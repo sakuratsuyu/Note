@@ -1,0 +1,13 @@
+
+body {
+    font-size: larger;
+}
+
+p {
+    font-size: large;
+}
+
+.md-typeset .admonition {
+    font-size: medium;
+    border-width: 0em;
+}

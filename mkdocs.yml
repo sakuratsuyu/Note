@@ -1,0 +1,126 @@
+site_name: NOTES
+site_author: sakuratsuyu
+
+theme:
+  name: material
+  language: zh
+  direction: ltr
+  font:
+    text: Source Sans Pro
+    code: Source Code Pro
+  icon:
+    logo: material/taco
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/lightbulb-variant-outline
+        name: dark mode
+      primary: white
+      accent: deep orange
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb-variant
+        name: light mode
+      primary: black
+      accent: deep orange
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.share
+
+
+copyright: Copyright &copy; 2022 sakuratsuyu
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/sakuratsuyu
+      name: Github
+    - icon: fontawesome/regular/envelope
+      link: mailto:sakuratsuyu@outlook.com
+  generator: true
+
+extra_css:
+  - css/extra.css
+
+extra_javascript:
+# Mathjax Configuration
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+  - glightbox
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      title: Content
+  - tables
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbr.md
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic:
+      mode: view
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji 
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      # linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home Page:
+    - Profile: index.md
+    - Plan: tasklist.md
+  - Mathematics Basis:
+    - comming_soon.md
+  - Computer Science Courses:
+    - comming_soon.md
+  - Tools:
+    - comming_soon.md
+  - Pot-pourri:
+    - comming_soon.md
