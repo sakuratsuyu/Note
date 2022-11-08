@@ -134,7 +134,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../1_Introduction/">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
         Computer Science Courses
       </a>
 </li>
@@ -235,10 +235,12 @@
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3">
-          Computer Science Courses
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">Computer Science Courses</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-label="Computer Science Courses" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
@@ -246,13 +248,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_1">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2">
           计算机视觉导论 | Introduction to Computer Vision
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="计算机视觉导论 | Introduction to Computer Vision" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_1">
+<label class="md-nav__title" for="__nav_3_2">
 <span class="md-nav__icon md-icon"></span>
           计算机视觉导论 | Introduction to Computer Vision
         </label>
@@ -451,6 +453,16 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3_Image_Processing/">
+        Lecture 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4_Model_Fitting_and_Optimization/">
+        Lecture 4
+      </a>
 </li>
 </ul>
 </nav>
@@ -697,8 +709,10 @@
 <h1 id="lecture-2-image-formation">Lecture 2 Image Formation<a class="headerlink" href="#lecture-2-image-formation" title="Permanent link">¶</a></h1>
 <h2 id="camera-and-lens">Camera and Lens<a class="headerlink" href="#camera-and-lens" title="Permanent link">¶</a></h2>
 <h3 id="pinhole-camera">Pinhole Camera<a class="headerlink" href="#pinhole-camera" title="Permanent link">¶</a></h3>
-<p>A barrier to block off most of the rays. The opening is the <strong>aperture 光圈</strong>.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_0.png"><img alt="lec2_0" src="../Pic/lec2_0.png"/></a></p>
+<p>A barrier to block off most of the rays. The opening is the <strong>aperture 光圈</strong>.</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_0.png"><img alt="lec2_0" src="../Pic/lec2_0.png" style="width:600px"/></a>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Flaws</p>
 <ul>
@@ -707,7 +721,9 @@
 </ul>
 </div>
 <h3 id="lens">Lens 透镜<a class="headerlink" href="#lens" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_1.png"><img alt="lec2_1" src="../Pic/lec2_1.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_1.png"><img alt="lec2_1" src="../Pic/lec2_1.png" style="width:500px"/></a>
+</div>
 <div class="arithmatex">\[
 \frac{1}{i} + \frac{1}{o} = \frac{1}{f}
 \]</div>
@@ -717,14 +733,18 @@
 <div class="arithmatex">\[
 m = \frac{h_i}{h_o}
 \]</div>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_2.png"><img alt="lec2_2" src="../Pic/lec2_2.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_2.png"><img alt="lec2_2" src="../Pic/lec2_2.png" style="width:500px"/></a>
+</div>
 <h4 id="field-of-view-fov">Field of View (FOV) 视野<a class="headerlink" href="#field-of-view-fov" title="Permanent link">¶</a></h4>
 <h5 id="factor">Factor<a class="headerlink" href="#factor" title="Permanent link">¶</a></h5>
 <ul>
 <li>Focal Length</li>
 <li>Longer focal length, Narrower angle of view. Vice versa.</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_3.png"><img alt="lec2_3" src="../Pic/lec2_3.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_3.png"><img alt="lec2_3" src="../Pic/lec2_3.png" style="width:200px"/></a>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>50mm / 46° (and full frame) is the most similar FOV with human eyes. Thus 50mm lens is called <strong>standard lens</strong>（标准镜头）.</p>
@@ -737,7 +757,9 @@ m = \frac{h_i}{h_o}
 <li>Sensor Size</li>
 <li>Bigger sensor size, Wider angle of view. Vice versa.</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_4.png"><img alt="lec2_4|500" src="../Pic/lec2_4.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_4.png"><img alt="lec2_4" src="../Pic/lec2_4.png" style="width:500px"/></a>
+</div>
 <h3 id="aperture">Aperture 光圈<a class="headerlink" href="#aperture" title="Permanent link">¶</a></h3>
 <p>The representation of aperture is its Diameter <span class="arithmatex">\(D\)</span>.</p>
 <p><strong>F-Number</strong></p>
@@ -745,15 +767,21 @@ m = \frac{h_i}{h_o}
 N = \frac{f}{D} \text{ (mostly greater than 1, around 1.8 ~ 22)}
 \]</div>
 <h3 id="lens-defocus">Lens Defocus<a class="headerlink" href="#lens-defocus" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_5.png"><img alt="lec2_5" src="../Pic/lec2_5.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_5.png"><img alt="lec2_5" src="../Pic/lec2_5.png" style="width:500px"/></a>
+</div>
 <p>Blur Circle Diameter (光斑半径)</p>
 <div class="arithmatex">\[
 b = \frac{D}{i'}|i' -i|, b \propto D \propto \frac{1}{N}
 \]</div>
 <h3 id="focusing">Focusing 对焦<a class="headerlink" href="#focusing" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_6.png"><img alt="lec2_6" src="../Pic/lec2_6.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_6.png"><img alt="lec2_6" src="../Pic/lec2_6.png" style="width:600px"/></a>
+</div>
 <h4 id="depth-of-field-dof">Depth of Field (DoF) 景深<a class="headerlink" href="#depth-of-field-dof" title="Permanent link">¶</a></h4>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_7.png"><img alt="lec2_7" src="../Pic/lec2_7.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_7.png"><img alt="lec2_7" src="../Pic/lec2_7.png" style="width:600px"/></a>
+</div>
 <div class="arithmatex">\[
 {\tt DoF} = o_2 - o_1 = \frac{2of^2cN(o-f)}{f^4-c^2N^2(o-f)^2}
 \]</div>
@@ -768,7 +796,9 @@ b = \frac{D}{i'}|i' -i|, b \propto D \propto \frac{1}{N}
 <h2 id="geometric-image-formation">Geometric Image Formation（定位）<a class="headerlink" href="#geometric-image-formation" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Camera model</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_8.png"><img alt="lec2_8" src="../Pic/lec2_8.png"/></a></p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_8.png"><img alt="lec2_8" src="../Pic/lec2_8.png" style="width:400px"/></a>
+</div></p>
 </div>
 <div class="arithmatex">\[
 \begin{bmatrix}
@@ -809,15 +839,21 @@ f\frac{y}{z} \\
 \end{bmatrix}
 \]</div>
 <p>We can also put the image plane in front of the camera (opposite to the previous picture).</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_9.png"><img alt="lec2_9" src="../Pic/lec2_9.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_9.png"><img alt="lec2_9" src="../Pic/lec2_9.png" style="width:400px"/></a>
+</div>
 <h3 id="perspective-projection">Perspective Projection<a class="headerlink" href="#perspective-projection" title="Permanent link">¶</a></h3>
 <ul>
 <li>Preserevd - Straight lines are still straight</li>
 <li>Lost - Length and Angle</li>
 </ul>
 <h4 id="vanishing-points">Vanishing Points<a class="headerlink" href="#vanishing-points" title="Permanent link">¶</a></h4>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_10.png"><img alt="lec2_10" src="../Pic/lec2_10.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_11.png"><img alt="lec2_11" src="../Pic/lec2_11.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_10.png"><img alt="lec2_10" src="../Pic/lec2_10.png" style="width:500px"/></a>
+</div>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_11.png"><img alt="lec2_11" src="../Pic/lec2_11.png" style="width:500px"/></a>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Properties</p>
 <ul>
@@ -831,19 +867,25 @@ f\frac{y}{z} \\
 <h4 id="vanishing-lines">Vanishing Lines<a class="headerlink" href="#vanishing-lines" title="Permanent link">¶</a></h4>
 <p>Multiple vanishing points</p>
 <p>The direction of the vanishing line tells us the orientation of the plane.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_12.png"><img alt="lec2_12" src="../Pic/lec2_12.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_12.png"><img alt="lec2_12" src="../Pic/lec2_12.png" style="width:500px"/></a>
+</div>
 <h4 id="distortion">Distortion<a class="headerlink" href="#distortion" title="Permanent link">¶</a></h4>
 <ul>
 <li>Converging verticals</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_13.png"><img alt="lec2_13" src="../Pic/lec2_13.png"/></a>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_13.png"><img alt="lec2_13" src="../Pic/lec2_13.png" style="width:800px"/></a>
+</div>
 <figcaption>Problem and Solution (View Camera 移轴相机)</figcaption></p>
 </figure>
 <ul>
 <li>Exterior columns appear bigger<ul>
 <li>Due to lens flaws
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_14.png"><img alt="lec2_14" src="../Pic/lec2_14.png"/></a></li>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_14.png"><img alt="lec2_14" src="../Pic/lec2_14.png" style="width:300px"/></a>
+</div></li>
 </ul>
 </li>
 <li>Radial distortion<ul>
@@ -851,7 +893,9 @@ f\frac{y}{z} \\
 </ul>
 </li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_15.png"><img alt="lec2_15" src="../Pic/lec2_15.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_15.png"><img alt="lec2_15" src="../Pic/lec2_15.png" style="width:800px"/></a>
+</div>
 <div class="arithmatex">\[
 \begin{align}
 r^2 &amp;= {x'}_n^{2} + {y'}_n^{2} \\
@@ -864,7 +908,9 @@ r^2 &amp;= {x'}_n^{2} + {y'}_n^{2} \\
 <p>Take a photo of a grid at the same point and then use the mathmatics to calculate and correct radial distortion.</p>
 </div>
 <h4 id="orthographic-projection">Orthographic Projection<a class="headerlink" href="#orthographic-projection" title="Permanent link">¶</a></h4>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_16.png"><img alt="lec2_16" src="../Pic/lec2_16.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_16.png"><img alt="lec2_16" src="../Pic/lec2_16.png" style="width:400px"/></a>
+</div>
 <div class="arithmatex">\[
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 \\
@@ -907,11 +953,17 @@ y \\
 <p>Practical Color Sensing: <strong>Bayer Filter</strong></p>
 </li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_17.png"><img alt="lec2_17" src="../Pic/lec2_17.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_17.png"><img alt="lec2_17" src="../Pic/lec2_17.png" style="width:800px"/></a>
+</div>
 <h4 id="shading">Shading 着色<a class="headerlink" href="#shading" title="Permanent link">¶</a></h4>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_18.png"><img alt="lec2_18" src="../Pic/lec2_18.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_18.png"><img alt="lec2_18" src="../Pic/lec2_18.png" style="width:300px"/></a>
+</div>
 <h5 id="brdf-bidirectional-reflectance-distribution-function">BRDF (Bidirectional Reflectance Distribution Function)<a class="headerlink" href="#brdf-bidirectional-reflectance-distribution-function" title="Permanent link">¶</a></h5>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_19.png"><img alt="lec2_19" src="../Pic/lec2_19.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_19.png"><img alt="lec2_19" src="../Pic/lec2_19.png" style="width:600px"/></a>
+</div>
 <div class="arithmatex">\[
 L_r(\hat{\textbf{v}_r};\lambda) = \int L_i(\hat{\textbf{i}_r};\lambda)f_r(\hat{\textbf{v}_r}, \hat{\textbf{v}_i}, \hat{\textbf{n}}; \lambda)\cos^+\theta_i\ d\hat{\textbf{v}_i}
 \]</div>
@@ -919,14 +971,20 @@ L_r(\hat{\textbf{v}_r};\lambda) = \int L_i(\hat{\textbf{i}_r};\lambda)f_r(\hat{\
 <ul>
 <li>Shading independent of view direction</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_20.png"><img alt="lec2_20" src="../Pic/lec2_20.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_20.png"><img alt="lec2_20" src="../Pic/lec2_20.png" style="width:600px"/></a>
+</div>
 <h5 id="specular-term">Specular Term<a class="headerlink" href="#specular-term" title="Permanent link">¶</a></h5>
 <ul>
-<li>Intensity depends on view direction
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_21.png"><img alt="lec2_21" src="../Pic/lec2_21.png"/></a></li>
+<li>Intensity depends on view direction</li>
 </ul>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_21.png"><img alt="lec2_21" src="../Pic/lec2_21.png" style="width:600px"/></a>
+</div>
 <h5 id="blinn-phong-reflection-model">Blinn-Phong Reflection Model<a class="headerlink" href="#blinn-phong-reflection-model" title="Permanent link">¶</a></h5>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_22.png"><img alt="lec2_22" src="../Pic/lec2_22.png"/></a></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_22.png"><img alt="lec2_22" src="../Pic/lec2_22.png" style="width:800px"/></a>
+</div>
 <div class="arithmatex">\[
 L = L_a + L_d + L_s = k_aI_a + k_d(I/r^2)\max(0, \textbf{n}\cdot\textbf{l}) + k_s(I/r^2)\max(0, \textbf{n}\cdot\textbf{h})^p
 \]</div>
@@ -953,13 +1011,13 @@ L = L_a + L_d + L_s = k_aI_a + k_d(I/r^2)\max(0, \textbf{n}\cdot\textbf{l}) + k_
             </div>
 </div>
 </a>
-<a aria-label="下一页: None" class="md-footer__link md-footer__link--next" href="../../../comming_soon/" rel="next">
+<a aria-label="下一页: Lecture 3" class="md-footer__link md-footer__link--next" href="../3_Image_Processing/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              None
+              Lecture 3
             </div>
 </div>
 <div class="md-footer__button md-icon">

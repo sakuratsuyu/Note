@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://sakuratsuyu.github.io/Note/Computer_Science_Courses/</loc>
+         <lastmod>2022-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/1_Introduction/</loc>
          <lastmod>2022-11-08</lastmod>
          <changefreq>daily</changefreq>
@@ -31,7 +36,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sakuratsuyu.github.io/Note/includes/abbr/</loc>
+         <loc>https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/3_Image_Processing/</loc>
+         <lastmod>2022-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/4_Model_Fitting_and_Optimization/</loc>
          <lastmod>2022-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>

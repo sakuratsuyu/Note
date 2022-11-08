@@ -6,19 +6,19 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="sakuratsuyu" name="author"/>
-<link href="https://sakuratsuyu.github.io/Note/includes/abbr/" rel="canonical"/>
-<link href="../../assets/images/favicon.png" rel="icon"/>
+<link href="https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/4_Model_Fitting_and_Optimization/" rel="canonical"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.8" name="generator"/>
-<title>Abbr - NOTES</title>
-<link href="../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.815d1a91.min.css" rel="stylesheet"/>
+<title>Lecture 4 - NOTES</title>
+<link href="../../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.815d1a91.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h226.7c17 0 33.3-6.7 45.3-18.7l93.3-93.3c12-12 18.7-28.3 18.7-45.3V96c0-35.3-28.7-64-64-64H64zm0 64h320v224h-64c-17.7 0-32 14.3-32 32v64H64V96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../css/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<link href="../../../css/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -26,19 +26,22 @@
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
-                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="deep-orange" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#lecture-4-model-fitting-and-optimization">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
-<a aria-label="NOTES" class="md-header__button md-logo" data-md-component="logo" href="../.." title="NOTES">
+<a aria-label="NOTES" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="NOTES">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 18H5a4 4 0 0 1-4-4 8 8 0 0 1 8-8c1.06 0 2.07.21 3 .58.93-.37 1.94-.58 3-.58a8 8 0 0 1 8 8 4 4 0 0 1-4 4M3 14a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-2.37 1.03-4.5 2.67-5.96L9 8a6 6 0 0 0-6 6m16 2a2 2 0 0 0 2-2 6 6 0 0 0-6-6 6 6 0 0 0-6 6c0 .73-.19 1.41-.54 2H19Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -54,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Abbr
+              Lecture 4
             
           </span>
 </div>
@@ -121,27 +124,27 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+<a class="md-tabs__link" href="../../..">
         Home Page
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../comming_soon/">
+<a class="md-tabs__link" href="../../../comming_soon/">
         Mathematics Basis
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../Computer_Science_Courses/ICV/1_Introduction/">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
         Computer Science Courses
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../comming_soon/">
+<a class="md-tabs__link" href="../../../comming_soon/">
         Tools
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../comming_soon/">
+<a class="md-tabs__link" href="../../../comming_soon/">
         Pot-pourri
       </a>
 </li>
@@ -155,7 +158,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="NOTES" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="NOTES">
+<a aria-label="NOTES" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="NOTES">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 18H5a4 4 0 0 1-4-4 8 8 0 0 1 8-8c1.06 0 2.07.21 3 .58.93-.37 1.94-.58 3-.58a8 8 0 0 1 8 8 4 4 0 0 1-4 4M3 14a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-2.37 1.03-4.5 2.67-5.96L9 8a6 6 0 0 0-6 6m16 2a2 2 0 0 0 2-2 6 6 0 0 0-6-6 6 6 0 0 0-6 6c0 .73-.19 1.41-.54 2H19Z"></path></svg>
 </a>
     NOTES
@@ -186,7 +189,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" id="__nav_1_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../..">Profile</a>
+<a href="../../..">Profile</a>
 </div>
 <nav aria-label="Profile" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_1">
@@ -198,12 +201,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../tasklist/">
+<a class="md-nav__link" href="../../../tasklist/">
         Plan
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../discussion/">
+<a class="md-nav__link" href="../../../discussion/">
         Blogroll
       </a>
 </li>
@@ -223,46 +226,186 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../comming_soon/">
+<a class="md-nav__link" href="../../../comming_soon/">
         None
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3">
-          Computer Science Courses
-          <span class="md-nav__icon md-icon"></span>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">Computer Science Courses</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-label="Computer Science Courses" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           Computer Science Courses
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_1">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2">
           计算机视觉导论 | Introduction to Computer Vision
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="计算机视觉导论 | Introduction to Computer Vision" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_1">
+<label class="md-nav__title" for="__nav_3_2">
 <span class="md-nav__icon md-icon"></span>
           计算机视觉导论 | Introduction to Computer Vision
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Computer_Science_Courses/ICV/1_Introduction/">
+<a class="md-nav__link" href="../1_Introduction/">
         Lecture 1
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Computer_Science_Courses/ICV/2_Image_Formation/">
+<a class="md-nav__link" href="../2_Image_Formation/">
         Lecture 2
       </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3_Image_Processing/">
+        Lecture 3
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Lecture 4
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Lecture 4
+      </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optimization">
+    Optimization
+  </a>
+<nav aria-label="Optimization" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-fitting">
+    Model Fitting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reasons-to-choose-mse">
+    Reasons to choose MSE
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#numerical-methods">
+    Numerical Methods
+  </a>
+<nav aria-label="Numerical Methods" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analytical-solution">
+    Analytical Solution 解析解
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#approximate-solution">
+    Approximate Solution 近似解
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gradient-descent-gd">
+    Gradient Descent (GD)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#steepest-descent-method">
+    Steepest Descent Method
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#newton-method">
+    Newton Method
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gauss-newton-method">
+    Gauss-Newton Method
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#levenberg-marquardt-lm">
+    Levenberg-Marquardt (LM)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#convex-optimization">
+    Convex Optimization
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#robust-estimation">
+    Robust Estimation
+  </a>
+<nav aria-label="Robust Estimation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ransac-random-sample-concensus">
+    RANSAC (Random Sample Concensus)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ill-posed-problem">
+    ill-posed Problem 病态问题 / 多解问题
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#graphcut-and-mrf">
+    Graphcut and MRF
+  </a>
+<nav aria-label="Graphcut and MRF" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#graph-cut">
+    Graph Cut
+  </a>
+<nav aria-label="Graph Cut" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem-with-min-cut">
+    Problem with min-cut
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markow-random-field-mrf">
+    Markow Random Field (MRF)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -283,7 +426,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../comming_soon/">
+<a class="md-nav__link" href="../../../comming_soon/">
         None
       </a>
 </li>
@@ -303,7 +446,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../comming_soon/">
+<a class="md-nav__link" href="../../../comming_soon/">
         Waiting...
       </a>
 </li>
@@ -319,16 +462,410 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optimization">
+    Optimization
+  </a>
+<nav aria-label="Optimization" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-fitting">
+    Model Fitting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reasons-to-choose-mse">
+    Reasons to choose MSE
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#numerical-methods">
+    Numerical Methods
+  </a>
+<nav aria-label="Numerical Methods" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analytical-solution">
+    Analytical Solution 解析解
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#approximate-solution">
+    Approximate Solution 近似解
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gradient-descent-gd">
+    Gradient Descent (GD)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#steepest-descent-method">
+    Steepest Descent Method
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#newton-method">
+    Newton Method
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gauss-newton-method">
+    Gauss-Newton Method
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#levenberg-marquardt-lm">
+    Levenberg-Marquardt (LM)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#convex-optimization">
+    Convex Optimization
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#robust-estimation">
+    Robust Estimation
+  </a>
+<nav aria-label="Robust Estimation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ransac-random-sample-concensus">
+    RANSAC (Random Sample Concensus)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ill-posed-problem">
+    ill-posed Problem 病态问题 / 多解问题
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#graphcut-and-mrf">
+    Graphcut and MRF
+  </a>
+<nav aria-label="Graphcut and MRF" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#graph-cut">
+    Graph Cut
+  </a>
+<nav aria-label="Graph Cut" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem-with-min-cut">
+    Problem with min-cut
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markow-random-field-mrf">
+    Markow Random Field (MRF)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/includes/abbr.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/ICV/4_Model_Fitting_and_Optimization.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Abbr</h1>
+<h1 id="lecture-4-model-fitting-and-optimization">Lecture 4 Model Fitting and Optimization<a class="headerlink" href="#lecture-4-model-fitting-and-optimization" title="Permanent link">¶</a></h1>
+<h2 id="optimization">Optimization<a class="headerlink" href="#optimization" title="Permanent link">¶</a></h2>
+<div class="arithmatex">\[
+\begin{align}
+&amp; \text{Minimize } &amp; f_0(x) \\
+&amp; \text{Subject to } &amp;f_i(x) &amp; \le 0,\ i = 1, \dots, m \\
+&amp; &amp; g_i(x) &amp; = 0,\ i = 1,\dots, p
+\end{align}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(x \in \mathbb{R}^n\)</span> is a vector variable to be chosen.</li>
+<li><span class="arithmatex">\(f_0\)</span> is the <strong>objective function</strong> to be minimized.</li>
+<li><span class="arithmatex">\(f_1, \dots, f_m\)</span> are the <strong>inequality constraint functions.</strong></li>
+<li><span class="arithmatex">\(g_1, \dots, g_p\)</span> are the <strong>equality constraint functions.</strong></li>
+</ul>
+<h3 id="model-fitting">Model Fitting<a class="headerlink" href="#model-fitting" title="Permanent link">¶</a></h3>
+<p>A typical approach: Minimize the <strong>Mean Square Error (<abbr title="Mean Square Error">MSE</abbr>)</strong></p>
+<div class="arithmatex">\[
+\hat x = \mathop{\arg\min}\limits_x \sum\limits_i(b_i - a_i^Tx)^2
+\]</div>
+<h3 id="reasons-to-choose-mse">Reasons to choose <abbr title="Mean Square Error">MSE</abbr><a class="headerlink" href="#reasons-to-choose-mse" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p><strong>Key Assumptions:</strong> <abbr title="Mean Square Error">MSE</abbr> = <abbr title="Maximum Likelihood Estimation">MLE</abbr> with Gaussian noise</p>
+</div>
+<p>From <strong>Maximum Likelihood Estimation (<abbr title="Maximum Likelihood Estimation">MLE</abbr>)</strong>, the data is assumed to be with <strong>Gaussian noise</strong>.</p>
+<div class="arithmatex">\[
+b_i = a_i^Tx + n,\ n \sim G(0, \sigma)
+\]</div>
+<p>The likelihood of observing <span class="arithmatex">\((a_i, b_i)\)</span> is </p>
+<div class="arithmatex">\[
+P[(a_i, b_i)|x] = P[b_i - a_i^Tx] \propto \exp\left(-\frac{(b_i - a_i^Tx)^2}{2\sigma^2}\right)
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the data points are <strong>independent</strong>,</p>
+<div class="arithmatex">\[
+\begin{align}
+P[(a_1, b_1)(a_2, b_2)\dots|x] &amp; = \prod\limits_iP[(a_i, b_i)|x] = \prod\limits_iP[b_i - a_{i^{Tx]}} \\
+&amp; \propto \exp\left(-\frac{\sum_i(b_i - a_i^Tx)^2}{2\sigma^2}\right) = \exp\left(-\frac{||Ax-b||^2_2}{2\sigma^2}\right)
+\end{align}
+\]</div>
+<div class="arithmatex">\[
+\begin{align}
+\hat x &amp;= \mathop{\arg\max}\limits_x P[(a_1, b_1)(a_2, b_2)\dots|x] \\ &amp;= \mathop{\arg\max}\limits_x \exp\left(-\frac{||Ax-b||^2_2}{2\sigma^2}\right) 
+= \mathop{\arg\min}\limits_x||Ax - b||_2^2
+\end{align}
+\]</div>
+</div>
+<hr/>
+<h2 id="numerical-methods">Numerical Methods<a class="headerlink" href="#numerical-methods" title="Permanent link">¶</a></h2>
+<h3 id="analytical-solution">Analytical Solution 解析解<a class="headerlink" href="#analytical-solution" title="Permanent link">¶</a></h3>
+<p>The derivative of <span class="arithmatex">\(||Ax-b||^2_2\)</span> is <span class="arithmatex">\(2A^T(Ax - b)\)</span>, let it be 0. Then we get <span class="arithmatex">\(\hat x\)</span> satisfying</p>
+<div class="arithmatex">\[
+A^TAx = A^Tb
+\]</div>
+<p>But, if no analytical solution ...</p>
+<h3 id="approximate-solution">Approximate Solution 近似解<a class="headerlink" href="#approximate-solution" title="Permanent link">¶</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Method</p>
+<ol>
+<li><span class="arithmatex">\(x \leftarrow x_0\)</span></li>
+<li><span class="arithmatex">\(\text{while not converge}\)</span><ol>
+<li><span class="arithmatex">\(p \leftarrow \text{descending_direction(x)}\)</span></li>
+<li><span class="arithmatex">\(\alpha \leftarrow \text{descending_step(x)}\)</span></li>
+<li><span class="arithmatex">\(x \leftarrow x + \alpha p\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<h3 id="gradient-descent-gd">Gradient Descent (GD)<a class="headerlink" href="#gradient-descent-gd" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<h3 id="steepest-descent-method">Steepest Descent Method<a class="headerlink" href="#steepest-descent-method" title="Permanent link">¶</a></h3>
+<div class="arithmatex">\[
+F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x
+\]</div>
+<ul>
+<li>Direction<ul>
+<li><span class="arithmatex">\(\Delta x = -J^T_F\)</span></li>
+</ul>
+</li>
+<li>
+<p>Step</p>
+<ul>
+<li>
+<p>To minimize <span class="arithmatex">\(\phi(a)\)</span>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_0.png"><img alt="lec4_0" src="../Pic/lec4_0.png" style="width:300px"/></a>
+</div> </p>
+<div class="admonition success">
+<p class="admonition-title">Backtracking Algorithm</p>
+<ul>
+<li>Initialize <span class="arithmatex">\(\alpha\)</span> with a large value.</li>
+<li>Decrease <span class="arithmatex">\(\alpha\)</span> until <span class="arithmatex">\(\phi(\alpha)\le\phi(0) + \gamma\phi'(0)\alpha\)</span>.</li>
+</ul>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_1.png"><img alt="lec4_1" src="../Pic/lec4_1.png" style="width:300px"/></a>
+</div> </p>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p>Advantage</p>
+<ul>
+<li>Easy to implement</li>
+<li>Perform well when far from the minimum</li>
+</ul>
+</li>
+<li>
+<p>Disadvantage</p>
+<ul>
+<li>Converge slowly when near the minimum, which wastes a lot of computation</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<h3 id="newton-method">Newton Method<a class="headerlink" href="#newton-method" title="Permanent link">¶</a></h3>
+<div class="arithmatex">\[
+F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\Delta x = -H_F^{-1}J^T_F\)</span></li>
+<li>Advantage<ul>
+<li>Faster convergence</li>
+</ul>
+</li>
+<li>Disadvantage<ul>
+<li>Hessian matrix requires a lot of computation</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<h3 id="gauss-newton-method">Gauss-Newton Method<a class="headerlink" href="#gauss-newton-method" title="Permanent link">¶</a></h3>
+<p>For <span class="arithmatex">\(\hat x = \mathop{\arg\min}\limits_x ||Ax-b||^2_2 \overset{\Delta}{=\!=}\mathop{\arg\min}\limits_x||R(x)||^2_2\)</span>, expand <span class="arithmatex">\(R(x)\)</span>.</p>
+<div class="arithmatex">\[
+\begin{align}
+||R(x_k+\Delta x)||^2_2 &amp;\approx ||R(x_k) + J_R\Delta x||^2_2 \newline 
+&amp;= ||R(x_k)||^2_2 + 2R(x_k)^TJ_R\Delta x + \Delta x^TJ^T_RJ_R\Delta x
+\end{align}
+\]</div>
+<ul>
+<li>
+<p><span class="arithmatex">\(\Delta x = -(J_R^TJ_R)^{-1}J_R^TR(x_k) = -(J_R^TJ_R)^{-1}J_F^T\)</span></p>
+<ul>
+<li>Compared to Newton Method, <span class="arithmatex">\(J_R^TJ_R\)</span> is used to approximate <span class="arithmatex">\(H_F\)</span>.</li>
+</ul>
+</li>
+<li>
+<p>Advantage</p>
+<ul>
+<li>No need to compute Hessian matrix</li>
+<li>Faster to converge</li>
+</ul>
+</li>
+<li>
+<p>Disadvantage</p>
+<ul>
+<li><span class="arithmatex">\(J^T_RJ_R\)</span> may be singular.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<h3 id="levenberg-marquardt-lm">Levenberg-Marquardt (LM)<a class="headerlink" href="#levenberg-marquardt-lm" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><span class="arithmatex">\(\Delta x = -(J_R^TJ_R + \lambda I)^{-1}J_R^TR(x_k)\)</span></p>
+<ul>
+<li><span class="arithmatex">\(\lambda \rightarrow \infty\)</span> Steepest Descent</li>
+<li><span class="arithmatex">\(\lambda \rightarrow 0\)</span> Gauss-Newton</li>
+</ul>
+</li>
+<li>
+<p>Advantage</p>
+<ul>
+<li>Start and converge quickly</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Local Minimum and Global Minimum</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_2.png"><img alt="lec4_2" src="../Pic/lec4_2.png" style="width:400px"/></a>
+</div> </p>
+</div>
+<h3 id="convex-optimization">Convex Optimization<a class="headerlink" href="#convex-optimization" title="Permanent link">¶</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+</div>
+<hr/>
+<h2 id="robust-estimation">Robust Estimation<a class="headerlink" href="#robust-estimation" title="Permanent link">¶</a></h2>
+<p><strong>Inlier</strong> obeys the model assumption. <strong>Outlier</strong> differs significantly rom the assumption.</p>
+<p>Outlier makes <abbr title="Mean Square Error">MSE</abbr> fail. To reduce its effect, we can use other loss functions, called <strong>robust functions.</strong></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_3.png"><img alt="lec4_3" src="../Pic/lec4_3.png" style="width:400px"/></a>
+</div>
+<h3 id="ransac-random-sample-concensus">RANSAC (Random Sample Concensus)<a class="headerlink" href="#ransac-random-sample-concensus" title="Permanent link">¶</a></h3>
+<p>The most powerful method to handle outliers.</p>
+<div class="admonition note">
+<p class="admonition-title">Key ideas</p>
+<ul>
+<li>The distribution of inliers is similar while outliers differ a lot.</li>
+<li>Use data point pairs to vote
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_4.png"><img alt="lec4_4" src="../Pic/lec4_4.png" style="width:500px"/></a>
+</div> </li>
+</ul>
+</div>
+<h3 id="ill-posed-problem">ill-posed Problem 病态问题 / 多解问题<a class="headerlink" href="#ill-posed-problem" title="Permanent link">¶</a></h3>
+<p>The solution is not unique. To make it unique:</p>
+<ul>
+<li>
+<p>L2 regularization</p>
+<ul>
+<li>Suppress redundant variables</li>
+<li><span class="arithmatex">\(\min_x||Ax-b||^2_2,\ s.t. ||x||_2 \le 1\)</span>  (the same as <span class="arithmatex">\(\min_x||Ax-b||^2_2 + \lambda||x||_2\)</span>)</li>
+</ul>
+</li>
+<li>
+<p>L1 regularization</p>
+<ul>
+<li>Make <span class="arithmatex">\(x\)</span> sparse</li>
+<li><span class="arithmatex">\(\min_x||Ax-b||^2_2,\ s.t. ||x||_1 \le 1\)</span>  (the same as <span class="arithmatex">\(\min_x||Ax-b||^2_2 + \lambda||x||_1\)</span>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="graphcut-and-mrf">Graphcut and <abbr title="Markow Random Field">MRF</abbr><a class="headerlink" href="#graphcut-and-mrf" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>A key idea:</strong> Neighboring pixels tend to take the same label.</p>
+</div>
+<div class="admonition note">
+<p>Images as Graphs</p>
+<ul>
+<li>A vertex for each pixel</li>
+<li>An edge between each pair, weighted by the <strong>affinity or similarity</strong> between its two vertices<ul>
+<li>Pixel Dissimilarity <span class="arithmatex">\(S(\textbf{f}_i, \textbf{f}_j) = \sqrt{\sum_k(f_{ik} - f_{jk})^2}\)</span></li>
+<li>Pixel Affinity <span class="arithmatex">\(w(i, j) = A(\textbf{f}_i, \textbf{f}_j) = \exp\left(\frac{-1}{2\sigma^2}S(\textbf{f}_i, \textbf{f}_j)\right)\)</span></li>
+</ul>
+</li>
+<li>Graph Notation <span class="arithmatex">\(G = (V, E)\)</span><ul>
+<li><span class="arithmatex">\(V\)</span>: a set of vertices</li>
+<li><span class="arithmatex">\(E\)</span>: a set of edges</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="graph-cut">Graph Cut<a class="headerlink" href="#graph-cut" title="Permanent link">¶</a></h3>
+<p>Cut <span class="arithmatex">\(C=(V_A, V_B)\)</span> is a parition of vertices <span class="arithmatex">\(V\)</span> of a graph <span class="arithmatex">\(G\)</span> into two disjoint subsets <span class="arithmatex">\(V_A\)</span> and <span class="arithmatex">\(V_B\)</span>.</p>
+<p><strong>Cost of Cut</strong> <span class="arithmatex">\(\text{cut}(V_A, V_B) = \sum_{u\in V_A, v\in V_B} w(u, v)\)</span></p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_5.png"><img alt="lec4_5" src="../Pic/lec4_5.png" style="width:300px"/></a>
+</div>
+<h4 id="problem-with-min-cut">Problem with min-cut<a class="headerlink" href="#problem-with-min-cut" title="Permanent link">¶</a></h4>
+<p>Bias to cut small, isolated segments</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_6.png"><img alt="lec4_6" src="../Pic/lec4_6.png" style="width:600px"/></a>
+</div>
+<p><strong>Solution: Normalized cut</strong></p>
+<p>Compute how strongly verices <span class="arithmatex">\(V_A\)</span> are associated with vertices<span class="arithmatex">\(V\)</span></p>
+<div class="arithmatex">\[
+\text{assoc}(V_A, V) =  \sum_{u\in V_A, v\in V} w(u, v)
+\]</div>
+<div class="arithmatex">\[
+\text{NCut}(V_A, V_B) = \frac{\text{cut}(V_A, V_B)}{\text{assoc}(V_A, V)} + \frac{\text{cut}(V_A, V_B)}{\text{assoc}(V_B, V)}
+\]</div>
+<h3 id="markow-random-field-mrf">Markow Random Field (<abbr title="Markow Random Field">MRF</abbr>)<a class="headerlink" href="#markow-random-field-mrf" title="Permanent link">¶</a></h3>
+<p>Graphcut is an exception of <abbr title="Markow Random Field">MRF</abbr>.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+</div>
 </article>
 </div>
 </div>
@@ -338,6 +875,34 @@
           </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: Lecture 3" class="md-footer__link md-footer__link--prev" href="../3_Image_Processing/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                上一页
+              </span>
+              Lecture 3
+            </div>
+</div>
+</a>
+<a aria-label="下一页: None" class="md-footer__link md-footer__link--next" href="../../../comming_soon/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                下一页
+              </span>
+              None
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -366,9 +931,9 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../js/mathjax.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+<script src="../../../js/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
