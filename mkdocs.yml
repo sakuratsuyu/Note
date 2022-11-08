@@ -1,8 +1,13 @@
 site_name: NOTES
 site_author: sakuratsuyu
+site_url: 'https://sakuratsuyu.github.io/Note'
+
+repo_name: 'sakuratsuyu/Note'
+repo_url: 'https://github.com/sakuratsuyu/Note'
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   direction: ltr
   font:
@@ -39,13 +44,15 @@ theme:
       primary: black
       accent: deep orange
   features:
+    - content.code.annotate
+    - content.tooltips
     - navigation.instant
     - navigation.tabs
     - navigation.indexes
     - navigation.top
     - search.highlight
     - search.share
-
+    - search.suggest
 
 copyright: Copyright &copy; 2022 sakuratsuyu
 
@@ -63,7 +70,7 @@ extra_css:
 
 extra_javascript:
 # Mathjax Configuration
-  - javascripts/mathjax.js
+  - js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
@@ -114,12 +121,16 @@ markdown_extensions:
 
 nav:
   - Home Page:
-    - Profile: index.md
+    - Profile:
+      - index.md
     - Plan: tasklist.md
+    - Blogroll: discussion.md
   - Mathematics Basis:
     - comming_soon.md
   - Computer Science Courses:
-    - comming_soon.md
+    - 计算机视觉导论 | Introduction to Computer Vision:
+      - Lecture 1 : Computer_Science_Courses/ICV/1_Introduction.md
+      - Lecture 2 : Computer_Science_Courses/ICV/2_Image_Formation.md
   - Tools:
     - comming_soon.md
   - Pot-pourri:

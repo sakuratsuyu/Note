@@ -1,16 +1,17 @@
 # Task List
+- [ ] Make a logo!
 - [ ] Mathematics Basis
     * [ ] Discrete Mathematics | DM
     * [ ] Numerical Analysis | NA
     * [ ] Abstract Algrebra
 - [ ] Computer Science Courses
-    * [ ] The Missing Semester of your CS education --> Tools
+    * [ ] The Missing Semester of your CS education --> Cheat Sheets / Tools
     * [ ] Introduction to Computer Systems | ICS
     * [ ] HPC 101
     * [ ] Introduction to Computer Vision | ICV
     * [ ] Fundemental of Data Strcuture | FDS
     * [ ] Digital Logic Design
-- [ ] Cheat Sheets
+- [ ] Cheat Sheets / Tools
     * [ ] Git
     * [ ] Markdown
     * [ ] Latex
