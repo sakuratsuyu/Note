@@ -5,7 +5,9 @@
 ### Pinhole Camera
 
 A barrier to block off most of the rays. The opening is the **aperture 光圈**.
-![lec2_0](Pic/lec2_0.png)
+<div align="center">
+	<img src="../Pic/lec2_0.png" alt="lec2_0" style="width:600px"/>
+</div>
 
 !!! tip "Flaws"
 	- Less light gets through.
@@ -13,7 +15,9 @@ A barrier to block off most of the rays. The opening is the **aperture 光圈**.
 
 ### Lens 透镜
 
-![lec2_1](Pic/lec2_1.png)
+<div align="center">
+	<img src="../Pic/lec2_1.png" alt="lec2_1" style="width:500px"/>
+</div>
 
 $$
 \frac{1}{i} + \frac{1}{o} = \frac{1}{f}
@@ -29,7 +33,9 @@ $$
 m = \frac{h_i}{h_o}
 $$
 
-![lec2_2](Pic/lec2_2.png)
+<div align="center">
+	<img src="../Pic/lec2_2.png" alt="lec2_2" style="width:500px"/>
+</div>
 
 #### Field of View (FOV) 视野
 
@@ -37,7 +43,9 @@ $$
 -  Focal Length
   - Longer focal length, Narrower angle of view. Vice versa.
 
-![lec2_3](Pic/lec2_3.png)
+<div align="center">
+	<img src="../Pic/lec2_3.png" alt="lec2_3" style="width:200px"/>
+</div>
 
 !!! note 
 	50mm / 46° (and full frame) is the most similar FOV with human eyes. Thus 50mm lens is called **standard lens**（标准镜头）.
@@ -47,7 +55,9 @@ $$
 -  Sensor Size
   - Bigger sensor size, Wider angle of view. Vice versa.
 
-![lec2_4|500](Pic/lec2_4.png)
+<div align="center">
+	<img src="../Pic/lec2_4.png" alt="lec2_4" style="width:500px"/>
+</div>
 
 ### Aperture 光圈
 
@@ -60,7 +70,9 @@ N = \frac{f}{D} \text{ (mostly greater than 1, around 1.8 ~ 22)}
 $$
 
 ### Lens Defocus
-![lec2_5](Pic/lec2_5.png)
+<div align="center">
+	<img src="../Pic/lec2_5.png" alt="lec2_5" style="width:500px"/>
+</div>
 
 Blur Circle Diameter (光斑半径)
 
@@ -70,11 +82,15 @@ $$
 
 ### Focusing 对焦
 
-![lec2_6](Pic/lec2_6.png)
+<div align="center">
+	<img src="../Pic/lec2_6.png" alt="lec2_6" style="width:600px"/>
+</div>
 
 #### Depth of Field (DoF) 景深
 
-![lec2_7](Pic/lec2_7.png)
+<div align="center">
+	<img src="../Pic/lec2_7.png" alt="lec2_7" style="width:600px"/>
+</div>
 
 
 $$
@@ -95,7 +111,9 @@ From the equation above DoF is almost proportional to $N$, and thus the Larger a
 ## Geometric Image Formation（定位）
 
 !!! note "Camera model"
-	![lec2_8](Pic/lec2_8.png)
+	<div align="center">
+		<img src="../Pic/lec2_8.png" alt="lec2_8" style="width:400px"/>
+	</div>
 
 $$
 \begin{bmatrix}
@@ -141,7 +159,10 @@ $$
 
 We can also put the image plane in front of the camera (opposite to the previous picture).
 
-![lec2_9](Pic/lec2_9.png)
+<div align="center">
+	<img src="../Pic/lec2_9.png" alt="lec2_9" style="width:400px"/>
+</div>
+	
 ### Perspective Projection
 
 - Preserevd - Straight lines are still straight
@@ -149,8 +170,12 @@ We can also put the image plane in front of the camera (opposite to the previous
 
 #### Vanishing Points
 
-![lec2_10](Pic/lec2_10.png)
-![lec2_11](Pic/lec2_11.png)
+<div align="center">
+	<img src="../Pic/lec2_10.png" alt="lec2_10" style="width:500px"/>
+</div>
+<div align="center">
+	<img src="../Pic/lec2_11.png" alt="lec2_11" style="width:500px"/>
+</div>
 
 !!! note "Properties"
 	- Any wo parallel lines have the same vanishing point **v.**
@@ -163,23 +188,32 @@ Multiple vanishing points
 
 The direction of the vanishing line tells us the orientation of the plane.
 
-![lec2_12](Pic/lec2_12.png)
+<div align="center">
+	<img src="../Pic/lec2_12.png" alt="lec2_12" style="width:500px"/>
+</div>
+
 #### Distortion
 
 - Converging verticals
 
 <figure markdown> 
-	![lec2_13](Pic/lec2_13.png)
+	<div align="center">
+		<img src="../Pic/lec2_13.png" alt="lec2_13" style="width:800px"/>
+	</div>
 	<figcaption>Problem and Solution (View Camera 移轴相机)</figcaption>
 </figure>
 
 - Exterior columns appear bigger
 	- Due to lens flaws
-![lec2_14](Pic/lec2_14.png)
+	<div align="center">
+		<img src="../Pic/lec2_14.png" alt="lec2_14" style="width:300px"/>
+	</div>
 - Radial distortion
 	- Due to imperfect lens
 
-![lec2_15](Pic/lec2_15.png)
+<div align="center">
+	<img src="../Pic/lec2_15.png" alt="lec2_15" style="width:800px"/>
+</div>
 
 $$
 \begin{align}
@@ -194,7 +228,9 @@ $$
 
 #### Orthographic Projection
 
-![lec2_16](Pic/lec2_16.png)
+<div align="center">
+	<img src="../Pic/lec2_16.png" alt="lec2_16" style="width:400px"/>
+</div>
 
 $$
 \begin{bmatrix}
@@ -237,16 +273,21 @@ Shutter speed controls exposure time.
 
 -   Practical Color Sensing: **Bayer Filter**
 
-![lec2_17](Pic/lec2_17.png)
+<div align="center">
+	<img src="../Pic/lec2_17.png" alt="lec2_17" style="width:800px"/>
+</div>
 
 #### Shading 着色
 
-![lec2_18](Pic/lec2_18.png)
+<div align="center">
+	<img src="../Pic/lec2_18.png" alt="lec2_18" style="width:300px"/>
+</div>
 
 ##### BRDF (Bidirectional Reflectance Distribution Function)
 
-![lec2_19](Pic/lec2_19.png)
-
+<div align="center">
+	<img src="../Pic/lec2_19.png" alt="lec2_19" style="width:600px"/>
+</div>
 
 $$
 L_r(\hat{\textbf{v}_r};\lambda) = \int L_i(\hat{\textbf{i}_r};\lambda)f_r(\hat{\textbf{v}_r}, \hat{\textbf{v}_i}, \hat{\textbf{n}}; \lambda)\cos^+\theta_i\ d\hat{\textbf{v}_i}
@@ -256,15 +297,23 @@ $$
 
 -   Shading independent of view direction
 
-![lec2_20](Pic/lec2_20.png)
+<div align="center">
+	<img src="../Pic/lec2_20.png" alt="lec2_20" style="width:600px"/>
+</div>
+
 ##### Specular Term
 
 -   Intensity depends on view direction
-![lec2_21](Pic/lec2_21.png)
+
+<div align="center">
+	<img src="../Pic/lec2_21.png" alt="lec2_21" style="width:600px"/>
+</div>
 
 ##### Blinn-Phong Reflection Model
 
-![lec2_22](Pic/lec2_22.png)
+<div align="center">
+	<img src="../Pic/lec2_22.png" alt="lec2_22" style="width:800px"/>
+</div>
 
 $$
 L = L_a + L_d + L_s = k_aI_a + k_d(I/r^2)\max(0, \textbf{n}\cdot\textbf{l}) + k_s(I/r^2)\max(0, \textbf{n}\cdot\textbf{h})^p

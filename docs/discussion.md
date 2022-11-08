@@ -8,5 +8,5 @@ Free talk here about anything!
 
 Maybe I can put some blogrolls there... Anyone wants? :heart_eyes:
 
-!!! Blogrolls
+!!! tip "Blogrolls"
     - wants more friends! :speech_balloon:

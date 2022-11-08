@@ -7,7 +7,7 @@ $$
 \tt{Transfering\ content\ from\ other\ places\ these\ days\ } \cdots\ \&\$@\%\&\$@\%\&\$@\%
 $$
 
-!!! info "@sakurtsuyu についで —"
+!!! info "@sakuratsuyu についで —"
     - Sophomore as a ZJU CS Undergraduate.
     - ZJUSCT Freshman. (摸大鱼)
     - MADer. (MAD 在做了在做了.jpg)

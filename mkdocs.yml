@@ -128,9 +128,12 @@ nav:
   - Mathematics Basis:
     - comming_soon.md
   - Computer Science Courses:
+    - Computer_Science_Courses/index.md
     - 计算机视觉导论 | Introduction to Computer Vision:
       - Lecture 1 : Computer_Science_Courses/ICV/1_Introduction.md
       - Lecture 2 : Computer_Science_Courses/ICV/2_Image_Formation.md
+      - Lecture 3 : Computer_Science_Courses/ICV/3_Image_Processing.md
+      - Lecture 4 : Computer_Science_Courses/ICV/4_Model_Fitting_and_Optimization.md
   - Tools:
     - comming_soon.md
   - Pot-pourri:
