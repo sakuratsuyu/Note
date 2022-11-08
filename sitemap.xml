@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>None</loc>
-         <lastmod>2022-11-06</lastmod>
+         <loc>https://sakuratsuyu.github.io/Note/</loc>
+         <lastmod>2022-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-11-06</lastmod>
+         <loc>https://sakuratsuyu.github.io/Note/comming_soon/</loc>
+         <lastmod>2022-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-11-06</lastmod>
+         <loc>https://sakuratsuyu.github.io/Note/discussion/</loc>
+         <lastmod>2022-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sakuratsuyu.github.io/Note/tasklist/</loc>
+         <lastmod>2022-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/1_Introduction/</loc>
+         <lastmod>2022-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/2_Image_Formation/</loc>
+         <lastmod>2022-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sakuratsuyu.github.io/Note/includes/abbr/</loc>
+         <lastmod>2022-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
