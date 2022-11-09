@@ -13,51 +13,51 @@ p {
     font-size: large;
 }
 
-h1,h2,h3,h4,h5,h6 {
+/* .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
 	display: block;
 	font-weight: bold;
 }
 
-h1 {
+.md-typeset h1 {
 	font-size: 1.8em;
     line-height: 110%;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
 }
 
-h2 {
+.md-typeset h2 {
 	font-size: 1.5em;
 	margin-top: 0.83em;
 	margin-bottom: 0.83em;
 }
 
-h3 {
+.md-typeset h3 {
 	font-size: 1.17em;
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
 
-h4 {
+.md-typeset h4 {
 	font-size: 1em;
 	margin-top: 1.33em;
 	margin-bottom: 1.33em;
 }
 
-h5 {
+.md-typeset h5 {
 	font-size: 1em;
 	margin-top: 1.33em;
 	margin-bottom: 1.33em;
 	color: #777777;
 }
 
-h6 {
+.md-typeset h6 {
 	font-size: 1em;
 	margin-top: 1.33em;
 	margin-bottom: 1.33em;
 	color: #adadad;
-}
+} */
 
-.md-typeset .admonition {
+.md-typeset .admonition, .md-typeset details {
     font-size: medium;
     border-width: 0em;
 }
