@@ -134,6 +134,14 @@ nav:
       - Lecture 2 : Computer_Science_Courses/ICV/2_Image_Formation.md
       - Lecture 3 : Computer_Science_Courses/ICV/3_Image_Processing.md
       - Lecture 4 : Computer_Science_Courses/ICV/4_Model_Fitting_and_Optimization.md
+      - Lecture 5 : Computer_Science_Courses/ICV/5_Image_Matching_and_Motion_Estimation.md
+      - Lecture 6 : Computer_Science_Courses/ICV/6_Image_Stitching.md
+      - Lecture 7 : Computer_Science_Courses/ICV/7_Structure_from_Motion.md
+      - Lecture 8 : Computer_Science_Courses/ICV/8_Depth_Estimation_and_3D_Reconstruction.md
+      - Lecture 9 : Computer_Science_Courses/ICV/9_Deep_Learning.md
+      - Lecture 10 : Computer_Science_Courses/ICV/10_Recognition.md
+      - Lecture 11 : Computer_Science_Courses/ICV/11_3D_Deep_Learning.md
+      - Lecture 12/13 : Computer_Science_Courses/ICV/12_13_Computational_Photography.md
   - Tools:
     - comming_soon.md
   - Pot-pourri:

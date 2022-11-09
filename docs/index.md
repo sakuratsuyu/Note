@@ -7,7 +7,8 @@ $$
 \tt{Transfering\ content\ from\ other\ places\ these\ days\ } \cdots\ \&\$@\%\&\$@\%\&\$@\%
 $$
 
-!!! info "@sakuratsuyu についで —"
+!!! info "About me"
+    - All ids I used: **sakuratsuyu**, **桜つゆ**, **曦露** and **Mslease**. Maybe you can find me somewhere else! :stuck_out_tongue_closed_eyes:
     - Sophomore as a ZJU CS Undergraduate.
     - ZJUSCT Freshman. (摸大鱼)
     - MADer. (MAD 在做了在做了.jpg)
