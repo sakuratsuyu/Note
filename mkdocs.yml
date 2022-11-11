@@ -15,6 +15,7 @@ theme:
     code: Source Code Pro
   icon:
     logo: material/taco
+    repo: fontawesome/brands/github-alt
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -41,7 +42,7 @@ theme:
       toggle:
         icon: material/lightbulb-variant
         name: light mode
-      primary: black
+      primary: dark
       accent: deep orange
   features:
     - content.code.annotate
@@ -77,6 +78,15 @@ extra_javascript:
 plugins:
   - search
   - glightbox
+  - git-revision-date-localized:
+    type: datetime
+    timezone: Asia/Shanghai
+    locale: zh
+    enable_creation_date: true
+    exclude:
+      - index.md
+      - comming_soon.md
+      - discussion.md
 
 markdown_extensions:
   - abbr
