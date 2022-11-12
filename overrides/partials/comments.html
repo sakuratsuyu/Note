@@ -1,3 +1,12 @@
+{% if git_page_authors %}
+<div class="md-source-date">
+  <small>
+      <!-- 作者: {{ git_page_authors | default('enable mkdocs-git-authors-plugin') }} -->
+      作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
+  </small>
+</div>
+{% endif %}
+
 {% if page.meta.comments %}
   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
   <!-- Insert generated snippet here -->
