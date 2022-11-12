@@ -79,14 +79,19 @@ plugins:
   - search
   - glightbox
   - git-revision-date-localized:
-    type: datetime
-    timezone: Asia/Shanghai
-    locale: zh
-    enable_creation_date: true
-    exclude:
-      - index.md
-      - comming_soon.md
-      - discussion.md
+      type: custom
+      custom_format: "%Y.%m.%d %H:%M:%S %Z"
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
+        - comming_soon.md
+        - discussion.md
+  - git-authors:
+      exclude:
+          - index.md
+          - discussion.md
 
 markdown_extensions:
   - abbr
@@ -128,11 +133,11 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - meta
 
 nav:
   - Home Page:
-    - Profile:
-      - index.md
+    - index.md
     - Plan: tasklist.md
     - Blogroll: discussion.md
   - Mathematics Basis:
