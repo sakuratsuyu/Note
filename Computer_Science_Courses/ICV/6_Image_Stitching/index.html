@@ -33,6 +33,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#lecture-6-image-stitching">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -271,9 +274,112 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Lecture 6
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Lecture 6
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-warping">
+    Image Warping
+  </a>
+<nav aria-label="Image Warping" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2d-transformations">
+    2D Transformations
+  </a>
+<nav aria-label="2D Transformations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#affine-transformations">
+    Affine Transformations 仿射变换
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#projective-transformation-homography">
+    Projective Transformation (Homography) 单应变换
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+<nav aria-label="Implementation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#forward-warping-not-so-good">
+    Forward Warping (Not so good)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inverse-warping">
+    Inverse Warping
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-stitching">
+    Image Stitching
+  </a>
+<nav aria-label="Image Stitching" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-matching">
+    Image Matching
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-t-for-image-wraping">
+    Find \(T\) for Image Wraping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#affine-transformations_1">
+    Affine Transformations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#projective-transformations">
+    Projective Transformations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#robustness">
+    Robustness
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary_1">
+    Summary
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../7_Structure_from_Motion/">
@@ -360,6 +466,103 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-warping">
+    Image Warping
+  </a>
+<nav aria-label="Image Warping" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2d-transformations">
+    2D Transformations
+  </a>
+<nav aria-label="2D Transformations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#affine-transformations">
+    Affine Transformations 仿射变换
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#projective-transformation-homography">
+    Projective Transformation (Homography) 单应变换
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+<nav aria-label="Implementation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#forward-warping-not-so-good">
+    Forward Warping (Not so good)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inverse-warping">
+    Inverse Warping
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-stitching">
+    Image Stitching
+  </a>
+<nav aria-label="Image Stitching" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-matching">
+    Image Matching
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-t-for-image-wraping">
+    Find \(T\) for Image Wraping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#affine-transformations_1">
+    Affine Transformations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#projective-transformations">
+    Projective Transformations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#robustness">
+    Robustness
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary_1">
+    Summary
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -369,13 +572,274 @@
 <a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/ICV/6_Image_Stitching.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Lecture 6</h1>
+<h1 id="lecture-6-image-stitching">Lecture 6 Image Stitching<a class="headerlink" href="#lecture-6-image-stitching" title="Permanent link">¶</a></h1>
+<h2 id="image-warping">Image Warping<a class="headerlink" href="#image-warping" title="Permanent link">¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Image filtering changes <strong>intensity</strong> of image.</li>
+<li>Image warping (翘曲) changes <strong>shape</strong> of image.</li>
+</ul>
+</div>
+<h3 id="2d-transformations">2D Transformations<a class="headerlink" href="#2d-transformations" title="Permanent link">¶</a></h3>
+<div class="admonition note"></div>
+<h4 id="affine-transformations">Affine Transformations 仿射变换<a class="headerlink" href="#affine-transformations" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+\begin{bmatrix}
+x' \\
+y' \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix} 
+\]</div>
+<div class="arithmatex">\[
+\begin{align}
+x' &amp;= ax + by + c \\
+y' &amp;= dx + ey + f
+\end{align}
+\]</div>
+<p>自由度 (degree of freedom) 为 <strong>6</strong>，所以我们需要至少 3 组点，也就是 6 个方程，以能够求解出 <span class="arithmatex">\(a, b, c, d, e, f\)</span>.</p>
+<div class="admonition note"></div>
+<h4 id="projective-transformation-homography">Projective Transformation (Homography) 单应变换<a class="headerlink" href="#projective-transformation-homography" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+\begin{bmatrix}
+x' \\
+y' \\
+1
+\end{bmatrix}
+\cong
+\begin{bmatrix}
+h_{00} &amp; h_{01} &amp; h_{02} \\
+h_{10} &amp; h_{11} &amp; h_{12} \\
+h_{20} &amp; h_{21} &amp; h_{22} \\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix} 
+\]</div>
+<div class="arithmatex">\[
+\begin{align}
+x' = \frac{h_{00}x + h_{01}y + h_{02}}{h_{20}x + h_{11}y + h_{12}}
+y' = \frac{h_{10}x + h_{11}y + h_{12}}{h_{20}x + h_{11}y + h_{12}}
+\end{align}
+\]</div>
+<p>Constraint: 令 <span class="arithmatex">\(||(h_{00}, h_{01}, \dots, h_{22})||\)</span> (向量范数) 规定为 <span class="arithmatex">\(1\)</span>，或者令 <span class="arithmatex">\(h_{22}\)</span> 为 <span class="arithmatex">\(1\)</span>.</p>
+<p>考虑到以上的限制条件 (constraint)，自由度 (degree of freedom) 为 <strong>8</strong>，所以我们需要至少 4 组点，也就是 8 个方程，以能够求解出 <span class="arithmatex">\(h_{ij}\)</span>.</p>
+<h4 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h4>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec6_0.png"><img alt="lec6_0" src="../Pic/lec6_0.png" style="width:600px"/></a>
+</div>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">¶</a></h3>
+<p>出于方便和可操作性，我们需要一个表征整体翘曲的函数 <span class="arithmatex">\(T\)</span> 而不是对每个像素点采取不同的翘曲策略.</p>
+<h4 id="forward-warping-not-so-good">Forward Warping (Not so good)<a class="headerlink" href="#forward-warping-not-so-good" title="Permanent link">¶</a></h4>
+<p>假设图像函数 <span class="arithmatex">\(f:(x, y) \rightarrow (r, g, b)\)</span> 经过了变换 <span class="arithmatex">\(T: (x, y) \rightarrow (x', y')\)</span> 得到新的图像函数 <span class="arithmatex">\(g:(x', y') \rightarrow (r, g, b)\)</span>.</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec6_1.png"><img alt="lec6_1" src="../Pic/lec6_1.png" style="width:600px"/></a>
+</div>
+<div class="admonition question">
+<p class="admonition-title">If the transformed pixed lands inside the pixels</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec6_2.png"><img alt="lec6_2" src="../Pic/lec6_2.png" style="width:600px"/></a>
+</div>
+- Quite complicated to solve it.</p>
+</div>
+<h4 id="inverse-warping">Inverse Warping<a class="headerlink" href="#inverse-warping" title="Permanent link">¶</a></h4>
+<p>Why not consider inversely?</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec6_3.png"><img alt="lec6_3" src="../Pic/lec6_3.png" style="width:600px"/></a>
+</div>
+<div class="admonition question">
+<p class="admonition-title">If the transformed pixed lands inside the pixels</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec6_4.png"><img alt="lec6_4" src="../Pic/lec6_4.png" style="width:600px"/></a>
+</div></p>
+<p><strong>Solution</strong> <span class="twemoji"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span> <a href="https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/3_Image_Processing/#2d-interpolation">2D Interpolation!</a></p>
+</div>
+<h2 id="image-stitching">Image Stitching<a class="headerlink" href="#image-stitching" title="Permanent link">¶</a></h2>
+<div class="arithmatex">\[
+\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix}
+\cong T
+\begin{bmatrix} x \\ y \\ 1 \end{bmatrix}
+\]</div>
+<h3 id="image-matching"><a href="https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/5_Image_Matching_and_Motion_Estimation/#image-matching">Image Matching</a><a class="headerlink" href="#image-matching" title="Permanent link">¶</a></h3>
+<p>通过图像匹配得到匹配点，每个匹配点可以提供一个以上形式的矩阵乘法等式.</p>
+<h3 id="find-t-for-image-wraping">Find <span class="arithmatex">\(T\)</span> for Image Wraping<a class="headerlink" href="#find-t-for-image-wraping" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<h3 id="affine-transformations_1">Affine Transformations<a class="headerlink" href="#affine-transformations_1" title="Permanent link">¶</a></h3>
+<p>对于每个匹配，</p>
+<div class="arithmatex">\[
+\begin{align}
+x' = ax + by + c \\
+y' = dx + ey + f
+\end{align}
+\]</div>
+<p>矩阵形式为</p>
+<div class="arithmatex">\[
+\begin{bmatrix} x' \\ y' \end{bmatrix}
+= 
+\begin{bmatrix} x &amp; y &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; x &amp; y &amp; 1 \end{bmatrix}
+\begin{bmatrix} a \\ b \\ c \\ d \\ e \\ f \end{bmatrix}
+\]</div>
+<p>对于 <span class="arithmatex">\(n\)</span> 个匹配，得到以下方程组</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+x_1 &amp; y_1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; x_1 &amp; y_1 &amp; 1 \\
+x_2 &amp; y_2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; x_2 &amp; y_2 &amp; 1 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+x_n &amp; y_n &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; x_n &amp; y_n &amp; 1 \\
+\end{bmatrix}
+\begin{bmatrix} a \\ b \\ c \\ d \\ e \\ f \end{bmatrix}
+= 
+\begin{bmatrix}
+x_1' \\
+y_1' \\
+x_2' \\
+y_2' \\
+\vdots \\
+x_n' \\
+y_n'
+\end{bmatrix}
+\]</div>
+<p>也即</p>
+<div class="arithmatex">\[
+\mathbf{A}_{2n \times 6} \times \mathbf{t}_{6 \times 1} = \mathbf{b}_{2n \times 1}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>虽然选择 3 组点是能够解出 <span class="arithmatex">\(a, b, c, d, e, f\)</span> 的最少数量，但是很可能存在部分行是线性相关从而导致奇异矩阵，退化为没有唯一解.</p>
+<p>所以为了能够得到 <span class="arithmatex">\(a, b, c, d, e, f\)</span> 的值，采用的方式是取较多的点然后通过最小二乘法计算，也即让 <span class="arithmatex">\(\mathbf{t}\)</span> 最小化 <span class="arithmatex">\(||\mathbf{A} \mathbf{t} - \mathbf{b}||\)</span>.</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Method of Least Square</p>
+<div class="arithmatex">\[
+\begin{align}
+\mathbf{A^{T}At} &amp;= \mathbf{A^{T}b} \\
+t &amp;= \mathbf{A^{T}A^{-1}A^{T}b}
+\end{align}
+\]</div>
+</div>
+</div>
+<div class="admonition note">
+<h3 id="projective-transformations">Projective Transformations<a class="headerlink" href="#projective-transformations" title="Permanent link">¶</a></h3>
+<p>类似地，对于每个匹配，</p>
+<div class="arithmatex">\[
+\begin{align}
+x_i'(h_{20}x_i + h_{21} y_i + h_{22}) = h_{00}x_i + h_{01}y_i + h_{02} \\
+y_i'(h_{20}x_i + h_{21} y_i + h_{22}) = h_{10}x_i + h_{11}y_i + h_{12} \\
+\end{align}
+\]</div>
+<p>矩阵形式为</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+x_i &amp; y_i &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -x_i'x_i &amp; -x_i'y_i &amp; -x_i'\\
+0 &amp; 0 &amp; 0 &amp; x_i &amp; y_i &amp; 1 &amp; -y_i'x_i &amp; -y_i'y_i &amp; -y_i'
+\end{bmatrix}
+\begin{bmatrix}
+h_{00} \\ h_{01} \\ h_{02} \\ h_{10} \\ h_{11} \\ h_{12} \\ h_{20} \\ h_{21} \\ h_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 0
+\end{bmatrix}
+\]</div>
+<p>对于 <span class="arithmatex">\(n\)</span> 个匹配，得到以下方程组</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+x_1 &amp; y_1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; x_1 &amp; y_1 &amp; 1 \\
+x_2 &amp; y_2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; x_2 &amp; y_2 &amp; 1 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+x_n &amp; y_n &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; x_n &amp; y_n &amp; 1 \\
+\end{bmatrix}
+\begin{bmatrix} a \\ b \\ c \\ d \\ e \\ f \end{bmatrix}
+= 
+\begin{bmatrix}
+x_1' \\
+y_1' \\
+x_2' \\
+y_2' \\
+\vdots \\
+x_n' \\
+y_n'
+\end{bmatrix}
+\]</div>
+<p>也即</p>
+<div class="arithmatex">\[
+\mathbf{A}_{2n \times 9} \times \mathbf{t}_{9 \times 1} = \mathbf{b}_{2n \times 1}
+\]</div>
+<p>同样地，我们要最小化 <span class="arithmatex">\(||\mathbf{Ah - 0}|| = \mathbf{||Ah||}\)</span>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Contraint: <span class="arithmatex">\(||\mathbf{h}|| = 1\)</span></p>
+<p>如果使用的是向量范数为 <span class="arithmatex">\(1\)</span> 的限制，那么我们只需要确定 <span class="arithmatex">\(\mathbf{h}\)</span> 的方向 <span class="arithmatex">\(\mathbf{\hat h}\)</span>.</p>
+<p>数学上可以证明解 <span class="arithmatex">\(\mathbf{\hat h}\)</span> 是 <span class="arithmatex">\(\mathbf{A^{T}A}\)</span> 最小特征值对应的特征向量.</p>
+</div>
+</div>
+<h3 id="robustness">Robustness<a class="headerlink" href="#robustness" title="Permanent link">¶</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Outliers</p>
+<p>图像匹配也不是完美的，可能有部分错误的匹配点成为孤立点 (outliner).</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Solution: <a href="https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/4_Model_Fitting_and_Optimization/?h=ransa#ransac-random-sample-concensus">RANSAC</a></p>
+<ul>
+<li>每次随机取 <span class="arithmatex">\(s\)</span> 组匹配点.</li>
+<li>通过选取的匹配点计算出变换矩阵 <span class="arithmatex">\(T\)</span>.</li>
+<li>在所有的匹配点中，统计在一定误差范围内符合变换 <span class="arithmatex">\(T\)</span> 的点 (inlier) 的数量作为得分.</li>
+<li>重复 <span class="arithmatex">\(N\)</span> 次，取得分最高的变换 <span class="arithmatex">\(T_0\)</span>.</li>
+<li><strong>(Better Step)</strong> 对所有大致符合变换 <span class="arithmatex">\(T_0\)</span> 的匹配点再次计算一个平均的变换矩阵 <span class="arithmatex">\(T\)</span>.</li>
+</ul>
+</div>
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">¶</a></h2>
+<p>How to make image stitching?</p>
+<ol>
+<li>Input Images.</li>
+<li>Feature Matching.</li>
+<li>Compute transformation matrices <span class="arithmatex">\(T\)</span> with RANSAC.</li>
+<li>Warp image 2 to image 1.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Extension: Panaroma and Cylindrical Projection</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec6_5.png"><img alt="lec6_5" src="../Pic/lec6_5.png" style="width:600px"/></a>
+</div></p>
+<div class="admonition bug">
+<p class="admonition-title">Problem: Drift</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec6_6.png"><img alt="lec6_6" src="../Pic/lec6_6.png" style="width:600px"/></a>
+</div></p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Solution</p>
+<ul>
+<li>Small vertical errors accumulate over time.</li>
+<li>Apply correction s.t. the sum of drift is 0.</li>
+</ul>
+<p>也就是拍摄全景图时尽可能减少上下抖动.</p>
+</div>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.12 17:11:42 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
@@ -383,8 +847,8 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'></span> -->
-          作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+      作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
 </article>
