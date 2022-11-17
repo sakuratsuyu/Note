@@ -33,6 +33,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#lecture-7-structure-from-motion-sfm">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -276,9 +279,217 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Lecture 7
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Lecture 7
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#camera-calibration">
+    Camera Calibration 相机标定
+  </a>
+<nav aria-label="Camera Calibration 相机标定" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principle-analysis">
+    Principle Analysis 原理分析
+  </a>
+<nav aria-label="Principle Analysis 原理分析" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#coordinate-transformation">
+    Coordinate Transformation
+  </a>
+<nav aria-label="Coordinate Transformation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    特点
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#perspective-projection">
+    Perspective Projection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-plane-to-image-sensor-mapping">
+    Image Plane to Image Sensor Mapping
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implemetation">
+    Implemetation
+  </a>
+<nav aria-label="Implemetation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-capture-an-image-of-an-object-with-known-geometry">
+    Step 1. Capture an image of an object with known geometry.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-identify-correspondences-image-matching-between-3d-scene-points-and-image-points">
+    Step 2. Identify correspondences (Image Matching 图像匹配) between 3D scene points and image points.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-for-each-corresponding-point-i-we-get">
+    Step 3. For each corresponding point \(i\),  we get
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-rearrange">
+    Step 4. Rearrange.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-5-solve-for-p">
+    Step 5 Solve for \(P\).
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-6-from-p-to-answers">
+    Step 6 From \(P\) to Answers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-linear-transform-dlt">
+    Direct Linear Transform (DLT)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#p3p">
+    P3P
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pnp">
+    PnP
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epnp">
+    EPnP
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#two-frame-structure-from-motion">
+    Two-frame Structure from Motion
+  </a>
+<nav aria-label="Two-frame Structure from Motion" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principle-induction">
+    Principle Induction 原理推导
+  </a>
+<nav aria-label="Principle Induction 原理推导" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#essential-matrix-e">
+    Essential Matrix \(E\) 基本矩阵
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fundemental-matrix-f">
+    Fundemental Matrix \(F\) 本真矩阵
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation 实现
+  </a>
+<nav aria-label="Implementation 实现" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-find-a-set-m-pairs-of-corresponding-features-m">
+    Step 1. Find a set (\(m\) pairs) of corresponding features. 找到一组（\(m\) 对）匹配点.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-build-linear-systems-and-solve-for-f-f">
+    Step 2. Build linear systems and solve for \(F\). 建立方程组并求解矩阵 \(F\).
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-find-e-and-extract-r-mathbft">
+    Step 3. Find \(E\) and Extract \(R, \mathbf{t}\)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-find-3d-position-of-scene-points">
+    Step 4. Find 3D Position of Scene Points
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multi-frame-structure-from-motion">
+    Multi-frame Structure from Motion
+  </a>
+<nav aria-label="Multi-frame Structure from Motion" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solution-sequential-structrue-from-motion">
+    Solution: Sequential Structrue from Motion
+  </a>
+<nav aria-label="Solution: Sequential Structrue from Motion" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-initialize-camera-motion-and-scene-structure">
+    Step 1. Initialize camera motion and scene structure. 初始化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-deal-with-an-addition-view">
+    Step 2. Deal with an addition view. 处理下一张图
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-refine-structure-and-motion-bundle-adjustment">
+    Step 3. Refine structure and motion: Bundle Adjustment. 集束调整
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#colmap">
+    COLMAP
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../8_Depth_Estimation_and_3D_Reconstruction/">
@@ -360,6 +571,208 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#camera-calibration">
+    Camera Calibration 相机标定
+  </a>
+<nav aria-label="Camera Calibration 相机标定" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principle-analysis">
+    Principle Analysis 原理分析
+  </a>
+<nav aria-label="Principle Analysis 原理分析" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#coordinate-transformation">
+    Coordinate Transformation
+  </a>
+<nav aria-label="Coordinate Transformation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    特点
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#perspective-projection">
+    Perspective Projection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-plane-to-image-sensor-mapping">
+    Image Plane to Image Sensor Mapping
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implemetation">
+    Implemetation
+  </a>
+<nav aria-label="Implemetation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-capture-an-image-of-an-object-with-known-geometry">
+    Step 1. Capture an image of an object with known geometry.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-identify-correspondences-image-matching-between-3d-scene-points-and-image-points">
+    Step 2. Identify correspondences (Image Matching 图像匹配) between 3D scene points and image points.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-for-each-corresponding-point-i-we-get">
+    Step 3. For each corresponding point \(i\),  we get
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-rearrange">
+    Step 4. Rearrange.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-5-solve-for-p">
+    Step 5 Solve for \(P\).
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-6-from-p-to-answers">
+    Step 6 From \(P\) to Answers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-linear-transform-dlt">
+    Direct Linear Transform (DLT)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#p3p">
+    P3P
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pnp">
+    PnP
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epnp">
+    EPnP
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#two-frame-structure-from-motion">
+    Two-frame Structure from Motion
+  </a>
+<nav aria-label="Two-frame Structure from Motion" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principle-induction">
+    Principle Induction 原理推导
+  </a>
+<nav aria-label="Principle Induction 原理推导" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#essential-matrix-e">
+    Essential Matrix \(E\) 基本矩阵
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fundemental-matrix-f">
+    Fundemental Matrix \(F\) 本真矩阵
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation 实现
+  </a>
+<nav aria-label="Implementation 实现" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-find-a-set-m-pairs-of-corresponding-features-m">
+    Step 1. Find a set (\(m\) pairs) of corresponding features. 找到一组（\(m\) 对）匹配点.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-build-linear-systems-and-solve-for-f-f">
+    Step 2. Build linear systems and solve for \(F\). 建立方程组并求解矩阵 \(F\).
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-find-e-and-extract-r-mathbft">
+    Step 3. Find \(E\) and Extract \(R, \mathbf{t}\)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-find-3d-position-of-scene-points">
+    Step 4. Find 3D Position of Scene Points
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multi-frame-structure-from-motion">
+    Multi-frame Structure from Motion
+  </a>
+<nav aria-label="Multi-frame Structure from Motion" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solution-sequential-structrue-from-motion">
+    Solution: Sequential Structrue from Motion
+  </a>
+<nav aria-label="Solution: Sequential Structrue from Motion" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-initialize-camera-motion-and-scene-structure">
+    Step 1. Initialize camera motion and scene structure. 初始化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-deal-with-an-addition-view">
+    Step 2. Deal with an addition view. 处理下一张图
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-refine-structure-and-motion-bundle-adjustment">
+    Step 3. Refine structure and motion: Bundle Adjustment. 集束调整
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#colmap">
+    COLMAP
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -369,13 +782,950 @@
 <a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/ICV/7_Structure_from_Motion.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Lecture 7</h1>
+<h1 id="lecture-7-structure-from-motion-sfm">Lecture 7 Structure from Motion (SfM)<a class="headerlink" href="#lecture-7-structure-from-motion-sfm" title="Permanent link">¶</a></h1>
+<h2 id="camera-calibration">Camera Calibration 相机标定<a class="headerlink" href="#camera-calibration" title="Permanent link">¶</a></h2>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_0.png"><img alt="lec7_0" src="../Pic/lec7_0.png" style="width:600px"/></a>
+</div>
+<p>相机标定的过程，就是从世界坐标系向像素坐标系转换的过程. 需要注意的四个坐标系：</p>
+<ul>
+<li><strong>世界坐标系 (World Coordinates)</strong></li>
+<li><strong>相机坐标系 (Camera Coordinates)</strong></li>
+<li><strong>图像坐标系 (Image Plane)</strong></li>
+<li><strong>像素坐标系 (Image Sensor)</strong></li>
+</ul>
+<p>其中，前两个坐标系的转换矩阵参数被称为 <strong>相机外参</strong>；后三个坐标系的转换矩阵参数被称为 <strong>相机内参</strong>.</p>
+<h3 id="principle-analysis">Principle Analysis 原理分析<a class="headerlink" href="#principle-analysis" title="Permanent link">¶</a></h3>
+<h4 id="coordinate-transformation">Coordinate Transformation<a class="headerlink" href="#coordinate-transformation" title="Permanent link">¶</a></h4>
+<p>从世界坐标系到相机坐标系的变换.</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_1.png"><img alt="lec7_1" src="../Pic/lec7_1.png" style="width:600px"/></a>
+</div>
+<h5 id="_1">特点<a class="headerlink" href="#_1" title="Permanent link">¶</a></h5>
+<p>刚体变换，只有旋转和平移，对应旋转矩阵 <span class="arithmatex">\(R\)</span>（<span class="arithmatex">\(R\)</span> 是 <strong>单位正交矩阵 (Orthonormal)</strong>) 和平移向量 <span class="arithmatex">\(c_w\)</span>.</p>
+<div class="arithmatex">\[
+\mathbf{x}_c = R(\mathbf{x}_w - \mathbf{c}_w) = R \mathbf{x}_w - R \mathbf{c}_w \overset{\Delta}{=\!=} = R \mathbf{x}_w + \mathbf{t}, \text{ where } \mathbf{t } = -R \mathbf{c}_w.
+\]</div>
+<p>故这个变换也可以等价地用 <span class="arithmatex">\(R\)</span> 和 <span class="arithmatex">\(\mathbf{t}\)</span> 来表征.</p>
+<div class="arithmatex">\[
+\mathbf{x}_c = \begin{bmatrix} x_c \\ y_c \\ z_c \end{bmatrix}
+=
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} \\
+r_{21} &amp; r_{22} &amp; r_{23} \\
+r_{31} &amp; r_{32} &amp; r_{33} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_w \\ y_w \\ z_w
+\end{bmatrix}
++
+\begin{bmatrix}
+t_x \\ t_y \\ t_z
+\end{bmatrix}
+\]</div>
+<p>同样考虑齐次坐标系</p>
+<div class="arithmatex">\[
+\mathbf{\tilde x}_c = \begin{bmatrix} x_c \\ y_c \\ z_c \\ 1\end{bmatrix}
+=
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; t_x \\
+r_{21} &amp; r_{22} &amp; r_{23} &amp; t_y\\
+r_{31} &amp; r_{32} &amp; r_{33} &amp; t_z\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x_w \\ y_w \\ z_w \\ 1
+\end{bmatrix}
+\]</div>
+<div class="admonition definition">
+<p class="admonition-title">Extrinsic Matrix (外参矩阵)</p>
+<div class="arithmatex">\[
+M_{ext} =
+\begin{bmatrix}
+R_{3\times 3} &amp; \mathbf{t} \\
+\mathbf{0}_{1\times 3} &amp; 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; t_x \\
+r_{21} &amp; r_{22} &amp; r_{23} &amp; t_y\\
+r_{31} &amp; r_{32} &amp; r_{33} &amp; t_z\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>也可以写作</p>
+<div class="arithmatex">\[
+M_{ext} =
+\begin{bmatrix}
+R_{3\times 3} &amp; \mathbf{t} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; t_x \\
+r_{21} &amp; r_{22} &amp; r_{23} &amp; t_y\\
+r_{31} &amp; r_{32} &amp; r_{33} &amp; t_z\\
+\end{bmatrix}
+\]</div>
+</div>
+<h4 id="perspective-projection">Perspective Projection<a class="headerlink" href="#perspective-projection" title="Permanent link">¶</a></h4>
+<p>从相机坐标系到图像坐标系的变换.</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_2.png"><img alt="lec7_2" src="../Pic/lec7_2.png" style="width:400px"/></a>
+</div>
+<p>前面几个 Lecture 中已经讨论过这一部分<a href="../2_Image_Formation/#geometric-image-formation">内容</a>. 此处不再赘述.</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+x_i \\ y_i \\ 1
+\end{bmatrix}
+\cong
+\begin{bmatrix}
+f &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; f &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+x_c \\
+y_c \\
+z_c \\
+1
+\end{bmatrix}
+\]</div>
+<h4 id="image-plane-to-image-sensor-mapping">Image Plane to Image Sensor Mapping<a class="headerlink" href="#image-plane-to-image-sensor-mapping" title="Permanent link">¶</a></h4>
+<p>从图像坐标系到像素坐标系的变换.</p>
+<div class="admonition note">
+<p class="admonition-title">像素点 pixel</p>
+<p>需要注意的是，由于相机自身的制作工艺和要求，像素点并不一定是正方形，而是矩形，与原图像相比具有一定的<strong>缩放</strong>. 这一点在视频的制作中也有所体现.</p>
+<p>此外，由于图像坐标系是从中心为原点，而像素坐标系是以左上角为原点的，坐标变换还需要一定的*<em>平移</em>.</p>
+</div>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_3.png"><img alt="lec7_3" src="../Pic/lec7_3.png" style="width:500px"/></a>
+</div>
+<div class="arithmatex">\[
+\begin{align}
+u &amp;= m_x f \frac{x_c}{z_c} + c_x \\
+v &amp;= m_y f \frac{y_c}{z_c} + c_y
+\end{align}
+\]</div>
+<p>结合以上两个变换，记 <span class="arithmatex">\(f_x = m_x f\)</span>, <span class="arithmatex">\(f_y = m_y f\)</span>.</p>
+<p>则从相机坐标系到像素坐标系的变换为</p>
+<div class="arithmatex">\[
+\mathbf{\tilde{u}}
+=
+\begin{bmatrix}
+u \\ v \\ w
+\end{bmatrix}
+\cong
+\begin{bmatrix}
+f_x &amp; 0 &amp; c_x &amp; 0 \\
+0 &amp; f_y &amp; c_y &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+x_c \\
+y_c \\
+z_c \\
+1
+\end{bmatrix}
+\]</div>
+<div class="admonition definition">
+<p class="admonition-title">Intrinsic Matrix (内参矩阵)</p>
+<div class="arithmatex">\[
+M_{int} = 
+\begin{bmatrix}
+f_x &amp; 0 &amp; c_x &amp; 0 \\
+0 &amp; f_y &amp; c_y &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\]</div>
+<p>也可以写作</p>
+<div class="arithmatex">\[
+K = 
+\begin{bmatrix}
+f_x &amp; 0 &amp; c_x \\
+0 &amp; f_y &amp; c_y \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Projection Matrix <span class="arithmatex">\(P\)</span></p>
+<p>World to Camera</p>
+<div class="arithmatex">\[
+\begin{bmatrix} x_c \\ y_c \\ z_c \\ 1\end{bmatrix}
+=
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; t_x \\
+r_{21} &amp; r_{22} &amp; r_{23} &amp; t_y\\
+r_{31} &amp; r_{32} &amp; r_{33} &amp; t_z\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x_w \\ y_w \\ z_w \\ 1
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{\tilde u} = M_{int}\mathbf{\tilde x}_c
+\]</div>
+<p>Camera to Pixel</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+u \\ v \\ w
+\end{bmatrix}
+\cong
+\begin{bmatrix}
+f_x &amp; 0 &amp; c_x &amp; 0 \\
+0 &amp; f_y &amp; c_y &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+x_c \\
+y_c \\
+z_c \\
+1
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{\tilde x}_c = M_{ext}\mathbf{\tilde x}_w
+\]</div>
+<p>故</p>
+<div class="arithmatex">\[
+\mathbf{\tilde u} = M_{int}M_{ext} \mathbf{\tilde x}_w = P \mathbf{\tilde x}
+\]</div>
+<p>其中，<span class="arithmatex">\(P\)</span> 被称为投影矩阵 (Projection Matrix).</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+u \\ v \\ w
+\end{bmatrix}
+\cong
+\begin{bmatrix}
+p_{11} &amp; p_{12} &amp; p_{13} &amp; p_{14} \\
+p_{21} &amp; p_{22} &amp; p_{23} &amp; p_{24} \\
+p_{31} &amp; p_{32} &amp; p_{33} &amp; p_{34} \\
+p_{41} &amp; p_{42} &amp; p_{43} &amp; p_{44} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_w \\
+y_w \\
+z_w \\
+1
+\end{bmatrix}
+\]</div>
+</div>
+<h3 id="implemetation">Implemetation<a class="headerlink" href="#implemetation" title="Permanent link">¶</a></h3>
+<h4 id="step-1-capture-an-image-of-an-object-with-known-geometry">Step 1. Capture an image of an object with known geometry.<a class="headerlink" href="#step-1-capture-an-image-of-an-object-with-known-geometry" title="Permanent link">¶</a></h4>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_4.png"><img alt="lec7_4" src="../Pic/lec7_4.png" style="width:300px"/></a>
+</div>
+<h4 id="step-2-identify-correspondences-image-matching-between-3d-scene-points-and-image-points">Step 2. Identify correspondences (Image Matching 图像匹配) between 3D scene points and image points.<a class="headerlink" href="#step-2-identify-correspondences-image-matching-between-3d-scene-points-and-image-points" title="Permanent link">¶</a></h4>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_5.png"><img alt="lec7_5" src="../Pic/lec7_5.png" style="width:400px"/></a>
+</div>
+<h4 id="step-3-for-each-corresponding-point-i-we-get">Step 3. For each corresponding point <span class="arithmatex">\(i\)</span>,  we get<a class="headerlink" href="#step-3-for-each-corresponding-point-i-we-get" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+\begin{bmatrix}
+u^{(i)} \\ v^{(i)} \\ w^{(i)}
+\end{bmatrix}
+\cong
+\begin{bmatrix}
+p_{11} &amp; p_{12} &amp; p_{13} &amp; p_{14} \\
+p_{21} &amp; p_{22} &amp; p_{23} &amp; p_{24} \\
+p_{31} &amp; p_{32} &amp; p_{33} &amp; p_{34} \\
+p_{41} &amp; p_{42} &amp; p_{43} &amp; p_{44} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_w^{(i)} \\
+y_w^{(i)} \\
+z_w^{(i)} \\
+1
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+\begin{align}
+u^{(i)} &amp;= \frac{p_{11}x_w^{(i)} + p_{12}y_w^{(i)} + p_{13}z_w^{(i)} + p_{14}}{p_{31}x_w^{(i)} + p_{32}y_w^{(i)} + p_{33}z_w^{(i)} + p_{34}} \\
+v^{(i)} &amp;= \frac{p_{21}x_w^{(i)} + p_{22}y_w^{(i)} + p_{23}z_w^{(i)} + p_{24}}{p_{31}x_w^{(i)} + p_{32}y_w^{(i)} + p_{33}z_w^{(i)} + p_{34}} \\
+\end{align}
+\]</div>
+<h4 id="step-4-rearrange">Step 4. Rearrange.<a class="headerlink" href="#step-4-rearrange" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+\scriptsize
+\begin{bmatrix}
+x_w^{(1)} &amp; y_w^{(1)} &amp; z_w^{(1)} &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -u_1x_w^{(1)} &amp; -u_1y_w^{(1)} &amp; -u_1z_w^{(1)} &amp; -u_1 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp;  x_w^{(1)} &amp; y_w^{(1)} &amp; z_w^{(1)} &amp; 1 &amp; -v_1x_w^{(1)} &amp; -v_1y_w^{(1)} &amp; -v_1z_w^{(1)} &amp; -v_1 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 
+x_w^{(i)} &amp; y_w^{(i)} &amp; z_w^{(i)} &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -u_ix_w^{(i)} &amp; -u_iy_w^{(i)} &amp; -u_iz_w^{(i)} &amp; -u_i \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp;  x_w^{(i)} &amp; y_w^{(i)} &amp; z_w^{(i)} &amp; 1 &amp; -v_ix_w^{(i)} &amp; -v_iy_w^{(i)} &amp; -v_iz_w^{(i)} &amp; -v_i \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 
+x_w^{(n)} &amp; y_w^{(n)} &amp; z_w^{(n)} &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -u_nx_w^{(n)} &amp; -u_ny_w^{(n)} &amp; -u_nz_w^{(n)} &amp; -u_n \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp;  x_w^{(n)} &amp; y_w^{(n)} &amp; z_w^{(n)} &amp; 1 &amp; -v_nx_w^{(n)} &amp; -v_ny_w^{(n)} &amp; -v_nz_w^{(n)} &amp; -v_n \\
+\end{bmatrix}
+\begin{bmatrix}
+p_{11} \\ p_{12} \\ p_{13} \\ p_{14} \\
+p_{21} \\ p_{22} \\ p_{23} \\ p_{24} \\
+p_{31} \\ p_{32} \\ p_{33} \\ p_{34}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 0 \\ 0 \\ 0 \\
+0 \\ 0 \\ 0 \\ 0 \\
+0 \\ 0 \\ 0 \\ 0
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+i.e.\ A \mathbf{p} = 0
+\]</div>
+<h4 id="step-5-solve-for-p">Step 5 Solve for <span class="arithmatex">\(P\)</span>.<a class="headerlink" href="#step-5-solve-for-p" title="Permanent link">¶</a></h4>
+<p>类似地，我们可以给出一定的限制 constraint.</p>
+<ul>
+<li>Option 1. 令 <span class="arithmatex">\(p_{34} = 1\)</span>.</li>
+<li>Option 2. 令 <span class="arithmatex">\(||p|| = 1\)</span>.</li>
+</ul>
+<p>得到自由度为 <span class="arithmatex">\(11\)</span>，至少需要 6 组点.</p>
+<p>并同样要最小化 <span class="arithmatex">\(||\mathbf{Ap - 0}|| = \mathbf{||Ap||}\)</span>.</p>
+<p>同样如果使用的是向量范数为 <span class="arithmatex">\(1\)</span> 的限制，那么我们只需要确定 <span class="arithmatex">\(\mathbf{p}\)</span> 的方向 <span class="arithmatex">\(\mathbf{\hat p}\)</span>.  且 <span class="arithmatex">\(\mathbf{\hat p}\)</span> 是 <span class="arithmatex">\(\mathbf{A^{T}A}\)</span> 最小特征值对应的特征向量.</p>
+<h4 id="step-6-from-p-to-answers">Step 6 From <span class="arithmatex">\(P\)</span> to Answers<a class="headerlink" href="#step-6-from-p-to-answers" title="Permanent link">¶</a></h4>
+<p>由</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+p_{11} \\ p_{12} \\ p_{13} \\ p_{14} \\
+p_{21} \\ p_{22} \\ p_{23} \\ p_{24} \\
+p_{31} \\ p_{32} \\ p_{33} \\ p_{34}
+\end{bmatrix}
+=
+\begin{bmatrix}
+f_x &amp; 0 &amp; c_x &amp; 0 \\
+0 &amp; f_y &amp; c_y &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; t_x \\
+r_{21} &amp; r_{22} &amp; r_{23} &amp; t_y\\
+r_{31} &amp; r_{32} &amp; r_{33} &amp; t_z\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>注意到</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+p_{11} \\ p_{12} \\ p_{13} \\
+p_{21} \\ p_{22} \\ p_{23} \\
+p_{31} \\ p_{32} \\ p_{33}
+\end{bmatrix}
+=
+\begin{bmatrix}
+f_x &amp; 0 &amp; c_x \\
+0 &amp; f_y &amp; c_y \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} \\
+r_{21} &amp; r_{22} &amp; r_{23} \\
+r_{31} &amp; r_{32} &amp; r_{33} \\
+\end{bmatrix}
+= KR
+\]</div>
+<p>其中 <span class="arithmatex">\(K\)</span> 是上三角矩阵 (Upper Right Triangular Matrix)， <span class="arithmatex">\(R\)</span> 是单位正交矩阵 (Orthonormal Matrix).</p>
+<p><strong>由 QR 分解 (QR Factorization) 可知，<span class="arithmatex">\(K\)</span> 与 <span class="arithmatex">\(R\)</span> 的解是唯一的.</strong></p>
+<p>再由</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+p_{14} \\ p_{24} \\ p_{34}
+\end{bmatrix}
+=
+\begin{bmatrix}
+f_x &amp; 0 &amp; c_x &amp; 0 \\
+0 &amp; f_y &amp; c_y &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+t_x \\ t_y \\ t_z
+\end{bmatrix}
+= K \mathbf{t}
+\]</div>
+<p>故可解得</p>
+<div class="arithmatex">\[
+\mathbf{t} = K^{-1} 
+\begin{bmatrix}
+p_{14} \\ p_{24} \\ p_{34}
+\end{bmatrix}
+\]</div>
+<div class="admonition bug">
+<p class="admonition-title">Problem: Distortion</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_6.png"><img alt="lec7_6" src="../Pic/lec7_6.png" style="width:600px"/></a>
+</div></p>
+<p>实际上相机自身会具有一定的扭曲系数，我们在此<strong>忽略</strong>它的影响.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Perspective-n-Point Problem (PnP 问题)<a name="PnP"></a></p>
+<p>弱化一下条件，假设已知相机的内参（即矩阵 <span class="arithmatex">\(K\)</span>），求相机的外参（即矩阵 <span class="arithmatex">\(R\)</span> 和 <span class="arithmatex">\(\mathbf{t}\)</span>），也即相机姿态 (camera pose).</p>
+<h4 id="direct-linear-transform-dlt">Direct Linear Transform (DLT)<a class="headerlink" href="#direct-linear-transform-dlt" title="Permanent link">¶</a></h4>
+<p>即以上在相机标定中提到的方法，先求解矩阵 <span class="arithmatex">\(P\)</span>，再通过 <span class="arithmatex">\(K\)</span> 得到 <span class="arithmatex">\(R\)</span> 和 <span class="arithmatex">\(\mathbf{t}\)</span>.</p>
+<h4 id="p3p">P3P<a class="headerlink" href="#p3p" title="Permanent link">¶</a></h4>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_7.png"><img alt="lec7_7" src="../Pic/lec7_7.png" style="width:200px"/></a>
+</div></p>
+<p>即已知 <span class="arithmatex">\(a, b, c, A, B, C\)</span> 点坐标，求 <span class="arithmatex">\(O\)</span> 坐标.</p>
+<ul>
+<li>至少需要 <span class="arithmatex">\(3\)</span> 组点</li>
+</ul>
+<details class="note">
+<summary>Intermediates.</summary>
+<ul>
+<li>由余弦定理</li>
+</ul>
+<div class="arithmatex">\[
+\begin{align}
+OA^2 + OB^2 - 2 OA \cdot OB \cos \angle AOB &amp;= AB^2 \\
+OA^2 + OC^2 - 2 OB \cdot OC \cos \angle BOC &amp;= BC^2 \\
+OA^2 + OC^2 - 2 OA \cdot OC \cos \angle AOC &amp;= AC^2
+\end{align}
+\]</div>
+<ul>
+<li>令 <span class="arithmatex">\(x = \frac{OA}{OC}, y = \frac{OB}{OC}, v = \frac{AB^2}{OC^2}, u = \frac{BC^2}{AB^2}, w = \frac{AC^2}{AB^2}\)</span>，化简得</li>
+</ul>
+<div class="arithmatex">\[
+\begin{align}
+(1 - u)y^2 - ux^2 - cos \angle BOC y + 2uxy \cos \angle AOB + 1 &amp;= 0 \\
+(1 - w)x^2 - wy^2 - cos \angle AOC y + 2wxy \cos \angle AOB + 1 &amp;= 0
+\end{align}
+\]</div>
+<ul>
+<li>以上方程组是二元二次方程组 (Binary Quadratic Equation)，有四组解.<ul>
+<li>其中有两组解的 <span class="arithmatex">\(O\)</span> 坐标在 面<span class="arithmatex">\(ABC\)</span> 与 面<span class="arithmatex">\(abc\)</span> 之间，舍去.</li>
+</ul>
+</li>
+</ul>
+</details>
+<ul>
+<li>还需要一组额外的点来确定唯一解，故一共需要 <span class="arithmatex">\(4\)</span> 组点.</li>
+</ul>
+<h4 id="pnp">PnP<a class="headerlink" href="#pnp" title="Permanent link">¶</a></h4>
+<ul>
+<li>最小化<strong>重投影误差</strong> (Reprojection Error)</li>
+</ul>
+<div class="arithmatex">\[
+\mathop{\arg\min\limits_{R, \mathbf{t}}} \sum\limits_i ||(p_i, K(RP_i + \mathbf{t})||^2
+\]</div>
+<p>其中，<span class="arithmatex">\(p_i\)</span> 是投影面上的二维坐标，<span class="arithmatex">\(P_i\)</span> 是空间内的三维坐标.</p>
+<ul>
+<li>通过 P3P 初始化，Gauss-Newton 法优化.</li>
+</ul>
+<h4 id="epnp">EPnP<a class="headerlink" href="#epnp" title="Permanent link">¶</a></h4>
+<ul>
+<li>one of the most popluar methods.</li>
+<li>time complexity <span class="arithmatex">\(O(N)\)</span>.</li>
+<li>high accuracy.</li>
+</ul>
+<p>大致方式是通过四组控制点的线性组合求解.</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_8.png"><img alt="lec7_8" src="../Pic/lec7_8.png" style="width:300px"/></a>
+</div></p>
+</div>
+<h2 id="two-frame-structure-from-motion">Two-frame Structure from Motion<a class="headerlink" href="#two-frame-structure-from-motion" title="Permanent link">¶</a></h2>
+<details class="info">
+<summary>Stereo vision 立体视觉</summary>
+<p>Compute 3D structure of the scene and camera poses from views (images).</p>
+</details>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_9.png"><img alt="lec7_9" src="../Pic/lec7_9.png" style="width:600px"/></a>
+</div>
+<p>Two-frame SfM 意在解决这样一个问题：已知两张图像和相机内参矩阵 (<span class="arithmatex">\(K_l(3 \times 3)\)</span> 与 <span class="arithmatex">\(K_r(3 \times 3)\)</span>)，求相机的位置以及所拍摄主体的三维位置坐标.</p>
+<h3 id="principle-induction">Principle Induction 原理推导<a class="headerlink" href="#principle-induction" title="Permanent link">¶</a></h3>
+<div class="admonition theorem">
+<p class="admonition-title">Epipolar Geometry 对极几何</p>
+<p>对极几何描述了一个三维点 <span class="arithmatex">\(P\)</span> 在两个视角的二维投影 <span class="arithmatex">\(u_l, u_r\)</span>  之间的几何关系. 并通过这个几何关系建立两个摄像机之间的变换关系（即给出矩阵 <span class="arithmatex">\(R\)</span> 和 <span class="arithmatex">\(\mathbf{t}\)</span>）.</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_10.png"><img alt="lec7_10" src="../Pic/lec7_10.png" style="width:600px"/></a>
+</div></p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+</div>
+<ul>
+<li><strong>Epipole 对极点</strong>：一台摄像机投影在另一台摄像机中的点. 如图中的 <span class="arithmatex">\(e_l\)</span> 和 <span class="arithmatex">\(e_r\)</span>. <ul>
+<li>对给定的两台摄像机，<span class="arithmatex">\(e_l\)</span> 和 <span class="arithmatex">\(e_r\)</span> 是唯一的.</li>
+</ul>
+</li>
+<li><strong>Epipolar Plane of Scene Point P 关于 P 点的对极面</strong>：由 Scene Point <span class="arithmatex">\(P\)</span> 点和两个摄像机 <span class="arithmatex">\(O_l\)</span> 和 <span class="arithmatex">\(O_r\)</span> 形成的平面. <ul>
+<li>每个 scene point 有唯一对应的对极面.</li>
+<li>对极点在对极面上.</li>
+</ul>
+</li>
+</ul>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_11.png"><img alt="lec7_11" src="../Pic/lec7_11.png" style="width:600px"/></a>
+</div>
+<h4 id="essential-matrix-e">Essential Matrix <span class="arithmatex">\(E\)</span> 基本矩阵<a class="headerlink" href="#essential-matrix-e" title="Permanent link">¶</a></h4>
+<p>对于一个对极面，以下等式关系成立：</p>
+<div class="arithmatex">\[
+\begin{align}
+\mathbf{n} = \mathbf{t} \times \mathbf{x}_l \\ \\
+\mathbf{x}_l \cdot (\mathbf{t} \times \mathbf{x}_l) = 0
+\end{align}
+\]</div>
+<p>其中 <span class="arithmatex">\(\mathbf{n}\)</span> 被称为 Normal Vector.</p>
+<p>假设右边的摄像机相对左边的摄像机进行刚体变换 + 平移，即：</p>
+<div class="arithmatex">\[
+\begin{align}
+\mathbf{x}_l &amp;= R \mathbf{x}_r + \mathbf{t} \\ \\
+\begin{bmatrix}
+x_l \\ y_l \\ z_l
+\end{bmatrix}
+&amp;=
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} \\
+r_{21} &amp; r_{22} &amp; r_{23} \\
+r_{31} &amp; r_{32} &amp; r_{33}
+\end{bmatrix}
+\begin{bmatrix}
+x_r \\ y_r \\ y_r
+\end{bmatrix}
++
+\begin{bmatrix}
+t_x \\ t_y \\ t_z
+\end{bmatrix}
+\end{align}
+\]</div>
+<p>进一步演绎推理，得到：</p>
+<div class="arithmatex">\[
+\begin{align}
+\begin{bmatrix}
+x_l &amp; y_l &amp; z_l
+\end{bmatrix}
+\begin{bmatrix}
+t_yz_l - t_zy_l \\
+t_zx_l - t_xz_l \\
+t_xy_l - t_yx_l
+\end{bmatrix}
+= 0
+&amp; \text{, Cross-product definition} \\ \\
+\begin{bmatrix}
+x_l &amp; y_l &amp; z_l
+\end{bmatrix}
+\underbrace{
+\begin{bmatrix}
+0 &amp; -t_z &amp; t_y \\
+t_z &amp; 0 &amp; -t_x \\
+-t_y &amp; t_x &amp; 0
+\end{bmatrix}
+}_{T_\times}
+\begin{bmatrix}
+x_l \\ y_l \\ z_l
+\end{bmatrix}
+= 0
+&amp; \text{, Matrix-vector form}
+\end{align}
+\]</div>
+<p>代入变换矩阵</p>
+<div class="arithmatex">\[
+\small
+\begin{bmatrix}
+x_l &amp; y_l &amp; z_l
+\end{bmatrix}
+\left(
+\underbrace{
+\begin{bmatrix}
+0 &amp; -t_z &amp; t_y \\
+t_z &amp; 0 &amp; -t_x \\
+-t_y &amp; t_x &amp; 0
+\end{bmatrix}
+}_{T_\times}
+\underbrace{
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} \\
+r_{21} &amp; r_{22} &amp; r_{23} \\
+r_{31} &amp; r_{32} &amp; r_{33}
+\end{bmatrix}
+}_{R}
+\begin{bmatrix}
+x_r \\ y_r \\ y_r
+\end{bmatrix}
++
+\underbrace{
+\begin{bmatrix}
+0 &amp; -t_z &amp; t_y \\
+t_z &amp; 0 &amp; -t_x \\
+-t_y &amp; t_x &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+t_x \\ t_y \\ t_z
+\end{bmatrix}
+}_{\mathbf{t} \times \mathbf{t} = \mathbf{0}}
+\right)
+= 0
+\]</div>
+<div class="arithmatex">\[
+\begin{bmatrix}
+x_l &amp; y_l &amp; z_l
+\end{bmatrix}
+\underbrace{
+\begin{bmatrix}
+e_{11} &amp; e_{12} &amp; e_{13} \\
+e_{21} &amp; e_{22} &amp; e_{23} \\
+e_{31} &amp; e_{32} &amp; e_{33}
+\end{bmatrix}
+}_{\text{Essential Matrix } E}
+\begin{bmatrix}
+x_r \\ y_r \\ y_r
+\end{bmatrix}
+\text{, where }
+E = T_\times R
+\]</div>
+<p>注意到 <span class="arithmatex">\(T_\times\)</span> 是反对称矩阵 (skew-symmetric matrix) 而 <span class="arithmatex">\(R\)</span> 是单位正交矩阵 (orthonomal matrix)，由 SVD 分解 (Singule Value Decomposition)，我们可以从 <span class="arithmatex">\(E\)</span> 唯一分解得到 <span class="arithmatex">\(T_\times\)</span> 和 <span class="arithmatex">\(R\)</span>.</p>
+<h4 id="fundemental-matrix-f">Fundemental Matrix <span class="arithmatex">\(F\)</span> 本真矩阵<a class="headerlink" href="#fundemental-matrix-f" title="Permanent link">¶</a></h4>
+<p>由投影关系以及内参矩阵 <span class="arithmatex">\(K\)</span>，得到：</p>
+<div class="arithmatex">\[
+\small
+\begin{align}
+\text{Left Camera} &amp;&amp; \text{Right Camera}
+\\
+z_l 
+\begin{bmatrix}
+u_l \\ v_l \\ 1
+\end{bmatrix}
+&amp;=
+\underbrace{
+\begin{bmatrix}
+f_x^{(l)} &amp; 0 &amp; o_x^{(l)} \\
+0 &amp; f_y^{(l)} &amp; o_y^{(l)} \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+}_{K_l}
+\begin{bmatrix}
+x_l \\ y_l \\ z_l
+\end{bmatrix}
+&amp;
+z_r 
+\begin{bmatrix}
+u_r \\ v_r \\ 1
+\end{bmatrix}
+&amp;=
+\underbrace{
+\begin{bmatrix}
+f_x^{(r)} &amp; 0 &amp; o_x^{(r)} \\
+0 &amp; f_y^{(r)} &amp; o_y^{(r)} \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+}_{K_r}
+\begin{bmatrix}
+x_r \\ y_r \\ z_r
+\end{bmatrix}
+\\
+\mathbf{x}_l^T &amp;=
+\begin{bmatrix}
+u_l &amp; v_l &amp; 1
+\end{bmatrix}
+z_l (K_l^{-1})^T
+&amp; \mathbf{x}_r &amp;= 
+K_r^{-1} z_r
+\begin{bmatrix}
+u_r \\ v_r \\ 1
+\end{bmatrix}
+\end{align}
+\]</div>
+<p>代入以上得到的：</p>
+<div class="arithmatex">\[
+\mathbf{x}^T_l E \mathbf{x}_r = 0
+\]</div>
+<p>有</p>
+<div class="arithmatex">\[
+\require{canel}
+\begin{bmatrix}
+u_l &amp; v_l &amp; 1
+\end{bmatrix}
+\cancel{z_l} (K_l^{-1})^T
+E
+K_r^{-1} \cancel{z_r}
+\begin{bmatrix}
+u_r \\ v_r \\ 1
+\end{bmatrix}
+= 0
+\]</div>
+<p>即</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+u_l &amp; v_l &amp; 1
+\end{bmatrix}
+F
+\begin{bmatrix}
+u_r \\ v_r \\ 1
+\end{bmatrix}
+= 0
+\text{, where }
+E = K_l^T F K_r
+\]</div>
+<h3 id="implementation">Implementation 实现<a class="headerlink" href="#implementation" title="Permanent link">¶</a></h3>
+<h4 id="step-1-find-a-set-m-pairs-of-corresponding-features-m">Step 1. Find a set (<span class="arithmatex">\(m\)</span> pairs) of corresponding features. 找到一组（<span class="arithmatex">\(m\)</span> 对）匹配点.<a class="headerlink" href="#step-1-find-a-set-m-pairs-of-corresponding-features-m" title="Permanent link">¶</a></h4>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_12.png"><img alt="lec7_12" src="../Pic/lec7_12.png" style="width:500px"/></a>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Least Number of Points</p>
+<p>At least <strong>8</strong> pairs: <span class="arithmatex">\((u_l^{(i)}, v_l^{(i)})\)</span> ↔ <span class="arithmatex">\((u_r^{(i)}, v_r^{(i)})\)</span>
+NOTE that one pair only corresponds one equation. (not the same as before)</p>
+</div>
+<h4 id="step-2-build-linear-systems-and-solve-for-f-f">Step 2. Build linear systems and solve for <span class="arithmatex">\(F\)</span>. 建立方程组并求解矩阵 <span class="arithmatex">\(F\)</span>.<a class="headerlink" href="#step-2-build-linear-systems-and-solve-for-f-f" title="Permanent link">¶</a></h4>
+<p>对于每组匹配 <span class="arithmatex">\(i\)</span>，</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+u_l^{(i)} &amp; v_l^{(i)} &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+f_{11} &amp; f_{12} &amp; f_{13} \\
+f_{21} &amp; f_{22} &amp; f_{23} \\
+f_{31} &amp; f_{32} &amp; f_{33}
+\end{bmatrix}
+\begin{bmatrix}
+u_r^{(i)} \\ v_r^{(i)} \\ 1
+\end{bmatrix}
+= 0
+\]</div>
+<p>展开得，</p>
+<div class="arithmatex">\[
+\small
+\left( f_{11} u_r^{(i)} + f_{12} v_r^{(i)} + f_13 \right)u_l^{(i)} +
+\left( f_{21} u_r^{(i)} + f_{22} v_r^{(i)} + f_23 \right)v_l^{(i)} +
+f_{31} u_r^{(i)} + f_{32} v_r^{(i)} + f_33 = 0
+\]</div>
+<p>对所有选择的点，有</p>
+<div class="arithmatex">\[
+\small
+\begin{bmatrix}
+u_l^{(1)}u_r^{(1)} &amp; u_l^{(1)}v_r^{(1)} &amp; u_l^{(1)} &amp; v_l^{(1)}u_r^{(1)} &amp; v_l^{(1)}v_r^{(1)} &amp; v_l^{(1)} &amp; u_r^{(1)} &amp; v_r^{(1)} &amp; 1 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 
+u_l^{(i)}u_r^{(i)} &amp; u_l^{(i)}v_r^{(i)} &amp; u_l^{(i)} &amp; v_l^{(i)}u_r^{(i)} &amp; v_l^{(i)}v_r^{(i)} &amp; v_l^{(i)} &amp; u_r^{(i)} &amp; v_r^{(i)} &amp; 1 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 
+u_l^{(m)}u_r^{(m)} &amp; u_l^{(m)}v_r^{(m)} &amp; u_l^{(m)} &amp; v_l^{(m)}u_r^{(m)} &amp; v_l^{(m)}v_r^{(m)} &amp; v_l^{(m)} &amp; u_r^{(m)} &amp; v_r^{(m)} &amp; 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+f_{11} \\ f_{12} \\ f_{13} \\
+f_{21} \\ f_{22} \\ f_{23} \\
+f_{31} \\ f_{32} \\ f_{33} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+A \mathbf{f} = \mathbf{0}
+\]</div>
+<p>同样地 ，我们可以给出一定的限制 constraint.</p>
+<ul>
+<li>Option 1. 令 <span class="arithmatex">\(f_{33} = 1\)</span>.</li>
+<li>Option 2. 令 <span class="arithmatex">\(||f|| = 1\)</span>.</li>
+</ul>
+<p>得到自由度为 <span class="arithmatex">\(8\)</span>，至少需要 8 组点.</p>
+<p>并同样要最小化 <span class="arithmatex">\(||\mathbf{Af - 0}|| = \mathbf{||Af||}\)</span>.</p>
+<p>同样如果使用的是向量范数为 <span class="arithmatex">\(1\)</span> 的限制，那么解就是 <span class="arithmatex">\(\mathbf{A^{T}A}\)</span> 最小特征值对应的特征向量.</p>
+<h4 id="step-3-find-e-and-extract-r-mathbft">Step 3. Find <span class="arithmatex">\(E\)</span> and Extract <span class="arithmatex">\(R, \mathbf{t}\)</span><a class="headerlink" href="#step-3-find-e-and-extract-r-mathbft" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+E = K_l^T F K_r
+\]</div>
+<p>通过 SVD 分解，  <span class="arithmatex">\(E = T_\times R\)</span> 得到 <span class="arithmatex">\(T_\times\)</span> 和 <span class="arithmatex">\(R\)</span>. </p>
+<p><span class="arithmatex">\(R\)</span> 即为旋转矩阵，<span class="arithmatex">\(\mathbf{t}\)</span> 可以通过 <span class="arithmatex">\(T_\times\)</span> 直接得到.</p>
+<h4 id="step-4-find-3d-position-of-scene-points">Step 4. Find 3D Position of Scene Points<a class="headerlink" href="#step-4-find-3d-position-of-scene-points" title="Permanent link">¶</a></h4>
+<p>现在已经有以下等式</p>
+<div class="arithmatex">\[
+\small
+\begin{align}
+\text{Left Camera}
+\\
+\begin{bmatrix}
+u_l \\ v_l \\ 1
+\end{bmatrix}
+&amp;=
+\begin{bmatrix}
+f_x^{(l)} &amp; 0 &amp; o_x^{(l)} &amp; 0 \\
+0 &amp; f_y^{(l)} &amp; o_y^{(l)} &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+x_l \\ y_l \\ z_l \\ 1
+\end{bmatrix}
+,\ 
+\begin{bmatrix}
+x_l \\ y_l \\ z_l \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; t_x \\
+r_{21} &amp; r_{22} &amp; r_{23} &amp; t_y \\
+r_{31} &amp; r_{32} &amp; r_{33} &amp; t_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x_r \\ y_r \\ z_r \\ 1
+\end{bmatrix}
+\\
+\begin{bmatrix}
+u_l \\ v_l \\ 1
+\end{bmatrix}
+&amp;=
+\begin{bmatrix}
+f_x^{(l)} &amp; 0 &amp; o_x^{(l)} &amp; 0 \\
+0 &amp; f_y^{(l)} &amp; o_y^{(l)} &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; t_x \\
+r_{21} &amp; r_{22} &amp; r_{23} &amp; t_y \\
+r_{31} &amp; r_{32} &amp; r_{33} &amp; t_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x_r \\ y_r \\ z_r \\ 1
+\end{bmatrix}
+\\ \\
+\normalsize
+\mathbf{\tilde u}_l &amp;= 
+\normalsize
+P_l \mathbf{\tilde x}_r
+\\ \\
+\small
+\text{Right Camera}
+\\
+\begin{bmatrix}
+u_r \\ v_r \\ 1
+\end{bmatrix}
+&amp;=
+\begin{bmatrix}
+f_x^{(r)} &amp; 0 &amp; o_x^{(r)} &amp; 0 \\
+0 &amp; f_y^{(r)} &amp; o_y^{(r)} &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+x_r \\ y_r \\ z_r \\ 1
+\end{bmatrix}
+\\ \\
+\normalsize
+\mathbf{\tilde u}_l &amp;= 
+\normalsize
+M_{int_r} \mathbf{\tilde x}_r
+\end{align}
+\]</div>
+<p>由</p>
+<div class="arithmatex">\[
+\small
+\begin{bmatrix}
+u_r \\ v_r \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+m_{11} &amp; m_{12} &amp; m_{13} &amp; m_{14} \\
+m_{21} &amp; m_{22} &amp; m_{23} &amp; m_{24} \\
+m_{31} &amp; m_{32} &amp; m_{33} &amp; m_{34} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_r \\ y_r \\ z_r \\ 1
+\end{bmatrix}
+,\ 
+\begin{bmatrix}
+u_r \\ v_r \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+p_{11} &amp; p_{12} &amp; p_{13} &amp; p_{14} \\
+p_{21} &amp; p_{22} &amp; p_{23} &amp; p_{24} \\
+p_{31} &amp; p_{32} &amp; p_{33} &amp; p_{34} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_r \\ y_r \\ z_r \\ 1
+\end{bmatrix}
+\]</div>
+<p>整理得</p>
+<div class="arithmatex">\[
+\underbrace{
+\begin{bmatrix}
+u_r m_{31} - m_{11} &amp; u_r m_{32} - m_{12} &amp; u_r m_{33} - m_{13} \\ 
+v_r m_{31} - m_{21} &amp; v_r m_{32} - m_{22} &amp; v_r m_{33} - m_{23} \\ 
+u_l p_{31} - p_{11} &amp; u_l p_{32} - p_{12} &amp; u_l p_{33} - p_{13} \\  
+v_l p_{31} - p_{21} &amp; v_l p_{32} - p_{22} &amp; v_l p_{33} - p_{23}
+\end{bmatrix}
+}_{A_{4\times 3}}
+\underbrace{
+\begin{bmatrix}
+x_r \\ y_r \\ z_r
+\end{bmatrix}
+}_{\mathbf{x}_r}
+=
+\underbrace{
+\begin{bmatrix}
+m_{14} - m_{34} \\
+m_{24} - m_{34} \\  
+p_{14} - p_{34} \\ 
+p_{24} - p_{34}
+\end{bmatrix}
+}_{\mathbf{b}}
+\]</div>
+<p>由分析上解的唯一性，理论上有两行是线性相关的. 但是在实际取点中可能会存在一定的误差，所以为了最大化利用数据量，还是采用最小二乘法.</p>
+<p>由最小二乘法得，</p>
+<div class="arithmatex">\[
+\mathbf{x}_r = (A^TA)^{-1}A^T \mathbf{b}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Non-linear Solution</p>
+<p>上面的是通过解线性系统的方法，另一种想法是最小化<strong>重映射误差 (reprojection error)</strong>.</p>
+<div class="arithmatex">\[
+\text{cost}(P) = \text{dist}(\mathbf{u}_l, \mathbf{\hat u}_l)^2 + \text{dist}(\mathbf{u}_r, \mathbf{\hat u}_r)^2 
+\]</div>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_13.png"><img alt="lec7_13" src="../Pic/lec7_13.png" style="width:400px"/></a>
+</div></p>
+<p>另外，通过这种方法我们也可以优化 <span class="arithmatex">\(R\)</span> 和 <span class="arithmatex">\(\mathbf{t}\)</span>.</p>
+</div>
+<h2 id="multi-frame-structure-from-motion">Multi-frame Structure from Motion<a class="headerlink" href="#multi-frame-structure-from-motion" title="Permanent link">¶</a></h2>
+<p>与 Two-frame SfM 类似，已知 <span class="arithmatex">\(m\)</span> 张图像，<span class="arithmatex">\(n\)</span> 个三维点以及相机内参矩阵，求相机的位置以及所拍摄主体的三维位置坐标.</p>
+<p>也就是对于以下等式：</p>
+<div class="arithmatex">\[
+\mathbf{u}_j^{(i)} = P_{proj}^{(i)} \mathbf{P}_j
+\text{, where } i = 1, \dots, m, j = 1, \dots, n
+\]</div>
+<p>由 <span class="arithmatex">\(mn\)</span> 个投影的二维点 <span class="arithmatex">\(\mathbf{u}_j^{(i)}\)</span>求解 <span class="arithmatex">\(m\)</span> 个投影矩阵 <span class="arithmatex">\(P_{proj}^{(i)}\)</span> 与 <span class="arithmatex">\(n\)</span> 个三维点坐标 <span class="arithmatex">\(P_j\)</span>.</p>
+<h3 id="solution-sequential-structrue-from-motion">Solution: Sequential Structrue from Motion<a class="headerlink" href="#solution-sequential-structrue-from-motion" title="Permanent link">¶</a></h3>
+<h4 id="step-1-initialize-camera-motion-and-scene-structure">Step 1. Initialize camera motion and scene structure. 初始化<a class="headerlink" href="#step-1-initialize-camera-motion-and-scene-structure" title="Permanent link">¶</a></h4>
+<p>首先选两张图做一次 Two-frame SfM.</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_14.png"><img alt="lec7_14" src="../Pic/lec7_14.png" style="width:300px"/></a>
+</div>
+<h4 id="step-2-deal-with-an-addition-view">Step 2. Deal with an addition view. 处理下一张图<a class="headerlink" href="#step-2-deal-with-an-addition-view" title="Permanent link">¶</a></h4>
+<p>对于每新增的一张图，</p>
+<ul>
+<li>对于已经建立三维坐标的点：<a href="#PnP">PnP 问题</a>.</li>
+</ul>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_15.png"><img alt="lec7_15" src="../Pic/lec7_15.png" style="width:450px"/></a>
+</div>
+<ul>
+<li>对于尚未建立三维坐标的点：做 Two-frame SfM.</li>
+</ul>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_16.png"><img alt="lec7_16" src="../Pic/lec7_16.png" style="width:300px"/></a>
+</div>
+<h4 id="step-3-refine-structure-and-motion-bundle-adjustment">Step 3. Refine structure and motion: Bundle Adjustment. 集束调整<a class="headerlink" href="#step-3-refine-structure-and-motion-bundle-adjustment" title="Permanent link">¶</a></h4>
+<p>处理完所有的图后，再通过一次<strong>集束调整</strong>（具体实现是 <a href="../4_Model_Fitting_and_Optimization/?h=lm#levenberg-marquardt-lm">LM 算法</a>）对三维点坐标和相机参数做进一步优化，即最小化<strong>重映射误差</strong>（非线性最小二乘）：</p>
+<div class="arithmatex">\[
+E(P_{proj}, \mathbf{P}) = \sum\limits_{i=1}^m \sum\limits_{j=1}^n \text{dist} \left( u_j^{(i)}, P_{proj}^{(i)} \mathbf{P}_j \right)^2
+\]</div>
+<h2 id="colmap">COLMAP<a class="headerlink" href="#colmap" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>COLMAP is a general-purpose <strong>Structure-from-Motion (SfM)</strong> and <strong>Multi-View Stereo (MVS)</strong> pipeline with a graphical and commandline interface. It offers a wide range of features for reconstruction of ordered and unordered image collections.</p>
+</blockquote>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_17.png"><img alt="lec7_17" src="../Pic/lec7_17.png" style="width:600px"/></a>
+</div>
+<div class="admonition note">
+<p>Pipeline</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_18.png"><img alt="lec7_18" src="../Pic/lec7_18.png" style="width:600px"/></a>
+</div></p>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.17 20:42:25 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
@@ -383,7 +1733,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
