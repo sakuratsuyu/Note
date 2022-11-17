@@ -168,8 +168,8 @@ An important method: **Interpolation**.
 
 ### Super-Resolution
 
-!!! question
+!!! question "Remains"
 
 ### Change Aspect Ratio
 
-!!! question
+!!! question "Remains"

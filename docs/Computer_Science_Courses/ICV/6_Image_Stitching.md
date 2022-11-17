@@ -109,7 +109,7 @@ Why not consider inversely?
 		<img src="../Pic/lec6_4.png" alt="lec6_4" style="width:600px"/>
 	</div>
 
-	**Solution** :fontawesome-solid-check: [2D Interpolation!](https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/3_Image_Processing/#2d-interpolation)
+	**Solution** :fontawesome-solid-check: [2D Interpolation!](../3_Image_Processing/#2d-interpolation)
 
 ## Image Stitching
 
@@ -119,7 +119,7 @@ $$
 \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}
 $$
 
-### [Image Matching](https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/5_Image_Matching_and_Motion_Estimation/#image-matching)
+### [Image Matching](../5_Image_Matching_and_Motion_Estimation/#image-matching)
 
 通过图像匹配得到匹配点，每个匹配点可以提供一个以上形式的矩阵乘法等式.
 
@@ -261,7 +261,7 @@ $$
 !!! question "Outliers"
 	图像匹配也不是完美的，可能有部分错误的匹配点成为孤立点 (outliner).
 
-!!! success "Solution: [RANSAC](https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/4_Model_Fitting_and_Optimization/?h=ransa#ransac-random-sample-concensus)"
+!!! success "Solution: [RANSAC](../4_Model_Fitting_and_Optimization/?h=ransa#ransac-random-sample-concensus)"
 	- 每次随机取 $s$ 组匹配点.
 	- 通过选取的匹配点计算出变换矩阵 $T$.
 	- 在所有的匹配点中，统计在一定误差范围内符合变换 $T$ 的点 (inlier) 的数量作为得分.

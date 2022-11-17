@@ -164,7 +164,7 @@ But, if no analytical solution ...
 
 ### Convex Optimization
 
-!!! question
+!!! question "Remains"
 
 ---
 
