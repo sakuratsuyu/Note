@@ -6,7 +6,7 @@ comments: true
 # Title Page
 
 !!! abstract
-	This section stores the notes of the courses that I've learned from ZJU or other platforms like MIT and Standford.
+	This section stores the notes of the courses that I've learned about computer scicence (CS) from ZJU or other platforms like MIT and Standford.
 	
 	It helps me to build my knowledge system and hope it helps you too. 
 	

@@ -30,7 +30,7 @@
 刚体变换，只有旋转和平移，对应旋转矩阵 $R$（$R$ 是 **单位正交矩阵 (Orthonormal)**) 和平移向量 $c_w$.
 
 $$
-\mathbf{x}_c = R(\mathbf{x}_w - \mathbf{c}_w) = R \mathbf{x}_w - R \mathbf{c}_w \overset{\Delta}{=\!=} = R \mathbf{x}_w + \mathbf{t}, \text{ where } \mathbf{t } = -R \mathbf{c}_w.
+\mathbf{x}_c = R(\mathbf{x}_w - \mathbf{c}_w) = R \mathbf{x}_w - R \mathbf{c}_w \overset{\Delta}{=\!=} R \mathbf{x}_w + \mathbf{t}, \text{ where } \mathbf{t } = -R \mathbf{c}_w.
 $$
 
 故这个变换也可以等价地用 $R$ 和 $\mathbf{t}$ 来表征.
@@ -410,9 +410,9 @@ p_{14} \\ p_{24} \\ p_{34}
 \end{bmatrix}
 =
 \begin{bmatrix}
-f_x & 0 & c_x & 0 \\
-0 & f_y & c_y & 0 \\
-0 & 0 & 1 & 0
+f_x & 0 & c_x \\
+0 & f_y & c_y \\
+0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
 t_x \\ t_y \\ t_z

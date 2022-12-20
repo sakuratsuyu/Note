@@ -71,9 +71,10 @@ extra_css:
 
 extra_javascript:
 # Mathjax Configuration
-  - js/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+#  - js/mathjax.js
+#  - https://polyfill.io/v3/polyfill.min.js?features=es6
+#  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 plugins:
   - search
@@ -141,7 +142,18 @@ nav:
     - Plan: tasklist.md
     - Blogroll: discussion.md
   - Mathematics Basis:
-    - comming_soon.md
+    - Mathematics_Basis/index.md
+    - 数值分析 | Numerical Analysis:
+      - Class Notes : Mathematics_Basis/NA/class_notes.md
+      - Chap 1 : Mathematics_Basis/NA/Chap_1.md
+      - Chap 2 : Mathematics_Basis/NA/Chap_2.md
+      - Chap 3 : Mathematics_Basis/NA/Chap_3.md
+      - Chap 4 : Mathematics_Basis/NA/Chap_4.md
+      - Chap 5 : Mathematics_Basis/NA/Chap_5.md
+      - Chap 6 : Mathematics_Basis/NA/Chap_6.md
+      - Chap 7 : Mathematics_Basis/NA/Chap_7.md
+      - Chap 8 : Mathematics_Basis/NA/Chap_8.md
+      - Chap 9 : Mathematics_Basis/NA/Chap_9.md
   - Computer Science Courses:
     - Computer_Science_Courses/index.md
     - 计算机视觉导论 | Introduction to Computer Vision:
