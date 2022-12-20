@@ -129,7 +129,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../comming_soon/">
+<a class="md-tabs__link" href="../../../Mathematics_Basis/">
         Mathematics Basis
       </a>
 </li>
@@ -203,20 +203,82 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2">
-          Mathematics Basis
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../Mathematics_Basis/">Mathematics Basis</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-label="Mathematics Basis" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           Mathematics Basis
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2">
+          数值分析 | Numerical Analysis
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="数值分析 | Numerical Analysis" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          数值分析 | Numerical Analysis
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../comming_soon/">
-        None
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/class_notes/">
+        Class Notes
       </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_1/">
+        Chap 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_2/">
+        Chap 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_3/">
+        Chap 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_4/">
+        Chap 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_5/">
+        Chap 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_6/">
+        Chap 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_7/">
+        Chap 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_8/">
+        Chap 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_9/">
+        Chap 9
+      </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -804,7 +866,7 @@
 <h5 id="_1">特点<a class="headerlink" href="#_1" title="Permanent link">¶</a></h5>
 <p>刚体变换，只有旋转和平移，对应旋转矩阵 <span class="arithmatex">\(R\)</span>（<span class="arithmatex">\(R\)</span> 是 <strong>单位正交矩阵 (Orthonormal)</strong>) 和平移向量 <span class="arithmatex">\(c_w\)</span>.</p>
 <div class="arithmatex">\[
-\mathbf{x}_c = R(\mathbf{x}_w - \mathbf{c}_w) = R \mathbf{x}_w - R \mathbf{c}_w \overset{\Delta}{=\!=} = R \mathbf{x}_w + \mathbf{t}, \text{ where } \mathbf{t } = -R \mathbf{c}_w.
+\mathbf{x}_c = R(\mathbf{x}_w - \mathbf{c}_w) = R \mathbf{x}_w - R \mathbf{c}_w \overset{\Delta}{=\!=} R \mathbf{x}_w + \mathbf{t}, \text{ where } \mathbf{t } = -R \mathbf{c}_w.
 \]</div>
 <p>故这个变换也可以等价地用 <span class="arithmatex">\(R\)</span> 和 <span class="arithmatex">\(\mathbf{t}\)</span> 来表征.</p>
 <div class="arithmatex">\[
@@ -1132,9 +1194,9 @@ p_{14} \\ p_{24} \\ p_{34}
 \end{bmatrix}
 =
 \begin{bmatrix}
-f_x &amp; 0 &amp; c_x &amp; 0 \\
-0 &amp; f_y &amp; c_y &amp; 0 \\
-0 &amp; 0 &amp; 1 &amp; 0
+f_x &amp; 0 &amp; c_x \\
+0 &amp; f_y &amp; c_y \\
+0 &amp; 0 &amp; 1
 \end{bmatrix}
 \begin{bmatrix}
 t_x \\ t_y \\ t_z
@@ -1725,7 +1787,7 @@ E(P_{proj}, \mathbf{P}) = \sum\limits_{i=1}^m \sum\limits_{j=1}^n \text{dist} \l
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.17 20:42:25 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.21 01:34:02 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
@@ -1804,8 +1866,6 @@ E(P_{proj}, \mathbf{P}) = \sum\limits_{i=1}^m \sum\limits_{j=1}^n \text{dist} \l
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>
