@@ -898,6 +898,24 @@ x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} =
 \]</div>
 </div>
 <h2 id="error-bounds-and-iterative-refinement">Error Bounds and Iterative Refinement<a class="headerlink" href="#error-bounds-and-iterative-refinement" title="Permanent link">¶</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>conditional number</strong> of the nonsigular matrix <span class="arithmatex">\(A\)</span> relative to a norm <span class="arithmatex">\(||\cdot||\)</span>$ is</p>
+<div class="arithmatex">\[
+    K(A) = ||A|| \cdot ||A^{-1}||.
+\]</div>
+<p>A matrix <span class="arithmatex">\(A\)</span> is <strong>well-conditioned</strong> if <span class="arithmatex">\(K(A)\)</span> is close to 1, and is <strong>ill-conditioned</strong> when <span class="arithmatex">\(K(A)\)</span> is significantly greater than 1.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Proposition</p>
+<ul>
+<li>If <span class="arithmatex">\(A\)</span> is symmetric, then <span class="arithmatex">\(K(A)_2 = \frac{\max|\lambda|}{\min|\lambda|}\)</span>.</li>
+<li><span class="arithmatex">\(K(A)_2 = 1\)</span> if <span class="arithmatex">\(A\)</span> is orthogonal.</li>
+<li><span class="arithmatex">\(\forall \text{ orthogonal matrix }R, K(RA)_2 = K(AR)_2 = K(A)_2.\)</span></li>
+<li><span class="arithmatex">\(\forall \text{ natural norm } ||\cdot||_p,\ K(A)_p \ge 1.\)</span></li>
+<li><span class="arithmatex">\(K(\alpha A) = K(A).\)</span></li>
+</ul>
+</div>
+</div>
 <div class="admonition theorem">
 <p class="admonition-title">Theorem</p>
 <p>For any natural norm,</p>
@@ -906,23 +924,46 @@ x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} =
 \]</div>
 <p>and if <span class="arithmatex">\(\mathbf{x} \ne \mathbf{0}\)</span> and <span class="arithmatex">\(\mathbf{b} \ne \mathbf{0}\)</span>,</p>
 <div class="arithmatex">\[
-    \frac{||\mathbf{x} - \mathbf{\tilde x}||}{||\mathbf{x}||} \le ||A||\cdot||A^{-1}|| \frac{||\mathbf{r}||}{||\mathbf{b}||}.
+    \frac{||\mathbf{x} - \mathbf{\tilde x}||}{||\mathbf{x}||} \le ||A||\cdot||A^{-1}|| \frac{||\mathbf{r}||}{||\mathbf{b}||} = K(A)\frac{||\mathbf{r}||}{||\mathbf{b}||}.
 \]</div>
 </div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>The <strong>conditional number</strong> of the nonsigular matrix <span class="arithmatex">\(A\)</span> relative to a norm <span class="arithmatex">\(||\cdot||\)</span>$ is</p>
+<div class="admonition success">
+<p class="admonition-title">Iterative Refinement</p>
+<p><strong>Step.1</strong> Solve <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span> and get an approximation solution <span class="arithmatex">\(\mathbf{x}_{0}\)</span>. Let <span class="arithmatex">\(i = 1\)</span>.</p>
+<p><strong>Step.2</strong> Let <span class="arithmatex">\(\mathbf{r} = \mathbf{b} - A\mathbf{x}_{i - 1}\)</span>.</p>
+<p><strong>Step.3</strong> Solve <span class="arithmatex">\(A\mathbf{d} = \mathbf{r}\)</span> and get the solution <span class="arithmatex">\(\mathbf{d}\)</span>.</p>
+<p><strong>Step.4</strong> The better approximation is <span class="arithmatex">\(\mathbf{x}_{i} = \mathbf{x}_{i - 1} + \mathbf{d}.\)</span></p>
+<p><strong>Step.5</strong> Judge whether it's precise enough. If not, let <span class="arithmatex">\(i = i + 1\)</span> and then repeat from <strong>Step.2</strong>.</p>
+</div>
+<hr/>
+<p>In reality, <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(\mathbf{b}\)</span> may be <em>perturbed</em> by an amount <span class="arithmatex">\(\delta A\)</span> and <span class="arithmatex">\(\delta \mathbf{b}\)</span>.</p>
+<p>For <span class="arithmatex">\(A(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b} + \delta\mathbf{b}\)</span></p>
 <div class="arithmatex">\[
-    K(A) = ||A|| \cdot ||A^{-1}||.
+    \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le ||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta \mathbf{b}||}{||\mathbf{b}||}    
 \]</div>
-<p>A matrix <span class="arithmatex">\(A\)</span> is <strong>well-conditioned</strong> if <span class="arithmatex">\(K(A)\)</span> is close to 1, and is <strong>ill-conditioned</strong> when <span class="arithmatex">\(K(A)\)</span> is significantly greater than 1.</p>
+<p>For <span class="arithmatex">\((A + \delta A)(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b}\)</span></p>
+<div class="arithmatex">\[
+    \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le \frac{||A^{-1}|| \cdot ||\delta A||}{1 - ||A^{-1}|| \cdot ||\delta A||} = 
+    \frac{||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta A||}{||A||}}{1 - ||A|| \cdot ||A^{-1}|| \cdot\frac{||\delta A||}{||A||}}    
+\]</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>If <span class="arithmatex">\(A\)</span> is nonsingular and </p>
+<div class="arithmatex">\[
+    ||\delta A|| \lt \frac{1}{||A^{-1}||}
+\]</div>
+<p>then <span class="arithmatex">\((A + \delta A)(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b} + \delta\mathbf{b}\)</span> with the error estimate</p>
+<div class="arithmatex">\[
+    \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le \frac{K(A)}{1 - K(A)\frac{||\delta A||}{||A||}}\left(\frac{||\delta A||}{||A||} + \frac{||\delta\mathbf{b}||}{||\mathbf{b}||}\right)
+\]</div>
 </div>
+<hr/>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.21 01:34:02 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.22 00:34:39 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.21 01:34:02 CST</span>

@@ -33,6 +33,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#chapter-9-approximating-eigenvalues">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -271,9 +274,40 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Chap 9
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Chap 9
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#power-method">
+    Power Method
+  </a>
+<nav aria-label="Power Method" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rate-of-convergence">
+    Rate of Convergence
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inverse-power-method">
+    Inverse Power Method
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -422,6 +456,31 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#power-method">
+    Power Method
+  </a>
+<nav aria-label="Power Method" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rate-of-convergence">
+    Rate of Convergence
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inverse-power-method">
+    Inverse Power Method
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -431,13 +490,98 @@
 <a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Mathematics_Basis/NA/Chap_9.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Chap 9</h1>
+<h1 id="chapter-9-approximating-eigenvalues">Chapter 9 | Approximating Eigenvalues<a class="headerlink" href="#chapter-9-approximating-eigenvalues" title="Permanent link">¶</a></h1>
+<h2 id="power-method">Power Method<a class="headerlink" href="#power-method" title="Permanent link">¶</a></h2>
+<p>The Power Method is an <em>iterative</em> technique used to determine the <strong>dominant eigenvalue</strong> of a matrix (the eigenvalue with the largest magnitude).</p>
+<p>Suppose <span class="arithmatex">\(A \in M_n(\mathbb{R})\)</span> with eigenvalues satisfying <span class="arithmatex">\(|\lambda_1| \gt |\lambda_2| \ge \dots \ge |\lambda_n|\)</span> and their corresponding <strong>linearly independent</strong> eigenvectors <span class="arithmatex">\(\mathbf{v}_\mathbf{1}, \dots, \mathbf{v}_\mathbf{n}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Original Method</p>
+<ol>
+<li>Start from any <span class="arithmatex">\(\mathbf{x}^{(0)} \ne \mathbf{0}\)</span> and <span class="arithmatex">\((\mathbf{x}^{(0)}, \mathbf{v}_\mathbf{1}) \ne 0\)</span>, and suppose <span class="arithmatex">\(\mathbf{x}^{(0)} = \sum\limits_{j = 1}^n\beta_j\mathbf{v}_\mathbf{j}\)</span>, <span class="arithmatex">\(\beta_1 \ne 0.\)</span></li>
+<li><span class="arithmatex">\(\mathbf{x}^{(k)} = A \mathbf{x}^{(k - 1)} = \sum\limits_{j = 1}^n\beta_j\lambda_j^k\mathbf{v}_\mathbf{j} = \lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j}\ \overset{k \rightarrow \infty}{=\!=\!=\!=}\ \lambda_1^k\beta_1\mathbf{v}_\mathbf{1}\)</span>.</li>
+<li><span class="arithmatex">\(A\mathbf{x}^{(k)} \approx \lambda_1^k\beta_1A\mathbf{v}_\mathbf{1} \approx \lambda_1\mathbf{x}^{(k)}\)</span>, thus</li>
+</ol>
+<div class="arithmatex">\[
+    \lambda_1 = \frac{\mathbf{x}^{(k + 1)}_i}{\mathbf{x}^{(k)}_i}, \mathbf{v}_\mathbf{1} = \frac{\mathbf{x}^{(k)}}{\lambda_1^k\beta_1}.
+\]</div>
+</div>
+<p><strong>Motivation for Normalization:</strong> In the original method, if <span class="arithmatex">\(|\lambda| &gt; 1\)</span> then <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> diverges. If <span class="arithmatex">\(|\lambda| &lt; 1\)</span> then <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> converges to 0. Both cases are not suitable for actual computing. Thus we need normalization to make sure <span class="arithmatex">\(||\mathbf{x}||_\infty = 1\)</span> at each step to guarantee the <em>stableness</em>.</p>
+<div class="admonition success">
+<p class="admonition-title">Normalization</p>
+<p>Let <span class="arithmatex">\(\mathbf{u}^{(k-1)} = \frac{\mathbf{x}^{(k-1)}}{||\mathbf{x}^{(k-1)}||_\infty}, 
+\mathbf{x}^{(k)} = A\mathbf{u}^{(k - 1)}\)</span>,</p>
+<p>then</p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp; \mathbf{u}^{(k)} =
+    \frac{\mathbf{x}^{(k)}}{||\mathbf{x}^{(k)}||_\infty} =
+    \frac{\lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j}}{\left|\left|\lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j}\right|\right|_\infty}
+    \ \overset{k \rightarrow \infty}{=\!=\!=\!=}\ \frac{\mathbf{v}_\mathbf{1}}{||\mathbf{v}_\mathbf{1}||_\infty}
+    \\
+    &amp; \mathbf{x}^{(k)} =
+    \frac{A^k\mathbf{x}_\mathbf{0}}{||A^{k - 1}\mathbf{x}_\mathbf{0}||} =
+    \frac{\lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j}}{\left|\left|\lambda_1^{k - 1} \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^{k - 1}\mathbf{v}_\mathbf{j}\right|\right|_\infty} \ \overset{k \rightarrow \infty}{=\!=\!=\!=}\ 
+    \lambda_1 \frac{\mathbf{v}_\mathbf{1}}{||\mathbf{v}_\mathbf{1}||_\infty}=\lambda_1 \mathbf{u}^{(k)}.
+\end{align}
+\]</div>
+<p>Thus </p>
+<div class="arithmatex">\[
+    \lambda_1 = \frac{\mathbf{x}_i^{(k)}}{\mathbf{u}_i^{(k)}}, \hat{\mathbf{v}_\mathbf{1}} = \frac{\mathbf{v}_\mathbf{1}}{||\mathbf{v}_\mathbf{1}||_\infty}= \mathbf{u}^{(k)}.
+\]</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Remark</p>
+<ul>
+<li>For multiple eigenvalues <span class="arithmatex">\(\lambda_1 = \lambda_2 = \dots = \lambda_r\)</span>,</li>
+</ul>
+<div class="arithmatex">\[
+    \mathbf{x}^{(k)} = \lambda_1^k\left(
+    \sum_{j = 1}^r\beta_j\mathbf{v}_\mathbf{j} +
+    \sum_{j = r + 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j} 
+    \right)\ \overset{k \rightarrow \infty}{=\!=\!=\!=}\ 
+    \lambda_1^k\sum_{j = 1}^r\beta_j\mathbf{v}_\mathbf{j}
+\]</div>
+<ul>
+<li>The method fails to converge if <span class="arithmatex">\(\lambda_1 = -\lambda_2\)</span>.</li>
+<li><a href="../Chap_2/#aitkens-delta2-method">Aitken's <span class="arithmatex">\(\Delta^2\)</span> procedure</a> can be used to speed up the convergence.</li>
+</ul>
+</div>
+<h3 id="rate-of-convergence">Rate of Convergence<a class="headerlink" href="#rate-of-convergence" title="Permanent link">¶</a></h3>
+<p>Examine <span class="arithmatex">\(\textbf{x}^{(k)} = \lambda_1^k \sum_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\textbf{v}_\textbf{j}\)</span>&gt; We find that <span class="arithmatex">\(\left(\frac{\lambda_j}{\lambda_1}\right)\)</span> determines the rate of convergence, especially <span class="arithmatex">\(\left|\frac{\lambda_2}{\lambda_1}\right|\)</span>.</p>
+<p><strong>Target:</strong> Make <span class="arithmatex">\(\left|\frac{\lambda_2}{\lambda_1}\right|\)</span> as small as possible.</p>
+<details class="example">
+<summary>Example</summary>
+<p>Let <span class="arithmatex">\(p = \frac12 (\lambda_2 + \lambda_n)\)</span>, and <span class="arithmatex">\(B = A - pI\)</span>, then <span class="arithmatex">\(B\)</span> has the eigenvalues</p>
+<div class="arithmatex">\[
+    \lambda_1 - p, \lambda_2 - p, \dots, \lambda_n - p.
+\]</div>
+<p>And since</p>
+<div class="arithmatex">\[
+    \left|\frac{\lambda_2 - p}{\lambda_1 - p}\right| &lt; \left|\frac{\lambda_2}{\lambda_1}\right|,
+\]</div>
+<p>the iteration for finding the eigenvalues of <span class="arithmatex">\(B\)</span> converges much faster than that of <span class="arithmatex">\(A\)</span>.</p>
+<p>But how to find <span class="arithmatex">\(p\)</span>? ...</p>
+</details>
+<h3 id="inverse-power-method">Inverse Power Method<a class="headerlink" href="#inverse-power-method" title="Permanent link">¶</a></h3>
+<p>If <span class="arithmatex">\(A\)</span> has  eigenvalues satisfying <span class="arithmatex">\(|\lambda_1| \ge |\lambda_2| \ge \dots \gt |\lambda_n|\)</span>, then <span class="arithmatex">\(A^{-1}\)</span> has</p>
+<div class="arithmatex">\[
+    \left|\frac{1}{\lambda_n}\right| \gt \left|\frac{1}{\lambda_{n-1}}\right| \ge \cdots \ge \left|\frac{1}{\lambda_1}\right|.
+\]</div>
+<p>The dominant eigenvalue of <span class="arithmatex">\(A^{-1}\)</span> is the eigenvalue with the <strong>smallest magnitude</strong> of <span class="arithmatex">\(A\)</span>.</p>
+<div class="admonition success">
+<p class="admonition-title">A way to find eigenvalue <span class="arithmatex">\(\lambda\)</span> closest to a given value <span class="arithmatex">\(p\)</span></p>
+<p>Use power method for matrix <span class="arithmatex">\((A - qI)^{-1}\)</span>, which has the eigenvalues</p>
+<div class="arithmatex">\[
+    \left|\frac{1}{\lambda_1 - q}\right| \gt \left|\frac{1}{\lambda_2 - q}\right| \ge \cdots \ge \left|\frac{1}{\lambda_n - q}\right|.
+\]</div>
+<p>where <span class="arithmatex">\(\lambda_1\)</span> is the closest to <span class="arithmatex">\(p\)</span>.</p>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.21 01:34:02 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.22 00:34:39 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
@@ -445,7 +589,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
