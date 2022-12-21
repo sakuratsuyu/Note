@@ -304,6 +304,22 @@ $$
 
 ## Error Bounds and Iterative Refinement
 
+!!! definition
+    The **conditional number** of the nonsigular matrix $A$ relative to a norm $||\cdot||$$ is
+
+    $$
+        K(A) = ||A|| \cdot ||A^{-1}||.
+    $$
+
+    A matrix $A$ is **well-conditioned** if $K(A)$ is close to 1, and is **ill-conditioned** when $K(A)$ is significantly greater than 1.
+
+    !!! theorem "Proposition"
+        - If $A$ is symmetric, then $K(A)_2 = \frac{\max|\lambda|}{\min|\lambda|}$.
+        - $K(A)_2 = 1$ if $A$ is orthogonal.
+        - $\forall \text{ orthogonal matrix }R, K(RA)_2 = K(AR)_2 = K(A)_2.$
+        - $\forall \text{ natural norm } ||\cdot||_p,\ K(A)_p \ge 1.$
+        - $K(\alpha A) = K(A).$
+
 !!! theorem
     For any natural norm,
 
@@ -314,15 +330,48 @@ $$
     and if $\mathbf{x} \ne \mathbf{0}$ and $\mathbf{b} \ne \mathbf{0}$,
 
     $$
-        \frac{||\mathbf{x} - \mathbf{\tilde x}||}{||\mathbf{x}||} \le ||A||\cdot||A^{-1}|| \frac{||\mathbf{r}||}{||\mathbf{b}||}.
+        \frac{||\mathbf{x} - \mathbf{\tilde x}||}{||\mathbf{x}||} \le ||A||\cdot||A^{-1}|| \frac{||\mathbf{r}||}{||\mathbf{b}||} = K(A)\frac{||\mathbf{r}||}{||\mathbf{b}||}.
     $$
 
-!!! definition
-    The **conditional number** of the nonsigular matrix $A$ relative to a norm $||\cdot||$$ is
+!!! success  "Iterative Refinement"
+    **Step.1** Solve $A\mathbf{x} = \mathbf{b}$ and get an approximation solution $\mathbf{x}_{0}$. Let $i = 1$.
 
+    **Step.2** Let $\mathbf{r} = \mathbf{b} - A\mathbf{x}_{i - 1}$.
+
+    **Step.3** Solve $A\mathbf{d} = \mathbf{r}$ and get the solution $\mathbf{d}$.
+
+    **Step.4** The better approximation is $\mathbf{x}_{i} = \mathbf{x}_{i - 1} + \mathbf{d}.$
+
+    **Step.5** Judge whether it's precise enough. If not, let $i = i + 1$ and then repeat from **Step.2**.
+
+---
+
+In reality, $A$ and $\mathbf{b}$ may be *perturbed* by an amount $\delta A$ and $\delta \mathbf{b}$.
+
+For $A(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b} + \delta\mathbf{b}$
+
+$$
+    \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le ||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta \mathbf{b}||}{||\mathbf{b}||}    
+$$
+
+For $(A + \delta A)(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b}$
+
+$$
+    \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le \frac{||A^{-1}|| \cdot ||\delta A||}{1 - ||A^{-1}|| \cdot ||\delta A||} = 
+    \frac{||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta A||}{||A||}}{1 - ||A|| \cdot ||A^{-1}|| \cdot\frac{||\delta A||}{||A||}}    
+$$
+
+!!! theorem
+    If $A$ is nonsingular and 
+    
     $$
-        K(A) = ||A|| \cdot ||A^{-1}||.
+        ||\delta A|| \lt \frac{1}{||A^{-1}||}
+    $$
+    
+    then $(A + \delta A)(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b} + \delta\mathbf{b}$ with the error estimate
+    
+    $$
+        \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le \frac{K(A)}{1 - K(A)\frac{||\delta A||}{||A||}}\left(\frac{||\delta A||}{||A||} + \frac{||\delta\mathbf{b}||}{||\mathbf{b}||}\right)
     $$
 
-    A matrix $A$ is **well-conditioned** if $K(A)$ is close to 1, and is **ill-conditioned** when $K(A)$ is significantly greater than 1.
-
+---
