@@ -1,4 +1,4 @@
-# Numerical Differentiation and Integration
+# Chapter 4 | Numerical Differentiation and Integration
 
 Before everything start, it's necessary to introduce an approach to reduce truncation error: Richardson's extrapolation.
 ### Richardson's Extrapolation
