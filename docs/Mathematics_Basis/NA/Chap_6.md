@@ -257,7 +257,7 @@ $$
     A = \tilde L \tilde L^t.\ \ (下三角矩阵乘其转置)
 $$
 
-### Tridiagonal Linear System
+### Tridiagonal Linear System 三对角矩阵
 
 !!! definition
     An $n \times n$ matrix $A$ is called a **band matrix** if $\exists p, q (1 < p, q < n)$, s.t. whenever $i + p \le j$ or $j + q \le i$, $a_{ij} = 0$. And $w = p + q - 1$ is called the **bandwidth**.
