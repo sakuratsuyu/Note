@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
 
 [data-md-color-primary=white] {
 	  --md-primary-fg-color: #fffefb;
@@ -31,62 +32,18 @@
 
 
 body {
-    font-family: 'Lexend', 'Noto Sans SC', 'Source Code Pro';
+    font-family: 'Noto Serif', 'Noto Serif SC', 'Source Code Pro';
     font-weight: normal;
     line-height: 1.5rem;
     letter-spacing: 0;
     margin: 0;
 }
 p {
-    font-size: large;
+    font-size: 14pt;
 }
-
-/* .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
-	display: block;
-	font-weight: bold;
-}
-
-.md-typeset h1 {
-	font-size: 1.8em;
-    line-height: 110%;
-	margin-top: 0.67em;
-	margin-bottom: 0.67em;
-}
-
-.md-typeset h2 {
-	font-size: 1.5em;
-	margin-top: 0.83em;
-	margin-bottom: 0.83em;
-}
-
-.md-typeset h3 {
-	font-size: 1.17em;
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
-
-.md-typeset h4 {
-	font-size: 1em;
-	margin-top: 1.33em;
-	margin-bottom: 1.33em;
-}
-
-.md-typeset h5 {
-	font-size: 1em;
-	margin-top: 1.33em;
-	margin-bottom: 1.33em;
-	color: #777777;
-}
-
-.md-typeset h6 {
-	font-size: 1em;
-	margin-top: 1.33em;
-	margin-bottom: 1.33em;
-	color: #adadad;
-} */
 
 .md-typeset .admonition, .md-typeset details {
-    font-size: medium;
+    font-size: inherit;
     border-width: 0em;
 }
 
