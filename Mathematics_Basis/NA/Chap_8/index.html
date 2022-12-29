@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -648,7 +650,7 @@
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 <h3 id="target">Target<a class="headerlink" href="#target" title="Permanent link">¶</a></h3>
-<p>Given <span class="arithmatex">\(x_1, \dots, x_m\)</span> and <span class="arithmatex">\(y_1, \dots, y_m\)</span> sampled from a funciton <span class="arithmatex">\(y = f(x)\)</span>, or the continuous function <span class="arithmatex">\(f(x), x \in [a, b]\)</span> itself, find a simpler function <span class="arithmatex">\(P(x) \approx f(x)\)</span>.</p>
+<p>Given <span class="arithmatex">\(x_1, \dots, x_m\)</span> and <span class="arithmatex">\(y_1, \dots, y_m\)</span> sampled from a funciton <span class="arithmatex">\(y = f(x)\)</span>, or the continuous function <span class="arithmatex">\(f(x)\)</span>, <span class="arithmatex">\(x \in [a, b]\)</span> itself, find a simpler function <span class="arithmatex">\(P(x) \approx f(x)\)</span>.</p>
 <h3 id="measurement-of-error">Measurement of Error<a class="headerlink" href="#measurement-of-error" title="Permanent link">¶</a></h3>
 <ul>
 <li>(<strong>Minimax</strong>) minimize<ul>
@@ -671,26 +673,28 @@
 <p>In this course, we only discuss the minimax and least square parts, and only make <span class="arithmatex">\(P(x)\)</span> a polynomial function.</p>
 <h3 id="general-least-squares-approximation">General Least Squares Approximation<a class="headerlink" href="#general-least-squares-approximation" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 8.0</p>
 <p><span class="arithmatex">\(w\)</span> is called a <strong>weight function</strong> if</p>
 <ul>
-<li>(discrete)
-    $$
-        \forall i, w_i &gt; 0.
-    $$</li>
+<li>
+<p>(discrete)</p>
+<div class="arithmatex">\[
+    \forall\ i \in \mathbb{N},\ \ w_i &gt; 0.
+\]</div>
+</li>
 <li>
 <p>(continuous)
     <span class="arithmatex">\(w\)</span> is an integrable function and on the interval <span class="arithmatex">\(I\)</span>,</p>
 <div class="arithmatex">\[
-    \forall x \in I, w(x) \ge 0,
+    \forall\ x \in I,\ \ w(x) \ge 0,
 \]</div>
 <div class="arithmatex">\[
-    \forall I' \subseteq I, w(x) \not\equiv 0.
+    \forall\ I' \subseteq I,\ \ w(x) \not\equiv 0.
 \]</div>
 </li>
 </ul>
 </div>
-<p>Considering the weight function, the least square method can be more general as below,</p>
+<p>Considering the weight function, the least square method can be more general as below.</p>
 <ul>
 <li>(discrete) <span class="arithmatex">\(E_2 = \sum\limits_{i = 1}^{m}w_i|P(x_i) - y_i|^2\)</span>.</li>
 <li>(continuous) <span class="arithmatex">\(E_2 = \int\nolimits_{a}^{b}w(x)|P(x) - f(x)|^2dx\)</span>.</li>
@@ -704,12 +708,12 @@
 <p>of degree <span class="arithmatex">\(n &lt; m - 1\)</span> (in most case <span class="arithmatex">\(n \ll m\)</span>), with the least squares measurement, w.r.t. and weight function <span class="arithmatex">\(w_i \equiv 1\)</span>.</p>
 <h3 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">¶</a></h3>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     E_2 &amp;= \sum\limits_{i = 1}^m (y_i - P_n(x_i))^2 \\
         &amp;= \sum\limits_{i = 1}^m y_i^2 - 2\sum\limits_{i = 1}^m P_n(x_i)y_i + \sum\limits_{i = 1}^m P_n^2(x_i) \\
         &amp;= \sum\limits_{i = 1}^m y_i^2 - 2\sum\limits_{i = 1}^m \left(\sum\limits_{j = 0}^n a_jx_i^j\right)y_i + \sum\limits_{i = 1}^m \left(\sum\limits_{j = 0}^n a_jx_i^j \right)^2 \\
         &amp;= \sum\limits_{i = 1}^m y_i^2 - 2\sum\limits_{j = 0}^n a_j \left( \sum\limits_{i = 1}^m y_i x_i^j \right) + \sum\limits_{j = 0}^n \sum\limits_{k = 0}^n a_ja_k \left(\sum\limits_{i = 1}^m x_i^{j + k} \right).
-\end{align}
+\end{aligned}
 \]</div>
 <p>The necessary condition to minimize <span class="arithmatex">\(E_2\)</span> is</p>
 <div class="arithmatex">\[
@@ -735,19 +739,19 @@
 \end{bmatrix}
 \]</div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 8.0</p>
 <p>Normal equations have a <strong>unique</strong> solution if <span class="arithmatex">\(x_i\)</span> are <strong>distinct</strong>.</p>
 </div>
 <details class="proof">
 <summary>Proof</summary>
-<p>Suppose <span class="arithmatex">\(X\)</span> is a <span class="arithmatex">\(n + 1 \times m\)</span> <strong>Vandermonde Matrix</strong>, which is</p>
+<p>Suppose <span class="arithmatex">\(X\)</span> is an <span class="arithmatex">\(n + 1 \times m\)</span> <strong>Vandermonde Matrix</strong>, which is</p>
 <div class="arithmatex">\[
     X = \begin{bmatrix}
     1 &amp; x_1 &amp; x_1^2 &amp; \cdots &amp; x_1^n \\
     1 &amp; x_2 &amp; x_2^2 &amp; \cdots &amp; x_2^n \\
     \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
     1 &amp; x_m &amp; x_m^2 &amp; \cdots &amp; x_m^n \\
-    \end{bmatrix}
+    \end{bmatrix},
 \]</div>
 <p>and let <span class="arithmatex">\(\mathbf{y} = (y_1, y_1, \cdots, y_m)^T\)</span>.</p>
 <p>Then the normal equations can be represented by (notice the dimension of matrices and vectors),</p>
@@ -783,7 +787,7 @@
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It's a simple algrebric transformation. But we should point out that it minimize the <strong>logarithmic linear</strong> least squares, but not linear least squares.</p>
+<p>It's a simple algrebric transformation. But we should point out that it minimize the <strong>logarithmic linear</strong> least squares, but <em>not linear least squares</em>.</p>
 <p>Just consider the arguments to minimize the following two errors,</p>
 <div class="arithmatex">\[
     E = \sum\limits_{i = 1}^m (y_i - be^{ax_i})^2,
@@ -820,12 +824,12 @@
 <div class="arithmatex">\[
     \int_{a}^{b} x^{j + k} dx = \frac{b^{j + k + 1} - a^{j + k + 1}}{j + k + 1}.
 \]</div>
-<p>Thus the coefficient of the linear system is a <strong>Hilbert matrix</strong>, which have a large <em>conditional number</em>. In actual numerical calculation, this gives a large roundoff error.</p>
-<p>Another disadvantage is that we can not easily get <span class="arithmatex">\(P_{n + 1}(x)\)</span> from <span class="arithmatex">\(P_{n}(x)\)</span>, similarly with the topic of Lagrange interpolation.</p>
+<p>Thus the coefficient of the linear system is a <strong>Hilbert matrix</strong>, which has a large <em>conditional number</em>. In actual numerical calculation, this gives a large roundoff error.</p>
+<p>Another disadvantage is that we can not easily get <span class="arithmatex">\(P_{n + 1}(x)\)</span> from <span class="arithmatex">\(P_{n}(x)\)</span>, similarly with the discussion of Lagrange interpolation.</p>
 </div>
 <p>Hence we introduce a different solution based on the concept of <strong>orthogonal polynomials</strong>.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 8.1</p>
 <p>The set of function <span class="arithmatex">\(\{\varphi_0(x), \dots, \varphi_n(x)\}\)</span> is <strong>linearly independent</strong> on <span class="arithmatex">\([a, b]\)</span> if, whenever</p>
 <div class="arithmatex">\[
     \forall\ x \in [a, b], c_0\varphi_0(x) + c_1\varphi_1(x) + \cdots + c_n\varphi_n(x) = 0
@@ -833,19 +837,19 @@
 <p>we have <span class="arithmatex">\(c_0 = c_1 = \cdots = c_n = 0\)</span>. Otherwise it's <strong>linearly dependent</strong>.</p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 8.1</p>
 <p>If <span class="arithmatex">\(\text{deg}(\varphi_j(x)) = j\)</span>, then <span class="arithmatex">\(\{\varphi_0(x), \dots, \varphi_n(x)\}\)</span> is linearly independent on any interval <span class="arithmatex">\([a, b]\)</span>.</p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 8.2</p>
 <p><span class="arithmatex">\(\Pi_n\)</span> is the linear space spanned by <span class="arithmatex">\(\{\varphi_0(x), \dots, \varphi_n(x)\}\)</span>, where <span class="arithmatex">\(\{\varphi_0(x), \dots, \varphi_n(x)\}\)</span> is linear independent, and <span class="arithmatex">\(\Pi_n\)</span> is the <strong>set of all polynomials of degree at most <em>n</em></strong>.</p>
 </div>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 8.2</p>
 <p>For the linear independent set <span class="arithmatex">\(\{\varphi_0(x), \dots, \varphi_n(x)\}\)</span>, <span class="arithmatex">\(\forall P(x) \in \Pi_n\)</span>, <span class="arithmatex">\(P(x) = \sum\limits_{j = 0}^n \alpha_j \varphi_j(x)\)</span> is called a <strong>generalized polynomial</strong>.</p>
 </div>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 8.3</p>
 <p><strong>Inner product</strong> w.r.t the weight function <span class="arithmatex">\(w\)</span> is defined and denoted by</p>
 <ul>
 <li>(discrete) <span class="arithmatex">\((f, g) = \sum\limits_{i = 1}^{m} w_i f(x_i)g(x_i)\)</span></li>
@@ -854,10 +858,10 @@
 <p><span class="arithmatex">\(\{\varphi_0(x), \dots, \varphi_n(x)\}\)</span> is an <strong>orthogonal set of functions</strong> for the interval <span class="arithmatex">\([a,b]\)</span> w.r.t the weight function <span class="arithmatex">\(w\)</span> if</p>
 <div class="arithmatex">\[
     (\varphi_j, \varphi_k) = \left\{
-    \begin{align}
+    \begin{aligned}
         &amp; 0, &amp;&amp; j \ne k, \\
         &amp; \alpha_k &gt; 0, &amp;&amp; j = k.
-    \end{align}
+    \end{aligned}
     \right.
 \]</div>
 <p>In addition, if <span class="arithmatex">\(\alpha_k = 1\)</span>, then the set is <strong>orthonormal （单位正交）</strong>.</p>
@@ -866,7 +870,7 @@
 <summary>Motivation of Orthogonality</summary>
 <p>Considering <span class="arithmatex">\(w(x)\)</span>, then the normal equations can be represented by</p>
 <div class="arithmatex">\[
-    \int_a^b w(x)f(x)\varphi_j(x)dx = \sum\limits_{k = 0}^n a_k \int_a^b w(x)\varphi_k(x)\varphi_j(x)dx,
+    \int_a^b w(x)f(x)\varphi_j(x)dx = \sum\limits_{k = 0}^n a_k \int_a^b w(x)\varphi_k(x)\varphi_j(x)dx.
 \]</div>
 <p>If we define the orthogonal set of functions as above, the equations reduce to</p>
 <div class="arithmatex">\[
@@ -874,7 +878,7 @@
 \]</div>
 </details>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 8.3</p>
 <p><span class="arithmatex">\(\{\varphi_0(x), \dots, \varphi_n(x)\}\)</span> is an orthogonal set of functions on the interval <span class="arithmatex">\([a, b]\)</span> w.r.t. the weight function <span class="arithmatex">\(w\)</span>, then the least squares approximation to <span class="arithmatex">\(f\)</span> on <span class="arithmatex">\([a, b]\)</span> w.r.t. <span class="arithmatex">\(w\)</span> is</p>
 <div class="arithmatex">\[
     P(x) = \sum\limits_{k = 0}^n a_k \varphi_k(x),
@@ -886,33 +890,50 @@
 </div>
 <p>Base on the <strong>Gram-Schmidt Process</strong>, we have the following theorem to construct the orthogonal polynomials on <span class="arithmatex">\([a, b]\)</span> w.r.t a weight function <span class="arithmatex">\(w\)</span>.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 8.4</p>
 <p>The set of polynomial functions <span class="arithmatex">\(\{\varphi_0(x), \dots, \varphi_n(x)\}\)</span> defined in the following way is orthogonal on <span class="arithmatex">\([a, b]\)</span> w.r.t. the weight function <span class="arithmatex">\(w\)</span>.</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     &amp; \varphi_0(x) \equiv 1,\ \varphi_1(x) = x - B_1, \\
     &amp; \varphi_k(x) = (x - B_k) \varphi_{k - 1}(x) - C_k \varphi_{k - 2}(x), k \ge 2. \\
-\end{align}
+\end{aligned}
 \]</div>
 <p>where</p>
 <div class="arithmatex">\[
-    B_k = \frac{(x\varphi_{k - 1}, \varphi_{k - 1})}{\varphi_{k - 1}, \varphi_{k - 1}},\ 
+    B_k = \frac{(x\varphi_{k - 1}, \varphi_{k - 1})}{\varphi_{k - 1}, \varphi_{k - 1}},\ \
     C_k = \frac{(x\varphi_{k - 1}, \varphi_{k - 2})}{\varphi_{k - 2}, \varphi_{k - 2}}.
 \]</div>
 </div>
 <h2 id="minimax-approximation">Minimax Approximation<a class="headerlink" href="#minimax-approximation" title="Permanent link">¶</a></h2>
+<p>The minimax approximation to minimize <span class="arithmatex">\(||P - f||_\infty||\)</span> has the following properties.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Property</p>
+<ul>
+<li>If <span class="arithmatex">\(f \in C[a, b]\)</span> and <span class="arithmatex">\(f\)</span> is not a polynomial of degree <span class="arithmatex">\(n\)</span>, then there exists a <strong>unique</strong> polynomial <span class="arithmatex">\(P(x)\)</span> s.t. <span class="arithmatex">\(||P - f||\infty\)</span> is minimized.</li>
+<li><span class="arithmatex">\(P(x)\)</span> exists and must have both <span class="arithmatex">\(+\)</span> and <span class="arithmatex">\(-\)</span> deviation points.</li>
+<li>
+<p>(Chebyshev Theorem) The <span class="arithmatex">\(n\)</span> degree <span class="arithmatex">\(P(x)\)</span> minimizes <span class="arithmatex">\(||P - f||_\infty\)</span> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(P(x)\)</span> has at least <span class="arithmatex">\(n + 2\)</span> <strong>alternating</strong> <span class="arithmatex">\(+\)</span> and <span class="arithmatex">\(-\)</span> deviation points w.r.t. <span class="arithmatex">\(f\)</span>. That is, there is a set of points <span class="arithmatex">\(a \le t_1 &lt; \dots &lt; t_{n + 2} \le b\)</span> (called the <strong>Chebyshev alternating sequence</strong>) s.t.</p>
+<div class="arithmatex">\[
+    P(t_k) - f(t_k) = (-1)^k||P - f||_\infty.
+\]</div>
+</li>
+</ul>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap8_3.png"><img alt="chap8_3 " src="../Pic/chap8_3.png" style="width:300px"/></a>
+</div></p>
+</div>
 <p>Here we introduce Chebyshev polynomials to deal with <span class="arithmatex">\(E_\infty\)</span> error, and by the way, we can use it to economize the power series.</p>
 <h3 id="chebyshev-polynomials">Chebyshev Polynomials<a class="headerlink" href="#chebyshev-polynomials" title="Permanent link">¶</a></h3>
-<p>Chebyshev polynomials are defined concisely as below,</p>
+<p>Chebyshev polynomials are defined concisely by</p>
 <div class="arithmatex">\[
-    T_n(x) = \cos(n \arccos x)
+    T_n(x) = \cos(n \arccos x),
 \]</div>
 <p>or equally defined recursively by</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     &amp; T_0(x) = 1,\ T_1(x) = x, \\
     &amp; T_{n + 1}(x) = 2x T_{n}(x) - T_{n - 1}(x).
-\end{align}
+\end{aligned}
 \]</div>
 <div class="admonition theorem">
 <p class="admonition-title">Property</p>
@@ -924,11 +945,11 @@
 \]</div>
 <div class="arithmatex">\[
     (T_n, T_m) = \int_{-1}^1 \frac{T_n(x)T_m(x)}{\sqrt{1 - x^2}}dx = \left\{
-    \begin{align}
-        &amp; 0, &amp;&amp; n \ne m \\
-        &amp; \pi, &amp;&amp; n = m = 0 \\
-        &amp; \frac{\pi}{2}, &amp;&amp; n = m \ne 0
-    \end{align}
+    \begin{aligned}
+        &amp; 0, &amp;&amp; n \ne m, \\
+        &amp; \pi, &amp;&amp; n = m = 0, \\
+        &amp; \frac{\pi}{2}, &amp;&amp; n = m \ne 0.
+    \end{aligned}
     \right.
 \]</div>
 </li>
@@ -963,13 +984,13 @@
 </div>
 <p>The following is an important theorem for the position of Chebyshev polynomials.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 8.5</p>
 <div class="arithmatex">\[
     \frac{1}{2^{n - 1}} = \max\limits_{x \in [-1, 1]}|\tilde T_n(x)| \le \max\limits_{x \in [-1, 1]}|P_n(x)|,\ \forall\ P_n(x) \in \tilde \Pi_n,
 \]</div>
 <p>where <span class="arithmatex">\(\tilde \Pi_n\)</span> denotes the <strong>set of all monic polynomials of degree <em>n</em></strong>.</p>
 </div>
-<p>From this theorem, we can answer <em>where to place interpolating points</em> to minimize the error in Lagrange interpolation. Recap that</p>
+<p>From <strong>theorem 8.5</strong>, we can answer <em>where to place interpolating points</em> to minimize the error in Lagrange interpolation. Recap that</p>
 <div class="arithmatex">\[
     R(x) = f(x) - P(x) = \frac{f^{n + 1}(\xi)}{(n + 1)!}\prod\limits_{i = 0}^{n}(x - x_i).
 \]</div>
@@ -983,7 +1004,7 @@
     x_k = \bar{x}_{k + 1} = \cos \frac{2k + 1}{2(n + 1)}\pi.
 \]</div>
 <div class="admonition theorem">
-<p class="admonition-title">Corollary</p>
+<p class="admonition-title">Corollary 8.6</p>
 <div class="arithmatex">\[
     \max\limits_{x \in [-1, 1]} |f(x) - P(x)| \le \frac{\max\limits_{x \in [-1, 1]}\left|f^{(n + 1)}(x)\right|}{2^n (n + 1)!}.
 \]</div>
@@ -993,7 +1014,7 @@
 <div class="arithmatex">\[
     E_\infty = \max\limits_{a \le x \le b}|P(x) - f(x)|,
 \]</div>
-<p>with a polynomial of degree <span class="arithmatex">\(n\)</span> on the interval <span class="arithmatex">\([a, b]\)</span>, we need the following steps:</p>
+<p>with a polynomial of degree <span class="arithmatex">\(n\)</span> on the interval <span class="arithmatex">\([a, b]\)</span>, we need the following steps.</p>
 <p><strong>Step.1</strong> Find the roots of <span class="arithmatex">\(T_{n + 1}(t)\)</span> on the interval <span class="arithmatex">\([-1, 1]\)</span>, denoted by <span class="arithmatex">\(t_0, \dots, t_n\)</span>.</p>
 <p><strong>Step.2</strong> Extend it to the interval <span class="arithmatex">\([a, b]\)</span> by</p>
 <div class="arithmatex">\[
@@ -1014,7 +1035,7 @@
     \max_{x\in[-1,1]}|P_n(x) - P_{n - 1}(x)|.
 \]</div>
 <h4 id="solution_2">Solution<a class="headerlink" href="#solution_2" title="Permanent link">¶</a></h4>
-<p>Since <span class="arithmatex">\((P_n(x) - P_{n - 1}(x)) / a_n\)</span> is monic, thus</p>
+<p>Since <span class="arithmatex">\(\frac{1}{a_n}(P_n(x) - P_{n - 1}(x))\)</span> is monic, thus</p>
 <div class="arithmatex">\[
     \max_{x\in[-1,1]}\left|\frac{1}{a_n}((P_n(x) - P_{n - 1}(x))\right| \ge \frac{1}{2^{n - 1}}.
 \]</div>
@@ -1114,8 +1135,7 @@
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

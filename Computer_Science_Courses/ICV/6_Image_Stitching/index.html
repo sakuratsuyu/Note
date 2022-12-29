@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -644,7 +646,7 @@
 </ul>
 </div>
 <h3 id="2d-transformations">2D Transformations<a class="headerlink" href="#2d-transformations" title="Permanent link">¶</a></h3>
-<div class="admonition note"></div>
+<div class="admonition plane"></div>
 <h4 id="affine-transformations">Affine Transformations 仿射变换<a class="headerlink" href="#affine-transformations" title="Permanent link">¶</a></h4>
 <div class="arithmatex">\[
 \begin{bmatrix}
@@ -665,13 +667,13 @@ y \\
 \end{bmatrix} 
 \]</div>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 x' &amp;= ax + by + c \\
 y' &amp;= dx + ey + f
-\end{align}
+\end{aligned}
 \]</div>
 <p>自由度 (degree of freedom) 为 <strong>6</strong>，所以我们需要至少 3 组点，也就是 6 个方程，以能够求解出 <span class="arithmatex">\(a, b, c, d, e, f\)</span>.</p>
-<div class="admonition note"></div>
+<div class="admonition plane"></div>
 <h4 id="projective-transformation-homography">Projective Transformation (Homography) 单应变换<a class="headerlink" href="#projective-transformation-homography" title="Permanent link">¶</a></h4>
 <div class="arithmatex">\[
 \begin{bmatrix}
@@ -692,10 +694,10 @@ y \\
 \end{bmatrix} 
 \]</div>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 x' = \frac{h_{00}x + h_{01}y + h_{02}}{h_{20}x + h_{11}y + h_{12}}
 y' = \frac{h_{10}x + h_{11}y + h_{12}}{h_{20}x + h_{11}y + h_{12}}
-\end{align}
+\end{aligned}
 \]</div>
 <p>Constraint: 令 <span class="arithmatex">\(||(h_{00}, h_{01}, \dots, h_{22})||\)</span> (向量范数) 规定为 <span class="arithmatex">\(1\)</span>，或者令 <span class="arithmatex">\(h_{22}\)</span> 为 <span class="arithmatex">\(1\)</span>.</p>
 <p>考虑到以上的限制条件 (constraint)，自由度 (degree of freedom) 为 <strong>8</strong>，所以我们需要至少 4 组点，也就是 8 个方程，以能够求解出 <span class="arithmatex">\(h_{ij}\)</span>.</p>
@@ -738,14 +740,14 @@ y' = \frac{h_{10}x + h_{11}y + h_{12}}{h_{20}x + h_{11}y + h_{12}}
 <h3 id="image-matching"><a href="../5_Image_Matching_and_Motion_Estimation/#image-matching">Image Matching</a><a class="headerlink" href="#image-matching" title="Permanent link">¶</a></h3>
 <p>通过图像匹配得到匹配点，每个匹配点可以提供一个以上形式的矩阵乘法等式.</p>
 <h3 id="find-t-for-image-wraping">Find <span class="arithmatex">\(T\)</span> for Image Wraping<a class="headerlink" href="#find-t-for-image-wraping" title="Permanent link">¶</a></h3>
-<div class="admonition note">
+<div class="admonition plane">
 <h3 id="affine-transformations_1">Affine Transformations<a class="headerlink" href="#affine-transformations_1" title="Permanent link">¶</a></h3>
 <p>对于每个匹配，</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 x' = ax + by + c \\
 y' = dx + ey + f
-\end{align}
+\end{aligned}
 \]</div>
 <p>矩阵形式为</p>
 <div class="arithmatex">\[
@@ -789,21 +791,21 @@ y_n'
 <div class="admonition success">
 <p class="admonition-title">Method of Least Square</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 \mathbf{A^{T}At} &amp;= \mathbf{A^{T}b} \\
 t &amp;= \mathbf{A^{T}A^{-1}A^{T}b}
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <h3 id="projective-transformations">Projective Transformations<a class="headerlink" href="#projective-transformations" title="Permanent link">¶</a></h3>
 <p>类似地，对于每个匹配，</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 x_i'(h_{20}x_i + h_{21} y_i + h_{22}) = h_{00}x_i + h_{01}y_i + h_{02} \\
 y_i'(h_{20}x_i + h_{21} y_i + h_{22}) = h_{10}x_i + h_{11}y_i + h_{12} \\
-\end{align}
+\end{aligned}
 \]</div>
 <p>矩阵形式为</p>
 <div class="arithmatex">\[
@@ -909,7 +911,7 @@ y_n'
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:not.committed.yet'>Not Committed Yet</a>, <a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
@@ -980,8 +982,7 @@ y_n'
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -631,7 +633,7 @@
 <p class="admonition-title">Definition</p>
 <p>A <strong>vector norm</strong> on <span class="arithmatex">\(\mathbb{R}^n\)</span> is a function <span class="arithmatex">\(||\cdot||\)</span>, from <span class="arithmatex">\(\mathbb{R}^n\)</span> into <span class="arithmatex">\(\mathbb{R}\)</span> with the following properties.</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     \forall \mathbf{x, y} \in \mathbb{R}^n, \alpha \in \mathbb{R}, &amp;
     (1)\ ||\mathbf{x}|| \ge 0;\ ||\mathbf{x}|| = 0 \Leftrightarrow \mathbf{x} = \mathbf{0}.
     \\ &amp;
@@ -639,7 +641,7 @@
     \\ &amp;
     (3)\ ||\mathbf{x} + \mathbf{y}|| \le ||\mathbf{x}|| + ||\mathbf{y}||
     \\
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <div class="admonition example">
@@ -671,7 +673,7 @@
 <p class="admonition-title">Definition</p>
 <p>A <strong>matrix norm</strong> on <span class="arithmatex">\(\mathbb{R}^n\)</span> is a function <span class="arithmatex">\(||\cdot||\)</span>, from <span class="arithmatex">\(M_n(\mathbb{R})\)</span> matrices into <span class="arithmatex">\(\mathbb{R}\)</span> with the following properties.</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     \forall A, B \in M_n(\mathbb{R}), \alpha \in \mathbb{R}, &amp;
     (1)\ ||A|| \ge 0;\ ||A|| = 0 \Leftrightarrow A = \mathbf{O}.
     \\ &amp;
@@ -680,7 +682,7 @@
     (3)\ ||A + B|| \le ||A|| + ||B||
     \\ &amp;
     (4)\ ||AB|| \le ||A|| \cdot ||B||
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <div class="admonition example">
@@ -971,7 +973,7 @@ x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} =
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:not.committed.yet'>Not Committed Yet</a>, <a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
@@ -1042,8 +1044,7 @@ x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} =
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

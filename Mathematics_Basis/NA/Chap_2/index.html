@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -587,10 +589,10 @@
 <h1 id="chapter-2-solution-of-equations-in-one-variable">Chapter 2 | Solution of Equations in One Variable<a class="headerlink" href="#chapter-2-solution-of-equations-in-one-variable" title="Permanent link">¶</a></h1>
 <h2 id="bisection-method">Bisection Method<a class="headerlink" href="#bisection-method" title="Permanent link">¶</a></h2>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>Suppose that <span class="arithmatex">\(f \in C[a, b]\)</span> and <span class="arithmatex">\(f(a)\cdot f(b) \lt 0\)</span>. The Bisection method generates a sequence <span class="arithmatex">\(\{p_n\}(n = 0, 1, 2,\dots)\)</span> approximating a zero <span class="arithmatex">\(p\)</span> of <span class="arithmatex">\(f\)</span> with</p>
+<p class="admonition-title">Theorem 2.0</p>
+<p>Suppose that <span class="arithmatex">\(f \in C[a, b]\)</span> and <span class="arithmatex">\(f(a)\cdot f(b) \lt 0\)</span>. The Bisection method generates a sequence <span class="arithmatex">\(\{p_n\}\)</span> <span class="arithmatex">\((n = 0, 1, 2,\dots)\)</span> approximating a zero <span class="arithmatex">\(p\)</span> of <span class="arithmatex">\(f\)</span> with</p>
 <div class="arithmatex">\[
-    |p_n-p| \le \frac{b - a}{2^n}, \text{when }n \ge 1
+    |p_n-p| \le \frac{b - a}{2^n},\ \ \text{ when }n \ge 1
 \]</div>
 </div>
 <h3 id="key-points-for-algorithm-implementation">Key Points for Algorithm Implementation<a class="headerlink" href="#key-points-for-algorithm-implementation" title="Permanent link">¶</a></h3>
@@ -599,9 +601,13 @@
 <li><span class="arithmatex">\(sign(FA)\cdot sign(FM)\gt 0, \text{but not }FA\cdot FM \gt 0\)</span>, for saving time.</li>
 </ul>
 <h3 id="pros-cons">Pros &amp; Cons<a class="headerlink" href="#pros-cons" title="Permanent link">¶</a></h3>
+<p><strong>Pros</strong></p>
 <ul>
-<li>Simple premise, only requires a continuous<span class="arithmatex">\(f\)</span>.</li>
+<li>Simple premise, only requires a continuous <span class="arithmatex">\(f\)</span>.</li>
 <li>Always converges to a solution.</li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
 <li>Slow to converge, and a good intermediate approximation can be inadvertently discarded.</li>
 <li>Cannot find multiple roots and complex roots.</li>
 </ul>
@@ -610,10 +616,10 @@
     f(x) = 0 \leftrightarrow x = g(x)
 \]</div>
 <div class="admonition theorem">
-<p class="admonition-title">Fixed-Point Theorem</p>
-<p>Let <span class="arithmatex">\(g \in C[a,b]\)</span> be such that <span class="arithmatex">\(g(x)\in[a,b], \forall x \in [a, b]\)</span>. Suppose <span class="arithmatex">\(g'\)</span> exists on<span class="arithmatex">\((a,b)\)</span> and that a constant <span class="arithmatex">\(k\ (0\lt k \lt 1)\)</span> exists, s.t.</p>
+<p class="admonition-title">Theorem12.1 | Fixed-Point Theorem</p>
+<p>Let <span class="arithmatex">\(g \in C[a,b]\)</span> be such that <span class="arithmatex">\(g(x) \in [a,b], \forall x \in [a, b]\)</span>. Suppose <span class="arithmatex">\(g'\)</span> exists on <span class="arithmatex">\((a,b)\)</span> and that a constant <span class="arithmatex">\(k\)</span> <span class="arithmatex">\((0\lt k \lt 1)\)</span> exists, s.t.</p>
 <div class="arithmatex">\[
-    \forall\ x \in (a,b), |g'(x)| \le k.
+    \forall\ x \in (a,b),\ \ |g'(x)| \le k.
 \]</div>
 <p>Then <span class="arithmatex">\(\forall\ p_0 \in[a,b]\)</span>, the sequence <span class="arithmatex">\(\{p_n\}\)</span> defined by</p>
 <div class="arithmatex">\[
@@ -623,14 +629,14 @@
 </div>
 <p>.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Corollary</p>
+<p class="admonition-title">Corollary 2.2</p>
 <div class="arithmatex">\[
-\begin{align}
-    |p_n - p| &amp;\le k^n \max\{p_0 = a, b - p_0\} \\
-    |p_n - p| &amp;\le \frac{k^n}{1 - k}|p_1 - p_0|
-\end{align}
+\begin{aligned}
+    |p_n - p| &amp;\le k^n \max\{p_0 = a, b - p_0\}, \\
+    |p_n - p| &amp;\le \frac{k^n}{1 - k}|p_1 - p_0|.
+\end{aligned}
 \]</div>
-<p><span class="arithmatex">\(\Rightarrow\)</span> The smaller the <span class="arithmatex">\(k\)</span> is, the faster it converges.</p>
+<p><span class="arithmatex">\(\Rightarrow\)</span> The smaller <span class="arithmatex">\(k\)</span> is, the faster it converges.</p>
 </div>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap2_0.png"><img alt="chap2_0 " src="../Pic/chap2_0.png" style="width:800px"/></a>
@@ -638,8 +644,8 @@
 <h2 id="newtons-method-newton-raphson-method">Newton's Method (Newton-Raphson Method)<a class="headerlink" href="#newtons-method-newton-raphson-method" title="Permanent link">¶</a></h2>
 <p>Newton's method is an improvement of common fixed-point iteration method above.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>Let <span class="arithmatex">\(f\in C^2[a,b]\)</span> and <span class="arithmatex">\(\exists\ p\in[a,b], s.t. f(p) = 0\)</span> and <span class="arithmatex">\(f'(p) \ne 0\)</span>, then <span class="arithmatex">\(\exists\ \delta \gt 0, \forall\ p_0 \in [p - \epsilon, p + \epsilon]\)</span>, s.t. the sequence <span class="arithmatex">\(\{p_n\}_{n = 1}^\infty\)</span> defined by </p>
+<p class="admonition-title">Theorem 2.3</p>
+<p>Let <span class="arithmatex">\(f\in C^2[a,b]\)</span> and <span class="arithmatex">\(\exists\ p\in[a,b]\)</span>, s.t. <span class="arithmatex">\(f(p) = 0\)</span> and <span class="arithmatex">\(f'(p) \ne 0\)</span>, then <span class="arithmatex">\(\exists\ \delta \gt 0\)</span>, <span class="arithmatex">\(\forall\ p_0 \in [p - \epsilon, p + \epsilon]\)</span>, s.t. the sequence <span class="arithmatex">\(\{p_n\}_{n = 1}^\infty\)</span> defined by </p>
 <div class="arithmatex">\[
     p_n = p_{n-1} - \frac{f(p_{n-1})}{f'(p_{n-1})}
 \]</div>
@@ -647,47 +653,47 @@
 </div>
 <h2 id="error-analysis-for-iterative-methods">Error Analysis for Iterative Methods<a class="headerlink" href="#error-analysis-for-iterative-methods" title="Permanent link">¶</a></h2>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Suppose <span class="arithmatex">\(\{p_n\}\)</span> is a sequence that converges to <span class="arithmatex">\(p\)</span>, and <span class="arithmatex">\(\forall n, p_n \ne p\)</span>. If positive constants <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\lambda\)</span> exist with</p>
+<p class="admonition-title">Definition 2.0</p>
+<p>Suppose <span class="arithmatex">\(\{p_n\}\)</span> is a sequence that converges to <span class="arithmatex">\(p\)</span>, and <span class="arithmatex">\(\forall n\)</span>, <span class="arithmatex">\(p_n \ne p\)</span>. If positive constants <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\lambda\)</span> exist with</p>
 <div class="arithmatex">\[
-    \lim_{n \rightarrow \infty} \frac{|p_{n + 1} - p|}{|p_n - p|^\alpha} = \lambda
+    \lim_{n \rightarrow \infty} \frac{|p_{n + 1} - p|}{|p_n - p|^\alpha} = \lambda,
 \]</div>
 <p>then <span class="arithmatex">\(\{p_n\}\)</span> <strong>conveges to <span class="arithmatex">\(p\)</span> of order <span class="arithmatex">\(\alpha\)</span></strong>, <strong>with asymptotic error constant <span class="arithmatex">\(\lambda\)</span></strong>.</p>
 <p>Specially,</p>
 <ul>
-<li>If <span class="arithmatex">\(\alpha = 1\)</span>, the sequence is <strong>linearly</strong> convergent.</li>
-<li>If <span class="arithmatex">\(\alpha = 2\)</span>, the sequence is <strong>quadratically</strong> convergent.</li>
+<li>If <span class="arithmatex">\(\alpha = 1\)</span>, the sequence is called <strong>linearly</strong> convergent.</li>
+<li>If <span class="arithmatex">\(\alpha = 2\)</span>, the sequence is called <strong>quadratically</strong> convergent.</li>
 </ul>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 2.4</p>
 <p>The common fixed-point iteration method (<span class="arithmatex">\(g'(p) \ne 0\)</span>) with the premise in <strong>Fixed-Point Theorem</strong> is <strong>linearly</strong> convergent.</p>
 </div>
 <details class="proof">
 <summary>Proof</summary>
 <div class="arithmatex">\[
-    \lim_{n\rightarrow \infty}\frac{|p_{n+1} - p|}{|p_n - p|} = \lim_{n\rightarrow \infty}\frac{g'(\xi)|p_n - p|}{|p_n - p|} = |g'(p)|
+    \lim_{n\rightarrow \infty}\frac{|p_{n+1} - p|}{|p_n - p|} = \lim_{n\rightarrow \infty}\frac{g'(\xi)|p_n - p|}{|p_n - p|} = |g'(p)|.
 \]</div>
 </details>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 2.5</p>
 <p>The Newton's method <span class="arithmatex">\((g'(p)=0)\)</span> is <em>at least</em> <strong>quadratically</strong> convergent.</p>
 </div>
 <details class="proof">
 <summary>Proof</summary>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     &amp; 0 = f(p) = f(p_n) + f'(p_n)(p - p_n) + \frac{f''(\xi _n)}{2!}(p - p_n)^2 \\
     &amp; \Rightarrow p = \underbrace{p_n - \frac{f(p_n)}{f"(p_n)}}_{p_{n+1}} - \frac{f''(\xi _n)}{2!f'(p_n)}(p - p_n)^2 \\
-    &amp; \Rightarrow \frac{|p_{n+1} - p|}{|p_n - p|^2} = \frac{f''(\xi _n)}{2f'(p_n)} \\ 
-    &amp; \lim_{n\rightarrow \infty}\frac{|p_{n+1} - p|}{|p_n - p|^2} = \frac{f''(p_n)}{2f'(p_n)}
-\end{align}
+    &amp; \Rightarrow \frac{|p_{n+1} - p|}{|p_n - p|^2} = \frac{f''(\xi _n)}{2f'(p_n)}, \\ 
+    &amp; \lim_{n\rightarrow \infty}\frac{|p_{n+1} - p|}{|p_n - p|^2} = \frac{f''(p_n)}{2f'(p_n)}.
+\end{aligned}
 \]</div>
 </details>
 <p>More commonly,</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>Let <span class="arithmatex">\(p\)</span> be a fixed point of <span class="arithmatex">\(g(x)\)</span>. If there exists some constant <span class="arithmatex">\(\alpha\ge 2\)</span> such that <span class="arithmatex">\(g\in C^\alpha [p-\delta, p+\delta],g'(p)=\dots=g^{(\alpha-1)}(p)=0, g^{(\alpha)}(p)=0\)</span>. Then the iterations with <span class="arithmatex">\(p_n = g(p_{n-1}),n\ge 1\)</span>, is of order <span class="arithmatex">\(\alpha\)</span>.</p>
+<p class="admonition-title">Theorem 2.6</p>
+<p>Let <span class="arithmatex">\(p\)</span> be a fixed point of <span class="arithmatex">\(g(x)\)</span>. If there exists some constant <span class="arithmatex">\(\alpha \ge 2\)</span> such that <span class="arithmatex">\(g\in C^\alpha [p-\delta, p+\delta]\)</span>, <span class="arithmatex">\(g'(p)=\dots=g^{(\alpha-1)}(p)=0\)</span>, <span class="arithmatex">\(g^{(\alpha)}(p)=0\)</span>. Then the iterations with <span class="arithmatex">\(p_n = g(p_{n-1})\)</span>, <span class="arithmatex">\(n \ge 1\)</span>, is of order <span class="arithmatex">\(\alpha\)</span>.</p>
 </div>
 <h3 id="multiple-roots-situation">Multiple Roots Situation<a class="headerlink" href="#multiple-roots-situation" title="Permanent link">¶</a></h3>
 <p>Notice that from the proof above, Newton's method is quadratically convergent if <span class="arithmatex">\(f'(p_n) \ne 0\)</span>. If <span class="arithmatex">\(f'(p) = 0\)</span>, then the equation has multiple roots at <span class="arithmatex">\(p\)</span>.</p>
@@ -695,7 +701,7 @@
 <div class="arithmatex">\[
     g'(p) = \frac{f(p)f''(p)}{f'(p)^2} = \left.\frac{f(x)f''(x)}{f'(x)^2}\right|_{x=p} = \dots =1 - \frac{1}{m} \lt 1
 \]</div>
-<p>It is still convegent, but <u>not quadratically</u>.</p>
+<p>It is still convegent, but <em>not quadratically</em>.</p>
 <details class="success">
 <summary>A way to speed it up</summary>
 <p>Let</p>
@@ -704,23 +710,27 @@
 \]</div>
 <p>then <span class="arithmatex">\(\mu (x)\)</span> has the same root as <span class="arithmatex">\(f(x)\)</span> but no multiple roots anymore. And</p>
 <div class="arithmatex">\[
-    g(x) = x - \frac{\mu (x)}{\mu'(x)} = x - \frac{f(x)f'(x)}{f'(x)^2 - f(x)f''(x)}
+    g(x) = x - \frac{\mu (x)}{\mu'(x)} = x - \frac{f(x)f'(x)}{f'(x)^2 - f(x)f''(x)}.
 \]</div>
 <p>Newton's method can be used there again.</p>
 <h4 id="pros-cons_1">Pros &amp; Cons<a class="headerlink" href="#pros-cons_1" title="Permanent link">¶</a></h4>
+<p><strong>Pros</strong></p>
 <ul>
 <li>Quadratic convegence</li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
 <li>Requires additional calculation of <span class="arithmatex">\(f''(x)\)</span></li>
-<li>The denominator consists of the difference of the two numbers both close to 0.</li>
+<li>The denominator consists of the difference of the two numbers both close to <span class="arithmatex">\(0\)</span>.</li>
 </ul>
 </details>
 <h2 id="accelerating-convergence">Accelerating Convergence<a class="headerlink" href="#accelerating-convergence" title="Permanent link">¶</a></h2>
 <h3 id="aitkens-delta2-method">Aitken's <span class="arithmatex">\(\Delta^2\)</span> Method<a class="headerlink" href="#aitkens-delta2-method" title="Permanent link">¶</a></h3>
 <div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap2_1.png"><img alt="chap2_1 " src="../Pic/chap2_1.png" style="width:600px"/></a>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap2_1.png"><img alt="chap2_1 " src="../Pic/chap2_1.png" style="width:400px"/></a>
 </div>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 2.1</p>
 <p><strong>Forward Difference</strong> <span class="arithmatex">\(\Delta p_n = p_{n+1} - p_n\)</span>. Similarly <span class="arithmatex">\(\Delta^kp_n = \Delta(\Delta^{k-1}p_n)\)</span></p>
 </div>
 <p>Representing Aitken's <span class="arithmatex">\(\Delta^2\)</span> Method by forward difference, we have</p>
@@ -728,8 +738,8 @@
     \hat{p_n} = p_n - \frac{(\Delta p_n)^2}{\Delta^2p_n}.
 \]</div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>Suppose that <span class="arithmatex">\(\{p_n\}\)</span> is a sequence, <span class="arithmatex">\(\lim_{n\rightarrow \infty}p_n = p\)</span>,<span class="arithmatex">\(\exists N\)</span>, s.t. <span class="arithmatex">\(\forall n &gt; N, (p_n - p)(p_{n+1} -p) \gt 0\)</span>. Then the sequence <span class="arithmatex">\(\{\hat{p_n}\}\)</span> converges to <span class="arithmatex">\(p\)</span> <strong>faster</strong> than <span class="arithmatex">\(\{p_n\}\)</span> in the sense that</p>
+<p class="admonition-title">Theorem 2.7</p>
+<p>Suppose that <span class="arithmatex">\(\{p_n\}\)</span> is a sequence, <span class="arithmatex">\(\lim\limits_{n\rightarrow \infty}p_n = p\)</span>, <span class="arithmatex">\(\exists N\)</span>, s.t. <span class="arithmatex">\(\forall\ n &gt; N\)</span>, <span class="arithmatex">\((p_n - p)(p_{n+1} -p) \gt 0\)</span>. Then the sequence <span class="arithmatex">\(\{\hat{p_n}\}\)</span> converges to <span class="arithmatex">\(p\)</span> <strong>faster</strong> than <span class="arithmatex">\(\{p_n\}\)</span> in the sense that</p>
 <div class="arithmatex">\[
     \lim_{n\rightarrow \infty}\frac{\hat{p_n} - p}{p_n - p} = 0.
 \]</div>
@@ -748,7 +758,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:not.committed.yet'>Not Committed Yet</a>, <a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
@@ -819,8 +829,7 @@
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -963,10 +965,10 @@ z_c \\
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_3.png"><img alt="lec7_3" src="../Pic/lec7_3.png" style="width:500px"/></a>
 </div>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 u &amp;= m_x f \frac{x_c}{z_c} + c_x \\
 v &amp;= m_y f \frac{y_c}{z_c} + c_y
-\end{align}
+\end{aligned}
 \]</div>
 <p>结合以上两个变换，记 <span class="arithmatex">\(f_x = m_x f\)</span>, <span class="arithmatex">\(f_y = m_y f\)</span>.</p>
 <p>则从相机坐标系到像素坐标系的变换为</p>
@@ -1102,10 +1104,10 @@ z_w^{(i)} \\
 \end{bmatrix}
 \]</div>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 u^{(i)} &amp;= \frac{p_{11}x_w^{(i)} + p_{12}y_w^{(i)} + p_{13}z_w^{(i)} + p_{14}}{p_{31}x_w^{(i)} + p_{32}y_w^{(i)} + p_{33}z_w^{(i)} + p_{34}} \\
 v^{(i)} &amp;= \frac{p_{21}x_w^{(i)} + p_{22}y_w^{(i)} + p_{23}z_w^{(i)} + p_{24}}{p_{31}x_w^{(i)} + p_{32}y_w^{(i)} + p_{33}z_w^{(i)} + p_{34}} \\
-\end{align}
+\end{aligned}
 \]</div>
 <h4 id="step-4-rearrange">Step 4. Rearrange.<a class="headerlink" href="#step-4-rearrange" title="Permanent link">¶</a></h4>
 <div class="arithmatex">\[
@@ -1236,20 +1238,20 @@ p_{14} \\ p_{24} \\ p_{34}
 <li>由余弦定理</li>
 </ul>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 OA^2 + OB^2 - 2 OA \cdot OB \cos \angle AOB &amp;= AB^2 \\
 OA^2 + OC^2 - 2 OB \cdot OC \cos \angle BOC &amp;= BC^2 \\
 OA^2 + OC^2 - 2 OA \cdot OC \cos \angle AOC &amp;= AC^2
-\end{align}
+\end{aligned}
 \]</div>
 <ul>
 <li>令 <span class="arithmatex">\(x = \frac{OA}{OC}, y = \frac{OB}{OC}, v = \frac{AB^2}{OC^2}, u = \frac{BC^2}{AB^2}, w = \frac{AC^2}{AB^2}\)</span>，化简得</li>
 </ul>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 (1 - u)y^2 - ux^2 - cos \angle BOC y + 2uxy \cos \angle AOB + 1 &amp;= 0 \\
 (1 - w)x^2 - wy^2 - cos \angle AOC y + 2wxy \cos \angle AOB + 1 &amp;= 0
-\end{align}
+\end{aligned}
 \]</div>
 <ul>
 <li>以上方程组是二元二次方程组 (Binary Quadratic Equation)，有四组解.<ul>
@@ -1320,15 +1322,15 @@ OA^2 + OC^2 - 2 OA \cdot OC \cos \angle AOC &amp;= AC^2
 <h4 id="essential-matrix-e">Essential Matrix <span class="arithmatex">\(E\)</span> 基本矩阵<a class="headerlink" href="#essential-matrix-e" title="Permanent link">¶</a></h4>
 <p>对于一个对极面，以下等式关系成立：</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 \mathbf{n} = \mathbf{t} \times \mathbf{x}_l \\ \\
 \mathbf{x}_l \cdot (\mathbf{t} \times \mathbf{x}_l) = 0
-\end{align}
+\end{aligned}
 \]</div>
 <p>其中 <span class="arithmatex">\(\mathbf{n}\)</span> 被称为 Normal Vector.</p>
 <p>假设右边的摄像机相对左边的摄像机进行刚体变换 + 平移，即：</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 \mathbf{x}_l &amp;= R \mathbf{x}_r + \mathbf{t} \\ \\
 \begin{bmatrix}
 x_l \\ y_l \\ z_l
@@ -1346,11 +1348,11 @@ x_r \\ y_r \\ y_r
 \begin{bmatrix}
 t_x \\ t_y \\ t_z
 \end{bmatrix}
-\end{align}
+\end{aligned}
 \]</div>
 <p>进一步演绎推理，得到：</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 \begin{bmatrix}
 x_l &amp; y_l &amp; z_l
 \end{bmatrix}
@@ -1376,7 +1378,7 @@ x_l \\ y_l \\ z_l
 \end{bmatrix}
 = 0
 &amp; \text{, Matrix-vector form}
-\end{align}
+\end{aligned}
 \]</div>
 <p>代入变换矩阵</p>
 <div class="arithmatex">\[
@@ -1438,7 +1440,7 @@ E = T_\times R
 <p>由投影关系以及内参矩阵 <span class="arithmatex">\(K\)</span>，得到：</p>
 <div class="arithmatex">\[
 \small
-\begin{align}
+\begin{aligned}
 \text{Left Camera} &amp;&amp; \text{Right Camera}
 \\
 z_l 
@@ -1483,7 +1485,7 @@ K_r^{-1} z_r
 \begin{bmatrix}
 u_r \\ v_r \\ 1
 \end{bmatrix}
-\end{align}
+\end{aligned}
 \]</div>
 <p>代入以上得到的：</p>
 <div class="arithmatex">\[
@@ -1491,19 +1493,18 @@ u_r \\ v_r \\ 1
 \]</div>
 <p>有</p>
 <div class="arithmatex">\[
-\require{canel}
 \begin{bmatrix}
 u_l &amp; v_l &amp; 1
 \end{bmatrix}
-\cancel{z_l} (K_l^{-1})^T
+z_l (K_l^{-1})^T
 E
-K_r^{-1} \cancel{z_r}
+K_r^{-1} z_r
 \begin{bmatrix}
 u_r \\ v_r \\ 1
 \end{bmatrix}
 = 0
 \]</div>
-<p>即</p>
+<p>约去 <span class="arithmatex">\(z_l\)</span>, <span class="arithmatex">\(z_r\)</span>，则</p>
 <div class="arithmatex">\[
 \begin{bmatrix}
 u_l &amp; v_l &amp; 1
@@ -1590,7 +1591,7 @@ E = K_l^T F K_r
 <p>现在已经有以下等式</p>
 <div class="arithmatex">\[
 \small
-\begin{align}
+\begin{aligned}
 \text{Left Camera}
 \\
 \begin{bmatrix}
@@ -1664,7 +1665,7 @@ x_r \\ y_r \\ z_r \\ 1
 \mathbf{\tilde u}_l &amp;= 
 \normalsize
 M_{int_r} \mathbf{\tilde x}_r
-\end{align}
+\end{aligned}
 \]</div>
 <p>由</p>
 <div class="arithmatex">\[
@@ -1776,7 +1777,7 @@ E(P_{proj}, \mathbf{P}) = \sum\limits_{i=1}^m \sum\limits_{j=1}^n \text{dist} \l
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_17.png"><img alt="lec7_17" src="../Pic/lec7_17.png" style="width:600px"/></a>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <p>Pipeline</p>
 <p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec7_18.png"><img alt="lec7_18" src="../Pic/lec7_18.png" style="width:600px"/></a>
@@ -1795,7 +1796,7 @@ E(P_{proj}, \mathbf{P}) = \sum\limits_{i=1}^m \sum\limits_{j=1}^n \text{dist} \l
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:not.committed.yet'>Not Committed Yet</a>, <a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
@@ -1866,8 +1867,7 @@ E(P_{proj}, \mathbf{P}) = \sum\limits_{i=1}^m \sum\limits_{j=1}^n \text{dist} \l
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

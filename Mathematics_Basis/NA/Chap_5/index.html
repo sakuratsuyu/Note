@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -690,7 +692,7 @@
 <p><strong>Basic IVP (one variable first order)</strong></p>
 <p>Approximate the solution <span class="arithmatex">\(y(t)\)</span> to a problem of the form</p>
 <div class="arithmatex">\[
-    \frac{dy}{dy} = f(t, y), t \in [a, b],
+    \frac{dy}{dt} = f(t, y), t \in [a, b],
 \]</div>
 <p>subject to an initial condition</p>
 <div class="arithmatex">\[
@@ -699,12 +701,12 @@
 <p><strong>Higher-Order Systems of First-Order IVP</strong></p>
 <p>Moreover, add the number of unknowns, it becomes approximating <span class="arithmatex">\(y_1(t), \dots y_m(t)\)</span> to a problem of the form</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     \frac{dy_1}{dt} &amp;= f_1(t, y_1, y_2, \dots, y_m), \\
     \frac{dy_2}{dt} &amp;= f_2(t, y_1, y_2, \dots, y_m), \\
     &amp; \vdots \\
     \frac{dy_m}{dt} &amp;= f_m(t, y_1, y_2, \dots, y_m),
-\end{align}
+\end{aligned}
 \]</div>
 <p>for <span class="arithmatex">\(t \in [a, b]\)</span>, subject to the initial conditions</p>
 <div class="arithmatex">\[
@@ -800,10 +802,10 @@
 \]</div>
 <p>is said to satisfy <strong>Lipschitz condition</strong> on <span class="arithmatex">\(D\)</span> in the variables <span class="arithmatex">\(y_1, \dots, y_m\)</span> if <span class="arithmatex">\(\exists L &gt; 0\)</span>, s.t</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     &amp; \forall (t, y_1, \dots, y_n), (t, z_1, \dots, z_n) \in D, \\
     &amp; |f(t, y_1, \dots, y_m) - f(t, z_1, \dots, z_m)| \le L \sum\limits_{j = 1}^m |y_j - z_j|
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <div class="admonition theorem">
@@ -816,10 +818,10 @@
 <p class="admonition-title">Definition</p>
 <p>The difference method</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + h\phi(t_i, w_i).
-\end{align}
+\end{aligned}
 \]</div>
 <p>has the <strong>local truncation error</strong></p>
 <div class="arithmatex">\[
@@ -837,10 +839,10 @@
 \]</div>
 <p>If <span class="arithmatex">\(w_i \approx y(t_i)\)</span> and we delete the remainder term, we get the <strong>(Explicit) Euler's method</strong>,</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + hf(t_i, w_i). \text{(difference equations)}
-\end{align}
+\end{aligned}
 \]</div>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap5_1.png"><img alt="chap5_1 " src="../Pic/chap5_1.png" style="width:600px"/></a>
@@ -878,20 +880,20 @@
 \]</div>
 <p>Thus we get the <strong>Implicit Euler's Method</strong>,</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + hf(t_{i + 1}, w_{i + 1}).
-\end{align}
+\end{aligned}
 \]</div>
 <p>Since <span class="arithmatex">\(w_{i + 1}\)</span> is on the both side, we may use some methods in <a href="../Chap_2">Chapter 2</a> to solve out the equation.</p>
 <p>The local truncation error of implicit Euler's method is</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     \tau_{i + 1}(h) &amp;= \frac{hy'(t_i) + \frac{h^2}{2}y''(\xi_i)}{h} - f(t_{i + 1}, y_{i + 1}) 
     \\ &amp;= y'(t_i) - y'(t_{i + 1}) + \frac{h}{2}y''(\xi_i)
     \\ &amp;= y'(t_i) - y'(t_i) - hy''(\xi'_i) + \frac{h}{2}y''(\xi_i)
     \\ &amp;= -\frac{h}{2}y''(\eta_i) = O(h).
-\end{align}
+\end{aligned}
 \]</div>
 <h3 id="trapezoidal-method">Trapezoidal Method<a class="headerlink" href="#trapezoidal-method" title="Permanent link">¶</a></h3>
 <p>Notice the local truncation errors of two Euler's method are</p>
@@ -901,33 +903,33 @@
 \]</div>
 <p>If we combine these two, we then obtain a method of <span class="arithmatex">\(O(h^2)\)</span> local truncation error, which is called <strong>Trapezoidal Method</strong>.</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + \frac{h}{2}[f(t_i, w_i) + f(t_{i + 1}, w_{i + 1})].
-\end{align}
+\end{aligned}
 \]</div>
 <h2 id="higher-order-taylor-method">Higher-Order Taylor Method<a class="headerlink" href="#higher-order-taylor-method" title="Permanent link">¶</a></h2>
 <p>In Euler's methods, we only employ first order Taylor polynomials, if we expand it more to <em>n</em>th Taylor polynomials, we have</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     y(t_{i + 1}) &amp;= y(t_i) + hy'(t_i) + \frac{h^2}{2}y''(t_i) + \cdots + \frac{h^n}{n!}y^{(n)}(t_i) + \frac{h^{n + 1}}{(n + 1)!} y^{(n + 1)}(\xi_i),
     \\ &amp; \text{ where } \xi_i \in [t_i, t_{i + 1}],
-\end{align}
+\end{aligned}
 \]</div>
 <p>and since <span class="arithmatex">\(y^{(k)}(t) = f^{(k - 1)}(t, y(t))\)</span>, we have</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     y(t_{i + 1}) &amp;= y(t_i) + hf(t_i, y(t_i)) + \frac{h^2}{2}f'(t_i, y(t_i)) + \cdots + \frac{h^n}{n!}f^{(n - 1)}(t_i, y(t_i))
     \\ &amp; \ \ \ \ + \frac{h^{n + 1}}{(n + 1)!} f^{(n)}(\xi_i, y(\xi_i)).
-\end{align}
+\end{aligned}
 \]</div>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Taylor Method of order <span class="arithmatex">\(n\)</span></strong></p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + hT^{(n)}(t_i, w_i),
-\end{align}
+\end{aligned}
 \]</div>
 <p>where</p>
 <div class="arithmatex">\[
@@ -949,10 +951,10 @@
 <p>where</p>
 <div class="arithmatex">\[
 \small
-\begin{align}
+\begin{aligned}
     P_n(x, y) &amp;= f(x_0, y_0) + \left(\Delta x\frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y}\right)f(x_0, y_0) + \frac{1}{2!}\left(\Delta x\frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y}\right)^2f(x_0, y_0) + 
     \\ &amp; \ \ \ \ \ \cdots + \frac{1}{n!}\left(\Delta x\frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y}\right)^nf(x_0, y_0),
-\end{align}
+\end{aligned}
 \]</div>
 <div class="arithmatex">\[
 \small
@@ -972,10 +974,10 @@
 \]</div>
 <p>with</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     a_1f(t + \alpha_1, y + \beta_1) &amp;= a_1f(t, y) + a_1 \alpha_1 \frac{\partial f}{\partial t}(t, y) 
     \\ &amp; \ \ \ \ + a_1 \beta_1 \frac{\partial f}{\partial y}(t, y) + a_1 \cdot R_1(t + \alpha_1, y + \beta_1).
-\end{align}
+\end{aligned}
 \]</div>
 <p>except for the last residual term <span class="arithmatex">\(R_1\)</span>, we have</p>
 <div class="arithmatex">\[
@@ -987,13 +989,13 @@
 \]</div>
 <p>Since the term <span class="arithmatex">\(R_1\)</span> is only concerned with the 2<sup>nd</sup>-order partial derivatives of <span class="arithmatex">\(f\)</span>, if they are bounded, then <span class="arithmatex">\(R_1\)</span> is <span class="arithmatex">\(O(h^2)\)</span>, the order of the local truncation error. Replace <span class="arithmatex">\(T^{(2)}(t,y)\)</span> by the formula above in the Taylor method of order 2, we have the <strong>Midpoint Method</strong>.</p>
 </details>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Midpoint Method</strong></p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + hf\left(t_i + \frac{h}{2}, w_i + \frac{h}{2}f(t_i, w_i)\right).
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <details class="info">
@@ -1013,30 +1015,30 @@
 \]</div>
 <p>Thus a number of <span class="arithmatex">\(O(h^2)\)</span> methods can be derived, and they are generally in the form</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_{i + 1} &amp;= w_i + h(a_1 K_1 + a_2 K_2) \\
     K_1 &amp;= f(t_i, w_i), \\
     K_2 &amp;= f(t_i + ph, y + ph K_1)
-\end{align}
+\end{aligned}
 \]</div>
 <p>The most important are the following two.</p>
 </details>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Modified Euler Method</strong></p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + \frac{h}{2}[f(t_i, w_i) + f(t_i + h, w_i + hf(t_i, w_i))].
-\end{align}
+\end{aligned}
 \]</div>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Heun's Method</strong></p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + \frac{h}{4}\left[f(t_i, w_i) + 3f\left(t_i + \frac23 h, w_i + \frac23 hf(t_i, w_i)\right)\right].
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <p>In a similar manner, approximate <span class="arithmatex">\(T^{(n)}(t, y)\)</span> with</p>
@@ -1045,26 +1047,26 @@
 \]</div>
 <p>where</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     K_1 &amp;= f(t, y), \\
     K_2 &amp;= f(t + \alpha_2 h, y + \beta_{21} h K_1), \\
     &amp; \vdots \\
     K_m &amp;= f(t + \alpha_m h, y + \beta_{m1} h K_1 + \beta_{m, m - 1} hK_{m - 1}).
-\end{align}
+\end{aligned}
 \]</div>
 <p>with different <span class="arithmatex">\(m\)</span>, we can derive quite a lot of Runge-Kutta methods.</p>
 <p>The most common Runge-Kutta method is given below.</p>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Runge-Kutta Order Four</strong></p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + \frac{h}{6}(K_1 + 2K_2 + 2K_3 + K_4), \\
     K_1 &amp;= f(t_i, w_i), \\
     K_2 &amp;= f\left(t_i + \frac{h}{2}, w_i + \frac{h}{2}K_1\right), \\
     K_3 &amp;= f\left(t_i + \frac{h}{2}, w_i + \frac{h}{2}K_2\right), \\
     K_4 &amp;= f\left(t_i + h, w_i + h K_3\right).
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <p>The local trancation error of Runge-Kutta are given below, <span class="arithmatex">\(n\)</span> is the number of evaluations per step.</p>
@@ -1085,10 +1087,10 @@
 \]</div>
 <p>has a difference equation</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_{i + 1} &amp;= a_{m - 1}w_i + a_{m - 2}w_{i - 1} + \cdots a_0 w_{i + 1 - m} + h[b_mf(t_{i + 1}, w_{i + 1})
     \\ &amp; \ \ \ \ + b_{m - 1}f(t_i, w_i) + \cdots + b_0 f(t_{i + 1 - m}, w_{i + 1 - m})],
-\end{align}
+\end{aligned}
 \]</div>
 <p>with the starting values</p>
 <div class="arithmatex">\[
@@ -1101,10 +1103,10 @@
 <p class="admonition-title">Definition</p>
 <p>For a <em>m</em>-step multistep method, the <strong>local truncation error</strong> at <span class="arithmatex">\((i + 1)\)</span>st step is</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     \tau_{i + 1}(h) &amp;= \frac{y(t_{i + 1}) - a_{m - 1}y(t_i) - \cdots - a_0 y(t_{i + 1 - m})}{h}
     \\ &amp; \ \ \ \ - b_{m - 1}f(t_i, y(t_{i + 1})) + \cdots + b_0 f(t_{i + 1 - m}, y(t_{i + 1 - m}))],
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <h3 id="adams-method">Adams Method<a class="headerlink" href="#adams-method" title="Permanent link">¶</a></h3>
@@ -1129,7 +1131,7 @@
 \]</div>
 <p>Then suppose <span class="arithmatex">\(t = t_i + sh\)</span>, with <span class="arithmatex">\(dt = hds\)</span>, we have</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     \int_{t_i}^{t_{i + 1}} f(t, y(t)) dt &amp;= \int_{t_i}^{t_{i + 1}} \sum\limits_{k = 0}^{m - 1}(-1)^k \binom{-s}{k}\nabla^k f(t_i, y(t_i))dt
     \\ &amp; \ \ \ \ + \int_{t_i}^{t_{i + 1}} \frac{f^{(m)}(\xi_i, y(\xi_i))}{m!}\prod\limits_{k = 0}^{m - 1}(t - t_{i - k})dt
     \\ \left(\text{Note that } dt = hds\right)
@@ -1138,7 +1140,7 @@
     \\ \left(\substack{\text{Weighted Mean Value} \\ \text{Theorem for Integral}}\right)
     &amp;= h\sum\limits_{k = 0}^{m - 1}\nabla^k (-1)^k \int_0^1 \binom{-s}{k}ds
     \\ &amp; \ \ \ \ + h^{m + 1}f^{(m)}(\mu_i, y(\mu_i))\int_0^1 \binom{-s}{m}ds.
-\end{align}
+\end{aligned}
 \]</div>
 <p>Since for given <span class="arithmatex">\(k\)</span>, we have</p>
 <table>
@@ -1165,25 +1167,25 @@
 </table>
 <p>Thus</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     y(t_{i + 1}) &amp;= y(t_i) + h\left[f(t_i, y(t_i)) + \frac12 \nabla f(t_i, y(t_i)) + \frac{5}{12} \nabla^2 f(t_i, y(t_i)) + \cdots\right]
     \\ &amp; \ \ \ \ + h^{m + 1}f^{(m)}(\mu_i, y(\mu_i))\int_0^1 \binom{-s}{m}ds.
-\end{align}
+\end{aligned}
 \]</div>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Adams-Bashforth <em>m</em>-Step Explicit Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ \ w_1 = \alpha_1, \dots, w_{m - 1} = \alpha_{m - 1},
 \]</div>
 <div class="arithmatex">\[
-    w_{i + 1} = w_i + h\sum\limits_{k = 0}^{m - 1}\nabla^k (-1)^k \int_0^1 \binom{-s}{k}ds,
+    w_{i + 1} = w_i + h\sum\limits_{k = 0}^{m - 1}\nabla^k f(t_i, y(t_i)) (-1)^k \int_0^1 \binom{-s}{k}ds,
 \]</div>
 <p>with local truncation error</p>
 <div class="arithmatex">\[
-    \tau_{i + 1}(h) = h^{m + 1}f^{(m)}(\mu_i, y(\mu_i))\int_0^1 \binom{-s}{m}ds.
+    \tau_{i + 1}(h) = h^{m}y^{(m + 1)}(\mu_i)(-1)^m\int_0^1 \binom{-s}{m}ds.
 \]</div>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Adams-Bashforth Two-Step Explicit Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ \ w_1 = \alpha_1,
@@ -1196,7 +1198,7 @@
     \tau_{i + 1}(h) = \frac{5}{12}y'''(\mu_i)h^2.
 \]</div>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Adams-Bashforth Three-Step Explicit Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ w_2 = \alpha_2,
@@ -1209,16 +1211,16 @@
     \tau_{i + 1}(h) = \frac{3}{8}y^{(4)}(\mu_i)h^3.
 \]</div>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Adams-Bashforth Four-Step Explicit Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ w_2 = \alpha_2,\ \ w_3 = \alpha_3,
 \]</div>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_{i + 1} = w_i + \frac{h}{24}&amp;[55f(t_i, w_i) - 59f(t_{i - 1}, w_{i - 1})
     \\ &amp; + 37f(t_{i - 2}, w_{i - 2}) - 9f(t_{i - 3}, w_{i - 3})],
-\end{align}
+\end{aligned}
 \]</div>
 <p>with local truncation error</p>
 <div class="arithmatex">\[
@@ -1226,22 +1228,22 @@
 \]</div>
 </div>
 <h4 id="adams-moulton-m-step-implicit-method">Adams-Moulton <em>m</em>-Step Implicit Method<a class="headerlink" href="#adams-moulton-m-step-implicit-method" title="Permanent link">¶</a></h4>
-<p>For implicit case, we use <span class="arithmatex">\((t_{i + 1}, f(t_{i + 1}, y(t_{i + 1})))\)</span> instead of <span class="arithmatex">\((t_{i + 1 - m}, f(t_{i + 1 - m}, y(t_{i + 1 - m})))\)</span> to constrcut the interpolating polynomials. Similarly we have the conclusions below.</p>
-<div class="admonition note">
-<p><strong>Adams-Moulton <em>m</em>-Step Explicit Method</strong></p>
+<p>For implicit case, we add <span class="arithmatex">\((t_{i + 1}, f(t_{i + 1}, y(t_{i + 1})))\)</span> as an interpolating node to construct the interpolating polynomials. Let <span class="arithmatex">\(t = t_{i + 1} + sh\)</span> and there is <span class="arithmatex">\(m\)</span> points. Similarly we have the conclusions below.</p>
+<div class="admonition plane">
+<p><strong>Adams-Moulton <em>m</em>-Step Implicit Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ \ w_1 = \alpha_1, \dots, w_{m - 1} = \alpha_{m - 1},
 \]</div>
 <div class="arithmatex">\[
-    w_{i + 1} = w_i + h\sum\limits_{k = 0}^{m - 1}\nabla^k (-1)^k \int_0^1 \binom{-s}{k}ds,
+    w_{i + 1} = w_i + h\sum\limits_{k = 0}^{m}\nabla^k f(t_{i + 1}, y(t_{i + 1})) (-1)^k \int_{-1}^0 \binom{-s}{k}ds,
 \]</div>
 <p>with local truncation error</p>
 <div class="arithmatex">\[
-    \tau_{i + 1}(h) = h^{m + 1}f^{(m)}(\mu_i, y(\mu_i))\int_0^1 \binom{-s}{m}ds.
+    \tau_{i + 1}(h) = h^{m + 1}y^{(m + 2)}(\mu_i)(-1)^{m + 1}\int_{-1}^0 \binom{-s}{m + 1}ds.
 \]</div>
 </div>
-<div class="admonition note">
-<p><strong>Adams-Moulton Two-Step Explicit Method</strong></p>
+<div class="admonition plane">
+<p><strong>Adams-Moulton Two-Step Implicit Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ \ w_1 = \alpha_1,
 \]</div>
@@ -1253,8 +1255,8 @@
     \tau_{i + 1}(h) = -\frac{1}{24}y^{(4)}(\mu_i)h^3.
 \]</div>
 </div>
-<div class="admonition note">
-<p><strong>Adams-Moulton Three-Step Explicit Method</strong></p>
+<div class="admonition plane">
+<p><strong>Adams-Moulton Three-Step Implicit Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ w_2 = \alpha_2,
 \]</div>
@@ -1266,16 +1268,16 @@
     \tau_{i + 1}(h) = -\frac{19}{720}y^{(5)}(\mu_i)h^4.
 \]</div>
 </div>
-<div class="admonition note">
-<p><strong>Adams-Moulton Four-Step Explicit Method</strong></p>
+<div class="admonition plane">
+<p><strong>Adams-Moulton Four-Step Implicit Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ w_2 = \alpha_2,\ \ w_3 = \alpha_3,
 \]</div>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_{i + 1} = w_i + \frac{h}{720}&amp;[251f(t_{i + 1}, w_{i + 1}) + 646f(t_i, w_i) - 264f(t_{i - 1}, w_{i - 1})
     \\ &amp; + 106f(t_{i - 2}, w_{i - 2}) - 19f(t_{i - 3}, w_{i - 3})],
-\end{align}
+\end{aligned}
 \]</div>
 <p>with local truncation error</p>
 <div class="arithmatex">\[
@@ -1329,12 +1331,12 @@
 <p>We use <span class="arithmatex">\(y_i\)</span> and <span class="arithmatex">\(f_i\)</span> to denote <span class="arithmatex">\(y(t_i)\)</span> and <span class="arithmatex">\(f(t_i, y_i)\)</span> respectively.</p>
 <p>Expand <span class="arithmatex">\(y_{i - 1}, f_{i + 1}, f_{i}, f_{i - 1}\)</span>, we have</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     y_{i - 1} &amp;= y_i - hy_i' + \frac12 h^2 y_i'' - \frac16h^3y_i''' + O(h^4), \\
     f_{i + 1} &amp;= y_i' + hy_i'' + \frac12 h^2 y_i''' + O(h^3), \\
     f_i &amp;= y_i', \\
     f_{i - 1} &amp;= y_i' - hy_i'' + \frac12 h^2 y_i''' + O(h^3), \\
-\end{align}
+\end{aligned}
 \]</div>
 <p>and note that</p>
 <div class="arithmatex">\[
@@ -1352,7 +1354,7 @@
 <div class="arithmatex">\[
     w_{i + 1} = w_{i - 1} + \frac{h}{3}(f(t_{i + 1}, w_{i + 1}) + 4f(t_i, w_i) + f(t_{i - 1}, w_{i - 1})).
 \]</div>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Simpson Implicit Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ w_1 = \alpha_1, \\
@@ -1364,7 +1366,7 @@
 \]</div>
 </div>
 <p>Note that it's an implicit method, and the most commonly used corresponding predictor is</p>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Milne's Method</strong></p>
 <div class="arithmatex">\[
     w_0 = \alpha,\ w_1 = \alpha_1,\ w_2 = \alpha_2 \\
@@ -1378,30 +1380,30 @@
 <p>which can also derive by Taylor expansion in the similar manner.</p>
 <h2 id="higher-order-systems-of-first-order-ivp">Higher-Order Systems of First-Order IVP<a class="headerlink" href="#higher-order-systems-of-first-order-ivp" title="Permanent link">¶</a></h2>
 <p>Actually it just vectorize the method that we've mentioned above. Take Runge-Kutta Order Four as example.</p>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Runge-Kutta Method for Systems of Differential Equations</strong></p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_{1, 0} &amp;= \alpha_1, w_{2, 0} = \alpha_2, \dots, w_{m, 0} = \alpha_m. \\
     w_{i, j + 1} &amp;= w_{i, j} + \frac{h}{6}(K_{1, i} + 2K_{2, i} + 2K_{3, i} + K_{4, i}), \\
     K_{1, i} &amp;= f_i(t_j, w_{1, j}, w_{2, j}, \dots, w_{m, j}), \\
     K_{2, i} &amp;= f_i\left(t_j + \frac{h}{2}, w_{1, j} + \frac{h}{2}K_{1, 1}, w_{2, j} + \frac{h}{2}K_{1, 2}, \dots, w_{m, j} + \frac{h}{2}K_{1, m}\right), \\
     K_{3, i} &amp;= f_i\left(t_j + \frac{h}{2}, w_{1, j} + \frac{h}{2}K_{2, 1}, w_{2, j} + \frac{h}{2}K_{2, 2}, \dots, w_{m, j} + \frac{h}{2}K_{2, m}\right), \\
     K_{4, i} &amp;= f_i\left(t_j + h, w_{1, j} + h K_{3, 1}, w_{2, j} + h K_{3, 2}, \dots, w_{m, j} + h K_{3. m} \right).
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <h2 id="higher-order-ivp">Higher-Order IVP<a class="headerlink" href="#higher-order-ivp" title="Permanent link">¶</a></h2>
 <p>We can deal with higher-order IVP the same as higher-order systems of first-order IVP. The only transformation we need to do is let <span class="arithmatex">\(u_1(t) = y(t)\)</span>, <span class="arithmatex">\(u_2(t) = y'(t)\)</span>, <span class="arithmatex">\(\dots\)</span>, and <span class="arithmatex">\(u_m(t) = y^{(m - 1)}(t)\)</span>.</p>
 <p>This produces the first-order system</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     \frac{du_1}{dt} &amp;= \frac{dy}{dt} = u_2, \\
     \frac{du_2}{dt} &amp;= \frac{dy'}{dt} = u_3, \\
     &amp; \vdots \\
     \frac{du_{m - 1}}{dt} &amp;= \frac{dy^{(m - 2)}}{dt} = u_m, \\
     \frac{du_m}{dt} &amp;= \frac{dy^{(m - 1)}}{dt} = y^{(m)} = f(t, y', y'', \dots, y^{(m - 1)}) = f(t, u_1, \dots, u_m).
-\end{align}
+\end{aligned}
 \]</div>
 <p>with initial conditions</p>
 <div class="arithmatex">\[
@@ -1437,10 +1439,10 @@
 <p class="admonition-title">Theorem</p>
 <p>Suppose the IVP is approximated by a one-step method in the form</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + h \phi(t_i, w_i, h).
-\end{align}
+\end{aligned}
 \]</div>
 <p>If <span class="arithmatex">\(\exists h_0 &gt; 0\)</span> and <span class="arithmatex">\(\phi(t, w, h)\)</span> is continuous and satisfies a Lipschitz condition in the varaible <span class="arithmatex">\(w\)</span> with Lipschitz constant <span class="arithmatex">\(L\)</span> on the set</p>
 <div class="arithmatex">\[
@@ -1703,8 +1705,7 @@
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

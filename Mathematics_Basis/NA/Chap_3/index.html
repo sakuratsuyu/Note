@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -570,10 +572,10 @@
 <h2 id="lagrange-interpolation">Lagrange Interpolation<a class="headerlink" href="#lagrange-interpolation" title="Permanent link">¶</a></h2>
 <p>Suppose we have function <span class="arithmatex">\(y = f(x)\)</span> with the given points <span class="arithmatex">\((x_0, y_0), (x_1, y_1), \dots, (x_n, y_n)\)</span>, and then construct a relatively simple approximating function <span class="arithmatex">\(g(x) \approx f(x)\)</span>.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem 3.1</p>
+<p class="admonition-title">Theorem 3.0</p>
 <p>If <span class="arithmatex">\(x_0, x_1, \dots, x_n\)</span> are <span class="arithmatex">\(n + 1\)</span> distinct numbers and <span class="arithmatex">\(f\)</span> is a function with given values <span class="arithmatex">\(f(x_0), \dots, f(x_n)\)</span>, then a <strong>unique polynomial</strong> <span class="arithmatex">\(P(x)\)</span> of degree <em>at most</em> <span class="arithmatex">\(n\)</span> exists with</p>
 <div class="arithmatex">\[
-    P(x_k) = f(x_k), \text{ for each } k = 0, 1, \dots, n.
+    P(x_k) = f(x_k),\ \ \text{ for each } k = 0, 1, \dots, n,
 \]</div>
 <p>and</p>
 <div class="arithmatex">\[
@@ -588,7 +590,7 @@
 <details class="proof">
 <summary>Proof</summary>
 <p>First we prove for the structure of function <span class="arithmatex">\(L_{n, k}(x)\)</span>.</p>
-<p>From the definition of <span class="arithmatex">\(P(x)\)</span>, <span class="arithmatex">\(L_{n, k}(x)\)</span> has the following properties</p>
+<p>From the definition of <span class="arithmatex">\(P(x)\)</span>, <span class="arithmatex">\(L_{n, k}(x)\)</span> has the following properties.</p>
 <ul>
 <li><span class="arithmatex">\(L_{n, k}(x_i) = 0\)</span> when <span class="arithmatex">\(i \ne k\)</span>.</li>
 <li><span class="arithmatex">\(L_{n, k}(x_k) = 1\)</span>.</li>
@@ -599,10 +601,10 @@
 \]</div>
 <p>To satisfy the second property, the denominator of <span class="arithmatex">\(L_{n, k}(x)\)</span> must be equal to the numerator at <span class="arithmatex">\(x = x_k\)</span>, thus</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     L_{n, k}(x) &amp;= \frac{(x - x_0)(x - x_1) \cdots (x - x_{k - 1})(x - x_{k + 1}) \cdots (x - x_n)}{(x_k - x_0)(x - x_1) \cdots (x_k - x_{k - 1})(x_k - x_{k + 1}) \cdots (x_k - x_n)} 
     \\ &amp;= \prod\limits_{\substack{i = 0 \\ i \ne k}}^n \frac{x - x_i}{x_k - x_i}.
-\end{align}
+\end{aligned}
 \]</div>
 <p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap3_0.png"><img alt="chap3_0 " src="../Pic/chap3_0.png" style="width:600px"/></a>
@@ -610,10 +612,10 @@
 <p>For uniqueness, we prove by contradition. If not, suppose <span class="arithmatex">\(P(x)\)</span> and <span class="arithmatex">\(Q(x)\)</span> both satisfying the conditions, then <span class="arithmatex">\(D(x) = P(x) - Q(x)\)</span> is a polynomial of degree <span class="arithmatex">\(\text{deg}(D(x)) \le n\)</span>, but <span class="arithmatex">\(D(x)\)</span> has <span class="arithmatex">\(n + 1\)</span> distinct roots <span class="arithmatex">\(x_0, x_1, \dots, x_n\)</span>, which leads to a contradiction.</p>
 </details>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem 3.2</p>
+<p class="admonition-title">Theorem 3.1</p>
 <p>If <span class="arithmatex">\(x_0, x_1, \dots, x_n\)</span> are <span class="arithmatex">\(n + 1\)</span> distinct numbers in the interval <span class="arithmatex">\([a, b]\)</span> and <span class="arithmatex">\(f \in C^{n + 1}[a, b]\)</span>. <span class="arithmatex">\(\forall x \in [a, b], \exists \xi \in [a, b], s.t.\)</span></p>
 <div class="arithmatex">\[
-    f(x) = P(x) + \frac{f^{(n + 1)}(\xi)}{(n + 1)!}\prod\limits_{i = 0}^n (x - x_i).
+    f(x) = P(x) + \frac{f^{(n + 1)}(\xi)}{(n + 1)!}\prod\limits_{i = 0}^n (x - x_i),
 \]</div>
 <p>where <span class="arithmatex">\(P(x)\)</span> is the Lagrange interpolating polynomial. And</p>
 <div class="arithmatex">\[
@@ -631,7 +633,7 @@
 <div class="arithmatex">\[
     g(t) = R(t) - K(x)\prod\limits_{i = 0}^n (t - x_i).
 \]</div>
-<p>Since <span class="arithmatex">\(g(t)\)</span> has <span class="arithmatex">\(n + 2\)</span> distinct roots <span class="arithmatex">\(x, x_0, \dots, x_n\)</span>, by Generalized Rolle's Theorem,</p>
+<p>Since <span class="arithmatex">\(g(t)\)</span> has <span class="arithmatex">\(n + 2\)</span> distinct roots <span class="arithmatex">\(x, x_0, \dots, x_n\)</span>, by Generalized Rolle's Theorem, we have</p>
 <div class="arithmatex">\[
     \exists\ \xi \in [a, b],\ s.t.\ g^{(n + 1)}(\xi) = 0.
 \]</div>
@@ -646,15 +648,15 @@
 </details>
 <details class="example">
 <summary>Example</summary>
-<p>Suppose a table is to be prepared for the function <span class="arithmatex">\(f(x) = e^x\)</span> for <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\([0, 1]\)</span>.  Assume that each entry of the table is accurate up to 8 decimal places and the step size is <span class="arithmatex">\(h\)</span>.  What should <span class="arithmatex">\(h\)</span> be for linear interpolation to give an absolute error of at most <span class="arithmatex">\(10^{-6}\)</span>?</p>
+<p>Suppose a table is to be prepared for the function <span class="arithmatex">\(f(x) = e^x\)</span> for <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\([0, 1]\)</span>. Assume that each entry of the table is accurate up to 8 decimal places and the step size is <span class="arithmatex">\(h\)</span>. What should <span class="arithmatex">\(h\)</span> be for linear interpolation to give an absolute error of at most <span class="arithmatex">\(10^{-6}\)</span>?</p>
 <p><strong>Solution.</strong></p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     |f(x) - P(x)| &amp;= \left|\frac{f^{(2)}(\xi)}{2!}(x - x_j)(x - x_{j + 1})\right| 
     \\ &amp;= \left|\frac{e^\xi}{2}(x - kh)(x - (k + 1)h)\right| \le \frac{e}{2} \cdot \frac{h^2}{4} = \frac{eh^2}{8}.
-\end{align}
+\end{aligned}
 \]</div>
-<p>Thus let <span class="arithmatex">\(\frac{eh^2}{8} \le 10^{-6}\)</span>, we have <span class="arithmatex">\(h \le 1.72 \times 10^{-3}\)</span>. To make <span class="arithmatex">\(N = (1 - 0) / h\)</span> an integer, we can simply choose <span class="arithmatex">\(h = 0.001\)</span>.</p>
+<p>Thus let <span class="arithmatex">\(\dfrac{eh^2}{8} \le 10^{-6}\)</span>, we have <span class="arithmatex">\(h \le 1.72 \times 10^{-3}\)</span>. To make <span class="arithmatex">\(N = \dfrac{(1 - 0)}{h}\)</span> an integer, we can simply choose <span class="arithmatex">\(h = 0.001\)</span>.</p>
 </details>
 <details class="note">
 <summary>Extrapolation</summary>
@@ -666,12 +668,12 @@
 <h3 id="nevilles-method">Neville's Method<a class="headerlink" href="#nevilles-method" title="Permanent link">¶</a></h3>
 <p><strong>Motivation:</strong> When we have more interpolating points, the original Lagrange interpolating method should <em>re-calculate</em> all <span class="arithmatex">\(L_{n, k}\)</span>, which is not efficient.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 3.0</p>
 <p>Let <span class="arithmatex">\(f\)</span> be a function defined at <span class="arithmatex">\(x_0, x_1, \dots, x_n\)</span>, and suppose that <span class="arithmatex">\(m_1, \dots, m_k\)</span> are <span class="arithmatex">\(k\)</span> distinct integers with <span class="arithmatex">\(0 \le m_i \le n\)</span> for each <span class="arithmatex">\(i\)</span>. The Lagrange polynomial that agrees with <span class="arithmatex">\(f(x)\)</span> at the <span class="arithmatex">\(k\)</span> points denoted by <span class="arithmatex">\(P_{m_1, m_2, \dots, m_k}(x)\)</span>.</p>
 <p>Thus <span class="arithmatex">\(P(x) = P_{0, 1, \dots, n}(x)\)</span>, where <span class="arithmatex">\(P(x)\)</span> is the <em>n</em> th Lagrange polynomials that interpolate <span class="arithmatex">\(f\)</span> at <span class="arithmatex">\(k + 1\)</span> points <span class="arithmatex">\(x_0, \dots, x_k\)</span>.</p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem 3.3</p>
+<p class="admonition-title">Theorem 3.2</p>
 <p>Let <span class="arithmatex">\(f\)</span> be a function defined at <span class="arithmatex">\(x_0, x_1, \dots, x_n\)</span>, and <span class="arithmatex">\(x_i \ne x_j\)</span>, then</p>
 <div class="arithmatex">\[
     P(x) = \frac{(x - x_j)P_{0, 1, \dots, j - 1, j + 1, \dots k}(x) - (x - x_i)P_{0, 1, \dots, i - 1, i + 1, \dots k}(x)}{(x_i - x_j)}.
@@ -681,27 +683,28 @@
 <div class="arithmatex">\[
     Q_{i, j} = P_{i - j, i - j + 1, \dots, i - 1, i},
 \]</div>
-<p>then from the theorem above, the interpolating polynomials can be generated <strong>recursively</strong>. </p>
+<p>then from <strong>Theorem 3.2</strong>, the interpolating polynomials can be generated <strong>recursively</strong>. </p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap3_1.png"><img alt="chap3_1 " src="../Pic/chap3_1.png" style="width:700px"/></a>
 </div>
 <h2 id="newton-interpolation">Newton Interpolation<a class="headerlink" href="#newton-interpolation" title="Permanent link">¶</a></h2>
 <p>Differing from Langrange polynomials, we try to represent <span class="arithmatex">\(P(x)\)</span> by the following form:</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     N(x) = &amp;\ a_0 + a_1(x - x_0) + a_2(x - x_0)(x - x_1) + \cdots
     \\ &amp; + a_n(x - x_0)(x - x_1) \cdots (x - x_{n - 1}).
-\end{align}
+\end{aligned}
 \]</div>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 3.1</p>
 <p><span class="arithmatex">\(f[x_i] = f(x_i)\)</span> is the <strong>zeroth divided difference</strong> w.r.t. <span class="arithmatex">\(x_i\)</span>.</p>
 <p>The <strong><em>k</em> th divided difference</strong> w.r.t. <span class="arithmatex">\(x_i, x_{i + 1}, x_{i + k}\)</span> is defined recursively by</p>
 <div class="arithmatex">\[
-    f[x_i, x_{i + 1}, \dots, x_{i + k - 1}, x_{i + k}] = \frac{f[x_{i + 1}, x_{i + 2}, \dots, x_{i + k}] - f[x_i, x_{i + 1}, \dots, x_{i + k - 1}]}{x_{i + k} - x_i}
+\small
+    f[x_i, x_{i + 1}, \dots, x_{i + k - 1}, x_{i + k}] = \frac{f[x_{i + 1}, x_{i + 2}, \dots, x_{i + k}] - f[x_i, x_{i + 1}, \dots, x_{i + k - 1}]}{x_{i + k} - x_i}.
 \]</div>
 </div>
-<p>Then we derive the <strong>Newton's interpolatory divided-difference formula</strong>:</p>
+<p>Then we derive the <strong>Newton's interpolatory divided-difference formula</strong></p>
 <div class="arithmatex">\[
     N(x) = f[x_0] + \sum\limits_{k = 1}^n f[x_0, x_1, \dots, x_k]\prod\limits_{i = 0}^{k - 1}(x - x_i).
 \]</div>
@@ -710,7 +713,7 @@
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap3_2.png"><img alt="chap3_2 " src="../Pic/chap3_2.png" style="width:700px"/></a>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem 3.4</p>
+<p class="admonition-title">Theorem 3.3</p>
 <p>If <span class="arithmatex">\(x_0, x_1, \dots, x_n\)</span> are <span class="arithmatex">\(n + 1\)</span> distinct numbers in the interval <span class="arithmatex">\([a, b]\)</span> and <span class="arithmatex">\(f \in C^{n + 1}[a, b]\)</span>. <span class="arithmatex">\(\forall x \in [a, b], \exists \xi \in [a, b], s.t.\)</span></p>
 <div class="arithmatex">\[
     f(x) = N(x) + f[x, x_0, \dots, x_n]\prod\limits_{i = 0}^n (x - x_i).
@@ -726,12 +729,12 @@
 <p>By definition of divided difference, we have</p>
 <div class="arithmatex">\[
 \left\{
-\begin{align}
+\begin{aligned}
     f(x) &amp;= f[x_0] + (x - x_0)f[x, x_0], &amp; \textbf{Eq.1} \\
     f[x, x_0] &amp;= f[x_0, x_1] + (x - x_1)f[x, x_0, x_1], &amp; \textbf{Eq.2} \\
-    &amp; \vdots \\
+    &amp; \ \ \vdots \\
     f[x, x_0, \dots, x_{n - 1}] &amp;= f[x_0, \dots, x_n] + (x - x_n)f[x, x_0, \dots, x_n]. &amp; \textbf{Eq.n - 1}
-\end{align}
+\end{aligned}
 \right.
 \]</div>
 <p>then compute</p>
@@ -757,7 +760,7 @@
 </ul>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem 3.5</p>
+<p class="admonition-title">Theorem 3.4</p>
 <p>Suppose that <span class="arithmatex">\(f \in C^n[a, b]\)</span> and <span class="arithmatex">\(x_0, x_1, \dots, x_n\)</span> are distinct numbers in <span class="arithmatex">\([a, b]\)</span>. Then <span class="arithmatex">\(\exists\ \xi \in (a, b)\)</span>, s.t.</p>
 <div class="arithmatex">\[
     f[x_0, x_1, \dots, x_n] = \frac{f^{(n)}(\xi)}{n!}.
@@ -765,90 +768,90 @@
 </div>
 <h3 id="special-case-equal-spacing">Special Case: Equal Spacing<a class="headerlink" href="#special-case-equal-spacing" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 3.2</p>
 <p><strong>Forward Difference</strong> </p>
 <div class="arithmatex">\[
-\begin{align}
-    \Delta f_i &amp;= f_{i + 1} - f_i \\
+\begin{aligned}
+    \Delta f_i &amp;= f_{i + 1} - f_i, \\
     \Delta^k f_i &amp;= \Delta\left(\Delta^{k - 1} f_i \right) = \Delta^{k - 1}f_{i + 1} - \Delta^{k - 1}f_i.
-\end{align}
+\end{aligned}
 \]</div>
 <p><strong>Backward Difference</strong> </p>
 <div class="arithmatex">\[
-\begin{align}
-    \nabla f_i &amp;= f_i - f_{i - 1} \\
+\begin{aligned}
+    \nabla f_i &amp;= f_i - f_{i - 1}, \\
     \nabla^k f_i &amp;= \nabla\left(\nabla^{k - 1} f_i \right) = \nabla^{k - 1}f_i - \nabla^{k - 1}f_{i - 1}.
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <details class="theorem">
-<summary>Property</summary>
+<summary>Property of Forward / Backward Difference</summary>
 <ul>
-<li>Linearity: <span class="arithmatex">\(\Delta (af(x) + bg(x)) = a \Delta f + b \Delta g\)</span>.</li>
+<li>Linearity <span class="arithmatex">\(\Delta (af(x) + bg(x)) = a \Delta f + b \Delta g\)</span>.</li>
 <li>
 <p>If <span class="arithmatex">\(\text{deg}(f(x)) = m\)</span>, then</p>
 <div class="arithmatex">\[
     \text{deg}\left(\Delta^kf(x)\right) = \left\{
-    \begin{align}
-        &amp; m - k, &amp; 0 \le k \le m \\
-        &amp; 0, &amp; k &gt; m
-    \end{align}
+    \begin{aligned}
+        &amp; m - k, &amp; 0 \le k \le m, \\
+        &amp; 0, &amp; k &gt; m.
+    \end{aligned}
     \right.
 \]</div>
 </li>
 <li>
 <p>Decompose the recursive definition,</p>
 <div class="arithmatex">\[
-\begin{align}
-    \Delta^n f_k &amp;= \sum\limits_{j = 0}^n (-1)^j \binom{n}{j} f_{n + k - j} \\
-    \nabla^n f_k &amp;= \sum\limits_{j = 0}^n (-1)^{n - j} \binom{n}{j} f_{j + k - n}
-\end{align}
+\begin{aligned}
+    \Delta^n f_k &amp;= \sum\limits_{j = 0}^n (-1)^j \binom{n}{j} f_{n + k - j}, \\
+    \nabla^n f_k &amp;= \sum\limits_{j = 0}^n (-1)^{n - j} \binom{n}{j} f_{j + k - n}.
+\end{aligned}
 \]</div>
 </li>
 <li>
 <p>Vice versa,</p>
 <div class="arithmatex">\[
-    f_{n + k} = \sum\limits_{j = 0}^n \binom{n}{j} \Delta^j f_k
+    f_{n + k} = \sum\limits_{j = 0}^n \binom{n}{j} \Delta^j f_k.
 \]</div>
 </li>
 </ul>
 </details>
 <p>Suppose <span class="arithmatex">\(x_0, x_1, \dots x_n\)</span> are equally spaced, namely <span class="arithmatex">\(x_i = x_0 + ih\)</span>. And let <span class="arithmatex">\(x = x_0 + sh\)</span>, then <span class="arithmatex">\(x - x_i = (s - i)h\)</span>. Thus</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     N(x) &amp;= f[x_0] + \sum\limits_{k = 1}^n s(s - 1) \cdots (s - k + 1) h^k f[x_0, x_1, \dots, x_k]
     \\ &amp;= f[x_0] + \sum\limits_{k = 1}^n \binom{s}{k} k! h^k f[x_0, x_1, \dots, x_k]
-\end{align}
+\end{aligned}
 \]</div>
 <p>is called <strong>Newton forward divided-difference formula</strong>.</p>
 <p>From mathematical induction, we can derive that</p>
 <div class="arithmatex">\[
     f[x_0, x_1, \dots, x_k] = \frac{1}{k!h^k}\Delta^k f(x_0).
 \]</div>
-<p>Thus we get the <strong>Newton Forward-Difference Formula</strong>.</p>
+<p>Thus we get the <strong>Newton Forward-Difference Formula</strong></p>
 <div class="arithmatex">\[
     N(x) = f[x_0] + \sum\limits_{k = 1}^n \binom{s}{k} \Delta^k f(x_0).
 \]</div>
 <hr/>
 <p>Inversely, <span class="arithmatex">\(x = x_n + sh\)</span>, then <span class="arithmatex">\(x - x_i = (s + n - i)h\)</span>, Thus</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     N(x) &amp;= f[x_n] + \sum\limits_{k = 1}^n s(s + 1) \cdots (s + k - 1) h^k f[x_n, x_{n - 1}, \dots, x_{n - k}]
     \\ &amp;= f[x_n] + \sum\limits_{k = 1}^n (-1)^k \binom{-s}{k} k! h^k f[x_n, x_{n - 1}, \dots, x_{n - k}].
-\end{align}
+\end{aligned}
 \]</div>
 <p>is called <strong>Newton backward divided-difference formula</strong>.</p>
 <p>From mathematical induction, we can derive that</p>
 <div class="arithmatex">\[
     f[x_n, x_{n - 1}, \dots, x_0] = \frac{1}{k!h^k}\nabla^k f(x_n).
 \]</div>
-<p>Thus we get the <strong>Newton Backward-Difference Formula</strong>.</p>
+<p>Thus we get the <strong>Newton Backward-Difference Formula</strong></p>
 <div class="arithmatex">\[
-    N(x) = f[x_0] + \sum\limits_{k = 1}^n (-1)^k \binom{-s}{k} \nabla^k f(x_n).
+    N(x) = f[x_n] + \sum\limits_{k = 1}^n (-1)^k \binom{-s}{k} \nabla^k f(x_n).
 \]</div>
 <h2 id="hermit-interpolation">Hermit Interpolation<a class="headerlink" href="#hermit-interpolation" title="Permanent link">¶</a></h2>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 3.3</p>
 <p>Let <span class="arithmatex">\(x_0, x_1, \dots, x_n\)</span> be <span class="arithmatex">\(n + 1\)</span> distinct numbers in <span class="arithmatex">\([a, b]\)</span> and <span class="arithmatex">\(m_i \in \mathbb{N}\)</span>. Suppose that <span class="arithmatex">\(f \in C^m[a, b]\)</span>, where <span class="arithmatex">\(m = \max \{m_i\}\)</span>. The <strong>osculating polynomial</strong> approximating <span class="arithmatex">\(f\)</span> is the polynomial <span class="arithmatex">\(P(x)\)</span> of <em>least</em> degree such that</p>
 <div class="arithmatex">\[
     \frac{d^k P(x_i)}{dx^k} = \frac{d^k f(x_i)}{dx^k}, \text{ for each } i = 0, 1, \dots, n \text{ and } k = 0, 1, \dots, m_i.
@@ -856,14 +859,14 @@
 </div>
 <p>From definition above, we know that when <span class="arithmatex">\(m_i = 0\)</span> for each <span class="arithmatex">\(i\)</span>, it's the <em>n</em>-th Lagrange polynomial. And the cases that <span class="arithmatex">\(m_i = 1\)</span> for each <span class="arithmatex">\(i\)</span>, then it's <strong>Hermit Polynomials</strong>.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem 3.6</p>
-<p>If <span class="arithmatex">\(f \in C^1[a, b]\)</span> and <span class="arithmatex">\(x_0, \dots, x_n \in [a, b]\)</span> are distinct, the unique polynomial of least degree agreeing with <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(f'\)</span> at <span class="arithmatex">\(x_0, \dots, x_n\)</span> is the <strong>Hermit Polynomial</strong> of degree <em>at most</em> <strong>2n + 1</strong> defined by</p>
+<p class="admonition-title">Theorem 3.5</p>
+<p>If <span class="arithmatex">\(f \in C^1[a, b]\)</span> and <span class="arithmatex">\(x_0, \dots, x_n \in [a, b]\)</span> are distinct, the unique polynomial of least degree agreeing with <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(f'\)</span> at <span class="arithmatex">\(x_0, \dots, x_n\)</span> is the <strong>Hermit Polynomial</strong> of degree <em>at most</em> <span class="arithmatex">\(\bf 2n + 1\)</span> defined by</p>
 <div class="arithmatex">\[
     H_{2n + 1}(x) = \sum\limits_{j = 0}^n f(x_j) H_{n ,j}(x) + \sum\limits_{j = 0}^n f'(x_j) \hat H_{n, j}(x),
 \]</div>
 <p>where</p>
 <div class="arithmatex">\[
-    H_{n, j}(x) = [1 - 2(x - x_j)L'_{n, j}(x_j)]L^2_{n, j}(x)
+    H_{n, j}(x) = [1 - 2(x - x_j)L'_{n, j}(x_j)]L^2_{n, j}(x),
 \]</div>
 <p>and</p>
 <div class="arithmatex">\[
@@ -879,7 +882,7 @@
 <div class="arithmatex">\[
     z_{2i} = z_{2i + 1} = x_i.
 \]</div>
-<p>Based on the <strong>Theorem 3.5</strong>, we redefine that </p>
+<p>Based on the <strong>Theorem 3.4</strong>, we redefine that </p>
 <div class="arithmatex">\[
     f[z_{2i}, z_{2i + 1}] = f'(z_{2i}) = f'(x_i).
 \]</div>
@@ -894,8 +897,8 @@
 <p><strong>Motivation:</strong> For osculating polynomial approximation, we can let <span class="arithmatex">\(m_i\)</span> be bigger to get high-degree polynomials. It can somehow be better but higher degree tends to causes a <em>fluctuation</em> or say <em>overfitting</em>.</p>
 <p>An alternative approach is to divide the interval into subintervals and approximate them respectively, which is called <strong>piecewise-polynomial approximation</strong>. The most common piecewise-polynomial approximation uses cubic polynomials called <strong>cubic spline approximation</strong>.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Given a function <span class="arithmatex">\(f\)</span> defined on <span class="arithmatex">\([a, b]\)</span> and a set of nodes <span class="arithmatex">\(a = x_0 &lt; x_1 &lt; \cdots &lt; x_n = b\)</span>, a <strong>cubic spline interpolant</strong> <span class="arithmatex">\(S\)</span> for <span class="arithmatex">\(f\)</span> is a function that satisfies the following conditions:</p>
+<p class="admonition-title">Definition 3.4</p>
+<p>Given a function <span class="arithmatex">\(f\)</span> defined on <span class="arithmatex">\([a, b]\)</span> and a set of nodes <span class="arithmatex">\(a = x_0 &lt; x_1 &lt; \cdots &lt; x_n = b\)</span>, a <strong>cubic spline interpolant</strong> <span class="arithmatex">\(S\)</span> for <span class="arithmatex">\(f\)</span> is a function that satisfies the following conditions.</p>
 <ul>
 <li><span class="arithmatex">\(S(x)\)</span> is a cubic polynomial, denoted <span class="arithmatex">\(S_j(x)\)</span>, on the subinterval <span class="arithmatex">\([x_j, x_j + 1]\)</span>, for each <span class="arithmatex">\(j = 0, 1, \dots, n - 1\)</span>;</li>
 <li><span class="arithmatex">\(S(x_j) = f(x_j)\)</span> for each <span class="arithmatex">\(j = 0, 1, \dots, n\)</span>;</li>
@@ -911,7 +914,7 @@
 <p>The spline of natural boundary is called <strong>natural spline</strong>. </p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem 3.7</p>
+<p class="admonition-title">Theorem 3.6</p>
 <p>The cubic spline interpolation of either natural boundary or clamped boundary is <strong>unique</strong>.</p>
 <p>(Since the coefficient matrix <span class="arithmatex">\(A\)</span> is strictly diagonally dominant.)</p>
 </div>
@@ -921,12 +924,12 @@
 \]</div>
 <p>From the conditions in the definition above, by some algebraic process, we can derive the solution with the following equations,</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     h_j &amp;= x_{j + 1} - x_j; \\
     a_j &amp;= f(x_j); \\
     b_j &amp;= \frac{1}{h_j}(a_{j + 1}) - \frac{h_j}{3}(2c_j + c_{j + 1}); \\
     d_j &amp;= \frac{1}{3h_j}{c_{j + 1} - c_j}.
-\end{align}
+\end{aligned}
 \]</div>
 <p>While <span class="arithmatex">\(c_j\)</span> is given by solving the following linear system,</p>
 <div class="arithmatex">\[
@@ -960,7 +963,7 @@ A =
     \vdots \\
     \frac{3}{h_{n - 1}}\ (a_n - a_{n - 1}) - \frac{3}{h_{n - 2}}\ (a_{n - 1} - a_{n - 2}) \\
     0
-\end{bmatrix}
+\end{bmatrix}.
 \]</div>
 <p>For clamped boundary,</p>
 <div class="arithmatex">\[
@@ -972,10 +975,10 @@ A =
     \vdots \\
     \frac{3}{h_{n - 1}}\ (a_n - a_{n - 1}) - \frac{3}{h_{n - 2}}\ (a_{n - 1} - a_{n - 2}) \\
     3f'(b) - \frac{3}{h_{n - 1}}\ (a_n - a_{n - 1}) \\
-\end{bmatrix}
+\end{bmatrix}.
 \]</div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">For More Accuracy...</p>
 <p>If <span class="arithmatex">\(f \in C[a, b]\)</span> and <span class="arithmatex">\(\frac{\max h_i}{\min h_i} \le C &lt; \infty\)</span>. Then <span class="arithmatex">\(S(x)\ \overset{\text{uniform}}{\longrightarrow}\ f(x)\)</span> when <span class="arithmatex">\(\max h_i \rightarrow 0\)</span>.</p>
 <p>That is the accuracy of approximation can be improved by <strong>adding more nodes</strong> without increasing the degree of the splines.</p>
 </div>
@@ -988,7 +991,7 @@ A =
 \]</div>
 <p>The interpolation method can be Lagrange, Hermite and Cubic spline, whatever.</p>
 <h3 id="bezier-curve">Bezier Curve<a class="headerlink" href="#bezier-curve" title="Permanent link">¶</a></h3>
-<p>In nature, it's <strong>piecewise cubic Hermite polynomial</strong>, and the curve is call <strong>Bezier curve</strong>.</p>
+<p>In nature, it's <strong>piecewise cubic Hermite polynomial</strong>, and the curve is called <strong>Bezier curve</strong>.</p>
 <p>Similarly, suppose two function <span class="arithmatex">\(x(t)\)</span> and <span class="arithmatex">\(y(t)\)</span> at each interval. We have the following condtions.</p>
 <div class="arithmatex">\[
     x(0) = x_0,\ x(1) = x_1,\ x'(0) = \alpha_0,\ x'(1) = \alpha_1.
@@ -998,10 +1001,10 @@ A =
 \]</div>
 <p>The solution is</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     x(t) &amp;= [2(x_0 - x_1) + (\alpha_0 + \alpha_1)]t^3 + [3(x_1 - x_0) - (\alpha_1 + 2\alpha_0)]t^2 + \alpha_0 t + x_0. \\
     y(t) &amp;= [2(y_0 - y_1) + (\beta_0 + \beta_1)]t^3 + [3(y_1 - y_0) - (\beta_1 + 2\beta_0)]t^2 + \alpha_0 t + y_0.
-\end{align}
+\end{aligned}
 \]</div>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap3_4.png"><img alt="chap3_4 " src="../Pic/chap3_4.png" style="width:500px"/></a>
@@ -1090,8 +1093,7 @@ A =
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

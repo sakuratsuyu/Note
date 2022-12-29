@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -496,33 +498,31 @@
 <p>Suppose <span class="arithmatex">\(A \in M_n(\mathbb{R})\)</span> with eigenvalues satisfying <span class="arithmatex">\(|\lambda_1| \gt |\lambda_2| \ge \dots \ge |\lambda_n|\)</span> and their corresponding <strong>linearly independent</strong> eigenvectors <span class="arithmatex">\(\mathbf{v}_\mathbf{1}, \dots, \mathbf{v}_\mathbf{n}\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Original Method</p>
-<ol>
-<li>Start from any <span class="arithmatex">\(\mathbf{x}^{(0)} \ne \mathbf{0}\)</span> and <span class="arithmatex">\((\mathbf{x}^{(0)}, \mathbf{v}_\mathbf{1}) \ne 0\)</span>, and suppose <span class="arithmatex">\(\mathbf{x}^{(0)} = \sum\limits_{j = 1}^n\beta_j\mathbf{v}_\mathbf{j}\)</span>, <span class="arithmatex">\(\beta_1 \ne 0.\)</span></li>
-<li><span class="arithmatex">\(\mathbf{x}^{(k)} = A \mathbf{x}^{(k - 1)} = \sum\limits_{j = 1}^n\beta_j\lambda_j^k\mathbf{v}_\mathbf{j} = \lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j}\ \overset{k \rightarrow \infty}{=\!=\!=\!=}\ \lambda_1^k\beta_1\mathbf{v}_\mathbf{1}\)</span>.</li>
-<li><span class="arithmatex">\(A\mathbf{x}^{(k)} \approx \lambda_1^k\beta_1A\mathbf{v}_\mathbf{1} \approx \lambda_1\mathbf{x}^{(k)}\)</span>, thus</li>
-</ol>
+<p><strong>Step.1</strong> Start from any <span class="arithmatex">\(\mathbf{x}^{(0)} \ne \mathbf{0}\)</span> and <span class="arithmatex">\((\mathbf{x}^{(0)}, \mathbf{v}_\mathbf{1}) \ne 0\)</span>, and suppose <span class="arithmatex">\(\mathbf{x}^{(0)} = \sum\limits_{j = 1}^n\beta_j\mathbf{v}_\mathbf{j}\)</span>, <span class="arithmatex">\(\beta_1 \ne 0.\)</span></p>
+<p><strong>Step.2</strong> <span class="arithmatex">\(\mathbf{x}^{(k)} = A \mathbf{x}^{(k - 1)} = \sum\limits_{j = 1}^n\beta_j\lambda_j^k\mathbf{v}_\mathbf{j} = \lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j}\ \overset{k \rightarrow \infty}{=\!=\!=\!=}\ \lambda_1^k\beta_1\mathbf{v}_\mathbf{1}\)</span>.</p>
+<p><strong>Step.3</strong> <span class="arithmatex">\(A\mathbf{x}^{(k)} \approx \lambda_1^k\beta_1A\mathbf{v}_\mathbf{1} \approx \lambda_1\mathbf{x}^{(k)}\)</span>, thus</p>
 <div class="arithmatex">\[
     \lambda_1 = \frac{\mathbf{x}^{(k + 1)}_i}{\mathbf{x}^{(k)}_i}, \mathbf{v}_\mathbf{1} = \frac{\mathbf{x}^{(k)}}{\lambda_1^k\beta_1}.
 \]</div>
 </div>
-<p><strong>Motivation for Normalization:</strong> In the original method, if <span class="arithmatex">\(|\lambda| &gt; 1\)</span> then <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> diverges. If <span class="arithmatex">\(|\lambda| &lt; 1\)</span> then <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> converges to 0. Both cases are not suitable for actual computing. Thus we need normalization to make sure <span class="arithmatex">\(||\mathbf{x}||_\infty = 1\)</span> at each step to guarantee the <em>stableness</em>.</p>
+<p><strong>Motivation for Normalization:</strong> In the original method, if <span class="arithmatex">\(|\lambda| &gt; 1\)</span> then <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> diverges. If <span class="arithmatex">\(|\lambda| &lt; 1\)</span> then <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> converges to <span class="arithmatex">\(0\)</span>. Both cases are not suitable for actual computing. Thus we need normalization to make sure <span class="arithmatex">\(||\mathbf{x}||_\infty = 1\)</span> at each step to guarantee the <em>stability</em>.</p>
 <div class="admonition success">
 <p class="admonition-title">Normalization</p>
 <p>Let <span class="arithmatex">\(\mathbf{u}^{(k-1)} = \frac{\mathbf{x}^{(k-1)}}{||\mathbf{x}^{(k-1)}||_\infty}, 
 \mathbf{x}^{(k)} = A\mathbf{u}^{(k - 1)}\)</span>,</p>
 <p>then</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     &amp; \mathbf{u}^{(k)} =
     \frac{\mathbf{x}^{(k)}}{||\mathbf{x}^{(k)}||_\infty} =
     \frac{\lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j}}{\left|\left|\lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j}\right|\right|_\infty}
-    \ \overset{k \rightarrow \infty}{=\!=\!=\!=}\ \frac{\mathbf{v}_\mathbf{1}}{||\mathbf{v}_\mathbf{1}||_\infty}
+    \ \overset{k \rightarrow \infty}{=\!=\!=\!=}\ \frac{\mathbf{v}_\mathbf{1}}{||\mathbf{v}_\mathbf{1}||_\infty},
     \\
     &amp; \mathbf{x}^{(k)} =
     \frac{A^k\mathbf{x}_\mathbf{0}}{||A^{k - 1}\mathbf{x}_\mathbf{0}||} =
     \frac{\lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}_\mathbf{j}}{\left|\left|\lambda_1^{k - 1} \sum\limits_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^{k - 1}\mathbf{v}_\mathbf{j}\right|\right|_\infty} \ \overset{k \rightarrow \infty}{=\!=\!=\!=}\ 
     \lambda_1 \frac{\mathbf{v}_\mathbf{1}}{||\mathbf{v}_\mathbf{1}||_\infty}=\lambda_1 \mathbf{u}^{(k)}.
-\end{align}
+\end{aligned}
 \]</div>
 <p>Thus </p>
 <div class="arithmatex">\[
@@ -547,11 +547,11 @@
 </ul>
 </div>
 <h3 id="rate-of-convergence">Rate of Convergence<a class="headerlink" href="#rate-of-convergence" title="Permanent link">¶</a></h3>
-<p>Examine <span class="arithmatex">\(\textbf{x}^{(k)} = \lambda_1^k \sum_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\textbf{v}_\textbf{j}\)</span>&gt; We find that <span class="arithmatex">\(\left(\frac{\lambda_j}{\lambda_1}\right)\)</span> determines the rate of convergence, especially <span class="arithmatex">\(\left|\frac{\lambda_2}{\lambda_1}\right|\)</span>.</p>
-<p><strong>Target:</strong> Make <span class="arithmatex">\(\left|\frac{\lambda_2}{\lambda_1}\right|\)</span> as small as possible.</p>
+<p>Examine <span class="arithmatex">\(\textbf{x}^{(k)} = \lambda_1^k \sum_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\textbf{v}_\textbf{j}\)</span>. We find that <span class="arithmatex">\(\left(\dfrac{\lambda_j}{\lambda_1}\right)\)</span> determines the rate of convergence, especially <span class="arithmatex">\(\left|\dfrac{\lambda_2}{\lambda_1}\right|\)</span>.</p>
+<p><strong>Target:</strong> Make <span class="arithmatex">\(\left|\dfrac{\lambda_2}{\lambda_1}\right|\)</span> as small as possible.</p>
 <details class="example">
 <summary>Example</summary>
-<p>Let <span class="arithmatex">\(p = \frac12 (\lambda_2 + \lambda_n)\)</span>, and <span class="arithmatex">\(B = A - pI\)</span>, then <span class="arithmatex">\(B\)</span> has the eigenvalues</p>
+<p>Let <span class="arithmatex">\(p = \dfrac12 (\lambda_2 + \lambda_n)\)</span>, and <span class="arithmatex">\(B = A - pI\)</span>, then <span class="arithmatex">\(B\)</span> has the eigenvalues</p>
 <div class="arithmatex">\[
     \lambda_1 - p, \lambda_2 - p, \dots, \lambda_n - p.
 \]</div>
@@ -560,7 +560,7 @@
     \left|\frac{\lambda_2 - p}{\lambda_1 - p}\right| &lt; \left|\frac{\lambda_2}{\lambda_1}\right|,
 \]</div>
 <p>the iteration for finding the eigenvalues of <span class="arithmatex">\(B\)</span> converges much faster than that of <span class="arithmatex">\(A\)</span>.</p>
-<p>But how to find <span class="arithmatex">\(p\)</span>? ...</p>
+<p>But how to find <span class="arithmatex">\(p\)</span> ...?</p>
 </details>
 <h3 id="inverse-power-method">Inverse Power Method<a class="headerlink" href="#inverse-power-method" title="Permanent link">¶</a></h3>
 <p>If <span class="arithmatex">\(A\)</span> has  eigenvalues satisfying <span class="arithmatex">\(|\lambda_1| \ge |\lambda_2| \ge \dots \gt |\lambda_n|\)</span>, then <span class="arithmatex">\(A^{-1}\)</span> has</p>
@@ -589,7 +589,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:not.committed.yet'>Not Committed Yet</a>, <a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
@@ -660,8 +660,7 @@
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -553,25 +555,25 @@
 <h3 id="truncation-error">Truncation Error<a class="headerlink" href="#truncation-error" title="Permanent link">¶</a></h3>
 <p>the error involved using a truncated or finite summation.</p>
 <h3 id="roundoff-error">Roundoff Error<a class="headerlink" href="#roundoff-error" title="Permanent link">¶</a></h3>
-<p>the error produced when performing real number calculations. It occurs because the arithmetic performed in a machine involved numbers with a finite number of digits.</p>
+<p>the error produced when performing real number calculations. It occurs because the arithmetic performed in a machine involved numbers with <strong>a finite number of digits</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Chopping &amp; Rounding</p>
 <p>Given a real number <span class="arithmatex">\(y = 0.d_1d_2\dots d_kd_{k+1}\dots \times 10^N\)</span>, the floating-point representation of <span class="arithmatex">\(y\)</span> is <span class="arithmatex">\(fl(y)\)</span>:</p>
 <div class="arithmatex">\[
     fl(y) = \left\{
-        \begin{align}
+        \begin{aligned}
             &amp; 0.d_1d_2\dots d_k \times 10^N, &amp; {\tt Chopping} \\
             &amp; {\tt chop}\left(y + 5 \times 10^{n - (k + 1)}\right). &amp; {\tt Rounding}
-        \end{align}
+        \end{aligned}
     \right.
 \]</div>
 </div>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
-<p>If <span class="arithmatex">\(p^*\)</span> is an approximation to <span class="arithmatex">\(p\)</span>, then <strong>absolute error</strong> is <span class="arithmatex">\(|p - p*|\)</span> and <strong>relative error</strong> is <span class="arithmatex">\(\frac{|p - p^*|}{|p|}\)</span>.</p>
-<p>The number <span class="arithmatex">\(p^*\)</span> is said to be approximate to <span class="arithmatex">\(p\)</span> to <span class="arithmatex">\(t\)</span> *<em>significant digits</em> if <span class="arithmatex">\(t\)</span> is the largest nonnegative integer for which</p>
+<p>If <span class="arithmatex">\(p^*\)</span> is an approximation to <span class="arithmatex">\(p\)</span>, then <strong>absolute error</strong> is <span class="arithmatex">\(|p - p^*|\)</span> and <strong>relative error</strong> is <span class="arithmatex">\(\dfrac{|p - p^*|}{|p|}\)</span>.</p>
+<p>The number <span class="arithmatex">\(p^*\)</span> is said to be approximate to <span class="arithmatex">\(p\)</span> to <span class="arithmatex">\(t\)</span> <strong>significant digits</strong> if <span class="arithmatex">\(t\)</span> is the largest nonnegative integer s.t.</p>
 <div class="arithmatex">\[
-    \frac{|p - p^*|}{|p|} &lt; 5 \times 10^{-t}
+    \frac{|p - p^*|}{|p|} &lt; 5 \times 10^{-t}.
 \]</div>
 </div>
 <details class="example">
@@ -580,65 +582,65 @@
 <div class="arithmatex">\[
     \left|\frac{y - fl(y)}{y}\right|.
 \]</div>
-<p>for chopping representation,</p>
+<p>For chopping representation,</p>
 <div class="arithmatex">\[
     \left|\frac{y - fl(y)}{y}\right| = \left|\frac{0.d_{k + 1}d_{k + 2}\dots}{0.d_1d_2\dots}\right| \times 10^{-k} \le \frac{1}{0.1} \times 10^{-k} = 10^{-k + 1}.
 \]</div>
-<p>for rounding representation,</p>
+<p>For rounding representation,</p>
 <div class="arithmatex">\[
     \left|\frac{y - fl(y)}{y}\right| \le \frac{0.5}{0.1} \times 10^{-k} = 0.5 \times 10^{-k + 1}.
 \]</div>
 </details>
 <h3 id="effect-of-error">Effect of Error<a class="headerlink" href="#effect-of-error" title="Permanent link">¶</a></h3>
 <ul>
-<li>Subtraction may reduce significant digits. <em>e.g.</em> 0.1234 - 0.1233 = 0.001</li>
+<li>Subtraction may reduce significant digits. <em>e.g.</em> 0.1234 - 0.1233 = 0.001.</li>
 <li>Division by small number of multiplication by large number magnify the abosolute error without modifying the relative error.</li>
 </ul>
 <h3 id="some-solutions-to-reduce-error">Some Solutions to Reduce Error<a class="headerlink" href="#some-solutions-to-reduce-error" title="Permanent link">¶</a></h3>
-<details class="example">
-<summary>Quadratic Formula</summary>
-<p>the roots of <span class="arithmatex">\(ax^2 + bx + c = 0\)</span> is </p>
+<div class="admonition example">
+<p class="admonition-title">Quadratic Formula</p>
+<p>The roots of <span class="arithmatex">\(ax^2 + bx + c = 0\)</span> is </p>
 <div class="arithmatex">\[
     x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
 \]</div>
-<p>Sometimes <span class="arithmatex">\(b\)</span> is closer to <span class="arithmatex">\(\sqrt{b^2 - 4ac}\)</span>, which may cause the subtraction to reduce significant digits. <u>An alternate way</u> is to modify the formula to</p>
+<p>Sometimes <span class="arithmatex">\(b\)</span> is closer to <span class="arithmatex">\(\sqrt{b^2 - 4ac}\)</span>, which may cause the subtraction to reduce significant digits. <em>An alternate way</em> is to modify the formula to</p>
 <div class="arithmatex">\[
     x = \frac{-2c}{b \pm \sqrt{b^2 - 4ac}}.
 \]</div>
 <p>But it may cause the division by small number. So it's a <strong>tradeoff</strong> to use one of the two formulae above.</p>
-</details>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Horner's Method 秦九韶算法</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
     f(x) &amp;= a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0 
     \\ &amp;= (\dots((a_nx+a_{n-1})x+a_{n-2})x+\dots+a_1)x+a_0
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <h2 id="stable-algorithms-and-convergence">Stable Algorithms and Convergence<a class="headerlink" href="#stable-algorithms-and-convergence" title="Permanent link">¶</a></h2>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
 <p>An algorithm that satisfies that small changes in the initial data produce correspondingly small changes in the final results is called <strong>stable</strong>; otherwise it is <strong>unstable</strong>.  An algorithm is called <strong>conditionally stable</strong> if it is stable only for certain choices of initial data.</p>
-<p>Suppose <span class="arithmatex">\(E_0 &gt; 0\)</span> denotes an initial errors, <span class="arithmatex">\(E_n\)</span> denotes the magnitude of an error after <span class="arithmatex">\(n\)</span> subsequent operations</p>
+<p>Suppose <span class="arithmatex">\(E_0 &gt; 0\)</span> denotes an initial errors, <span class="arithmatex">\(E_n\)</span> denotes the magnitude of an error after <span class="arithmatex">\(n\)</span> subsequent operations, then we define</p>
 <ul>
-<li><strong>Linear growth of errors</strong> <span class="arithmatex">\(E_n \approx C n E_0\)</span><ul>
-<li>unavoidable and acceptable</li>
+<li><strong>Linear growth of errors</strong> <span class="arithmatex">\(E_n \approx C n E_0.\)</span><ul>
+<li>unavoidable and acceptable.</li>
 </ul>
 </li>
-<li><strong>Exponential growth of errors</strong> <span class="arithmatex">\(E_n \approx C^n E_0\)</span><ul>
-<li><u>unacceptable</u></li>
+<li><strong>Exponential growth of errors</strong> <span class="arithmatex">\(E_n \approx C^n E_0.\)</span><ul>
+<li><font color="red">unacceptable.</font></li>
 </ul>
 </li>
 </ul>
 </div>
 <details class="example">
 <summary>Example</summary>
-<p>the recursive equation <span class="arithmatex">\(p_n = \frac{10}{3}p_{n - 1} - p_{n - 2}\)</span> has the solution</p>
+<p>The recursive equation <span class="arithmatex">\(p_n = \dfrac{10}{3}p_{n - 1} - p_{n - 2}\)</span> has the solution</p>
 <div class="arithmatex">\[
     p_n = c_1 \left(\frac13\right)^n + c_23^n.
 \]</div>
-<p>If <span class="arithmatex">\(p_0 = 1, p_1 = \frac13\)</span>, then the solution is</p>
+<p>If <span class="arithmatex">\(p_0 = 1, p_1 = \dfrac13\)</span>, then the solution is</p>
 <div class="arithmatex">\[
     p_n = \left(\frac13\right)^n.
 \]</div>
@@ -655,7 +657,7 @@
 <div class="arithmatex">\[
     p_n = c_1 + c_2n
 \]</div>
-<p>If <span class="arithmatex">\(p_0 = 1, p_1 = \frac13\)</span>, then the solution is</p>
+<p>If <span class="arithmatex">\(p_0 = 1, p_1 = \dfrac13\)</span>, then the solution is</p>
 <div class="arithmatex">\[
     p_n = 1 - \frac23 n.
 \]</div>
@@ -669,29 +671,33 @@
 \]</div>
 <p>grow <strong>linearly</strong> with <span class="arithmatex">\(n\)</span>.</p>
 </details>
-<div class="admonition tip">
+<div class="admonition info">
 <p class="admonition-title">Error of floating-point number (IEEE 754 standard)</p>
 <h4 id="range-of-normal-representation">Range of normal representation<a class="headerlink" href="#range-of-normal-representation" title="Permanent link">¶</a></h4>
-<p>Single-Precision</p>
+<p>For Single-Precision</p>
 <ul>
 <li>Smallest <span class="arithmatex">\(\text{0/1\ 00000001\ 00\dots00}\)</span><ul>
-<li><span class="arithmatex">\(\pm 1.0 \times 2^{-126} \approx \pm 1.2 \times 10^{-38}\)</span></li>
+<li><span class="arithmatex">\(\pm 1.0 \times 2^{-126} \approx \pm 1.2 \times 10^{-38}\)</span>.</li>
 </ul>
 </li>
 <li>Largest <span class="arithmatex">\(\text{0/1\ 11111110\ 11\dots11}\)</span><ul>
-<li><span class="arithmatex">\(\pm 2.0 \times 2^{127} \approx \pm 3.4 \times 10^{38}\)</span></li>
+<li><span class="arithmatex">\(\pm 2.0 \times 2^{127} \approx \pm 3.4 \times 10^{38}\)</span>.</li>
 </ul>
 </li>
 </ul>
-<p>For Double-Precision, smallest <span class="arithmatex">\(\pm 1.0 \times 2^{-1022} \approx \pm 2.2 \times 10^{-308}\)</span>, largest<span class="arithmatex">\(\pm 2.0 \times 2^{1023} \approx \pm 1.8 \times 10^{308}\)</span></p>
+<p>For Double-Precision</p>
+<ul>
+<li>Smallest <span class="arithmatex">\(\pm 1.0 \times 2^{-1022} \approx \pm 2.2 \times 10^{-308}\)</span>.</li>
+<li>Largest <span class="arithmatex">\(\pm 2.0 \times 2^{1023} \approx \pm 1.8 \times 10^{308}\)</span>.</li>
+</ul>
 <h4 id="relative-precision">Relative precision<a class="headerlink" href="#relative-precision" title="Permanent link">¶</a></h4>
 <ul>
-<li>Single <span class="arithmatex">\(2^{-23}\)</span><ul>
-<li>Equivalent to <span class="arithmatex">\(23 \times \log_{10}2 \approx 6\)</span>decimal digits of precision（6 位有效数字）</li>
+<li>Single-Precision: <span class="arithmatex">\(2^{-23}\)</span><ul>
+<li>Equivalent to <span class="arithmatex">\(23 \times \log_{10}2 \approx 6\)</span> decimal digits of precision（6 位有效数字）.</li>
 </ul>
 </li>
-<li>Double <span class="arithmatex">\(2^{-52}\)</span><ul>
-<li>Equivalent to <span class="arithmatex">\(52 \times \log_{10}2 \approx 16\)</span>decimal digits of precision（16 位有效数字）</li>
+<li>Double-Precision: <span class="arithmatex">\(2^{-52}\)</span><ul>
+<li>Equivalent to <span class="arithmatex">\(52 \times \log_{10}2 \approx 16\)</span> decimal digits of precision（16 位有效数字）.</li>
 </ul>
 </li>
 </ul>
@@ -709,7 +715,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:not.committed.yet'>Not Committed Yet</a>, <a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
@@ -780,8 +786,7 @@
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

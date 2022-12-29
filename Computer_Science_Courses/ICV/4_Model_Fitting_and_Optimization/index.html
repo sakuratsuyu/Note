@@ -16,7 +16,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
-<link href="../../../css/extra.css" rel="stylesheet"/>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -685,11 +687,11 @@
 <h1 id="lecture-4-model-fitting-and-optimization">Lecture 4 Model Fitting and Optimization<a class="headerlink" href="#lecture-4-model-fitting-and-optimization" title="Permanent link">¶</a></h1>
 <h2 id="optimization">Optimization<a class="headerlink" href="#optimization" title="Permanent link">¶</a></h2>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 &amp; \text{Minimize } &amp; f_0(x) \\
 &amp; \text{Subject to } &amp;f_i(x) &amp; \le 0,\ i = 1, \dots, m \\
 &amp; &amp; g_i(x) &amp; = 0,\ i = 1,\dots, p
-\end{align}
+\end{aligned}
 \]</div>
 <ul>
 <li><span class="arithmatex">\(x \in \mathbb{R}^n\)</span> is a vector variable to be chosen.</li>
@@ -703,7 +705,7 @@
 \hat x = \mathop{\arg\min}\limits_x \sum\limits_i(b_i - a_i^Tx)^2
 \]</div>
 <h3 id="reasons-to-choose-mse">Reasons to choose <abbr title="Mean Square Error">MSE</abbr><a class="headerlink" href="#reasons-to-choose-mse" title="Permanent link">¶</a></h3>
-<div class="admonition note">
+<div class="admonition plane">
 <p><strong>Key Assumptions:</strong> <abbr title="Mean Square Error">MSE</abbr> = <abbr title="Maximum Likelihood Estimation">MLE</abbr> with Gaussian noise</p>
 </div>
 <p>From <strong>Maximum Likelihood Estimation (<abbr title="Maximum Likelihood Estimation">MLE</abbr>)</strong>, the data is assumed to be with <strong>Gaussian noise</strong>.</p>
@@ -718,16 +720,16 @@ P[(a_i, b_i)|x] = P[b_i - a_i^Tx] \propto \exp\left(-\frac{(b_i - a_i^Tx)^2}{2\s
 <p class="admonition-title">Note</p>
 <p>If the data points are <strong>independent</strong>,</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 P[(a_1, b_1)(a_2, b_2)\dots|x] &amp; = \prod\limits_iP[(a_i, b_i)|x] = \prod\limits_iP[b_i - a_{i^{Tx]}} \\
 &amp; \propto \exp\left(-\frac{\sum_i(b_i - a_i^Tx)^2}{2\sigma^2}\right) = \exp\left(-\frac{||Ax-b||^2_2}{2\sigma^2}\right)
-\end{align}
+\end{aligned}
 \]</div>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 \hat x &amp;= \mathop{\arg\max}\limits_x P[(a_1, b_1)(a_2, b_2)\dots|x] \\ &amp;= \mathop{\arg\max}\limits_x \exp\left(-\frac{||Ax-b||^2_2}{2\sigma^2}\right) 
 = \mathop{\arg\min}\limits_x||Ax - b||_2^2
-\end{align}
+\end{aligned}
 \]</div>
 </div>
 <hr/>
@@ -752,7 +754,7 @@ A^TAx = A^Tb
 </ol>
 </div>
 <h3 id="gradient-descent-gd">Gradient Descent (GD)<a class="headerlink" href="#gradient-descent-gd" title="Permanent link">¶</a></h3>
-<div class="admonition note">
+<div class="admonition plane">
 <h3 id="steepest-descent-method">Steepest Descent Method<a class="headerlink" href="#steepest-descent-method" title="Permanent link">¶</a></h3>
 <div class="arithmatex">\[
 F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x
@@ -798,7 +800,7 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x
 </li>
 </ul>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <h3 id="newton-method">Newton Method<a class="headerlink" href="#newton-method" title="Permanent link">¶</a></h3>
 <div class="arithmatex">\[
 F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
@@ -815,14 +817,14 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
 </li>
 </ul>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <h3 id="gauss-newton-method">Gauss-Newton Method<a class="headerlink" href="#gauss-newton-method" title="Permanent link">¶</a></h3>
 <p>For <span class="arithmatex">\(\hat x = \mathop{\arg\min}\limits_x ||Ax-b||^2_2 \overset{\Delta}{=\!=}\mathop{\arg\min}\limits_x||R(x)||^2_2\)</span>, expand <span class="arithmatex">\(R(x)\)</span>.</p>
 <div class="arithmatex">\[
-\begin{align}
+\begin{aligned}
 ||R(x_k+\Delta x)||^2_2 &amp;\approx ||R(x_k) + J_R\Delta x||^2_2 \newline 
 &amp;= ||R(x_k)||^2_2 + 2R(x_k)^TJ_R\Delta x + \Delta x^TJ^T_RJ_R\Delta x
-\end{align}
+\end{aligned}
 \]</div>
 <ul>
 <li>
@@ -846,7 +848,7 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
 </li>
 </ul>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <h3 id="levenberg-marquardt-lm">Levenberg-Marquardt (LM)<a class="headerlink" href="#levenberg-marquardt-lm" title="Permanent link">¶</a></h3>
 <ul>
 <li>
@@ -916,7 +918,7 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
 <p class="admonition-title">Note</p>
 <p><strong>A key idea:</strong> Neighboring pixels tend to take the same label.</p>
 </div>
-<div class="admonition note">
+<div class="admonition plane">
 <p>Images as Graphs</p>
 <ul>
 <li>A vertex for each pixel</li>
@@ -969,7 +971,7 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:not.committed.yet'>Not Committed Yet</a>, <a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
@@ -1040,8 +1042,7 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script src="../../../js/mathjax.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>
