@@ -630,16 +630,16 @@
 <h2 id="norms-of-vectors-and-matrices">Norms of Vectors and Matrices<a class="headerlink" href="#norms-of-vectors-and-matrices" title="Permanent link">¶</a></h2>
 <h3 id="vector-norms">Vector Norms<a class="headerlink" href="#vector-norms" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 7.0</p>
 <p>A <strong>vector norm</strong> on <span class="arithmatex">\(\mathbb{R}^n\)</span> is a function <span class="arithmatex">\(||\cdot||\)</span>, from <span class="arithmatex">\(\mathbb{R}^n\)</span> into <span class="arithmatex">\(\mathbb{R}\)</span> with the following properties.</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \forall \mathbf{x, y} \in \mathbb{R}^n, \alpha \in \mathbb{R}, &amp;
-    (1)\ ||\mathbf{x}|| \ge 0;\ ||\mathbf{x}|| = 0 \Leftrightarrow \mathbf{x} = \mathbf{0}.
+    (1)\ ||\mathbf{x}|| \ge 0;\ ||\mathbf{x}|| = 0 \Leftrightarrow \mathbf{x} = \mathbf{0};
     \\ &amp;
-    (2)\ ||\alpha \mathbf{x}|| = |\alpha| \cdot ||\mathbf{x}||
+    (2)\ ||\alpha \mathbf{x}|| = |\alpha| \cdot ||\mathbf{x}||;
     \\ &amp;
-    (3)\ ||\mathbf{x} + \mathbf{y}|| \le ||\mathbf{x}|| + ||\mathbf{y}||
+    (3)\ ||\mathbf{x} + \mathbf{y}|| \le ||\mathbf{x}|| + ||\mathbf{y}||.
     \\
 \end{aligned}
 \]</div>
@@ -656,32 +656,32 @@
 <h4 id="convergence-of-vector">Convergence of Vector<a class="headerlink" href="#convergence-of-vector" title="Permanent link">¶</a></h4>
 <p>Similarly with a scalar, a sequence of vectors <span class="arithmatex">\(\{\mathbf{x}^{(k)}\}_{k=1}^\infty\)</span> in <span class="arithmatex">\(\mathbb{R}^n\)</span> is said to <strong>converge</strong> to <span class="arithmatex">\(\mathbf{x}\)</span> with respect to norm <span class="arithmatex">\(||\cdot||\)</span>, if <span class="arithmatex">\(\forall \epsilon \gt 0,\exists N \in \mathbb{N}\)</span>, s.t <span class="arithmatex">\(\forall k \gt N, ||\mathbf{x}^{(k)} - \mathbf{x}|| \lt \epsilon\)</span>.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p><span class="arithmatex">\(\{\mathbf{x}^{(k)}\}_{k=1}^\infty\)</span> in <span class="arithmatex">\(\mathbb{R}^n\)</span> converges to <span class="arithmatex">\(\mathbf{x}\)</span> with respect to norm <span class="arithmatex">\(||\cdot||_\infty\)</span> if and only if <span class="arithmatex">\(\forall i,\lim_{k \rightarrow \infty}x_i^{(k)} = x_i\)</span>.</p>
+<p class="admonition-title">Theorem 7.0</p>
+<p><span class="arithmatex">\(\{\mathbf{x}^{(k)}\}_{k=1}^\infty\)</span> in <span class="arithmatex">\(\mathbb{R}^n\)</span> converges to <span class="arithmatex">\(\mathbf{x}\)</span> with respect to norm <span class="arithmatex">\(||\cdot||_\infty\)</span> if and only if <span class="arithmatex">\(\forall\ i\)</span>, <span class="arithmatex">\(\lim_{k \rightarrow \infty}x_i^{(k)} = x_i\)</span>.</p>
 </div>
 <h3 id="equivalence">Equivalence<a class="headerlink" href="#equivalence" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 7.1</p>
 <p>If <span class="arithmatex">\(\exists C_1, C_2,\ s.t.\ C_1||\mathbf{x}||_B \le ||\mathbf{x}||_A \le C_2||\mathbf{x}||_B\)</span>, then <span class="arithmatex">\(||\mathbf{x}||_A\)</span> and <span class="arithmatex">\(||\mathbf{x}||_B\)</span> are <strong>equivalent</strong>.</p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 7.1</p>
 <p>All the vector norms on <span class="arithmatex">\(\mathbb{R}^n\)</span> are equivalent.</p>
 </div>
 <h2 id="matrix-norms">Matrix Norms<a class="headerlink" href="#matrix-norms" title="Permanent link">¶</a></h2>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 7.2</p>
 <p>A <strong>matrix norm</strong> on <span class="arithmatex">\(\mathbb{R}^n\)</span> is a function <span class="arithmatex">\(||\cdot||\)</span>, from <span class="arithmatex">\(M_n(\mathbb{R})\)</span> matrices into <span class="arithmatex">\(\mathbb{R}\)</span> with the following properties.</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \forall A, B \in M_n(\mathbb{R}), \alpha \in \mathbb{R}, &amp;
-    (1)\ ||A|| \ge 0;\ ||A|| = 0 \Leftrightarrow A = \mathbf{O}.
+    (1)\ ||A|| \ge 0;\ ||A|| = 0 \Leftrightarrow A = \mathbf{O};
     \\ &amp;
-    (2)\ ||\alpha A|| = |\alpha| \cdot ||A||
+    (2)\ ||\alpha A|| = |\alpha| \cdot ||A||;
     \\ &amp;
-    (3)\ ||A + B|| \le ||A|| + ||B||
+    (3)\ ||A + B|| \le ||A|| + ||B||;
     \\ &amp;
-    (4)\ ||AB|| \le ||A|| \cdot ||B||
+    (4)\ ||AB|| \le ||A|| \cdot ||B||.
 \end{aligned}
 \]</div>
 </div>
@@ -698,7 +698,7 @@
 </li>
 </ul>
 <div class="admonition theorem">
-<p class="admonition-title">Corollary</p>
+<p class="admonition-title">Corollary 7.2</p>
 <p>For any vector <span class="arithmatex">\(\mathbf{x} \ne 0\)</span>, matrix <span class="arithmatex">\(A\)</span>, and any natural norm <span class="arithmatex">\(||\cdot||\)</span>, we have</p>
 <div class="arithmatex">\[
     ||A\mathbf{x}|| \le ||A|| \cdot ||\mathbf{x}||.
@@ -707,7 +707,7 @@
 </div>
 <h2 id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Permanent link">¶</a></h2>
 <details class="definition">
-<summary>Definition (Recap)</summary>
+<summary>Definition 7.3 (Recap)</summary>
 <p>If <span class="arithmatex">\(A\)</span> is a square matrix, the **characteristic polynomial$ of <span class="arithmatex">\(A\)</span> is defined by</p>
 <div class="arithmatex">\[
     p(\lambda) = \text{det}(A - \lambda I).
@@ -716,15 +716,15 @@
 </details>
 <h3 id="spectral-radius">Spectral Radius<a class="headerlink" href="#spectral-radius" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 7.4</p>
 <p>The <strong>spectral radius</strong> of a matrix <span class="arithmatex">\(A\)</span> is defined by</p>
 <div class="arithmatex">\[
-    \rho(A) = \max|\lambda| \text{, where $\lambda$ is an eigenvalue of $A$}.
+    \rho(A) = \max|\lambda|,\ \ \text{ where $\lambda$ is an eigenvalue of $A$}.
 \]</div>
 <p>(Recap that for complex <span class="arithmatex">\(\lambda = \alpha + \beta i\)</span>, <span class="arithmatex">\(|\lambda| = \sqrt{\alpha^2 + \beta^2}\)</span>.)</p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 7.3</p>
 <p><span class="arithmatex">\(\forall A \in M_n(\mathbb{R})\)</span>,</p>
 <ul>
 <li><span class="arithmatex">\(||A||_2 = \sqrt{\rho(A^tA)}\)</span>.</li>
@@ -744,7 +744,7 @@
 </details>
 <h3 id="convergence-of-matrix">Convergence of Matrix<a class="headerlink" href="#convergence-of-matrix" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 7.5</p>
 <p><span class="arithmatex">\(A \in M_n(\mathbb{R}))\)</span> is <strong>convergent</strong> if</p>
 <div class="arithmatex">\[
     \lim_{k \rightarrow \infty}\left(A^k\right)_{ij} = 0
@@ -752,7 +752,7 @@
 \]</div>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 7.4</p>
 <p>The following statements are equivalent.</p>
 <ul>
 <li><span class="arithmatex">\(A\)</span> is a convergent matrix.</li>
@@ -771,7 +771,7 @@
 \]</div>
 <p>Thus,</p>
 <div class="arithmatex">\[
-    \mathbf{x} = D^{-1}(L + U)\mathbf{x} + D^{-1}\mathbf{b}
+    \mathbf{x} = D^{-1}(L + U)\mathbf{x} + D^{-1}\mathbf{b}.
 \]</div>
 <h3 id="jacobi-iterative-method">Jacobi Iterative Method<a class="headerlink" href="#jacobi-iterative-method" title="Permanent link">¶</a></h3>
 <p>Let <span class="arithmatex">\(T_j = D^{-1}(L+U)\)</span> and <span class="arithmatex">\(\mathbf{c}_\mathbf{j} = D^{-1}\mathbf{b}\)</span>, then</p>
@@ -794,7 +794,7 @@
 \]</div>
 <p>where <span class="arithmatex">\(\mathbf{x}^{(0)}\)</span> is arbitrary.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Lemma</p>
+<p class="admonition-title">Lemma 7.5</p>
 <p>If <span class="arithmatex">\(\rho(T) \lt 1\)</span> , then <span class="arithmatex">\((I - T)^{-1}\)</span> exists and </p>
 <div class="arithmatex">\[
     (I - T)^{-1} = \sum\limits_{j = 0}^\infty T^j.
@@ -811,10 +811,10 @@
 <div class="arithmatex">\[
     \lim\limits_{m \rightarrow \infty} (I - T)S_m = \lim\limits_{m \rightarrow \infty}(I - T^{m + 1}) = I.
 \]</div>
-<p>Thus, $(I - T)^{-1} = \lim\limits_{m \rightarrow \infty}S_m = \sum\limits_{j = 0}^\infty T^j.</p>
+<p>Thus, <span class="arithmatex">\((I - T)^{-1} = \lim\limits_{m \rightarrow \infty}S_m = \sum\limits_{j = 0}^\infty T^j\)</span>.</p>
 </details>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 7.6</p>
 <p><span class="arithmatex">\(\{\mathbf{x}^{(k)}\}_{k=1}^\infty\)</span> defined by <span class="arithmatex">\(\mathbf{x}^{(k)} = T\mathbf{x}^{(k - 1)} + \mathbf{c}\)</span> converges to the unique solution of <span class="arithmatex">\(\mathbf{x} = T\mathbf{x} + \mathbf{c}\)</span> if and only if <span class="arithmatex">\(\rho(T) \lt 1\)</span>.</p>
 </div>
 <details class="proof">
@@ -823,7 +823,7 @@
 <p>define error <span class="arithmatex">\(\mathbf{e}^{(k)} = \mathbf{x} - \mathbf{x}^{(k)}\)</span>, then</p>
 <div class="arithmatex">\[
     \mathbf{e}^{(k)} = (T\mathbf{x} + c) - (T\mathbf{x}^{(k - 1)} + c) = T(\mathbf{x} - \mathbf{x}^{(k - 1)})T\mathbf{e}^{(k - 1)}
-    \Rightarrow \mathbf{e}^{(k)} = T^k \mathbf{e}^{(0)}
+    \Rightarrow \mathbf{e}^{(k)} = T^k \mathbf{e}^{(0)}.
 \]</div>
 <p>Since it converges, thus</p>
 <div class="arithmatex">\[
@@ -833,7 +833,7 @@
 \]</div>
 <div class="arithmatex">\[
     \Leftrightarrow
-    \rho(T) &lt; 1
+    \rho(T) &lt; 1.
 \]</div>
 <p><span class="arithmatex">\(\Leftarrow\)</span>:</p>
 <div class="arithmatex">\[
@@ -843,14 +843,14 @@
 <div class="arithmatex">\[
     \lim\limits_{k \rightarrow \infty} T^k x^{(0)} = \mathbf{0}.
 \]</div>
-<p>From the Lemma above, we have</p>
+<p>From <strong>Lemma 7.5</strong>, we have</p>
 <div class="arithmatex">\[
     \lim\limits_{k \rightarrow \infty} \mathbf{x}^{(k)} = \lim\limits_{k \rightarrow \infty} T^k\mathbf{x}^{(0)} + \left(\sum\limits_{j = 0}^\infty T^j \right)\mathbf{c} = \mathbf{0} + (I - T)^{-1}\mathbf{c} = (I - T)^{-1}\mathbf{c}.
 \]</div>
 <p>Thus <span class="arithmatex">\(\{\mathbf{x}^{(k)}\}\)</span> converges to <span class="arithmatex">\(\mathbf{x} \equiv (I - T)^{-1} \Leftrightarrow \mathbf{x} = T\mathbf{x} + c\)</span>. </p>
 </details>
 <div class="admonition theorem">
-<p class="admonition-title">Corollary</p>
+<p class="admonition-title">Corollary 7.7</p>
 <p>If <span class="arithmatex">\(||T||\lt 1\)</span> for any matrix norm and <span class="arithmatex">\(\mathbf{c}\)</span> is a given vector, then for all <span class="arithmatex">\(\mathbf{x}^{(0)}\in \mathbb{R}^n\)</span>, <span class="arithmatex">\(\{\mathbf{x}^{(k)}\}_{k=1}^\infty\)</span> defined by <span class="arithmatex">\(\mathbf{x}^{(k)} = T\mathbf{x}^{(k - 1)} + \mathbf{c}\)</span> converges to <span class="arithmatex">\(\mathbf{x}\)</span>, and the following error bounds hold</p>
 <ul>
 <li><span class="arithmatex">\(||\mathbf{x} - \mathbf{x}^{(k)}|| \le ||T||^k||\mathbf{x}^{(0)} - \mathbf{x}||\)</span>.</li>
@@ -858,42 +858,42 @@
 </ul>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p><span class="arithmatex">\(\forall A\)</span> is strictly diagonally dominant, <span class="arithmatex">\(\forall \text{\bf{x}}^{(0)}\)</span>, both Jacobi and Gauss-Seidel methods give <span class="arithmatex">\(\{\mathbf{x}^{(k)}\}_{k=0}^\infty\)</span> that converge to the unique solution of <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span>.</p>
+<p class="admonition-title">Theorem 7.8</p>
+<p><span class="arithmatex">\(\forall\ A\)</span> is strictly diagonally dominant, <span class="arithmatex">\(\forall\ \mathbf{x}^{(0)}\)</span>, both Jacobi and Gauss-Seidel methods give <span class="arithmatex">\(\{\mathbf{x}^{(k)}\}_{k=0}^\infty\)</span> that converge to the unique solution of <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span>.</p>
 </div>
 <h3 id="relaxation-methods">Relaxation Methods<a class="headerlink" href="#relaxation-methods" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 7.6</p>
 <p>Suppose <span class="arithmatex">\(\mathbf{\tilde x}\)</span> is an approximation to the solution of <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span>, then the <strong>residual vector</strong> for <span class="arithmatex">\(\mathbf{\tilde x}\)</span> w.r.t this linear system is <span class="arithmatex">\(\mathbf{r} = \mathbf{b} - A\mathbf{\tilde x}\)</span>.</p>
 </div>
 <p>Further examine Gauss-Seidel method,</p>
 <div class="arithmatex">\[
-x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} = b_i - \sum_{j \lt i} a_{ij}x_j^{(k)} - \sum_{j \ge i} a_{ij}x_j^{(k - 1)}
+x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} = b_i - \sum_{j \lt i} a_{ij}x_j^{(k)} - \sum_{j \ge i} a_{ij}x_j^{(k - 1)}.
 \]</div>
-<p>Let <span class="arithmatex">\(x_i^{(k)} = x_i^{(k - 1)} + \omega\frac{r_i^{(k)}}{a_{ii}}\)</span>, by modifying the value of <span class="arithmatex">\(\omega\)</span>, we can somehow get faster convergence.</p>
+<p>Let <span class="arithmatex">\(x_i^{(k)} = x_i^{(k - 1)} + \omega\dfrac{r_i^{(k)}}{a_{ii}}\)</span>, by modifying the value of <span class="arithmatex">\(\omega\)</span>, we can somehow get faster convergence.</p>
 <ul>
-<li><span class="arithmatex">\(0 \lt \omega \le 1\)</span>  Under-Relaxation Method</li>
-<li><span class="arithmatex">\(\omega = 1\)</span>  Gauss-Seidel Method</li>
-<li><span class="arithmatex">\(\omega \gt 1\)</span>    Successive Over-Relaxation Method (SOR)</li>
+<li><span class="arithmatex">\(0 \lt \omega \le 1\)</span> <strong>Under-Relaxation Method</strong></li>
+<li><span class="arithmatex">\(\omega = 1\)</span> <strong>Gauss-Seidel Method</strong></li>
+<li><span class="arithmatex">\(\omega \gt 1\)</span> <strong>Successive Over-Relaxation Method (SOR)</strong></li>
 </ul>
 <p>In matrix form,</p>
 <div class="arithmatex">\[
-    \mathbf{x}^{(k)} = (D - \omega L)^{-1}[(1 - \omega)D + \omega U]\mathbf{x}^{(k - 1)} + (D - \omega L)^{-1}\mathbf{b}
+    \mathbf{x}^{(k)} = (D - \omega L)^{-1}[(1 - \omega)D + \omega U]\mathbf{x}^{(k - 1)} + (D - \omega L)^{-1}\mathbf{b}.
 \]</div>
 <p>Let <span class="arithmatex">\(T_\omega = (D - \omega L)^{-1}[(1 - \omega)D + \omega U]\)</span> and <span class="arithmatex">\(\mathbf{c}_\omega = (D - \omega L)^{-1}\mathbf{b}\)</span>, then</p>
 <div class="arithmatex">\[
     \mathbf{x}^{(k)} = T_\omega\mathbf{x}^{(k - 1)} + \mathbf{c}_\omega.
 \]</div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem (Kahan)</p>
+<p class="admonition-title">Theorem 7.9 (Kahan)</p>
 <p>If <span class="arithmatex">\(a_{ii} \ne 0\)</span>, then <span class="arithmatex">\(\rho(T_\omega)\ge |\omega -1 |\)</span>, which implies <span class="arithmatex">\(0 \lt \omega \lt 2\)</span>.</p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem (Ostrowski-Reich)</p>
+<p class="admonition-title">Theorem 7.10 (Ostrowski-Reich)</p>
 <p>If <span class="arithmatex">\(A\)</span> is positive definite and <span class="arithmatex">\(0 \lt \omega \lt 2\)</span>, the SOR method converges for any choice of initial approximation.</p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 7.11</p>
 <p>If <span class="arithmatex">\(A\)</span> is positive definite and tridiagonal, then <span class="arithmatex">\(\rho(T_g) = \rho(T_j)^2\lt1\)</span>, and the optimal choice of <span class="arithmatex">\(\omega\)</span> for the SOR method is</p>
 <div class="arithmatex">\[
     \omega = \frac{2}{1 + \sqrt{1 - \rho(T_j)^2}}.
@@ -901,7 +901,7 @@ x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} =
 </div>
 <h2 id="error-bounds-and-iterative-refinement">Error Bounds and Iterative Refinement<a class="headerlink" href="#error-bounds-and-iterative-refinement" title="Permanent link">¶</a></h2>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 7.7</p>
 <p>The <strong>conditional number</strong> of the nonsigular matrix <span class="arithmatex">\(A\)</span> relative to a norm <span class="arithmatex">\(||\cdot||\)</span>$ is</p>
 <div class="arithmatex">\[
     K(A) = ||A|| \cdot ||A^{-1}||.
@@ -910,7 +910,7 @@ x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} =
 <div class="admonition theorem">
 <p class="admonition-title">Proposition</p>
 <ul>
-<li>If <span class="arithmatex">\(A\)</span> is symmetric, then <span class="arithmatex">\(K(A)_2 = \frac{\max|\lambda|}{\min|\lambda|}\)</span>.</li>
+<li>If <span class="arithmatex">\(A\)</span> is symmetric, then <span class="arithmatex">\(K(A)_2 = \dfrac{\max|\lambda|}{\min|\lambda|}\)</span>.</li>
 <li><span class="arithmatex">\(K(A)_2 = 1\)</span> if <span class="arithmatex">\(A\)</span> is orthogonal.</li>
 <li><span class="arithmatex">\(\forall \text{ orthogonal matrix }R, K(RA)_2 = K(AR)_2 = K(A)_2.\)</span></li>
 <li><span class="arithmatex">\(\forall \text{ natural norm } ||\cdot||_p,\ K(A)_p \ge 1.\)</span></li>
@@ -919,10 +919,10 @@ x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} =
 </div>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 7.12</p>
 <p>For any natural norm,</p>
 <div class="arithmatex">\[
-    ||\mathbf{x} - \mathbf{\tilde x}|| \le ||\mathbf{r}|| \cdot ||A^{-1}||
+    ||\mathbf{x} - \mathbf{\tilde x}|| \le ||\mathbf{r}|| \cdot ||A^{-1}||,
 \]</div>
 <p>and if <span class="arithmatex">\(\mathbf{x} \ne \mathbf{0}\)</span> and <span class="arithmatex">\(\mathbf{b} \ne \mathbf{0}\)</span>,</p>
 <div class="arithmatex">\[
@@ -941,15 +941,15 @@ x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} =
 <p>In reality, <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(\mathbf{b}\)</span> may be <em>perturbed</em> by an amount <span class="arithmatex">\(\delta A\)</span> and <span class="arithmatex">\(\delta \mathbf{b}\)</span>.</p>
 <p>For <span class="arithmatex">\(A(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b} + \delta\mathbf{b}\)</span></p>
 <div class="arithmatex">\[
-    \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le ||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta \mathbf{b}||}{||\mathbf{b}||}    
+    \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le ||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta \mathbf{b}||}{||\mathbf{b}||}.
 \]</div>
 <p>For <span class="arithmatex">\((A + \delta A)(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b}\)</span></p>
 <div class="arithmatex">\[
     \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le \frac{||A^{-1}|| \cdot ||\delta A||}{1 - ||A^{-1}|| \cdot ||\delta A||} = 
-    \frac{||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta A||}{||A||}}{1 - ||A|| \cdot ||A^{-1}|| \cdot\frac{||\delta A||}{||A||}}    
+    \frac{||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta A||}{||A||}}{1 - ||A|| \cdot ||A^{-1}|| \cdot\frac{||\delta A||}{||A||}}.
 \]</div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 7.13</p>
 <p>If <span class="arithmatex">\(A\)</span> is nonsingular and </p>
 <div class="arithmatex">\[
     ||\delta A|| \lt \frac{1}{||A^{-1}||}

@@ -668,15 +668,15 @@
 <div class="arithmatex">\[
     A\mathbf{x} = \mathbf{b}
 \]</div>
-<p>Let <span class="arithmatex">\(A^{(1)} = A, \mathbf{b}^{(1)} = \mathbf{b}\)</span>,</p>
-<p>For Step <span class="arithmatex">\(k\ (1\le k \le n-1)\)</span>, if <span class="arithmatex">\(a^{(k)}_{kk}\ne0\)</span> (<strong>pivot element</strong>), compute <span class="arithmatex">\(m_{ik} = \frac{a^{(k)}_{ik}}{a^{(k)}_{kk}}\)</span> and</p>
+<p>Let <span class="arithmatex">\(A^{(1)} = A, \mathbf{b}^{(1)} = \mathbf{b}\)</span>.</p>
+<p>For Step <span class="arithmatex">\(k\ (1\le k \le n-1)\)</span>, if <span class="arithmatex">\(a^{(k)}_{kk}\ne0\)</span> (<strong>pivot element</strong>), compute <span class="arithmatex">\(m_{ik} = \dfrac{a^{(k)}_{ik}}{a^{(k)}_{kk}}\)</span> and</p>
 <div class="arithmatex">\[
 \left\{
 \begin{aligned}
     a_{ij}^{(k+1)} = a_{ij}^{(k)} - m_{ik}a_{kj}^{(k)} \\
     b_i^{(k+1)} = b_i^{(k)} - m_{ik}b_k^{(k)}
 \end{aligned}
-\text{, where }i, j = k+1, \dots, n
+,\ \ \text{ where } i, j = k+1, \dots, n.
 \right.
 \]</div>
 <h4 id="elimination">Elimination<a class="headerlink" href="#elimination" title="Permanent link">¶</a></h4>
@@ -700,12 +700,12 @@
     b^{(2)}_2 \\
     \vdots \\
 b^{(n)}_n
-\end{bmatrix}
+\end{bmatrix}.
 \]</div>
 <h4 id="backward-substitution">Backward Substitution<a class="headerlink" href="#backward-substitution" title="Permanent link">¶</a></h4>
 <p>Then,</p>
 <div class="arithmatex">\[
-x_n = \frac{b_n^{(n)}}{a^{(n)}_{nn}}, x_i = \frac{1}{a_{ii}^{(i)}}\left(b^{(i)}_i - \sum_{j = i + 1}^n a^{(i)}_{ij} x_j\right), i = n-1, \dots, 1
+x_n = \frac{b_n^{(n)}}{a^{(n)}_{nn}}, x_i = \frac{1}{a_{ii}^{(i)}}\left(b^{(i)}_i - \sum_{j = i + 1}^n a^{(i)}_{ij} x_j\right),\ \ \text{ where }i = n-1, \dots, 1.
 \]</div>
 <h3 id="complexity">Complexity<a class="headerlink" href="#complexity" title="Permanent link">¶</a></h3>
 <p>For Elimination, </p>
@@ -725,22 +725,22 @@ x_n = \frac{b_n^{(n)}}{a^{(n)}_{nn}}, x_i = \frac{1}{a_{ii}^{(i)}}\left(b^{(i)}_
 <h3 id="partial-pivoting-aka-maximal-column-pivoting">Partial Pivoting (a.k.a Maximal Column Pivoting)<a class="headerlink" href="#partial-pivoting-aka-maximal-column-pivoting" title="Permanent link">¶</a></h3>
 <p>Determine the smallest <span class="arithmatex">\(p \ge k\)</span> such that</p>
 <div class="arithmatex">\[
-    \left|a_{pk}^{(k)}\right| = \max_{k \le i \le n} \left|a_{ik}^{(k)}\right|
+    \left|a_{pk}^{(k)}\right| = \max_{k \le i \le n} \left|a_{ik}^{(k)}\right|,
 \]</div>
 <p>and interchange row <span class="arithmatex">\(p\)</span> and row <span class="arithmatex">\(k\)</span> .</p>
 <p><em>Requires</em> <span class="arithmatex">\(O(N^2)\)</span> additional <strong>comparisons</strong>.</p>
 <h3 id="scaled-partial-pivoting-aka-scaled-column-pivoting">Scaled Partial Pivoting (a.k.a Scaled-Column Pivoting)<a class="headerlink" href="#scaled-partial-pivoting-aka-scaled-column-pivoting" title="Permanent link">¶</a></h3>
 <p>Determine the smallest <span class="arithmatex">\(p \ge k\)</span> such that</p>
 <div class="arithmatex">\[
-    \frac{\left|a_{pk}^{(k)}\right|}{s_p} = \max\limits_{k \le i \le n} \frac{\left|a_{ik}^{(k)}\right|}{s_i}
+    \frac{\left|a_{pk}^{(k)}\right|}{s_p} = \max\limits_{k \le i \le n} \frac{\left|a_{ik}^{(k)}\right|}{s_i},
 \]</div>
 <p>and interchange row <span class="arithmatex">\(p\)</span> and row <span class="arithmatex">\(k\)</span>, where <span class="arithmatex">\(s_i = \max\limits_{1 \le j \le n} \left|a_{ij}\right|\)</span>.</p>
-<p>(Simply put, Place the element in the pivot position that is largest relative to the entries in its 
+<p>(Simply put, place the element in the pivot position that is largest relative to the entries in its 
 row.)</p>
 <p><em>Requires</em> <span class="arithmatex">\(O(N^2)\)</span> additional <strong>comparisons</strong> and <span class="arithmatex">\(O(N^2)\)</span> <strong>divisions</strong>.</p>
 <h3 id="complete-pivoting-aka-maximal-pivoting">Complete Pivoting (a.k.a Maximal Pivoting)<a class="headerlink" href="#complete-pivoting-aka-maximal-pivoting" title="Permanent link">¶</a></h3>
-<p>Search all the entries <span class="arithmatex">\(a_{ij}\)</span> for <span class="arithmatex">\(i,j = k, \dots,n\)</span> to find the entry with the largest magnitude. <u>Both row and column</u> interchanges are performed to bring this entry to the pivot position.</p>
-<p><em>Requires</em> <span class="arithmatex">\(O\left(\frac{1}{3}N^3\right)\)</span> additional <strong>comparisons</strong>.</p>
+<p>Search all the entries <span class="arithmatex">\(a_{ij}\)</span> for <span class="arithmatex">\(i,j = k, \dots,n\)</span> to find the entry with the largest magnitude. <strong>Both row and column</strong> interchanges are performed to bring this entry to the pivot position.</p>
+<p><em>Requires</em> <span class="arithmatex">\(O\left(\dfrac{1}{3}N^3\right)\)</span> additional <strong>comparisons</strong>.</p>
 <h2 id="matrix-factorization-lu-factorization">Matrix Factorization (LU Factorization)<a class="headerlink" href="#matrix-factorization-lu-factorization" title="Permanent link">¶</a></h2>
 <p>Considering the matrix form of Gaussian Elimination, for total <span class="arithmatex">\(n-1\)</span> steps,</p>
 <div class="arithmatex">\[
@@ -762,7 +762,7 @@ L_k =
     \vdots &amp; \ddots &amp; -m_{k+1, k} &amp; \ddots &amp; \ddots &amp; \vdots\\
     \vdots &amp; \ddots&amp; \vdots &amp; \ddots &amp; \ddots &amp; 0 \\
     0 &amp; \cdots &amp; -m_{n, k} &amp; \cdots &amp; \cdots &amp; 1
-\end{bmatrix}
+\end{bmatrix}.
 \]</div>
 <p>It's simple to compute that</p>
 <div class="arithmatex">\[
@@ -800,33 +800,33 @@ U = \begin{bmatrix}
 \]</div>
 <p>Then we get</p>
 <div class="arithmatex">\[
-    A = LU
+    A = LU.
 \]</div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 6.0</p>
 <p>If Gaussian elimination can be performed on the linear system <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span> without row interchanges, then the matrix <span class="arithmatex">\(A\)</span> can be factored into the product of <strong>a lower-triangular matrix</strong> <span class="arithmatex">\(L\)</span> and <strong>an upper-triangular matrix</strong> <span class="arithmatex">\(U\)</span> .</p>
 <p>If <span class="arithmatex">\(L\)</span> has to be <strong>unitary</strong>, then the factorization is <strong>unique</strong>.</p>
 </div>
 <h2 id="special-types-of-matrices">Special Types of Matrices<a class="headerlink" href="#special-types-of-matrices" title="Permanent link">¶</a></h2>
 <h3 id="strictly-diagonally-dominant-matrix">Strictly Diagonally Dominant Matrix 严格主对角占优矩阵<a class="headerlink" href="#strictly-diagonally-dominant-matrix" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 6.0</p>
 <p>The <span class="arithmatex">\(n \times n\)</span> matrix <span class="arithmatex">\(A\)</span> is said to be strictly diagnoally dominant when</p>
 <div class="arithmatex">\[
     |a_{ii}| \gt \sum_{j=1,j\ne i}^{n}|a_{ij}|,\text{ for each } i = 1, \dots, n
 \]</div>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 6.1</p>
 <p>A strictly diagonally dominant matrix is <strong>nonsingular</strong>. And Gaussian elimination can be performed <strong>without</strong> row or column interchanges, and computations will be <strong>stable</strong> with respect to the growth of roundoff errors.（满秩、无需交换行列、误差稳定）</p>
 </div>
 <h3 id="positive-definite-matrix">Positive Definite Matrix 正定矩阵<a class="headerlink" href="#positive-definite-matrix" title="Permanent link">¶</a></h3>
 <details class="definition">
-<summary>Definition (Recap)</summary>
+<summary>Definition 6.1 (Recap)</summary>
 <p>A matrix <span class="arithmatex">\(A\)</span> is <strong>positive definite</strong> if it's <strong>symmetric</strong> and if <span class="arithmatex">\(\mathbf{x}^tA\mathbf{x} &gt; 0\)</span> for every <span class="arithmatex">\(n\)</span>-dimensional vector <span class="arithmatex">\(\mathbf{x} \ne \mathbf{0}\)</span>.</p>
 </details>
 <details class="theorem">
-<summary>Theorem</summary>
+<summary>Theorem 6.2</summary>
 <p>If <span class="arithmatex">\(A\)</span> is an <span class="arithmatex">\(n \times n\)</span> positive definite matrix, then</p>
 <ul>
 <li><span class="arithmatex">\(A\)</span> is nonsingular;</li>
@@ -862,7 +862,7 @@ D^{1/2} =
 \]</div>
 <h3 id="tridiagonal-linear-system">Tridiagonal Linear System 三对角矩阵<a class="headerlink" href="#tridiagonal-linear-system" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 6.2</p>
 <p>An <span class="arithmatex">\(n \times n\)</span> matrix <span class="arithmatex">\(A\)</span> is called a <strong>band matrix</strong> if <span class="arithmatex">\(\exists p, q (1 &lt; p, q &lt; n)\)</span>, s.t. whenever <span class="arithmatex">\(i + p \le j\)</span> or <span class="arithmatex">\(j + q \le i\)</span>, <span class="arithmatex">\(a_{ij} = 0\)</span>. And <span class="arithmatex">\(w = p + q - 1\)</span> is called the <strong>bandwidth</strong>.</p>
 <p>Specially, if <span class="arithmatex">\(p = q = 2\)</span>, then <span class="arithmatex">\(A\)</span> is called <strong>tridiagonal</strong>, with the following form,</p>
 <div class="arithmatex">\[
@@ -891,7 +891,7 @@ A = LU =
     &amp; &amp; \ddots &amp; \ddots \\
     &amp; &amp; &amp; \ddots &amp; u_{n-1,n}\\
     &amp; &amp; &amp; &amp; 1 
-\end{bmatrix}
+\end{bmatrix}.
 \]</div>
 <p>the time complexity is <span class="arithmatex">\(O(N)\)</span>.</p>
 <hr/>

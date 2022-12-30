@@ -699,7 +699,7 @@
     y(a) = \alpha.
 \]</div>
 <p><strong>Higher-Order Systems of First-Order IVP</strong></p>
-<p>Moreover, add the number of unknowns, it becomes approximating <span class="arithmatex">\(y_1(t), \dots y_m(t)\)</span> to a problem of the form</p>
+<p>Moreover, adding the number of unknowns, it becomes approximating <span class="arithmatex">\(y_1(t), \dots y_m(t)\)</span> to a problem of the form</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \frac{dy_1}{dt} &amp;= f_1(t, y_1, y_2, \dots, y_m), \\
@@ -713,7 +713,7 @@
     y_1(a) = \alpha_1, y_2(a) = \alpha_2, \dots,  y_m(a) = \alpha_m. 
 \]</div>
 <p><strong>Higher-Order IVP</strong></p>
-<p>Or add the number of order, it becomes <em>m</em>th-order IVP of the form</p>
+<p>Or adding the number of order, it becomes <em>m</em>th-order IVP of the form</p>
 <div class="arithmatex">\[
     y^{(m)} = f(t, y, y', y'', \dots, y^{(m - 1)}),
 \]</div>
@@ -731,41 +731,41 @@
 <h2 id="availability-and-uniqueness">Availability and Uniqueness<a class="headerlink" href="#availability-and-uniqueness" title="Permanent link">¶</a></h2>
 <p>Before finding out the approximation, we need some conditions to guarantee its availability and uniqueness.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p><span class="arithmatex">\(f(t, y)\)</span> is said to satisfy a <strong>Lipschitz condition</strong> in the variable <span class="arithmatex">\(y\)</span> on a set <span class="arithmatex">\(D \in \mathbb{R}^2\)</span> if <span class="arithmatex">\(\exists L &gt; 0\)</span>, s.t.</p>
+<p class="admonition-title">Definition 5.0</p>
+<p><span class="arithmatex">\(f(t, y)\)</span> is said to satisfy a <strong>Lipschitz condition</strong> in the variable <span class="arithmatex">\(y\)</span> on a set <span class="arithmatex">\(D \in \mathbb{R}^2\)</span> if <span class="arithmatex">\(\exists\ L &gt; 0\)</span>, s.t.</p>
 <div class="arithmatex">\[
-    |f(t, y_1) - f(t, y_2)| \le L|y_1 - y_2|,\ \forall (t, y_1), (t, y_2) \in D.
+    |f(t, y_1) - f(t, y_2)| \le L|y_1 - y_2|,\ \ \forall\ (t, y_1), (t, y_2) \in D.
 \]</div>
 <p><span class="arithmatex">\(L\)</span> is called a <strong>Lipschitz constant</strong> for <span class="arithmatex">\(f\)</span>.</p>
 </div>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.1</p>
 <p>A set <span class="arithmatex">\(D \in \mathbb{R}^2\)</span> is said to be <strong>convex</strong> if</p>
 <div class="arithmatex">\[
-    \forall (t, y_1), (t, y_2) \in D,\ \forall \lambda \in [0, 1],\ ((1 - \lambda)t_1 + \lambda t_2, (1 - \lambda)y_1 + \lambda y_2) \in D.
+    \forall\ (t, y_1), (t, y_2) \in D,\ \ \forall\ \lambda \in [0, 1],\ \ ((1 - \lambda)t_1 + \lambda t_2, (1 - \lambda)y_1 + \lambda y_2) \in D.
 \]</div>
 <p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap5_0.png"><img alt="chap5_0 " src="../Pic/chap5_0.png" style="width:600px"/></a>
 </div></p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem | Sufficient Condition</p>
-<p><span class="arithmatex">\(f(t, y)\)</span> is defined on a convex set <span class="arithmatex">\(D \in \mathbb{R}^2\)</span>. If <span class="arithmatex">\(\exists L &gt; 0\)</span> s.t.</p>
+<p class="admonition-title">Theorem 5.0 | Sufficient Condition</p>
+<p><span class="arithmatex">\(f(t, y)\)</span> is defined on a convex set <span class="arithmatex">\(D \in \mathbb{R}^2\)</span>. If <span class="arithmatex">\(\exists\ L &gt; 0\)</span> s.t.</p>
 <div class="arithmatex">\[
-    \left|\frac{\partial f}{\partial y}(t, y)\right| \le L,\ \forall (t, y) \in D,
+    \left|\frac{\partial f}{\partial y}(t, y)\right| \le L,\ \ \forall\ (t, y) \in D,
 \]</div>
 <p>then <span class="arithmatex">\(f\)</span> satisfies a Lipschitz condition on <span class="arithmatex">\(D\)</span> in the variable <span class="arithmatex">\(y\)</span> with Lipschitz constatnt <span class="arithmatex">\(L\)</span>.</p>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem | Unique Solution</p>
+<p class="admonition-title">Theorem 5.1 | Unique Solution</p>
 <p><span class="arithmatex">\(f(t, y)\)</span> is continuous on <span class="arithmatex">\(D = \{(t, y) | a \le t \le b, -\infty &lt; y &lt; \infty\}\)</span>(<span class="arithmatex">\(D\)</span> is convex). If <span class="arithmatex">\(f\)</span> satisfies a Lipschitz condition on <span class="arithmatex">\(D\)</span> in the variable <span class="arithmatex">\(y\)</span>, then the IVP</p>
 <div class="arithmatex">\[
-    y'(t) = f(t, y),\ a \le t \le b,\ y(a) = \alpha,
+    y'(t) = f(t, y),\ \ a \le t \le b,\ \ y(a) = \alpha,
 \]</div>
 <p>has a <strong>unique solution</strong> <span class="arithmatex">\(y(t)\)</span> for <span class="arithmatex">\(a \le t \le b\)</span>.</p>
 </div>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.2</p>
 <p>The IVP </p>
 <div class="arithmatex">\[
     \frac{dy}{dt} = f(t, y),\ a \le t \le b,\ y(a) = \alpha,
@@ -773,49 +773,49 @@
 <p>is said to be a <strong>well-posed</strong> problem if</p>
 <ul>
 <li>A unique solution <span class="arithmatex">\(y(t)\)</span> exists;</li>
-<li><span class="arithmatex">\(\forall \varepsilon &gt; 0, \exists k(\varepsilon) &gt; 0\)</span>, s.t. <span class="arithmatex">\(\forall |\varepsilon_0| &lt; \varepsilon\)</span>, and <span class="arithmatex">\(|\delta(t)|\)</span> is continuous with <span class="arithmatex">\(|\delta(t)| &lt; \varepsilon\)</span> on <span class="arithmatex">\([a, b]\)</span>, a unique solution <span class="arithmatex">\(z(t)\)</span> to the IVP</li>
+<li><span class="arithmatex">\(\forall\ \varepsilon &gt; 0, \exists\ k(\varepsilon) &gt; 0\)</span>, s.t. <span class="arithmatex">\(\forall |\varepsilon_0| &lt; \varepsilon\)</span>, and <span class="arithmatex">\(|\delta(t)|\)</span> is continuous with <span class="arithmatex">\(|\delta(t)| &lt; \varepsilon\)</span> on <span class="arithmatex">\([a, b]\)</span>, a unique solution <span class="arithmatex">\(z(t)\)</span> to the IVP</li>
 </ul>
 <div class="arithmatex">\[
-    \frac{dz}{dt} = f(t, y) + \delta(t),\ a \le t \le b,\ y(a) = \alpha, \text{ (perturbed problem)}
+    \frac{dz}{dt} = f(t, y) + \delta(t),\ \ a \le t \le b,\ \ y(a) = \alpha,\ \ \text{ (perturbed problem)}
 \]</div>
-<p>     exists with</p>
+<p>       exists with</p>
 <div class="arithmatex">\[
-    |z(t) - y(t)| &lt; k(\varepsilon)\varepsilon,\ \forall t \in [a, b].
+    |z(t) - y(t)| &lt; k(\varepsilon)\varepsilon,\ \ \forall\ t \in [a, b].
 \]</div>
 </div>
 <p>Numerical methods will always be concerned with solving a <strong>perturbed problem</strong> since roundoff error is unavoidable. Thus we want the problem to be <strong>well-posed</strong>, which means the perturbation will not affect the result approxiamtion a lot.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 5.2</p>
 <p><span class="arithmatex">\(f(t, y)\)</span> is continuous on <span class="arithmatex">\(D = \{(t, y) | a \le t \le b, -\infty &lt; y &lt; \infty\}\)</span>(<span class="arithmatex">\(D\)</span> is convex). If <span class="arithmatex">\(f\)</span> satisfies a Lipschitz condition on <span class="arithmatex">\(D\)</span> in the variable <span class="arithmatex">\(y\)</span>, then the IVP</p>
 <div class="arithmatex">\[
-    y'(t) = f(t, y),\ a \le t \le b,\ y(a) = \alpha,
+    y'(t) = f(t, y),\ \ a \le t \le b,\ \ y(a) = \alpha,
 \]</div>
 <p>is <strong>well-posed</strong>.</p>
 </div>
 <p>Besides, we also need to discuss the sufficient condition of <strong><em>m</em>th-order system of first-order IVP</strong>.</p>
 <p>Similarly, we have the definition of <strong>Lipschitz condition</strong> and it's sufficient for the <strong>uniqueness</strong> of the solution.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.3</p>
 <p><span class="arithmatex">\(f(t, y_1, \dots, y_m)\)</span> define on the convex set</p>
 <div class="arithmatex">\[
     D = \{(t, y_1, \dots, y_m | a \le t \le b, -\infty &lt; u_i &lt; \infty, \text{ for each } i = 1, 2, \dots, m\}
 \]</div>
-<p>is said to satisfy <strong>Lipschitz condition</strong> on <span class="arithmatex">\(D\)</span> in the variables <span class="arithmatex">\(y_1, \dots, y_m\)</span> if <span class="arithmatex">\(\exists L &gt; 0\)</span>, s.t</p>
+<p>is said to satisfy <strong>Lipschitz condition</strong> on <span class="arithmatex">\(D\)</span> in the variables <span class="arithmatex">\(y_1, \dots, y_m\)</span> if <span class="arithmatex">\(\exists\ L &gt; 0\)</span>, s.t</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    &amp; \forall (t, y_1, \dots, y_n), (t, z_1, \dots, z_n) \in D, \\
-    &amp; |f(t, y_1, \dots, y_m) - f(t, z_1, \dots, z_m)| \le L \sum\limits_{j = 1}^m |y_j - z_j|
+    &amp; \forall\ (t, y_1, \dots, y_n), (t, z_1, \dots, z_n) \in D, \\
+    &amp; |f(t, y_1, \dots, y_m) - f(t, z_1, \dots, z_m)| \le L \sum\limits_{j = 1}^m |y_j - z_j|.
 \end{aligned}
 \]</div>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 5.3</p>
 <p>if <span class="arithmatex">\(f(t, y_1, \dots, y_m)\)</span> satisfy Lipschitz condition, then the <em>m</em>th order systems of first-order IVP has a <strong>unique</strong> solution <span class="arithmatex">\(y_1(t), \dots, y_n(t)\)</span>.</p>
 </div>
 <h2 id="eulers-method">Euler's Method<a class="headerlink" href="#eulers-method" title="Permanent link">¶</a></h2>
 <p>To measure the error of Taylor methods (Euler's method is Taylor's method of order 1), we first give the definition of <strong>local truncation error</strong>, which somehow measure the truncation error at a specified step.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.4</p>
 <p>The difference method</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -835,15 +835,18 @@
 \]</div>
 <p>and since <span class="arithmatex">\(y'(t_i) = f(t_i, y(t_i))\)</span>, we have</p>
 <div class="arithmatex">\[
-    y(t_{i + 1}) = y(t_i) + hf(t_i, y(t_i)) + \frac{h^2}{2}y''(\xi_i), \xi_i \in [t_i, t_{i + 1}],
+    y(t_{i + 1}) = y(t_i) + hf.(t_i, y(t_i)) + \frac{h^2}{2}y''(\xi_i), \xi_i \in [t_i, t_{i + 1}].
 \]</div>
-<p>If <span class="arithmatex">\(w_i \approx y(t_i)\)</span> and we delete the remainder term, we get the <strong>(Explicit) Euler's method</strong>,</p>
+<p>If <span class="arithmatex">\(w_i \approx y(t_i)\)</span> and we delete the remainder term, we get the <strong>(Explicit) Euler's method</strong>.</p>
+<div class="admonition plane">
+<p><strong>(Explicit) Euler's Method</strong></p>
 <div class="arithmatex">\[
 \begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + hf(t_i, w_i). \text{(difference equations)}
 \end{aligned}
 \]</div>
+</div>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap5_1.png"><img alt="chap5_1 " src="../Pic/chap5_1.png" style="width:600px"/></a>
 </div>
@@ -852,8 +855,8 @@
     \tau_{i + 1}(h) = \frac{hy'(t_i) + \frac{h^2}{2}y''(\xi_i)}{h} - f(t_i, y_i) = \frac{h}{2}y''(\xi_i) = O(h).
 \]</div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>The error bound of Euler's method,</p>
+<p class="admonition-title">Theorem 5.4</p>
+<p>The error bound of Euler's method is</p>
 <div class="arithmatex">\[
     |y(t_i) - w_i| \le \frac{hM}{2L}\left[e^{L(t_i - a)} - 1\right],
 \]</div>
@@ -862,14 +865,14 @@
 <p>Although it has an exponential term (which is not such an accurate error bound), the most important intuitive is that the error bound is <strong>proportional</strong> to <span class="arithmatex">\(h\)</span>.</p>
 <p>If we consider the roundoff error, we have the following theorem.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>Suppose there exists roundoff error and <span class="arithmatex">\(u_i = w_i + \delta_i, i = 0, 1, \dots\)</span>, then</p>
+<p class="admonition-title">Theorem 5.5</p>
+<p>Suppose there exists roundoff error and <span class="arithmatex">\(u_i = w_i + \delta_i\)</span>, <span class="arithmatex">\(i = 0, 1, \dots\)</span>, then</p>
 <div class="arithmatex">\[
     |y(t_i) - u_i| \le \frac{1}{L}\left(\frac{hM}{2} + \frac{\delta}{h}\right)\left[e^{L(t_i - a)} - 1\right] + |\delta_0|e^{L(t_i - a)},
 \]</div>
 <p>where <span class="arithmatex">\(\delta\)</span> is the upper bound of <span class="arithmatex">\(\delta_i\)</span>.</p>
 </div>
-<p>This comes to a different case, we can't take <span class="arithmatex">\(h\)</span> to be too small, and the optimal choice of <span class="arithmatex">\(h\)</span> is</p>
+<p>This comes to a different case, we can't make <span class="arithmatex">\(h\)</span> too small, and the optimal choice of <span class="arithmatex">\(h\)</span> is</p>
 <div class="arithmatex">\[
     h = \sqrt{\frac{2\delta}{M}}.
 \]</div>
@@ -879,12 +882,15 @@
     y(t_i) = y(t_{i + 1}) - hy'(t_{i + 1}) + \frac{h^2}{2}y''(\xi_{i + 1}), \xi_i \in [t_i, t_{i + 1}].
 \]</div>
 <p>Thus we get the <strong>Implicit Euler's Method</strong>,</p>
+<div class="admonition plane">
+<p><strong>Implicit Euler's Method</strong></p>
 <div class="arithmatex">\[
 \begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + hf(t_{i + 1}, w_{i + 1}).
 \end{aligned}
 \]</div>
+</div>
 <p>Since <span class="arithmatex">\(w_{i + 1}\)</span> is on the both side, we may use some methods in <a href="../Chap_2">Chapter 2</a> to solve out the equation.</p>
 <p>The local truncation error of implicit Euler's method is</p>
 <div class="arithmatex">\[
@@ -898,18 +904,21 @@
 <h3 id="trapezoidal-method">Trapezoidal Method<a class="headerlink" href="#trapezoidal-method" title="Permanent link">¶</a></h3>
 <p>Notice the local truncation errors of two Euler's method are</p>
 <div class="arithmatex">\[
-    \tau_{i + 1}(h) = \frac{h}{2}y''(\xi'), 
-    \tau_{i + 1}(h) = -\frac{h}{2}y''(\eta'), 
+    \tau_{i + 1}(h) = \frac{h}{2}y''(\xi'),\ \ 
+    \tau_{i + 1}(h) = -\frac{h}{2}y''(\eta').
 \]</div>
 <p>If we combine these two, we then obtain a method of <span class="arithmatex">\(O(h^2)\)</span> local truncation error, which is called <strong>Trapezoidal Method</strong>.</p>
+<div class="admonition plane">
+<p><strong>Trapezoidal Method</strong></p>
 <div class="arithmatex">\[
 \begin{aligned}
     w_0 &amp;= \alpha, \\
     w_{i + 1} &amp;= w_i + \frac{h}{2}[f(t_i, w_i) + f(t_{i + 1}, w_{i + 1})].
 \end{aligned}
 \]</div>
+</div>
 <h2 id="higher-order-taylor-method">Higher-Order Taylor Method<a class="headerlink" href="#higher-order-taylor-method" title="Permanent link">¶</a></h2>
-<p>In Euler's methods, we only employ first order Taylor polynomials, if we expand it more to <em>n</em>th Taylor polynomials, we have</p>
+<p>In Euler's methods, we only employ first order Taylor polynomials. If we expand it more to <em>n</em>th Taylor polynomials, we have</p>
 <div class="arithmatex">\[
 \begin{aligned}
     y(t_{i + 1}) &amp;= y(t_i) + hy'(t_i) + \frac{h^2}{2}y''(t_i) + \cdots + \frac{h^n}{n!}y^{(n)}(t_i) + \frac{h^{n + 1}}{(n + 1)!} y^{(n + 1)}(\xi_i),
@@ -924,7 +933,7 @@
 \end{aligned}
 \]</div>
 <div class="admonition plane">
-<p><strong>Taylor Method of order <span class="arithmatex">\(n\)</span></strong></p>
+<p><strong>Taylor Method of order <em>n</em></strong></p>
 <div class="arithmatex">\[
 \begin{aligned}
     w_0 &amp;= \alpha, \\
@@ -937,14 +946,14 @@
 \]</div>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 5.6</p>
 <p>The local truncation error of Taylor method of order <span class="arithmatex">\(n\)</span> is <span class="arithmatex">\(O(h^n)\)</span>.</p>
 </div>
 <h2 id="runge-kutta-method">Runge-Kutta Method<a class="headerlink" href="#runge-kutta-method" title="Permanent link">¶</a></h2>
 <p>Although Taylor method gives more accuracy as <span class="arithmatex">\(n\)</span> increase, but it's not an easy job to calculate <em>n</em>th derivative of <span class="arithmatex">\(f\)</span>. Here we introduce a new method called <strong>Runge-Kutta Method</strong>, which has low local truncation error and doesn't need to compute derivatives. It's based on <strong>Taylor's Theorem in two variables</strong>.</p>
 <details class="theorem">
-<summary>Theorem | Taylor's Theorem in two variables (Recap)</summary>
-<p><span class="arithmatex">\(f(x, y)\)</span> has continous <span class="arithmatex">\(n + 1\)</span> partial derivatives on the neigbourhood of <span class="arithmatex">\(A(x_0, y_0)\)</span>, <span class="arithmatex">\(U(A)\)</span>, then <span class="arithmatex">\(\forall (x, y) \in U(A)\)</span>, denote <span class="arithmatex">\(\Delta x = x - x_0\)</span>, <span class="arithmatex">\(\Delta y = y - y_0\)</span>, <span class="arithmatex">\(\exists \theta \in (0, 1)\)</span>, s.t.</p>
+<summary>Theorem 5.7 | Taylor's Theorem in two variables (Recap)</summary>
+<p><span class="arithmatex">\(f(x, y)\)</span> has continous <span class="arithmatex">\(n + 1\)</span> partial derivatives on the neigbourhood of <span class="arithmatex">\(A(x_0, y_0)\)</span>, denoted by <span class="arithmatex">\(U(A)\)</span>, then <span class="arithmatex">\(\forall\ (x, y) \in U(A)\)</span>, denote <span class="arithmatex">\(\Delta x = x - x_0\)</span>, <span class="arithmatex">\(\Delta y = y - y_0\)</span>, <span class="arithmatex">\(\exists\ \theta \in (0, 1)\)</span>, s.t.</p>
 <div class="arithmatex">\[
     f(x, y) = P_n(x, y) + R_n(x, y),
 \]</div>
@@ -970,13 +979,13 @@
 <summary>Derivation of Midpoint Method</summary>
 <p>To equate</p>
 <div class="arithmatex">\[
-    T^{(2)}(t, y) = f(t, y) + \frac{h}{2}f'(t, y) = f(t, y) + \frac{h}{2}\frac{\partial f}{\partial t}(t,y) + \frac{h}{2}\frac{\partial f}{\partial y}(t,y)\cdot f(t, y).
+    T^{(2)}(t, y) = f(t, y) + \frac{h}{2}f'(t, y) = f(t, y) + \frac{h}{2}\frac{\partial f}{\partial t}(t,y) + \frac{h}{2}\frac{\partial f}{\partial y}(t,y)\cdot f(t, y),
 \]</div>
 <p>with</p>
 <div class="arithmatex">\[
 \begin{aligned}
     a_1f(t + \alpha_1, y + \beta_1) &amp;= a_1f(t, y) + a_1 \alpha_1 \frac{\partial f}{\partial t}(t, y) 
-    \\ &amp; \ \ \ \ + a_1 \beta_1 \frac{\partial f}{\partial y}(t, y) + a_1 \cdot R_1(t + \alpha_1, y + \beta_1).
+    \\ &amp; \ \ \ \ + a_1 \beta_1 \frac{\partial f}{\partial y}(t, y) + a_1 \cdot R_1(t + \alpha_1, y + \beta_1),
 \end{aligned}
 \]</div>
 <p>except for the last residual term <span class="arithmatex">\(R_1\)</span>, we have</p>
@@ -1008,7 +1017,7 @@
 <div class="arithmatex">\[
     a_1f(t,y) + a_2f(t + \alpha_2, y + \delta_2f(t,y)).
 \]</div>
-<p>But it doesn't have sufficient equation to determine the 4 unknowns <span class="arithmatex">\(a_1, a_2, \alpha_2, \delta_2\)</span> above. But we have</p>
+<p>But it doesn't have sufficient equation to determine the 4 unknowns <span class="arithmatex">\(a_1, a_2, \alpha_2, \delta_2\)</span> above. Instead we have</p>
 <div class="arithmatex">\[
     a_1 + a_2 = 1, \
     \alpha_2 = \delta_2\ \overset{\Delta}{=\!=}\ ph.
@@ -1018,7 +1027,7 @@
 \begin{aligned}
     w_{i + 1} &amp;= w_i + h(a_1 K_1 + a_2 K_2) \\
     K_1 &amp;= f(t_i, w_i), \\
-    K_2 &amp;= f(t_i + ph, y + ph K_1)
+    K_2 &amp;= f(t_i + ph, y + ph K_1).
 \end{aligned}
 \]</div>
 <p>The most important are the following two.</p>
@@ -1050,8 +1059,8 @@
 \begin{aligned}
     K_1 &amp;= f(t, y), \\
     K_2 &amp;= f(t + \alpha_2 h, y + \beta_{21} h K_1), \\
-    &amp; \vdots \\
-    K_m &amp;= f(t + \alpha_m h, y + \beta_{m1} h K_1 + \beta_{m, m - 1} hK_{m - 1}).
+    &amp; \ \ \vdots \\
+    K_m &amp;= f(t + \alpha_m h, y + \beta_{m1} h K_1 + \beta_{m, m - 1} hK_{m - 1}),
 \end{aligned}
 \]</div>
 <p>with different <span class="arithmatex">\(m\)</span>, we can derive quite a lot of Runge-Kutta methods.</p>
@@ -1069,7 +1078,7 @@
 \end{aligned}
 \]</div>
 </div>
-<p>The local trancation error of Runge-Kutta are given below, <span class="arithmatex">\(n\)</span> is the number of evaluations per step.</p>
+<p>The local trancation error of Runge-Kutta are given below, where <span class="arithmatex">\(n\)</span> is the number of evaluations per step.</p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap5_2.png"><img alt="chap5_2 " src="../Pic/chap5_2.png" style="width:800px"/></a>
 </div>
@@ -1080,10 +1089,10 @@
 <h2 id="multistep-method">Multistep Method<a class="headerlink" href="#multistep-method" title="Permanent link">¶</a></h2>
 <p>In the previous section, the difference equation only relates <span class="arithmatex">\(w_{i + 1}\)</span> with <span class="arithmatex">\(w_{i}\)</span>. <strong>Multistep Method</strong> discuss the situation of relating more term of previous predicted <span class="arithmatex">\(w\)</span>.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.5</p>
 <p>An <strong><em>m</em>-step multistep method</strong> for solving the IVP</p>
 <div class="arithmatex">\[
-    y'(t) = f(t, y),\ a \le t \le b,\ y(a) = \alpha,
+    y'(t) = f(t, y),\ \ a \le t \le b,\ \ y(a) = \alpha,
 \]</div>
 <p>has a difference equation</p>
 <div class="arithmatex">\[
@@ -1094,23 +1103,23 @@
 \]</div>
 <p>with the starting values</p>
 <div class="arithmatex">\[
-    w_0 = \alpha,\ \  w_1 = \alpha_1,\ \dots\ , w_{m - 1} = \alpha_{m - 1}.
+    w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ \dots,\ \ w_{m - 1} = \alpha_{m - 1}.
 \]</div>
 <p>If <span class="arithmatex">\(b_m = 0\)</span>, it's called <strong>explicit</strong>, or <strong>open</strong>. Otherwise, it's called <strong>implicit</strong>, or <strong>closed</strong>.</p>
 </div>
 <p>Similarly, we first define local truncation error for multistep method to measure the error at a specified step.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>For a <em>m</em>-step multistep method, the <strong>local truncation error</strong> at <span class="arithmatex">\((i + 1)\)</span>st step is</p>
+<p class="admonition-title">Definition 5.6</p>
+<p>For a <em>m</em>-step multistep method, the <strong>local truncation error</strong> at <span class="arithmatex">\((i + 1)\)</span>th step is</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \tau_{i + 1}(h) &amp;= \frac{y(t_{i + 1}) - a_{m - 1}y(t_i) - \cdots - a_0 y(t_{i + 1 - m})}{h}
-    \\ &amp; \ \ \ \ - b_{m - 1}f(t_i, y(t_{i + 1})) + \cdots + b_0 f(t_{i + 1 - m}, y(t_{i + 1 - m}))],
+    \\ &amp; \ \ \ \ - b_{m - 1}f(t_i, y(t_{i + 1})) + \cdots + b_0 f(t_{i + 1 - m}, y(t_{i + 1 - m}))].
 \end{aligned}
 \]</div>
 </div>
 <h3 id="adams-method">Adams Method<a class="headerlink" href="#adams-method" title="Permanent link">¶</a></h3>
-<p>In this section, we only consider that <span class="arithmatex">\(a_{m - 1} = 1\)</span> and <span class="arithmatex">\(a_i = 0, i \ne m - 1\)</span>.</p>
+<p>In this section, we only consider the case of <span class="arithmatex">\(a_{m - 1} = 1\)</span> and <span class="arithmatex">\(a_i = 0\)</span>, <span class="arithmatex">\(i \ne m - 1\)</span>.</p>
 <p>To derive the Adams method, we start from a simple formula.</p>
 <div class="arithmatex">\[
     y(t_{i + 1}) - y(t_i) = \int_{t_i}^{t_{i + 1}}y'(t)dt = \int_{t_i}^{t_{i + 1}}f(t, y(t))dt.
@@ -1119,7 +1128,7 @@
 <div class="arithmatex">\[
     y(t_{i + 1}) = y(t_i) + \int_{t_i}^{t_{i + 1}}f(t, y(t))dt.
 \]</div>
-<p>We cannot integrate <span class="arithmatex">\(f(t, y(t))\)</span> without knowing <span class="arithmatex">\(y(t)\)</span>. Instead we use an interpolating polynomial <span class="arithmatex">\(P(t)\)</span> by points <span class="arithmatex">\((t_0, w_0), \dots (t_i, w_i)\)</span> to approximate <span class="arithmatex">\(f(t, y)\)</span>. Thus we approximate <span class="arithmatex">\(y(t_{i + 1})\)</span> by</p>
+<p>We cannot integrate <span class="arithmatex">\(f(t, y(t))\)</span> without knowing <span class="arithmatex">\(y(t)\)</span>. Instead we use an interpolating polynomial <span class="arithmatex">\(P(t)\)</span> by points <span class="arithmatex">\((t_0, w_0),\ \dots,\ (t_i, w_i)\)</span> to approximate <span class="arithmatex">\(f(t, y)\)</span>. Thus we approximate <span class="arithmatex">\(y(t_{i + 1})\)</span> by</p>
 <div class="arithmatex">\[
     y(t_{i + 1}) \approx w_i + \int_{t_i}^{t_{i + 1}} P(t) dt.
 \]</div>
@@ -1127,7 +1136,7 @@
 <h4 id="adams-bashforth-m-step-explicit-method">Adams-Bashforth <em>m</em>-Step Explicit Method<a class="headerlink" href="#adams-bashforth-m-step-explicit-method" title="Permanent link">¶</a></h4>
 <p>To derive <strong>an Adam-Bashforth explicit <em>m</em>-step technique</strong>, we form the interpolating polynomial <span class="arithmatex">\(P_{m - 1}(t)\)</span> by </p>
 <div class="arithmatex">\[
-    (t_i, f(t_i, y(t_i))), \dots (t_{i + 1 - m}, f(t_{i + 1 - m}, y(t_{i + 1 - m}))).
+    (t_i, f(t_i, y(t_i))),\ \ \dots,\ \ (t_{i + 1 - m}, f(t_{i + 1 - m}, y(t_{i + 1 - m}))).
 \]</div>
 <p>Then suppose <span class="arithmatex">\(t = t_i + sh\)</span>, with <span class="arithmatex">\(dt = hds\)</span>, we have</p>
 <div class="arithmatex">\[
@@ -1142,7 +1151,7 @@
     \\ &amp; \ \ \ \ + h^{m + 1}f^{(m)}(\mu_i, y(\mu_i))\int_0^1 \binom{-s}{m}ds.
 \end{aligned}
 \]</div>
-<p>Since for given <span class="arithmatex">\(k\)</span>, we have</p>
+<p>Since for a given <span class="arithmatex">\(k\)</span>, we have</p>
 <table>
 <thead>
 <tr>
@@ -1175,7 +1184,7 @@
 <div class="admonition plane">
 <p><strong>Adams-Bashforth <em>m</em>-Step Explicit Method</strong></p>
 <div class="arithmatex">\[
-    w_0 = \alpha,\ \ w_1 = \alpha_1, \dots, w_{m - 1} = \alpha_{m - 1},
+    w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ \dots,\ \ w_{m - 1} = \alpha_{m - 1},
 \]</div>
 <div class="arithmatex">\[
     w_{i + 1} = w_i + h\sum\limits_{k = 0}^{m - 1}\nabla^k f(t_i, y(t_i)) (-1)^k \int_0^1 \binom{-s}{k}ds,
@@ -1228,11 +1237,11 @@
 \]</div>
 </div>
 <h4 id="adams-moulton-m-step-implicit-method">Adams-Moulton <em>m</em>-Step Implicit Method<a class="headerlink" href="#adams-moulton-m-step-implicit-method" title="Permanent link">¶</a></h4>
-<p>For implicit case, we add <span class="arithmatex">\((t_{i + 1}, f(t_{i + 1}, y(t_{i + 1})))\)</span> as an interpolating node to construct the interpolating polynomials. Let <span class="arithmatex">\(t = t_{i + 1} + sh\)</span> and there is <span class="arithmatex">\(m\)</span> points. Similarly we have the conclusions below.</p>
+<p>For implicit case, we add <span class="arithmatex">\((t_{i + 1}, f(t_{i + 1}, y(t_{i + 1})))\)</span> as one more interpolating node to construct the interpolating polynomials. Let <span class="arithmatex">\(t = t_{i + 1} + sh\)</span> and there is <span class="arithmatex">\(m\)</span> points. Similarly we have the conclusions below.</p>
 <div class="admonition plane">
 <p><strong>Adams-Moulton <em>m</em>-Step Implicit Method</strong></p>
 <div class="arithmatex">\[
-    w_0 = \alpha,\ \ w_1 = \alpha_1, \dots, w_{m - 1} = \alpha_{m - 1},
+    w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ \dots,\ \ w_{m - 1} = \alpha_{m - 1},
 \]</div>
 <div class="arithmatex">\[
     w_{i + 1} = w_i + h\sum\limits_{k = 0}^{m}\nabla^k f(t_{i + 1}, y(t_{i + 1})) (-1)^k \int_{-1}^0 \binom{-s}{k}ds,
@@ -1284,7 +1293,10 @@
     \tau_{i + 1}(h) = -\frac{3}{160}y^{(6)}(\mu_i)h^5.
 \]</div>
 </div>
-<p><strong>NOTE</strong> that comparing an <em>m</em>-step Adams-Bashforth explicit method and <em>(m - 1)</em>-step Adams-Moulton implicit method, they both involve <em>m</em> evaluation of <span class="arithmatex">\(f\)</span> per step, and both have the local truncation error of the term <span class="arithmatex">\(ky^{(m + 1)}(\mu_i)h^m\)</span>. And the latter implicit method has the smaller coefficient <span class="arithmatex">\(k\)</span>. This leads to <strong>greater stability</strong> and <strong>smaller roundoff errors</strong> for implicit methods.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Comparing an <em>m</em>-step Adams-Bashforth explicit method and <em>(m - 1)</em>-step Adams-Moulton implicit method, they both involve <em>m</em> evaluation of <span class="arithmatex">\(f\)</span> per step, and both have the local truncation error of the term <span class="arithmatex">\(ky^{(m + 1)}(\mu_i)h^m\)</span>. And the latter implicit method has the smaller coefficient <span class="arithmatex">\(k\)</span>. This leads to <strong>greater stability</strong> and <strong>smaller roundoff errors</strong> for implicit methods.</p>
+</div>
 <h3 id="predictor-corrector-method">Predictor-Corrector Method<a class="headerlink" href="#predictor-corrector-method" title="Permanent link">¶</a></h3>
 <p>Implicit method has some advantages but it's hard to calculate. We could use some iterative methods introduced in <a href="../Chap_2">Chapter 2</a> to solve it but it complicates the process considerably.</p>
 <p>In practice, since explicit method is easy to calculate, we combine the explicit and implicit method to <strong>predictor-corrector method</strong>.</p>
@@ -1312,9 +1324,9 @@
 \small
     w_{i + 1}^{(1)} = w_i + \frac{h}{24}[9f(t_{i + 1}, w_{i + 1}^{(1)}) + 19f(t_i, w_i) - 5f(t_{i - 1}, w_{i - 1}) + f(t_{i - 2}, w_{i - 2})],
 \]</div>
-<p>Then we have the two options</p>
+<p>Then we have two options</p>
 <ul>
-<li><span class="arithmatex">\(i = i + 1\)</span>, and go back to <strong>Step. 2</strong>, approximate the next point.</li>
+<li><span class="arithmatex">\(i = i + 1\)</span>, and go back to <strong>Step. 2</strong>, to approximate the next point.</li>
 <li>Or, for higher accuracy, we can repeat <strong>Step.3</strong> iteratively by </li>
 </ul>
 <div class="arithmatex">\[
@@ -1357,8 +1369,8 @@
 <div class="admonition plane">
 <p><strong>Simpson Implicit Method</strong></p>
 <div class="arithmatex">\[
-    w_0 = \alpha,\ w_1 = \alpha_1, \\
-    w_{i + 1} = w_{i - 1} + \frac{h}{3}(f(t_{i + 1}, w_{i + 1}) + 4f(t_i, w_i) + f(t_{i - 1}, w_{i - 1})).
+    w_0 = \alpha,\ \ w_1 = \alpha_1, \\
+    w_{i + 1} = w_{i - 1} + \frac{h}{3}(f(t_{i + 1}, w_{i + 1}) + 4f(t_i, w_i) + f(t_{i - 1}, w_{i - 1})),
 \]</div>
 <p>with local truncation error</p>
 <div class="arithmatex">\[
@@ -1369,8 +1381,8 @@
 <div class="admonition plane">
 <p><strong>Milne's Method</strong></p>
 <div class="arithmatex">\[
-    w_0 = \alpha,\ w_1 = \alpha_1,\ w_2 = \alpha_2 \\
-    w_{i + 1} = w_{i - 3} + \frac{4h}{3}(2f(t_i, w_i) + - f(t_{i - 1}, w_{i - 1}) + 2f(t_{i - 2}, w_{i - 2})).
+    w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ w_2 = \alpha_2 \\
+    w_{i + 1} = w_{i - 3} + \frac{4h}{3}(2f(t_i, w_i) + - f(t_{i - 1}, w_{i - 1}) + 2f(t_{i - 2}, w_{i - 2})),
 \]</div>
 <p>with local truncation error</p>
 <div class="arithmatex">\[
@@ -1379,7 +1391,7 @@
 </div>
 <p>which can also derive by Taylor expansion in the similar manner.</p>
 <h2 id="higher-order-systems-of-first-order-ivp">Higher-Order Systems of First-Order IVP<a class="headerlink" href="#higher-order-systems-of-first-order-ivp" title="Permanent link">¶</a></h2>
-<p>Actually it just vectorize the method that we've mentioned above. Take Runge-Kutta Order Four as example.</p>
+<p>Actually it just <strong>vectorize</strong> the method that we've mentioned above. Take Runge-Kutta Order Four as example.</p>
 <div class="admonition plane">
 <p><strong>Runge-Kutta Method for Systems of Differential Equations</strong></p>
 <div class="arithmatex">\[
@@ -1394,7 +1406,7 @@
 \]</div>
 </div>
 <h2 id="higher-order-ivp">Higher-Order IVP<a class="headerlink" href="#higher-order-ivp" title="Permanent link">¶</a></h2>
-<p>We can deal with higher-order IVP the same as higher-order systems of first-order IVP. The only transformation we need to do is let <span class="arithmatex">\(u_1(t) = y(t)\)</span>, <span class="arithmatex">\(u_2(t) = y'(t)\)</span>, <span class="arithmatex">\(\dots\)</span>, and <span class="arithmatex">\(u_m(t) = y^{(m - 1)}(t)\)</span>.</p>
+<p>We can deal with higher-order IVP the same as higher-order systems of first-order IVP. The only transformation we need to do is to let <span class="arithmatex">\(u_1(t) = y(t)\)</span>, <span class="arithmatex">\(u_2(t) = y'(t)\)</span>, <span class="arithmatex">\(\dots\)</span>, and <span class="arithmatex">\(u_m(t) = y^{(m - 1)}(t)\)</span>.</p>
 <p>This produces the first-order system</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1402,41 +1414,41 @@
     \frac{du_2}{dt} &amp;= \frac{dy'}{dt} = u_3, \\
     &amp; \vdots \\
     \frac{du_{m - 1}}{dt} &amp;= \frac{dy^{(m - 2)}}{dt} = u_m, \\
-    \frac{du_m}{dt} &amp;= \frac{dy^{(m - 1)}}{dt} = y^{(m)} = f(t, y', y'', \dots, y^{(m - 1)}) = f(t, u_1, \dots, u_m).
+    \frac{du_m}{dt} &amp;= \frac{dy^{(m - 1)}}{dt} = y^{(m)} = f(t, y', y'', \dots, y^{(m - 1)}) = f(t, u_1, \dots, u_m),
 \end{aligned}
 \]</div>
 <p>with initial conditions</p>
 <div class="arithmatex">\[
-    u_1(a) = y(a) = \alpha_1, u_2(a) = y'(a) = \alpha_2, \dots,  u_m(a) = y^{(m - 1)}(a) = \alpha_m. 
+    u_1(a) = y(a) = \alpha_1,\ \ u_2(a) = y'(a) = \alpha_2,\ \ \dots,\ \ u_m(a) = y^{(m - 1)}(a) = \alpha_m. 
 \]</div>
 <h2 id="stability">Stability<a class="headerlink" href="#stability" title="Permanent link">¶</a></h2>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.7</p>
 <p>A one-step difference-equation method with local truncation error <span class="arithmatex">\(\tau_i(h)\)</span> is <strong>consistent</strong> with the differential equation it approximates if</p>
 <div class="arithmatex">\[
     \lim\limits_{h \rightarrow 0} \max\limits_{1 \le i \le N}|\tau_i(h)| = 0.
 \]</div>
 <p>For <em>m</em>-step multistep methods, it's also required that</p>
 <div class="arithmatex">\[
-    \lim\limits_{h \rightarrow 0} |\alpha_i - y_i| = 0, i = 1, 2, \dots, m - 1,
+    \lim\limits_{h \rightarrow 0} |\alpha_i - y_i| = 0,\ \ i = 1, 2, \dots, m - 1,
 \]</div>
 <p>since at most cases, these <span class="arithmatex">\(\alpha_i\)</span> are derived by one-step methods.</p>
 </div>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.8</p>
 <p>A one-step / multistep difference-equation method is <strong>convergent</strong> w.r.t the differential equation it approximates if</p>
 <div class="arithmatex">\[
     \lim\limits_{h \rightarrow 0} \max\limits_{1 \le i \le N}|w_i - y(t_i)| = 0.
 \]</div>
 </div>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.9</p>
 <p>A <strong>stable</strong> method is one whose results depent <em>continously</em> on the initial data, in the sense that small changes or perturbations in the intial conditions produce correspondingly small changes in the subsequent approximations.</p>
 </div>
 <h3 id="one-step-method">One Step Method<a class="headerlink" href="#one-step-method" title="Permanent link">¶</a></h3>
-<p>It's relatively natural to think the stability is somewhat analogous to the discussion of well-posed, and thus it's not surprising Lipschitz condition appears. The following theorem gives the relation among <em>consistency</em>, <em>convergence</em> and <em>stability</em>.</p>
+<p>It's relatively natural to think the stability is somewhat analogous to the discussion of <em>well-posed</em>, and thus it's not surprising <strong>Lipschitz condition</strong> appears. The following theorem gives the relation among <em>consistency</em>, <em>convergence</em> and <em>stability</em>.</p>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 5.8</p>
 <p>Suppose the IVP is approximated by a one-step method in the form</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1444,7 +1456,7 @@
     w_{i + 1} &amp;= w_i + h \phi(t_i, w_i, h).
 \end{aligned}
 \]</div>
-<p>If <span class="arithmatex">\(\exists h_0 &gt; 0\)</span> and <span class="arithmatex">\(\phi(t, w, h)\)</span> is continuous and satisfies a Lipschitz condition in the varaible <span class="arithmatex">\(w\)</span> with Lipschitz constant <span class="arithmatex">\(L\)</span> on the set</p>
+<p>If <span class="arithmatex">\(\exists\ h_0 &gt; 0\)</span> and $ \phi(t, w, h)$ is continuous and satisfies a Lipschitz condition in the varaible <span class="arithmatex">\(w\)</span> with Lipschitz constant <span class="arithmatex">\(L\)</span> on the set</p>
 <div class="arithmatex">\[
     D = \{(t, w, h) | a \le t \le b, -\infty &lt; w &lt; \infty, 0 \le h \le h_0\}.
 \]</div>
@@ -1454,7 +1466,7 @@
 <li>The difference method is <strong>convergent</strong> iff it's <strong>consistent</strong>, which is equivalent to</li>
 </ul>
 <div class="arithmatex">\[
-    \phi(t, y, 0) = f(t, y),\ t \in [a, b].
+    \phi(t, y, 0) = f(t, y),\ \ t \in [a, b].
 \]</div>
 <ul>
 <li><strong>(Relation between Global Error and Local Truncation Error)</strong> If <span class="arithmatex">\(\exists \tau(h)\)</span> s.t. <span class="arithmatex">\(|\tau_i(h)| \le \tau(h)\)</span> whenever <span class="arithmatex">\(0 \le h \le h_0\)</span>, then</li>
@@ -1465,7 +1477,7 @@
 </div>
 <h3 id="multistep-method_1">Multistep Method<a class="headerlink" href="#multistep-method_1" title="Permanent link">¶</a></h3>
 <details class="theorem">
-<summary>Theorem | Relation between Global Error and Local Truncation Error</summary>
+<summary>Theorem 5.9 | Relation between Global Error and Local Truncation Error</summary>
 <p>Suppose the IVP is approximated by a predictor-corrector method with an <em>m</em>-step Adams-Bashforth predictor equation</p>
 <div class="arithmatex">\[
     w_{i + 1} = w_i + h[b_{m - 1}f(t_i, w_i) + \cdots + b_0f(t_{i + 1 - m}, w_{i + 1 - m})],
@@ -1477,9 +1489,9 @@
 <p>with local truncation error <span class="arithmatex">\(\tilde \tau_{i + 1}(h)\)</span>. In addition, suppose <span class="arithmatex">\(f(t, y)\)</span> and <span class="arithmatex">\(f_y(t, y)\)</span> are continous on <span class="arithmatex">\(D = \{(t, y) | a \le t \le b, -\infty &lt; y &lt; \infty\}\)</span> and <span class="arithmatex">\(f_y\)</span> is bounded. Then the local truncation error <span class="arithmatex">\(\sigma_{i + 1}(h)\)</span> of the predictor-corrector method is</p>
 <div class="arithmatex">\[
 \small
-    \sigma_{i + 1}(h) = \tilde \tau_{i + 1}(h) + \tau_{i + 1}(h) \tilde b_{m - 1} \frac{\partial f}{\partial y}(t_{i + 1}, \theta_{i + 1}),\ \text{ for some } \theta_{i + 1} \in (0, h\tau_{i + 1}(h))
+    \sigma_{i + 1}(h) = \tilde \tau_{i + 1}(h) + \tau_{i + 1}(h) \tilde b_{m - 1} \frac{\partial f}{\partial y}(t_{i + 1}, \theta_{i + 1}),\ \ \text{ for some } \theta_{i + 1} \in (0, h\tau_{i + 1}(h)).
 \]</div>
-<p>Moreover, <span class="arithmatex">\(\exists k_1, k_2\)</span>, s.t.</p>
+<p>Moreover, <span class="arithmatex">\(\exists\ k_1, k_2\)</span>, s.t.</p>
 <div class="arithmatex">\[
     |w_i - y(t_i)| \le \left[\max\limits_{0 \le j \le m - 1}|w_j - y(t_j)| + k_1\sigma(h) \right] e^{k_2(t_i - a)},
 \]</div>
@@ -1490,17 +1502,17 @@
     P(\lambda) = \lambda^m - a_{m - 1}\lambda^{m - 1} - a_{m - 2}\lambda^{m - 2} - \cdots - a_1 \lambda - a_0.
 \]</div>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.10</p>
 <p>Suppose the roots of the characteristic equation</p>
 <div class="arithmatex">\[
     P(\lambda) = \lambda^m - a_{m - 1}\lambda^{m - 1} - a_{m - 2}\lambda^{m - 2} - \cdots - a_1 \lambda - a_0 = 0
 \]</div>
 <p>associated with the multistep difference method</p>
 <div class="arithmatex">\[
-    w_0 = \alpha,\ \  w_1 = \alpha_1,\ \dots\ , w_{m - 1} = \alpha_{m - 1}, \\
+    w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ \dots,\ \ w_{m - 1} = \alpha_{m - 1}, \\
     w_{i + 1} = a_{m - 1}w_i + a_{m - 2}w_{i - 1} + \cdots a_0 w_{i + 1 - m} + hF(t_i, h, w_{i + 1}, w_i \dots, w_{i + 1 - m}).
 \]</div>
-<p>If <span class="arithmatex">\(|\lambda_i| \le 1\)</span>, for each <span class="arithmatex">\(i = 1, 2, \dots, m\)</span> and all roots with modulus value 1 are simple roots, then the difference method is said to satisfy the <strong>root condition</strong>.</p>
+<p>If <span class="arithmatex">\(|\lambda_i| \le 1\)</span>, for each <span class="arithmatex">\(i = 1, 2, \dots, m\)</span> and all roots with modulus value <span class="arithmatex">\(1\)</span> are simple roots, then the difference method is said to satisfy the <strong>root condition</strong>.</p>
 <ul>
 <li>Methods that satisfy the root condition and have <span class="arithmatex">\(\lambda = 1\)</span> as the only root of the characteristic equation of magnitude one are called <strong>strongly stable</strong>.</li>
 <li>Methods that satisfy the root condition and have more than one disctinct root with magnitude one are called <strong>weakly stable</strong>.</li>
@@ -1508,10 +1520,10 @@
 </ul>
 </div>
 <div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p class="admonition-title">Theorem 5.10</p>
 <p>A multistep method of the form</p>
 <div class="arithmatex">\[
-    w_0 = \alpha,\ \  w_1 = \alpha_1,\ \dots\ , w_{m - 1} = \alpha_{m - 1}, \\
+    w_0 = \alpha,\ \ w_1 = \alpha_1,\ \ \dots,\ \ w_{m - 1} = \alpha_{m - 1}, \\
     w_{i + 1} = a_{m - 1}w_i + a_{m - 2}w_{i - 1} + \cdots a_0 w_{i + 1 - m} + hF(t_i, h, w_{i + 1}, w_i \dots, w_{i + 1 - m}).
 \]</div>
 <p>is <strong>stable</strong> iff it satisfies the root condition. Moreover, if the difference method is <strong>consistent</strong> with the differential equation, then the method is <strong>stable</strong> iff it is <strong>convergent</strong>.</p>
@@ -1521,7 +1533,7 @@
 <p>Stiff differential eqaution are characterized as those whose exact solution has a term of the form <span class="arithmatex">\(e^{-ct}\)</span>, where <span class="arithmatex">\(c\)</span> is a large positive constant. This is called the <em>transient</em> solution. Actaully there is another important part of solution called <em>steady-state</em> solution. </p>
 <p>Let's first define <em>test equation</em> to examine what happen with the stiff cases.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.11</p>
 <p>A <strong>test equation</strong> is the IVP</p>
 <div class="arithmatex">\[
     y' = \lambda y,\ \ y(0) = \alpha,\ \ \text{ where } \text{Re}(\lambda) &lt; 0.
@@ -1549,7 +1561,7 @@
 \]</div>
 <p>From another perspective, consider the roundoff error of the initial value <span class="arithmatex">\(\alpha\)</span> by,</p>
 <div class="arithmatex">\[
-    w_0 = \alpha + \delta_0,
+    w_0 = \alpha + \delta_0.
 \]</div>
 <p>At the <em>i</em>th step the roundoff error is</p>
 <div class="arithmatex">\[
@@ -1570,20 +1582,20 @@
 <div class="arithmatex">\[
     Q(z, H) = (1 - H b_m)z^m - (a_{m - 1} + H b_{m - 1})z^{m - 1} - \cdots - (a_0 + H b_0).
 \]</div>
-<p>Suppose <span class="arithmatex">\(\beta_i\)</span> are the distinct roots of <span class="arithmatex">\(Q(z, H)\)</span>, then it can be proved that <span class="arithmatex">\(\exists c_i\)</span>, s.t.</p>
+<p>Suppose <span class="arithmatex">\(\beta_i\)</span> are the distinct roots of <span class="arithmatex">\(Q(z, H)\)</span>, then it can be proved that <span class="arithmatex">\(\exists\ c_i\)</span>, s.t.</p>
 <div class="arithmatex">\[
     w_{i} = \sum\limits_{k = 1}^m c_k\beta_k^i.
 \]</div>
-<p>Again, to make <span class="arithmatex">\(w_i\)</span> approximate <span class="arithmatex">\((e^H)^i\)</span>, we want at least all <span class="arithmatex">\(|\beta_k| &lt; 1\)</span> to make it decay to 0. It also delimit a region in a complex plane.</p>
+<p>Again, to make <span class="arithmatex">\(w_i\)</span> approximate <span class="arithmatex">\((e^H)^i\)</span>, we want at least all <span class="arithmatex">\(|\beta_k| &lt; 1\)</span> to make it decay to <span class="arithmatex">\(0\)</span>. It also delimit a region in a complex plane.</p>
 <div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<p class="admonition-title">Definition 5.12</p>
 <p>The <strong>Region R of abosolute stability</strong> for a one-step method is</p>
 <div class="arithmatex">\[
     R = \{H \in \mathbb{C} | |Q(H)| &lt; 1\},
 \]</div>
 <p>and for a multistep method,</p>
 <div class="arithmatex">\[
-    R = \{H \in \mathbb{C} | |\beta_k| &lt; 1, for all zero point of Q(z, H)\}.
+    R = \{H \in \mathbb{C} | |\beta_k| &lt; 1,\ \ \text{ for all zero points of } Q(z, H)\}.
 \]</div>
 <ul>
 <li>A numerical method is said to be <strong>A-stable</strong> if its region <span class="arithmatex">\(R\)</span> of abosolute stability contains <em>left half-plane</em>, which means <span class="arithmatex">\(\text{Re}(\lambda) &lt; 0\)</span>, <strong>stable with stiff equation</strong>.</li>
@@ -1612,9 +1624,9 @@
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/chap5_5.png"><img alt="chap5_5 " src="../Pic/chap5_5.png" style="width:200px"/></a>
 </div>
 <p>Thus it's <em>A-stable</em>.</p>
-<p>Also, <strong>implicit Trapezoidal method</strong> and <strong>2<sup>nd</sup>-order Runge-Kutta implict method</strong> are <em>A-stable</em>, both with the difference equation,</p>
+<p>Also, <strong>implicit Trapezoidal method</strong> and <strong>2<sup>nd</sup>-order Runge-Kutta implict method</strong> are <em>A-stable</em>, both with the difference equation</p>
 <div class="arithmatex">\[
-    w_{i + 1} = \frac{2 + H}{2 - H}w_i.
+    w_{i + 1} = \frac{2 + H}{2 - H}w_i,
 \]</div>
 <p>whose region is just right covers the left half-plane.</p>
 <div align="center">
