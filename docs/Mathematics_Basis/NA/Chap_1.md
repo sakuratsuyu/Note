@@ -1,33 +1,32 @@
 # Chapter 1 | Mathematical Preliminaries
 ## Error
-
 ### Truncation Error
 
 the error involved using a truncated or finite summation.
 
 ###  Roundoff Error
 
-the error produced when performing real number calculations. It occurs because the arithmetic performed in a machine involved numbers with a finite number of digits.
+the error produced when performing real number calculations. It occurs because the arithmetic performed in a machine involved numbers with **a finite number of digits**.
 
 !!! note "Chopping & Rounding"
 	Given a real number $y = 0.d_1d_2\dots d_kd_{k+1}\dots \times 10^N$, the floating-point representation of $y$ is $fl(y)$:
 
 	$$
 		fl(y) = \left\{
-			\begin{align}
+			\begin{aligned}
 				& 0.d_1d_2\dots d_k \times 10^N, & {\tt Chopping} \\
 				& {\tt chop}\left(y + 5 \times 10^{n - (k + 1)}\right). & {\tt Rounding}
-			\end{align}
+			\end{aligned}
 		\right.
 	$$
 
-!!! definition
-	If $p^*$ is an approximation to $p$, then **absolute error** is $|p - p*|$ and **relative error** is $\frac{|p - p^*|}{|p|}$.
+!!! definition "Definition 1.0"
+	If $p^*$ is an approximation to $p$, then **absolute error** is $|p - p^*|$ and **relative error** is $\dfrac{|p - p^*|}{|p|}$.
 
-	The number $p^*$ is said to be approximate to $p$ to $t$ **significant digits* if $t$ is the largest nonnegative integer for which
+	The number $p^*$ is said to be approximate to $p$ to $t$ **significant digits** if $t$ is the largest nonnegative integer s.t.
 
 	$$
-		\frac{|p - p^*|}{|p|} < 5 \times 10^{-t}
+		\frac{|p - p^*|}{|p|} < 5 \times 10^{-t}.
 	$$
 
 ??? example
@@ -37,13 +36,13 @@ the error produced when performing real number calculations. It occurs because t
 		\left|\frac{y - fl(y)}{y}\right|.
 	$$
 
-	for chopping representation,
+	For chopping representation,
 
 	$$
 		\left|\frac{y - fl(y)}{y}\right| = \left|\frac{0.d_{k + 1}d_{k + 2}\dots}{0.d_1d_2\dots}\right| \times 10^{-k} \le \frac{1}{0.1} \times 10^{-k} = 10^{-k + 1}.
 	$$
 
-	for rounding representation,
+	For rounding representation,
 
 	$$
 		\left|\frac{y - fl(y)}{y}\right| \le \frac{0.5}{0.1} \times 10^{-k} = 0.5 \times 10^{-k + 1}.
@@ -51,19 +50,19 @@ the error produced when performing real number calculations. It occurs because t
 
 ### Effect of Error
 
-- Subtraction may reduce significant digits. *e.g.* 0.1234 - 0.1233 = 0.001
+- Subtraction may reduce significant digits. *e.g.* 0.1234 - 0.1233 = 0.001.
 - Division by small number of multiplication by large number magnify the abosolute error without modifying the relative error.
 
 ### Some Solutions to Reduce Error
 
-??? example "Quadratic Formula"
-	the roots of $ax^2 + bx + c = 0$ is 
+!!! example "Quadratic Formula"
+	The roots of $ax^2 + bx + c = 0$ is 
 
 	$$
 		x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
 	$$
 
-	Sometimes $b$ is closer to $\sqrt{b^2 - 4ac}$, which may cause the subtraction to reduce significant digits. <u>An alternate way</u> is to modify the formula to
+	Sometimes $b$ is closer to $\sqrt{b^2 - 4ac}$, which may cause the subtraction to reduce significant digits. *An alternate way* is to modify the formula to
 
 	$$
 		x = \frac{-2c}{b \pm \sqrt{b^2 - 4ac}}.
@@ -73,32 +72,32 @@ the error produced when performing real number calculations. It occurs because t
 
 !!! note "Horner's Method 秦九韶算法"
 	$$
-	\begin{align}
+	\begin{aligned}
 		f(x) &= a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0 
 		\\ &= (\dots((a_nx+a_{n-1})x+a_{n-2})x+\dots+a_1)x+a_0
-	\end{align}
+	\end{aligned}
 	$$
 
 ## Stable Algorithms and Convergence
 
-!!! definition
+!!! definition "Definition 1.1"
 	An algorithm that satisfies that small changes in the initial data produce correspondingly small changes in the final results is called **stable**; otherwise it is **unstable**.  An algorithm is called **conditionally stable** if it is stable only for certain choices of initial data.
 
-	Suppose $E_0 > 0$ denotes an initial errors, $E_n$ denotes the magnitude of an error after $n$ subsequent operations
+	Suppose $E_0 > 0$ denotes an initial errors, $E_n$ denotes the magnitude of an error after $n$ subsequent operations, then we define
 	
-	- **Linear growth of errors** $E_n \approx C n E_0$
-		- unavoidable and acceptable
-	- **Exponential growth of errors** $E_n \approx C^n E_0$
-		- <u>unacceptable</u>
+	- **Linear growth of errors** $E_n \approx C n E_0.$
+		- unavoidable and acceptable.
+	- **Exponential growth of errors** $E_n \approx C^n E_0.$
+		- <font color="red">unacceptable.</font>
 
 ??? example
-	the recursive equation $p_n = \frac{10}{3}p_{n - 1} - p_{n - 2}$ has the solution
+	The recursive equation $p_n = \dfrac{10}{3}p_{n - 1} - p_{n - 2}$ has the solution
 	
 	$$
 		p_n = c_1 \left(\frac13\right)^n + c_23^n.
 	$$
 
-	If $p_0 = 1, p_1 = \frac13$, then the solution is
+	If $p_0 = 1, p_1 = \dfrac13$, then the solution is
 
 	$$
 		p_n = \left(\frac13\right)^n.
@@ -124,7 +123,7 @@ the error produced when performing real number calculations. It occurs because t
 		p_n = c_1 + c_2n
 	$$
 
-	If $p_0 = 1, p_1 = \frac13$, then the solution is
+	If $p_0 = 1, p_1 = \dfrac13$, then the solution is
 
 	$$
 		p_n = 1 - \frac23 n.
@@ -144,20 +143,23 @@ the error produced when performing real number calculations. It occurs because t
 
 	grow **linearly** with $n$.
 
-!!! tip "Error of floating-point number (IEEE 754 standard)"
+!!! info "Error of floating-point number (IEEE 754 standard)"
 	#### Range of normal representation
 
-	Single-Precision
+	For Single-Precision
 
 	- Smallest $\text{0/1\ 00000001\ 00\dots00}$
-		- $\pm 1.0 \times 2^{-126} \approx \pm 1.2 \times 10^{-38}$
+		- $\pm 1.0 \times 2^{-126} \approx \pm 1.2 \times 10^{-38}$.
 	- Largest $\text{0/1\ 11111110\ 11\dots11}$
-		- $\pm 2.0 \times 2^{127} \approx \pm 3.4 \times 10^{38}$
+		- $\pm 2.0 \times 2^{127} \approx \pm 3.4 \times 10^{38}$.
 
-	For Double-Precision, smallest $\pm 1.0 \times 2^{-1022} \approx \pm 2.2 \times 10^{-308}$, largest$\pm 2.0 \times 2^{1023} \approx \pm 1.8 \times 10^{308}$
+	For Double-Precision
+
+	- Smallest $\pm 1.0 \times 2^{-1022} \approx \pm 2.2 \times 10^{-308}$.
+	- Largest $\pm 2.0 \times 2^{1023} \approx \pm 1.8 \times 10^{308}$.
 
 	#### Relative precision
-	- Single $2^{-23}$
-		- Equivalent to $23 \times \log_{10}2 \approx 6$decimal digits of precision（6 位有效数字）
-	- Double $2^{-52}$
-		- Equivalent to $52 \times \log_{10}2 \approx 16$decimal digits of precision（16 位有效数字）
+	- Single-Precision: $2^{-23}$
+		- Equivalent to $23 \times \log_{10}2 \approx 6$ decimal digits of precision（6 位有效数字）.
+	- Double-Precision: $2^{-52}$
+		- Equivalent to $52 \times \log_{10}2 \approx 16$ decimal digits of precision（16 位有效数字）.

@@ -3,11 +3,11 @@
 ## Optimization
 
 $$
-\begin{align}
+\begin{aligned}
 & \text{Minimize } & f_0(x) \\
 & \text{Subject to } &f_i(x) & \le 0,\ i = 1, \dots, m \\
 & & g_i(x) & = 0,\ i = 1,\dots, p
-\end{align}
+\end{aligned}
 $$
 
 -   $x \in \mathbb{R}^n$ is a vector variable to be chosen.
@@ -25,7 +25,7 @@ $$
 
 ### Reasons to choose MSE
 
-!!! note ""
+!!! plane ""
 	**Key Assumptions:** MSE = MLE with Gaussian noise
 
 From **Maximum Likelihood Estimation (MLE)**, the data is assumed to be with **Gaussian noise**.
@@ -44,17 +44,17 @@ $$
 	If the data points are **independent**,
 	
 	$$
-	\begin{align}
+	\begin{aligned}
 	P[(a_1, b_1)(a_2, b_2)\dots|x] & = \prod\limits_iP[(a_i, b_i)|x] = \prod\limits_iP[b_i - a_{i^{Tx]}} \\
 	& \propto \exp\left(-\frac{\sum_i(b_i - a_i^Tx)^2}{2\sigma^2}\right) = \exp\left(-\frac{||Ax-b||^2_2}{2\sigma^2}\right)
-	\end{align}
+	\end{aligned}
 	$$
 	
 	$$
-	\begin{align}
+	\begin{aligned}
 	\hat x &= \mathop{\arg\max}\limits_x P[(a_1, b_1)(a_2, b_2)\dots|x] \\ &= \mathop{\arg\max}\limits_x \exp\left(-\frac{||Ax-b||^2_2}{2\sigma^2}\right) 
 	= \mathop{\arg\min}\limits_x||Ax - b||_2^2
-	\end{align}
+	\end{aligned}
 	$$
 
 ---
@@ -82,7 +82,7 @@ But, if no analytical solution ...
 
 ### Gradient Descent (GD)
 
-!!! note ""
+!!! plane ""
 	### Steepest Descent Method
 	
 	$$
@@ -112,7 +112,7 @@ But, if no analytical solution ...
 	-   Disadvantage
 		-   Converge slowly when near the minimum, which wastes a lot of computation
 
-!!! note ""
+!!! plane ""
 	### Newton Method
 	
 	$$
@@ -125,16 +125,16 @@ But, if no analytical solution ...
 	-   Disadvantage
 		-   Hessian matrix requires a lot of computation
 
-!!! note "" 
+!!! plane "" 
 	### Gauss-Newton Method
 	
 	For $\hat x = \mathop{\arg\min}\limits_x ||Ax-b||^2_2 \overset{\Delta}{=\!=}\mathop{\arg\min}\limits_x||R(x)||^2_2$, expand $R(x)$.
 	
 	$$
-	\begin{align}
+	\begin{aligned}
 	||R(x_k+\Delta x)||^2_2 &\approx ||R(x_k) + J_R\Delta x||^2_2 \newline 
 	&= ||R(x_k)||^2_2 + 2R(x_k)^TJ_R\Delta x + \Delta x^TJ^T_RJ_R\Delta x
-	\end{align}
+	\end{aligned}
 	$$
 	
 	- $\Delta x = -(J_R^TJ_R)^{-1}J_R^TR(x_k) = -(J_R^TJ_R)^{-1}J_F^T$
@@ -147,7 +147,7 @@ But, if no analytical solution ...
 	-   Disadvantage
 		-   $J^T_RJ_R$ may be singular.
 
-!!! note ""
+!!! plane ""
 	### Levenberg-Marquardt (LM)
 	
 	- $\Delta x = -(J_R^TJ_R + \lambda I)^{-1}J_R^TR(x_k)$
@@ -206,7 +206,7 @@ The solution is not unique. To make it unique:
 !!! note
 	**A key idea:** Neighboring pixels tend to take the same label.
 
-!!! note ""
+!!! plane ""
 	Images as Graphs
 	
 	-   A vertex for each pixel

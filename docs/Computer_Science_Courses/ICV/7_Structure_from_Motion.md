@@ -142,10 +142,10 @@ $$
 </div>
 
 $$
-\begin{align}
+\begin{aligned}
 u &= m_x f \frac{x_c}{z_c} + c_x \\
 v &= m_y f \frac{y_c}{z_c} + c_y
-\end{align}
+\end{aligned}
 $$
 
 结合以上两个变换，记 $f_x = m_x f$, $f_y = m_y f$.
@@ -302,10 +302,10 @@ z_w^{(i)} \\
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 u^{(i)} &= \frac{p_{11}x_w^{(i)} + p_{12}y_w^{(i)} + p_{13}z_w^{(i)} + p_{14}}{p_{31}x_w^{(i)} + p_{32}y_w^{(i)} + p_{33}z_w^{(i)} + p_{34}} \\
 v^{(i)} &= \frac{p_{21}x_w^{(i)} + p_{22}y_w^{(i)} + p_{23}z_w^{(i)} + p_{24}}{p_{31}x_w^{(i)} + p_{32}y_w^{(i)} + p_{33}z_w^{(i)} + p_{34}} \\
-\end{align}
+\end{aligned}
 $$
 
 #### Step 4. Rearrange.
@@ -457,20 +457,20 @@ $$
 		- 由余弦定理
 		
 		$$
-		\begin{align}
+		\begin{aligned}
 		OA^2 + OB^2 - 2 OA \cdot OB \cos \angle AOB &= AB^2 \\
 		OA^2 + OC^2 - 2 OB \cdot OC \cos \angle BOC &= BC^2 \\
 		OA^2 + OC^2 - 2 OA \cdot OC \cos \angle AOC &= AC^2
-		\end{align}
+		\end{aligned}
 		$$
 		
 		- 令 $x = \frac{OA}{OC}, y = \frac{OB}{OC}, v = \frac{AB^2}{OC^2}, u = \frac{BC^2}{AB^2}, w = \frac{AC^2}{AB^2}$，化简得
 		
 		$$
-		\begin{align}
+		\begin{aligned}
 		(1 - u)y^2 - ux^2 - cos \angle BOC y + 2uxy \cos \angle AOB + 1 &= 0 \\
 		(1 - w)x^2 - wy^2 - cos \angle AOC y + 2wxy \cos \angle AOB + 1 &= 0
-		\end{align}
+		\end{aligned}
 		$$
 		
 		- 以上方程组是二元二次方程组 (Binary Quadratic Equation)，有四组解.
@@ -540,10 +540,10 @@ Two-frame SfM 意在解决这样一个问题：已知两张图像和相机内参
 对于一个对极面，以下等式关系成立：
 
 $$
-\begin{align}
+\begin{aligned}
 \mathbf{n} = \mathbf{t} \times \mathbf{x}_l \\ \\
 \mathbf{x}_l \cdot (\mathbf{t} \times \mathbf{x}_l) = 0
-\end{align}
+\end{aligned}
 $$
 
 其中 $\mathbf{n}$ 被称为 Normal Vector.
@@ -551,7 +551,7 @@ $$
 假设右边的摄像机相对左边的摄像机进行刚体变换 + 平移，即：
 
 $$
-\begin{align}
+\begin{aligned}
 \mathbf{x}_l &= R \mathbf{x}_r + \mathbf{t} \\ \\
 \begin{bmatrix}
 x_l \\ y_l \\ z_l
@@ -569,13 +569,13 @@ x_r \\ y_r \\ y_r
 \begin{bmatrix}
 t_x \\ t_y \\ t_z
 \end{bmatrix}
-\end{align}
+\end{aligned}
 $$
 
 进一步演绎推理，得到：
 
 $$
-\begin{align}
+\begin{aligned}
 \begin{bmatrix}
 x_l & y_l & z_l
 \end{bmatrix}
@@ -601,7 +601,7 @@ x_l \\ y_l \\ z_l
 \end{bmatrix}
 = 0
 & \text{, Matrix-vector form}
-\end{align}
+\end{aligned}
 $$
 
 代入变换矩阵
@@ -670,7 +670,7 @@ $$
 
 $$
 \small
-\begin{align}
+\begin{aligned}
 \text{Left Camera} && \text{Right Camera}
 \\
 z_l 
@@ -715,7 +715,7 @@ K_r^{-1} z_r
 \begin{bmatrix}
 u_r \\ v_r \\ 1
 \end{bmatrix}
-\end{align}
+\end{aligned}
 $$
 
 代入以上得到的：
@@ -727,20 +727,19 @@ $$
 有
 
 $$
-\require{canel}
 \begin{bmatrix}
 u_l & v_l & 1
 \end{bmatrix}
-\cancel{z_l} (K_l^{-1})^T
+z_l (K_l^{-1})^T
 E
-K_r^{-1} \cancel{z_r}
+K_r^{-1} z_r
 \begin{bmatrix}
 u_r \\ v_r \\ 1
 \end{bmatrix}
 = 0
 $$
 
-即
+约去 $z_l$, $z_r$，则
 
 $$
 \begin{bmatrix}
@@ -848,7 +847,7 @@ $R$ 即为旋转矩阵，$\mathbf{t}$ 可以通过 $T_\times$ 直接得到.
 
 $$
 \small
-\begin{align}
+\begin{aligned}
 \text{Left Camera}
 \\
 \begin{bmatrix}
@@ -922,7 +921,7 @@ x_r \\ y_r \\ z_r \\ 1
 \mathbf{\tilde u}_l &= 
 \normalsize
 M_{int_r} \mathbf{\tilde x}_r
-\end{align}
+\end{aligned}
 $$
 
 由
@@ -1059,7 +1058,7 @@ $$
 	<img src="../Pic/lec7_17.png" alt="lec7_17" style="width:600px"/>
 </div>
 
-!!! Note ""
+!!! plane ""
 	Pipeline
 	
 	<div align="center">

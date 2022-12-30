@@ -201,12 +201,12 @@ Problems
 #### Brightness constancy
 
 $$
-\begin{align}
+\begin{aligned}
 I(x, y, t) &= I(x + u, y + v, t + 1) \\
 I(x + u, y + v, t + 1) &\approx I(x, y, t) + I_x u + I_y v + I_t \\
 I_x u + I_y v + I_t &\approx 0 \\
 \nabla I \cdot [u, v]^T + I_t &= 0
-\end{align}
+\end{aligned}
 $$
 
 #### Aperture Problem

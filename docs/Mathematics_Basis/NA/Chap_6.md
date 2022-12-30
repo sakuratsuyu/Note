@@ -8,17 +8,17 @@ $$
     A\mathbf{x} = \mathbf{b}
 $$
 
-Let $A^{(1)} = A, \mathbf{b}^{(1)} = \mathbf{b}$,
+Let $A^{(1)} = A, \mathbf{b}^{(1)} = \mathbf{b}$.
 
-For Step $k\ (1\le k \le n-1)$, if $a^{(k)}_{kk}\ne0$ (**pivot element**), compute $m_{ik} = \frac{a^{(k)}_{ik}}{a^{(k)}_{kk}}$ and
+For Step $k\ (1\le k \le n-1)$, if $a^{(k)}_{kk}\ne0$ (**pivot element**), compute $m_{ik} = \dfrac{a^{(k)}_{ik}}{a^{(k)}_{kk}}$ and
 
 $$
 \left\{
-\begin{align}
+\begin{aligned}
     a_{ij}^{(k+1)} = a_{ij}^{(k)} - m_{ik}a_{kj}^{(k)} \\
     b_i^{(k+1)} = b_i^{(k)} - m_{ik}b_k^{(k)}
-\end{align}
-\text{, where }i, j = k+1, \dots, n
+\end{aligned}
+,\ \ \text{ where } i, j = k+1, \dots, n.
 \right.
 $$
 
@@ -45,7 +45,7 @@ $$
     b^{(2)}_2 \\
     \vdots \\
 b^{(n)}_n
-\end{bmatrix}
+\end{bmatrix}.
 $$
 
 #### Backward Substitution
@@ -53,7 +53,7 @@ $$
 Then,
 
 $$
-x_n = \frac{b_n^{(n)}}{a^{(n)}_{nn}}, x_i = \frac{1}{a_{ii}^{(i)}}\left(b^{(i)}_i - \sum_{j = i + 1}^n a^{(i)}_{ij} x_j\right), i = n-1, \dots, 1
+x_n = \frac{b_n^{(n)}}{a^{(n)}_{nn}}, x_i = \frac{1}{a_{ii}^{(i)}}\left(b^{(i)}_i - \sum_{j = i + 1}^n a^{(i)}_{ij} x_j\right),\ \ \text{ where }i = n-1, \dots, 1.
 $$
 
 ### Complexity
@@ -85,7 +85,7 @@ $$
 Determine the smallest $p \ge k$ such that
 
 $$
-    \left|a_{pk}^{(k)}\right| = \max_{k \le i \le n} \left|a_{ik}^{(k)}\right|
+    \left|a_{pk}^{(k)}\right| = \max_{k \le i \le n} \left|a_{ik}^{(k)}\right|,
 $$
 
 and interchange row $p$ and row $k$ .
@@ -97,21 +97,21 @@ and interchange row $p$ and row $k$ .
 Determine the smallest $p \ge k$ such that
 
 $$
-    \frac{\left|a_{pk}^{(k)}\right|}{s_p} = \max\limits_{k \le i \le n} \frac{\left|a_{ik}^{(k)}\right|}{s_i}
+    \frac{\left|a_{pk}^{(k)}\right|}{s_p} = \max\limits_{k \le i \le n} \frac{\left|a_{ik}^{(k)}\right|}{s_i},
 $$
 
 and interchange row $p$ and row $k$, where $s_i = \max\limits_{1 \le j \le n} \left|a_{ij}\right|$.
 
-(Simply put, Place the element in the pivot position that is largest relative to the entries in its 
+(Simply put, place the element in the pivot position that is largest relative to the entries in its 
 row.)
 
 *Requires* $O(N^2)$ additional **comparisons** and $O(N^2)$ **divisions**.
 
 ### Complete Pivoting (a.k.a Maximal Pivoting)
 
-Search all the entries $a_{ij}$ for $i,j = k, \dots,n$ to find the entry with the largest magnitude. <u>Both row and column</u> interchanges are performed to bring this entry to the pivot position.
+Search all the entries $a_{ij}$ for $i,j = k, \dots,n$ to find the entry with the largest magnitude. **Both row and column** interchanges are performed to bring this entry to the pivot position.
 
-*Requires* $O\left(\frac{1}{3}N^3\right)$ additional **comparisons**.
+*Requires* $O\left(\dfrac{1}{3}N^3\right)$ additional **comparisons**.
 
 ## Matrix Factorization (LU Factorization)
 
@@ -138,7 +138,7 @@ L_k =
     \vdots & \ddots & -m_{k+1, k} & \ddots & \ddots & \vdots\\
     \vdots & \ddots& \vdots & \ddots & \ddots & 0 \\
     0 & \cdots & -m_{n, k} & \cdots & \cdots & 1
-\end{bmatrix}
+\end{bmatrix}.
 $$
 
 It's simple to compute that
@@ -154,7 +154,6 @@ L_k^{-1} =
     0 & \cdots & m_{n, k} & \cdots & \cdots & 1
 \end{bmatrix}.
 $$
-
 
 Thus we let
 
@@ -185,10 +184,10 @@ $$
 Then we get
 
 $$
-    A = LU
+    A = LU.
 $$
 
-!!! theorem
+!!! theorem "Theorem 6.0"
     If Gaussian elimination can be performed on the linear system $A\mathbf{x} = \mathbf{b}$ without row interchanges, then the matrix $A$ can be factored into the product of **a lower-triangular matrix** $L$ and **an upper-triangular matrix** $U$ .
     
     If $L$ has to be **unitary**, then the factorization is **unique**.
@@ -198,22 +197,22 @@ $$
 
 ### Strictly Diagonally Dominant Matrix 严格主对角占优矩阵
 
-!!! definition
+!!! definition "Definition 6.0"
     The $n \times n$ matrix $A$ is said to be strictly diagnoally dominant when
 
     $$
         |a_{ii}| \gt \sum_{j=1,j\ne i}^{n}|a_{ij}|,\text{ for each } i = 1, \dots, n
     $$
 
-!!! theorem
+!!! theorem "Theorem 6.1"
     A strictly diagonally dominant matrix is **nonsingular**. And Gaussian elimination can be performed **without** row or column interchanges, and computations will be **stable** with respect to the growth of roundoff errors.（满秩、无需交换行列、误差稳定）
 
 ### Positive Definite Matrix 正定矩阵
 
-??? definition "Definition (Recap)"
+??? definition "Definition 6.1 (Recap)"
     A matrix $A$ is **positive definite** if it's **symmetric** and if $\mathbf{x}^tA\mathbf{x} > 0$ for every $n$-dimensional vector $\mathbf{x} \ne \mathbf{0}$.
 
-??? theorem
+??? theorem "Theorem 6.2"
     If $A$ is an $n \times n$ positive definite matrix, then
 
     - $A$ is nonsingular;
@@ -259,7 +258,7 @@ $$
 
 ### Tridiagonal Linear System 三对角矩阵
 
-!!! definition
+!!! definition "Definition 6.2"
     An $n \times n$ matrix $A$ is called a **band matrix** if $\exists p, q (1 < p, q < n)$, s.t. whenever $i + p \le j$ or $j + q \le i$, $a_{ij} = 0$. And $w = p + q - 1$ is called the **bandwidth**.
 
     Specially, if $p = q = 2$, then $A$ is called **tridiagonal**, with the following form,
@@ -291,7 +290,7 @@ A = LU =
     & & \ddots & \ddots \\
     & & & \ddots & u_{n-1,n}\\
     & & & & 1 
-\end{bmatrix}
+\end{bmatrix}.
 $$
 
 the time complexity is $O(N)$.

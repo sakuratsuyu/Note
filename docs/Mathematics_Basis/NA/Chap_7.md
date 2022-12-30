@@ -4,19 +4,19 @@
 
 ### Vector Norms
 
-!!! definition
+!!! definition "Definition 7.0"
     A **vector norm** on $\mathbb{R}^n$ is a function $||\cdot||$, from $\mathbb{R}^n$ into $\mathbb{R}$ with the following properties.
 
     $$
-    \begin{align}
+    \begin{aligned}
         \forall \mathbf{x, y} \in \mathbb{R}^n, \alpha \in \mathbb{R}, &
-        (1)\ ||\mathbf{x}|| \ge 0;\ ||\mathbf{x}|| = 0 \Leftrightarrow \mathbf{x} = \mathbf{0}.
+        (1)\ ||\mathbf{x}|| \ge 0;\ ||\mathbf{x}|| = 0 \Leftrightarrow \mathbf{x} = \mathbf{0};
         \\ &
-        (2)\ ||\alpha \mathbf{x}|| = |\alpha| \cdot ||\mathbf{x}||
+        (2)\ ||\alpha \mathbf{x}|| = |\alpha| \cdot ||\mathbf{x}||;
         \\ &
-        (3)\ ||\mathbf{x} + \mathbf{y}|| \le ||\mathbf{x}|| + ||\mathbf{y}||
+        (3)\ ||\mathbf{x} + \mathbf{y}|| \le ||\mathbf{x}|| + ||\mathbf{y}||.
         \\
-    \end{align}
+    \end{aligned}
     $$
 
 !!! example "Commonly used examples"
@@ -29,33 +29,33 @@
 
 Similarly with a scalar, a sequence of vectors $\{\mathbf{x}^{(k)}\}_{k=1}^\infty$ in $\mathbb{R}^n$ is said to **converge** to $\mathbf{x}$ with respect to norm $||\cdot||$, if $\forall \epsilon \gt 0,\exists N \in \mathbb{N}$, s.t $\forall k \gt N, ||\mathbf{x}^{(k)} - \mathbf{x}|| \lt \epsilon$.
 
-!!! theorem
-    $\{\mathbf{x}^{(k)}\}_{k=1}^\infty$ in $\mathbb{R}^n$ converges to $\mathbf{x}$ with respect to norm $||\cdot||_\infty$ if and only if $\forall i,\lim_{k \rightarrow \infty}x_i^{(k)} = x_i$.
+!!! theorem "Theorem 7.0"
+    $\{\mathbf{x}^{(k)}\}_{k=1}^\infty$ in $\mathbb{R}^n$ converges to $\mathbf{x}$ with respect to norm $||\cdot||_\infty$ if and only if $\forall\ i$, $\lim_{k \rightarrow \infty}x_i^{(k)} = x_i$.
 
 ### Equivalence
 
-!!! definition
+!!! definition "Definition 7.1"
     If $\exists C_1, C_2,\ s.t.\ C_1||\mathbf{x}||_B \le ||\mathbf{x}||_A \le C_2||\mathbf{x}||_B$, then $||\mathbf{x}||_A$ and $||\mathbf{x}||_B$ are **equivalent**.
 
-!!! theorem
+!!! theorem "Theorem 7.1"
     All the vector norms on $\mathbb{R}^n$ are equivalent.
 
 ## Matrix Norms
 
-!!! definition
+!!! definition "Definition 7.2"
     A **matrix norm** on $\mathbb{R}^n$ is a function $||\cdot||$, from $M_n(\mathbb{R})$ matrices into $\mathbb{R}$ with the following properties.
 
     $$
-    \begin{align}
+    \begin{aligned}
         \forall A, B \in M_n(\mathbb{R}), \alpha \in \mathbb{R}, &
-        (1)\ ||A|| \ge 0;\ ||A|| = 0 \Leftrightarrow A = \mathbf{O}.
+        (1)\ ||A|| \ge 0;\ ||A|| = 0 \Leftrightarrow A = \mathbf{O};
         \\ &
-        (2)\ ||\alpha A|| = |\alpha| \cdot ||A||
+        (2)\ ||\alpha A|| = |\alpha| \cdot ||A||;
         \\ &
-        (3)\ ||A + B|| \le ||A|| + ||B||
+        (3)\ ||A + B|| \le ||A|| + ||B||;
         \\ &
-        (4)\ ||AB|| \le ||A|| \cdot ||B||
-    \end{align}
+        (4)\ ||AB|| \le ||A|| \cdot ||B||.
+    \end{aligned}
     $$
 
 !!! example "Commonly used examples"
@@ -65,7 +65,8 @@ Similarly with a scalar, a sequence of vectors $\{\mathbf{x}^{(k)}\}_{k=1}^\inft
         - $||A||_\infty = \max\limits_{1\le i \le n}\sum\limits_{j=1}^n|a_{ij}|$.
         - $||A||_1= \max\limits_{1\le j \le n}\sum\limits_{i=1}^n|a_{ij}|$.
         - (Spectral Norm) $||A||_2= \sqrt{\lambda_{max}(A^TA)}$.
-    !!! theorem "Corollary"
+
+    !!! theorem "Corollary 7.2"
         For any vector $\mathbf{x} \ne 0$, matrix $A$, and any natural norm $||\cdot||$, we have
         
         $$
@@ -75,7 +76,7 @@ Similarly with a scalar, a sequence of vectors $\{\mathbf{x}^{(k)}\}_{k=1}^\inft
 
 ## Eigenvalues and Eigenvectors
 
-??? definition "Definition (Recap)"
+??? definition "Definition 7.3 (Recap)"
     If $A$ is a square matrix, the **characteristic polynomial$ of $A$ is defined by
 
     $$
@@ -86,16 +87,16 @@ Similarly with a scalar, a sequence of vectors $\{\mathbf{x}^{(k)}\}_{k=1}^\inft
 
 ### Spectral Radius
 
-!!! definition
+!!! definition "Definition 7.4"
     The **spectral radius** of a matrix $A$ is defined by
 
     $$
-        \rho(A) = \max|\lambda| \text{, where $\lambda$ is an eigenvalue of $A$}.
+        \rho(A) = \max|\lambda|,\ \ \text{ where $\lambda$ is an eigenvalue of $A$}.
     $$
 
     (Recap that for complex $\lambda = \alpha + \beta i$, $|\lambda| = \sqrt{\alpha^2 + \beta^2}$.)
 
-!!! theorem
+!!! theorem "Theorem 7.3"
     $\forall A \in M_n(\mathbb{R})$,
 
     - $||A||_2 = \sqrt{\rho(A^tA)}$.
@@ -116,7 +117,7 @@ Similarly with a scalar, a sequence of vectors $\{\mathbf{x}^{(k)}\}_{k=1}^\inft
 
 ### Convergence of Matrix
 
-!!! definition
+!!! definition "Definition 7.5"
     $A \in M_n(\mathbb{R}))$ is **convergent** if
 
     $$
@@ -124,7 +125,7 @@ Similarly with a scalar, a sequence of vectors $\{\mathbf{x}^{(k)}\}_{k=1}^\inft
         \text{ , for each } i = 1, 2, \dots, n \text{ and } j = 1, 2, \dots, n.
     $$
 
-!!! theorem
+!!! theorem "Theorem 7.4"
     The following statements are equivalent.
     
     - $A$ is a convergent matrix.
@@ -146,7 +147,7 @@ $$
 Thus,
 
 $$
-    \mathbf{x} = D^{-1}(L + U)\mathbf{x} + D^{-1}\mathbf{b}
+    \mathbf{x} = D^{-1}(L + U)\mathbf{x} + D^{-1}\mathbf{b}.
 $$
 
 ### Jacobi Iterative Method
@@ -180,7 +181,7 @@ $$
 
 where $\mathbf{x}^{(0)}$ is arbitrary.
 
-!!! theorem "Lemma"
+!!! theorem "Lemma 7.5"
     If $\rho(T) \lt 1$ , then $(I - T)^{-1}$ exists and 
     
     $$
@@ -202,9 +203,9 @@ where $\mathbf{x}^{(0)}$ is arbitrary.
         \lim\limits_{m \rightarrow \infty} (I - T)S_m = \lim\limits_{m \rightarrow \infty}(I - T^{m + 1}) = I.
     $$
 
-    Thus, $(I - T)^{-1} = \lim\limits_{m \rightarrow \infty}S_m = \sum\limits_{j = 0}^\infty T^j.
+    Thus, $(I - T)^{-1} = \lim\limits_{m \rightarrow \infty}S_m = \sum\limits_{j = 0}^\infty T^j$.
 
-!!! theorem
+!!! theorem "Theorem 7.6"
     $\{\mathbf{x}^{(k)}\}_{k=1}^\infty$ defined by $\mathbf{x}^{(k)} = T\mathbf{x}^{(k - 1)} + \mathbf{c}$ converges to the unique solution of $\mathbf{x} = T\mathbf{x} + \mathbf{c}$ if and only if $\rho(T) \lt 1$.
 
 ??? proof
@@ -214,7 +215,7 @@ where $\mathbf{x}^{(0)}$ is arbitrary.
 
     $$
         \mathbf{e}^{(k)} = (T\mathbf{x} + c) - (T\mathbf{x}^{(k - 1)} + c) = T(\mathbf{x} - \mathbf{x}^{(k - 1)})T\mathbf{e}^{(k - 1)}
-        \Rightarrow \mathbf{e}^{(k)} = T^k \mathbf{e}^{(0)}
+        \Rightarrow \mathbf{e}^{(k)} = T^k \mathbf{e}^{(0)}.
     $$
 
     Since it converges, thus
@@ -227,7 +228,7 @@ where $\mathbf{x}^{(0)}$ is arbitrary.
 
     $$
         \Leftrightarrow
-        \rho(T) < 1
+        \rho(T) < 1.
     $$
 
     $\Leftarrow$:
@@ -242,7 +243,7 @@ where $\mathbf{x}^{(0)}$ is arbitrary.
         \lim\limits_{k \rightarrow \infty} T^k x^{(0)} = \mathbf{0}.
     $$
 
-    From the Lemma above, we have
+    From **Lemma 7.5**, we have
 
     $$
         \lim\limits_{k \rightarrow \infty} \mathbf{x}^{(k)} = \lim\limits_{k \rightarrow \infty} T^k\mathbf{x}^{(0)} + \left(\sum\limits_{j = 0}^\infty T^j \right)\mathbf{c} = \mathbf{0} + (I - T)^{-1}\mathbf{c} = (I - T)^{-1}\mathbf{c}.
@@ -251,36 +252,36 @@ where $\mathbf{x}^{(0)}$ is arbitrary.
     Thus $\{\mathbf{x}^{(k)}\}$ converges to $\mathbf{x} \equiv (I - T)^{-1} \Leftrightarrow \mathbf{x} = T\mathbf{x} + c$. 
 
 
-!!! theorem "Corollary"
+!!! theorem "Corollary 7.7"
     If $||T||\lt 1$ for any matrix norm and $\mathbf{c}$ is a given vector, then for all $\mathbf{x}^{(0)}\in \mathbb{R}^n$, $\{\mathbf{x}^{(k)}\}_{k=1}^\infty$ defined by $\mathbf{x}^{(k)} = T\mathbf{x}^{(k - 1)} + \mathbf{c}$ converges to $\mathbf{x}$, and the following error bounds hold
 
     - $||\mathbf{x} - \mathbf{x}^{(k)}|| \le ||T||^k||\mathbf{x}^{(0)} - \mathbf{x}||$.
     - $||\mathbf{x} - \mathbf{x}^{(k)}|| \le \frac{||T||^k}{1 - ||T||}||\mathbf{x}^{(1)} - \mathbf{x}||$.
 
-!!! theorem
-    $\forall A$ is strictly diagonally dominant, $\forall \text{\bf{x}}^{(0)}$, both Jacobi and Gauss-Seidel methods give $\{\mathbf{x}^{(k)}\}_{k=0}^\infty$ that converge to the unique solution of $A\mathbf{x} = \mathbf{b}$.
+!!! theorem "Theorem 7.8"
+    $\forall\ A$ is strictly diagonally dominant, $\forall\ \mathbf{x}^{(0)}$, both Jacobi and Gauss-Seidel methods give $\{\mathbf{x}^{(k)}\}_{k=0}^\infty$ that converge to the unique solution of $A\mathbf{x} = \mathbf{b}$.
 
 ### Relaxation Methods
 
-!!! definition
+!!! definition "Definition 7.6"
     Suppose $\mathbf{\tilde x}$ is an approximation to the solution of $A\mathbf{x} = \mathbf{b}$, then the **residual vector** for $\mathbf{\tilde x}$ w.r.t this linear system is $\mathbf{r} = \mathbf{b} - A\mathbf{\tilde x}$.
 
 Further examine Gauss-Seidel method,
 
 $$
-x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} = b_i - \sum_{j \lt i} a_{ij}x_j^{(k)} - \sum_{j \ge i} a_{ij}x_j^{(k - 1)}
+x_i^{(k)} = x_i^{(k - 1)} + \frac{r_i^{(k)}}{a_{ii}}, \text{ where } r_i^{(k)} = b_i - \sum_{j \lt i} a_{ij}x_j^{(k)} - \sum_{j \ge i} a_{ij}x_j^{(k - 1)}.
 $$
 
-Let $x_i^{(k)} = x_i^{(k - 1)} + \omega\frac{r_i^{(k)}}{a_{ii}}$, by modifying the value of $\omega$, we can somehow get faster convergence.
+Let $x_i^{(k)} = x_i^{(k - 1)} + \omega\dfrac{r_i^{(k)}}{a_{ii}}$, by modifying the value of $\omega$, we can somehow get faster convergence.
 
-- $0 \lt \omega \le 1$	Under-Relaxation Method
-- $\omega = 1$	Gauss-Seidel Method
-- $\omega \gt 1$	Successive Over-Relaxation Method (SOR)
+- $0 \lt \omega \le 1$  **Under-Relaxation Method**
+- $\omega = 1$	**Gauss-Seidel Method**
+- $\omega \gt 1$	**Successive Over-Relaxation Method (SOR)**
 
 In matrix form,
 
 $$
-    \mathbf{x}^{(k)} = (D - \omega L)^{-1}[(1 - \omega)D + \omega U]\mathbf{x}^{(k - 1)} + (D - \omega L)^{-1}\mathbf{b}
+    \mathbf{x}^{(k)} = (D - \omega L)^{-1}[(1 - \omega)D + \omega U]\mathbf{x}^{(k - 1)} + (D - \omega L)^{-1}\mathbf{b}.
 $$
 
 Let $T_\omega = (D - \omega L)^{-1}[(1 - \omega)D + \omega U]$ and $\mathbf{c}_\omega = (D - \omega L)^{-1}\mathbf{b}$, then
@@ -289,13 +290,13 @@ $$
     \mathbf{x}^{(k)} = T_\omega\mathbf{x}^{(k - 1)} + \mathbf{c}_\omega.
 $$
 
-!!! theorem "Theorem (Kahan)"
+!!! theorem "Theorem 7.9 (Kahan)"
 	If $a_{ii} \ne 0$, then $\rho(T_\omega)\ge |\omega -1 |$, which implies $0 \lt \omega \lt 2$.
     
-!!! theorem "Theorem (Ostrowski-Reich)"
+!!! theorem "Theorem 7.10 (Ostrowski-Reich)"
 	If $A$ is positive definite and $0 \lt \omega \lt 2$, the SOR method converges for any choice of initial approximation.
 
-!!! theorem	
+!!! theorem	 "Theorem 7.11"
     If $A$ is positive definite and tridiagonal, then $\rho(T_g) = \rho(T_j)^2\lt1$, and the optimal choice of $\omega$ for the SOR method is
     
     $$
@@ -304,7 +305,7 @@ $$
 
 ## Error Bounds and Iterative Refinement
 
-!!! definition
+!!! definition "Definition 7.7"
     The **conditional number** of the nonsigular matrix $A$ relative to a norm $||\cdot||$$ is
 
     $$
@@ -314,17 +315,17 @@ $$
     A matrix $A$ is **well-conditioned** if $K(A)$ is close to 1, and is **ill-conditioned** when $K(A)$ is significantly greater than 1.
 
     !!! theorem "Proposition"
-        - If $A$ is symmetric, then $K(A)_2 = \frac{\max|\lambda|}{\min|\lambda|}$.
+        - If $A$ is symmetric, then $K(A)_2 = \dfrac{\max|\lambda|}{\min|\lambda|}$.
         - $K(A)_2 = 1$ if $A$ is orthogonal.
         - $\forall \text{ orthogonal matrix }R, K(RA)_2 = K(AR)_2 = K(A)_2.$
         - $\forall \text{ natural norm } ||\cdot||_p,\ K(A)_p \ge 1.$
         - $K(\alpha A) = K(A).$
 
-!!! theorem
+!!! theorem "Theorem 7.12"
     For any natural norm,
 
     $$
-        ||\mathbf{x} - \mathbf{\tilde x}|| \le ||\mathbf{r}|| \cdot ||A^{-1}||
+        ||\mathbf{x} - \mathbf{\tilde x}|| \le ||\mathbf{r}|| \cdot ||A^{-1}||,
     $$
 
     and if $\mathbf{x} \ne \mathbf{0}$ and $\mathbf{b} \ne \mathbf{0}$,
@@ -351,17 +352,17 @@ In reality, $A$ and $\mathbf{b}$ may be *perturbed* by an amount $\delta A$ and 
 For $A(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b} + \delta\mathbf{b}$
 
 $$
-    \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le ||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta \mathbf{b}||}{||\mathbf{b}||}    
+    \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le ||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta \mathbf{b}||}{||\mathbf{b}||}.
 $$
 
 For $(A + \delta A)(\mathbf{x} + \delta\mathbf{x}) = \mathbf{b}$
 
 $$
     \frac{||\delta \mathbf{x}||}{||\mathbf{x}||} \le \frac{||A^{-1}|| \cdot ||\delta A||}{1 - ||A^{-1}|| \cdot ||\delta A||} = 
-    \frac{||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta A||}{||A||}}{1 - ||A|| \cdot ||A^{-1}|| \cdot\frac{||\delta A||}{||A||}}    
+    \frac{||A|| \cdot ||A^{-1}|| \cdot \frac{||\delta A||}{||A||}}{1 - ||A|| \cdot ||A^{-1}|| \cdot\frac{||\delta A||}{||A||}}.
 $$
 
-!!! theorem
+!!! theorem "Theorem 7.13"
     If $A$ is nonsingular and 
     
     $$

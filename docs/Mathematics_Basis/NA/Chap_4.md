@@ -1,6 +1,6 @@
 # Chapter 4 | Numerical Differentiation and Integration
 
-Before everything start, it's necessary to introduce an approach to reduce truncation error: Richardson's extrapolation.
+Before everything start, it's necessary to introduce an approach to reduce truncation error: **Richardson's extrapolation**.
 ### Richardson's Extrapolation
 
 Suppose for each $h$, we have a formula $N(h)$ to approximate an unknown value $M$. And suppose the truncation error have the form
@@ -14,13 +14,13 @@ for some unknown constants $K_1$, $K_2$, $K_3$, $\dots$. This has $O(h)$ approxi
 First, we try to make some transformation to reduce the $K_1 h$ term.
 
 $$
-\begin{align}
+\begin{aligned}
     M &= N(h) + K_1 h + K_2 h^2 + K_3 h^3 + \cdots, \\
     M &= N\left(\frac{h}{2}\right) + K_1 \frac{h}{2} + K_2 \frac{h^2}{4} + K_3 \frac{h^3}{8} + \cdots,
-\end{align}
+\end{aligned}
 $$
 
-Eliminate $K_1 h$, we have
+Eliminate $h$, and we have
 
 $$
     \small
@@ -39,10 +39,10 @@ $$
     M = N_2(h) - \frac{K_2}{2}h^2 - \frac{3K_3}{4}h^3 - \cdots.
 $$
 
-Repeat this process, eliminate $K_2h^2$, we have
+Repeat this process by eliminating $h^2$, and then we have
 
 $$
-    M = N_3(h) + \frac{K_3}{8}h^3 + \cdots.
+    M = N_3(h) + \frac{K_3}{8}h^3 + \cdots,
 $$
 
 where
@@ -86,7 +86,7 @@ $$
     f(x) = \sum\limits_{k = 0}^{n}f(x_k)L_k(x) + \frac{f^{(n + 1)}(\xi(x))}{(n + 1)!}\prod\limits_{i = 0}^{n}(x - x_i).
 $$
 
-Differentiate $f(x)$ and substitute $x_j$,
+Differentiate $f(x)$ and substitute $x_j$ to it,
 
 $$
     f'(x_j) = \sum\limits_{k = 0}^{n}f(x_k)L_k'(x) + \frac{f^{(n + 1)}(\xi(x_j))}{(n + 1)!} \prod\limits_{\substack{k = 0 \\ k \ne j}}^n(x_j - x_k),
@@ -94,16 +94,23 @@ $$
 
 which is called an **(n + 1)-point formula** to approximate $f'(x_j)$.
 
-For convenience, we only discuss the **equally spaced** situation. Suppose the interval is $[a, b]$ divided in $n$ parts, and $h = (b - a) / n$, $x_i = a + ih$.
+For convenience, we only discuss the **equally spaced** situation. Suppose the interval is $[a, b]$ divided to $n$ parts, and denote 
 
-!!! note ""
+$$
+\begin{aligned}
+    h = \frac{b - a}{n}, \\
+    x_i = a + ih.
+\end{aligned}
+$$
+
+!!! plane ""
     When $n = 1$, we simply get the two-point formula,
 
     $$
         f'(x_0) = \frac{f(x_0 + h) - f(x_0)}{h} - \frac{h}{2}f''(\xi),
     $$
 
-    which is known as **forward-difference formula**. Inversely, change $h$ to $-h$,
+    which is known as **forward-difference formula**. Inversely, by replacing $h$ with $-h$,
 
     $$
         f'(x_0) = \frac{f(x_0) - f(x_0 - h)}{h} + \frac{h}{2}f''(\xi),
@@ -111,30 +118,30 @@ For convenience, we only discuss the **equally spaced** situation. Suppose the i
 
     is known as **backward-difference formula**.
 
-!!! note ""
+!!! plane ""
     When $n = 3$, we get the **three-point formulae**. Due to symmetry, there are only two.
 
     $$
-    \begin{align}
+    \begin{aligned}
         f'(x_0) &= \frac{1}{2h}[-3(f(x_0)) + 4f(x_0 + h) - f(x_0 + 2h)] + \frac{h^2}{3}f^{(3)}(\xi), \\
-        & \text{where } \xi \in [x_0, x_0 + 2h], \\
+        & \text{where some } \xi \in [x_0, x_0 + 2h], \\
         f'(x_0) &= \frac{1}{2h}[f(x_0 + h) + f(x_0 - h)] - \frac{h^2}{6}f^{(3)}(\xi), \\
-        & \text{where } \xi \in [x_0 - h, x_0 + h].
-    \end{align}
+        & \text{where some } \xi \in [x_0 - h, x_0 + h].
+    \end{aligned}
     $$
 
-!!! note ""
+!!! plane ""
     When $n = 5$, we get the **five-point formulae**. The following are the useful two of them.
 
     $$
-    \begin{align}
+    \begin{aligned}
         f'(x_0) &= \frac{1}{12h}[-25f(x_0) + 48f(x_0 + h) - 36f(x_0 + 2h) \\
                 & \ \ \ \ + 16f(x_0 + 3h) - 3f(x_0 + 4h)] + \frac{h^4}{5}f^{(5)}(\xi), \\
-        & \text{where } \xi \in [x_0, x_0 + 4h], \\
+        & \text{where some } \xi \in [x_0, x_0 + 4h], \\
         f'(x_0) &= \frac{1}{12h}[f(x_0 - 2h) - 8f(x_0 - h)] + 8f(x_0 + h) - f(x_0 + 2h)] \\
                 & \ \ \ \ + \frac{h^4}{30}f^{(5)}(\xi), \\
-        & \text{where } \xi \in [x_0 - 2h, x_0 + 2h].
-    \end{align}
+        & \text{where some } \xi \in [x_0 - 2h, x_0 + 2h].
+    \end{aligned}
     $$
 
 <div align="center">
@@ -170,7 +177,7 @@ For convenience, we only discuss the **equally spaced** situation. Suppose the i
         N_2(h) = N_1 \left(\frac{h}{2}\right) + \frac{1}{3}\left(N_1\left(\frac{h}{2}\right) - N_1(h)\right).
     $$
 
-    Continue this procedure we have,
+    Continuing this procedure, we have,
 
     $$
         N_j(h) = N_{j - 1}\left(\frac{h}{2}\right) + \frac{1}{4^{j - 1} - 1}\left(N_{j - 1}\left(\frac{h}{2}\right) - N_{j - 1}(h)\right).
@@ -187,13 +194,13 @@ For convenience, we only discuss the **equally spaced** situation. Suppose the i
 
 ### Higher Differentiation
 
-Take second order differentiation as an example. From Taylor polynomial about point $x_0$,
+Take second order differentiation as an example. From Taylor polynomial about point $x_0$, we have
 
 $$
-\begin{align}
+\begin{aligned}
     f(x_0 + h) &= f(x_0) + f'(x_0)h + \frac{1}{2}f''(x_0)h^2 + \frac{1}{6}f'''(x_0)h^3 + \frac{1}{24}f^{(4)}(\xi_1)h^4, \\
     f(x_0 - h) &= f(x_0) - f'(x_0)h + \frac{1}{2}f''(x_0)h^2 - \frac{1}{6}f'''(x_0)h^3 + \frac{1}{24}f^{(4)}(\xi_{-1})h^4, \\
-\end{align}
+\end{aligned}
 $$
 
 where $x_0 - h < \xi_{-1} < x_0 < \xi_1 < x_0 + h$.
@@ -204,7 +211,7 @@ $$
     f''(x_0) = \frac{1}{h^2}[f(x_0 - h) - 2f(x_0) + f(x_0 + h)] - \frac{h^2}{12}f^{(4)}(\xi),
 $$
 
-where $x_0 - h < \xi < x_0 + h$, and $f^{(4)}(\xi) = \frac{1}{2}(f^{(4)}(\xi_1) + f^{(4)}(\xi_{-1}))$.
+where $x_0 - h < \xi < x_0 + h$, and $f^{(4)}(\xi) = \dfrac{1}{2}(f^{(4)}(\xi_1) + f^{(4)}(\xi_{-1}))$.
 
 ### Error Analysis
 
@@ -214,13 +221,13 @@ $$
     f'(x_0) = \frac{1}{2h}[f(x_0 + h) + f(x_0 - h)] - \frac{h^2}{6}f^{(3)}(\xi).
 $$
 
-Suppose that in evaluation $f(x_0 + h)$ and $f(x_0 - h)$ we encounter roundoff errors $e(x_0 + h)$ and $e(x_0 - h)$. Then our computed value $\tilde f(x_0 + h)$ and $\tilde f(x_0 - h)$ satisfy the following formulae,
+Suppose that in evaluation of $f(x_0 + h)$ and $f(x_0 - h)$, we encounter roundoff errors $e(x_0 + h)$ and $e(x_0 - h)$. Then our computed values $\tilde f(x_0 + h)$ and $\tilde f(x_0 - h)$ satisfy the following formulae,
 
 $$
-\begin{align}
+\begin{aligned}
     f(x_0 + h) &= \tilde f(x_0 + h) + e(x_0 + h), \\ 
     f(x_0 - h) &= \tilde f(x_0 - h) + e(x_0 - h).
-\end{align}
+\end{aligned}
 $$
 
 Thus the total error is 
@@ -252,10 +259,10 @@ $$
 Integrate $f(x)$ and we get
 
 $$
-\begin{align}
+\begin{aligned}
     \int_a^b f(x) dx &= \int_a^b \sum\limits_{k = 0}^{n}f(x_k)L_k'(x) dx + \int_a^b \frac{f^{(n + 1)}(\xi(x))}{(n + 1)!} \prod\limits_{k = 0}^n (x - x_k)dx, 
-    \\ &= \sum\limits_{i = 0}^n A_i f(x_i) + \underbrace{\frac{1}{(n + 1)!} \int_a^b \prod_{i = 0}^n(x - x_i)f^{(n + 1)}(\xi(x))dx}_{E(f)}.
-\end{align}
+    \\ &= \sum\limits_{i = 0}^n A_i f(x_i) + \underbrace{\frac{1}{(n + 1)!} \int_a^b \prod_{i = 0}^n(x - x_i)f^{(n + 1)}(\xi(x))dx}_{E(f)},
+\end{aligned}
 $$
 
 where
@@ -264,20 +271,20 @@ $$
     A_i = \int_a^b L_i(x)dx.
 $$
 
-!!! definition
+!!! definition "Definition 4.0"
     The **degree of accuracy**, or say **precision**, of a quadrature formula is the *largest* positive integer $n$ such that the formula is *exact* for $x^k$, for each $k = 0, 1, \dots, n$.
 
 
 Similarly, we suppose **equally spaced** situation here again.
 
-!!! theorem "Theorem | (n + 1)-point closed Newton-Cotes formulae"
-    Suppose $x_0 = a$, $x_n = b$, and $h = (b - a) / n$, then $\exists \xi \in (a, b)$, s.t.
+!!! theorem "Theorem 4.0 | (n + 1)-point closed Newton-Cotes formulae"
+    Suppose $x_0 = a$, $x_n = b$, and $h = (b - a) / n$, then $\exists\ \xi \in (a, b)$, s.t.
 
     $$
         \int_a^b f(x)dx = \sum\limits_{i = 0}^n A_i f(x_i) + \frac{h^{n + 3}f^{(n + 2)}(\xi)}{(n + 2)!}\int_0^n t^2(t - 1)\cdots(t - n)dt,
     $$
 
-    if $n$ is even and $f \in C^{n + 2}[a, b]$, and,
+    if $n$ is even and $f \in C^{n + 2}[a, b]$, and
 
     $$
         \int_a^b f(x)dx = \sum\limits_{i = 0}^n A_i f(x_i) + \frac{h^{n + 2}f^{(n + 1)}(\xi)}{(n + 1)!}\int_0^n t(t - 1)\cdots(t - n)dt,
@@ -298,26 +305,26 @@ Similarly, we suppose **equally spaced** situation here again.
     </figure>
     </div>
 
-!!! note ""
+!!! plane ""
     $n = 1$ **Trapezoidal rule**
 
     $$
         \int_{x_0}^{x_1}f(x)dx = \frac{h}{2}[f(x_0) + f(x_1)] - \frac{h^3}{12}f''(\xi)
-        \text{, where } x_0 < \xi < x_1.
+        ,\ \ \text{ where some } x_0 < \xi < x_1.
     $$
 
     $n = 2$ **Simpson's rule**
 
     $$
         \int_{x_0}^{x_2}f(x)dx = \frac{h}{3}[f(x_0) + 4f(x_1) + f(x_2)] - \frac{h^5}{90}f^{(4)}(\xi)
-        \text{, where } x_0 < \xi < x_2.
+        ,\ \ \text{ where some } x_0 < \xi < x_2.
     $$
 
     $n = 3$ **Simpson's Three-Eighths rule**
 
     $$
         \int_{x_0}^{x_3}f(x)dx = \frac{3h}{8}[f(x_0) + 3f(x_1) + 3f(x_2) + f(x_3)] - \frac{3h^5}{80}f^{(4)}(\xi), \\
-        \text{where } x_0 < \xi < x_3.
+        \text{where some } x_0 < \xi < x_3.
     $$
 
 <div align="center">
@@ -334,14 +341,14 @@ Similarly, we suppose **equally spaced** situation here again.
 </figure>
 </div>
 
-!!! theorem "Theorem | (n + 1)-point open Newton-Cotes formulae"
-    Suppose $x_{-1} = a$, $x_{n + 1} = b$, and $h = (b - a) / (n + 2)$, then $\exists \xi \in (a, b)$, s.t.
+!!! theorem "Theorem 4.1 | (n + 1)-point open Newton-Cotes formulae"
+    Suppose $x_{-1} = a$, $x_{n + 1} = b$, and $h = (b - a) / (n + 2)$, then $\exists\ \xi \in (a, b)$, s.t.
 
     $$
         \int_a^b f(x)dx = \sum\limits_{i = 0}^n A_i f(x_i) + \frac{h^{n + 3}f^{(n + 2)}(\xi)}{(n + 2)!}\int_{-1}^{n + 1} t^2(t - 1)\cdots(t - n)dt,
     $$
 
-    if $n$ is even and $f \in C^{n + 2}[a, b]$, and,
+    if $n$ is even and $f \in C^{n + 2}[a, b]$, and
 
     $$
         \int_a^b f(x)dx = \sum\limits_{i = 0}^n A_i f(x_i) + \frac{h^{n + 2}f^{(n + 1)}(\xi)}{(n + 1)!}\int_{-1}^{n + 1} t(t - 1)\cdots(t - n)dt,
@@ -362,12 +369,12 @@ Similarly, we suppose **equally spaced** situation here again.
     </figure>
     </div>
 
-!!! note ""
+!!! plane ""
     $n = 0$ **Midpoint rule**
 
     $$
         \int_{x_{-1}}^{x_1}f(x)dx = 2hf(x_0) + \frac{h^2}{3}f''(\xi)
-        \text{, where } x_{-1} < \xi < x_1.
+        \text{where some } x_{-1} < \xi < x_1.
     $$
 ### Composite Numerical Integration
 
@@ -375,8 +382,8 @@ Similarly, we suppose **equally spaced** situation here again.
 
 Similarly, we discuss a **piecewise** approach to numerical integration with low-order Newton-Cotes formulae. *These are the techniques most often applied*.
 
-!!! theorem "Theorem | Composite Trapezoidal rule"
-    $f \in C^2[a, b]$, $h = (b - a) /n$, and $x_j = a + jh$, $j = 0, 1, \dots, n$. Then $\exists \mu \in (a, b)$, s.t.
+!!! theorem "Theorem 4.2 | Composite Trapezoidal rule"
+    $f \in C^2[a, b]$, $h = (b - a) /n$, and $x_j = a + jh$, $j = 0, 1, \dots, n$. Then $\exists\ \mu \in (a, b)$, s.t.
 
     $$
         \int_a^b f(x)dx = \frac{h}{2}\left[f(a) + 2 \sum\limits_{j = 1}^{n - 1}f(x_j) + f(b)\right] - \frac{b - a}{12}h^2 f''(\mu).
@@ -386,8 +393,8 @@ Similarly, we discuss a **piecewise** approach to numerical integration with low
     	<img src="../Pic/chap4_8.png" alt="chap4_8" style="width:500px"/>
     </div>
 
-!!! theorem "Theorem | Composite Simpson's rule"
-    $f \in C^2[a, b]$, $h = (b - a) /n$, and $x_j = a + jh$, $j = 0, 1, \dots, n$. Then $\exists \mu \in (a, b)$, s.t.
+!!! theorem "Theorem 4.3 | Composite Simpson's rule"
+    $f \in C^2[a, b]$, $h = (b - a) /n$, and $x_j = a + jh$, $j = 0, 1, \dots, n$. Then $\exists\ \mu \in (a, b)$, s.t.
 
     $$
         \small
@@ -398,8 +405,8 @@ Similarly, we discuss a **piecewise** approach to numerical integration with low
     	<img src="../Pic/chap4_9.png" alt="chap4_9" style="width:500px"/>
     </div>
 
-!!! theorem "Theorem | Composite Midpoint rule"
-    $f \in C^2[a, b]$, $h = (b - a) / (n + 2)$, and $x_j = a + (j + 1)h$, $j = -1, 0, \dots, n + 1$. Then $\exists \mu \in (a, b)$, s.t.
+!!! theorem "Theorem 4.4 | Composite Midpoint rule"
+    $f \in C^2[a, b]$, $h = (b - a) / (n + 2)$, and $x_j = a + (j + 1)h$, $j = -1, 0, \dots, n + 1$. Then $\exists\ \mu \in (a, b)$, s.t.
 
     $$
         \int_a^b f(x)dx = 2h \sum\limits_{j = 0}^{n / 2}f(x_{2j}) + \frac{b - a}{6} h^2 f''(\mu).
@@ -419,10 +426,10 @@ Similarly, we discuss a **piecewise** approach to numerical integration with low
             f(x_i) = \tilde f(x_i) + e_i.
         $$
 
-        Then the accumulated error,
+        Then the accumulated error is
 
         $$
-            e(h) = \left|\frac{h}{3}\left[e_0 + 2\sum\limits_{j = 1}^{(n / 2) - 1}e_{2j} + 4\sum\limits_{j = 1}^{n / 2}e_{2j-1} + e_n\right]\right|
+            e(h) = \left|\frac{h}{3}\left[e_0 + 2\sum\limits_{j = 1}^{(n / 2) - 1}e_{2j} + 4\sum\limits_{j = 1}^{n / 2}e_{2j-1} + e_n\right]\right|.
         $$
 
         Suppose $e_i$ are uniformly bounded by $\varepsilon$, then
@@ -457,7 +464,7 @@ $$
 	<img src="../Pic/chap4_11.png" alt="chap4_11" style="width:600px"/>
 </div>
 
-!!! theorem
+!!! theorem "Theorem 4.5"
     the Composite Trapezoidal rule can represented by an alternative error term in the form
 
     $$
@@ -466,9 +473,7 @@ $$
 
     where $K_i$ depends only on $f^{(2i-1)}(a)$ and $f^{(2i-1)}(b)$.
 
-This nice theorem makes Richardson's extrapolation available to reduce the truncation error!
-
-Similar to **Differentiation with Richardson's Extrapolation**, we have the following formula,
+This nice theorem makes Richardson's extrapolation available to reduce the truncation error! Similar to **Differentiation with Richardson's Extrapolation**, we have the following formula.
 
 !!! success "Romberg Integration"
     
@@ -486,7 +491,7 @@ Similar to **Differentiation with Richardson's Extrapolation**, we have the foll
 
 **Motivation:** On the premise of equal spacing, in some cases, the left half of the interval is well approximated, and maybe we only need to subdivide the right half to approximate better. Here we introduce the **Adaptive quadrature methods** based on the Composite Simpson's rule.
 
-!!! note ""
+!!! plane ""
     First, we want to derive, if we apply Simpson's rule in two subinterval and add them up, *how much precision does it improve* compared to only applying Simpson's rule just in the whole interval.
 
 From Simpson's rule, we have
@@ -522,14 +527,14 @@ $$
 Then,
 
 $$
-\begin{align}
+\begin{aligned}
     \left|\int_a^b f(x) dx - S\left(a, \frac{a + b}{2}\right) - S\left(\frac{a + b}{2}, b\right)\right|
     = \left|\frac{1}{16}\left(\frac{h^5}{90}\right)f^{(4)}(\tilde \mu)\right|
-    \\ \approx \frac{1}{15} \left|S(a, b) - S\left(a, \frac{a + b}{2}\right) - S\left(\frac{a + b}{2}, b\right)\right|
-\end{align}
+    \\ \approx \frac{1}{15} \left|S(a, b) - S\left(a, \frac{a + b}{2}\right) - S\left(\frac{a + b}{2}, b\right)\right|.
+\end{aligned}
 $$
 
-This result means that the subdivision approximates $\int_a^b f(x) dx$ about **15** times better than it agree with $S(a, b)$. Thus suppose we have a tolerance $\varepsilon$ across the interval $[a, b]$, if
+This result means that the subdivision approximates $\int_a^b f(x) dx$ about **15** times better than it agree with $S(a, b)$. Thus suppose we have a tolerance $\varepsilon$ across the interval $[a, b]$. If
 
 $$
     \left|S(a, b) - S\left(a, \frac{a + b}{2}\right) - S\left(\frac{a + b}{2}, b\right)\right| < 15\varepsilon,
@@ -544,7 +549,7 @@ $$
 and the subdivision is thought to be a better approximation to $\int_a^bf(x)dx$.
 
 !!! success "Conclusion"
-    Suppose we have a tolerance $\varepsilon$ on $[a, b]$, we expect the tolerance is uniform. Thus at the subinterval $[p, q] \subseteq [a, b]$, with $q - p = k(b - a)$, we expect the tolerance as $k\varepsilon$.
+    Suppose we have a tolerance $\varepsilon$ on $[a, b]$, and we expect the tolerance is uniform. Thus at the subinterval $[p, q] \subseteq [a, b]$, with $q - p = k(b - a)$, we expect the tolerance as $k\varepsilon$.
 
     Moreover, suppose the approximation of Simpson's rule on $[p, q]$ is $S$ while the approxiamtion of Simpson's rule on $[p, (p + q) / 2]$ and $[(p + q) / 2, q]$ are $S_1$ and $S_2$ respectively. 
 
@@ -554,7 +559,7 @@ and the subdivision is thought to be a better approximation to $\int_a^bf(x)dx$.
         |S_1 + S_2 - S| < M \cdot k \varepsilon.
     $$
 
-    where $M$ is often taken as 10 but not 15, which we derive above, since it also consider the error between $f^{(4)}(\mu)$ and $f^{(4)}(\tilde \mu)$.
+    where $M$ is often taken as **10** but not **15**, which we derive above, since it also consider the error between $f^{(4)}(\mu)$ and $f^{(4)}(\tilde \mu)$.
 
 ### Gaussian Quadrature
 
@@ -565,10 +570,10 @@ That means, to determine $x_i$ and $A_i$ (totally $2n + 2$ unknowns) such that t
 !!! bug "Problem"
     Theoretically, since we have $2n + 2$ unknowns and $2n + 2$ eqautions, we can solve out $x_i$ and $A_i$. But the equations are **not linear**!
 
-Thus we give the following theorem to find Gaussian points without solving the nonlinear eqautions. Recap [the definition of weight function and **orthogonality** of polynomials, and the construction of the set of orthogonal polynomials](../Chap_8/#solution_1).
+Thus we give the following theorem to find Gaussian points without solving the nonlinear eqautions. [Recap](../Chap_8/#solution_1) the definition of weight function and **orthogonality** of polynomials, and the construction of the set of orthogonal polynomials.
 
 
-!!! theorem
+!!! theorem "Theorem 4.6"
     $x_0, \dots, x_n$ are Gaussian point iff $W(x) = \prod\limits_{k = 0}^n (x - x_k)$ is orthogonal to all the polynomials of degree no greater than $n$ on interval $[a,b]$ w.r.t the weight function $w(x)$.
 
 ??? proof
@@ -577,7 +582,7 @@ Thus we give the following theorem to find Gaussian points without solving the n
     
     if $x_0, \dots x_n$ are Gaussian points, then the degree of precision of the formula $\int_a^b w(x)f(x)dx \approx \sum\limits_{k = 0}^n A_k f(x_k)$ is at least $2n + 1$.
 
-    Then $\forall P(x) \in \Pi_n$, $\text{deg}(P(x)W(x)) \le 2n + 1$. Thus
+    Then $\forall\ P(x) \in \Pi_n$,\ \ $\text{deg}(P(x)W(x)) \le 2n + 1$. Thus
 
     $$
         \int_a^b w(x)P(x)W(x)dx = \sum\limits_{k = 0}^n A_k P(x_k)\underbrace{W(x_k)}_{0} = 0.
@@ -585,13 +590,13 @@ Thus we give the following theorem to find Gaussian points without solving the n
 
     $\Leftarrow$
 
-    $\forall P(x) \in \Pi_{2n + 1}$, let $P(x) = W(x)q(x) + r(x), q(x), r(x) \in \Pi_{n}$, then
+    $\forall\ P(x) \in \Pi_{2n + 1}$, let $P(x) = W(x)q(x) + r(x),\ \ q(x), r(x) \in \Pi_{n}$, then
 
     $$
-    \begin{align}
+    \begin{aligned}
         \int_a^b w(x)P(x) dx &= \int_a^b w(x)W(x)q(x)dx + \int_a^b w(x)r(x)dx \\
         &= \sum\limits_{k = 0}^n A_k r(x_k) = \sum\limits_{k = 0}^n A_k P(x_k).
-    \end{align}
+    \end{aligned}
     $$
 
 Recap that the set of orthogonal polynomials $\{\varphi_0, \dots, \varphi_n, \dots\}$ is linearly independent and $\varphi_{n + 1}$ is orthogonal to any polynomials of degree no greater than $n$.
@@ -609,7 +614,7 @@ Thus we can take $\varphi_{n + 1}(x)$ to be $W(x)$ and **the roots of $\varphi_{
 
     **Step.2** Find the roots of $\varphi_{n}(x)$, which are the Gaussian points $x_0, \dots, x_n$.
 
-    **Step.3** Solve the linear systems of the equation given by the precision for $f(x) = 1, x, \dots, x^{2n + 1}$, and obtain $A_0, \dots A_n$.
+    **Step.3** Solve the linear systems of the equation given by the precision for $f(x) = 1, x, \dots, x^{2n + 1}$, and obtain $A_0, \dots, A_n$.
 
 Although the method above is theoretically available, but it's tedious. But we have some special solutions which have been calculated. With some transformations, we can make them to solve the general problem too.
 
@@ -625,10 +630,10 @@ A typical set of orthogonal functions is Legrendre Polynomials.
     or equally defined recursively by
 
     $$
-    \begin{align}
+    \begin{aligned}
         & P_0(x) = 1,\ P_1(x) = x, \\
         & P_{k + 1}(x) = \frac{1}{k + 1}\left((2k + 1)x P_k(x) - k P_{k - 1}(x)\right).
-    \end{align}
+    \end{aligned}
     $$
 
 !!! theorem "Property"
@@ -641,10 +646,10 @@ A typical set of orthogonal functions is Legrendre Polynomials.
 
         $$
             (P_j, P_k) = \left\{
-            \begin{align}
+            \begin{aligned}
                 & 0, && k \ne l, \\
                 & \frac{2}{2k + 1}, && k = l.
-            \end{align}
+            \end{aligned}
             \right.
         $$
 
@@ -655,13 +660,13 @@ A typical set of orthogonal functions is Legrendre Polynomials.
 The first few of them are
 
 $$
-\begin{align}
+\begin{aligned}
     P_0(x) &= 1, \\
     P_1(x) &= x, \\
     P_2(x) &= x^2 - \frac13, \\
     P_3(x) &= x^3 - \frac35 x, \\
     P_4(x) &= x^4 - \frac67 x^2 + \frac{3}{35}.
-\end{align}
+\end{aligned}
 $$
 
 The following table gives the pre-calculated values.
@@ -706,11 +711,11 @@ The formula using the roots of $P_{n + 1}(x)$ is called the **Gauss-Legendre** q
     For $n = 3$,
 
     $$
-    \begin{align}
+    \begin{aligned}
         \int_1^{1.5} e^{-x^2} &\approx \frac14 [0.55556e^{-(0.77460 + 5)^2 / 16} + 0.88889e^{-(5)^2 / 16} 
         \\ & \ \ \ \ + 0.55556e^{-(-0.77460 + 5)^2 / 16}]
         \\ & = 0.1093642.
-    \end{align}
+    \end{aligned}
     $$
 
 #### Chebyshev Polynomials

@@ -8,7 +8,7 @@
 
 ### 2D Transformations
 
-!!! note ""
+!!! plane ""
 #### Affine Transformations 仿射变换
 
 $$
@@ -31,16 +31,16 @@ y \\
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 x' &= ax + by + c \\
 y' &= dx + ey + f
-\end{align}
+\end{aligned}
 $$
 
 自由度 (degree of freedom) 为 **6**，所以我们需要至少 3 组点，也就是 6 个方程，以能够求解出 $a, b, c, d, e, f$.
 
 
-!!! note ""
+!!! plane ""
 #### Projective Transformation (Homography) 单应变换
 
 $$
@@ -63,10 +63,10 @@ y \\
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 x' = \frac{h_{00}x + h_{01}y + h_{02}}{h_{20}x + h_{11}y + h_{12}}
 y' = \frac{h_{10}x + h_{11}y + h_{12}}{h_{20}x + h_{11}y + h_{12}}
-\end{align}
+\end{aligned}
 $$
 
 Constraint: 令 $||(h_{00}, h_{01}, \dots, h_{22})||$ (向量范数) 规定为 $1$，或者令 $h_{22}$ 为 $1$.
@@ -125,16 +125,16 @@ $$
 
 ### Find $T$ for Image Wraping
 
-!!! note ""
+!!! plane ""
 	### Affine Transformations
 	
 	对于每个匹配，
 	
 	$$
-	\begin{align}
+	\begin{aligned}
 	x' = ax + by + c \\
 	y' = dx + ey + f
-	\end{align}
+	\end{aligned}
 	$$
 	
 	矩阵形式为
@@ -184,22 +184,22 @@ $$
 	
 	!!! success "Method of Least Square"
 		$$
-		\begin{align}
+		\begin{aligned}
 		\mathbf{A^{T}At} &= \mathbf{A^{T}b} \\
 		t &= \mathbf{A^{T}A^{-1}A^{T}b}
-		\end{align}
+		\end{aligned}
 		$$
 
-!!! note ""
+!!! plane ""
 	### Projective Transformations
 	
 	类似地，对于每个匹配，
 	
 	$$
-	\begin{align}
+	\begin{aligned}
 	x_i'(h_{20}x_i + h_{21} y_i + h_{22}) = h_{00}x_i + h_{01}y_i + h_{02} \\
 	y_i'(h_{20}x_i + h_{21} y_i + h_{22}) = h_{10}x_i + h_{11}y_i + h_{12} \\
-	\end{align}
+	\end{aligned}
 	$$
 	
 	矩阵形式为

@@ -4,7 +4,7 @@
 
     ### Target
 
-    Given $x_1, \dots, x_m$ and $y_1, \dots, y_m$ sampled from a funciton $y = f(x)$, or the continuous function $f(x), x \in [a, b]$ itself, find a simpler function $P(x) \approx f(x)$.
+    Given $x_1, \dots, x_m$ and $y_1, \dots, y_m$ sampled from a funciton $y = f(x)$, or the continuous function $f(x)$, $x \in [a, b]$ itself, find a simpler function $P(x) \approx f(x)$.
 
     ### Measurement of Error
 
@@ -22,25 +22,27 @@ In this course, we only discuss the minimax and least square parts, and only mak
 
 ### General Least Squares Approximation
 
-!!! definition
+!!! definition "Definition 8.0"
     $w$ is called a **weight function** if
     
     - (discrete)
+
         $$
-            \forall i, w_i > 0.
+            \forall\ i \in \mathbb{N},\ \ w_i > 0.
         $$
+
     - (continuous)
         $w$ is an integrable function and on the interval $I$,
 
         $$
-            \forall x \in I, w(x) \ge 0,
+            \forall\ x \in I,\ \ w(x) \ge 0,
         $$
 
         $$
-            \forall I' \subseteq I, w(x) \not\equiv 0.
+            \forall\ I' \subseteq I,\ \ w(x) \not\equiv 0.
         $$
 
-Considering the weight function, the least square method can be more general as below,
+Considering the weight function, the least square method can be more general as below.
 
 - (discrete) $E_2 = \sum\limits_{i = 1}^{m}w_i|P(x_i) - y_i|^2$.
 - (continuous) $E_2 = \int\nolimits_{a}^{b}w(x)|P(x) - f(x)|^2dx$.
@@ -61,12 +63,12 @@ of degree $n < m - 1$ (in most case $n \ll m$), with the least squares measureme
 ### Solution
 
 $$
-\begin{align}
+\begin{aligned}
     E_2 &= \sum\limits_{i = 1}^m (y_i - P_n(x_i))^2 \\
         &= \sum\limits_{i = 1}^m y_i^2 - 2\sum\limits_{i = 1}^m P_n(x_i)y_i + \sum\limits_{i = 1}^m P_n^2(x_i) \\
         &= \sum\limits_{i = 1}^m y_i^2 - 2\sum\limits_{i = 1}^m \left(\sum\limits_{j = 0}^n a_jx_i^j\right)y_i + \sum\limits_{i = 1}^m \left(\sum\limits_{j = 0}^n a_jx_i^j \right)^2 \\
         &= \sum\limits_{i = 1}^m y_i^2 - 2\sum\limits_{j = 0}^n a_j \left( \sum\limits_{i = 1}^m y_i x_i^j \right) + \sum\limits_{j = 0}^n \sum\limits_{k = 0}^n a_ja_k \left(\sum\limits_{i = 1}^m x_i^{j + k} \right).
-\end{align}
+\end{aligned}
 $$
 
 The necessary condition to minimize $E_2$ is
@@ -98,12 +100,12 @@ $$
 \end{bmatrix}
 $$
 
-!!! theorem
+!!! theorem "Theorem 8.0"
     Normal equations have a **unique** solution if $x_i$ are **distinct**.
 
 
 ??? proof
-    Suppose $X$ is a $n + 1 \times m$ **Vandermonde Matrix**, which is
+    Suppose $X$ is an $n + 1 \times m$ **Vandermonde Matrix**, which is
 
     $$
         X = \begin{bmatrix}
@@ -111,7 +113,7 @@ $$
         1 & x_2 & x_2^2 & \cdots & x_2^n \\
         \vdots & \vdots & \ddots & \vdots \\
         1 & x_m & x_m^2 & \cdots & x_m^n \\
-        \end{bmatrix}
+        \end{bmatrix},
     $$
 
     and let $\mathbf{y} = (y_1, y_1, \cdots, y_m)^T$.
@@ -164,7 +166,7 @@ $$
 $$
 
 !!! note
-    It's a simple algrebric transformation. But we should point out that it minimize the **logarithmic linear** least squares, but not linear least squares.
+    It's a simple algrebric transformation. But we should point out that it minimize the **logarithmic linear** least squares, but *not linear least squares*.
 
     Just consider the arguments to minimize the following two errors,
 
@@ -219,13 +221,13 @@ with the least squares measurement, w.r.t the weight function $w(x) \equiv 1$.
         \int_{a}^{b} x^{j + k} dx = \frac{b^{j + k + 1} - a^{j + k + 1}}{j + k + 1}.
     $$
 
-    Thus the coefficient of the linear system is a **Hilbert matrix**, which have a large *conditional number*. In actual numerical calculation, this gives a large roundoff error.
+    Thus the coefficient of the linear system is a **Hilbert matrix**, which has a large *conditional number*. In actual numerical calculation, this gives a large roundoff error.
 
-    Another disadvantage is that we can not easily get $P_{n + 1}(x)$ from $P_{n}(x)$, similarly with the topic of Lagrange interpolation.
+    Another disadvantage is that we can not easily get $P_{n + 1}(x)$ from $P_{n}(x)$, similarly with the discussion of Lagrange interpolation.
 
 Hence we introduce a different solution based on the concept of **orthogonal polynomials**.
 
-!!! definition
+!!! definition "Definition 8.1"
     The set of function $\{\varphi_0(x), \dots, \varphi_n(x)\}$ is **linearly independent** on $[a, b]$ if, whenever
 
     $$
@@ -234,16 +236,16 @@ Hence we introduce a different solution based on the concept of **orthogonal pol
 
     we have $c_0 = c_1 = \cdots = c_n = 0$. Otherwise it's **linearly dependent**.
 
-!!! theorem
+!!! theorem "Theorem 8.1"
     If $\text{deg}(\varphi_j(x)) = j$, then $\{\varphi_0(x), \dots, \varphi_n(x)\}$ is linearly independent on any interval $[a, b]$.
 
-!!! theorem
+!!! theorem "Theorem 8.2"
     $\Pi_n$ is the linear space spanned by $\{\varphi_0(x), \dots, \varphi_n(x)\}$, where $\{\varphi_0(x), \dots, \varphi_n(x)\}$ is linear independent, and $\Pi_n$ is the **set of all polynomials of degree at most *n***.
 
-!!! definition
+!!! definition "Definition 8.2"
     For the linear independent set $\{\varphi_0(x), \dots, \varphi_n(x)\}$, $\forall P(x) \in \Pi_n$, $P(x) = \sum\limits_{j = 0}^n \alpha_j \varphi_j(x)$ is called a **generalized polynomial**.
 
-!!! definition
+!!! definition "Definition 8.3"
     **Inner product** w.r.t the weight function $w$ is defined and denoted by
 
     - (discrete) $(f, g) = \sum\limits_{i = 1}^{m} w_i f(x_i)g(x_i)$
@@ -253,10 +255,10 @@ Hence we introduce a different solution based on the concept of **orthogonal pol
 
     $$
         (\varphi_j, \varphi_k) = \left\{
-        \begin{align}
+        \begin{aligned}
             & 0, && j \ne k, \\
             & \alpha_k > 0, && j = k.
-        \end{align}
+        \end{aligned}
         \right.
     $$
 
@@ -266,7 +268,7 @@ Hence we introduce a different solution based on the concept of **orthogonal pol
     Considering $w(x)$, then the normal equations can be represented by
 
     $$
-        \int_a^b w(x)f(x)\varphi_j(x)dx = \sum\limits_{k = 0}^n a_k \int_a^b w(x)\varphi_k(x)\varphi_j(x)dx,
+        \int_a^b w(x)f(x)\varphi_j(x)dx = \sum\limits_{k = 0}^n a_k \int_a^b w(x)\varphi_k(x)\varphi_j(x)dx.
     $$
 
     If we define the orthogonal set of functions as above, the equations reduce to
@@ -275,7 +277,7 @@ Hence we introduce a different solution based on the concept of **orthogonal pol
         \int_a^b w(x)f(x)\varphi_j(x)dx = a_j \alpha_j.
     $$
 
-!!! theorem
+!!! theorem "Theorem 8.3"
     $\{\varphi_0(x), \dots, \varphi_n(x)\}$ is an orthogonal set of functions on the interval $[a, b]$ w.r.t. the weight function $w$, then the least squares approximation to $f$ on $[a, b]$ w.r.t. $w$ is
 
     $$
@@ -290,43 +292,59 @@ Hence we introduce a different solution based on the concept of **orthogonal pol
 
 Base on the **Gram-Schmidt Process**, we have the following theorem to construct the orthogonal polynomials on $[a, b]$ w.r.t a weight function $w$.
 
-!!! theorem
+!!! theorem "Theorem 8.4"
     The set of polynomial functions $\{\varphi_0(x), \dots, \varphi_n(x)\}$ defined in the following way is orthogonal on $[a, b]$ w.r.t. the weight function $w$.
 
     $$
-    \begin{align}
+    \begin{aligned}
         & \varphi_0(x) \equiv 1,\ \varphi_1(x) = x - B_1, \\
         & \varphi_k(x) = (x - B_k) \varphi_{k - 1}(x) - C_k \varphi_{k - 2}(x), k \ge 2. \\
-    \end{align}
+    \end{aligned}
     $$
 
     where
 
     $$
-        B_k = \frac{(x\varphi_{k - 1}, \varphi_{k - 1})}{\varphi_{k - 1}, \varphi_{k - 1}},\ 
+        B_k = \frac{(x\varphi_{k - 1}, \varphi_{k - 1})}{\varphi_{k - 1}, \varphi_{k - 1}},\ \
         C_k = \frac{(x\varphi_{k - 1}, \varphi_{k - 2})}{\varphi_{k - 2}, \varphi_{k - 2}}.
     $$
 
 
 ## Minimax Approximation
 
+The minimax approximation to minimize $||P - f||_\infty||$ has the following properties.
+
+!!! theorem "Proposition"
+
+    - If $f \in C[a, b]$ and $f$ is not a polynomial of degree $n$, then there exists a **unique** polynomial $P(x)$ s.t. $||P - f||\infty$ is minimized.
+    - $P(x)$ exists and must have both $+$ and $-$ deviation points.
+    - (Chebyshev Theorem) The $n$ degree $P(x)$ minimizes $||P - f||_\infty$ $\Leftrightarrow$ $P(x)$ has at least $n + 2$ **alternating** $+$ and $-$ deviation points w.r.t. $f$. That is, there is a set of points $a \le t_1 < \dots < t_{n + 2} \le b$ (called the **Chebyshev alternating sequence**) s.t.
+
+        $$
+            P(t_k) - f(t_k) = (-1)^k||P - f||_\infty.
+        $$
+    
+    <div align="center">
+    	<img src="../Pic/chap8_3.png" alt="chap8_3 " style="width:300px"/>
+    </div>
+
 Here we introduce Chebyshev polynomials to deal with $E_\infty$ error, and by the way, we can use it to economize the power series.
 
 ### Chebyshev Polynomials
 
-Chebyshev polynomials are defined concisely as below,
+Chebyshev polynomials are defined concisely by
 
 $$
-    T_n(x) = \cos(n \arccos x)
+    T_n(x) = \cos(n \arccos x),
 $$
 
 or equally defined recursively by
 
 $$
-\begin{align}
+\begin{aligned}
     & T_0(x) = 1,\ T_1(x) = x, \\
     & T_{n + 1}(x) = 2x T_{n}(x) - T_{n - 1}(x).
-\end{align}
+\end{aligned}
 $$
 
 !!! theorem "Property"
@@ -338,11 +356,11 @@ $$
 
         $$
             (T_n, T_m) = \int_{-1}^1 \frac{T_n(x)T_m(x)}{\sqrt{1 - x^2}}dx = \left\{
-            \begin{align}
-                & 0, && n \ne m \\
-                & \pi, && n = m = 0 \\
-                & \frac{\pi}{2}, && n = m \ne 0
-            \end{align}
+            \begin{aligned}
+                & 0, && n \ne m, \\
+                & \pi, && n = m = 0, \\
+                & \frac{\pi}{2}, && n = m \ne 0.
+            \end{aligned}
             \right.
         $$
 
@@ -379,15 +397,15 @@ $$
 
 The following is an important theorem for the position of Chebyshev polynomials.
 
-!!! theorem
+!!! theorem "Theorem 8.5"
 
     $$
         \frac{1}{2^{n - 1}} = \max\limits_{x \in [-1, 1]}|\tilde T_n(x)| \le \max\limits_{x \in [-1, 1]}|P_n(x)|,\ \forall\ P_n(x) \in \tilde \Pi_n,
     $$
 
-    where $\tilde \Pi_n$ denote the **set of all monic polynomials of degree *n***.
+    where $\tilde \Pi_n$ denotes the **set of all monic polynomials of degree *n***.
 
-From this theorem, we can answer *where to place interpolating points* to minimize the error in Lagrange interpolation. Recap that
+From **theorem 8.5**, we can answer *where to place interpolating points* to minimize the error in Lagrange interpolation. Recap that
 
 $$
     R(x) = f(x) - P(x) = \frac{f^{n + 1}(\xi)}{(n + 1)!}\prod\limits_{i = 0}^{n}(x - x_i).
@@ -407,7 +425,7 @@ $$
     x_k = \bar{x}_{k + 1} = \cos \frac{2k + 1}{2(n + 1)}\pi.
 $$
 
-!!! theorem "Corollary"
+!!! theorem "Corollary 8.6"
     
     $$
         \max\limits_{x \in [-1, 1]} |f(x) - P(x)| \le \frac{\max\limits_{x \in [-1, 1]}\left|f^{(n + 1)}(x)\right|}{2^n (n + 1)!}.
@@ -421,7 +439,7 @@ $$
     E_\infty = \max\limits_{a \le x \le b}|P(x) - f(x)|,
 $$
 
-with a polynomial of degree $n$ on the interval $[a, b]$, we need the following steps:
+with a polynomial of degree $n$ on the interval $[a, b]$, we need the following steps.
 
 **Step.1** Find the roots of $T_{n + 1}(t)$ on the interval $[-1, 1]$, denoted by $t_0, \dots, t_n$.
 
@@ -457,7 +475,7 @@ $$
 
 #### Solution
 
-Since $(P_n(x) - P_{n - 1}(x)) / a_n$ is monic, thus
+Since $\frac{1}{a_n}(P_n(x) - P_{n - 1}(x))$ is monic, thus
 
 $$
     \max_{x\in[-1,1]}\left|\frac{1}{a_n}((P_n(x) - P_{n - 1}(x))\right| \ge \frac{1}{2^{n - 1}}.

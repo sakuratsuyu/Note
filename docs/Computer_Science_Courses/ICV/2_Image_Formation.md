@@ -216,11 +216,11 @@ The direction of the vanishing line tells us the orientation of the plane.
 </div>
 
 $$
-\begin{align}
+\begin{aligned}
 r^2 &= {x'}_n^{2} + {y'}_n^{2} \\
 {x'}_d &= {x'}_n(1 + \kappa_1r^2 + \kappa_2r^4) \\
 {y'}_d &= {y'}_n(1 + \kappa_1r^2 + \kappa_2r^4) \\
-\end{align}
+\end{aligned}
 $$
 
 !!! success "Solution"
