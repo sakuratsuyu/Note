@@ -256,7 +256,7 @@ where $\mathbf{x}^{(0)}$ is arbitrary.
     If $||T||\lt 1$ for any matrix norm and $\mathbf{c}$ is a given vector, then for all $\mathbf{x}^{(0)}\in \mathbb{R}^n$, $\{\mathbf{x}^{(k)}\}_{k=1}^\infty$ defined by $\mathbf{x}^{(k)} = T\mathbf{x}^{(k - 1)} + \mathbf{c}$ converges to $\mathbf{x}$, and the following error bounds hold
 
     - $||\mathbf{x} - \mathbf{x}^{(k)}|| \le ||T||^k||\mathbf{x}^{(0)} - \mathbf{x}||$.
-    - $||\mathbf{x} - \mathbf{x}^{(k)}|| \le \frac{||T||^k}{1 - ||T||}||\mathbf{x}^{(1)} - \mathbf{x}||$.
+    - $||\mathbf{x} - \mathbf{x}^{(k)}|| \le \dfrac{||T||^k}{1 - ||T||}||\mathbf{x}^{(1)} - \mathbf{x}||$.
 
 !!! theorem "Theorem 7.8"
     $\forall\ A$ is strictly diagonally dominant, $\forall\ \mathbf{x}^{(0)}$, both Jacobi and Gauss-Seidel methods give $\{\mathbf{x}^{(k)}\}_{k=0}^\infty$ that converge to the unique solution of $A\mathbf{x} = \mathbf{b}$.

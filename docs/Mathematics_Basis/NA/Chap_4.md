@@ -1,7 +1,7 @@
 # Chapter 4 | Numerical Differentiation and Integration
 
 Before everything start, it's necessary to introduce an approach to reduce truncation error: **Richardson's extrapolation**.
-### Richardson's Extrapolation
+### Richardson's Extrapolation 外推
 
 Suppose for each $h$, we have a formula $N(h)$ to approximate an unknown value $M$. And suppose the truncation error have the form
 

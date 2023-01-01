@@ -6,7 +6,7 @@
     Suppose that $f \in C[a, b]$ and $f(a)\cdot f(b) \lt 0$. The Bisection method generates a sequence $\{p_n\}$ $(n = 0, 1, 2,\dots)$ approximating a zero $p$ of $f$ with
     
     $$
-        |p_n-p| \le \frac{b - a}{2^n},\ \ \text{ when }n \ge 1
+        |p_n-p| \le \frac{b - a}{2^n},\ \ \text{ when }n \ge 1.
     $$
 
 ### Key Points for Algorithm Implementation

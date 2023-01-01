@@ -2,8 +2,6 @@
 
 param($comment)
 
-git add .
-
 git add -A
 
 if ($comment) {
