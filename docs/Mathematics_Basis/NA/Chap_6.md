@@ -10,6 +10,8 @@ $$
 
 Let $A^{(1)} = A, \mathbf{b}^{(1)} = \mathbf{b}$.
 
+#### Elimination
+
 For Step $k\ (1\le k \le n-1)$, if $a^{(k)}_{kk}\ne0$ (**pivot element**), compute $m_{ik} = \dfrac{a^{(k)}_{ik}}{a^{(k)}_{kk}}$ and
 
 $$
@@ -21,8 +23,6 @@ $$
 ,\ \ \text{ where } i, j = k+1, \dots, n.
 \right.
 $$
-
-#### Elimination
 
 After $n-1$ steps,
 
@@ -53,27 +53,59 @@ $$
 Then,
 
 $$
-x_n = \frac{b_n^{(n)}}{a^{(n)}_{nn}}, x_i = \frac{1}{a_{ii}^{(i)}}\left(b^{(i)}_i - \sum_{j = i + 1}^n a^{(i)}_{ij} x_j\right),\ \ \text{ where }i = n-1, \dots, 1.
+x_n = \frac{b_n^{(n)}}{a^{(n)}_{nn}},\ \ x_i = \frac{1}{a_{ii}^{(i)}}\left(b^{(i)}_i - \sum_{j = i + 1}^n a^{(i)}_{ij} x_j\right),\ \ \text{ where }i = n-1, \dots, 1.
 $$
 
 ### Complexity
 
-For Elimination, 
+Recap that we have
 
 $$
-    \sum_{k=1}^{n-1}(n - k)(n - k + 2) = \frac{n^3}{3} + \frac{n^2}{2} - \frac{5}{6}n.
+    \sum\limits_{i = 1}^n 1 = n,\ \
+    \sum\limits_{i = 1}^n i = \frac{n(n+1)}{2},\ \
+    \sum\limits_{i = 1}^n i^2 = \frac{n(n+1)(2n+1)}{6}.\ \
+$$
+
+For Elimination,
+
+*Multiplications/divisions*
+
+$$
+    \sum\limits_{k=1}^{n-1}((n - k) + (n - k)(n - k + 2)) = \frac{n^3}{3} + \frac{n^2}{2} - \frac{5}{6}n.
+$$
+
+*Addtion/subtraction*
+
+$$
+    \sum\limits_{k = 1}^{n-1}(n - k)(n - k + 1) = \frac{n^3}{3} - \frac{n}{3}.
 $$
 
 For Backward-substitution,
 
+*Multiplications/divisions*
+
 $$
-    1 + \sum_{k=1}^{n-1}(n - k + 1) = \frac{n^2}{2} + \frac{n}{2}.
+    1 + \sum\limits_{k=1}^{n-1}(n - k + 1) = \frac{n^2}{2} + \frac{n}{2}.
+$$
+
+*Addtion/subtraction*
+
+$$
+    \sum\limits_{i = 1}^{n - 1}((n - i + 1) + 1) = \frac{n^2}{2} - \frac{n}{2}.
 $$
 
 In total,
 
+*Multiplications/divisions*
+
 $$
     \frac{n^3}{3} + n^2 - \frac{n}{3}.
+$$
+
+*Addtion/subtraction*
+
+$$
+\frac{n^3}{3} + \frac{n^2}{2}-\frac{5n}{6}.
 $$
 
 ## Pivoting Strategies
@@ -113,16 +145,16 @@ Search all the entries $a_{ij}$ for $i,j = k, \dots,n$ to find the entry with th
 
 *Requires* $O\left(\dfrac{1}{3}N^3\right)$ additional **comparisons**.
 
-## Matrix Factorization (LU Factorization)
+## LU Factorization
 
-Considering the matrix form of Gaussian Elimination, for total $n-1$ steps,
+Considering the matrix form of Gaussian Elimination, for total $n-1$ steps, we have
 
 $$
 L_{n-1}L_{n-2}\dots L_1[A\ \textbf{b}] = 
 \begin{bmatrix}
     a^{(1)}_{11} & a^{(1)}_{12} & \cdots & a^{(1)}_{1n} & b_1^{(1)} \\
     & a^{(2)}_{22} & \cdots & a^{(2)}_{2n} & b_2^{(2)} \\
-    & & \cdots & \vdots & \vdots \\
+    & & \ddots & \vdots & \vdots \\
     & & & a^{(n)}_{nn} & b_n^{(n)} \\
 \end{bmatrix},
 $$
@@ -161,7 +193,7 @@ $$
 L_1^{-1}L_2^{-1}\dots L_{n-1}^{-1} = 
 \begin{bmatrix}
     1 & 0 & \cdots & \cdots & \cdots & 0 \\
-    m_{1,2} & 1 & \ddots & \ddots & \ddots & \vdots \\
+    m_{2,1} & 1 & \ddots & \ddots & \ddots & \vdots \\
     \vdots & \ddots & 1 & \ddots & \ddots & \vdots\\
     \vdots & \ddots & \ddots & \ddots & \ddots & \vdots\\
     \vdots & \ddots &\ddots& \ddots & 1 & 0\\
@@ -175,9 +207,9 @@ and
 $$
 U = \begin{bmatrix}
     a^{(1)}_{11} & a^{(1)}_{12} & \cdots & a^{(1)}_{1n} \\
-    & a^{(2)}_{22} & \cdots & a^{(2)}_{2n} \\
-    & & \cdots & \vdots \\
-    & & & a^{(n)}_{nn} \\
+    0 & a^{(2)}_{22} & \cdots & a^{(2)}_{2n} \\
+    \vdots & \ddots & \ddots & \vdots \\
+    0 & \cdots & 0 & a^{(n)}_{nn} \\
 \end{bmatrix}.
 $$
 
@@ -188,7 +220,7 @@ $$
 $$
 
 !!! theorem "Theorem 6.0"
-    If Gaussian elimination can be performed on the linear system $A\mathbf{x} = \mathbf{b}$ without row interchanges, then the matrix $A$ can be factored into the product of **a lower-triangular matrix** $L$ and **an upper-triangular matrix** $U$ .
+    If Gaussian elimination can be performed on the linear system $A\mathbf{x} = \mathbf{b}$ *without row interchanges*, then the matrix $A$ can be factored into the product of **a lower-triangular matrix** $L$ and **an upper-triangular matrix** $U$ .
     
     If $L$ has to be **unitary**, then the factorization is **unique**.
 
@@ -198,10 +230,10 @@ $$
 ### Strictly Diagonally Dominant Matrix 严格主对角占优矩阵
 
 !!! definition "Definition 6.0"
-    The $n \times n$ matrix $A$ is said to be strictly diagnoally dominant when
+    The $n \times n$ matrix $A$ is said to be **strictly diagnoally dominant** when
 
     $$
-        |a_{ii}| \gt \sum_{j=1,j\ne i}^{n}|a_{ij}|,\text{ for each } i = 1, \dots, n
+        |a_{ii}| \gt \sum\limits_{\substack{j=1 \\ j\ne i}}^{n}|a_{ij}|,\text{ for each } i = 1, \dots, n.
     $$
 
 !!! theorem "Theorem 6.1"
@@ -210,7 +242,7 @@ $$
 ### Positive Definite Matrix 正定矩阵
 
 ??? definition "Definition 6.1 (Recap)"
-    A matrix $A$ is **positive definite** if it's **symmetric** and if $\mathbf{x}^tA\mathbf{x} > 0$ for every $n$-dimensional vector $\mathbf{x} \ne \mathbf{0}$.
+    A matrix $A$ is **positive definite** if it's **symmetric** and if $\forall\ (\mathbf{0} \ne) \mathbf{x} \in \mathbb{R}^n$, $\mathbf{x}^tA\mathbf{x} > 0$.
 
 ??? theorem "Theorem 6.2"
     If $A$ is an $n \times n$ positive definite matrix, then
@@ -259,7 +291,7 @@ $$
 ### Tridiagonal Linear System 三对角矩阵
 
 !!! definition "Definition 6.2"
-    An $n \times n$ matrix $A$ is called a **band matrix** if $\exists p, q (1 < p, q < n)$, s.t. whenever $i + p \le j$ or $j + q \le i$, $a_{ij} = 0$. And $w = p + q - 1$ is called the **bandwidth**.
+    An $n \times n$ matrix $A$ is called a **band matrix** if $\exists\ p, q$ $(1 < p, q < n)$, s.t. whenever $i + p \le j$ or $j + q \le i$, $a_{ij} = 0$. And $w = p + q - 1$ is called the **bandwidth**.
 
     Specially, if $p = q = 2$, then $A$ is called **tridiagonal**, with the following form,
 
