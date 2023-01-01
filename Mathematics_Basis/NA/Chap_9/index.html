@@ -305,6 +305,11 @@
     Inverse Power Method
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wielandt-deflation">
+    Wielandt Deflation
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -479,6 +484,11 @@
     Inverse Power Method
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wielandt-deflation">
+    Wielandt Deflation
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -508,7 +518,7 @@
 <p><strong>Motivation for Normalization:</strong> In the original method, if <span class="arithmatex">\(|\lambda| &gt; 1\)</span> then <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> diverges. If <span class="arithmatex">\(|\lambda| &lt; 1\)</span> then <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> converges to <span class="arithmatex">\(0\)</span>. Both cases are not suitable for actual computing. Thus we need normalization to make sure <span class="arithmatex">\(||\mathbf{x}||_\infty = 1\)</span> at each step to guarantee the <em>stability</em>.</p>
 <div class="admonition success">
 <p class="admonition-title">Normalization</p>
-<p>Let <span class="arithmatex">\(\mathbf{u}^{(k-1)} = \frac{\mathbf{x}^{(k-1)}}{||\mathbf{x}^{(k-1)}||_\infty}, 
+<p>Let <span class="arithmatex">\(\mathbf{u}^{(k-1)} = \dfrac{\mathbf{x}^{(k-1)}}{||\mathbf{x}^{(k-1)}||_\infty}, 
 \mathbf{x}^{(k)} = A\mathbf{u}^{(k - 1)}\)</span>,</p>
 <p>then</p>
 <div class="arithmatex">\[
@@ -526,7 +536,10 @@
 \]</div>
 <p>Thus </p>
 <div class="arithmatex">\[
-    \lambda_1 = \frac{\mathbf{x}_i^{(k)}}{\mathbf{u}_i^{(k)}}, \hat{\mathbf{v}_\mathbf{1}} = \frac{\mathbf{v}_\mathbf{1}}{||\mathbf{v}_\mathbf{1}||_\infty}= \mathbf{u}^{(k)}.
+\begin{aligned}
+    &amp; \lambda_1 = \frac{\mathbf{x}_i^{(k)}}{\mathbf{u}_i^{(k)}},\ \ \text{ or more directly }, \lambda_1 = \mathbf{x}^{(k)}_{p_k},\ \ \text{ where } \mathbf{u}^{(k)}_{p_k} = 1 = ||\mathbf{u}^{(k)}||_\infty, \\
+    &amp; \hat{\mathbf{v}_\mathbf{1}} = \frac{\mathbf{v}_\mathbf{1}}{||\mathbf{v}_\mathbf{1}||_\infty}= \mathbf{u}^{(k)}.
+\end{aligned}
 \]</div>
 </div>
 <div class="admonition tip">
@@ -547,7 +560,35 @@
 </ul>
 </div>
 <h3 id="rate-of-convergence">Rate of Convergence<a class="headerlink" href="#rate-of-convergence" title="Permanent link">¶</a></h3>
-<p>Examine <span class="arithmatex">\(\textbf{x}^{(k)} = \lambda_1^k \sum_{j = 1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\textbf{v}_\textbf{j}\)</span>. We find that <span class="arithmatex">\(\left(\dfrac{\lambda_j}{\lambda_1}\right)\)</span> determines the rate of convergence, especially <span class="arithmatex">\(\left|\dfrac{\lambda_2}{\lambda_1}\right|\)</span>.</p>
+<p>Examine <span class="arithmatex">\(\textbf{x}^{(k)} = \lambda_1^k \sum\limits_{j = 1}^n\beta_j\left(\dfrac{\lambda_j}{\lambda_1}\right)^k\textbf{v}_\textbf{j}\)</span>. We find that <span class="arithmatex">\(\left(\dfrac{\lambda_j}{\lambda_1}\right)^k\)</span> determines the rate of convergence, especially <span class="arithmatex">\(\left|\dfrac{\lambda_2}{\lambda_1}\right|^k\)</span>.</p>
+<p>Thus, suppose</p>
+<div class="arithmatex">\[
+    \mu^{(k)} = \mathbf{x}^{(k)}_{p_k},\ \ \text{ where } \mathbf{u}^{(k)}_{p_k} = 1 = ||\mathbf{u}^{(k)}||_\infty, \\
+\]</div>
+<p>Then there is a constant <span class="arithmatex">\(L\)</span>, s.t. for some large <span class="arithmatex">\(m\)</span>,</p>
+<div class="arithmatex">\[
+    |\mu^{(m)} - \lambda_1| \approx L \left|\frac{\lambda_2}{\lambda_1}\right|^m,
+\]</div>
+<p>which implies that</p>
+<div class="arithmatex">\[
+    \lim\limits_{m \rightarrow \infty} \frac{|\mu^{(m + 1)} - \lambda_1|}{|\mu^{(m)} - \lambda_1|} \approx \left|\frac{\lambda_2}{\lambda_1}\right| &lt; 1.
+\]</div>
+<p>Hence the seqence <span class="arithmatex">\(\{\mu^{(m)}\}\)</span> converges <strong>linearly</strong> to <span class="arithmatex">\(\lambda_1\)</span> and Aitken's <span class="arithmatex">\(\Delta^2\)</span> procedure can be applied.</p>
+<div class="admonition success">
+<p class="admonition-title">Aitken's <span class="arithmatex">\(\Delta^2\)</span> procedure</p>
+<p>Initially set <span class="arithmatex">\(\mu_0 = 0\)</span>, <span class="arithmatex">\(\mu_1 = 0\)</span>.</p>
+<p>For each step <span class="arithmatex">\(k\)</span>,</p>
+<ul>
+<li>set <span class="arithmatex">\(\mu = \mathbf{x}^{(k)}_p\)</span>, where <span class="arithmatex">\(\mathbf{u}^{(k - 1)}_p = 1\)</span>.</li>
+<li>set the predicted eigenvalue to <span class="arithmatex">\(\lambda_1\)</span> be</li>
+</ul>
+<div class="arithmatex">\[
+    \hat\mu = \mu_0 - \frac{(\mu_1-\mu_0)^2}{\mu - 2\mu_1 + \mu_0}.
+\]</div>
+<ul>
+<li>set <span class="arithmatex">\(\mu_0 = \mu_1\)</span>, <span class="arithmatex">\(\mu_1 = \mu\)</span>.</li>
+</ul>
+</div>
 <p><strong>Target:</strong> Make <span class="arithmatex">\(\left|\dfrac{\lambda_2}{\lambda_1}\right|\)</span> as small as possible.</p>
 <details class="example">
 <summary>Example</summary>
@@ -569,19 +610,100 @@
 \]</div>
 <p>The dominant eigenvalue of <span class="arithmatex">\(A^{-1}\)</span> is the eigenvalue with the <strong>smallest magnitude</strong> of <span class="arithmatex">\(A\)</span>.</p>
 <div class="admonition success">
-<p class="admonition-title">A way to find eigenvalue <span class="arithmatex">\(\lambda\)</span> closest to a given value <span class="arithmatex">\(p\)</span></p>
+<p class="admonition-title">A way to find eigenvalue <span class="arithmatex">\(\lambda\)</span> closest to a given value <span class="arithmatex">\(q\)</span></p>
 <p>Use power method for matrix <span class="arithmatex">\((A - qI)^{-1}\)</span>, which has the eigenvalues</p>
 <div class="arithmatex">\[
     \left|\frac{1}{\lambda_1 - q}\right| \gt \left|\frac{1}{\lambda_2 - q}\right| \ge \cdots \ge \left|\frac{1}{\lambda_n - q}\right|.
 \]</div>
-<p>where <span class="arithmatex">\(\lambda_1\)</span> is the closest to <span class="arithmatex">\(p\)</span>.</p>
+<p>where <span class="arithmatex">\(\lambda_1\)</span> is the closest to <span class="arithmatex">\(q\)</span>.</p>
+</div>
+<p>Also, inverse power method can sometimes accelerate to solve <span class="arithmatex">\(\lambda_1\)</span> of <span class="arithmatex">\(A\)</span>. By initialize <span class="arithmatex">\(q\)</span> with</p>
+<div class="arithmatex">\[
+    q =\frac{\mathbf{x}^{(0)t}A\mathbf{x}^{(0)}}{\mathbf{x}^{(0)t}\mathbf{x}^{(0)}}.
+\]</div>
+<p>This choice is considered by the property of eigenvalue <span class="arithmatex">\(\lambda\)</span> if <span class="arithmatex">\(\mathbf{x}\)</span> is an eigenvector of <span class="arithmatex">\(A\)</span>.</p>
+<div class="arithmatex">\[
+    \lambda =\frac{\mathbf{x}^{t}A\mathbf{x}}{\mathbf{x}^{t}\mathbf{x}} = \frac{\mathbf{x}^{t}A\mathbf{x}}{||\mathbf{x}||^2_2}.
+\]</div>
+<h3 id="wielandt-deflation">Wielandt Deflation<a class="headerlink" href="#wielandt-deflation" title="Permanent link">¶</a></h3>
+<p>Our target is now to solve the eigenvalue of the second largest magnitude associated with its eigenvector. We introduce <strong>deflation techniques</strong> here, which forming a new matrix <span class="arithmatex">\(B\)</span> with eigenvalue <span class="arithmatex">\(0, \lambda_2, \dots, \lambda_n\)</span>, where <span class="arithmatex">\(\lambda_1\)</span> is replaced by <span class="arithmatex">\(0\)</span>.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem 9.0</p>
+<p>Suppose <span class="arithmatex">\(\lambda_1, \dots, \lambda_n\)</span> are eigenvalues of <span class="arithmatex">\(A\)</span> associated with eigenvectors <span class="arithmatex">\(\mathbf{v}^{(1)}, \dots, \mathbf{v}^{(n)}\)</span>, and <span class="arithmatex">\(\lambda_1\)</span> has multiplicity <span class="arithmatex">\(1\)</span>. Let <span class="arithmatex">\(\mathbf{x}\)</span> be a vector with <span class="arithmatex">\(\mathbf{x}^{t}\mathbf{v}^{(1)} = 1\)</span>. Then the matrix</p>
+<div class="arithmatex">\[
+    B = A - \lambda_1\mathbf{v}^{(1)}\mathbf{x}^t
+\]</div>
+<p>has eigenvalues <span class="arithmatex">\(0, \lambda_2, \dots, \lambda_n\)</span> with associated eigenvectors <span class="arithmatex">\(\mathbf{v}^{(1)}, \mathbf{w}^{(2)}, \dots, \mathbf{w}^{(n)}\)</span>, where <span class="arithmatex">\(\mathbf{v}^{(i)}\)</span> and <span class="arithmatex">\(\mathbf{w}^{(i)}\)</span> are related by the equation</p>
+<div class="arithmatex">\[
+    \mathbf{v}^{(i)} = (\lambda_i - \lambda_1) \mathbf{w}^{(i)} + \lambda_1(\mathbf{x}^t\mathbf{w}^{(i)})\mathbf{v}^{(1)}.
+\]</div>
+</div>
+<p>With the <strong>Theorem 9.0</strong>, the only thing we need to do is to choose vector <span class="arithmatex">\(\mathbf{x}\)</span>. <strong>Wielandt deflation</strong> chooses <span class="arithmatex">\(\mathbf{x}\)</span> by the following formula.</p>
+<div class="arithmatex">\[
+    \mathbf{x} = \frac{1}{\lambda_1 v_i^{(1)}}(a_{i1}, \dots, a_{in})^t,
+\]</div>
+<p>where <span class="arithmatex">\(v_i^{(1)}\)</span> is a nonzero coordinate of the eigenvector <span class="arithmatex">\(\mathbf{v}^{(1)}\)</span> and <span class="arithmatex">\(a_{i1}, \dots a_{in}\)</span> are the entries of <em>i</em>-th row of <span class="arithmatex">\(A\)</span>. It's easy to verify that</p>
+<div class="arithmatex">\[
+    \mathbf{x}^t\mathbf{v}^{(1)} = \frac{1}{\lambda_1 v_i^{(1)}}(\lambda_1 v_i^{(1)}) = 1.
+\]</div>
+<p>Moreover, by this definition, the <em>i</em>-th row of <span class="arithmatex">\(B\)</span> consists <em>entirely of zero entries</em>. This means that the <em>i</em>-th coordinate of eigenvector <span class="arithmatex">\(\mathbf{w}\)</span> is <span class="arithmatex">\(0\)</span>. Consequently <em>i</em>-th column of <span class="arithmatex">\(B\)</span> makes no contribution for calculating eigenvector. Thus we can replace <span class="arithmatex">\(B\)</span> by an <span class="arithmatex">\((n - 1)\times(n - 1)\)</span> matrix <span class="arithmatex">\(B'\)</span>, which deletes the <em>i</em>-th row and <em>i</em>-th column and has eigenvalues <span class="arithmatex">\(\lambda_2, \dots, \lambda_n\)</span>.</p>
+<div class="admonition success">
+<p class="admonition-title">Wielandt Deflation</p>
+<p><strong>Step.1</strong> Find <span class="arithmatex">\(\lambda_1\)</span>, the eigenvalue of the largest magnitude, and its associated eigenvector <span class="arithmatex">\(\mathbf{v}^{(1)}\)</span> by Power Method.</p>
+<p><strong>Step.2</strong> Choose <span class="arithmatex">\(\mathbf{x}\)</span> and Construct <span class="arithmatex">\(B = A - \lambda_1 \mathbf{v}^{(1)} \mathbf{x}^{(t)}\)</span>.</p>
+<p><strong>Step.3</strong> Delete <em>i</em>-th row and <em>i</em>-th column, which gives <span class="arithmatex">\(B'\)</span>.</p>
+<p><strong>Step.4</strong> Find <span class="arithmatex">\(\lambda_2\)</span> and its associated eigenvector <span class="arithmatex">\(\mathbf{w}^{(2)}\)</span> of <span class="arithmatex">\(B'\)</span> by Power Method.</p>
+<p><strong>Step.5</strong> Use the formula of <strong>Theorem 9.0</strong> to get the associated eigenvector <span class="arithmatex">\(\mathbf{v}^{(2)}\)</span> of <span class="arithmatex">\(A\)</span>.</p>
+<div class="arithmatex">\[
+    \mathbf{v}^{(2)} = (\lambda_2 - \lambda_1) \mathbf{w}^{(2)} + \lambda_1(\mathbf{x}^t\mathbf{w}^{(2)})\mathbf{v}^{(1)}.
+\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Find the eigenvalue of the second largest magnitude and its associated eigenvector of</p>
+<div class="arithmatex">\[
+    A = \begin{bmatrix}
+        -4 &amp; 14 &amp; 0 \\
+        -5 &amp; 13 &amp; 0 \\
+        -1 &amp; 0 &amp; 2
+    \end{bmatrix}.
+\]</div>
+<p><strong>Solution.</strong></p>
+<p><strong>Step.1</strong> Find <span class="arithmatex">\(\lambda_1 = 6\)</span> and its associated eigenvector <span class="arithmatex">\(\mathbf{v}^{(1)} = \left(1, \dfrac{5}{7}, -\dfrac14\right)^t\)</span> by Power Method of <span class="arithmatex">\(A\)</span>.</p>
+<p><strong>Step.2</strong> Choose <span class="arithmatex">\(i = 1\)</span>, then</p>
+<div class="arithmatex">\[
+    \mathbf{x} = \frac{1}{6 \times 1}(-4, 14, 0)^t = \left(-\frac23, \frac83, 0\right)^t,
+\]</div>
+<div class="arithmatex">\[
+    B = A - \lambda_1\mathbf{v}^{(1)}\mathbf{x}^t = \begin{bmatrix}
+        0 &amp; 0 &amp; 0 \\
+        -\frac{15}{7} &amp; 3 &amp; 0 \\
+        -2 &amp; \frac72 &amp; 2
+    \end{bmatrix}.
+\]</div>
+<p><strong>Step.3</strong> Delete the <em>i</em>-th row and <em>i</em>-th column,</p>
+<div class="arithmatex">\[
+    B' = \begin{bmatrix}
+        3 &amp; 0 \\
+        \frac72 &amp; 2
+    \end{bmatrix}.
+\]</div>
+<p><strong>Step.4</strong> Find <span class="arithmatex">\(\lambda_2 = 3\)</span> and its associated eigenvector <span class="arithmatex">\(\mathbf{w}^{(2)'} = \left(\dfrac{2}{7}, 1\right)^t\)</span> by Power Method of <span class="arithmatex">\(B'\)</span>.</p>
+<p><strong>Step.5</strong> Add the dimension of <span class="arithmatex">\(\mathbf{w}^{(2)'}\)</span> and <span class="arithmatex">\(\mathbf{w}^{(2)} = \left(0, \dfrac{2}{7}, 1\right)^t\)</span>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \mathbf{v}^{(2)} &amp;= (\lambda_2 - \lambda_1) \mathbf{w}^{(2)} + \lambda_1(\mathbf{x}^t\mathbf{w}^{(2)})\mathbf{v}^{(1)}
+    \\ &amp;= (3 - 6)\left(0, \dfrac{2}{7}, 1\right)^t + 6\left[\left(-\frac23, \frac83, 0\right)\left(0, \dfrac{2}{7}, 1\right)^t\right]\left(1, \dfrac{5}{7}, -\dfrac14\right)^t
+    \\ &amp;= (4, 2, -4)^t \overset{\text{Normalized by } ||\cdot||_\infty}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=} (1, 0.5, -1)^t.
+\end{aligned}
+\]</div>
 </div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.30 15:10:22 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.01 16:53:56 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
