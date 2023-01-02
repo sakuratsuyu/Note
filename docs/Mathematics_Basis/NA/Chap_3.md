@@ -394,7 +394,7 @@ $$
 $$
 
 <div align="center">
-	<img src="../Pic/chap3_2.png" alt="chap3_2 " style="width:800px"/>
+	<img src="../Pic/chap3_3.png" alt="chap3_3 " style="width:800px"/>
 </div>
 
 ## Cubic Spline Interpolation

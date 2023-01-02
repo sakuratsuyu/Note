@@ -414,7 +414,7 @@ $$
 To minimize $R(x)$, since there is no control over $\xi$, so we only need to minimize
 
 $$
-    |w_n(x)| = |\prod\limits_{i = 0}^{n}(x - x_i)|.
+    |w_n(x)| = \left|\prod\limits_{i = 0}^{n}(x - x_i)\right|.
 $$
 
 Since $w_n(x)$ is a monic polynomial of degree $(n + 1)$, we can obtain minimum when $w_n(x) = \tilde T_{n + 1}(x)$.
