@@ -9,7 +9,7 @@
     * [ ] Introduction to Computer Systems | ICS
     * [ ] HPC 101
     * [ ] Introduction to Computer Vision | ICV
-    * [ ] Fundemental of Data Strcuture | FDS
+    * [ ] Fundemental of Data Structure | FDS
     * [ ] Digital Logic Design
 - [ ] Cheat Sheets / Tools
     * [ ] Git

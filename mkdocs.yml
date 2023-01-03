@@ -163,6 +163,15 @@ nav:
       - Chap 9 : Mathematics_Basis/NA/Chap_9.md
   - Computer Science Courses:
     - Computer_Science_Courses/index.md
+    - 数据结构基础 | Fundemental of Data Structure:
+      - Algorithm Analysis: Computer_Science_Courses/FDS/Algorithm_Analysis.md
+      - Lists, Stacks and Queues: Computer_Science_Courses/FDS/Lists_Stacks_and_Queues.md
+      - Trees: Computer_Science_Courses/FDS/Trees.md
+      - Hashing: Computer_Science_Courses/FDS/Hashing.md
+      - Priority Queues: Computer_Science_Courses/FDS/Priority_Queues.md
+      - Sort: Computer_Science_Courses/FDS/Sort.md
+      - Disjoint Set: Computer_Science_Courses/FDS/Disjoint_Set.md
+      - Graph: Computer_Science_Courses/FDS/Grpah.md
     - 计算机视觉导论 | Introduction to Computer Vision:
       - Lecture 1 : Computer_Science_Courses/ICV/1_Introduction.md
       - Lecture 2 : Computer_Science_Courses/ICV/2_Image_Formation.md
