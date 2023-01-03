@@ -6,10 +6,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="sakuratsuyu" name="author"/>
-<link href="https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICV/3_Image_Processing/" rel="canonical"/>
+<link href="https://sakuratsuyu.github.io/Note/Computer_Science_Courses/FDS/Graph/" rel="canonical"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.8" name="generator"/>
-<title>Lecture 3 - NOTES</title>
+<title>Graph - NOTES</title>
 <link href="../../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.815d1a91.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h226.7c17 0 33.3-6.7 45.3-18.7l93.3-93.3c12-12 18.7-28.3 18.7-45.3V96c0-35.3-28.7-64-64-64H64zm0 64h320v224h-64c-17.7 0-32 14.3-32 32v64H64V96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -35,9 +35,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#lecture-3-imae-processing">
-          跳转至
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -59,7 +56,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Lecture 3
+              Graph
             
           </span>
 </div>
@@ -136,7 +133,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../">
+<a class="md-tabs__link" href="../../">
         Computer Science Courses
       </a>
 </li>
@@ -285,8 +282,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../">Computer Science Courses</a>
 <label for="__nav_3">
@@ -312,50 +309,50 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../FDS/Algorithm_Analysis/">
+<a class="md-nav__link" href="../Algorithm_Analysis/">
         Algorithm Analysis
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../FDS/Lists_Stacks_and_Queues/">
+<a class="md-nav__link" href="../Lists_Stacks_and_Queues/">
         Lists, Stacks and Queues
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../FDS/Trees/">
+<a class="md-nav__link" href="../Trees/">
         Trees
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../FDS/Hashing/">
+<a class="md-nav__link" href="../Hashing/">
         Hashing
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../FDS/Priority_Queues/">
+<a class="md-nav__link" href="../Priority_Queues/">
         Priority Queues
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../FDS/Sort/">
+<a class="md-nav__link" href="../Sort/">
         Sort
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../FDS/Disjoint_Set/">
+<a class="md-nav__link" href="../Disjoint_Set/">
         Disjoint Set
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../FDS/Grpah.md">
+<a class="md-nav__link" href="../Grpah.md">
         Graph
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3">
           计算机视觉导论 | Introduction to Computer Vision
           <span class="md-nav__icon md-icon"></span>
@@ -367,175 +364,62 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../1_Introduction/">
+<a class="md-nav__link" href="../../ICV/1_Introduction/">
         Lecture 1
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2_Image_Formation/">
+<a class="md-nav__link" href="../../ICV/2_Image_Formation/">
         Lecture 2
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Lecture 3
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/3_Image_Processing/">
         Lecture 3
       </a>
-<nav aria-label="Content" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Content
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-processing-basis">
-    Image Processing Basis
-  </a>
-<nav aria-label="Image Processing Basis" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#convolution">
-    Convolution
-  </a>
-<nav aria-label="Convolution" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gaussian-blur">
-    Gaussian Blur
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#sharpen">
-    Sharpen
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#extract-gradients">
-    Extract Gradients
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bilateral-filters">
-    Bilateral Filters
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-sampling">
-    Image Sampling
-  </a>
-<nav aria-label="Image Sampling" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#aliasing">
-    Aliasing
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fourier-transform">
-    Fourier Transform
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#from-the-view-of-fourier-transform">
-    From the view of Fourier Transform ...
-  </a>
-<nav aria-label="From the view of Fourier Transform ..." class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sampling-and-aliasing">
-    Sampling and Aliasing
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-magnification">
-    Image Magnification
-  </a>
-<nav aria-label="Image Magnification" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1d-interpolation">
-    1D Interpolation
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2d-interpolation">
-    2D Interpolation
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#super-resolution">
-    Super-Resolution
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#change-aspect-ratio">
-    Change Aspect Ratio
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../4_Model_Fitting_and_Optimization/">
+<a class="md-nav__link" href="../../ICV/4_Model_Fitting_and_Optimization/">
         Lecture 4
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../5_Image_Matching_and_Motion_Estimation/">
+<a class="md-nav__link" href="../../ICV/5_Image_Matching_and_Motion_Estimation/">
         Lecture 5
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../6_Image_Stitching/">
+<a class="md-nav__link" href="../../ICV/6_Image_Stitching/">
         Lecture 6
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../7_Structure_from_Motion/">
+<a class="md-nav__link" href="../../ICV/7_Structure_from_Motion/">
         Lecture 7
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../8_Depth_Estimation_and_3D_Reconstruction/">
+<a class="md-nav__link" href="../../ICV/8_Depth_Estimation_and_3D_Reconstruction/">
         Lecture 8
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../9_Deep_Learning/">
+<a class="md-nav__link" href="../../ICV/9_Deep_Learning/">
         Lecture 9
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../10_Recognition/">
+<a class="md-nav__link" href="../../ICV/10_Recognition/">
         Lecture 10
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../11_3D_Deep_Learning/">
+<a class="md-nav__link" href="../../ICV/11_3D_Deep_Learning/">
         Lecture 11
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../12_13_Computational_Photography/">
+<a class="md-nav__link" href="../../ICV/12_13_Computational_Photography/">
         Lecture 12/13
       </a>
 </li>
@@ -594,313 +478,30 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Content
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-processing-basis">
-    Image Processing Basis
-  </a>
-<nav aria-label="Image Processing Basis" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#convolution">
-    Convolution
-  </a>
-<nav aria-label="Convolution" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gaussian-blur">
-    Gaussian Blur
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sharpen">
-    Sharpen
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#extract-gradients">
-    Extract Gradients
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bilateral-filters">
-    Bilateral Filters
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-sampling">
-    Image Sampling
-  </a>
-<nav aria-label="Image Sampling" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#aliasing">
-    Aliasing
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fourier-transform">
-    Fourier Transform
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#from-the-view-of-fourier-transform">
-    From the view of Fourier Transform ...
-  </a>
-<nav aria-label="From the view of Fourier Transform ..." class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sampling-and-aliasing">
-    Sampling and Aliasing
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-magnification">
-    Image Magnification
-  </a>
-<nav aria-label="Image Magnification" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1d-interpolation">
-    1D Interpolation
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2d-interpolation">
-    2D Interpolation
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#super-resolution">
-    Super-Resolution
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#change-aspect-ratio">
-    Change Aspect Ratio
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/ICV/3_Image_Processing.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/FDS/Graph.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="lecture-3-imae-processing">Lecture 3 Imae Processing<a class="headerlink" href="#lecture-3-imae-processing" title="Permanent link">¶</a></h1>
-<h2 id="image-processing-basis">Image Processing Basis<a class="headerlink" href="#image-processing-basis" title="Permanent link">¶</a></h2>
-<p>Operations: Incresing contrast, Invert, Blur, Sharpen, Edge Detection</p>
-<h3 id="convolution">Convolution<a class="headerlink" href="#convolution" title="Permanent link">¶</a></h3>
-<div class="arithmatex">\[
-(f * g)(x) = \int_{-\infty}^\infty f(y)g(x-y)dy
-\]</div>
-<p>discrete 2D form</p>
-<div class="arithmatex">\[
-(f * g)(x) = \sum_{i, j =-\infty}^\infty f(i, j)g(x - i, y - j)
-\]</div>
-<h4 id="gaussian-blur">Gaussian Blur<a class="headerlink" href="#gaussian-blur" title="Permanent link">¶</a></h4>
-<p>2D Gaussian function</p>
-<div class="arithmatex">\[
-\large f(i, j) = \frac{1}{2\pi\sigma^2}e^{-\frac{i^2 + j^2}{2\sigma^2}}
-\]</div>
-<div class="admonition note">
-<p class="admonition-title">Usage</p>
-<ul>
-<li>Define a window size (commmly a square, say <span class="arithmatex">\(n \times n\)</span>, and let <span class="arithmatex">\(r = \lfloor n / 2 \rfloor\)</span>).</li>
-<li>Select a point, say <span class="arithmatex">\((x, y)\)</span> and then a window around it.</li>
-<li>Apply the Gaussian function at each point in the window, and sum them up, namely <span class="arithmatex">\(G(x, y) = \sum\limits_{i = x - r}^{x + r}\sum\limits_{j = y - r}^{y + r}f(i,j)\)</span>.</li>
-<li>Then the "blurred" value of point <span class="arithmatex">\((x, y)\)</span> is <span class="arithmatex">\(G(x, y)\)</span>.</li>
-</ul>
-</div>
-<h4 id="sharpen">Sharpen<a class="headerlink" href="#sharpen" title="Permanent link">¶</a></h4>
-<div class="admonition example">
-<p class="admonition-title">An example of kernel matrix</p>
-<div class="arithmatex">\[
-f = \begin{bmatrix}
-0 &amp; -1 &amp; 0 \\
--1 &amp; 5 &amp; -1 \\
-0 &amp; -1 &amp; 0
-\end{bmatrix}
-\]</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">An insight</p>
-<p>Let <span class="arithmatex">\(I\)</span> be the original image, then the sharpen image <span class="arithmatex">\(I' = I + (I - \text{blur}(I))\)</span>, where <span class="arithmatex">\(I - \text{blur}(I)\)</span> can be regarded as the high frequency content.</p>
-</div>
-<h4 id="extract-gradients">Extract Gradients<a class="headerlink" href="#extract-gradients" title="Permanent link">¶</a></h4>
-<div class="admonition example">
-<p class="admonition-title">Examples of kernel matrix</p>
-<ul>
-<li><span class="arithmatex">\(f = \begin{bmatrix} -1 &amp; 0 &amp; 1 \\ -2 &amp; 0 &amp; 2 \\ -1 &amp; 0 &amp; 1\end{bmatrix}\)</span>extracts horizontal gradients.</li>
-<li><span class="arithmatex">\(f = \begin{bmatrix}  -1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{bmatrix}\)</span>extracts vertical gradients.</li>
-</ul>
-</div>
-<h4 id="bilateral-filters">Bilateral Filters<a class="headerlink" href="#bilateral-filters" title="Permanent link">¶</a></h4>
-<p><u>Kernel depends on image content.</u></p>
-<p>Better performance but lower efficiency.</p>
-<div class="admonition tip">
-<p class="admonition-title">A trick: Separable Filter</p>
-<p>A filter is separable if it can be wriiten as the outer product of two other filters.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="arithmatex">\[
-\frac19 \begin{bmatrix} 1 &amp; 1 &amp; 1\\ 1 &amp; 1 &amp; 1\\ 1 &amp; 1 &amp; 1 \end{bmatrix} =  \frac13 \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \times \frac13 \begin{bmatrix} 1 &amp; 1 &amp; 1 \end{bmatrix} 
-\]</div>
-</div>
-<p><strong>Purpose / Advantages</strong>: speed up the calculation</p>
-</div>
-<h2 id="image-sampling">Image Sampling<a class="headerlink" href="#image-sampling" title="Permanent link">¶</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
-<p>Down-sampling → Reducing image size</p>
-</div>
-<h3 id="aliasing">Aliasing<a class="headerlink" href="#aliasing" title="Permanent link">¶</a></h3>
-<p>Aliasing is the artifacts due to sampling</p>
-<p>Higher frequencies need faster sampling.</p>
-<p>Undersampling creates frequency aliases.</p>
-<div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_0.png"><img alt="lec3_0" src="../Pic/lec3_0.png" style="width:400px"/></a>
-</div>
-<h3 id="fourier-transform">Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permanent link">¶</a></h3>
-<p>Simly put, fourier transform represents a function as a <strong>weighted sum</strong> of <u>sines and cosines</u>, where the sines and consines are in various <strong>frequencies</strong>.</p>
-<div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_1.png"><img alt="lec3_1" src="../Pic/lec3_1.png" style="width:800px"/></a>
-</div>
-<div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_2.png"><img alt="lec3_2" src="../Pic/lec3_2.png" style="width:200px"/></a>
-</div>
-<div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_3.png"><img alt="lec3_3" src="../Pic/lec3_3.png" style="width:500px"/></a>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Convolution Theorem</p>
-<p><div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_4.png"><img alt="lec3_4" src="../Pic/lec3_4.png" style="width:500px"/></a>
-</div></p>
-</div>
-<h3 id="from-the-view-of-fourier-transform">From the view of Fourier Transform ...<a class="headerlink" href="#from-the-view-of-fourier-transform" title="Permanent link">¶</a></h3>
-<h4 id="sampling-and-aliasing">Sampling and Aliasing<a class="headerlink" href="#sampling-and-aliasing" title="Permanent link">¶</a></h4>
-<p>Sampling is repeating frequency contents. Aliasing is mixed frequency contents.</p>
-<div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_5.png"><img alt="lec3_5" src="../Pic/lec3_5.png" style="width:500px"/></a>
-</div>
-<div class="admonition success">
-<p class="admonition-title">Method to reduce aliasing</p>
-<ul>
-<li>Increase sampling rate</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Nyquist-Shannon theorem<p>the signal can be perfectly reconstructed if sampled with a frequency larger than <span class="arithmatex">\(2f_0\)</span>.
-<div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_6.png"><img alt="lec3_6" src="../Pic/lec3_6.png" style="width:400px"/></a>
-</div></p>
-</p>
-</div>
-<ul>
-<li>Anti-aliasing<ul>
-<li>Filtering, then sampling
-    <div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_7.png"><img alt="lec3_7" src="../Pic/lec3_7.png" style="width:500px"/></a>
-</div></li>
-</ul>
-</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Example<p><div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_8.png"><img alt="lec3_8" src="../Pic/lec3_8.png" style="width:500px"/></a>
-</div></p>
-</p>
-</div>
-</div>
-<h2 id="image-magnification">Image Magnification<a class="headerlink" href="#image-magnification" title="Permanent link">¶</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
-<p>Up-sampling - Inverse of down-sampling</p>
-</div>
-<p>An important method: <strong>Interpolation</strong>.</p>
-<h3 id="1d-interpolation">1D Interpolation<a class="headerlink" href="#1d-interpolation" title="Permanent link">¶</a></h3>
-<ul>
-<li>Nearest-neighbour Interpolation<ul>
-<li>Not continuous; Not smooth
-        <div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_9.png"><img alt="lec3_9" src="../Pic/lec3_9.png" style="width:400px"/></a>
-</div></li>
-</ul>
-</li>
-<li>Linear Interpolation<ul>
-<li>Continuous; Not smooth
-        <div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_10.png"><img alt="lec3_10" src="../Pic/lec3_10.png" style="width:400px"/></a>
-</div></li>
-</ul>
-</li>
-<li>Cubic Interpolation<ul>
-<li>Continuous; Smooth
-        <div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_11.png"><img alt="lec3_11" src="../Pic/lec3_11.png" style="width:400px"/></a>
-</div></li>
-</ul>
-</li>
-</ul>
-<h3 id="2d-interpolation">2D Interpolation<a class="headerlink" href="#2d-interpolation" title="Permanent link">¶</a></h3>
-<p>(similar to 1D cases)</p>
-<ul>
-<li>Nearest-neighbour Interpolation</li>
-<li>Bilinear Interpolation<ul>
-<li>define <span class="arithmatex">\(\text{lerp}(x, v_0,v_1) = v_0 + x(v_1 - v_0)\)</span>.</li>
-<li>Suppose the point in the rectangle surrounded by four points <span class="arithmatex">\(u_{00},u_{01},u_{10},u_{11}\)</span>.</li>
-<li>then <span class="arithmatex">\(f(x, y) = \text{lerp}(t, u_0, u_1)\)</span>, where <span class="arithmatex">\(u_0 = \text{lerp}(s, u_{00}, u_{10})\)</span> and <span class="arithmatex">\(u_1 = \text{lerp}(s, u_{01}, u_{11})\)</span>.</li>
-</ul>
-</li>
-<li>Bicubic Interpolation
-        <div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_12.png"><img alt="lec3_12" src="../Pic/lec3_12.png" style="width:600px"/></a>
-</div></li>
-</ul>
-<h3 id="super-resolution">Super-Resolution<a class="headerlink" href="#super-resolution" title="Permanent link">¶</a></h3>
-<div class="admonition question">
-<p class="admonition-title">Remains</p>
-</div>
-<h3 id="change-aspect-ratio">Change Aspect Ratio<a class="headerlink" href="#change-aspect-ratio" title="Permanent link">¶</a></h3>
-<div class="admonition question">
-<p class="admonition-title">Remains</p>
-</div>
+<h1>Graph</h1>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.17 20:42:25 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.04 01:26:14 CST</span>
 <br/>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.09 00:35:37 CST</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
 </small>
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
@@ -913,34 +514,6 @@ f = \begin{bmatrix}
           </a>
 </main>
 <footer class="md-footer">
-<nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: Lecture 2" class="md-footer__link md-footer__link--prev" href="../2_Image_Formation/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                上一页
-              </span>
-              Lecture 2
-            </div>
-</div>
-</a>
-<a aria-label="下一页: Lecture 4" class="md-footer__link md-footer__link--next" href="../4_Model_Fitting_and_Optimization/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                下一页
-              </span>
-              Lecture 4
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
