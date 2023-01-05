@@ -52,21 +52,21 @@
 
             $$
             \begin{aligned}
-            & \text{Parent}(i) = \left\{
+            \text{Parent}(i) &= \left\{
                 \begin{aligned}
                     & \lfloor i / 2 \rfloor, & i \ne 1 \\
                     & \text{None}, & i = 1.
                 \end{aligned}
             \right.
             \\
-            & \text{LeftChild}(i) = \left\{
+            \text{LeftChild}(i) &= \left\{
                 \begin{aligned}
                     & 2i, & 2i \le n \\
                     & \text{None}, & 2i > n.
                 \end{aligned}
             \right.
             \\
-            & \text{RightChild}(i) = \left\{
+            \text{RightChild}(i) &= \left\{
                 \begin{aligned}
                     & 2i + 1, & 2i + 1 \le n \\
                     & \text{None}, & 2i + 1 > n.
