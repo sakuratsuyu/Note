@@ -55,3 +55,7 @@ p {
 .arithmatex {
     font-size: var(--text-font-size);
 }
+
+.highlight span.filename {
+    font-size: var(--text-font-size);
+}
