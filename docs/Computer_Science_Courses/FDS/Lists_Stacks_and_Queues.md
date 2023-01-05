@@ -31,9 +31,7 @@ Following are some implementations of list.
 
 We say it a *sequential mapping* or *sequantial storage structure*.
 
-#### Data Type
-
-```C
+```C title="Data Type"
 typedef int ElementType;
 typedef struct {
    ElementType *array;
@@ -78,10 +76,8 @@ typedef struct {
     }
 
     void Insert(List *list, const int position, const ElementType element) {
-        if (position < 0 || position >= list->size || list->size == list->capacity) {
-            // WARNING
-            return;
-        }
+        assert(0 < position && position <= list->size &&
+               (list->capacity == -1 || list->size < list->capacity));
         list->size ++;
         for (int i = list->size; i > position; i --) {
             list->array[i] = list->array[i - 1];
@@ -90,10 +86,7 @@ typedef struct {
     }
 
     void Delete(List *list, const int position) {
-        if (position < 0 || position >= list->size || list->size == 0) {
-            // WARNING
-            return;
-        }
+        assert(0 <= position && postion < list->size && list->size > 0);
         list->size --;
         for (int i = position; i < size; i ++ ) {
             list->array[i] = list->array[i + 1];
@@ -114,9 +107,7 @@ typedef struct {
 
 We say it a *linked storage structure*.
 
-#### Data Type
-
-```C
+```C title="Data Type"
 typedef int ElementType;
 typedef struct _node {
     ElementType element;
@@ -171,11 +162,8 @@ typedef struct {
     }
 
     void Insert(List *list, const int position, const ElementType element) {
-        if (position < 0 || position > list->size || 
-            (list->capacity != -1 && list->size == list->capacity)) {
-            // WARNING
-            return;
-        }
+        assert(0 < position && position <= list->size &&
+               (list->capacity == -1 || list->size < list->capacity));
         Node *p = (Node *)malloc(sizeof(Node));
         p->element = element;
         p->next = NULL;
@@ -193,11 +181,7 @@ typedef struct {
     }
 
     void Delete(List *list, const int position) {
-        if (position < 0 || position >= list->size || list->size == 0) {
-            // WARNING
-            return;
-        }
-
+        assert(0 <= position && postion < list->size && list->size > 0);
         list->size --;
         Node *temp = NULL;
         if (position == 0) {
@@ -218,7 +202,7 @@ From the implementation, we find it complicated for the special judge of `positi
 
 ??? code "Linked List with Sentinel"
 
-    ```C hl_lines="5 6 7 53 54 55 56 67 68 69 70 71"
+    ```C hl_lines="5 6 7 50 51 52 53 60 61 62 63 64"
     List *CreateList(const int capacity) {
         List *list = (List *)malloc(sizeof(List));
         list->capacity = capacity;
@@ -261,11 +245,8 @@ From the implementation, we find it complicated for the special judge of `positi
     }
 
     void Insert(List *list, const int position, const ElementType element) {
-        if (position < 0 || position > list->size || 
-            (list->capacity != -1 && list->size == list->capacity)) {
-            // WARNING
-            return;
-        }
+        assert(0 < position && position <= list->size &&
+               (list->capacity == -1 || list->size < list->capacity));
         Node *p = (Node *)malloc(sizeof(Node));
         p->element = element;
         p->next = NULL;
@@ -278,11 +259,7 @@ From the implementation, we find it complicated for the special judge of `positi
     }
 
     void Delete(List *list, const int position) {
-        if (position < 0 || position >= list->size || list->size == 0) {
-            // WARNING
-            return;
-        }
-
+        assert(0 <= position && postion < list->size && list->size > 0);
         list->size --;
         Node *temp = NULL;
         Node *q = list->head;
@@ -306,9 +283,7 @@ From the implementation, we find it complicated for the special judge of `positi
 
 ### Doubly Linked List
 
-#### Data Type
-
-```C
+```C title="Data Type"
 typedef int ElementType;
 typedef struct _node {
     ElementType element;
@@ -326,7 +301,7 @@ Also, it's reasonable to add a field `Node *tail` to `List` and maintain `tail` 
 
 ??? code "Doubly Linked List with Sentinel"
 
-    ```C linenums="1" hl_lines="8 58 59 74"
+    ```C hl_lines="8 55 56 67"
     List *CreateList(const int capacity) {
         List *list = (List *)malloc(sizeof(List));
         list->capacity = capacity;
@@ -370,11 +345,8 @@ Also, it's reasonable to add a field `Node *tail` to `List` and maintain `tail` 
     }
 
     void Insert(List *list, const int position, const ElementType element) {
-        if (position < 0 || position > list->size || 
-            (list->capacity != -1 && list->size == list->capacity)) {
-            // WARNING
-            return;
-        }
+        assert(0 < position && position <= list->size &&
+               (list->capacity == -1 || list->size < list->capacity));
         Node *p = (Node *)malloc(sizeof(Node));
         p->element = element;
         p->next = p->prev = NULL;
@@ -389,11 +361,7 @@ Also, it's reasonable to add a field `Node *tail` to `List` and maintain `tail` 
     }
 
     void Delete(List *list, const int position) {
-        if (position < 0 || position >= list->size || list->size == 0) {
-            // WARNING
-            return;
-        }
-
+        assert(0 <= position && postion < list->size && list->size > 0);
         list->size --;
         Node *temp = NULL;
         Node *q = list->head;
@@ -417,7 +385,7 @@ int pos = ((position % list->size) + list->size) % list->size;
 
 ??? code "Circularly Doubly Linked List with Sentinel"
 
-    ```C hl_lines="7 8 39 40 55 71"
+    ```C hl_lines="7 8 39 40 53 65"
     List *CreateList(const int capacity) {
         List *list = (List *)malloc(sizeof(List));
         list->capacity = capacity;
@@ -462,10 +430,8 @@ int pos = ((position % list->size) + list->size) % list->size;
     }
 
     void Insert(List *list, const int position, const ElementType element) {
-        if (list->capacity != -1 && list->size == list->capacity) {
-            // WARNING
-            return;
-        }
+        assert(0 < position && position <= list->size &&
+               (list->capacity == -1 || list->size < list->capacity));
 
         Node *p = (Node *)malloc(sizeof(Node));
         p->element = element;
@@ -483,11 +449,7 @@ int pos = ((position % list->size) + list->size) % list->size;
     }
 
     void Delete(List *list, const int position) {
-        if (list->size == 0) {
-            // WARNING
-            return;
-        }
-
+        assert(list->size > 0);
         int pos = ((position % list->size) + list->size) % list->size;
         list->size --;
 
@@ -536,9 +498,7 @@ Reference: [静态链表及实现（C语言）详解](http://data.biancheng.net/
 
 Simply put, we need an array to maintain **TWO** linked lists, one for data, the other for the unused space. The head of the unused space list is commonly at position `0`.
 
-#### Data Type
-
-```C
+```C title="Data Type"
 #define MAXN 1000
 typedef int ElementType;
 typedef struct {
@@ -616,10 +576,9 @@ Also, we can consider the sentinel, the tail, and the double and circular proper
     }
 
     void Insert(List *list, const int position, const ElementType element) {
-        if (position < 0 || position > list->size || list->size == MAXN) {
-            // WARNING
-            return;
-        }
+        assert(0 < position && position <= list->size &&
+               (list->capacity == -1 || list->size < list->capacity));
+
         int p = MemAlloc(list);
         list->MEM_SPACE[p].element = element;
         list->MEM_SPACE[p].next = 0;
@@ -632,11 +591,7 @@ Also, we can consider the sentinel, the tail, and the double and circular proper
     }
 
     void Delete(List *list, const int position) {
-        if (position < 0 || position >= list->size || list->size == 0) {
-            // WARNING
-            return;
-        }
-
+        assert(0 <= postion && position < list->size && list->size > 0);
         list->size --;
         int temp = 0;
         int q = list->head;
@@ -665,9 +620,7 @@ A stack is a **Last-In-First-Out (LIFO)** list.
     - **Push** a new item onto a stack.
     - **Pop** an item from a stack.
 
-### Data Type
-
-```C
+```C title="Data Type"
 typedef int ElementType;
 typedef struct _node {
     ElementType element;
@@ -767,9 +720,7 @@ A queue is a **First-In-First-Out (FIFO)** list.
     - **Enqueue** a new item to a queue.
     - **Dequeue** an item from a queue.
 
-### Data Type
-
-```C
+```C title="Data Type" 
 typedef int ElementType;
 typedef struct _node {
     ElementType element;
