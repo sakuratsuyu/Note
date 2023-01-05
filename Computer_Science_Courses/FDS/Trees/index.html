@@ -35,6 +35,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#trees">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -325,9 +328,88 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Trees
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Trees
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+<nav aria-label="Implementation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-representation">
+    List Representation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#firstchild-nextsibling-representation">
+    FirstChild-NextSibling Representation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-tree">
+    Binary Tree
+  </a>
+<nav aria-label="Binary Tree" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#traversals">
+    Traversals
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#threaded-binary-trees">
+    Threaded Binary Trees
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-search-tree-bst">
+    Binary Search Tree (BST)
+  </a>
+<nav aria-label="Binary Search Tree (BST)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#time-complexity">
+    Time Complexity
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#avl-tree">
+    AVL Tree
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#splay-tree">
+    Splay Tree
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-tree">
+    B-Tree
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Hashing/">
@@ -484,6 +566,79 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+<nav aria-label="Implementation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-representation">
+    List Representation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#firstchild-nextsibling-representation">
+    FirstChild-NextSibling Representation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-tree">
+    Binary Tree
+  </a>
+<nav aria-label="Binary Tree" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#traversals">
+    Traversals
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#threaded-binary-trees">
+    Threaded Binary Trees
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-search-tree-bst">
+    Binary Search Tree (BST)
+  </a>
+<nav aria-label="Binary Search Tree (BST)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#time-complexity">
+    Time Complexity
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#avl-tree">
+    AVL Tree
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#splay-tree">
+    Splay Tree
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-tree">
+    B-Tree
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -493,13 +648,276 @@
 <a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/FDS/Trees.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Trees</h1>
+<h1 id="trees">Trees<a class="headerlink" href="#trees" title="Permanent link">¶</a></h1>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <strong>tree</strong> is a collection of nodes. The collection can be empty; otherwise, a tree consists of</p>
+<ul>
+<li>a distinguished node <span class="arithmatex">\(r\)</span>, called the <strong>root</strong>.</li>
+<li>zero or more nonempty <strong>subtrees</strong> <span class="arithmatex">\(T_1, \dots, T_k\)</span>, each of whose roots are connected by a directed <strong>edge</strong> from<span class="arithmatex">\(r\)</span>.</li>
+</ul>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<ul>
+<li><strong>Degree of a node:</strong>         number of subtrees of the node.</li>
+<li><strong>Degree of a tree:</strong>         maximum among the degrees of all nodes.</li>
+<li><strong>Parent:</strong>                   a node that has subtrees.</li>
+<li><strong>Children:</strong>                 the roots of the subtrees of parent.</li>
+<li><strong>Siblings:</strong>                 children of the same parent.</li>
+<li><strong>Leaf (terminal node):</strong>     a node with degree <span class="arithmatex">\(0\)</span> (no children).</li>
+<li><strong>Path from <span class="arithmatex">\(n_1\)</span> to <span class="arithmatex">\(n_k\)</span>:</strong> a unique sequence of nodes <span class="arithmatex">\(n_1,n_2,\dots,n_k\)</span> such that <span class="arithmatex">\(n_i\)</span> is the parent of <span class="arithmatex">\(n_{i+1}\)</span>.</li>
+<li><strong>Length of path:</strong>           number of edges on the path.</li>
+<li><strong>Ancestor of a node:</strong>       all the nodes along the path from the node up to the root.</li>
+<li><strong>Descendants of a node:</strong>    all the nodes in its subtrees.</li>
+<li><strong>Depth of <span class="arithmatex">\(n_k\)</span>:</strong>           length of the unique path from the root to <span class="arithmatex">\(n_i\)</span>.</li>
+<li><strong>Height of <span class="arithmatex">\(n_k\)</span>:</strong>          length of the longest path from <span class="arithmatex">\(n_i\)</span> to a leaf.</li>
+<li><strong>Height / Depth of a tree:</strong> the height of the root or the maximum depth among all leaves.</li>
+</ul>
+</div>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">¶</a></h2>
+<p>Consider the following tree.</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/1.png"><img src="../Pic/1.png" style="width:300px"/></a>
+</div>
+<h3 id="list-representation">List Representation<a class="headerlink" href="#list-representation" title="Permanent link">¶</a></h3>
+<ul>
+<li>Array Representation</li>
+</ul>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/2.png"><img src="../Pic/2.png" style="width:400px"/></a>
+</div>
+<ul>
+<li>Linked List Representation</li>
+</ul>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/3.png"><img src="../Pic/3.png" style="width:300px"/></a>
+</div>
+<h3 id="firstchild-nextsibling-representation">FirstChild-NextSibling Representation<a class="headerlink" href="#firstchild-nextsibling-representation" title="Permanent link">¶</a></h3>
+<p>This representation is not unique with different <code>FirstChild</code> chosen.</p>
+<div align="center" style="height:200px;">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/4.png"><img src="../Pic/4.png" style="width:200px; vertical-align:middle;"/></a>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/5.png"><img src="../Pic/5.png" style="width:300px; vertical-align:middle;"/></a>
+</div>
+<h2 id="binary-tree">Binary Tree<a class="headerlink" href="#binary-tree" title="Permanent link">¶</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <strong>binary tree</strong> is a tree in which no node can have more than two children.</p>
+</div>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/6.png"><img src="../Pic/6.png" style="width:200px"/></a>
+</div>
+<p>Since it has the same structure of FirstChild-NextSibling Representation, thus <strong>all trees can be represented by binary trees</strong>.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Property</p>
+<ul>
+<li>In a binary tree, left child and right child are different.</li>
+<li>The maximum number of nodes of level <span class="arithmatex">\(i\)</span> is <span class="arithmatex">\(2^{i - 1}\)</span>. The maximum number of nodes in a binary tree of depth <span class="arithmatex">\(k\)</span> is <span class="arithmatex">\(2^k - 1\)</span>.</li>
+<li><span class="arithmatex">\(n_0 = n_2 + 1\)</span>, where <span class="arithmatex">\(n_0\)</span> is the number of leaf nodes and <span class="arithmatex">\(n_2\)</span> is the number of nodes of degreee 2.</li>
+</ul>
+</div>
+<div class="highlight"><span class="filename">Data Type</span><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ElementType</span><span class="p">;</span><span class="w"></span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">left</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">Tree</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="traversals">Traversals<a class="headerlink" href="#traversals" title="Permanent link">¶</a></h3>
+<p>The following three types of traversal are implemented by recursion, or alternatively by a stack with iteration.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Preorder Traversal 前序遍历</label><label for="__tabbed_1_2">Inorder Traversal 中序遍历</label><label for="__tabbed_1_3">Postorder Traversal 后序遍历</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Preorder</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Preorder</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Preorder</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Inorder</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">Inorder</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Inorder</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Postorder</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">Postorder</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Postorder</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</input></input></input></div>
+<p><strong>Levelorder Traversal 层序遍历 / 宽度优先遍历</strong></p>
+<p>Levelorder traversal are implemented by a queue.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Levelorder</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Enqueue</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span><span class="w"> </span><span class="n">tree</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">IsEmptyQueue</span><span class="p">(</span><span class="n">queue</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dequeue</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span><span class="w"> </span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">Enqueue</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span><span class="w"> </span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">Enqueue</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span><span class="w"> </span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="threaded-binary-trees">Threaded Binary Trees<a class="headerlink" href="#threaded-binary-trees" title="Permanent link">¶</a></h3>
+<p>There are <span class="arithmatex">\(n + 1\)</span> <code>NULL</code> children of the leaf nodes of a binarty tree with <span class="arithmatex">\(n\)</span> nodes. We want to make these <code>NULL</code> pointers more useful. And here comes the <strong>Threaded Binary Trees</strong>.</p>
+<div class="highlight"><span class="filename">Data Type</span><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ElementType</span><span class="p">;</span><span class="w"></span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ThreadedTreeNode</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">ThreadedTreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">left</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">ThreadedTreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">leftThread</span><span class="p">;</span><span class="w">    </span><span class="c1">// `true` to indicate `left` is a thread instead of a child pointer.</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">rightThread</span><span class="p">;</span><span class="w">   </span><span class="c1">// `true` to indicate `right` is a thread instead of a child pointer.</span>
+<span class="p">}</span><span class="w"> </span><span class="n">ThreadedTree</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition theorem">
+<p class="admonition-title">Rule for Threaded Binary Trees</p>
+<p><strong>Rule 1:</strong> If <code>tree-&gt;left == NULL</code>, then replace it with a pointer to its <strong>inorder predecessor</strong>.</p>
+<p><strong>Rule 2:</strong> If <code>tree-&gt;right == NULL</code>, then replace it with a pointer to its <strong>inorder sucessor</strong>.</p>
+<p><strong>Rule 3:</strong> A threaded binary tree must have a <strong>head node</strong> of which the left child points to the first node.</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<p>The following is the infix syntax tree of </p>
+<div class="arithmatex">\[
+    A + B * C / D.
+\]</div>
+<p><div align="center" style="height:300px;">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/7.png"><img src="../Pic/7.png" style="height:200px; vertical-align:middle;"/></a>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/8.png"><img src="../Pic/8.png" style="height:300px; vertical-align:middle;"/></a>
+</div></p>
+</details>
+<h2 id="binary-search-tree-bst">Binary Search Tree (BST)<a class="headerlink" href="#binary-search-tree-bst" title="Permanent link">¶</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <strong>binary search tree</strong> is a <em>binary tree</em>. It may be empty. If it is not empty, it satisfies the following properties:</p>
+<ul>
+<li>Every node has a key which is an integer, and the keys are <strong>distinct</strong>.</li>
+<li>The keys in a nonempty <strong>left</strong> subtree must be <strong>smaller</strong> than the key in the root of the subtree.</li>
+<li>The keys in a nonempty <strong>right</strong> subtree must be <strong>larger</strong> than the key in the root of the subtree.</li>
+<li>The left and right subtrees are also binary search trees.</li>
+</ul>
+</div>
+<div class="admonition list">
+<p class="admonition-title">ADT</p>
+<p><strong>Objects:</strong> A finite ordered list with zero or more elements.</p>
+<p><strong>Operations:</strong></p>
+<ul>
+<li>Make an empty BST.</li>
+<li><strong>Find</strong> a key in a BST.</li>
+<li><strong>Find</strong> the <strong>minimum</strong> key in a BST.</li>
+<li><strong>Find</strong> the <strong>maximum</strong> key in a BST.</li>
+<li><strong>Insert</strong> a key to a BST.</li>
+<li><strong>Delete</strong> a key in a BST.</li>
+</ul>
+</div>
+<div class="admonition code">
+<p class="admonition-title">BST</p>
+<div class="highlight"><pre><span></span><code><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="nf">Find</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">element</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">tree</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">elemet</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="nf">FindMin</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">tree</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">FindMin</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="nf">FindMax</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">tree</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">FindMax</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="nf">Insert</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">TreeNode</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">element</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Insert</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Insert</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tree</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="nf">Delete</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Warning: Element not found.</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">element</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FindMin</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span><span class="w"> </span><span class="c1">// (1)!</span>
+<span class="w">            </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Delete</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tree</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">free</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">element</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Delete</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Delete</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>Here it's replaced with the <strong>smallest</strong> node in the right subtree. Or alternatively it can be replaced with the <strong>largest</strong> node in the left subtree.</li>
+</ol>
+</div>
+<h3 id="time-complexity">Time Complexity<a class="headerlink" href="#time-complexity" title="Permanent link">¶</a></h3>
+<p>The average complexities of all operations are <span class="arithmatex">\(O(d)\)</span>, where <span class="arithmatex">\(d\)</span> is the depth of the target node. The average depth over all nodes in a tree is <span class="arithmatex">\(O(\log N)\)</span>.</p>
+<p>But for the worst cases, when building a tree by inserting a set of oredered elements, it will degenerate to linear list with <span class="arithmatex">\(O(N)\)</span> complexity of each operation.</p>
+<h2 id="avl-tree">AVL Tree<a class="headerlink" href="#avl-tree" title="Permanent link">¶</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Remains</p>
+</div>
+<h2 id="splay-tree">Splay Tree<a class="headerlink" href="#splay-tree" title="Permanent link">¶</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Remains</p>
+</div>
+<h2 id="b-tree">B-Tree<a class="headerlink" href="#b-tree" title="Permanent link">¶</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Remains</p>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.04 01:26:14 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.05 16:51:02 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
@@ -507,7 +925,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>

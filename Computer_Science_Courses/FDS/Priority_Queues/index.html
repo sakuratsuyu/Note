@@ -35,6 +35,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#priority-queues">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -335,9 +338,75 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Priority Queues
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Priority Queues
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-heap">
+    Binary Heap 二叉堆
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-heap-operations">
+    Other Heap Operations
+  </a>
+<nav aria-label="Other Heap Operations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-heap">
+    Build Heap
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#increase-decrease-value">
+    Increase / Decrease Value
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete">
+    Delete
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#d-heap">
+    d-Heap
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#leftist-tree-heap">
+    Leftist Tree / Heap 左偏树
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#skew-heap">
+    Skew Heap 斜堆
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binomial-queues">
+    Binomial Queues 二项队列 / 二项堆
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Sort/">
@@ -484,6 +553,66 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-heap">
+    Binary Heap 二叉堆
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-heap-operations">
+    Other Heap Operations
+  </a>
+<nav aria-label="Other Heap Operations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-heap">
+    Build Heap
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#increase-decrease-value">
+    Increase / Decrease Value
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete">
+    Delete
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#d-heap">
+    d-Heap
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#leftist-tree-heap">
+    Leftist Tree / Heap 左偏树
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#skew-heap">
+    Skew Heap 斜堆
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binomial-queues">
+    Binomial Queues 二项队列 / 二项堆
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -493,13 +622,259 @@
 <a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/FDS/Priority_Queues.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Priority Queues</h1>
+<h1 id="priority-queues">Priority Queues<a class="headerlink" href="#priority-queues" title="Permanent link">¶</a></h1>
+<p><strong>Priority queue (PQ, pq)</strong> is a <strong>First-In-Largest-Out</strong> queue. The elements must be <strong>comparable</strong>, which enables priority. Each element is added to the rear of the queue, and the prior element is deleted in the front of the queue. The implementation of priority queue is <strong>Heap</strong>.</p>
+<div class="admonition list">
+<p class="admonition-title">ADT</p>
+<p><strong>Objects:</strong> A finite ordered list with zero or more elements.</p>
+<p><strong>Operations:</strong></p>
+<ul>
+<li>Initialize a priority queue with a set of elements.</li>
+<li><strong>Find</strong> the prior element of a priority queue.</li>
+<li><strong>Insert</strong> a new element into a priority queue.</li>
+<li><strong>Delete</strong> the prior element of a priority queue.</li>
+</ul>
+</div>
+<details class="note">
+<summary>Comparison</summary>
+<p>Let's first consider some data structure to implement the operations we need above.</p>
+<ul>
+<li>Array<ul>
+<li>Insertion (Add one element at the end) - <span class="arithmatex">\(\Theta(1)\)</span>.</li>
+<li>Deletion (Find the prior key, remove and shift array) - <span class="arithmatex">\(\Theta(n) + O(n)\)</span></li>
+</ul>
+</li>
+<li>Linked List<ul>
+<li>Insertion (Add to the front of the list) - <span class="arithmatex">\(\Theta(1)\)</span></li>
+<li>Deletion (Find the prior key and remove it) - <span class="arithmatex">\(\Theta(n) + \Theta(1)\)</span>.</li>
+</ul>
+</li>
+<li>Ordered Array<ul>
+<li>Insertion (Find the proper position, shift array and add the element) - <span class="arithmatex">\(O(n) + O(n)\)</span></li>
+<li>Deletion (Remove the first element) - <span class="arithmatex">\(\Theta(1)\)</span></li>
+</ul>
+</li>
+<li>Ordered Linked List<ul>
+<li>Insertion (Find the proper position and add the element) - <span class="arithmatex">\(O(n) + \Theta(1)\)</span></li>
+<li>Deletion (Remove the first element) - <span class="arithmatex">\(\Theta(1)\)</span></li>
+</ul>
+</li>
+<li>BST / AVL tree<ul>
+<li>Both Insertion and Deletion are <span class="arithmatex">\(O(\log n)\)</span></li>
+<li>Many operations that we don't need</li>
+<li>Thus we modify it to a <strong>binary heap</strong></li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="binary-heap">Binary Heap 二叉堆<a class="headerlink" href="#binary-heap" title="Permanent link">¶</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A binary tree with <span class="arithmatex">\(n\)</span> nodes and height <span class="arithmatex">\(h\)</span> is called a <strong>complete binary tree</strong> iff its notes correspond to the nodes numbers from <span class="arithmatex">\(1\)</span> to <span class="arithmatex">\(n\)</span> (up to down and left to right) in a perfect binary tree of height <span class="arithmatex">\(h\)</span>.</p>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Property</p>
+<ul>
+<li>A complete binary tree of height <span class="arithmatex">\(h\)</span> has between <span class="arithmatex">\(2^h\)</span> and <span class="arithmatex">\(2^{h + 1} - 1\)</span> nodes, and thus</li>
+</ul>
+<div class="arithmatex">\[
+    h = \lfloor \log n \rfloor.
+\]</div>
+<ul>
+<li>A complete binary tree with <span class="arithmatex">\(n\)</span> nodes can be represented by an <strong>array</strong> with <span class="arithmatex">\(n + 1\)</span> items. (The zeroth is not used).<ul>
+<li>The array is built by the levelorder of the tree.</li>
+<li>
+<p>For any node with index <span class="arithmatex">\(i\)</span>, we have</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; \text{Parent}(i) = \left\{
+    \begin{aligned}
+        &amp; \lfloor i / 2 \rfloor, &amp; i \ne 1 \\
+        &amp; \text{None}, &amp; i = 1.
+    \end{aligned}
+\right.
+\\
+&amp; \text{LeftChild}(i) = \left\{
+    \begin{aligned}
+        &amp; 2i, &amp; 2i \le n \\
+        &amp; \text{None}, &amp; 2i &gt; n.
+    \end{aligned}
+\right.
+\\
+&amp; \text{RightChild}(i) = \left\{
+    \begin{aligned}
+        &amp; 2i + 1, &amp; 2i + 1 \le n \\
+        &amp; \text{None}, &amp; 2i + 1 &gt; n.
+    \end{aligned}
+\right.
+\end{aligned}
+\]</div>
+</li>
+</ul>
+</li>
+</ul>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/10.svg"><img src="../Pic/10.svg" style="width:500px"/></a>
+</div></p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <strong>min tree</strong> is a tree in which the key value in each node is <em>no larger</em> than the key values in its children (if any).  A <strong>min heap</strong> is a complete binary tree that is also a min tree.</p>
+<p>A <strong>max tree</strong> is a tree in which the key value in each node is <em>no smaller</em> than the key values in its children (if any).  A <strong>max heap</strong> is a complete binary tree that is also a max tree.</p>
+<p>Thus <strong>Heap</strong> consists of <strong>max heap</strong> and <strong>min heap</strong>. And a <strong>heap</strong> is a complete binary tree and a max / min tree.</p>
+</div>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">¶</a></h2>
+<div class="highlight"><span class="filename">Data Type</span><pre><span></span><code><span class="cp">#define MinData -1</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ElementType</span><span class="p">;</span><span class="w"></span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="o">*</span><span class="n">element</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p><strong>NOTE:</strong> The heap is stored in an <strong>array</strong> since it's a complete binary tree. And <code>element[0]</code> is a <strong>sentinel</strong>. If it's a min heap, then <code>element[0]</code> must store the smallest value <code>MinData</code>.</p>
+<div class="highlight"><span class="filename">Priority Queue</span><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">SwapElement</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="o">*</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="nf">CreateQueue</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">capacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">capacity</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">((</span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">capacity</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">ElementType</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MinData</span><span class="p">;</span><span class="w"> </span><span class="c1">// Sentinel</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Q</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">IsEmptyQueue</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">PercolateUp</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">parent</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">SwapElement</span><span class="p">(</span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">parent</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">PercolateDown</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">child</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">child</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">child</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">child</span><span class="w"> </span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">child</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">SwapElement</span><span class="p">(</span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">child</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">child</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">Insert</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">PercolateUp</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">ElementType</span><span class="w"> </span><span class="nf">DeleteMin</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">minElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">--</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="n">PercolateDown</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">minElement</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Time Complexity</strong></p>
+<p>Time complexities of both <code>Insert</code> and <code>DeleteMin</code> are <span class="arithmatex">\(O(\log n)\)</span>.</p>
+<h2 id="other-heap-operations">Other Heap Operations<a class="headerlink" href="#other-heap-operations" title="Permanent link">¶</a></h2>
+<h3 id="build-heap">Build Heap<a class="headerlink" href="#build-heap" title="Permanent link">¶</a></h3>
+<p>Suppose now there is an array of data and we want to build a heap based on the data. Instead of creating an empty heap and inserting one by one, we have the following faster implementation.</p>
+<div class="highlight"><pre><span></span><code><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="nf">BuildHeap</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">capacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">((</span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">ElementType</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">ElementType</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">pos</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">pos</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">PercolateDown</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Q</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Time Complexity</strong></p>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>For the perfect binary tree of heigh <span class="arithmatex">\(h\)</span> containing <span class="arithmatex">\(2^{h + 1} - 1\)</span> nodes, the sum of the heights of the node is <span class="arithmatex">\(2^{h + 1} - 1 - (h + 1)\)</span>.</p>
+</div>
+<p>Thus the time complexity of building a heap is <span class="arithmatex">\(O(n)\)</span>, which is linear.</p>
+<h3 id="increase-decrease-value">Increase / Decrease Value<a class="headerlink" href="#increase-decrease-value" title="Permanent link">¶</a></h3>
+<p>Increase or decrease some value <code>delta</code> (<code>delta &gt; 0</code>) at position <code>pos</code> of a heap.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">IncreaseValue</span><span class="p">(</span><span class="n">Priority</span><span class="w"> </span><span class="n">Queue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">delta</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">PercolateUp</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">DecreaseValue</span><span class="p">(</span><span class="n">Priority</span><span class="w"> </span><span class="n">Queue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">delta</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">PercolateDown</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">¶</a></h3>
+<p>Delete the element at position <code>pos</code> of a heap. We just decrease it to the minimum and then delete it.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define inf 2147483647</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Delete</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="o">*</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">DecreaseValue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">inf</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">DeleteMin</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="d-heap">d-Heap<a class="headerlink" href="#d-heap" title="Permanent link">¶</a></h2>
+<p>A d-Heap is a heap like binary heap except that all nodes have <span class="arithmatex">\(d\)</span> children.</p>
+<div align="center">
+<figure>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/11.png"><img src="../Pic/11.png" style="width:400px"/></a>
+<figcaption> 3-Heap </figcaption>
+</figure>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><code>DeleteMin</code> will take <span class="arithmatex">\(d - 1\)</span> comparisons to find the smallest child and thus totally take <span class="arithmatex">\(O(d \log_d n)\)</span> time.</li>
+<li><code>Insert</code> will take <span class="arithmatex">\(O(\log_d n)\)</span> time.</li>
+</ul>
+</div>
+<h2 id="leftist-tree-heap">Leftist Tree / Heap 左偏树<a class="headerlink" href="#leftist-tree-heap" title="Permanent link">¶</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Remains</p>
+</div>
+<h2 id="skew-heap">Skew Heap 斜堆<a class="headerlink" href="#skew-heap" title="Permanent link">¶</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Remains</p>
+</div>
+<h2 id="binomial-queues">Binomial Queues 二项队列 / 二项堆<a class="headerlink" href="#binomial-queues" title="Permanent link">¶</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Remains</p>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.04 01:26:14 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.05 16:53:01 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
@@ -507,7 +882,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
