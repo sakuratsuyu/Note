@@ -779,7 +779,7 @@
 <li><strong>Time complexity</strong><ul>
 <li>Avearge case <span class="arithmatex">\(O(n^2)\)</span>.</li>
 <li>Best case <span class="arithmatex">\(O(n)\)</span> (<strong>High Efficiency</strong> when it's almost in order).</li>
-<li>When <span class="arithmatex">\(N \le 20\)</span>, insertion sort is the <strong>fastest</strong>.</li>
+<li>When <span class="arithmatex">\(n \le 20\)</span>, insertion sort is the <strong>fastest</strong>.</li>
 </ul>
 </li>
 <li><strong>Space complexity</strong> <span class="arithmatex">\(O(1)\)</span>.</li>
@@ -830,7 +830,7 @@
 <li><strong>Space complexity</strong> <span class="arithmatex">\(O(1)\)</span>.</li>
 </ul>
 <h2 id="counting-sort">Counting Sort 计数排序<a class="headerlink" href="#counting-sort" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="cp">#define m 10010</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define m 10010 </span><span class="c1">// (1)!</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">CountingSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">m</span><span class="p">],</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">cnt</span><span class="p">));</span><span class="w"></span>
@@ -846,6 +846,9 @@
 <span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">));</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<ol>
+<li><code>m</code> is the upper bound of <code>a[i]</code>.</li>
+</ol>
 <p><strong>Analysis</strong></p>
 <ul>
 <li><strong>Stable</strong>.</li>
@@ -855,7 +858,7 @@
 <h2 id="radix-sort">Radix Sort 基数排序<a class="headerlink" href="#radix-sort" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">[</span><span class="n">K</span><span class="p">];</span><span class="w"> </span><span class="c1">// `K` is the number of keys</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">[</span><span class="n">K</span><span class="p">];</span><span class="w"> </span><span class="c1">// (1)!</span>
 <span class="p">}</span><span class="w"> </span><span class="n">ElementType</span><span class="p">;</span><span class="w"></span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">CountingSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="p">[],</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">b</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -873,20 +876,43 @@
 <span class="p">}</span><span class="w"> </span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">RadixSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">M</span><span class="p">];</span><span class="w"> </span><span class="c1">// `M` is the maximum of `m_i`, the upper bound of each key.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">M</span><span class="p">];</span><span class="w"> </span><span class="c1">// (2)!</span>
 <span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">CountingSort</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">cnt</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>The most common keys for sorting a series of integers are the number at digit <span class="arithmatex">\(j\)</span>.</p>
+<ol>
+<li><code>K</code> is the number of keys.</li>
+<li><code>M</code> is the maximum of <code>m[i]</code>, where <code>m[i]</code> is the upper bound of each key.</li>
+</ol>
+<p>The most common keys for sorting integers are</p>
+<ul>
+<li>the digit number from high to low (left to right), which is called <strong>Most Significant Digit (MSD)</strong> sort</li>
+<li>the digit number from low to high (right to left), which is called <strong>Least Significant Digit (LSD)</strong> sort</li>
+</ul>
+<p>In general, LSD is better than MSD.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Keys of LSD</label><label for="__tabbed_4_2">Keys of MSD</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">K</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">key</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">element</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">key</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">element</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">K</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">key</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">element</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</input></input></div>
 <p><strong>Analysis</strong></p>
 <ul>
 <li><strong>Stable</strong> unless the inner sort is unstable.</li>
@@ -1011,7 +1037,7 @@
 <p>Partition the series into <strong>THREE</strong> parts: <code>&gt; m</code>, <code>&lt; m</code> and <code>= m</code>. It's efficient to deal with the cases of multiple identical values.</p>
 </details>
 <h2 id="merge-sort">Merge Sort 归并排序<a class="headerlink" href="#merge-sort" title="Permanent link">¶</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Recursion</label><label for="__tabbed_4_2">Iteration</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Recursion</label><label for="__tabbed_5_2">Iteration</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Merge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1079,46 +1105,284 @@
 <li><strong>Stable</strong>.</li>
 <li><strong>Time complexity</strong> <span class="arithmatex">\(O(n \log n)\)</span>.</li>
 <li><strong>Space complexity</strong> <span class="arithmatex">\(O(n)\)</span>.</li>
+<li>Better performance at parrallel sort.</li>
 </ul>
+<details class="note">
+<summary>Time Complexity</summary>
+<div class="arithmatex">\[
+\begin{aligned}
+    T(1) &amp;= 1, \\
+    T(N) &amp;= 2T\left(\frac{N}{2}\right) + O(N) \\
+         &amp;= 2^k T\left(\frac{N}{2^k}\right) + k \cdot O(N) \\
+         &amp;= N \cdot O(1) + \log N \cdot O(N)
+         &amp;= O(N + N \log N)
+\end{aligned}
+\]</div>
+</details>
 <h2 id="bucket-sort">Bucket Sort 桶排序<a class="headerlink" href="#bucket-sort" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#define m 10010 </span><span class="c1">//(1)!</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">_node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span><span class="w"></span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">List</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">InsertionSort</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="o">*</span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">flag</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">BucketSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bucketNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// (2)!</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bucketSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bucketNum</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">bucketNum</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="o">**</span><span class="n">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">bucketNum</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="o">*</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">bucketNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">List</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">bucketSize</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">bucket</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bucket</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">bucket</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">bucketNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">InsertionSort</span><span class="p">(</span><span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">a</span><span class="p">[</span><span class="n">cnt</span><span class="w"> </span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">bucketNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">free</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">bucket</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li><code>m</code> is the upper bound of <code>a[i]</code>.</li>
+<li><code>bucketNum</code> is the number of the bucket.</li>
+</ol>
 <p><strong>Analysis</strong></p>
 <ul>
-<li>Improvement of <strong>Radix Sort</strong>.</li>
+<li>Similar to <strong>Radix Sort</strong>.</li>
 <li><strong>Stable</strong> unless the inner sort is unstable.</li>
 <li><strong>Time complexity</strong><ul>
-<li>Average case <span class="arithmatex">\(O(n + n^2 / k + k)\)</span>.</li>
+<li>Average case <span class="arithmatex">\(O\left(n + k \cdot \left(\dfrac{n}{k}\right)^2 + k\right)\)</span>, where <span class="arithmatex">\(k\)</span> is the number of the bucket.</li>
 <li>Worst case <span class="arithmatex">\(O(n^2)\)</span>.</li>
+<li>Large constant of time complexity.</li>
 </ul>
 </li>
 <li><strong>Space complexity</strong> <span class="arithmatex">\(O(n)\)</span>.</li>
 </ul>
 <h2 id="heap-sort">Heap Sort 堆排序<a class="headerlink" href="#heap-sort" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">MaxHeapify</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (1)!</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">child</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">child</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">child</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">child</span><span class="w"> </span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">child</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Swap</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">child</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">child</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">HeapSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (2)!</span>
+<span class="w">        </span><span class="n">MaxHeapify</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">MaxHeapify</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>The same as <code>PercolateDown()</code> of <a href="../Priority_Queues/#implementation"><strong>implementation</strong></a> of heap.</li>
+<li>The same as <a href="../Priority_Queues/#build-heap"><strong>Build Heap</strong></a>.</li>
+</ol>
 <p><strong>Analysis</strong></p>
 <ul>
 <li>Improvement of <strong>Selection Sort</strong>.</li>
 <li><strong>Unstable</strong>.</li>
 <li><strong>Time complexity</strong> <span class="arithmatex">\(O(n \log n)\)</span>.</li>
 <li><strong>Space complexity</strong> <span class="arithmatex">\(O(1)\)</span>.</li>
+<li>Much cache miss and not based on partition, which means hard to parallel.</li>
 </ul>
+<details class="theorem">
+<summary>Theorem</summary>
+<p>The average number of comparisons used to heapsort a random permutation of N distinct items is 
+<span class="arithmatex">\(2N \log N - O(N\log \log N)\)</span>.</p>
+</details>
 <h2 id="shell-sort">Shell Sort 希尔排序<a class="headerlink" href="#shell-sort" title="Permanent link">¶</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Shell's Increment</label><label for="__tabbed_6_2">Shell's Increment (Simplified)</label><label for="__tabbed_6_3">Hibbard's Increment</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ShellSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">step</span><span class="p">;</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">step</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">step</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">step</span><span class="p">];</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ShellSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">step</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">step</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">step</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">step</span><span class="p">];</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ShellSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">step</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">step</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">step</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">step</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">step</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">step</span><span class="p">];</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">t</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</input></input></input></div>
 <p><strong>Analysis</strong></p>
 <ul>
 <li>Improvement of <strong>Insertion Sort</strong>.</li>
 <li><strong>Unstable</strong>.</li>
 <li><strong>Time complexity</strong><ul>
-<li>Depend on the interval.</li>
-<li>Best case <span class="arithmatex">\(O(N)\)</span>.</li>
-<li>Best worst case <span class="arithmatex">\(O(n \log^2 n)\)</span>.</li>
+<li>Depend on the <strong>increment sequence</strong> (example are discussed below).</li>
+<li>Best case <span class="arithmatex">\(O(n)\)</span>.</li>
+<li>Worst case <span class="arithmatex">\(\Theta(n^2)\)</span>.</li>
+<li>Best worst case that are known is <span class="arithmatex">\(O(n \log^2 n)\)</span>.</li>
 </ul>
 </li>
 <li><strong>Space complexity</strong> <span class="arithmatex">\(O(1)\)</span>.</li>
+<li>Much cache miss and not based on partition, which means hard to parallel.</li>
 </ul>
+<details class="example">
+<summary>Choice of Increment Sequence</summary>
+<div class="admonition plane">
+<p><strong>Shell's Increment Sequence</strong></p>
+<div class="arithmatex">\[
+    h_t = \left\lfloor \frac{N}{2} \right\rfloor,\ \
+    h_k = \left\lfloor \frac{h_{k + 1}}{2} \right\rfloor.
+\]</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>The worst case running time of Shell Sort using Shell's increment sequence is <span class="arithmatex">\(\Theta(N^2)\)</span>.</p>
+</div>
+<p><div align="center">
+<figure>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/12.png"><img src="../Pic/12.png" style="width:400px"/></a>
+<figcaption> Worst Case of Shell's Increment Sequence </figcaption>
+</figure>
+</div></p>
+</div>
+<div class="admonition plane">
+<p><strong>Hibbard's Increment Sequence</strong></p>
+<div class="arithmatex">\[
+    h_k = 2^k - 1.
+\]</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>The worst case running time of Shell Sort using Hibbard's increment sequence is <span class="arithmatex">\(\Theta\left(N^{\frac{3}{2}}\right)\)</span>.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Conjectures</p>
+</div>
+<div class="arithmatex">\[
+    T_{avg-Hibbard}(N) = O\left(N^{\frac54}\right).
+\]</div>
+</div>
+<details class="question">
+<summary>Conjectures: Sedgewick's Best Sequence</summary>
+<p>Sedgewick’s best sequence is <span class="arithmatex">\(\{1, 5, 19, 41, 109, \dots\}\)</span> in which the terms are either of the form <span class="arithmatex">\(9 \times 4^i - 9 \times 2^i + 1\)</span> or <span class="arithmatex">\(4^i – 3 \times 2^i + 1\)</span>. </p>
+<div class="arithmatex">\[
+    T_{avg}(N) = O\left(N^{\frac76}\right),\ \ 
+    T_{worst}(N) = O\left(N^{\frac43}\right).
+\]</div>
+</details>
+</details>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.05 16:51:02 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.05 22:08:21 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>

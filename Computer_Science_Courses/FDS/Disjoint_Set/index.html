@@ -35,6 +35,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#disjoint-set">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -345,9 +348,78 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Disjoint Set
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Disjoint Set
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+<nav aria-label="Implementation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-1-tree">
+    Method 1 | Tree
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-2-array">
+    Method 2 | Array
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#improvement">
+    Improvement
+  </a>
+<nav aria-label="Improvement" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#heuristic-union-stategy">
+    Heuristic Union Stategy
+  </a>
+<nav aria-label="Heuristic Union Stategy" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#union-by-size">
+    Union-by-Size
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#union-by-height-rank">
+    Union-by-Height / Rank
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#path-compression">
+    Path Compression
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#time-complexity">
+    Time Complexity
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Graph/">
@@ -484,6 +556,69 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+<nav aria-label="Implementation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-1-tree">
+    Method 1 | Tree
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-2-array">
+    Method 2 | Array
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#improvement">
+    Improvement
+  </a>
+<nav aria-label="Improvement" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#heuristic-union-stategy">
+    Heuristic Union Stategy
+  </a>
+<nav aria-label="Heuristic Union Stategy" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#union-by-size">
+    Union-by-Size
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#union-by-height-rank">
+    Union-by-Height / Rank
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#path-compression">
+    Path Compression
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#time-complexity">
+    Time Complexity
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -493,13 +628,220 @@
 <a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/FDS/Disjoint_Set.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Disjoint Set</h1>
+<h1 id="disjoint-set">Disjoint Set<a class="headerlink" href="#disjoint-set" title="Permanent link">¶</a></h1>
+<details class="definition">
+<summary>Definition (Recap)</summary>
+<p>A <strong>relation <span class="arithmatex">\(R\)</span></strong> is defined on a set <span class="arithmatex">\(S\)</span> if for every pair of elements <span class="arithmatex">\((a, b)\)</span>, <span class="arithmatex">\(a, b \in S\)</span>, <span class="arithmatex">\(aRb\)</span> is either true of false. If <span class="arithmatex">\(aRb\)</span> is true, then <span class="arithmatex">\(a\)</span> is related to <span class="arithmatex">\(b\)</span>.</p>
+<p>A relation <span class="arithmatex">\(\sim\)</span> over a set <span class="arithmatex">\(S\)</span> is said to be an <strong>equivalence relation</strong> over <span class="arithmatex">\(S\)</span> iff it's <em>symmetric</em>, <em>reflexive</em> and <em>transitive</em> over <span class="arithmatex">\(S\)</span>.</p>
+<p>Two members <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> of a set <span class="arithmatex">\(S\)</span> are said to be in the same equivalence class iff <span class="arithmatex">\(x \sim y\)</span>.</p>
+</details>
+<div class="admonition list">
+<p class="admonition-title">ADT</p>
+<p><strong>Objects:</strong></p>
+<ul>
+<li>Elements of the sets: <span class="arithmatex">\(1, 2, 3, \dots, N\)</span>.</li>
+<li><strong>Disjoint</strong> sets: <span class="arithmatex">\(S_1, S_2, \dots\)</span>.</li>
+</ul>
+<p><strong>Operations:</strong></p>
+<ul>
+<li><strong>Union</strong> two sets <span class="arithmatex">\(S_i\)</span> and <span class="arithmatex">\(S_j\)</span> to <span class="arithmatex">\(S\)</span>, i.e. <span class="arithmatex">\(S = S_i \cup S_j\)</span>.</li>
+<li><strong>Find</strong> the set <span class="arithmatex">\(S_k\)</span> which contains the element <span class="arithmatex">\(i\)</span>.</li>
+</ul>
+</div>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">¶</a></h2>
+<h3 id="method-1-tree">Method 1 | Tree<a class="headerlink" href="#method-1-tree" title="Permanent link">¶</a></h3>
+<p>The sets is represented by a forest. Each set <span class="arithmatex">\(S_i\)</span> is represented by a tree, and the root of the tree is the representation element. And a list <code>name</code> stores the roots of the trees.</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/13.png"><img src="../Pic/13.png" style="width:400px"/></a>
+</div>
+<p>For <strong>Union</strong> operation, it sets the parent of the root of one tree to the other root. The following picture shows</p>
+<div class="arithmatex">\[
+    S_2 \cup S1 \Rightarrow S_2.
+\]</div>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/14.png"><img src="../Pic/14.png" style="width:400px"/></a>
+</div>
+<p>For <strong>Find</strong> operation, it finds the root of <span class="arithmatex">\(i\)</span> and its corresponding <code>name</code>, which is <code>'S'</code> in the following picture.</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/15.png"><img src="../Pic/15.png" style="width:300px"/></a>
+</div>
+<h3 id="method-2-array">Method 2 | Array<a class="headerlink" href="#method-2-array" title="Permanent link">¶</a></h3>
+<p>Another method is to maintain an array <span class="arithmatex">\(S\)</span> of size <span class="arithmatex">\(N\)</span> to reprsent the trees in Method 1.</p>
+<div class="arithmatex">\[
+    S[\text{element}] = \left\{
+    \begin{aligned}
+        &amp; 0, &amp;&amp; \text{if the element is root}, \\
+        &amp; \text{the element's parent}, &amp;&amp; \text{if the element isn't root}.
+    \end{aligned}
+    \right.
+\]</div>
+<p>And the name of each set is the <strong>index</strong> of the root.</p>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/16.png"><img src="../Pic/16.png" style="width:600px"/></a>
+</div>
+<p>For <strong>Union</strong> operation, we just set</p>
+<div class="highlight"><pre><span></span><code><span class="n">S</span><span class="p">[</span><span class="n">root_2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root_1</span><span class="p">.</span><span class="w"></span>
+</code></pre></div>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/17.png"><img src="../Pic/17.png" style="width:300px"/></a>
+</div>
+<p>For <strong>Find</strong> operation, we iteratively or recursively find its parent until <code>S[x] = 0</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="improvement">Improvement<a class="headerlink" href="#improvement" title="Permanent link">¶</a></h2>
+<p><strong>Motivation:</strong> There may be the case that a sequence of special operations that makes the tree degenerate to a list.</p>
+<h3 id="heuristic-union-stategy">Heuristic Union Stategy<a class="headerlink" href="#heuristic-union-stategy" title="Permanent link">¶</a></h3>
+<h4 id="union-by-size">Union-by-Size<a class="headerlink" href="#union-by-size" title="Permanent link">¶</a></h4>
+<p>When union two sets <span class="arithmatex">\(S_1\)</span> and <span class="arithmatex">\(S_2\)</span> (represented by trees), if the size of <span class="arithmatex">\(S_1\)</span> is <strong>smaller</strong>, then we union <span class="arithmatex">\(S_1\)</span> to <span class="arithmatex">\(S_2\)</span>.</p>
+<p>To indicate the size of a set, suppose we only consider the positive indices, we can let <code>S[root] = -size</code> (initialized with <code>-1</code>) instead of <code>S[root] = 0</code>.</p>
+<div class="highlight"><span class="filename">Union by Size</span><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Union</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">root_a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">root_b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root_a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root_b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root_a</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root_b</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition theorem">
+<p class="admonition-title">Proposition</p>
+<p>Let <span class="arithmatex">\(T\)</span> be a tree created by union-by-size with <span class="arithmatex">\(N\)</span> nodes, then </p>
+<div class="arithmatex">\[
+    \text{height}(T) \le \lfloor \log_2N \rfloor.
+\]</div>
+</div>
+<p><strong>Time complexity</strong> of <span class="arithmatex">\(N\)</span> Union and <span class="arithmatex">\(M\)</span> Find operations is now <span class="arithmatex">\(O(N + M\log_2N)\)</span>.</p>
+<h3 id="union-by-height-rank">Union-by-Height / Rank<a class="headerlink" href="#union-by-height-rank" title="Permanent link">¶</a></h3>
+<p>When union two sets <span class="arithmatex">\(S_1\)</span> and <span class="arithmatex">\(S_2\)</span> (represented by trees), if the <strong>height</strong> of tree <span class="arithmatex">\(S_1\)</span> is <strong>smaller</strong>, then we union <span class="arithmatex">\(S_1\)</span> to <span class="arithmatex">\(S_2\)</span>.</p>
+<p>The height of a tree increases only when two <strong>equally deep</strong> trees are joined (and then the height goes up by one).</p>
+<div class="highlight"><span class="filename">Union by Height</span><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Union</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">root_a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">root_b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root_b</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root_a</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">]</span><span class="w"> </span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root_a</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="path-compression">Path Compression<a class="headerlink" href="#path-compression" title="Permanent link">¶</a></h3>
+<p>When we are finding an element, we can simultaneously change the parents of the nodes along the finding path, including itself, to the root, which makes the tree shallower.</p>
+<div align="center">
+<figure>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/18.png"><img src="../Pic/18.png" style="width:300px"/></a>
+<figcaption> When finding the root of the <strong>purple</strong> node </figcaption>
+</figure>
+</div>
+<div class="admonition code">
+<p class="admonition-title">Union-Find / Disjoint Set</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="nf">Initialize</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">Find</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">a</span><span class="p">]);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">Union</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">root_a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">root_b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root_a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root_b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root_a</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_b</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">root_a</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root_b</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="time-complexity">Time Complexity<a class="headerlink" href="#time-complexity" title="Permanent link">¶</a></h2>
+<p>After heuristic union (union-by-rank) and path compression, the <strong>average time complexity</strong> of each operation is</p>
+<div class="arithmatex">\[
+    O(\alpha(n)),\ \ \text{ where $\alpha$ is the inverse function of Ackermann function}.
+\]</div>
+<p>Its growth is very slow, which can be regarded as a constant.</p>
+<p>Ackermann function $A(m,n) $ is defined by</p>
+<div class="arithmatex">\[
+A(i, j) = \left\{
+\begin{aligned}
+    &amp; 2^j, &amp;&amp; i = 1 \text{ and } j \ge 1 \\
+    &amp; A(i - 1, 2), &amp;&amp; i \ge 2 \text{ and } j = 1 \\
+    &amp; A(i - 1, A(i, j - 1)), &amp;&amp; i \ge 2 \text{ and } j \ge 2 \\
+\end{aligned}
+\right.
+\]</div>
+<p>and <span class="arithmatex">\(\alpha(n)\)</span> is defined by the maximum <span class="arithmatex">\(m\)</span> s.t. <span class="arithmatex">\(A(m, m) \le n\)</span>. <span class="arithmatex">\(\alpha(n) = O(log^* n)\)</span> (iterative logarithm).</p>
+<details class="note">
+<summary>Iterative Logarithm</summary>
+<div class="arithmatex">\[
+    \log^* n = \left\{
+    \begin{aligned}
+        &amp; 0, &amp;&amp; \text{if } n \le 1 \\
+        &amp; 1 + \log^*(\log_2 n). &amp;&amp; \text{if } n &gt; 1 \\
+    \end{aligned}
+    \right.
+\]</div>
+<p>Thus we have</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \log^* 2 &amp;= 1 + \log^*(\log_2 2) = 1 + \log^*1 = 1, \\
+    \log^* 4 &amp;= 1 + \log^*(\log_2 4) = 1 + \log^*2 = 2, \\
+    \log^* 16 &amp;= 1 + \log^*(\log_2 16) = 1 + \log^*4 = 3, \\
+    \log^* 65536 &amp;= 1 + \log^*(\log_2 65536) = 1 + \log^*16 = 4, \\
+    \log^* 2^{65536} &amp;= 1 + \log^*(\log_2 2^{65536}) = 1 + \log^*65536 = 5. \\
+\end{aligned}
+\]</div>
+</details>
+<table>
+<thead>
+<tr>
+<th align="center">Improvement</th>
+<th align="center">Average Time Complexity</th>
+<th align="center">Worst Time Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">No improvement</td>
+<td align="center"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td align="center"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td align="center">Path Compression</td>
+<td align="center"><span class="arithmatex">\(O(\alpha (n))\)</span></td>
+<td align="center"><span class="arithmatex">\(O(\log n)\)</span></td>
+</tr>
+<tr>
+<td align="center">Union by Rank</td>
+<td align="center"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td align="center"><span class="arithmatex">\(O(\log n)\)</span></td>
+</tr>
+<tr>
+<td align="center">Both</td>
+<td align="center"><span class="arithmatex">\(O(\alpha(n))\)</span></td>
+<td align="center"><span class="arithmatex">\(O(\alpha(n))\)</span></td>
+</tr>
+</tbody>
+</table>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.04 01:26:14 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.05 22:08:21 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
@@ -507,7 +849,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
