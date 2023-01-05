@@ -76,7 +76,7 @@
             $$
 
     <div align="center">
-    	<img src="../Pic/0.svg" style="width:500px"/>
+    	<img src="../Pic/10.svg" style="width:500px"/>
     </div>
 
 !!! Definition
@@ -235,7 +235,7 @@ A d-Heap is a heap like binary heap except that all nodes have $d$ children.
 
 <div align="center">
 <figure>
-	<img src="../Pic/9.png" style="width:400px"/>
+	<img src="../Pic/11.png" style="width:400px"/>
     <figcaption> 3-Heap </figcaption>
 </figure>
 </div>
