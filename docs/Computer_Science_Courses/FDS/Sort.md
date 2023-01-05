@@ -126,7 +126,7 @@ Space complexity considers the extra space the algorithm need.
 - **Time complexity**
     - Avearge case $O(n^2)$.
     - Best case $O(n)$ (**High Efficiency** when it's almost in order).
-    - When $N \le 20$, insertion sort is the **fastest**.
+    - When $n \le 20$, insertion sort is the **fastest**.
 - **Space complexity** $O(1)$.
 
 ## Selection Sort 选择排序
@@ -178,7 +178,7 @@ Space complexity considers the extra space the algorithm need.
 ## Counting Sort 计数排序
 
 ```C
-#define m 10010
+#define m 10010 // (1)!
 void CountingSort(const int n, int a[]) {
     int cnt[m], b[n];
     memset(cnt, 0, sizeof(cnt));
@@ -195,6 +195,8 @@ void CountingSort(const int n, int a[]) {
 }
 ```
 
+1. `m` is the upper bound of `a[i]`.
+
 **Analysis**
 
 - **Stable**.
@@ -206,7 +208,7 @@ void CountingSort(const int n, int a[]) {
 ```C
 typedef struct {
     int element;
-    int key[K]; // `K` is the number of keys
+    int key[K]; // (1)!
 } ElementType;
 
 void CountingSort(const int n, ElementType a[], int p, int cnt[], ElementType b[]) {
@@ -224,7 +226,7 @@ void CountingSort(const int n, ElementType a[], int p, int cnt[], ElementType b[
 } 
 
 void RadixSort(const int n, ElementType a[]) {
-    int cnt[M]; // `M` is the maximum of `m_i`, the upper bound of each key.
+    int cnt[M]; // (2)!
     ElementType b[n];
     for (int i = k - 1; i >= 0; i --) {
         CountingSort(n, a, i, cnt, b);
@@ -232,15 +234,35 @@ void RadixSort(const int n, ElementType a[]) {
 }
 ```
 
-The most common keys for sorting a series of integers are the number at digit $j$.
+1. `K` is the number of keys.
+2. `M` is the maximum of `m[i]`, where `m[i]` is the upper bound of each key.
 
-```C
-for (int i = 0; i < n; i ++) {
-    for (int j = 0; j < K; j ++) {
-        a[i].key[j] = a[i].element / pow(10, j - 1) % 10;
+The most common keys for sorting integers are
+
+- the digit number from high to low (left to right), which is called **Most Significant Digit (MSD)** sort
+- the digit number from low to high (right to left), which is called **Least Significant Digit (LSD)** sort
+
+In general, LSD is better than MSD.
+
+=== "Keys of LSD"
+
+    ```C
+    for (int i = 0; i < n; i ++) {
+        for (int j = 0; j < K; j ++) {
+            a[i].key[j] = (int)(a[i].element / pow(10, j)) % 10;
+        }
     }
-}
-```
+    ```
+
+=== "Keys of MSD"
+
+    ```C
+    for (int i = 0; i < n; i ++) {
+        for (int j = 0; j < K; j ++) {
+            a[i].key[j] = (int)(a[i].element / (pow(10, K - 1) / pow(10, j))) % 10;
+        }
+    }
+    ```
 
 **Analysis**
 
@@ -428,18 +450,138 @@ void QuickSort(const int n, int a[]) {
 - **Stable**.
 - **Time complexity** $O(n \log n)$.
 - **Space complexity** $O(n)$.
+- Better performance at parrallel sort.
+
+??? note "Time Complexity"
+    
+    $$
+    \begin{aligned}
+        T(1) &= 1, \\
+        T(N) &= 2T\left(\frac{N}{2}\right) + O(N) \\
+             &= 2^k T\left(\frac{N}{2^k}\right) + k \cdot O(N) \\
+             &= N \cdot O(1) + \log N \cdot O(N)
+             &= O(N + N \log N)
+    \end{aligned}
+    $$
 
 ## Bucket Sort 桶排序
 
+```C
+#define m 10010 //(1)!
+
+typedef struct _node {
+    int element;
+    struct _node *next;
+} Node;
+typedef struct {
+    int size;
+    Node *head;
+} List;
+
+void InsertionSort(List *list) {
+    for (Node *p = list->head->next, *q = list->head; p != NULL;) {
+        bool flag = false;
+        for (Node *r = list->head->next, *s = list->head; r != p; s = r, r = r->next) {
+            if (r->element > p->element) {
+                Node *temp = p;
+                p = p->next;
+                q->next = p;
+                flag = true;
+
+                s->next = temp;
+                temp->next = r;
+                break;
+            }
+        }
+        if (flag == false) {
+            q = p;
+            p = p->next;
+        }
+    }
+}
+
+void BucketSort(const int n, int a[]) {
+    int bucketNum = 6; // (2)!
+    int bucketSize = (m + bucketNum - 1) / bucketNum;
+    List **bucket = (List **)malloc(bucketNum * sizeof(List *));
+    for (int i = 0; i < bucketNum; i ++) {
+        bucket[i] = (List *)malloc(sizeof(List));
+        bucket[i]->size = 0;
+        bucket[i]->head = (Node *)malloc(sizeof(Node));
+        bucket[i]->head->next = NULL;
+    }
+
+    for (int i = 0; i < n; i ++) {
+        int pos = a[i] / bucketSize;
+        bucket[pos]->size ++;
+        Node *p = (Node *)malloc(sizeof(Node));
+        p->element = a[i];
+        p->next = bucket[pos]->head->next;
+        bucket[pos]->head->next = p;
+    }
+
+    for (int i = 0, cnt = 0; i < bucketNum; i ++) {
+        InsertionSort(bucket[i]);
+        for (Node *p = bucket[i]->head->next; p != NULL; p = p->next) {
+            a[cnt ++] = p->element;
+        }
+    }
+
+    for (int i = 0; i < bucketNum; i ++) {
+        for (Node *p = bucket[i]->head, *temp = NULL; p != NULL;) {
+            temp = p;
+            p = p->next;
+            free(temp);
+        }
+        free(bucket[i]);
+    }
+    free(bucket);
+}
+```
+
+1. `m` is the upper bound of `a[i]`.
+2. `bucketNum` is the number of the bucket.
+
 **Analysis**
 
-- Improvement of **Radix Sort**.
+- Similar to **Radix Sort**.
 - **Stable** unless the inner sort is unstable.
 - **Time complexity**
-    - Average case $O(n + n^2 / k + k)$.
+    - Average case $O\left(n + k \cdot \left(\dfrac{n}{k}\right)^2 + k\right)$, where $k$ is the number of the bucket.
     - Worst case $O(n^2)$.
+    - Large constant of time complexity.
 - **Space complexity** $O(n)$.
 ## Heap Sort 堆排序
+
+```C
+void MaxHeapify(int a[], int p, int size) { // (1)!
+    while (p << 1 <= size) {
+        int child = p << 1;
+        if (child != size && a[child] < a[child + 1]) {
+            child ++;
+        }
+        if (a[p] < a[child]) {
+            Swap(a + p, a + child);
+        } else {
+            break;
+        }
+        p = child;
+    }
+}
+
+void HeapSort(const int n, int a[]) {
+    for (int i = n / 2 - 1; i >= 0; i --) { // (2)!
+        MaxHeapify(a, i, n - 1);
+    }
+    for (int i = n - 1; i > 0; i --) {
+            Swap(a, a + i);
+        MaxHeapify(a, 0, i - 1);
+    }
+}
+```
+
+1. The same as `PercolateDown()` of [**implementation**](../Priority_Queues/#implementation) of heap.
+2. The same as [**Build Heap**](../Priority_Queues/#build-heap).
 
 **Analysis**
 
@@ -447,15 +589,138 @@ void QuickSort(const int n, int a[]) {
 - **Unstable**.
 - **Time complexity** $O(n \log n)$.
 - **Space complexity** $O(1)$.
+- Much cache miss and not based on partition, which means hard to parallel.
+
+??? theorem
+    The average number of comparisons used to heapsort a random permutation of N distinct items is 
+    $2N \log N - O(N\log \log N)$.
 
 ## Shell Sort 希尔排序
+
+=== "Shell's Increment"
+
+    ```C
+    void ShellSort(const int n, int a[]) {
+        for (int step = n >> 1; step > 0; step >>= 1) {
+            for (int start = 0; start < step; start ++) {
+                for (int i = start; i < n; i += step) {
+                    int temp = a[i], j;
+                    for (j = i; j >= step; j -= step) {
+                        if (temp < a[j - step]) {
+                            a[j] = a[j - step];
+                        } else {
+                            break;
+                        }
+                    }
+                    a[j] = temp;
+                }
+            }
+        }
+    }
+    ```
+
+=== "Shell's Increment (Simplified)"
+
+    ```C
+    void ShellSort(const int n, int a[]) {
+        for (int step = n >> 1; step > 0; step >>= 1) {
+            for (int i = step; i < n; i += step) {
+                int temp = a[i], j;
+                for (j = i; j >= step; j -= step) {
+                    if (temp < a[j - step]) {
+                        a[j] = a[j - step];
+                    } else {
+                        break;
+                    }
+                }
+                a[j] = temp;
+            }
+        }
+    }
+    ```
+
+=== "Hibbard's Increment"
+
+    ```C
+    void ShellSort(const int n, int a[]) {
+        int t = 1, step;
+        while (t << 1 < n) {
+                t <<= 1;
+        }
+        step = t - 1;
+
+        while (step > 0) {
+            for (int i = step; i < n; i += step) {
+                int temp = a[i], j;
+                for (j = i; j >= step; j -= step) {
+                    if (temp < a[j - step]) {
+                        a[j] = a[j - step];
+                    } else {
+                        break;
+                    }
+                }
+                a[j] = temp;
+            }
+            t >>= 1;
+            step = t - 1;
+        }
+    }
+    ```
+
 
 **Analysis**
 
 - Improvement of **Insertion Sort**.
 - **Unstable**.
 - **Time complexity**
-    - Depend on the interval.
-    - Best case $O(N)$.
-    - Best worst case $O(n \log^2 n)$.
+    - Depend on the **increment sequence** (example are discussed below).
+    - Best case $O(n)$.
+    - Worst case $\Theta(n^2)$.
+    - Best worst case that are known is $O(n \log^2 n)$.
 - **Space complexity** $O(1)$.
+- Much cache miss and not based on partition, which means hard to parallel.
+
+??? Example "Choice of Increment Sequence"
+    !!! plane ""
+        **Shell's Increment Sequence**
+        
+        $$
+            h_t = \left\lfloor \frac{N}{2} \right\rfloor,\ \
+            h_k = \left\lfloor \frac{h_{k + 1}}{2} \right\rfloor.
+        $$
+
+        !!! theorem
+            The worst case running time of Shell Sort using Shell's increment sequence is $\Theta(N^2)$.
+        
+        <div align="center">
+        <figure>
+        	<img src="../Pic/12.png" style="width:400px"/>
+            <figcaption> Worst Case of Shell's Increment Sequence </figcaption>
+        </figure>
+        </div>
+    
+    !!! plane ""
+        **Hibbard's Increment Sequence**
+
+        $$
+            h_k = 2^k - 1.
+        $$
+
+        !!! theorem
+            The worst case running time of Shell Sort using Hibbard's increment sequence is $\Theta\left(N^{\frac{3}{2}}\right)$.
+        
+        !!! question "Conjectures"
+
+        $$
+            T_{avg-Hibbard}(N) = O\left(N^{\frac54}\right).
+        $$
+    
+    ??? question "Conjectures: Sedgewick's Best Sequence"
+        Sedgewick’s best sequence is $\{1, 5, 19, 41, 109, \dots\}$ in which the terms are either of the form $9 \times 4^i - 9 \times 2^i + 1$ or $4^i – 3 \times 2^i + 1$. 
+        
+        $$
+            T_{avg}(N) = O\left(N^{\frac76}\right),\ \ 
+            T_{worst}(N) = O\left(N^{\frac43}\right).
+        $$
+
+
