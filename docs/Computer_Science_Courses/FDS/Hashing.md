@@ -43,7 +43,7 @@ But sometimes we have $key_1 \ne key_2$, but $hash(key_1) = hash(key_2)$, we cal
 
     - **Middle Square**. Take middle some digits of the square of the key as the address of hash function.
 
-    - **Random**
+    - **Random**.
 
 
 ## Hash Table
@@ -217,13 +217,15 @@ $$
 Analysis of linear probing show that the **expected number of probes** $p$ satisfies
 
 $$
-p = \left\{
 \begin{aligned}
-    \frac12\left(1 + \frac{1}{(1 - \lambda)^2}\right),\ \ \text{for insertions and unsuccessful searches,}
-    \frac12\left(1 + \frac{1}{(1 - \lambda)}\right).\ \ \text{for successful searches}
+p = &\left\{
+\begin{aligned}
+    & \frac12\left(1 + \frac{1}{(1 - \lambda)^2}\right), && \text{for insertions and unsuccessful searches,} \\
+    & \frac12\left(1 + \frac{1}{(1 - \lambda)}\right), && \text{for successful searches,}
 \end{aligned}
 \right.
-,\ \ \text{ where $\lambda$ is the loading density}.
+,\\ & \text{where $\lambda$ is the loading density}.
+\end{aligned}
 $$
 
 #### Quadratic Probing 平方探测

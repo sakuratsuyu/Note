@@ -27,7 +27,7 @@
 
 Following are some implementations of list.
 
-### Array
+### Array / Sequential List
 
 We say it a *sequential mapping* or *sequantial storage structure*.
 
@@ -40,7 +40,7 @@ typedef struct {
 } List;
 ```
 
-??? code "Array"
+??? code "Array / Sequential List"
 
     ```C
     List *CreateList(const int capacity) {

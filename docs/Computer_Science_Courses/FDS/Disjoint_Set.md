@@ -115,7 +115,7 @@ void Union(int *S, const int root_a, const int root_b) {
 
 **Time complexity** of $N$ Union and $M$ Find operations is now $O(N + M\log_2N)$.
 
-### Union-by-Height / Rank
+#### Union-by-Height / Rank
 
 When union two sets $S_1$ and $S_2$ (represented by trees), if the **height** of tree $S_1$ is **smaller**, then we union $S_1$ to $S_2$.
 

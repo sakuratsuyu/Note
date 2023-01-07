@@ -239,8 +239,8 @@ void RadixSort(const int n, ElementType a[]) {
 
 The most common keys for sorting integers are
 
-- the digit number from high to low (left to right), which is called **Most Significant Digit (MSD)** sort
-- the digit number from low to high (right to left), which is called **Least Significant Digit (LSD)** sort
+- the digit number from high to low (left to right), which is called **Most Significant Digit (MSD)** sort.
+- the digit number from low to high (right to left), which is called **Least Significant Digit (LSD)** sort.
 
 In general, LSD is better than MSD.
 

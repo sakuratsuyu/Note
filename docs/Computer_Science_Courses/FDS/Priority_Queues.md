@@ -243,6 +243,10 @@ A d-Heap is a heap like binary heap except that all nodes have $d$ children.
 !!! note
     - `DeleteMin` will take $d - 1$ comparisons to find the smallest child and thus totally take $O(d \log_d n)$ time.
     - `Insert` will take $O(\log_d n)$ time.
+    - If a d-heap is stored as an array, for an entry of index $i$,
+        - the parent is at $\lfloor (i + d - 2) / d \rfloor$.
+        - the first child is at $(i - 1)d + 2$.
+        - the last child is at $id + 1$.
 
 ## Leftist Tree / Heap 左偏树
 

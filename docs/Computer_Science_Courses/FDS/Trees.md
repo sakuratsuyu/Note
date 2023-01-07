@@ -4,7 +4,7 @@
     A **tree** is a collection of nodes. The collection can be empty; otherwise, a tree consists of
         
     -  a distinguished node $r$, called the **root**.
-    - zero or more nonempty **subtrees** $T_1, \dots, T_k$, each of whose roots are connected by a directed **edge** from$r$.
+    - zero or more nonempty **subtrees** $T_1, \dots, T_k$, each of whose roots are connected by a directed **edge** from $r$.
 
 !!! definition
     - **Degree of a node:**	        number of subtrees of the node.
@@ -21,7 +21,7 @@
     - **Height of $n_k$:**	        length of the longest path from $n_i$ to a leaf.
     - **Height / Depth of a tree:** the height of the root or the maximum depth among all leaves.
 
-## Implementation
+## Representation
 
 Consider the following tree.
 
@@ -80,7 +80,17 @@ typedef struct TreeNode {
 
 ### Traversals
 
-The following three types of traversal are implemented by recursion, or alternatively by a stack with iteration.
+There are four traversals for a binary tree, **preorder traversal**, **inorder traversal**, **postorder traversal** and **levelorder traversal** (or in graph, **breadth first search, BFS**).
+
+- Pre-, in-, and postorder traversals are implemented by recursion, or alternatively by a stack with iteration.
+- Levelorder traversal is implemented by a queue.
+
+!!! tip
+    For a general tree, it also has
+    
+    - Preorder Traversal: first itself, then sons.
+    - Postorder Traversal: first sons, then itself.
+    - Levelorder Traversal.
 
 === "Preorder Traversal 前序遍历"
 
@@ -125,21 +135,20 @@ The following three types of traversal are implemented by recursion, or alternat
     }
     ```
 
-**Levelorder Traversal 层序遍历 / 宽度优先遍历**
+<br/>
 
-Levelorder traversal are implemented by a queue.
-
-```C
-void Levelorder(Tree *tree) {
-    Enqueue(queue, tree);
-    while (!IsEmptyQueue(queue)) {
-        Tree *cur = Dequeue(queue);
-        printf("%d ", cur->element);
-        Enqueue(queue, cur->left);
-        Enqueue(queue, cur->right);
+=== "Levelorder Traversal 层序遍历 / 宽度优先遍历"
+    ```C
+    void Levelorder(Tree *tree) {
+        Enqueue(queue, tree);
+        while (!IsEmptyQueue(queue)) {
+            Tree *cur = Dequeue(queue);
+            printf("%d ", cur->element);
+            Enqueue(queue, cur->left);
+            Enqueue(queue, cur->right);
+        }
     }
-}
-```
+    ```
 
 ### Threaded Binary Trees
 
@@ -157,6 +166,8 @@ typedef struct ThreadedTreeNode {
 ```
 
 !!! theorem "Rule for Threaded Binary Trees"
+    **NOTE:** the following "**inorder**"" can also be replaced by **any traversals**.
+
     **Rule 1:** If `tree->left == NULL`, then replace it with a pointer to its **inorder predecessor**.
 
     **Rule 2:** If `tree->right == NULL`, then replace it with a pointer to its **inorder sucessor**.
