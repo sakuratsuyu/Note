@@ -342,10 +342,10 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#implementation">
-    Implementation
+<a class="md-nav__link" href="#representation">
+    Representation
   </a>
-<nav aria-label="Implementation" class="md-nav">
+<nav aria-label="Representation" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#list-representation">
@@ -572,10 +572,10 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#implementation">
-    Implementation
+<a class="md-nav__link" href="#representation">
+    Representation
   </a>
-<nav aria-label="Implementation" class="md-nav">
+<nav aria-label="Representation" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#list-representation">
@@ -654,7 +654,7 @@
 <p>A <strong>tree</strong> is a collection of nodes. The collection can be empty; otherwise, a tree consists of</p>
 <ul>
 <li>a distinguished node <span class="arithmatex">\(r\)</span>, called the <strong>root</strong>.</li>
-<li>zero or more nonempty <strong>subtrees</strong> <span class="arithmatex">\(T_1, \dots, T_k\)</span>, each of whose roots are connected by a directed <strong>edge</strong> from<span class="arithmatex">\(r\)</span>.</li>
+<li>zero or more nonempty <strong>subtrees</strong> <span class="arithmatex">\(T_1, \dots, T_k\)</span>, each of whose roots are connected by a directed <strong>edge</strong> from <span class="arithmatex">\(r\)</span>.</li>
 </ul>
 </div>
 <div class="admonition definition">
@@ -675,7 +675,7 @@
 <li><strong>Height / Depth of a tree:</strong> the height of the root or the maximum depth among all leaves.</li>
 </ul>
 </div>
-<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">¶</a></h2>
+<h2 id="representation">Representation<a class="headerlink" href="#representation" title="Permanent link">¶</a></h2>
 <p>Consider the following tree.</p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/1.png"><img src="../Pic/1.png" style="width:300px"/></a>
@@ -724,7 +724,20 @@
 <span class="p">}</span><span class="w"> </span><span class="n">Tree</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="traversals">Traversals<a class="headerlink" href="#traversals" title="Permanent link">¶</a></h3>
-<p>The following three types of traversal are implemented by recursion, or alternatively by a stack with iteration.</p>
+<p>There are four traversals for a binary tree, <strong>preorder traversal</strong>, <strong>inorder traversal</strong>, <strong>postorder traversal</strong> and <strong>levelorder traversal</strong> (or in graph, <strong>breadth first search, BFS</strong>).</p>
+<ul>
+<li>Pre-, in-, and postorder traversals are implemented by recursion, or alternatively by a stack with iteration.</li>
+<li>Levelorder traversal is implemented by a queue.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For a general tree, it also has</p>
+<ul>
+<li>Preorder Traversal: first itself, then sons.</li>
+<li>Postorder Traversal: first sons, then itself.</li>
+<li>Levelorder Traversal.</li>
+</ul>
+</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Preorder Traversal 前序遍历</label><label for="__tabbed_1_2">Inorder Traversal 中序遍历</label><label for="__tabbed_1_3">Postorder Traversal 后序遍历</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -765,8 +778,10 @@
 </div>
 </div>
 </input></input></input></div>
-<p><strong>Levelorder Traversal 层序遍历 / 宽度优先遍历</strong></p>
-<p>Levelorder traversal are implemented by a queue.</p>
+<p><br/></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Levelorder Traversal 层序遍历 / 宽度优先遍历</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Levelorder</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">Enqueue</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span><span class="w"> </span><span class="n">tree</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">IsEmptyQueue</span><span class="p">(</span><span class="n">queue</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -777,6 +792,9 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+</div>
+</div>
+</input></div>
 <h3 id="threaded-binary-trees">Threaded Binary Trees<a class="headerlink" href="#threaded-binary-trees" title="Permanent link">¶</a></h3>
 <p>There are <span class="arithmatex">\(n + 1\)</span> <code>NULL</code> children of the leaf nodes of a binarty tree with <span class="arithmatex">\(n\)</span> nodes. We want to make these <code>NULL</code> pointers more useful. And here comes the <strong>Threaded Binary Trees</strong>.</p>
 <div class="highlight"><span class="filename">Data Type</span><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ElementType</span><span class="p">;</span><span class="w"></span>
@@ -790,6 +808,7 @@
 </code></pre></div>
 <div class="admonition theorem">
 <p class="admonition-title">Rule for Threaded Binary Trees</p>
+<p><strong>NOTE:</strong> the following "<strong>inorder</strong>"" can also be replaced by <strong>any traversals</strong>.</p>
 <p><strong>Rule 1:</strong> If <code>tree-&gt;left == NULL</code>, then replace it with a pointer to its <strong>inorder predecessor</strong>.</p>
 <p><strong>Rule 2:</strong> If <code>tree-&gt;right == NULL</code>, then replace it with a pointer to its <strong>inorder sucessor</strong>.</p>
 <p><strong>Rule 3:</strong> A threaded binary tree must have a <strong>head node</strong> of which the left child points to the first node.</p>
@@ -917,7 +936,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.05 16:51:02 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.07 23:15:42 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>

@@ -397,13 +397,13 @@
     Union-by-Size
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#union-by-height-rank">
     Union-by-Height / Rank
   </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#path-compression">
@@ -597,13 +597,13 @@
     Union-by-Size
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#union-by-height-rank">
     Union-by-Height / Rank
   </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#path-compression">
@@ -715,7 +715,7 @@
 \]</div>
 </div>
 <p><strong>Time complexity</strong> of <span class="arithmatex">\(N\)</span> Union and <span class="arithmatex">\(M\)</span> Find operations is now <span class="arithmatex">\(O(N + M\log_2N)\)</span>.</p>
-<h3 id="union-by-height-rank">Union-by-Height / Rank<a class="headerlink" href="#union-by-height-rank" title="Permanent link">¶</a></h3>
+<h4 id="union-by-height-rank">Union-by-Height / Rank<a class="headerlink" href="#union-by-height-rank" title="Permanent link">¶</a></h4>
 <p>When union two sets <span class="arithmatex">\(S_1\)</span> and <span class="arithmatex">\(S_2\)</span> (represented by trees), if the <strong>height</strong> of tree <span class="arithmatex">\(S_1\)</span> is <strong>smaller</strong>, then we union <span class="arithmatex">\(S_1\)</span> to <span class="arithmatex">\(S_2\)</span>.</p>
 <p>The height of a tree increases only when two <strong>equally deep</strong> trees are joined (and then the height goes up by one).</p>
 <div class="highlight"><span class="filename">Union by Height</span><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Union</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">root_a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">root_b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -841,7 +841,7 @@ A(i, j) = \left\{
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.05 22:08:21 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.07 23:15:42 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
