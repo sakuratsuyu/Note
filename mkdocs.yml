@@ -10,9 +10,6 @@ theme:
   custom_dir: overrides
   language: zh
   direction: ltr
-  font:
-    text: Source Sans Pro
-    code: Source Code Pro
   icon:
     logo: material/taco
     repo: fontawesome/brands/github-alt
