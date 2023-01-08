@@ -10,6 +10,6 @@ if ($comment) {
     git commit -m "[Default] Synchronization"
 }
 
-git push
+git push -u origin main
 
 mkdocs gh-deploy
