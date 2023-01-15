@@ -66,6 +66,7 @@ extra:
 extra_css:
   - css/basic.css
   - css/admonition.css
+  - css/flink.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css
 
 extra_javascript:
@@ -148,7 +149,6 @@ nav:
   - Mathematics Basis:
     - Mathematics_Basis/index.md
     - 离散数学 | Discrete Mathamatics:
-      - Class Notes : Mathematics_Basis/DM/class_notes.md
       - Chap 1 : Mathematics_Basis/DM/Chap_1.md
       - Chap 2 : Mathematics_Basis/DM/Chap_2.md
       - Chap 3 : Mathematics_Basis/DM/Chap_3.md

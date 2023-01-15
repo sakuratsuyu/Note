@@ -17,7 +17,7 @@ $$
 
 <div align="center" style="height:600x; margin:50px">
     <figure>
-        <img src="kirakirame.png" alt="kirakirame" style="zoom:30%;"/>
+        <img src="../assets/avatars/kirakirame.png" style="zoom:30%;"/>
         <figcaption>✨キラキラ目✨</figcaption>
     </figure>
 </div>
