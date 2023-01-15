@@ -479,6 +479,11 @@
 <nav aria-label="Optimization" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#target">
+    Target
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#model-fitting">
     Model Fitting
   </a>
@@ -511,7 +516,8 @@
 <a class="md-nav__link" href="#gradient-descent-gd">
     Gradient Descent (GD)
   </a>
-</li>
+<nav aria-label="Gradient Descent (GD)" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#steepest-descent-method">
     Steepest Descent Method
@@ -532,6 +538,9 @@
     Levenberg-Marquardt (LM)
   </a>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#convex-optimization">
     Convex Optimization
@@ -548,7 +557,7 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ransac-random-sample-concensus">
-    RANSAC (Random Sample Concensus)
+    RANSAC (RANdom SAmple Concensus)
   </a>
 </li>
 <li class="md-nav__item">
@@ -569,15 +578,6 @@
 <a class="md-nav__link" href="#graph-cut">
     Graph Cut
   </a>
-<nav aria-label="Graph Cut" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#problem-with-min-cut">
-    Problem with min-cut
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#markow-random-field-mrf">
@@ -697,6 +697,11 @@
 <nav aria-label="Optimization" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#target">
+    Target
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#model-fitting">
     Model Fitting
   </a>
@@ -729,7 +734,8 @@
 <a class="md-nav__link" href="#gradient-descent-gd">
     Gradient Descent (GD)
   </a>
-</li>
+<nav aria-label="Gradient Descent (GD)" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#steepest-descent-method">
     Steepest Descent Method
@@ -750,6 +756,9 @@
     Levenberg-Marquardt (LM)
   </a>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#convex-optimization">
     Convex Optimization
@@ -766,7 +775,7 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ransac-random-sample-concensus">
-    RANSAC (Random Sample Concensus)
+    RANSAC (RANdom SAmple Concensus)
   </a>
 </li>
 <li class="md-nav__item">
@@ -787,15 +796,6 @@
 <a class="md-nav__link" href="#graph-cut">
     Graph Cut
   </a>
-<nav aria-label="Graph Cut" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#problem-with-min-cut">
-    Problem with min-cut
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#markow-random-field-mrf">
@@ -817,11 +817,12 @@
 </a>
 <h1 id="lecture-4-model-fitting-and-optimization">Lecture 4 Model Fitting and Optimization<a class="headerlink" href="#lecture-4-model-fitting-and-optimization" title="Permanent link">¶</a></h1>
 <h2 id="optimization">Optimization<a class="headerlink" href="#optimization" title="Permanent link">¶</a></h2>
+<h3 id="target">Target<a class="headerlink" href="#target" title="Permanent link">¶</a></h3>
 <div class="arithmatex">\[
 \begin{aligned}
-&amp; \text{Minimize } &amp; f_0(x) \\
-&amp; \text{Subject to } &amp;f_i(x) &amp; \le 0,\ i = 1, \dots, m \\
-&amp; &amp; g_i(x) &amp; = 0,\ i = 1,\dots, p
+&amp; \text{Minimize } &amp; f_0(x), \\
+&amp; \text{Subject to } &amp;f_i(x) &amp; \le 0,\ i = 1, \dots, m, \\
+&amp; &amp; g_i(x) &amp; = 0,\ i = 1,\dots, p.
 \end{aligned}
 \]</div>
 <ul>
@@ -833,74 +834,70 @@
 <h3 id="model-fitting">Model Fitting<a class="headerlink" href="#model-fitting" title="Permanent link">¶</a></h3>
 <p>A typical approach: Minimize the <strong>Mean Square Error (<abbr title="Mean Square Error">MSE</abbr>)</strong></p>
 <div class="arithmatex">\[
-\hat x = \mathop{\arg\min}\limits_x \sum\limits_i(b_i - a_i^Tx)^2
+\hat x = \mathop{\arg\min}\limits_x \sum\limits_i(b_i - a_i^Tx)^2.
 \]</div>
 <h3 id="reasons-to-choose-mse">Reasons to choose <abbr title="Mean Square Error">MSE</abbr><a class="headerlink" href="#reasons-to-choose-mse" title="Permanent link">¶</a></h3>
 <div class="admonition plane">
-<p><strong>Key Assumptions:</strong> <abbr title="Mean Square Error">MSE</abbr> = <abbr title="Maximum Likelihood Estimation">MLE</abbr> with Gaussian noise</p>
+<p><strong>Key Assumptions:</strong> <abbr title="Mean Square Error">MSE</abbr> is <abbr title="Maximum Likelihood Estimation">MLE</abbr> with Gaussian noise.</p>
 </div>
 <p>From <strong>Maximum Likelihood Estimation (<abbr title="Maximum Likelihood Estimation">MLE</abbr>)</strong>, the data is assumed to be with <strong>Gaussian noise</strong>.</p>
 <div class="arithmatex">\[
-b_i = a_i^Tx + n,\ n \sim G(0, \sigma)
+b_i = a_i^Tx + n,\ \ n \sim G(0, \sigma).
 \]</div>
 <p>The likelihood of observing <span class="arithmatex">\((a_i, b_i)\)</span> is </p>
 <div class="arithmatex">\[
-P[(a_i, b_i)|x] = P[b_i - a_i^Tx] \propto \exp\left(-\frac{(b_i - a_i^Tx)^2}{2\sigma^2}\right)
+P[(a_i, b_i)|x] = P[b_i - a_i^Tx] \propto \exp\left(-\frac{(b_i - a_i^Tx)^2}{2\sigma^2}\right).
 \]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition plane">
 <p>If the data points are <strong>independent</strong>,</p>
 <div class="arithmatex">\[
 \begin{aligned}
-P[(a_1, b_1)(a_2, b_2)\dots|x] &amp; = \prod\limits_iP[(a_i, b_i)|x] = \prod\limits_iP[b_i - a_{i^{Tx]}} \\
-&amp; \propto \exp\left(-\frac{\sum_i(b_i - a_i^Tx)^2}{2\sigma^2}\right) = \exp\left(-\frac{||Ax-b||^2_2}{2\sigma^2}\right)
+P[(a_1, b_1)(a_2, b_2)\dots|x] &amp; = \prod\limits_iP[(a_i, b_i)|x] = \prod\limits_iP[b_i - a_{i^T}x] \\
+&amp; \propto \exp\left(-\frac{\sum_i(b_i - a_i^Tx)^2}{2\sigma^2}\right) = \exp\left(-\frac{||Ax-b||^2_2}{2\sigma^2}\right).
 \end{aligned}
 \]</div>
 <div class="arithmatex">\[
 \begin{aligned}
 \hat x &amp;= \mathop{\arg\max}\limits_x P[(a_1, b_1)(a_2, b_2)\dots|x] \\ &amp;= \mathop{\arg\max}\limits_x \exp\left(-\frac{||Ax-b||^2_2}{2\sigma^2}\right) 
-= \mathop{\arg\min}\limits_x||Ax - b||_2^2
+= \mathop{\arg\min}\limits_x||Ax - b||_2^2.
 \end{aligned}
 \]</div>
 </div>
 <hr/>
 <h2 id="numerical-methods">Numerical Methods<a class="headerlink" href="#numerical-methods" title="Permanent link">¶</a></h2>
 <h3 id="analytical-solution">Analytical Solution 解析解<a class="headerlink" href="#analytical-solution" title="Permanent link">¶</a></h3>
-<p>The derivative of <span class="arithmatex">\(||Ax-b||^2_2\)</span> is <span class="arithmatex">\(2A^T(Ax - b)\)</span>, let it be 0. Then we get <span class="arithmatex">\(\hat x\)</span> satisfying</p>
+<p>The derivative of <span class="arithmatex">\(||Ax-b||^2_2\)</span> is <span class="arithmatex">\(2A^T(Ax - b)\)</span>, let it be <span class="arithmatex">\(0\)</span>. Then we get <span class="arithmatex">\(\hat x\)</span> satisfying</p>
 <div class="arithmatex">\[
-A^TAx = A^Tb
+A^TAx = A^Tb.
 \]</div>
-<p>But, if no analytical solution ...</p>
+<p>But, if no analytical solution, we should only consider the <strong>approximate solution</strong>.</p>
 <h3 id="approximate-solution">Approximate Solution 近似解<a class="headerlink" href="#approximate-solution" title="Permanent link">¶</a></h3>
 <div class="admonition success">
 <p class="admonition-title">Method</p>
 <ol>
-<li><span class="arithmatex">\(x \leftarrow x_0\)</span></li>
-<li><span class="arithmatex">\(\text{while not converge}\)</span><ol>
-<li><span class="arithmatex">\(p \leftarrow \text{descending_direction(x)}\)</span></li>
-<li><span class="arithmatex">\(\alpha \leftarrow \text{descending_step(x)}\)</span></li>
-<li><span class="arithmatex">\(x \leftarrow x + \alpha p\)</span></li>
+<li><span class="arithmatex">\(x \leftarrow x_0\)</span> (Initialization),</li>
+<li>while not converge,<ol>
+<li><span class="arithmatex">\(p \leftarrow \text{descending\_direction(x)}\)</span>,</li>
+<li><span class="arithmatex">\(\alpha \leftarrow \text{descending\_step(x)}\)</span>,</li>
+<li><span class="arithmatex">\(x \leftarrow x + \alpha p\)</span>.</li>
 </ol>
 </li>
 </ol>
 </div>
 <h3 id="gradient-descent-gd">Gradient Descent (GD)<a class="headerlink" href="#gradient-descent-gd" title="Permanent link">¶</a></h3>
 <div class="admonition plane">
-<h3 id="steepest-descent-method">Steepest Descent Method<a class="headerlink" href="#steepest-descent-method" title="Permanent link">¶</a></h3>
+<h4 id="steepest-descent-method">Steepest Descent Method<a class="headerlink" href="#steepest-descent-method" title="Permanent link">¶</a></h4>
 <div class="arithmatex">\[
-F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x
+    F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x.
 \]</div>
 <ul>
-<li>Direction<ul>
-<li><span class="arithmatex">\(\Delta x = -J^T_F\)</span></li>
-</ul>
-</li>
+<li>Direction <span class="arithmatex">\(\Delta x = -J^T_F\)</span>.</li>
 <li>
 <p>Step</p>
 <ul>
 <li>
-<p>To minimize <span class="arithmatex">\(\phi(a)\)</span>
-<div align="center">
+<p>To minimize <span class="arithmatex">\(\phi(a)\)</span>.</p>
+<p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_0.png"><img alt="lec4_0" src="../Pic/lec4_0.png" style="width:300px"/></a>
 </div> </p>
 <div class="admonition success">
@@ -919,47 +916,45 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x
 <li>
 <p>Advantage</p>
 <ul>
-<li>Easy to implement</li>
-<li>Perform well when far from the minimum</li>
-</ul>
-</li>
-<li>
-<p>Disadvantage</p>
-<ul>
-<li>Converge slowly when near the minimum, which wastes a lot of computation</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="admonition plane">
-<h3 id="newton-method">Newton Method<a class="headerlink" href="#newton-method" title="Permanent link">¶</a></h3>
-<div class="arithmatex">\[
-F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
-\]</div>
-<ul>
-<li><span class="arithmatex">\(\Delta x = -H_F^{-1}J^T_F\)</span></li>
-<li>Advantage<ul>
-<li>Faster convergence</li>
+<li>Easy to implement.</li>
+<li>Perform well when far from the minimum.</li>
 </ul>
 </li>
 <li>Disadvantage<ul>
-<li>Hessian matrix requires a lot of computation</li>
+<li>Converge slowly when near the minimum, which wastes a lot of computation.</li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="admonition plane">
-<h3 id="gauss-newton-method">Gauss-Newton Method<a class="headerlink" href="#gauss-newton-method" title="Permanent link">¶</a></h3>
+<h4 id="newton-method">Newton Method<a class="headerlink" href="#newton-method" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+    F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x.
+\]</div>
+<ul>
+<li>Direction <span class="arithmatex">\(\Delta x = -H_F^{-1}J^T_F\)</span>.</li>
+<li>Advantage<ul>
+<li>Faster convergence.</li>
+</ul>
+</li>
+<li>Disadvantage<ul>
+<li>Hessian matrix requires a lot of computation.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition plane">
+<h4 id="gauss-newton-method">Gauss-Newton Method<a class="headerlink" href="#gauss-newton-method" title="Permanent link">¶</a></h4>
 <p>For <span class="arithmatex">\(\hat x = \mathop{\arg\min}\limits_x ||Ax-b||^2_2 \overset{\Delta}{=\!=}\mathop{\arg\min}\limits_x||R(x)||^2_2\)</span>, expand <span class="arithmatex">\(R(x)\)</span>.</p>
 <div class="arithmatex">\[
-\begin{aligned}
-||R(x_k+\Delta x)||^2_2 &amp;\approx ||R(x_k) + J_R\Delta x||^2_2 \newline 
-&amp;= ||R(x_k)||^2_2 + 2R(x_k)^TJ_R\Delta x + \Delta x^TJ^T_RJ_R\Delta x
-\end{aligned}
+    \begin{aligned}
+    ||R(x_k+\Delta x)||^2_2 &amp;\approx ||R(x_k) + J_R\Delta x||^2_2 \newline 
+    &amp;= ||R(x_k)||^2_2 + 2R(x_k)^TJ_R\Delta x + \Delta x^TJ^T_RJ_R\Delta x.
+    \end{aligned}
 \]</div>
 <ul>
 <li>
-<p><span class="arithmatex">\(\Delta x = -(J_R^TJ_R)^{-1}J_R^TR(x_k) = -(J_R^TJ_R)^{-1}J_F^T\)</span></p>
+<p>Direction <span class="arithmatex">\(\Delta x = -(J_R^TJ_R)^{-1}J_R^TR(x_k) = -(J_R^TJ_R)^{-1}J_F^T\)</span></p>
 <ul>
 <li>Compared to Newton Method, <span class="arithmatex">\(J_R^TJ_R\)</span> is used to approximate <span class="arithmatex">\(H_F\)</span>.</li>
 </ul>
@@ -967,8 +962,8 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
 <li>
 <p>Advantage</p>
 <ul>
-<li>No need to compute Hessian matrix</li>
-<li>Faster to converge</li>
+<li>No need to compute Hessian matrix.</li>
+<li>Faster to converge.</li>
 </ul>
 </li>
 <li>
@@ -980,19 +975,19 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
 </ul>
 </div>
 <div class="admonition plane">
-<h3 id="levenberg-marquardt-lm">Levenberg-Marquardt (LM)<a class="headerlink" href="#levenberg-marquardt-lm" title="Permanent link">¶</a></h3>
+<h4 id="levenberg-marquardt-lm">Levenberg-Marquardt (LM)<a class="headerlink" href="#levenberg-marquardt-lm" title="Permanent link">¶</a></h4>
 <ul>
 <li>
-<p><span class="arithmatex">\(\Delta x = -(J_R^TJ_R + \lambda I)^{-1}J_R^TR(x_k)\)</span></p>
+<p>Direction <span class="arithmatex">\(\Delta x = -(J_R^TJ_R + \lambda I)^{-1}J_R^TR(x_k)\)</span>.</p>
 <ul>
-<li><span class="arithmatex">\(\lambda \rightarrow \infty\)</span> Steepest Descent</li>
-<li><span class="arithmatex">\(\lambda \rightarrow 0\)</span> Gauss-Newton</li>
+<li><span class="arithmatex">\(\lambda \rightarrow \infty\)</span> Steepest Descent.</li>
+<li><span class="arithmatex">\(\lambda \rightarrow 0\)</span> Gauss-Newton.</li>
 </ul>
 </li>
 <li>
 <p>Advantage</p>
 <ul>
-<li>Start and converge quickly</li>
+<li>Start and converge quickly.</li>
 </ul>
 </li>
 </ul>
@@ -1014,76 +1009,77 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_3.png"><img alt="lec4_3" src="../Pic/lec4_3.png" style="width:400px"/></a>
 </div>
-<h3 id="ransac-random-sample-concensus">RANSAC (Random Sample Concensus)<a class="headerlink" href="#ransac-random-sample-concensus" title="Permanent link">¶</a></h3>
+<h3 id="ransac-random-sample-concensus">RANSAC (RANdom SAmple Concensus)<a class="headerlink" href="#ransac-random-sample-concensus" title="Permanent link">¶</a></h3>
 <p>The most powerful method to handle outliers.</p>
 <div class="admonition note">
 <p class="admonition-title">Key ideas</p>
 <ul>
 <li>The distribution of inliers is similar while outliers differ a lot.</li>
-<li>Use data point pairs to vote
-<div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_4.png"><img alt="lec4_4" src="../Pic/lec4_4.png" style="width:500px"/></a>
-</div> </li>
+<li>Use data point pairs to vote.</li>
 </ul>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_4.png"><img alt="lec4_4" src="../Pic/lec4_4.png" style="width:500px"/></a>
+</div> </p>
 </div>
 <h3 id="ill-posed-problem">ill-posed Problem 病态问题 / 多解问题<a class="headerlink" href="#ill-posed-problem" title="Permanent link">¶</a></h3>
-<p>The solution is not unique. To make it unique:</p>
+<p>Ill-posed problems are the problems that the solution is not unique. To make it unique:</p>
 <ul>
 <li>
 <p>L2 regularization</p>
 <ul>
-<li>Suppress redundant variables</li>
-<li><span class="arithmatex">\(\min_x||Ax-b||^2_2,\ s.t. ||x||_2 \le 1\)</span>  (the same as <span class="arithmatex">\(\min_x||Ax-b||^2_2 + \lambda||x||_2\)</span>)</li>
+<li>Suppress redundant variables.</li>
+<li><span class="arithmatex">\(\min_x||Ax-b||^2_2,\ s.t. ||x||_2 \le 1\)</span>. (the same as <span class="arithmatex">\(\min_x||Ax-b||^2_2 + \lambda||x||_2\)</span>)</li>
 </ul>
 </li>
 <li>
 <p>L1 regularization</p>
 <ul>
-<li>Make <span class="arithmatex">\(x\)</span> sparse</li>
-<li><span class="arithmatex">\(\min_x||Ax-b||^2_2,\ s.t. ||x||_1 \le 1\)</span>  (the same as <span class="arithmatex">\(\min_x||Ax-b||^2_2 + \lambda||x||_1\)</span>)</li>
+<li>Make <span class="arithmatex">\(x\)</span> sparse.</li>
+<li><span class="arithmatex">\(\min_x||Ax-b||^2_2,\ s.t. ||x||_1 \le 1\)</span>. (the same as <span class="arithmatex">\(\min_x||Ax-b||^2_2 + \lambda||x||_1\)</span>)</li>
 </ul>
 </li>
 </ul>
 <h2 id="graphcut-and-mrf">Graphcut and <abbr title="Markow Random Field">MRF</abbr><a class="headerlink" href="#graphcut-and-mrf" title="Permanent link">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <p><strong>A key idea:</strong> Neighboring pixels tend to take the same label.</p>
-</div>
 <div class="admonition plane">
 <p>Images as Graphs</p>
 <ul>
-<li>A vertex for each pixel</li>
-<li>An edge between each pair, weighted by the <strong>affinity or similarity</strong> between its two vertices<ul>
-<li>Pixel Dissimilarity <span class="arithmatex">\(S(\textbf{f}_i, \textbf{f}_j) = \sqrt{\sum_k(f_{ik} - f_{jk})^2}\)</span></li>
-<li>Pixel Affinity <span class="arithmatex">\(w(i, j) = A(\textbf{f}_i, \textbf{f}_j) = \exp\left(\frac{-1}{2\sigma^2}S(\textbf{f}_i, \textbf{f}_j)\right)\)</span></li>
+<li>A vertex for each pixel.</li>
+<li>An edge between each pair, weighted by the <strong>affinity or similarity</strong> between its two vertices.<ul>
+<li>Pixel Dissimilarity <span class="arithmatex">\(S(\textbf{f}_i, \textbf{f}_j) = \sqrt{\sum_k(f_{ik} - f_{jk})^2}\)</span>.</li>
+<li>Pixel Affinity <span class="arithmatex">\(w(i, j) = A(\textbf{f}_i, \textbf{f}_j) = \exp\left(-\dfrac{1}{2\sigma^2}S(\textbf{f}_i, \textbf{f}_j)\right)\)</span>.</li>
 </ul>
 </li>
-<li>Graph Notation <span class="arithmatex">\(G = (V, E)\)</span><ul>
-<li><span class="arithmatex">\(V\)</span>: a set of vertices</li>
-<li><span class="arithmatex">\(E\)</span>: a set of edges</li>
+<li>Graph Notation <span class="arithmatex">\(G = (V, E)\)</span>.<ul>
+<li><span class="arithmatex">\(V\)</span>: a set of vertices.</li>
+<li><span class="arithmatex">\(E\)</span>: a set of edges.</li>
 </ul>
 </li>
 </ul>
 </div>
 <h3 id="graph-cut">Graph Cut<a class="headerlink" href="#graph-cut" title="Permanent link">¶</a></h3>
 <p>Cut <span class="arithmatex">\(C=(V_A, V_B)\)</span> is a parition of vertices <span class="arithmatex">\(V\)</span> of a graph <span class="arithmatex">\(G\)</span> into two disjoint subsets <span class="arithmatex">\(V_A\)</span> and <span class="arithmatex">\(V_B\)</span>.</p>
-<p><strong>Cost of Cut</strong> <span class="arithmatex">\(\text{cut}(V_A, V_B) = \sum_{u\in V_A, v\in V_B} w(u, v)\)</span></p>
+<p><strong>Cost of Cut:</strong> <span class="arithmatex">\(\text{cut}(V_A, V_B) = \sum\limits_{u\in V_A, v\in V_B} w(u, v)\)</span>.</p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_5.png"><img alt="lec4_5" src="../Pic/lec4_5.png" style="width:300px"/></a>
 </div>
-<h4 id="problem-with-min-cut">Problem with min-cut<a class="headerlink" href="#problem-with-min-cut" title="Permanent link">¶</a></h4>
-<p>Bias to cut small, isolated segments</p>
-<div align="center">
+<div class="admonition question">
+<p class="admonition-title">Problem with Min-Cut</p>
+<p>Min-cut is bias to cut small and isolated segments.</p>
+<p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec4_6.png"><img alt="lec4_6" src="../Pic/lec4_6.png" style="width:600px"/></a>
+</div> </p>
 </div>
-<p><strong>Solution: Normalized cut</strong></p>
-<p>Compute how strongly verices <span class="arithmatex">\(V_A\)</span> are associated with vertices<span class="arithmatex">\(V\)</span></p>
+<div class="admonition success">
+<p class="admonition-title">Solution: Normalized Cut</p>
+<p>Compute how strongly verices <span class="arithmatex">\(V_A\)</span> are associated with vertices <span class="arithmatex">\(V\)</span>.</p>
 <div class="arithmatex">\[
-\text{assoc}(V_A, V) =  \sum_{u\in V_A, v\in V} w(u, v)
+    \text{assoc}(V_A, V) =  \sum\limits_{u\in V_A, v\in V} w(u, v),
 \]</div>
 <div class="arithmatex">\[
-\text{NCut}(V_A, V_B) = \frac{\text{cut}(V_A, V_B)}{\text{assoc}(V_A, V)} + \frac{\text{cut}(V_A, V_B)}{\text{assoc}(V_B, V)}
+\text{NCut}(V_A, V_B) = \frac{\text{cut}(V_A, V_B)}{\text{assoc}(V_A, V)} + \frac{\text{cut}(V_A, V_B)}{\text{assoc}(V_B, V)}.
 \]</div>
+</div>
 <h3 id="markow-random-field-mrf">Markow Random Field (<abbr title="Markow Random Field">MRF</abbr>)<a class="headerlink" href="#markow-random-field-mrf" title="Permanent link">¶</a></h3>
 <p>Graphcut is an exception of <abbr title="Markow Random Field">MRF</abbr>.</p>
 <div class="admonition question">
@@ -1094,7 +1090,7 @@ F(x_0 + \Delta x) \approx F(x_0) + J_F\Delta x + \frac12\Delta x^TH_F\Delta x
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.30 15:10:22 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.16 00:06:03 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.09 00:35:37 CST</span>

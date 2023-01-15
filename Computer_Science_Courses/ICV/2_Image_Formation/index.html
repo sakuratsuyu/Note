@@ -569,6 +569,9 @@
 </ul>
 </nav>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#photometric-image-formation">
     Photometric Image Formation（定颜色/亮度）
@@ -577,12 +580,12 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#image-sensor">
-    Image Sensor
+    Image Sensor 传感器
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#shutter">
-    Shutter
+    Shutter 快门
   </a>
 </li>
 <li class="md-nav__item">
@@ -594,13 +597,13 @@
 <a class="md-nav__link" href="#shading">
     Shading 着色
   </a>
-<nav aria-label="Shading 着色" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#brdf-bidirectional-reflectance-distribution-function">
     BRDF (Bidirectional Reflectance Distribution Function)
   </a>
-</li>
+<nav aria-label="BRDF (Bidirectional Reflectance Distribution Function)" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#diffuse-lambertian-reflection">
     Diffuse (Lambertian) Reflection
@@ -615,9 +618,6 @@
 <a class="md-nav__link" href="#blinn-phong-reflection-model">
     Blinn-Phong Reflection Model
   </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -845,6 +845,9 @@
 </ul>
 </nav>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#photometric-image-formation">
     Photometric Image Formation（定颜色/亮度）
@@ -853,12 +856,12 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#image-sensor">
-    Image Sensor
+    Image Sensor 传感器
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#shutter">
-    Shutter
+    Shutter 快门
   </a>
 </li>
 <li class="md-nav__item">
@@ -870,13 +873,13 @@
 <a class="md-nav__link" href="#shading">
     Shading 着色
   </a>
-<nav aria-label="Shading 着色" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#brdf-bidirectional-reflectance-distribution-function">
     BRDF (Bidirectional Reflectance Distribution Function)
   </a>
-</li>
+<nav aria-label="BRDF (Bidirectional Reflectance Distribution Function)" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#diffuse-lambertian-reflection">
     Diffuse (Lambertian) Reflection
@@ -891,9 +894,6 @@
 <a class="md-nav__link" href="#blinn-phong-reflection-model">
     Blinn-Phong Reflection Model
   </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -971,7 +971,7 @@ m = \frac{h_i}{h_o}.
 <p>The representation of aperture is its Diameter <span class="arithmatex">\(D\)</span>.</p>
 <p><strong>F-Number</strong></p>
 <div class="arithmatex">\[
-N = \frac{f}{D} \text{ (mostly greater than 1, around 1.8 \sim 22)}.
+N = \frac{f}{D}\ \ \text{ (mostly greater than $1$, around $1.8 \sim 22$)}.
 \]</div>
 <h3 id="lens-defocus">Lens Defocus<a class="headerlink" href="#lens-defocus" title="Permanent link">¶</a></h3>
 <div align="center">
@@ -979,7 +979,7 @@ N = \frac{f}{D} \text{ (mostly greater than 1, around 1.8 \sim 22)}.
 </div>
 <p>Blur Circle Diameter (光斑半径)</p>
 <div class="arithmatex">\[
-b = \frac{D}{i'}|i' -i|, b \propto D \propto \frac{1}{N}
+b = \frac{D}{i'}|i' -i|,\ \ b \propto D \propto \frac{1}{N}.
 \]</div>
 <h3 id="focusing">Focusing 对焦<a class="headerlink" href="#focusing" title="Permanent link">¶</a></h3>
 <div align="center">
@@ -1014,12 +1014,12 @@ v
 \end{bmatrix}
 =
 \begin{bmatrix}
-f \frac{x}{z} \\
-f \frac{y}{z}
+f \cfrac{x}{z} \\
+f \cfrac{y}{z}
 \end{bmatrix}.
 \]</div>
 <h3 id="homogeneous-coordinates-projective-coordinates">Homogeneous Coordinates / Projective Coordinates<a class="headerlink" href="#homogeneous-coordinates-projective-coordinates" title="Permanent link">¶</a></h3>
-<p>Suppose that <span class="arithmatex">\(\begin{bmatrix} x \\ y \\ w \end{bmatrix}\)</span>is the same as <span class="arithmatex">\(\begin{bmatrix} x/w \\ y/w \\ 1 \end{bmatrix}\)</span>, then we get</p>
+<p>Suppose that <span class="arithmatex">\(\begin{bmatrix} x \\ y \\ w \end{bmatrix}\)</span> is the same as <span class="arithmatex">\(\begin{bmatrix} x/w \\ y/w \\ 1 \end{bmatrix}\)</span>, then we get</p>
 <div class="arithmatex">\[
 \begin{bmatrix}
 f &amp; 0 &amp; 0 &amp; 0 \\
@@ -1040,19 +1040,19 @@ z \\
 \end{bmatrix}
 \cong
 \begin{bmatrix}
-f\frac{x}{z} \\
-f\frac{y}{z} \\
+f\cfrac{x}{z} \\
+f\cfrac{y}{z} \\
 1
 \end{bmatrix}.
 \]</div>
-<p>We can also put the image plane in front of the camera (opposite to the previous picture).</p>
+<p>For convenience of dicussion, we can also put the image plane in front of the camera (opposite to the previous picture).</p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_9.png"><img alt="lec2_9" src="../Pic/lec2_9.png" style="width:400px"/></a>
 </div>
 <h3 id="perspective-projection">Perspective Projection<a class="headerlink" href="#perspective-projection" title="Permanent link">¶</a></h3>
 <ul>
-<li>Preserevd - Straight lines are still straight</li>
-<li>Lost - Length and Angle</li>
+<li><strong>What are Preserevd:</strong> Straight lines are still straight.</li>
+<li><strong>What are Lost:</strong> Length and Angle.</li>
 </ul>
 <h4 id="vanishing-points">Vanishing Points<a class="headerlink" href="#vanishing-points" title="Permanent link">¶</a></h4>
 <div align="center">
@@ -1061,25 +1061,25 @@ f\frac{y}{z} \\
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_11.png"><img alt="lec2_11" src="../Pic/lec2_11.png" style="width:500px"/></a>
 </div>
-<div class="admonition note">
+<div class="admonition theorem">
 <p class="admonition-title">Properties</p>
 <ul>
-<li>Any wo parallel lines have the same vanishing point <strong>v.</strong><ul>
-<li><strong>v</strong> can be outside the image frame or at infinity.</li>
+<li>Any two parallel lines have the same vanishing point <span class="arithmatex">\(\bf v\)</span>.<ul>
+<li><span class="arithmatex">\(\bf v\)</span> can be outside the image frame or at infinity.</li>
 </ul>
 </li>
-<li>Line from <strong>C</strong> to <strong>v</strong> is parallel to the lines.</li>
+<li>Line from <span class="arithmatex">\(\bf C\)</span> to <span class="arithmatex">\(\bf v\)</span> is parallel to the lines.</li>
 </ul>
 </div>
 <h4 id="vanishing-lines">Vanishing Lines<a class="headerlink" href="#vanishing-lines" title="Permanent link">¶</a></h4>
-<p>Multiple vanishing points</p>
+<p>Multiple vanishing points compose the vanishing lines.</p>
 <p>The direction of the vanishing line tells us the orientation of the plane.</p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_12.png"><img alt="lec2_12" src="../Pic/lec2_12.png" style="width:500px"/></a>
 </div>
 <h4 id="distortion">Distortion<a class="headerlink" href="#distortion" title="Permanent link">¶</a></h4>
 <ul>
-<li>Converging verticals</li>
+<li>Converging verticals.</li>
 </ul>
 <figure>
 <p><div align="center">
@@ -1088,16 +1088,14 @@ f\frac{y}{z} \\
 <figcaption>Problem and Solution (View Camera 移轴相机)</figcaption></p>
 </figure>
 <ul>
-<li>Exterior columns appear bigger<ul>
-<li>Due to lens flaws
-<div align="center">
+<li>
+<p>Exterior columns appear bigger. (Due to lens flaws.)</p>
+<p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_14.png"><img alt="lec2_14" src="../Pic/lec2_14.png" style="width:300px"/></a>
-</div></li>
-</ul>
+</div></p>
 </li>
-<li>Radial distortion<ul>
-<li>Due to imperfect lens</li>
-</ul>
+<li>
+<p>Radial distortion. (Due to imperfect lens.)</p>
 </li>
 </ul>
 <div align="center">
@@ -1105,14 +1103,14 @@ f\frac{y}{z} \\
 </div>
 <div class="arithmatex">\[
 \begin{aligned}
-r^2 &amp;= {x'}_n^{2} + {y'}_n^{2} \\
-{x'}_d &amp;= {x'}_n(1 + \kappa_1r^2 + \kappa_2r^4) \\
-{y'}_d &amp;= {y'}_n(1 + \kappa_1r^2 + \kappa_2r^4) \\
+r^2 &amp;= {x'}_n^{2} + {y'}_n^{2}, \\
+{x'}_d &amp;= {x'}_n(1 + \kappa_1r^2 + \kappa_2r^4), \\
+{y'}_d &amp;= {y'}_n(1 + \kappa_1r^2 + \kappa_2r^4). \\
 \end{aligned}
 \]</div>
 <div class="admonition success">
 <p class="admonition-title">Solution</p>
-<p>Take a photo of a grid at the same point and then use the mathmatics to calculate and correct radial distortion.</p>
+<p>Take a photo of a grid at the same point and then use the mathematics to calculate and correct radial distortion.</p>
 </div>
 <h4 id="orthographic-projection">Orthographic Projection<a class="headerlink" href="#orthographic-projection" title="Permanent link">¶</a></h4>
 <div align="center">
@@ -1137,17 +1135,17 @@ y \\
 1 \\
 \end{bmatrix}
 \Rightarrow
-(x, y)
+(x, y).
 \]</div>
-<h3 id="photometric-image-formation">Photometric Image Formation（定颜色/亮度）<a class="headerlink" href="#photometric-image-formation" title="Permanent link">¶</a></h3>
-<h4 id="image-sensor">Image Sensor<a class="headerlink" href="#image-sensor" title="Permanent link">¶</a></h4>
+<h2 id="photometric-image-formation">Photometric Image Formation（定颜色/亮度）<a class="headerlink" href="#photometric-image-formation" title="Permanent link">¶</a></h2>
+<h3 id="image-sensor">Image Sensor 传感器<a class="headerlink" href="#image-sensor" title="Permanent link">¶</a></h3>
 <ul>
 <li>CMOS</li>
 <li>CCD (Charge Coupled Device)</li>
 </ul>
-<h4 id="shutter">Shutter<a class="headerlink" href="#shutter" title="Permanent link">¶</a></h4>
+<h3 id="shutter">Shutter 快门<a class="headerlink" href="#shutter" title="Permanent link">¶</a></h3>
 <p>Shutter speed controls exposure time.</p>
-<h4 id="color-sensing">Color Sensing<a class="headerlink" href="#color-sensing" title="Permanent link">¶</a></h4>
+<h3 id="color-sensing">Color Sensing<a class="headerlink" href="#color-sensing" title="Permanent link">¶</a></h3>
 <ul>
 <li>
 <p>Color Spaces</p>
@@ -1163,44 +1161,44 @@ y \\
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_17.png"><img alt="lec2_17" src="../Pic/lec2_17.png" style="width:800px"/></a>
 </div>
-<h4 id="shading">Shading 着色<a class="headerlink" href="#shading" title="Permanent link">¶</a></h4>
+<h3 id="shading">Shading 着色<a class="headerlink" href="#shading" title="Permanent link">¶</a></h3>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_18.png"><img alt="lec2_18" src="../Pic/lec2_18.png" style="width:300px"/></a>
 </div>
-<h5 id="brdf-bidirectional-reflectance-distribution-function">BRDF (Bidirectional Reflectance Distribution Function)<a class="headerlink" href="#brdf-bidirectional-reflectance-distribution-function" title="Permanent link">¶</a></h5>
+<h3 id="brdf-bidirectional-reflectance-distribution-function">BRDF (Bidirectional Reflectance Distribution Function)<a class="headerlink" href="#brdf-bidirectional-reflectance-distribution-function" title="Permanent link">¶</a></h3>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_19.png"><img alt="lec2_19" src="../Pic/lec2_19.png" style="width:600px"/></a>
 </div>
 <div class="arithmatex">\[
-L_r(\hat{\textbf{v}_r};\lambda) = \int L_i(\hat{\textbf{i}_r};\lambda)f_r(\hat{\textbf{v}_r}, \hat{\textbf{v}_i}, \hat{\textbf{n}}; \lambda)\cos^+\theta_i\ d\hat{\textbf{v}_i}
+L_r(\hat{\textbf{v}_r};\lambda) = \int L_i(\hat{\textbf{i}_r};\lambda)f_r(\hat{\textbf{v}_r}, \hat{\textbf{v}_i}, \hat{\textbf{n}}; \lambda)\cos^+\theta_i\ d\hat{\textbf{v}_i}.
 \]</div>
-<h5 id="diffuse-lambertian-reflection">Diffuse (Lambertian) Reflection<a class="headerlink" href="#diffuse-lambertian-reflection" title="Permanent link">¶</a></h5>
+<h4 id="diffuse-lambertian-reflection">Diffuse (Lambertian) Reflection<a class="headerlink" href="#diffuse-lambertian-reflection" title="Permanent link">¶</a></h4>
 <ul>
-<li>Shading independent of view direction</li>
+<li>Shading independent of view direction.</li>
 </ul>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_20.png"><img alt="lec2_20" src="../Pic/lec2_20.png" style="width:600px"/></a>
 </div>
-<h5 id="specular-term">Specular Term<a class="headerlink" href="#specular-term" title="Permanent link">¶</a></h5>
+<h4 id="specular-term">Specular Term<a class="headerlink" href="#specular-term" title="Permanent link">¶</a></h4>
 <ul>
-<li>Intensity depends on view direction</li>
+<li>Intensity depends on view direction.</li>
 </ul>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_21.png"><img alt="lec2_21" src="../Pic/lec2_21.png" style="width:600px"/></a>
 </div>
-<h5 id="blinn-phong-reflection-model">Blinn-Phong Reflection Model<a class="headerlink" href="#blinn-phong-reflection-model" title="Permanent link">¶</a></h5>
+<h4 id="blinn-phong-reflection-model">Blinn-Phong Reflection Model<a class="headerlink" href="#blinn-phong-reflection-model" title="Permanent link">¶</a></h4>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_22.png"><img alt="lec2_22" src="../Pic/lec2_22.png" style="width:800px"/></a>
 </div>
 <div class="arithmatex">\[
-L = L_a + L_d + L_s = k_aI_a + k_d(I/r^2)\max(0, \textbf{n}\cdot\textbf{l}) + k_s(I/r^2)\max(0, \textbf{n}\cdot\textbf{h})^p
+L = L_a + L_d + L_s = k_aI_a + k_d(I/r^2)\max(0, \textbf{n}\cdot\textbf{l}) + k_s(I/r^2)\max(0, \textbf{n}\cdot\textbf{h})^p.
 \]</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.15 13:54:18 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.16 00:06:03 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.08 20:35:08 CST</span>

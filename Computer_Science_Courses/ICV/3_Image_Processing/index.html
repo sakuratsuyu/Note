@@ -36,7 +36,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#lecture-3-imae-processing">
+<a class="md-skip" href="#lecture-3-image-processing">
           跳转至
         </a>
 </div>
@@ -468,17 +468,16 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#image-processing-basis">
-    Image Processing Basis
+<a class="md-nav__link" href="#image-processing">
+    Image Processing
   </a>
-<nav aria-label="Image Processing Basis" class="md-nav">
+<nav aria-label="Image Processing" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#convolution">
     Convolution
   </a>
-<nav aria-label="Convolution" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#gaussian-blur">
     Gaussian Blur
@@ -502,9 +501,6 @@
 </ul>
 </nav>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#image-sampling">
     Image Sampling
@@ -522,18 +518,9 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#from-the-view-of-fourier-transform">
-    From the view of Fourier Transform ...
+<a class="md-nav__link" href="#sampling-and-aliasing-from-ft">
+    Sampling and Aliasing From FT
   </a>
-<nav aria-label="From the view of Fourier Transform ..." class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sampling-and-aliasing">
-    Sampling and Aliasing
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -676,17 +663,16 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#image-processing-basis">
-    Image Processing Basis
+<a class="md-nav__link" href="#image-processing">
+    Image Processing
   </a>
-<nav aria-label="Image Processing Basis" class="md-nav">
+<nav aria-label="Image Processing" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#convolution">
     Convolution
   </a>
-<nav aria-label="Convolution" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#gaussian-blur">
     Gaussian Blur
@@ -710,9 +696,6 @@
 </ul>
 </nav>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#image-sampling">
     Image Sampling
@@ -730,18 +713,9 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#from-the-view-of-fourier-transform">
-    From the view of Fourier Transform ...
+<a class="md-nav__link" href="#sampling-and-aliasing-from-ft">
+    Sampling and Aliasing From FT
   </a>
-<nav aria-label="From the view of Fourier Transform ..." class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sampling-and-aliasing">
-    Sampling and Aliasing
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -785,99 +759,127 @@
 <a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/ICV/3_Image_Processing.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="lecture-3-imae-processing">Lecture 3 Imae Processing<a class="headerlink" href="#lecture-3-imae-processing" title="Permanent link">¶</a></h1>
-<h2 id="image-processing-basis">Image Processing Basis<a class="headerlink" href="#image-processing-basis" title="Permanent link">¶</a></h2>
-<p>Operations: Incresing contrast, Invert, Blur, Sharpen, Edge Detection</p>
+<h1 id="lecture-3-image-processing">Lecture 3 Image Processing<a class="headerlink" href="#lecture-3-image-processing" title="Permanent link">¶</a></h1>
+<h2 id="image-processing">Image Processing<a class="headerlink" href="#image-processing" title="Permanent link">¶</a></h2>
+<p><strong>Common Processs of Images:</strong></p>
+<p>Incresing contrast, Invert, Blur, Sharpen, Edge Detection ...</p>
 <h3 id="convolution">Convolution<a class="headerlink" href="#convolution" title="Permanent link">¶</a></h3>
-<div class="arithmatex">\[
-(f * g)(x) = \int_{-\infty}^\infty f(y)g(x-y)dy
-\]</div>
-<p>discrete 2D form</p>
-<div class="arithmatex">\[
-(f * g)(x) = \sum_{i, j =-\infty}^\infty f(i, j)g(x - i, y - j)
-\]</div>
-<h4 id="gaussian-blur">Gaussian Blur<a class="headerlink" href="#gaussian-blur" title="Permanent link">¶</a></h4>
-<p>2D Gaussian function</p>
-<div class="arithmatex">\[
-\large f(i, j) = \frac{1}{2\pi\sigma^2}e^{-\frac{i^2 + j^2}{2\sigma^2}}
-\]</div>
-<div class="admonition note">
-<p class="admonition-title">Usage</p>
 <ul>
-<li>Define a window size (commmly a square, say <span class="arithmatex">\(n \times n\)</span>, and let <span class="arithmatex">\(r = \lfloor n / 2 \rfloor\)</span>).</li>
-<li>Select a point, say <span class="arithmatex">\((x, y)\)</span> and then a window around it.</li>
-<li>Apply the Gaussian function at each point in the window, and sum them up, namely <span class="arithmatex">\(G(x, y) = \sum\limits_{i = x - r}^{x + r}\sum\limits_{j = y - r}^{y + r}f(i,j)\)</span>.</li>
-<li>Then the "blurred" value of point <span class="arithmatex">\((x, y)\)</span> is <span class="arithmatex">\(G(x, y)\)</span>.</li>
+<li>Continous 1-D form,</li>
 </ul>
+<div class="arithmatex">\[
+(f * g)(x) = \int_{-\infty}^\infty f(y)g(x-y)dy.
+\]</div>
+<ul>
+<li>Discrete 2D form,</li>
+</ul>
+<div class="arithmatex">\[
+(f * g)(x) = \sum_{i, j =-\infty}^\infty f(i, j)g(x - i, y - j).
+\]</div>
+<h3 id="gaussian-blur">Gaussian Blur<a class="headerlink" href="#gaussian-blur" title="Permanent link">¶</a></h3>
+<p>We define thb <strong>2D Gaussian function</strong> as below,</p>
+<div class="arithmatex">\[
+\large f(i, j) = \frac{1}{2\pi\sigma^2}e^{-\frac{i^2 + j^2}{2\sigma^2}}.
+\]</div>
+<div class="admonition success">
+<p class="admonition-title">Process of Gaussian Blur</p>
+<ol>
+<li>Define a window size (commmly a square, say <span class="arithmatex">\(n \times n\)</span>, and let <span class="arithmatex">\(r = \lfloor n / 2 \rfloor\)</span>).</li>
+<li>Select a point, say <span class="arithmatex">\((x, y)\)</span> and then put a window around it.</li>
+<li>
+<p>Apply the Gaussian function at each point in the window, and sum them up, namely </p>
+<div class="arithmatex">\[
+G(x, y) = \sum\limits_{i = x - r}^{x + r}\sum\limits_{j = y - r}^{y + r}f(i,j).
+\]</div>
+</li>
+<li>
+<p>Then the 「blurred」 value of point <span class="arithmatex">\((x, y)\)</span> is <span class="arithmatex">\(G(x, y)\)</span>.</p>
+</li>
+</ol>
 </div>
-<h4 id="sharpen">Sharpen<a class="headerlink" href="#sharpen" title="Permanent link">¶</a></h4>
+<h3 id="sharpen">Sharpen<a class="headerlink" href="#sharpen" title="Permanent link">¶</a></h3>
 <div class="admonition example">
 <p class="admonition-title">An example of kernel matrix</p>
 <div class="arithmatex">\[
-f = \begin{bmatrix}
-0 &amp; -1 &amp; 0 \\
--1 &amp; 5 &amp; -1 \\
-0 &amp; -1 &amp; 0
-\end{bmatrix}
+    f = \begin{bmatrix}
+    0 &amp; -1 &amp; 0 \\
+    -1 &amp; 5 &amp; -1 \\
+    0 &amp; -1 &amp; 0
+    \end{bmatrix}
 \]</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">An insight</p>
-<p>Let <span class="arithmatex">\(I\)</span> be the original image, then the sharpen image <span class="arithmatex">\(I' = I + (I - \text{blur}(I))\)</span>, where <span class="arithmatex">\(I - \text{blur}(I)\)</span> can be regarded as the high frequency content.</p>
+<p>Let <span class="arithmatex">\(I\)</span> be the original image, then the sharpen image can be consider as</p>
+<div class="arithmatex">\[
+    I' = I + (I - \text{blur}(I)),
+\]</div>
+<p>where <span class="arithmatex">\(I - \text{blur}(I)\)</span> can be regarded as the <strong>high frequency</strong> part of content.</p>
 </div>
-<h4 id="extract-gradients">Extract Gradients<a class="headerlink" href="#extract-gradients" title="Permanent link">¶</a></h4>
+<h3 id="extract-gradients">Extract Gradients<a class="headerlink" href="#extract-gradients" title="Permanent link">¶</a></h3>
 <div class="admonition example">
-<p class="admonition-title">Examples of kernel matrix</p>
+<p class="admonition-title">Two examples of kernel matrices</p>
 <ul>
-<li><span class="arithmatex">\(f = \begin{bmatrix} -1 &amp; 0 &amp; 1 \\ -2 &amp; 0 &amp; 2 \\ -1 &amp; 0 &amp; 1\end{bmatrix}\)</span>extracts horizontal gradients.</li>
-<li><span class="arithmatex">\(f = \begin{bmatrix}  -1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{bmatrix}\)</span>extracts vertical gradients.</li>
+<li><span class="arithmatex">\(f = \begin{bmatrix} -1 &amp; 0 &amp; 1 \\ -2 &amp; 0 &amp; 2 \\ -1 &amp; 0 &amp; 1\end{bmatrix}\)</span> extracts horizontal gradients.</li>
+<li><span class="arithmatex">\(f = \begin{bmatrix}  -1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{bmatrix}\)</span> extracts vertical gradients.</li>
 </ul>
 </div>
-<h4 id="bilateral-filters">Bilateral Filters<a class="headerlink" href="#bilateral-filters" title="Permanent link">¶</a></h4>
-<p><u>Kernel depends on image content.</u></p>
-<p>Better performance but lower efficiency.</p>
+<h3 id="bilateral-filters">Bilateral Filters<a class="headerlink" href="#bilateral-filters" title="Permanent link">¶</a></h3>
+<p><strong>Feature</strong></p>
+<ul>
+<li>Kernel depends on image content.</li>
+<li>Better performance but lower efficiency.</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">A trick: Separable Filter</p>
-<p>A filter is separable if it can be wriiten as the outer product of two other filters.</p>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A filter is <strong>separable</strong> if it can be wriiten as the outer product of two other filters.</p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="arithmatex">\[
 \frac19 \begin{bmatrix} 1 &amp; 1 &amp; 1\\ 1 &amp; 1 &amp; 1\\ 1 &amp; 1 &amp; 1 \end{bmatrix} =  \frac13 \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \times \frac13 \begin{bmatrix} 1 &amp; 1 &amp; 1 \end{bmatrix} 
 \]</div>
 </div>
-<p><strong>Purpose / Advantages</strong>: speed up the calculation</p>
+<p><strong>Purpose / Advantages:</strong> speed up the calculation.</p>
 </div>
 <h2 id="image-sampling">Image Sampling<a class="headerlink" href="#image-sampling" title="Permanent link">¶</a></h2>
 <div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
-<p>Down-sampling → Reducing image size</p>
+<p class="admonition-title">Basic Idea</p>
+<p>Down-sampling → Reducing image size.</p>
 </div>
 <h3 id="aliasing">Aliasing<a class="headerlink" href="#aliasing" title="Permanent link">¶</a></h3>
-<p>Aliasing is the artifacts due to sampling</p>
-<p>Higher frequencies need faster sampling.</p>
-<p>Undersampling creates frequency aliases.</p>
+<ul>
+<li>Aliasing is the artifacts due to sampling.</li>
+<li>Higher frequencies need faster sampling.</li>
+<li>Undersampling creates frequency aliases.</li>
+</ul>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_0.png"><img alt="lec3_0" src="../Pic/lec3_0.png" style="width:400px"/></a>
 </div>
 <h3 id="fourier-transform">Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permanent link">¶</a></h3>
-<p>Simly put, fourier transform represents a function as a <strong>weighted sum</strong> of <u>sines and cosines</u>, where the sines and consines are in various <strong>frequencies</strong>.</p>
+<p>Simly put, fourier transform represents a function as a <strong>weighted sum</strong> of sines and cosines, where the sines and consines are in various <strong>frequencies</strong>.</p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_1.png"><img alt="lec3_1" src="../Pic/lec3_1.png" style="width:800px"/></a>
 </div>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_2.png"><img alt="lec3_2" src="../Pic/lec3_2.png" style="width:200px"/></a>
 </div>
+<p><br/></p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_3.png"><img alt="lec3_3" src="../Pic/lec3_3.png" style="width:500px"/></a>
 </div>
-<div class="admonition info">
+<div class="admonition theorem">
 <p class="admonition-title">Convolution Theorem</p>
 <p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_4.png"><img alt="lec3_4" src="../Pic/lec3_4.png" style="width:500px"/></a>
 </div></p>
 </div>
-<h3 id="from-the-view-of-fourier-transform">From the view of Fourier Transform ...<a class="headerlink" href="#from-the-view-of-fourier-transform" title="Permanent link">¶</a></h3>
-<h4 id="sampling-and-aliasing">Sampling and Aliasing<a class="headerlink" href="#sampling-and-aliasing" title="Permanent link">¶</a></h4>
+<div class="admonition plane">
+<p>Now we can consider sampling and aliasing <strong>from the view of Fourier Transform (FT)</strong> ...</p>
+</div>
+<h3 id="sampling-and-aliasing-from-ft">Sampling and Aliasing From FT<a class="headerlink" href="#sampling-and-aliasing-from-ft" title="Permanent link">¶</a></h3>
 <p>Sampling is repeating frequency contents. Aliasing is mixed frequency contents.</p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_5.png"><img alt="lec3_5" src="../Pic/lec3_5.png" style="width:500px"/></a>
@@ -885,58 +887,74 @@ f = \begin{bmatrix}
 <div class="admonition success">
 <p class="admonition-title">Method to reduce aliasing</p>
 <ul>
-<li>Increase sampling rate</li>
-</ul>
-<div class="admonition note">
+<li>
+<p>Increase sampling rate</p>
+<div class="admonition theorem">
 <p class="admonition-title">Nyquist-Shannon theorem<p>the signal can be perfectly reconstructed if sampled with a frequency larger than <span class="arithmatex">\(2f_0\)</span>.
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_6.png"><img alt="lec3_6" src="../Pic/lec3_6.png" style="width:400px"/></a>
 </div></p>
 </p>
 </div>
+</li>
+<li>
+<p>Anti-aliasing</p>
 <ul>
-<li>Anti-aliasing<ul>
-<li>Filtering, then sampling
-    <div align="center">
+<li>
+<p>Filtering → Sampling.</p>
+<p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_7.png"><img alt="lec3_7" src="../Pic/lec3_7.png" style="width:500px"/></a>
-</div></li>
+</div></p>
+</li>
 </ul>
 </li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">Example<p><div align="center">
+<p class="admonition-title">Example</p>
+<p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_8.png"><img alt="lec3_8" src="../Pic/lec3_8.png" style="width:500px"/></a>
 </div></p>
-</p>
 </div>
 </div>
 <h2 id="image-magnification">Image Magnification<a class="headerlink" href="#image-magnification" title="Permanent link">¶</a></h2>
 <div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
-<p>Up-sampling - Inverse of down-sampling</p>
+<p class="admonition-title">Basic Idea</p>
+<p>Up-sampling is Inverse of down-sampling.</p>
 </div>
 <p>An important method: <strong>Interpolation</strong>.</p>
 <h3 id="1d-interpolation">1D Interpolation<a class="headerlink" href="#1d-interpolation" title="Permanent link">¶</a></h3>
 <ul>
-<li>Nearest-neighbour Interpolation<ul>
-<li>Not continuous; Not smooth
-        <div align="center">
+<li>
+<p>Nearest-neighbour Interpolation</p>
+<ul>
+<li>
+<p><strong>Feature:</strong> Not continuous; Not smooth.</p>
+<p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_9.png"><img alt="lec3_9" src="../Pic/lec3_9.png" style="width:400px"/></a>
-</div></li>
+</div></p>
+</li>
 </ul>
 </li>
-<li>Linear Interpolation<ul>
-<li>Continuous; Not smooth
-        <div align="center">
+<li>
+<p>Linear Interpolation</p>
+<ul>
+<li>
+<p><strong>Feature:</strong> Continuous; Not smooth.</p>
+<p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_10.png"><img alt="lec3_10" src="../Pic/lec3_10.png" style="width:400px"/></a>
-</div></li>
+</div></p>
+</li>
 </ul>
 </li>
-<li>Cubic Interpolation<ul>
-<li>Continuous; Smooth
-        <div align="center">
+<li>
+<p>Cubic Interpolation</p>
+<ul>
+<li>
+<p><strong>Feature:</strong> Continuous; Smooth.</p>
+<p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec3_11.png"><img alt="lec3_11" src="../Pic/lec3_11.png" style="width:400px"/></a>
-</div></li>
+</div></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -946,7 +964,7 @@ f = \begin{bmatrix}
 <li>Nearest-neighbour Interpolation</li>
 <li>Bilinear Interpolation<ul>
 <li>define <span class="arithmatex">\(\text{lerp}(x, v_0,v_1) = v_0 + x(v_1 - v_0)\)</span>.</li>
-<li>Suppose the point in the rectangle surrounded by four points <span class="arithmatex">\(u_{00},u_{01},u_{10},u_{11}\)</span>.</li>
+<li>Suppose the point in the rectangle surrounded by four points are <span class="arithmatex">\(u_{00},u_{01},u_{10},u_{11}\)</span>.</li>
 <li>then <span class="arithmatex">\(f(x, y) = \text{lerp}(t, u_0, u_1)\)</span>, where <span class="arithmatex">\(u_0 = \text{lerp}(s, u_{00}, u_{10})\)</span> and <span class="arithmatex">\(u_1 = \text{lerp}(s, u_{01}, u_{11})\)</span>.</li>
 </ul>
 </li>
@@ -968,7 +986,7 @@ f = \begin{bmatrix}
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.17 20:42:25 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.16 00:06:03 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.09 00:35:37 CST</span>

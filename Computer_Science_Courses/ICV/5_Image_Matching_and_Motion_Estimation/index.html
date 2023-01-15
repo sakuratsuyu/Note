@@ -464,9 +464,149 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Lecture 5
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Lecture 5
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-matching">
+    Image Matching
+  </a>
+<nav aria-label="Image Matching" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-detection">
+    1. Detection
+  </a>
+<nav aria-label="1. Detection" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#corner-detection">
+    Corner Detection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blob-detection">
+    Blob Detection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#laplacian-of-gaussian-log-filter">
+    Laplacian of Gaussian (LoG) Filter
+  </a>
+<nav aria-label="Laplacian of Gaussian (LoG) Filter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scale-selection-the-same-problem-as-corner-detection">
+    Scale Selection (the same problem as corner detection)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation-difference-of-gaussian-dog">
+    Implementation: Difference of Gaussian (DoG)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-description">
+    2. Description
+  </a>
+<nav aria-label="2. Description" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orientation-normalization">
+    Orientation Normalization
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properites-of-sift">
+    Properites of SIFT
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-matching">
+    3. Matching
+  </a>
+<nav aria-label="3. Matching" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#feature-matching">
+    Feature matching
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-learning-based-matching">
+    4. Learning based matching
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#motion-estimation">
+    Motion Estimation
+  </a>
+<nav aria-label="Motion Estimation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-lucas-kanade-method">
+    Method: Lucas-Kanade Method
+  </a>
+<nav aria-label="Method: Lucas-Kanade Method" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assumptions">
+    Assumptions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#brightness-constancy">
+    Brightness constancy
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aperture-problem">
+    Aperture Problem
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#small-motion-assumption">
+    Small Motion Assumption
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solution">
+    Solution
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../6_Image_Stitching/">
@@ -558,6 +698,140 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-matching">
+    Image Matching
+  </a>
+<nav aria-label="Image Matching" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-detection">
+    1. Detection
+  </a>
+<nav aria-label="1. Detection" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#corner-detection">
+    Corner Detection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blob-detection">
+    Blob Detection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#laplacian-of-gaussian-log-filter">
+    Laplacian of Gaussian (LoG) Filter
+  </a>
+<nav aria-label="Laplacian of Gaussian (LoG) Filter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scale-selection-the-same-problem-as-corner-detection">
+    Scale Selection (the same problem as corner detection)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation-difference-of-gaussian-dog">
+    Implementation: Difference of Gaussian (DoG)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-description">
+    2. Description
+  </a>
+<nav aria-label="2. Description" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orientation-normalization">
+    Orientation Normalization
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properites-of-sift">
+    Properites of SIFT
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-matching">
+    3. Matching
+  </a>
+<nav aria-label="3. Matching" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#feature-matching">
+    Feature matching
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-learning-based-matching">
+    4. Learning based matching
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#motion-estimation">
+    Motion Estimation
+  </a>
+<nav aria-label="Motion Estimation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-lucas-kanade-method">
+    Method: Lucas-Kanade Method
+  </a>
+<nav aria-label="Method: Lucas-Kanade Method" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assumptions">
+    Assumptions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#brightness-constancy">
+    Brightness constancy
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aperture-problem">
+    Aperture Problem
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#small-motion-assumption">
+    Small Motion Assumption
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solution">
+    Solution
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -568,7 +842,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="lecture-5-image-matching-and-motion-estimation">Lecture 5 Image Matching and Motion Estimation<a class="headerlink" href="#lecture-5-image-matching-and-motion-estimation" title="Permanent link">¶</a></h1>
-<h1 id="image-matching">Image Matching<a class="headerlink" href="#image-matching" title="Permanent link">¶</a></h1>
+<h2 id="image-matching">Image Matching<a class="headerlink" href="#image-matching" title="Permanent link">¶</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 <ol>
@@ -578,10 +852,10 @@
 <li>Learned based matching</li>
 </ol>
 </div>
-<h2 id="1-detection">1. Detection<a class="headerlink" href="#1-detection" title="Permanent link">¶</a></h2>
-<p>We want <strong>uniqueness.</strong></p>
-<h3 id="corner-detection">Corner Detection<a class="headerlink" href="#corner-detection" title="Permanent link">¶</a></h3>
-<h4 id="local-measures-of-uniqueness">Local measures of uniqueness<a class="headerlink" href="#local-measures-of-uniqueness" title="Permanent link">¶</a></h4>
+<h3 id="1-detection">1. Detection<a class="headerlink" href="#1-detection" title="Permanent link">¶</a></h3>
+<p>We want <strong>uniqueness</strong>.</p>
+<h4 id="corner-detection">Corner Detection<a class="headerlink" href="#corner-detection" title="Permanent link">¶</a></h4>
+<p><strong>Local measures of uniqueness</strong></p>
 <figure>
 <p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec5_0.png"><img alt="lec5_0" src="../Pic/lec5_0.png" style="width:600px"/></a>
@@ -602,37 +876,38 @@
 </div></p>
 </div>
 <div class="admonition success">
-<p class="admonition-title">Method</p>
+<p class="admonition-title">Method of Corner Detection</p>
 <ol>
 <li>Compute the covariance matrix <span class="arithmatex">\(H\)</span> at each point and compute its eigenvalues <span class="arithmatex">\(\lambda_1\)</span>, <span class="arithmatex">\(\lambda_2\)</span>.</li>
-<li>Classify<ol>
+<li>Classification<ol>
 <li><strong>Flat</strong> - <span class="arithmatex">\(\lambda_1\)</span> and <span class="arithmatex">\(lambda_2\)</span> are both small.</li>
 <li><strong>Edge</strong> - <span class="arithmatex">\(\lambda_1 \gg \lambda_2\)</span> or <span class="arithmatex">\(\lambda_1 \ll \lambda_2\)</span>.</li>
-<li><strong>Corner</strong> - <span class="arithmatex">\(\lambda_1\)</span> and $lambda_2are both large.</li>
+<li><strong>Corner</strong> - <span class="arithmatex">\(\lambda_1\)</span> and <span class="arithmatex">\(\lambda_2\)</span> are both large.</li>
 </ol>
 </li>
 </ol>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Harri Corner Detector</p>
+<p class="admonition-title">Harris Corner Detector</p>
 <p>However, computing eigenvalues are expensive. Instead, we use <strong>Harris corner detector</strong> to indicate it.</p>
-<ul>
+<ol>
 <li>Compute derivatives at each pixel.</li>
 <li>Compute covariance matrix <span class="arithmatex">\(H\)</span> in a Gaussian window around each pixel.</li>
-<li>Compute <strong>corner response function</strong> <span class="arithmatex">\(f\)</span>, given by</li>
-</ul>
+<li>
+<p>Compute <strong>corner response function</strong> (Harris corner detector) <span class="arithmatex">\(f\)</span>, given by</p>
 <div class="arithmatex">\[
-f = \frac{\lambda_1\lambda_2}{\lambda_1 + \lambda_2} = \frac{\det(H)}{\text{tr}(H)}
+    f = \frac{\lambda_1\lambda_2}{\lambda_1 + \lambda_2} = \frac{\det(H)}{\text{tr}(H)}.
 \]</div>
-<ul>
-<li>Threshold <span class="arithmatex">\(f\)</span>.</li>
+</li>
+<li>
+<p>Threshold <span class="arithmatex">\(f\)</span>.</p>
+</li>
 <li>Find local maxima of response function.</li>
-</ul>
-</div>
+</ol>
 <p><strong>Invariance Properties</strong></p>
 <ul>
-<li>Invariant to intensity shift, translation, rotation</li>
-<li>Not invariant to intensity scaling, scaling<ul>
+<li>Invariant to <strong>translation</strong>, <strong>rotation</strong> and <strong>intensity shift</strong>.</li>
+<li>Not invariant to <strong>scaling</strong> and <strong>intensity scaling</strong>.<ul>
 <li>How to find the correct scale?<ul>
 <li>Try each scale and find the scale of maximum of <span class="arithmatex">\(f\)</span>.</li>
 </ul>
@@ -640,23 +915,24 @@ f = \frac{\lambda_1\lambda_2}{\lambda_1 + \lambda_2} = \frac{\det(H)}{\text{tr}(
 </ul>
 </li>
 </ul>
-<div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec5_3.png"><img alt="lec5_3" src="../Pic/lec5_3.png" style="width:600px"/></a>
-</div>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec5_3.png"><img alt="lec5_3" src="../Pic/lec5_3.png" style="width:700px"/></a>
+</div></p>
 <div class="admonition note">
 <p class="admonition-title">Implementation</p>
-<p>—— <strong>image pyramid</strong> with a fixed window size.
-<div align="center">
+<p><strong>image pyramid</strong> with a fixed window size.</p>
+<p><div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec5_4.png"><img alt="lec5_4" src="../Pic/lec5_4.png" style="width:600px"/></a>
 </div></p>
 </div>
-<h3 id="blob-detection">Blob Detection<a class="headerlink" href="#blob-detection" title="Permanent link">¶</a></h3>
+</div>
+<h4 id="blob-detection">Blob Detection<a class="headerlink" href="#blob-detection" title="Permanent link">¶</a></h4>
 <p>convolution!</p>
 <h4 id="laplacian-of-gaussian-log-filter">Laplacian of Gaussian (LoG) Filter<a class="headerlink" href="#laplacian-of-gaussian-log-filter" title="Permanent link">¶</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="arithmatex">\[
-f = \begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 1 &amp; -4 &amp; 1 \\ 0 &amp; 1 &amp; 0 \end{bmatrix}
+    f = \begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 1 &amp; -4 &amp; 1 \\ 0 &amp; 1 &amp; 0 \end{bmatrix}.
 \]</div>
 </div>
 <div align="center">
@@ -673,12 +949,12 @@ f = \begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 1 &amp; -4 &amp; 1 \\ 0 &amp; 1 &amp; 0
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec5_6.png"><img alt="lec5_6" src="../Pic/lec5_6.png" style="width:600px"/></a>
 </div>
-<h4 id="scale-selection-the-same-problem-as-corner-detection">Scale Selection (the same problem as corner detection)<a class="headerlink" href="#scale-selection-the-same-problem-as-corner-detection" title="Permanent link">¶</a></h4>
+<h5 id="scale-selection-the-same-problem-as-corner-detection">Scale Selection (the same problem as corner detection)<a class="headerlink" href="#scale-selection-the-same-problem-as-corner-detection" title="Permanent link">¶</a></h5>
 <p>The same solution as corner detection - Try and find maximum.</p>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec5_7.png"><img alt="lec5_7" src="../Pic/lec5_7.png" style="width:600px"/></a>
 </div>
-<h4 id="implementation-difference-of-gaussian-dog">Implementation: Difference of Gaussian (DoG)<a class="headerlink" href="#implementation-difference-of-gaussian-dog" title="Permanent link">¶</a></h4>
+<h5 id="implementation-difference-of-gaussian-dog">Implementation: Difference of Gaussian (DoG)<a class="headerlink" href="#implementation-difference-of-gaussian-dog" title="Permanent link">¶</a></h5>
 <p>A way to acclerate computation, since LoG can be approximated by DoG.</p>
 <div class="arithmatex">\[
 \nabla^2G_\sigma \approx G_{\sigma_1} - G_{\sigma_2}
@@ -720,7 +996,7 @@ f = \begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 1 &amp; -4 &amp; 1 \\ 0 &amp; 1 &amp; 0
 </ul>
 </details>
 <h3 id="3-matching">3. Matching<a class="headerlink" href="#3-matching" title="Permanent link">¶</a></h3>
-<h5 id="feature-matching">Feature matching<a class="headerlink" href="#feature-matching" title="Permanent link">¶</a></h5>
+<h4 id="feature-matching">Feature matching<a class="headerlink" href="#feature-matching" title="Permanent link">¶</a></h4>
 <ul>
 <li>Define <strong>distance function</strong> to compare two descriptors.</li>
 <li>Test all to find the minimum distance.</li>
@@ -806,7 +1082,7 @@ I_x u + I_y v + I_t &amp;\approx 0 \\
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.30 15:10:22 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.16 00:06:03 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
