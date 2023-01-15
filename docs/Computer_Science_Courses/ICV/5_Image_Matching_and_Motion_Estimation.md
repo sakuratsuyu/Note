@@ -1,6 +1,6 @@
 # Lecture 5 Image Matching and Motion Estimation
 
-# Image Matching
+## Image Matching
 
 !!! abstract
 	1. Dectection
@@ -8,13 +8,13 @@
 	3. Matching
 	4. Learned based matching
 
-## 1. Detection
+### 1. Detection
 
-We want **uniqueness.**
+We want **uniqueness**.
 
-### Corner Detection
+#### Corner Detection
 
-#### Local measures of uniqueness
+**Local measures of uniqueness**
 
 <figure markdown> 
 	<div align="center">
@@ -37,53 +37,56 @@ We want **uniqueness.**
 		<img src="../Pic/lec5_2.png" alt="lec5_2" style="width:600px"/>
 	</div>
 
-!!! success  "Method"
+!!! success  "Method of Corner Detection"
+
 	1.  Compute the covariance matrix $H$ at each point and compute its eigenvalues $\lambda_1$, $\lambda_2$.
-	2.  Classify
+	2.  Classification
 		1.  **Flat** - $\lambda_1$ and $lambda_2$ are both small.
 		2.  **Edge** - $\lambda_1 \gg \lambda_2$ or $\lambda_1 \ll \lambda_2$.
-		3.  **Corner** - $\lambda_1$ and $lambda_2are both large.
+		3.  **Corner** - $\lambda_1$ and $\lambda_2$ are both large.
 
-!!! note  "Harri Corner Detector"
+!!! note  "Harris Corner Detector"
 	However, computing eigenvalues are expensive. Instead, we use **Harris corner detector** to indicate it.
 	
-	- Compute derivatives at each pixel.
-	- Compute covariance matrix $H$ in a Gaussian window around each pixel.
-	- Compute **corner response function** $f$, given by
+	1. Compute derivatives at each pixel.
+	2. Compute covariance matrix $H$ in a Gaussian window around each pixel.
+	3. Compute **corner response function** (Harris corner detector) $f$, given by
 	
-	$$
-	f = \frac{\lambda_1\lambda_2}{\lambda_1 + \lambda_2} = \frac{\det(H)}{\text{tr}(H)}
-	$$
+		$$
+			f = \frac{\lambda_1\lambda_2}{\lambda_1 + \lambda_2} = \frac{\det(H)}{\text{tr}(H)}.
+		$$
 	
-	- Threshold $f$.
-	- Find local maxima of response function.
+	4. Threshold $f$.
+	5. Find local maxima of response function.
 
-**Invariance Properties**
+	**Invariance Properties**
 
--   Invariant to intensity shift, translation, rotation
--   Not invariant to intensity scaling, scaling
-	-   How to find the correct scale?
-		-   Try each scale and find the scale of maximum of $f$.
+	- Invariant to **translation**, **rotation** and **intensity shift**.
+	- Not invariant to **scaling** and **intensity scaling**.
+		- How to find the correct scale?
+			- Try each scale and find the scale of maximum of $f$.
 
-<div align="center">
-	<img src="../Pic/lec5_3.png" alt="lec5_3" style="width:600px"/>
-</div>
-
-!!! note "Implementation"
-	—— **image pyramid** with a fixed window size.
 	<div align="center">
-		<img src="../Pic/lec5_4.png" alt="lec5_4" style="width:600px"/>
+		<img src="../Pic/lec5_3.png" alt="lec5_3" style="width:700px"/>
 	</div>
 
-### Blob Detection
+	!!! note "Implementation"
+		**image pyramid** with a fixed window size.
+
+		<div align="center">
+			<img src="../Pic/lec5_4.png" alt="lec5_4" style="width:600px"/>
+		</div>
+
+#### Blob Detection
 
 convolution!
 
 #### Laplacian of Gaussian (LoG) Filter
 
 !!! example 
+
 	$$
-	f = \begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0 \end{bmatrix}
+		f = \begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0 \end{bmatrix}.
 	$$
 
 <div align="center">
@@ -103,7 +106,7 @@ $$
 	<img src="../Pic/lec5_6.png" alt="lec5_6" style="width:600px"/>
 </div>
 
-#### Scale Selection (the same problem as corner detection)
+##### Scale Selection (the same problem as corner detection)
 
 The same solution as corner detection - Try and find maximum.
 
@@ -111,7 +114,7 @@ The same solution as corner detection - Try and find maximum.
 	<img src="../Pic/lec5_7.png" alt="lec5_7" style="width:600px"/>
 </div>
 
-#### Implementation: Difference of Gaussian (DoG)
+##### Implementation: Difference of Gaussian (DoG)
 
 A way to acclerate computation, since LoG can be approximated by DoG.
 
@@ -154,7 +157,7 @@ We mainly focus on the <u>SIFT</u> (Scale Invariant Feature Transform) descripto
 
 ### 3. Matching
 
-##### Feature matching
+#### Feature matching
 
 -   Define **distance function** to compare two descriptors.
 -   Test all to find the minimum distance.

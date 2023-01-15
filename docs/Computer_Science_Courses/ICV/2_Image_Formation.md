@@ -68,7 +68,7 @@ The representation of aperture is its Diameter $D$.
 **F-Number**
 
 $$
-N = \frac{f}{D} \text{ (mostly greater than 1, around 1.8 \sim 22)}.
+N = \frac{f}{D}\ \ \text{ (mostly greater than $1$, around $1.8 \sim 22$)}.
 $$
 
 ### Lens Defocus
@@ -80,7 +80,7 @@ $$
 Blur Circle Diameter (光斑半径)
 
 $$
-b = \frac{D}{i'}|i' -i|, b \propto D \propto \frac{1}{N}
+b = \frac{D}{i'}|i' -i|,\ \ b \propto D \propto \frac{1}{N}.
 $$
 
 ### Focusing 对焦
@@ -123,14 +123,14 @@ v
 \end{bmatrix}
 =
 \begin{bmatrix}
-f \frac{x}{z} \\
-f \frac{y}{z}
+f \cfrac{x}{z} \\
+f \cfrac{y}{z}
 \end{bmatrix}.
 $$
 
 ### Homogeneous Coordinates / Projective Coordinates
 
-Suppose that $\begin{bmatrix} x \\ y \\ w \end{bmatrix}$is the same as $\begin{bmatrix} x/w \\ y/w \\ 1 \end{bmatrix}$, then we get
+Suppose that $\begin{bmatrix} x \\ y \\ w \end{bmatrix}$ is the same as $\begin{bmatrix} x/w \\ y/w \\ 1 \end{bmatrix}$, then we get
 
 $$
 \begin{bmatrix}
@@ -152,13 +152,13 @@ z \\
 \end{bmatrix}
 \cong
 \begin{bmatrix}
-f\frac{x}{z} \\
-f\frac{y}{z} \\
+f\cfrac{x}{z} \\
+f\cfrac{y}{z} \\
 1
 \end{bmatrix}.
 $$
 
-We can also put the image plane in front of the camera (opposite to the previous picture).
+For convenience of dicussion, we can also put the image plane in front of the camera (opposite to the previous picture).
 
 <div align="center">
 	<img src="../Pic/lec2_9.png" alt="lec2_9" style="width:400px"/>
@@ -166,8 +166,8 @@ We can also put the image plane in front of the camera (opposite to the previous
 	
 ### Perspective Projection
 
-- Preserevd - Straight lines are still straight
-- Lost - Length and Angle
+- **What are Preserevd:** Straight lines are still straight.
+- **What are Lost:** Length and Angle.
 
 #### Vanishing Points
 
@@ -178,14 +178,15 @@ We can also put the image plane in front of the camera (opposite to the previous
 	<img src="../Pic/lec2_11.png" alt="lec2_11" style="width:500px"/>
 </div>
 
-!!! note "Properties"
-	- Any wo parallel lines have the same vanishing point **v.**
-		- **v** can be outside the image frame or at infinity.
-	- Line from **C** to **v** is parallel to the lines.
+!!! theorem "Properties"
+
+	- Any two parallel lines have the same vanishing point $\bf v$.
+		- $\bf v$ can be outside the image frame or at infinity.
+	- Line from $\bf C$ to $\bf v$ is parallel to the lines.
 
 #### Vanishing Lines
 
-Multiple vanishing points
+Multiple vanishing points compose the vanishing lines.
 
 The direction of the vanishing line tells us the orientation of the plane.
 
@@ -195,7 +196,7 @@ The direction of the vanishing line tells us the orientation of the plane.
 
 #### Distortion
 
-- Converging verticals
+- Converging verticals.
 
 <figure markdown> 
 	<div align="center">
@@ -204,13 +205,13 @@ The direction of the vanishing line tells us the orientation of the plane.
 	<figcaption>Problem and Solution (View Camera 移轴相机)</figcaption>
 </figure>
 
-- Exterior columns appear bigger
-	- Due to lens flaws
+- Exterior columns appear bigger. (Due to lens flaws.)
+
 	<div align="center">
 		<img src="../Pic/lec2_14.png" alt="lec2_14" style="width:300px"/>
 	</div>
-- Radial distortion
-	- Due to imperfect lens
+
+- Radial distortion. (Due to imperfect lens.)
 
 <div align="center">
 	<img src="../Pic/lec2_15.png" alt="lec2_15" style="width:800px"/>
@@ -218,14 +219,14 @@ The direction of the vanishing line tells us the orientation of the plane.
 
 $$
 \begin{aligned}
-r^2 &= {x'}_n^{2} + {y'}_n^{2} \\
-{x'}_d &= {x'}_n(1 + \kappa_1r^2 + \kappa_2r^4) \\
-{y'}_d &= {y'}_n(1 + \kappa_1r^2 + \kappa_2r^4) \\
+r^2 &= {x'}_n^{2} + {y'}_n^{2}, \\
+{x'}_d &= {x'}_n(1 + \kappa_1r^2 + \kappa_2r^4), \\
+{y'}_d &= {y'}_n(1 + \kappa_1r^2 + \kappa_2r^4). \\
 \end{aligned}
 $$
 
 !!! success "Solution"
-	Take a photo of a grid at the same point and then use the mathmatics to calculate and correct radial distortion.
+	Take a photo of a grid at the same point and then use the mathematics to calculate and correct radial distortion.
 
 #### Orthographic Projection
 
@@ -252,21 +253,21 @@ y \\
 1 \\
 \end{bmatrix}
 \Rightarrow
-(x, y)
+(x, y).
 $$
 
-### Photometric Image Formation（定颜色/亮度）
+## Photometric Image Formation（定颜色/亮度）
 
-#### Image Sensor
+### Image Sensor 传感器
 
 -   CMOS
 -   CCD (Charge Coupled Device)
 
-#### Shutter
+### Shutter 快门
 
 Shutter speed controls exposure time.
 
-#### Color Sensing
+### Color Sensing
 
 -   Color Spaces
 	-   RGB
@@ -278,44 +279,44 @@ Shutter speed controls exposure time.
 	<img src="../Pic/lec2_17.png" alt="lec2_17" style="width:800px"/>
 </div>
 
-#### Shading 着色
+### Shading 着色
 
 <div align="center">
 	<img src="../Pic/lec2_18.png" alt="lec2_18" style="width:300px"/>
 </div>
 
-##### BRDF (Bidirectional Reflectance Distribution Function)
+### BRDF (Bidirectional Reflectance Distribution Function)
 
 <div align="center">
 	<img src="../Pic/lec2_19.png" alt="lec2_19" style="width:600px"/>
 </div>
 
 $$
-L_r(\hat{\textbf{v}_r};\lambda) = \int L_i(\hat{\textbf{i}_r};\lambda)f_r(\hat{\textbf{v}_r}, \hat{\textbf{v}_i}, \hat{\textbf{n}}; \lambda)\cos^+\theta_i\ d\hat{\textbf{v}_i}
+L_r(\hat{\textbf{v}_r};\lambda) = \int L_i(\hat{\textbf{i}_r};\lambda)f_r(\hat{\textbf{v}_r}, \hat{\textbf{v}_i}, \hat{\textbf{n}}; \lambda)\cos^+\theta_i\ d\hat{\textbf{v}_i}.
 $$
 
-##### Diffuse (Lambertian) Reflection
+#### Diffuse (Lambertian) Reflection
 
--   Shading independent of view direction
+-   Shading independent of view direction.
 
 <div align="center">
 	<img src="../Pic/lec2_20.png" alt="lec2_20" style="width:600px"/>
 </div>
 
-##### Specular Term
+#### Specular Term
 
--   Intensity depends on view direction
+-   Intensity depends on view direction.
 
 <div align="center">
 	<img src="../Pic/lec2_21.png" alt="lec2_21" style="width:600px"/>
 </div>
 
-##### Blinn-Phong Reflection Model
+#### Blinn-Phong Reflection Model
 
 <div align="center">
 	<img src="../Pic/lec2_22.png" alt="lec2_22" style="width:800px"/>
 </div>
 
 $$
-L = L_a + L_d + L_s = k_aI_a + k_d(I/r^2)\max(0, \textbf{n}\cdot\textbf{l}) + k_s(I/r^2)\max(0, \textbf{n}\cdot\textbf{h})^p
+L = L_a + L_d + L_s = k_aI_a + k_d(I/r^2)\max(0, \textbf{n}\cdot\textbf{l}) + k_s(I/r^2)\max(0, \textbf{n}\cdot\textbf{h})^p.
 $$

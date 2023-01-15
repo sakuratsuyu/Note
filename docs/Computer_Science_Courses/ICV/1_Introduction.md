@@ -4,7 +4,7 @@
 
 #### Affine Transformations 仿射变换
 
-Affine map = linear map + translation
+Affine map combines linear map and translation.
 
 $$
 \begin{bmatrix}
@@ -24,10 +24,10 @@ y
 \begin{bmatrix}
 t_x \\
 t_y
-\end{bmatrix} 
+\end{bmatrix} .
 $$
 
-Using homogenous coordinates （齐次坐标）
+Using homogenous coordinates (齐次坐标)
 
 $$
 \begin{bmatrix}
@@ -45,9 +45,10 @@ c & d & t_y \\
 x \\
 y \\
 1
-\end{bmatrix} 
+\end{bmatrix}.
 $$
 
 #### Eigenvectors and Eigenvalues
-The eigenvalues of symmetric matrices are real numbers.
-The eigenvalues of positive definite matrices are positive numbers.
+
+- The eigenvalues of symmetric matrices are real numbers.
+- The eigenvalues of positive definite matrices are positive numbers.
