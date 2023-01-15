@@ -325,7 +325,7 @@ void QuickSort(const int n, int a[]) {
 ??? note "Time Complexity"
     
     $$
-        T(N) = T(i) + T(N - i - 1) + cN
+        T(N) = T(i) + T(N - i - 1) + cN.
     $$
 
     - Worst Case
@@ -450,7 +450,7 @@ void QuickSort(const int n, int a[]) {
 - **Stable**.
 - **Time complexity** $O(n \log n)$.
 - **Space complexity** $O(n)$.
-- Better performance at parrallel sort.
+- Better performance at parallel sort.
 
 ??? note "Time Complexity"
     
@@ -459,15 +459,15 @@ void QuickSort(const int n, int a[]) {
         T(1) &= 1, \\
         T(N) &= 2T\left(\frac{N}{2}\right) + O(N) \\
              &= 2^k T\left(\frac{N}{2^k}\right) + k \cdot O(N) \\
-             &= N \cdot O(1) + \log N \cdot O(N)
-             &= O(N + N \log N)
+             &= N \cdot O(1) + \log N \cdot O(N) \\
+             &= O(N + N \log N).
     \end{aligned}
     $$
 
 ## Bucket Sort 桶排序
 
 ```C
-#define m 10010 //(1)!
+#define m 10010 // (1)!
 
 typedef struct _node {
     int element;
@@ -478,7 +478,7 @@ typedef struct {
     Node *head;
 } List;
 
-void InsertionSort(List *list) {
+void InsertionSort(List *list) { // (2)!
     for (Node *p = list->head->next, *q = list->head; p != NULL;) {
         bool flag = false;
         for (Node *r = list->head->next, *s = list->head; r != p; s = r, r = r->next) {
@@ -501,7 +501,7 @@ void InsertionSort(List *list) {
 }
 
 void BucketSort(const int n, int a[]) {
-    int bucketNum = 6; // (2)!
+    int bucketNum = 6; // (3)!
     int bucketSize = (m + bucketNum - 1) / bucketNum;
     List **bucket = (List **)malloc(bucketNum * sizeof(List *));
     for (int i = 0; i < bucketNum; i ++) {
@@ -540,7 +540,8 @@ void BucketSort(const int n, int a[]) {
 ```
 
 1. `m` is the upper bound of `a[i]`.
-2. `bucketNum` is the number of the bucket.
+2. The inner sort is used insertion sort, and here is a list implementation of **Insertion Sort**.
+3. `bucketNum` is the number of the bucket.
 
 **Analysis**
 
@@ -645,7 +646,7 @@ void HeapSort(const int n, int a[]) {
     void ShellSort(const int n, int a[]) {
         int t = 1, step;
         while (t << 1 < n) {
-                t <<= 1;
+            t <<= 1;
         }
         step = t - 1;
 

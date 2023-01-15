@@ -147,6 +147,19 @@ nav:
     - Blogroll: discussion.md
   - Mathematics Basis:
     - Mathematics_Basis/index.md
+    - 离散数学 | Discrete Mathamatics:
+      - Class Notes : Mathematics_Basis/DM/class_notes.md
+      - Chap 1 : Mathematics_Basis/DM/Chap_1.md
+      - Chap 2 : Mathematics_Basis/DM/Chap_2.md
+      - Chap 3 : Mathematics_Basis/DM/Chap_3.md
+      - Chap 4 : Mathematics_Basis/DM/Chap_4.md
+      - Chap 5 : Mathematics_Basis/DM/Chap_5.md
+      - Chap 6 : Mathematics_Basis/DM/Chap_6.md
+      - Chap 7 : Mathematics_Basis/DM/Chap_7.md
+      - Chap 8 : Mathematics_Basis/DM/Chap_8.md
+      - Chap 9 : Mathematics_Basis/DM/Chap_9.md
+      - Chap 10 : Mathematics_Basis/DM/Chap_10.md
+      - Chap 11 : Mathematics_Basis/DM/Chap_11.md
     - 数值分析 | Numerical Analysis:
       - Class Notes : Mathematics_Basis/NA/class_notes.md
       - Chap 1 : Mathematics_Basis/NA/Chap_1.md
@@ -158,6 +171,7 @@ nav:
       - Chap 7 : Mathematics_Basis/NA/Chap_7.md
       - Chap 8 : Mathematics_Basis/NA/Chap_8.md
       - Chap 9 : Mathematics_Basis/NA/Chap_9.md
+
   - Computer Science Courses:
     - Computer_Science_Courses/index.md
     - 数据结构基础 | Fundemental of Data Structure:

@@ -9,9 +9,10 @@ A barrier to block off most of the rays. The opening is the **aperture 光圈**.
 	<img src="../Pic/lec2_0.png" alt="lec2_0" style="width:600px"/>
 </div>
 
-!!! tip "Flaws"
-	- Less light gets through.
-	- Diffraction effects（衍射）
+**Flaws**
+
+- Less light gets through.
+- Diffraction effects (衍射).
 
 ### Lens 透镜
 
@@ -20,17 +21,17 @@ A barrier to block off most of the rays. The opening is the **aperture 光圈**.
 </div>
 
 $$
-\frac{1}{i} + \frac{1}{o} = \frac{1}{f}
+\frac{1}{i} + \frac{1}{o} = \frac{1}{f}.
 $$
 
 #### Focal length $f$  焦距
 
-if $o = \infty$, then $f = i$.
+If $o = \infty$, then $f = i$.
 
 #### Magnification $m$ 放大率
 
 $$
-m = \frac{h_i}{h_o}
+m = \frac{h_i}{h_o}.
 $$
 
 <div align="center">
@@ -39,21 +40,22 @@ $$
 
 #### Field of View (FOV) 视野
 
-##### Factor
--  Focal Length
-  - Longer focal length, Narrower angle of view. Vice versa.
+**Factor**
+
+-  Focal Length.
+	- Longer focal length, Narrower angle of view. Vice versa.
 
 <div align="center">
 	<img src="../Pic/lec2_3.png" alt="lec2_3" style="width:200px"/>
 </div>
 
 !!! note 
-	50mm / 46° (and full frame) is the most similar FOV with human eyes. Thus 50mm lens is called **standard lens**（标准镜头）.
+	50mm / 46° (and full frame) is the most similar FOV with human eyes. Thus 50mm lens is called **standard lens** (标准镜头).
 	
-	- telephoto lens （长焦镜头，望远镜头）：视野小，放大率大
-	- short focal lens （短焦镜头，广角镜头）：视野大，放大率小
+	- telephoto lens (长焦镜头，望远镜头): 视野小, 放大率大.
+	- short focal lens (短焦镜头，广角镜头); 视野大, 放大率小.
 -  Sensor Size
-  - Bigger sensor size, Wider angle of view. Vice versa.
+	- Bigger sensor size, Wider angle of view. Vice versa.
 
 <div align="center">
 	<img src="../Pic/lec2_4.png" alt="lec2_4" style="width:500px"/>
@@ -66,10 +68,11 @@ The representation of aperture is its Diameter $D$.
 **F-Number**
 
 $$
-N = \frac{f}{D} \text{ (mostly greater than 1, around 1.8 ~ 22)}
+N = \frac{f}{D} \text{ (mostly greater than 1, around 1.8 \sim 22)}.
 $$
 
 ### Lens Defocus
+
 <div align="center">
 	<img src="../Pic/lec2_5.png" alt="lec2_5" style="width:500px"/>
 </div>
@@ -94,19 +97,17 @@ $$
 
 
 $$
-{\tt DoF} = o_2 - o_1 = \frac{2of^2cN(o-f)}{f^4-c^2N^2(o-f)^2}
+{\tt DoF} = o_2 - o_1 = \frac{2of^2cN(o-f)}{f^4-c^2N^2(o-f)^2}.
 $$
 
-From the equation above DoF is almost proportional to $N$, and thus the Larger aperture, the Smaller F-Number and the Smaller DoF.
+From the equation above, we can find that **DoF is almost proportional to $N$**, and thus the Larger aperture, the Smaller F-Number and the Smaller DoF.
 
 #### How to blur the background
 
--  Large aperture
--  Long focal length
--  Near foreground
--  Far background
-
-
+-  Large aperture.
+-  Long focal length.
+-  Near foreground.
+-  Far background.
 
 ## Geometric Image Formation（定位）
 
@@ -124,7 +125,7 @@ v
 \begin{bmatrix}
 f \frac{x}{z} \\
 f \frac{y}{z}
-\end{bmatrix}
+\end{bmatrix}.
 $$
 
 ### Homogeneous Coordinates / Projective Coordinates
@@ -154,7 +155,7 @@ z \\
 f\frac{x}{z} \\
 f\frac{y}{z} \\
 1
-\end{bmatrix}
+\end{bmatrix}.
 $$
 
 We can also put the image plane in front of the camera (opposite to the previous picture).
