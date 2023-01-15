@@ -18,6 +18,7 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <link href="../../../css/basic.css" rel="stylesheet"/>
 <link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="../../../css/flink.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -220,11 +221,81 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2">
+          离散数学 | Discrete Mathamatics
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="离散数学 | Discrete Mathamatics" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          离散数学 | Discrete Mathamatics
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_1/">
+        Chap 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_2/">
+        Chap 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_3/">
+        Chap 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_4/">
+        Chap 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_5/">
+        Chap 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_6/">
+        Chap 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_7/">
+        Chap 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_8/">
+        Chap 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_9/">
+        Chap 9
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_10/">
+        Chap 10
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_11/">
+        Chap 11
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3">
           数值分析 | Numerical Analysis
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="数值分析 | Numerical Analysis" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_2">
+<label class="md-nav__title" for="__nav_2_3">
 <span class="md-nav__icon md-icon"></span>
           数值分析 | Numerical Analysis
         </label>
@@ -422,15 +493,6 @@
 <a class="md-nav__link" href="#field-of-view-fov">
     Field of View (FOV) 视野
   </a>
-<nav aria-label="Field of View (FOV) 视野" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#factor">
-    Factor
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -707,15 +769,6 @@
 <a class="md-nav__link" href="#field-of-view-fov">
     Field of View (FOV) 视野
   </a>
-<nav aria-label="Field of View (FOV) 视野" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#factor">
-    Factor
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -865,49 +918,51 @@
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_0.png"><img alt="lec2_0" src="../Pic/lec2_0.png" style="width:600px"/></a>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Flaws</p>
+<p><strong>Flaws</strong></p>
 <ul>
 <li>Less light gets through.</li>
-<li>Diffraction effects（衍射）</li>
+<li>Diffraction effects (衍射).</li>
 </ul>
-</div>
 <h3 id="lens">Lens 透镜<a class="headerlink" href="#lens" title="Permanent link">¶</a></h3>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_1.png"><img alt="lec2_1" src="../Pic/lec2_1.png" style="width:500px"/></a>
 </div>
 <div class="arithmatex">\[
-\frac{1}{i} + \frac{1}{o} = \frac{1}{f}
+\frac{1}{i} + \frac{1}{o} = \frac{1}{f}.
 \]</div>
 <h4 id="focal-length-f">Focal length <span class="arithmatex">\(f\)</span>  焦距<a class="headerlink" href="#focal-length-f" title="Permanent link">¶</a></h4>
-<p>if <span class="arithmatex">\(o = \infty\)</span>, then <span class="arithmatex">\(f = i\)</span>.</p>
+<p>If <span class="arithmatex">\(o = \infty\)</span>, then <span class="arithmatex">\(f = i\)</span>.</p>
 <h4 id="magnification-m">Magnification <span class="arithmatex">\(m\)</span> 放大率<a class="headerlink" href="#magnification-m" title="Permanent link">¶</a></h4>
 <div class="arithmatex">\[
-m = \frac{h_i}{h_o}
+m = \frac{h_i}{h_o}.
 \]</div>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_2.png"><img alt="lec2_2" src="../Pic/lec2_2.png" style="width:500px"/></a>
 </div>
 <h4 id="field-of-view-fov">Field of View (FOV) 视野<a class="headerlink" href="#field-of-view-fov" title="Permanent link">¶</a></h4>
-<h5 id="factor">Factor<a class="headerlink" href="#factor" title="Permanent link">¶</a></h5>
+<p><strong>Factor</strong></p>
 <ul>
-<li>Focal Length</li>
+<li>Focal Length.<ul>
 <li>Longer focal length, Narrower angle of view. Vice versa.</li>
+</ul>
+</li>
 </ul>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_3.png"><img alt="lec2_3" src="../Pic/lec2_3.png" style="width:200px"/></a>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>50mm / 46° (and full frame) is the most similar FOV with human eyes. Thus 50mm lens is called <strong>standard lens</strong>（标准镜头）.</p>
+<p>50mm / 46° (and full frame) is the most similar FOV with human eyes. Thus 50mm lens is called <strong>standard lens</strong> (标准镜头).</p>
 <ul>
-<li>telephoto lens （长焦镜头，望远镜头）：视野小，放大率大</li>
-<li>short focal lens （短焦镜头，广角镜头）：视野大，放大率小</li>
+<li>telephoto lens (长焦镜头，望远镜头): 视野小, 放大率大.</li>
+<li>short focal lens (短焦镜头，广角镜头); 视野大, 放大率小.</li>
 </ul>
 </div>
 <ul>
-<li>Sensor Size</li>
+<li>Sensor Size<ul>
 <li>Bigger sensor size, Wider angle of view. Vice versa.</li>
+</ul>
+</li>
 </ul>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_4.png"><img alt="lec2_4" src="../Pic/lec2_4.png" style="width:500px"/></a>
@@ -916,7 +971,7 @@ m = \frac{h_i}{h_o}
 <p>The representation of aperture is its Diameter <span class="arithmatex">\(D\)</span>.</p>
 <p><strong>F-Number</strong></p>
 <div class="arithmatex">\[
-N = \frac{f}{D} \text{ (mostly greater than 1, around 1.8 ~ 22)}
+N = \frac{f}{D} \text{ (mostly greater than 1, around 1.8 \sim 22)}.
 \]</div>
 <h3 id="lens-defocus">Lens Defocus<a class="headerlink" href="#lens-defocus" title="Permanent link">¶</a></h3>
 <div align="center">
@@ -935,15 +990,15 @@ b = \frac{D}{i'}|i' -i|, b \propto D \propto \frac{1}{N}
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/lec2_7.png"><img alt="lec2_7" src="../Pic/lec2_7.png" style="width:600px"/></a>
 </div>
 <div class="arithmatex">\[
-{\tt DoF} = o_2 - o_1 = \frac{2of^2cN(o-f)}{f^4-c^2N^2(o-f)^2}
+{\tt DoF} = o_2 - o_1 = \frac{2of^2cN(o-f)}{f^4-c^2N^2(o-f)^2}.
 \]</div>
-<p>From the equation above DoF is almost proportional to <span class="arithmatex">\(N\)</span>, and thus the Larger aperture, the Smaller F-Number and the Smaller DoF.</p>
+<p>From the equation above, we can find that <strong>DoF is almost proportional to <span class="arithmatex">\(N\)</span></strong>, and thus the Larger aperture, the Smaller F-Number and the Smaller DoF.</p>
 <h4 id="how-to-blur-the-background">How to blur the background<a class="headerlink" href="#how-to-blur-the-background" title="Permanent link">¶</a></h4>
 <ul>
-<li>Large aperture</li>
-<li>Long focal length</li>
-<li>Near foreground</li>
-<li>Far background</li>
+<li>Large aperture.</li>
+<li>Long focal length.</li>
+<li>Near foreground.</li>
+<li>Far background.</li>
 </ul>
 <h2 id="geometric-image-formation">Geometric Image Formation（定位）<a class="headerlink" href="#geometric-image-formation" title="Permanent link">¶</a></h2>
 <div class="admonition note">
@@ -961,7 +1016,7 @@ v
 \begin{bmatrix}
 f \frac{x}{z} \\
 f \frac{y}{z}
-\end{bmatrix}
+\end{bmatrix}.
 \]</div>
 <h3 id="homogeneous-coordinates-projective-coordinates">Homogeneous Coordinates / Projective Coordinates<a class="headerlink" href="#homogeneous-coordinates-projective-coordinates" title="Permanent link">¶</a></h3>
 <p>Suppose that <span class="arithmatex">\(\begin{bmatrix} x \\ y \\ w \end{bmatrix}\)</span>is the same as <span class="arithmatex">\(\begin{bmatrix} x/w \\ y/w \\ 1 \end{bmatrix}\)</span>, then we get</p>
@@ -988,7 +1043,7 @@ z \\
 f\frac{x}{z} \\
 f\frac{y}{z} \\
 1
-\end{bmatrix}
+\end{bmatrix}.
 \]</div>
 <p>We can also put the image plane in front of the camera (opposite to the previous picture).</p>
 <div align="center">
@@ -1145,7 +1200,7 @@ L = L_a + L_d + L_s = k_aI_a + k_d(I/r^2)\max(0, \textbf{n}\cdot\textbf{l}) + k_
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.12.30 15:10:22 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.15 13:54:18 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.08 20:35:08 CST</span>

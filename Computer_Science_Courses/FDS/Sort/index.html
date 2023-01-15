@@ -18,6 +18,7 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <link href="../../../css/basic.css" rel="stylesheet"/>
 <link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="../../../css/flink.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -220,11 +221,81 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2">
+          离散数学 | Discrete Mathamatics
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="离散数学 | Discrete Mathamatics" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          离散数学 | Discrete Mathamatics
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_1/">
+        Chap 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_2/">
+        Chap 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_3/">
+        Chap 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_4/">
+        Chap 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_5/">
+        Chap 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_6/">
+        Chap 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_7/">
+        Chap 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_8/">
+        Chap 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_9/">
+        Chap 9
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_10/">
+        Chap 10
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_11/">
+        Chap 11
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3">
           数值分析 | Numerical Analysis
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="数值分析 | Numerical Analysis" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_2">
+<label class="md-nav__title" for="__nav_2_3">
 <span class="md-nav__icon md-icon"></span>
           数值分析 | Numerical Analysis
         </label>
@@ -978,7 +1049,7 @@
 <details class="note">
 <summary>Time Complexity</summary>
 <div class="arithmatex">\[
-    T(N) = T(i) + T(N - i - 1) + cN
+    T(N) = T(i) + T(N - i - 1) + cN.
 \]</div>
 <ul>
 <li>Worst Case</li>
@@ -1105,7 +1176,7 @@
 <li><strong>Stable</strong>.</li>
 <li><strong>Time complexity</strong> <span class="arithmatex">\(O(n \log n)\)</span>.</li>
 <li><strong>Space complexity</strong> <span class="arithmatex">\(O(n)\)</span>.</li>
-<li>Better performance at parrallel sort.</li>
+<li>Better performance at parallel sort.</li>
 </ul>
 <details class="note">
 <summary>Time Complexity</summary>
@@ -1114,13 +1185,13 @@
     T(1) &amp;= 1, \\
     T(N) &amp;= 2T\left(\frac{N}{2}\right) + O(N) \\
          &amp;= 2^k T\left(\frac{N}{2^k}\right) + k \cdot O(N) \\
-         &amp;= N \cdot O(1) + \log N \cdot O(N)
-         &amp;= O(N + N \log N)
+         &amp;= N \cdot O(1) + \log N \cdot O(N) \\
+         &amp;= O(N + N \log N).
 \end{aligned}
 \]</div>
 </details>
 <h2 id="bucket-sort">Bucket Sort 桶排序<a class="headerlink" href="#bucket-sort" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="cp">#define m 10010 </span><span class="c1">//(1)!</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define m 10010 </span><span class="c1">// (1)!</span>
 
 <span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w"></span>
@@ -1131,7 +1202,7 @@
 <span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="n">List</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">InsertionSort</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="o">*</span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">InsertionSort</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="o">*</span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (2)!</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1154,7 +1225,7 @@
 <span class="p">}</span><span class="w"></span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">BucketSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bucketNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// (2)!</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bucketNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// (3)!</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bucketSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bucketNum</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">bucketNum</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="o">**</span><span class="n">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">bucketNum</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="o">*</span><span class="p">));</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">bucketNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1193,6 +1264,7 @@
 </code></pre></div>
 <ol>
 <li><code>m</code> is the upper bound of <code>a[i]</code>.</li>
+<li>The inner sort is used insertion sort, and here is a list implementation of <strong>Insertion Sort</strong>.</li>
 <li><code>bucketNum</code> is the number of the bucket.</li>
 </ol>
 <p><strong>Analysis</strong></p>
@@ -1295,7 +1367,7 @@
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ShellSort</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">step</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 
@@ -1382,7 +1454,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.07 23:15:42 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.15 13:54:18 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
