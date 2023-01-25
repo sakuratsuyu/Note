@@ -174,6 +174,7 @@ nav:
 
   - Computer Science Courses:
     - Computer_Science_Courses/index.md
+    - The Missing Semester of Your CS Education: Computer_Science_Courses/MISSING/note.md
     - 数据结构基础 | Fundemental of Data Structure:
       - Class Notes : Computer_Science_Courses/FDS/class_notes.md
       - Algorithm Analysis: Computer_Science_Courses/FDS/Algorithm_Analysis.md
