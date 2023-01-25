@@ -1,0 +1,2149 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="sakuratsuyu" name="author"/>
+<link href="https://sakuratsuyu.github.io/Note/Computer_Science_Courses/MISSING/note/" rel="canonical"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.8" name="generator"/>
+<title>The Missing Semester of Your CS Education - NOTES</title>
+<link href="../../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.815d1a91.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h226.7c17 0 33.3-6.7 45.3-18.7l93.3-93.3c12-12 18.7-28.3 18.7-45.3V96c0-35.3-28.7-64-64-64H64zm0 64h320v224h-64c-17.7 0-32 14.3-32 32v64H64V96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../css/basic.css" rel="stylesheet"/>
+<link href="../../../css/admonition.css" rel="stylesheet"/>
+<link href="../../../css/flink.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="deep-orange" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#the-missing-semester-of-your-cs-education">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="NOTES" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="NOTES">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 18H5a4 4 0 0 1-4-4 8 8 0 0 1 8-8c1.06 0 2.07.21 3 .58.93-.37 1.94-.58 3-.58a8 8 0 0 1 8 8 4 4 0 0 1-4 4M3 14a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-2.37 1.03-4.5 2.67-5.96L9 8a6 6 0 0 0-6 6m16 2a2 2 0 0 0 2-2 6 6 0 0 0-6-6 6 6 0 0 0-6 6c0 .73-.19 1.41-.54 2H19Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            NOTES
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              The Missing Semester of Your CS Education
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="dark mode" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="" data-md-color-primary="white" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0-.39.39-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1v-1Z"></path></svg>
+</label>
+<input aria-label="light mode" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="" data-md-color-primary="dark" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1v-1M19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0-.39.39-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/sakuratsuyu/Note" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 480 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg>
+</div>
+<div class="md-source__repository">
+    sakuratsuyu/Note
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+        Home Page
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../Mathematics_Basis/">
+        Mathematics Basis
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
+        Computer Science Courses
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../comming_soon/">
+        Tools
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../comming_soon/">
+        Pot-pourri
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="NOTES" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="NOTES">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 18H5a4 4 0 0 1-4-4 8 8 0 0 1 8-8c1.06 0 2.07.21 3 .58.93-.37 1.94-.58 3-.58a8 8 0 0 1 8 8 4 4 0 0 1-4 4M3 14a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-2.37 1.03-4.5 2.67-5.96L9 8a6 6 0 0 0-6 6m16 2a2 2 0 0 0 2-2 6 6 0 0 0-6-6 6 6 0 0 0-6 6c0 .73-.19 1.41-.54 2H19Z"></path></svg>
+</a>
+    NOTES
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/sakuratsuyu/Note" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 480 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg>
+</div>
+<div class="md-source__repository">
+    sakuratsuyu/Note
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../..">Home Page</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Home Page" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Home Page
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tasklist/">
+        Plan
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../discussion/">
+        Blogroll
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../Mathematics_Basis/">Mathematics Basis</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Mathematics Basis" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Mathematics Basis
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2">
+          离散数学 | Discrete Mathamatics
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="离散数学 | Discrete Mathamatics" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          离散数学 | Discrete Mathamatics
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_1/">
+        Chap 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_2/">
+        Chap 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_3/">
+        Chap 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_4/">
+        Chap 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_5/">
+        Chap 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_6/">
+        Chap 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_7/">
+        Chap 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_8/">
+        Chap 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_9/">
+        Chap 9
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_10/">
+        Chap 10
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/DM/Chap_11/">
+        Chap 11
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3">
+          数值分析 | Numerical Analysis
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="数值分析 | Numerical Analysis" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          数值分析 | Numerical Analysis
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/class_notes/">
+        Class Notes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_1/">
+        Chap 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_2/">
+        Chap 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_3/">
+        Chap 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_4/">
+        Chap 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_5/">
+        Chap 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_6/">
+        Chap 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_7/">
+        Chap 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_8/">
+        Chap 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Mathematics_Basis/NA/Chap_9/">
+        Chap 9
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">Computer Science Courses</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Computer Science Courses" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Computer Science Courses
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          The Missing Semester of Your CS Education
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        The Missing Semester of Your CS Education
+      </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-course-overview-and-the-shell">
+    1. Course Overview and the Shell
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-shell-tools-and-scripting">
+    2. Shell Tools and Scripting
+  </a>
+<nav aria-label="2. Shell Tools and Scripting" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script">
+    Script
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shell-tools">
+    Shell Tools
+  </a>
+<nav aria-label="Shell Tools" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finding-files">
+    Finding Files
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finding-code">
+    Finding Code
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-shell-commands">
+    Find Shell Commands
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#directory-navigation">
+    Directory Navigation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-editors-vim">
+    3. Editors (Vim)
+  </a>
+<nav aria-label="3. Editors (Vim)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vim-mode-in-other-programs">
+    Vim-mode in other programs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advanced-vim">
+    Advanced Vim
+  </a>
+<nav aria-label="Advanced Vim" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#search-and-replace">
+    Search and Replace
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#macro">
+    Macro
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-data-wrangling">
+    4. Data Wrangling
+  </a>
+<nav aria-label="4. Data Wrangling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regular-expressions-regex">
+    Regular Expressions (Regex)
+  </a>
+<nav aria-label="Regular Expressions (Regex)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-patterns">
+    Common patterns
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#capture-group">
+    Capture group
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-command-for-data-wrangling">
+    Other command for data wrangling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analyzing-data">
+    Analyzing Data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wrangling-binary-data">
+    Wrangling Binary Data
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-command-line-environment">
+    5. Command-line Environment
+  </a>
+<nav aria-label="5. Command-line Environment" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#job-control">
+    Job Control
+  </a>
+<nav aria-label="Job Control" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#signal">
+    Signal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#killing-a-process">
+    Killing a process
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pausing-and-backgrouding-processes">
+    Pausing and backgrouding processes
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#terminal-multiplexers">
+    Terminal Multiplexers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alias-dotfiles-and-ssh">
+    Alias, dotfiles and SSH
+  </a>
+<nav aria-label="Alias, dotfiles and SSH" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dotfile-version-control">
+    Dotfile Version Control
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execute-command-directly-from-ssh-device">
+    Execute command directly from ssh device
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#copy-files-over-ssh">
+    Copy files over SSH
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ssh-config">
+    SSH config
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shell-framework-and-terminal-emulators">
+    Shell &amp; Framework and Terminal Emulators
+  </a>
+<nav aria-label="Shell &amp; Framework and Terminal Emulators" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration-of-terminal-emulators">
+    Configuration of terminal emulators
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-version-control-git">
+    6. Version Control (Git)
+  </a>
+<nav aria-label="6. Version Control (Git)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure-and-model-of-git">
+    Structure and Model of git
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-debugging-and-profiling">
+    7. Debugging and Profiling
+  </a>
+<nav aria-label="7. Debugging and Profiling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debugging">
+    Debugging
+  </a>
+<nav aria-label="Debugging" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#print-debugging-and-logging">
+    Print debugging and Logging
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#color-the-log">
+    Color the Log
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#third-party-logs">
+    Third party logs
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debugger">
+    Debugger
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#profiling">
+    Profiling
+  </a>
+<nav aria-label="Profiling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#timing">
+    Timing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#profiler">
+    Profiler
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-metaprogramming">
+    8. Metaprogramming
+  </a>
+<nav aria-label="8. Metaprogramming" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-systems">
+    Build systems
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dependency-management">
+    Dependency Management
+  </a>
+<nav aria-label="Dependency Management" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#versioning">
+    Versioning
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lock-file">
+    Lock File
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#continuous-integration-systems">
+    Continuous Integration Systems
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-security-and-cryptography">
+    9. Security and Cryptography
+  </a>
+<nav aria-label="9. Security and Cryptography" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash-function">
+    Hash Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-derivation-functions-kdfs">
+    Key Derivation Functions (KDFs)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#symmetric-cryptography">
+    Symmetric Cryptography
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#asymmetric-cryptography">
+    Asymmetric Cryptography
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hybrid-encrytion">
+    Hybrid Encrytion
+  </a>
+<nav aria-label="Hybrid Encrytion" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sender-end">
+    Sender End
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#receiver-end">
+    Receiver End
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-11-pot-pourri-and-qa">
+    10 &amp; 11. Pot-pourri and Q&amp;A
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
+          数据结构基础 | Fundemental of Data Structure
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="数据结构基础 | Fundemental of Data Structure" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          数据结构基础 | Fundemental of Data Structure
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../FDS/class_notes/">
+        Class Notes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../FDS/Algorithm_Analysis/">
+        Algorithm Analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../FDS/Lists_Stacks_and_Queues/">
+        Lists, Stacks and Queues
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../FDS/Trees/">
+        Trees
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../FDS/Hashing/">
+        Hashing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../FDS/Priority_Queues/">
+        Priority Queues
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../FDS/Sort/">
+        Sort
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../FDS/Disjoint_Set/">
+        Disjoint Set
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../FDS/Graph/">
+        Graph
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4">
+          计算机视觉导论 | Introduction to Computer Vision
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="计算机视觉导论 | Introduction to Computer Vision" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+          计算机视觉导论 | Introduction to Computer Vision
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/1_Introduction/">
+        Lecture 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/2_Image_Formation/">
+        Lecture 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/3_Image_Processing/">
+        Lecture 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/4_Model_Fitting_and_Optimization/">
+        Lecture 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/5_Image_Matching_and_Motion_Estimation/">
+        Lecture 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/6_Image_Stitching/">
+        Lecture 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/7_Structure_from_Motion/">
+        Lecture 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/8_Depth_Estimation_and_3D_Reconstruction/">
+        Lecture 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/9_Deep_Learning/">
+        Lecture 9
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/10_Recognition/">
+        Lecture 10
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/11_3D_Deep_Learning/">
+        Lecture 11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ICV/12_13_Computational_Photography/">
+        Lecture 12/13
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Tools" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../comming_soon/">
+        None
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Pot-pourri
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Pot-pourri" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Pot-pourri
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../comming_soon/">
+        Waiting...
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-course-overview-and-the-shell">
+    1. Course Overview and the Shell
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-shell-tools-and-scripting">
+    2. Shell Tools and Scripting
+  </a>
+<nav aria-label="2. Shell Tools and Scripting" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script">
+    Script
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shell-tools">
+    Shell Tools
+  </a>
+<nav aria-label="Shell Tools" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finding-files">
+    Finding Files
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finding-code">
+    Finding Code
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-shell-commands">
+    Find Shell Commands
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#directory-navigation">
+    Directory Navigation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-editors-vim">
+    3. Editors (Vim)
+  </a>
+<nav aria-label="3. Editors (Vim)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vim-mode-in-other-programs">
+    Vim-mode in other programs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advanced-vim">
+    Advanced Vim
+  </a>
+<nav aria-label="Advanced Vim" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#search-and-replace">
+    Search and Replace
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#macro">
+    Macro
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-data-wrangling">
+    4. Data Wrangling
+  </a>
+<nav aria-label="4. Data Wrangling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regular-expressions-regex">
+    Regular Expressions (Regex)
+  </a>
+<nav aria-label="Regular Expressions (Regex)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-patterns">
+    Common patterns
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#capture-group">
+    Capture group
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-command-for-data-wrangling">
+    Other command for data wrangling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analyzing-data">
+    Analyzing Data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wrangling-binary-data">
+    Wrangling Binary Data
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-command-line-environment">
+    5. Command-line Environment
+  </a>
+<nav aria-label="5. Command-line Environment" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#job-control">
+    Job Control
+  </a>
+<nav aria-label="Job Control" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#signal">
+    Signal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#killing-a-process">
+    Killing a process
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pausing-and-backgrouding-processes">
+    Pausing and backgrouding processes
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#terminal-multiplexers">
+    Terminal Multiplexers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alias-dotfiles-and-ssh">
+    Alias, dotfiles and SSH
+  </a>
+<nav aria-label="Alias, dotfiles and SSH" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dotfile-version-control">
+    Dotfile Version Control
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execute-command-directly-from-ssh-device">
+    Execute command directly from ssh device
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#copy-files-over-ssh">
+    Copy files over SSH
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ssh-config">
+    SSH config
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shell-framework-and-terminal-emulators">
+    Shell &amp; Framework and Terminal Emulators
+  </a>
+<nav aria-label="Shell &amp; Framework and Terminal Emulators" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration-of-terminal-emulators">
+    Configuration of terminal emulators
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-version-control-git">
+    6. Version Control (Git)
+  </a>
+<nav aria-label="6. Version Control (Git)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure-and-model-of-git">
+    Structure and Model of git
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-debugging-and-profiling">
+    7. Debugging and Profiling
+  </a>
+<nav aria-label="7. Debugging and Profiling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debugging">
+    Debugging
+  </a>
+<nav aria-label="Debugging" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#print-debugging-and-logging">
+    Print debugging and Logging
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#color-the-log">
+    Color the Log
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#third-party-logs">
+    Third party logs
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debugger">
+    Debugger
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#profiling">
+    Profiling
+  </a>
+<nav aria-label="Profiling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#timing">
+    Timing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#profiler">
+    Profiler
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-metaprogramming">
+    8. Metaprogramming
+  </a>
+<nav aria-label="8. Metaprogramming" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-systems">
+    Build systems
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dependency-management">
+    Dependency Management
+  </a>
+<nav aria-label="Dependency Management" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#versioning">
+    Versioning
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lock-file">
+    Lock File
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#continuous-integration-systems">
+    Continuous Integration Systems
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-security-and-cryptography">
+    9. Security and Cryptography
+  </a>
+<nav aria-label="9. Security and Cryptography" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash-function">
+    Hash Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-derivation-functions-kdfs">
+    Key Derivation Functions (KDFs)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#symmetric-cryptography">
+    Symmetric Cryptography
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#asymmetric-cryptography">
+    Asymmetric Cryptography
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hybrid-encrytion">
+    Hybrid Encrytion
+  </a>
+<nav aria-label="Hybrid Encrytion" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sender-end">
+    Sender End
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#receiver-end">
+    Receiver End
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-11-pot-pourri-and-qa">
+    10 &amp; 11. Pot-pourri and Q&amp;A
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Computer_Science_Courses/MISSING/note.md" title="编辑此页">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="the-missing-semester-of-your-cs-education">The Missing Semester of Your CS Education<a class="headerlink" href="#the-missing-semester-of-your-cs-education" title="Permanent link">¶</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>Lecturer:</strong> <a href="https://github.com/anishathalye">Anish</a>, <a href="https://github.com/jonhoo">Jon</a> and <a href="https://github.com/JJGO">Jose</a>.</p>
+<p><strong>Course Website:</strong></p>
+<p><a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education</a>. (<a href="https://missing-semester-cn.github.io/">Chinese Version</a>) [MIT 2020 version].</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">My Feedback and Things Needed to Know before learning this course</p>
+<p>Generally, it's a course to teach you many useful tools, mostly based on command line. The environment is Mac OS / Linux based OS, and the shell they use is zsh. These tools help you doing things more efficiently and proficiently. However, I think having got a master of python and JSON will make you a better understanding of this course, which I haven't yet. :-&lt;</p>
+<p><strong>Records</strong> on Youtube are really recomended, which also enables your learning skills through English. Because much content is not in the lecture notes.</p>
+<p>By the way, Jose had quite an accent so English substitutions are recomended. :-)</p>
+</div>
+<h2 id="1-course-overview-and-the-shell">1. Course Overview and the Shell<a class="headerlink" href="#1-course-overview-and-the-shell" title="Permanent link">¶</a></h2>
+<h2 id="2-shell-tools-and-scripting">2. Shell Tools and Scripting<a class="headerlink" href="#2-shell-tools-and-scripting" title="Permanent link">¶</a></h2>
+<h3 id="script">Script<a class="headerlink" href="#script" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Reference : Advanced Bash-Scripting Guide</p>
+</blockquote>
+<ul>
+<li><strong>Assignment</strong> <code>foo=bar</code>.</li>
+<li><strong>Access value</strong> <code>$foo</code>, <code>$(foo)</code>, <code>${foo}</code>.</li>
+</ul>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>Sometimes <code>${foo}</code> is not allowed depending on shell. Thus <code>$(foo)</code> is usually used.</p>
+</details>
+<ul>
+<li><strong>Space</strong> are the delimiters in shell. So <code>foo = bar</code> will be split to three arguments.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Difference between quote <code>'</code> and <code>"</code></p>
+<p>Provided that <code>foo=bar</code>, then echo <code>"$foo"</code> prints <code>bar</code> and echo <code>'$foo'</code> prints <code>$foo</code>.</p>
+</div>
+<ul>
+<li>
+<p>Return value</p>
+<ul>
+<li>Commands will ofter return output through <code>STDOUT</code>, errors through <code>STDERR</code>.</li>
+</ul>
+</li>
+<li>
+<p>Special identifiers (selected, not all)</p>
+<ul>
+<li><code>$0</code> - Script name (command name).</li>
+<li><code>$1</code> to <code>$9</code> - Arugments to the script.</li>
+<li><code>$@</code> - All the arguments.</li>
+<li><code>$#</code> - Number of arguments.</li>
+<li><code>$?</code> - Return code of the previous command. If the previous command executes successfully, <code>$?</code> will return <code>1</code>, otherwise <code>0</code>.</li>
+<li><code>$$</code> - Process identification number (PID) for the script</li>
+<li><code>!!</code> - Entire last command. It's useful for sudo <code>!!</code>.</li>
+<li><code>$_</code> - Last argument from the last command.</li>
+</ul>
+</li>
+<li>
+<p>Short-circuiting operators 短路运算符</p>
+<ul>
+<li><code>&amp;&amp;</code> and <code>||</code>. The same meaning as in C language.</li>
+</ul>
+</li>
+<li>
+<p>Substitution</p>
+<ul>
+<li>Command Substitution<ul>
+<li><code>$(CMD)</code> will executes command <code>CMD</code> and its return value replaces <code>$(CMD)</code>.</li>
+<li><em>e.g.</em> <code>for file in $(ls)</code> to iterate the files.</li>
+</ul>
+</li>
+<li>Process Substitution<ul>
+<li><code>&lt;(CMD)</code> will executes command <code>CMD</code> and its return value will be stored in a temporary file. That's useful when the return value is passed by file instead of <code>STDIN</code>.</li>
+<li><em>e.g.</em> <code>diff &lt;(ls foo) &lt;(ls bar)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Globbing 通配</p>
+<ul>
+<li><code>?</code> match one amount of characters, <code>*</code> match any amount of characters.<ul>
+<li><em>e.g.</em> <code>rm foo*</code> will remove <code>foo</code>, <code>foo1</code> and <code>foo123</code>. <code>rm foo?</code> will only remove <code>foo1</code>.</li>
+</ul>
+</li>
+<li><code>{}</code> expand the value in it.<ul>
+<li><em>e.g.</em> touch <code>{foo,bar}/{a..c}</code> will expand to <code>touch foo/a foo/b foo/c bar/a bar/b bar/c</code>; <code>convert image.{png,jpg}</code> will exapand to <code>convert image.png image.jpg</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Shebang</strong></p>
+<p>When writing bash script, you will commonly see <code>#!/usr/bin...</code> called <strong>shebang</strong> at the first line. When executed, it will run the script by the program this line specifies, not necessarily bash.</p>
+<p>Use command <code>env</code> for shebang is a good pratice. <em>e.g.</em> <code>#!/usr/bin/env python</code> will let shell execute the script using python.</p>
+<details class="example" open="open">
+<summary>Example</summary>
+<p>The following script will iterate through the arguments of files and append <code># foobar</code> if the file has no <code>foobar</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="nb">echo</span> <span class="s2">"Starting program at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span> <span class="c1"># Date will be substituted</span>
+
+<span class="nb">echo</span> <span class="s2">"Running program </span><span class="nv">$0</span><span class="s2"> with </span><span class="nv">$#</span><span class="s2"> arguments with pid </span><span class="nv">$$</span><span class="s2">"</span>
+
+<span class="k">for</span> file <span class="k">in</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
+    grep foobar <span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span> &gt; /dev/null <span class="m">2</span>&gt; /dev/null
+    <span class="c1"># When pattern is not found, grep has exit status 1</span>
+    <span class="c1"># We redirect STDOUT and STDERR to a null register since we do not care about them</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">"File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one"</span>
+        <span class="nb">echo</span> <span class="s2">"# foobar"</span> &gt;&gt; <span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span>
+    <span class="k">fi</span>
+<span class="k">done</span>
+</code></pre></div>
+</details>
+<h3 id="shell-tools">Shell Tools<a class="headerlink" href="#shell-tools" title="Permanent link">¶</a></h3>
+<div class="admonition question">
+<p class="admonition-title">How to use commands?</p>
+<ul>
+<li><code>man</code>, <code>CMD -h</code> or <code>CMD --help</code>.</li>
+<li><code>tldr</code> (short for <em>Too Long Don't Read</em>) is also a good tool to search for frequently used methods of the command.</li>
+</ul>
+</div>
+<h4 id="finding-files">Finding Files<a class="headerlink" href="#finding-files" title="Permanent link">¶</a></h4>
+<div class="admonition plane">
+<p><code>find</code></p>
+<ul>
+<li>Simple usage<ul>
+<li><code>find . -name src -type -d</code> finds all the directories named srcin the current directory.</li>
+<li><code>find . -path '*/test/*.py' -type f</code> finds all  .py files that have a parent folder named testin the current directory.</li>
+<li><code>find . -mtime -1</code> finds all files modified in the last day.</li>
+<li><code>find . size +500k -size -10M -name '.tar.gz'</code> finds all <code>.tar.gz</code> files with size ranging 500k to 10M.</li>
+</ul>
+</li>
+<li>Advanced usage</li>
+<li><code>find . -name '*.tmp' -exec rm {} \;</code> removes all <code>.tmp</code> files</li>
+<li><code>find . -name '*.png' -exec convert {} {}.jpg \;</code> convert all PNG files to JPG files.</li>
+<li>Generally, <code>PATTERN</code> is used for match like <code>find . -name 'PATTERN'</code>. <code>-iname</code> is optional to ignore the letter case.</li>
+</ul>
+<p><code>fd</code>, a better tool than <code>find</code>.</p>
+</div>
+<div class="admonition plane">
+<p><code>locate</code></p>
+<ul>
+<li><code>locate</code> uses a database updated by <code>updatedb</code>.</li>
+<li>It's faster to find files in some certain directories.</li>
+</ul>
+</div>
+<h4 id="finding-code">Finding Code<a class="headerlink" href="#finding-code" title="Permanent link">¶</a></h4>
+<p><code>grep</code></p>
+<ul>
+<li><code>-C</code> for getting context around the matching result.</li>
+<li><code>-v</code> for inverting the result.</li>
+<li><code>-R</code> for recursive finding.</li>
+</ul>
+<p><code>rg</code> (short for <code>ripgrep</code>)</p>
+<details class="example" open="open">
+<summary>Example</summary>
+<ul>
+<li><code>rg -t py 'import requests'</code> finds all .py files using requestslib.</li>
+<li><code>rg -u --files-without-match "^#!"</code> finds all files (including hidden files) without a shebang line.</li>
+<li><code>rg foo -A 5</code> finds all match of fooand prints the following 5 lines.</li>
+<li><code>rg -stats PATTERN</code> print statistics of matches.</li>
+</ul>
+</details>
+<h4 id="find-shell-commands">Find Shell Commands<a class="headerlink" href="#find-shell-commands" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>history</code> with <code>grep</code>.</li>
+<li><code>Ctrl + R</code> performs backwards search through history. It can be used with <code>fzf</code>.</li>
+</ul>
+<details class="note" open="open">
+<summary>history-based autosuggestions</summary>
+<p>It's first introduced by fish shell. This feature dynamically autocompletes the current shell command with the most recent command.</p>
+</details>
+<h4 id="directory-navigation">Directory Navigation<a class="headerlink" href="#directory-navigation" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>alias</code> for command short cut. <code>ln -s</code> creates symbolic links.</li>
+<li><code>fasd</code> or <code>autojump</code> finds frequent or recent files and directories.</li>
+<li><code>tree</code> or <code>brootgive</code> an overview of a directory structure.</li>
+<li><code>nnn</code> or <code>ranger</code> is full fledged file manager. </li>
+</ul>
+<h2 id="3-editors-vim">3. Editors (Vim)<a class="headerlink" href="#3-editors-vim" title="Permanent link">¶</a></h2>
+<p>Since I've learned about vim before. For the detail of basic operations please see the lecture notes and other resources. The following are some supplements.</p>
+<h3 id="vim-mode-in-other-programs">Vim-mode in other programs<a class="headerlink" href="#vim-mode-in-other-programs" title="Permanent link">¶</a></h3>
+<ul>
+<li>Shell.</li>
+<li>Readline.</li>
+<li>Vim in Browsers (Vimium-C), even in Jupyter notebooks.</li>
+</ul>
+<h3 id="advanced-vim">Advanced Vim<a class="headerlink" href="#advanced-vim" title="Permanent link">¶</a></h3>
+<h4 id="search-and-replace">Search and Replace<a class="headerlink" href="#search-and-replace" title="Permanent link">¶</a></h4>
+<p><code>:s</code>: <code>%s/foo/bar/g</code> to replace <code>foo</code> with <code>bar</code> globally in file. <code>%s/\[.*\](\(.*\))/\1/g</code> is to replace named Markdown links with plain URLs.</p>
+<h4 id="macro">Macro<a class="headerlink" href="#macro" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>q{character}</code> to start recording a marcro in register <code>{character}</code>.</li>
+<li><code>q</code> to stop recording.</li>
+<li><code>@{character}</code> replays the macro<ul>
+<li><code>{number}@{character}</code> executes a macro <code>{number}</code> times.</li>
+</ul>
+</li>
+<li>Macros can be recursive.</li>
+</ul>
+<details class="example" open="open">
+<summary>Example : convert xml to json</summary>
+<p><a href="https://missing.csail.mit.edu/2020/files/example-data.xml">File</a></p>
+<ol>
+<li>Record a macro stored in register <code>e</code> to format a single element.<ul>
+<li>Go to line with <code>&lt;name&gt;</code></li>
+<li><code>qe^r"f&gt;s": "&lt;ESC&gt;f&lt;C"&lt;ESC&gt;q</code></li>
+</ul>
+</li>
+<li>Record a macro stored in registser <code>p</code> to format a person.<ul>
+<li>Go to line with <code>&lt;person&gt;</code></li>
+<li><code>qpS{&lt;ESC&gt;j@eA,&lt;ESC&gt;j@ejS},&lt;ESC&gt;q</code></li>
+</ul>
+</li>
+<li>Record a macro stored in register <code>q</code> to format a person and go to the next person.<ul>
+<li>Go to line with <code>&lt;person&gt;</code></li>
+<li><code>qq@pjq</code></li>
+</ul>
+</li>
+<li>Execute macro until end of file.<ul>
+<li><code>999@q</code></li>
+</ul>
+</li>
+<li>Manually remove last <code>,</code> and add <code>[</code> and <code>]</code> delimiters.</li>
+</ol>
+</details>
+<h2 id="4-data-wrangling">4. Data Wrangling<a class="headerlink" href="#4-data-wrangling" title="Permanent link">¶</a></h2>
+<p>An example runs through this lecture : Wrangle the data from <code>ssh myserver journalctl</code>.</p>
+<h3 id="regular-expressions-regex">Regular Expressions (Regex)<a class="headerlink" href="#regular-expressions-regex" title="Permanent link">¶</a></h3>
+<h4 id="common-patterns">Common patterns<a class="headerlink" href="#common-patterns" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>.</code> matches any singel character except newline <code>\n</code> or <code>\r</code>.</li>
+<li><code>*</code> zero or more of the preceding match.</li>
+<li><code>+</code> one or more of the preceding match.</li>
+<li><code>[abc]</code> matches any one character of <code>a</code>, <code>b</code> and <code>c</code>.</li>
+<li><code>(RX1|RX2)</code> either matches <code>RX1</code> or <code>RX2</code>.</li>
+<li><code>^</code> the start of the line.</li>
+<li><code>$</code> the end of the line.</li>
+<li>By default, <code>*</code> and <code>+</code> are greedy. Suffix <code>*</code> or <code>+</code> with <code>?</code> to take it non-greedy.</li>
+</ul>
+<h4 id="capture-group">Capture group<a class="headerlink" href="#capture-group" title="Permanent link">¶</a></h4>
+<ul>
+<li>Any match of parenthesis will stored in the capture group (unless <code>?:</code> or other similar patterns are put in the front of the parenthesis). We can use <code>\1</code>, <code>\2</code> to refer them.</li>
+</ul>
+<p>More patterns and details for regex on <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular expression - Wikipedia</a> or <a href="https://www.runoob.com/regexp/regexp-tutorial.html">正则表达式 – 教程 | 菜鸟教程</a>.</p>
+<p>A nice tool to check regex: <a href="https://regex101.com/r/qqbZqh/2">regex101: build, test, and debug regex</a>.</p>
+<div class="admonition plane">
+<p><code>sed</code></p>
+<p><code>sed</code> is a stream editor building on top of the old <code>ed</code> editor. It supports regex for data wrangling.</p>
+<p>Mostly used command are <code>s</code> (substitution). Its syntax is <code>s/REGEX/SUBSTITUTION</code>. <code>REGEX</code> is the regular expression, <code>SUBSTITUTION</code> is the text to substitute matching text with.</p>
+<p>Regex of <code>sed</code> is a bit weird. It requires a <code>\</code> before most of the character above to give them special meaning. Or more intuitively, pass <code>-E</code>.</p>
+<p>But <code>sed</code> don't support non-greedy mode. Another tool supporting non-greedy is <code>perl -pe</code>.</p>
+</div>
+<p>At the last of these part, regex is used to wrangle data with the following command.</p>
+<div class="highlight"><pre><span></span><code>ssh myserver journalctl
+<span class="p">|</span> grep sshd
+<span class="p">|</span> grep <span class="s2">"Disconnected from"</span>
+<span class="p">|</span> sed -E <span class="s1">'s/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'</span>
+</code></pre></div>
+<h3 id="other-command-for-data-wrangling">Other command for data wrangling<a class="headerlink" href="#other-command-for-data-wrangling" title="Permanent link">¶</a></h3>
+<div class="admonition plane">
+<p><code>sort</code></p>
+<ul>
+<li>By default, it sorts the data with the first column as a key word and ascending lexicographic order.</li>
+<li><code>-n</code> will sort in numeric order.</li>
+<li><code>-r</code> will reverse.</li>
+<li><code>-u</code> will take the unique value.</li>
+<li><code>-k</code> specifies the coloum as a key word.</li>
+</ul>
+</div>
+<div class="admonition plane">
+<p><code>uniq</code></p>
+<ul>
+<li>filter repetitive lines</li>
+<li><code>-c</code> or <code>--count</code> will show a count of the number of occurrences.</li>
+<li><code>-u</code> will show the lines that only occur once.</li>
+</ul>
+</div>
+<div class="admonition plane">
+<p><code>wc</code></p>
+<ul>
+<li>count something</li>
+<li><code>-c</code> or <code>--bytes</code> or <code>--chars</code> will show the count of bytes.</li>
+<li><code>-l</code> or <code>--lines</code> will  show the count of lines.</li>
+<li><code>-w</code> or <code>--words</code> will show the count of words.</li>
+</ul>
+</div>
+<div class="admonition plane">
+<p><code>paste</code></p>
+<ul>
+<li><code>-d&lt;delimiter&gt;</code> or <code>--delimiters=&lt;delimiter&gt;</code> specifies the delimiter.</li>
+<li><code>-s</code> or <code>--serial</code> combines multiple lines into one line.</li>
+</ul>
+</div>
+<div class="admonition plane">
+<p><code>awk</code></p>
+<p><code>awk</code> is a programming language that just happens to be good at processing text streams. As with many other things here, only basic wll be gone through.</p>
+<ul>
+<li><code>$0</code> is set to the entire line. <code>$1</code> through <code>$n</code> are set to the <em>n</em>-th field of that line, when separated by awk field separator (white space by default, change with <code>-F</code>).</li>
+<li>So <code>| awk '{print $2}'</code> will print the second part from <code>STDIN</code>. </li>
+<li>Compute the number of single used usernames that match some regex pattern (start with <code>c</code> and end with <code>e</code>) from <code>STDIN</code>: <code>| awk '$1 == 1 &amp;&amp; $2 ~ /^c[^ ]*e$/ {print $2}' | wc -l</code>. <code>wc -l</code> is also not needed for it if we rewrite the <code>awk</code> part to <code>awk 'BEGIN {rows = 0} $1 == 1 &amp;&amp; $2 ~ /^c[^ ]*e$/ {rows += $1} END {print rows}'</code>. <code>BEGIN</code> and <code>END</code> are patterns that match the start and the end of the input respectively.</li>
+</ul>
+</div>
+<div class="highlight"><pre><span></span><code>ssh myserver journalctl
+ <span class="p">|</span> grep sshd
+ <span class="p">|</span> grep <span class="s2">"Disconnected from"</span>
+ <span class="p">|</span> sed -E <span class="s1">'s/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'</span>
+ <span class="p">|</span> sort <span class="p">|</span> uniq -c
+ <span class="p">|</span> sort -nk1,1 <span class="p">|</span> tail -n10
+ <span class="p">|</span> awk <span class="s1">'{print $2}'</span> <span class="p">|</span> paste -sd,
+</code></pre></div>
+<h3 id="analyzing-data">Analyzing Data<a class="headerlink" href="#analyzing-data" title="Permanent link">¶</a></h3>
+<div class="admonition plane">
+<p><code>bc</code></p>
+<ul>
+<li>A simple caculator which support <code>+-*/^%</code> and <code>sqrt()</code>.</li>
+<li>Other feature<ul>
+<li>set decimal digits: <code>echo 'scale=2; (4.3 - 1.2) / 2' | bc</code> returns <code>1.55</code>.</li>
+<li>specify base: <code>echo 'ibase=2; 111' | bc</code> returns <code>7</code>.</li>
+<li>change base : <code>echo 'obase=2; 5 | bc</code> returns <code>101</code>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Plot the Data</p>
+<p>R language or <code>gnuplot</code> for simpler plot.</p>
+<div class="highlight"><pre><span></span><code>ssh myserver journalctl
+ <span class="p">|</span> grep sshd
+ <span class="p">|</span> grep <span class="s2">"Disconnected from"</span>
+ <span class="p">|</span> sed -E <span class="s1">'s/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'</span>
+ <span class="p">|</span> sort <span class="p">|</span> uniq -c
+ <span class="p">|</span> sort -nk1,1 <span class="p">|</span> tail -n10
+ <span class="p">|</span> gnuplot -p -e <span class="s1">'set boxwidth 0.5; plot "-" using 1:xtic(2) with boxes'</span>
+</code></pre></div>
+</div>
+<h3 id="wrangling-binary-data">Wrangling Binary Data<a class="headerlink" href="#wrangling-binary-data" title="Permanent link">¶</a></h3>
+<p>Notice that <code>-</code> takes the output to <code>STDIN</code> or takes the input from <code>STDIN</code>.</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -loglevel panic -i /dev/video0 -frames <span class="m">1</span> -f image2 - 
+<span class="p">|</span> convert - -colorspace gray -
+</code></pre></div>
+<h2 id="5-command-line-environment">5. Command-line Environment<a class="headerlink" href="#5-command-line-environment" title="Permanent link">¶</a></h2>
+<h3 id="job-control">Job Control<a class="headerlink" href="#job-control" title="Permanent link">¶</a></h3>
+<h4 id="signal">Signal<a class="headerlink" href="#signal" title="Permanent link">¶</a></h4>
+<p>Shell uses a UNIX communication mechanism called a <strong>signal</strong> to communicate information to the process. When a process receives a signal, it stops its execution, deals with the signal and potentially changes the flow of execution. For this reason, signals are <strong>software interrupts</strong>.</p>
+<blockquote>
+<p>Use <code>man signal</code> or <code>kill -l</code> to learn more about it.</p>
+</blockquote>
+<h4 id="killing-a-process">Killing a process<a class="headerlink" href="#killing-a-process" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>Ctrl + C</code> will deliver a <code>SIGINT</code> signal to the process.</li>
+<li><code>Ctrl + \</code> will deliver a <code>SIGNQUIT</code> signal to the process.</li>
+</ul>
+<p>Although <code>SIGINT</code> and <code>SIGQUIT</code> are both usually associated with terminal related requests, a more generic signal for asking a process to exit gracefully is the <code>SIGTERM</code> signal. We can use kill command, with the syntax <code>kill -TERM &lt;PID&gt;</code>.</p>
+<p><code>SIGKILL</code> is a special signal. It cannot be captured by the process and will always terminate it immediately. But it can have bad side effects such as leaving orphaned children processes.</p>
+<h4 id="pausing-and-backgrouding-processes">Pausing and backgrouding processes<a class="headerlink" href="#pausing-and-backgrouding-processes" title="Permanent link">¶</a></h4>
+<p><code>STIGSTOP</code> pauses a process. In the terminal, <code>Ctrl + Z</code> will prompt the shell to send a <code>SIGTSTP</code> signal, short for Terminal Stop. (<em>i.e.</em> the terminal's version of <code>SIGSTOP</code>)</p>
+<p><code>fg</code> and <code>bg</code> can continue the paused job in the foreground or in the background respectively.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To run the program in the background, suffix <code>&amp;</code> with the command. But it will still use the shell's <code>STDOUT</code>, or we can use shell redirections.</p>
+<hr/>
+<p>To background an already running program, we can do <code>Ctrl + Z</code> and then execute <code>bg</code>.
+Note the background process are still children processes of the terminal and will die if the terminal will closed. Because closing the terminal sends a <code>SIGHUP</code> signal.</p>
+<hr/>
+<p>To prevent it, we can run the program with <code>nohup</code> or use <code>disown</code> for the already running program. Or we can use a terminal multiplexer.</p>
+</div>
+<h3 id="terminal-multiplexers">Terminal Multiplexers<a class="headerlink" href="#terminal-multiplexers" title="Permanent link">¶</a></h3>
+<div class="admonition plane">
+<p><code>tmux</code></p>
+<ul>
+<li>the config file is <code>~/.tmux.conf</code>.</li>
+<li>a hierarchy of three layers : <strong>session</strong>, <strong>window</strong> and <strong>pane</strong>.</li>
+<li>detail in <code>tmux</code> and then press <code>&lt;C-b&gt;?</code>.</li>
+</ul>
+</div>
+<h3 id="alias-dotfiles-and-ssh">Alias, dotfiles and SSH<a class="headerlink" href="#alias-dotfiles-and-ssh" title="Permanent link">¶</a></h3>
+<p>I've learn about it before. So this part is just for some supplements.</p>
+<h4 id="dotfile-version-control">Dotfile Version Control<a class="headerlink" href="#dotfile-version-control" title="Permanent link">¶</a></h4>
+<p>It's nice to put all the dotfiles together in a folder with version control. And symbolically link them to its own place.</p>
+<h4 id="execute-command-directly-from-ssh-device">Execute command directly from ssh device<a class="headerlink" href="#execute-command-directly-from-ssh-device" title="Permanent link">¶</a></h4>
+<p><em>e.g.</em> <code>ssh foobar@server ls</code> will execute <code>ls</code> in the home folder of <code>foobar</code>.</p>
+<h4 id="copy-files-over-ssh">Copy files over SSH<a class="headerlink" href="#copy-files-over-ssh" title="Permanent link">¶</a></h4>
+<ul>
+<li>ssh + tee</li>
+<li>scp</li>
+<li>rsync</li>
+</ul>
+<h4 id="ssh-config">SSH config<a class="headerlink" href="#ssh-config" title="Permanent link">¶</a></h4>
+<p>Config file is in <code>~/.ssh/config</code>.</p>
+<div class="highlight"><pre><span></span><code>Host vm
+    User foobar
+    HostName 172.16.174.141
+    Port 2222
+    IdentityFile ~/.ssh/id_ed25519
+    LocalForward 9999 localhost:8888
+
+# wildcards 通配符 are also OK!
+Host *.mit.edu
+    User foobaz
+</code></pre></div>
+<h3 id="shell-framework-and-terminal-emulators">Shell &amp; Framework and Terminal Emulators<a class="headerlink" href="#shell-framework-and-terminal-emulators" title="Permanent link">¶</a></h3>
+<p><code>zsh</code> is a superset of bash with the following features.</p>
+<ul>
+<li>Smarter globbing</li>
+<li>Inline globbing</li>
+<li>Spelling correction</li>
+<li>Better completion/selection</li>
+<li>Path expansion</li>
+</ul>
+<p>For framework of shell, the following is some attainable features.
+- Right prompt
+- Command syntax highlighting
+- History substring search
+- Prompt themes</p>
+<h4 id="configuration-of-terminal-emulators">Configuration of terminal emulators<a class="headerlink" href="#configuration-of-terminal-emulators" title="Permanent link">¶</a></h4>
+<blockquote>
+<p><a href="https://anarc.at/blog/2018-04-12-terminal-emulators-1/">A look at terminal emulators</a></p>
+</blockquote>
+<ul>
+<li>Font</li>
+<li>Theme</li>
+<li>Keyboard shortcuts</li>
+<li>Scrollback</li>
+<li>Performance (<code>alacritty</code> of <code>kitty</code> offer GPU acceleration)</li>
+</ul>
+<h2 id="6-version-control-git">6. Version Control (Git)<a class="headerlink" href="#6-version-control-git" title="Permanent link">¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>Snapshot</strong></p>
+<p>In git terminology, a file is called a blob and a directory is called a tree. A snapshot is the top-level tree that is being tracked.</p>
+<p><strong>History Model</strong></p>
+<p>In git, a history is a directed acyclic graph (DAG, 有向无环图) of snapshots.</p>
+</div>
+<h3 id="structure-and-model-of-git">Structure and Model of git<a class="headerlink" href="#structure-and-model-of-git" title="Permanent link">¶</a></h3>
+<p>All git command line commands are manipulations of either the <code>references</code> data or the <code>objects</code> data.</p>
+<div class="highlight"><span class="filename">Pseudo Code of git model</span><pre><span></span><code>// pseudocode
+
+type blob = array&lt;byte&gt;
+type tree = map&lt;string, tree | blob&gt;
+type commit = struct {
+    parents: array&lt;commit&gt;
+    author: string
+    message: string
+    snapshot: tree
+}
+
+type object = blob | tree | commit
+objects = map&lt;string, object&gt;
+# The key of `objects` is the sha-1 of object, which is a hexadecimal string of 40 characters.
+
+def store(o):
+    id = sha1(o)
+    object[id] = o
+
+def load(id):
+    return object[id]
+
+references = map&lt;string, string&gt;    # &lt;name, sha-1 string&gt;
+# Name is immutable but sha-1 string not.
+</code></pre></div>
+<h2 id="7-debugging-and-profiling">7. Debugging and Profiling<a class="headerlink" href="#7-debugging-and-profiling" title="Permanent link">¶</a></h2>
+<h3 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">¶</a></h3>
+<h4 id="print-debugging-and-logging">Print debugging and Logging<a class="headerlink" href="#print-debugging-and-logging" title="Permanent link">¶</a></h4>
+<p><a href="https://missing.csail.mit.edu/static/files/logger.py">Here</a> is an example code that logs messages.</p>
+<h4 id="color-the-log">Color the Log<a class="headerlink" href="#color-the-log" title="Permanent link">¶</a></h4>
+<p>For better readability, we can color them. If the terminal supports true color (真彩色), then <code>echo -e '\e[38;2;255;0;0mThis is read\e[0m'</code> will print out a red message <code>This is red</code>.</p>
+<p>The following script shows how to print many RGB colors into the terminal.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
+<span class="k">for</span> R <span class="k">in</span> <span class="k">$(</span>seq <span class="m">0</span> <span class="m">20</span> <span class="m">255</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">for</span> G <span class="k">in</span> <span class="k">$(</span>seq <span class="m">0</span> <span class="m">20</span> <span class="m">255</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+        <span class="k">for</span> B <span class="k">in</span> <span class="k">$(</span>seq <span class="m">0</span> <span class="m">20</span> <span class="m">255</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+            <span class="nb">printf</span> <span class="s2">"\e[38;2;</span><span class="si">${</span><span class="nv">R</span><span class="si">}</span><span class="s2">;</span><span class="si">${</span><span class="nv">G</span><span class="si">}</span><span class="s2">;</span><span class="si">${</span><span class="nv">B</span><span class="si">}</span><span class="s2">m█\e[0m"</span><span class="p">;</span>
+        <span class="k">done</span>
+    <span class="k">done</span>
+<span class="k">done</span>
+</code></pre></div>
+<h4 id="third-party-logs">Third party logs<a class="headerlink" href="#third-party-logs" title="Permanent link">¶</a></h4>
+<p>System uses a <strong>system log</strong>, which is increasingly where all log messages go. Most Linux system use <code>systemd</code>. <code>systemd</code> places the logs under <code>/var/log/journal</code> in a specialized format and use <code>journalctl</code> to display the messages.</p>
+<p><code>logger</code> shell program supports logging under the system logs.</p>
+<h3 id="debugger">Debugger<a class="headerlink" href="#debugger" title="Permanent link">¶</a></h3>
+<p>Debuggers are programs that let you interact with the execution of a program.</p>
+<p>Many programming languages come with some form of debugger. In Python this is <code>pdb</code>, or <code>ipdb</code> for better performance.</p>
+<p>For more low level programming, <code>gdb</code> and <code>lldb</code> may be a good choice.</p>
+<p>Even if trying to debug a black box binary, there are tools to help. <code>strace</code> in LInux can trace the <strong>system call</strong> the program uses.</p>
+<div class="admonition note">
+<p class="admonition-title">Static Analysis</p>
+<p>Static analysis programs take source code as input and analyze it using coding rules to reason about its correctness.</p>
+<p><code>pyflakes</code> and <code>mypy</code> for python and <code>shellcheck</code> for shell scripts.</p>
+<p>Most editors and IDEs support displaying the output of these tools within the editor, highlighting the locations of warning and errors. This is called <strong>code linting</strong>.</p>
+</div>
+<h3 id="profiling">Profiling<a class="headerlink" href="#profiling" title="Permanent link">¶</a></h3>
+<h4 id="timing">Timing<a class="headerlink" href="#timing" title="Permanent link">¶</a></h4>
+<ul>
+<li>Real time<ul>
+<li>Wall clcok elapsed time from start to finish of the program, including the time taken by other processes and time taken while blocked ( e.g. waiting for I/O or network ).</li>
+</ul>
+</li>
+<li>User time<ul>
+<li>Amount of time spent in the CPU running user code.</li>
+</ul>
+</li>
+<li>Sys time<ul>
+<li>Amount of time spent in the CPU running kernel code.</li>
+</ul>
+</li>
+</ul>
+<h4 id="profiler">Profiler<a class="headerlink" href="#profiler" title="Permanent link">¶</a></h4>
+<ul>
+<li>CPU<ul>
+<li>Two main types of CPU profilers : tracing and sampling profilers.<ul>
+<li>Tracing profilers keep a record of every function call the program makes.</li>
+<li>Sampling profilers probe the program periodically and record the program's stack.</li>
+</ul>
+</li>
+<li><em>e.g.</em> <code>cProfiler</code> for python.</li>
+</ul>
+</li>
+<li>Memory<ul>
+<li><em>e.g.</em> <code>memory_profiler</code> for python.</li>
+</ul>
+</li>
+<li>Event Profileing</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Visualization</p>
+<p>For CPU sampling profilers is to use a <strong>Flame Graph</strong>.</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/0.png"><img src="../Pic/0.png" style="width:800px"/></a>
+</div></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Resource Monitoring</p>
+<ul>
+<li>General Monitoring <code>htop</code></li>
+<li>I/O operations <code>iotop</code></li>
+<li>Dis usage <code>df</code></li>
+<li>Memory Usage <code>free</code></li>
+<li>Open Files <code>lsof</code></li>
+<li>Network Connections and Config <code>ss</code></li>
+<li>Network Usage <code>`nethogs</code> and <code>iftop</code></li>
+</ul>
+<p><code>hyperfine</code> can quickly benchmark command line programs.</p>
+</div>
+<h2 id="8-metaprogramming">8. Metaprogramming<a class="headerlink" href="#8-metaprogramming" title="Permanent link">¶</a></h2>
+<h3 id="build-systems">Build systems<a class="headerlink" href="#build-systems" title="Permanent link">¶</a></h3>
+<p><code>make</code> is one of the most common build systems. It has its warts, but works quite well for simple-to-moderate projects. When we run <code>make</code>, it consult a file called <code>Makefile</code> in the current directory.</p>
+<h3 id="dependency-management">Dependency Management<a class="headerlink" href="#dependency-management" title="Permanent link">¶</a></h3>
+<p>Different distros have differnet package manager and repository. But there are some common concepts of them.</p>
+<h4 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">¶</a></h4>
+<p>Most projects that other projects depend on issue a <strong>version number</strong> with every release.</p>
+<p>The relatively common standard is semantic versioning. For its rules, every version number is of the form: <code>major.minor.patch</code>.</p>
+<ul>
+<li>Increase the <code>patch</code> version, if a new release does not change the API, such as security improvement.</li>
+<li>Increase the <code>minor</code> version, if an API is added in a backwards-compatible (向下兼容) way.</li>
+<li>Increase the <code>major</code> version, if the API is changed in a non-backwaraeds-compatible way.</li>
+</ul>
+<h4 id="lock-file">Lock File<a class="headerlink" href="#lock-file" title="Permanent link">¶</a></h4>
+<p>A lock file is simply a file that lists the exact version you are currently depending on of each dependency. Usually, an update program should be run explicitly to upgrade the newer versions of the dependencies.</p>
+<h4 id="continuous-integration-systems">Continuous Integration Systems<a class="headerlink" href="#continuous-integration-systems" title="Permanent link">¶</a></h4>
+<p>Continuous, or <strong>CI</strong> is an <strong>umbrella term</strong> for stuff that runs whenever your code changes.</p>
+<p>By far the most common one is a rule like 「when someone pushes code, run the test suite」.</p>
+<h2 id="9-security-and-cryptography">9. Security and Cryptography<a class="headerlink" href="#9-security-and-cryptography" title="Permanent link">¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Entropy</p>
+<p>Entropy is a measure of randomness. It's useful when determining the strength of a password.</p>
+<p>Entropy is measured in bits. When selecting uniformly at random from a set of possible outcomes (均匀分布的随机离散变量), the entropy is equal to <span class="arithmatex">\(log_2(\text{\# of possibilities})\)</span>.</p>
+<p>For on-line guessing, around 40 bits of entropy is pretty good. To be resistant to off-line guessing, a stronger password would be necessary (<em>e.g.</em> 80 bits or more).</p>
+</div>
+<h3 id="hash-function">Hash Function<a class="headerlink" href="#hash-function" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>hash(value: array&lt;byte&gt;) -&gt; vector&lt;byte, N&gt; (for some fixed N)
+</code></pre></div>
+<details class="example" open="open">
+<summary>Example</summary>
+<p>An example is SHA-1, which used in git. It maps arbitrary-sized inputs to 160-bit outputs. We can try out SHA-1 with <code>sha1sum</code> command,</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">printf</span> <span class="s1">'hello'</span> <span class="p">|</span> sha1sum
+aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+$ <span class="nb">printf</span> <span class="s1">'hello'</span> <span class="p">|</span> sha1sum
+aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+$ <span class="nb">printf</span> <span class="s1">'Hello'</span> <span class="p">|</span> sha1sum
+f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
+</code></pre></div>
+</details>
+<p>At a high level, a hash function can be thought of as a hard-to-invert random-looking (but deterministic) function.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Properties</p>
+<ul>
+<li>Deterministic 确定性 : the same input always generates the same output.</li>
+<li>Non-invertible 不可逆性 : it's hard to find an input <code>m</code> such that <code>hash(m) = h</code> for desired output <code>h</code>.</li>
+<li>Target collision resistant  目标碰撞抵抗性（弱无碰撞）: given an input <code>m1</code>, it's hard to find a different input <code>m2</code>, such that <code>hash(m1) = hash(m2)</code>.</li>
+<li>Collision resistant 碰撞抵抗性（强无碰撞）: it's hard to find two inputs <code>m1</code> and <code>m2</code> such that <code>hash(m1) = hash(m2)</code>. (strictly stronger than target collision resistant)</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although it  may work for certain purpose (like implementing directory by hash table), SHA-1 is <a href="https://shattered.io/">no longer</a> considered a strong cryptographic hash function.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Applications</p>
+<ul>
+<li>Git, for content-addressed storage 内容寻址存储. Hash function is not only cryptographic, it's used in git to avoid content-address conflict. </li>
+<li>Message digest 文件信息摘要. The official sites usually post hashes alongside the download links. Software can be downloaded from mirrors and be checked after downloading the file. </li>
+<li>
+<p>Commitment schemes 承诺机制. </p>
+<details class="example" open="open">
+<summary>Example</summary>
+<p>Suppose you want to commit to a particular value, but reveal the value itself later. For example, I want to do a fair coin toss “in my head”, without a trusted shared coin that two parties can see. I could choose a value <code>r = random()</code>, and then share <code>h = sha256(r)</code>. Then, you could call heads or tails (we’ll agree that even <code>r</code> means heads, and odd <code>r</code> means tails). After you call, I can reveal my value <code>r</code>, and you can confirm that I haven’t cheated by checking <code>sha256(r)</code> matches the hash I shared earlier.</p>
+</details>
+</li>
+</ul>
+</div>
+<h3 id="key-derivation-functions-kdfs">Key Derivation Functions (KDFs)<a class="headerlink" href="#key-derivation-functions-kdfs" title="Permanent link">¶</a></h3>
+<div class="admonition theorem">
+<p class="admonition-title">Properties</p>
+<ul>
+<li>Slow : To slow down off-line brute-force attacks.</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Applications</p>
+<ul>
+<li>Storing login credentials. Generate and store a random salt <code>salt = random()</code> for each user, store <code>KDF(password + salt)</code> and verify by <code>KDF(input + salt)</code>. </li>
+<li>Producing keys from <strong>pass-phrases</strong> for use in other cryptographic algorithms.</li>
+</ul>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    p[passphrase] --&gt; KDF --&gt; k[key] --&gt; encrypt
+    pt[plaintext] --&gt; encrypt
+    encrypt --&gt; ct[ciphertext]
+    style p fill:#FFF, stroke-width:0px
+    style k fill:#FFF, stroke-width:0px
+    style pt fill:#FFF, stroke-width:0px
+    style ct fill:#FFF, stroke-width:0px</code></pre>
+<h3 id="symmetric-cryptography">Symmetric Cryptography<a class="headerlink" href="#symmetric-cryptography" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>keygen() -&gt; key (this function is randomized)
+
+encrypt(plaintext: array&lt;byte&gt;, key) -&gt; ciphertext: array&lt;byte&gt;
+decrypt(ciphertext: array&lt;byte&gt;, key) -&gt; plaintext: array&lt;byte&gt;
+</code></pre></div>
+<p>An example of a symmetric cryptosystem in wide use today is <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a>.</p>
+<div class="highlight"><pre><span></span><code>$ openssl aes-256-cbc -salt -in note.md -out note.enc.md
+enter aes-256-cbc encryption password:
+Verifying - enter aes-256-cbc encryption password:
+$ openssl aes-256-cbc -d -in note.enc.md -out note.dec.md
+enter aes-256-cbc encryption password:
+$ cmp note.md note.dec.md
+$ <span class="nb">echo</span> <span class="nv">$?</span>
+<span class="m">0</span>
+</code></pre></div>
+<div class="admonition theorem">
+<p class="admonition-title">Properties</p>
+<ul>
+<li>given <code>ciphertext</code>, it's hard to figure out <code>plaintext</code> without key.</li>
+<li><code>decrypt(encrypt(m, k), k) = m</code></li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Applications</p>
+<ul>
+<li>Encrypting files for storage in an untrusted cloud service.</li>
+</ul>
+</div>
+<h3 id="asymmetric-cryptography">Asymmetric Cryptography<a class="headerlink" href="#asymmetric-cryptography" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>keygen() -&gt; (public key, private key)
+
+encrypt(plaintext: array&lt;byte&gt;, public key) -&gt; ciphertext: array&lt;byte&gt;
+decrypt(ciphertext: array&lt;byte&gt;, private key) -&gt; plaintext: array&lt;byte&gt;
+
+sign(message: array&lt;byte&gt;, private key) -&gt; signature: array&lt;byte&gt;
+verify(message: array&lt;byte&gt;, signature: array&lt;byte&gt;, public key) -&gt; bool (the signature is valid or not)
+</code></pre></div>
+<p>An example of an asymmetric cryptosystem is RSA.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Properties</p>
+<ul>
+<li>hard to get plaintext from ciphertext without private key.</li>
+<li>decrypt(encrypt(m, k), k) = m</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Applications</p>
+<ul>
+<li>PGP email encryption.</li>
+<li>Private messaging. Apps like Signal or Keybase.</li>
+<li>Signing software. Git can have GPG-signed commit and tags. With a posted public key, anyone can verify the authenticity of downloaded software.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Key Distribution</p>
+<p>It's a big challenge of distributing public keys / mapping public keys to real-world identities.</p>
+<p><strong>Solutions</strong></p>
+<ul>
+<li>for Signal : trust on first use, and support out-of-band 线下 public key exchange and safety number 面对面交换公钥.</li>
+<li>for PGP : web of trust 信任网络</li>
+<li>for Keybase : social proof 社交网络证明</li>
+</ul>
+</div>
+<h3 id="hybrid-encrytion">Hybrid Encrytion<a class="headerlink" href="#hybrid-encrytion" title="Permanent link">¶</a></h3>
+<h4 id="sender-end">Sender End<a class="headerlink" href="#sender-end" title="Permanent link">¶</a></h4>
+<pre class="mermaid"><code>flowchart LR
+    m[plaintext] --&gt; se[symmetric encryption]
+    sk[symmetric keygen] --&gt; key --&gt; se --&gt; ct[ciphertext]
+    key --&gt; ae
+    pk[public key] --&gt; ae[asymmetric encryption] --&gt; ek[encrypted key]
+    style m fill:#FFF, stroke-width:0px
+    style key fill:#FFF, stroke-width:0px
+    style ct fill:#FFF, stroke-width:0px
+    style ek fill:#FFF, stroke-width:0px
+    style pk fill:#FFF, stroke-width:0px</code></pre>
+<h4 id="receiver-end">Receiver End<a class="headerlink" href="#receiver-end" title="Permanent link">¶</a></h4>
+<pre class="mermaid"><code>flowchart LR
+    ek[encrypted key] --&gt; ad[asymmetric decryption]
+    pk[private key] --&gt; ad[asymmetric decryption] --&gt; key --&gt; sd[symmetric decryption]
+    ct[ciphertext] --&gt; sd[symmetric decryption] --&gt; m[plaintext]
+    style m fill:#FFF, stroke-width:0px
+    style pk fill:#FFF, stroke-width:0px
+    style ek fill:#FFF, stroke-width:0px
+    style key fill:#FFF, stroke-width:0px
+    style ct fill:#FFF, stroke-width:0px</code></pre>
+<div class="admonition example">
+<p class="admonition-title">Case Studies</p>
+<ul>
+<li>Password managers: KeePassXC, Pass, 1Password</li>
+<li>Two-factor authentication</li>
+<li>Full disk encryption<ul>
+<li>Linux : cryptsetup + LUKS</li>
+<li>Windows : BitLocker</li>
+<li>macOS : FileVault</li>
+</ul>
+</li>
+<li>Private messaging</li>
+<li>Signal and Keybase. End-to-end security is bootstrapped from asymmetric-key encryption.</li>
+<li>SSH</li>
+</ul>
+</div>
+<h2 id="10-11-pot-pourri-and-qa">10 &amp; 11. Pot-pourri and Q&amp;A<a class="headerlink" href="#10-11-pot-pourri-and-qa" title="Permanent link">¶</a></h2>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.25 16:27:57 CST</span>
+<br/>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.25 16:27:57 CST</span>
+</small>
+</div>
+<div class="md-source-date">
+<small>
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
+      作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
+</small>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: Title Page" class="md-footer__link md-footer__link--prev" href="../../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                上一页
+              </span>
+              Title Page
+            </div>
+</div>
+</a>
+<a aria-label="下一页: Class Notes" class="md-footer__link md-footer__link--next" href="../../FDS/class_notes/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                下一页
+              </span>
+              Class Notes
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 sakuratsuyu
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/sakuratsuyu" rel="noopener" target="_blank" title="Github">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="mailto:sakuratsuyu@outlook.com" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 128c0-35.35 28.65-64 64-64h384c35.3 0 64 28.65 64 64v256c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64V128zm48 0v22.1l172.5 141.6c20.6 17 50.4 17 71 0L464 150.1v-23c0-7.9-7.2-16-16-16H64c-8.84 0-16 8.1-16 16v.9zm0 84.2V384c0 8.8 7.16 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.6 31.5-132.9 0L48 212.2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+<script src="../../../js/katex.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>
