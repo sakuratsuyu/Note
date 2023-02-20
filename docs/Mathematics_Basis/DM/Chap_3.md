@@ -1,4 +1,4 @@
-# The Fundamentals: Algorithms
+# Chapter 3 | The Fundamentals: Algorithms
 
 ## Algorithms
 
