@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#chapter-6-counting">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -254,9 +257,69 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Chap 6
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Chap 6
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-counting-principle">
+    Basic Counting Principle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pigeonhole-principle">
+    Pigeonhole Principle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permutations-and-combinations">
+    Permutations and Combinations
+  </a>
+<nav aria-label="Permutations and Combinations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binomial-coefficients">
+    Binomial Coefficients
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#generalized-permutations-and-combinations">
+    Generalized Permutations and Combinations
+  </a>
+<nav aria-label="Generalized Permutations and Combinations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permutation-with-repetition">
+    Permutation with repetition
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#combination-with-repetition">
+    Combination with repetition
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#generating-permutations">
+    Generating Permutations
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_7/">
@@ -281,6 +344,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_11/">
         Chap 11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Chap_12_13/">
+        Chap 12/13
       </a>
 </li>
 </ul>
@@ -560,6 +628,60 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-counting-principle">
+    Basic Counting Principle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pigeonhole-principle">
+    Pigeonhole Principle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permutations-and-combinations">
+    Permutations and Combinations
+  </a>
+<nav aria-label="Permutations and Combinations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binomial-coefficients">
+    Binomial Coefficients
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#generalized-permutations-and-combinations">
+    Generalized Permutations and Combinations
+  </a>
+<nav aria-label="Generalized Permutations and Combinations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permutation-with-repetition">
+    Permutation with repetition
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#combination-with-repetition">
+    Combination with repetition
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#generating-permutations">
+    Generating Permutations
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -569,13 +691,229 @@
 <a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Mathematics_Basis/DM/Chap_6.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Chap 6</h1>
+<h1 id="chapter-6-counting">Chapter 6 | Counting<a class="headerlink" href="#chapter-6-counting" title="Permanent link">¶</a></h1>
+<h2 id="basic-counting-principle">Basic Counting Principle<a class="headerlink" href="#basic-counting-principle" title="Permanent link">¶</a></h2>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem | SUM RULE</p>
+<p>Suppose that the tasks <span class="arithmatex">\(T_1, T_2, \dots, T_k\)</span> can be down in <span class="arithmatex">\(n_1, n_2, \dots, n_m\)</span> ways respectively and no two of these tasks can be down at the same time. Then the number of ways to do one of these tasks is</p>
+<div class="arithmatex">\[
+    n_1 + n_2 + \dots + n_k.
+\]</div>
+<p>Or, if <span class="arithmatex">\(A_1, A_2, \dots, A_k\)</span> are disjoint sets, then</p>
+<div class="arithmatex">\[
+    |A_1 \cup A_2 \cup \dots \cup A_k| = |A_1| + |A_2| + \dots + |A_k|.
+\]</div>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem | PRODUCT RULE</p>
+<p>Suppose that a procedure can be performed in <span class="arithmatex">\(k\)</span> succeessive steps, step <span class="arithmatex">\(i\)</span> can be done in <span class="arithmatex">\(n_i\)</span> ways. Then the number of different ways that the procedure can be is the product</p>
+<div class="arithmatex">\[
+    n_1 \cdot n_2 \cdot \cdots \cdot n_k.
+\]</div>
+<p>Or, if <span class="arithmatex">\(A_1, A_2, \dots, A_k\)</span> are finite sets, then</p>
+<div class="arithmatex">\[
+    |A_1 \times A_2 \times \cdots \times A_k| = |A_1| \cdot |A_2| \cdot \cdots \cdot |A_k|.
+\]</div>
+</div>
+<h2 id="pigeonhole-principle">Pigeonhole Principle<a class="headerlink" href="#pigeonhole-principle" title="Permanent link">¶</a></h2>
+<div class="admonition theorem">
+<p class="admonition-title">Pigeonhole Principle</p>
+<p>If <span class="arithmatex">\(k + 1\)</span> or more objects are placed into <span class="arithmatex">\(k\)</span> boxes then there is at least one box containing two or more of the objects.</p>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Generalized Pigeonhole Principle</p>
+<p>If <span class="arithmatex">\(N\)</span> are placed into <span class="arithmatex">\(k\)</span> boxes then there is at least one box containing at least <span class="arithmatex">\(\lceil N / k \rceil\)</span> objects.</p>
+</div>
+<p>We give some elegant applications of this principle.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Example 1</label><label for="__tabbed_1_2">Example 2</label><label for="__tabbed_1_3">Example 3</label><label for="__tabbed_1_4">Example 4</label><label for="__tabbed_1_5">Example 5</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Given <span class="arithmatex">\(n + 1\)</span> positive integers <span class="arithmatex">\(a_i\)</span> (<span class="arithmatex">\(i = 1, \dots, n + 1\)</span>) and <span class="arithmatex">\(a_i \le 2n\)</span>, show that <span class="arithmatex">\(\exist\ i, j,\ \ \text{ s.t. } a_i \mid a_j\)</span>.</p>
+<p><strong>Solution.</strong></p>
+<p>Suppose <span class="arithmatex">\(a_i = 2^{k_i} q_i\)</span> for some <span class="arithmatex">\(k_i\)</span> and odd <span class="arithmatex">\(q_i\)</span>.</p>
+<p>Then</p>
+<ul>
+<li>the pigeonhole is <span class="arithmatex">\(\{q_i\}_{i = 1}^{n}\)</span>, totally <span class="arithmatex">\(n\)</span> elements.</li>
+<li>the pigeon is <span class="arithmatex">\(\{a_i\}_{i = 1}^{n + 1}\)</span>, totally <span class="arithmatex">\(n + 1\)</span> elements.</li>
+</ul>
+<p>Thus <span class="arithmatex">\(\exists\ i, j,\ \ \text{ s.t. } q_i = q_j\)</span>, and <span class="arithmatex">\(a_i = 2^{k_i}q_i\)</span>, <span class="arithmatex">\(a_j = 2^{k_j}q_j\)</span>. Without loss of generation, if <span class="arithmatex">\(k_i &lt; k_j\)</span>, then <span class="arithmatex">\(a_i \mid a_j\)</span>.</p>
+</div>
+<div class="tabbed-block">
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>Every sequence of <span class="arithmatex">\(n^2 + 1\)</span> distinct real numbers <span class="arithmatex">\(\{a_i\}_{i = 1}^{n^2+1}\)</span> contains a subsequence of length <span class="arithmatex">\(n + 1\)</span> that is either strictly increasing or strictly decreasing.</p>
+</div>
+<div class="admonition proof">
+<p class="admonition-title">Proof</p>
+<p>Define</p>
+<ul>
+<li><span class="arithmatex">\(i_k\)</span> by the length of the <strong>longest</strong> increasing subsequence starting at <span class="arithmatex">\(a_k\)</span>.</li>
+<li><span class="arithmatex">\(d_k\)</span> by the length of the <strong>longest</strong> decreasing subsequence starting at <span class="arithmatex">\(a_k\)</span>.</li>
+</ul>
+<p>First we prove that if <span class="arithmatex">\(s \neq t\)</span>, then either <span class="arithmatex">\(i_s \neq i_t\)</span> or <span class="arithmatex">\(d_s = d_t\)</span>.</p>
+<div class="admonition plane">
+<p>Since <span class="arithmatex">\(a_i\)</span> are distinct, without loss of generation, for <span class="arithmatex">\(s &lt; t\)</span> either <span class="arithmatex">\(a_s &lt; a_t\)</span> or <span class="arithmatex">\(a_s &gt; a_t\)</span>.</p>
+<ul>
+<li>If <span class="arithmatex">\(a_s &lt; a_t\)</span>, then <span class="arithmatex">\(i_s &gt; i_t\)</span>.</li>
+<li>If <span class="arithmatex">\(a_s &gt; a_t\)</span>, then <span class="arithmatex">\(d_s &gt; d_t\)</span>.</li>
+</ul>
+</div>
+<p>We prove the theorem by contradiction. Suppose that there are no increasing or decreasing subsequence of length <span class="arithmatex">\(n + 1\)</span>, then we have</p>
+<div class="arithmatex">\[
+    1 \le i_k, d_k \le n, k = 1, \dots, n^2 + 1.
+\]</div>
+<p>Thus there are <span class="arithmatex">\(n^2\)</span> possible ordered pair <span class="arithmatex">\((i_k, d_k)\)</span>.</p>
+<p>Then</p>
+<ul>
+<li>the pigeonhole is <span class="arithmatex">\(\{(i_k, d_k)\}\)</span>, totally <span class="arithmatex">\(n^2\)</span> elements.</li>
+<li>the pigeon is <span class="arithmatex">\(\{a_i\}_{i = 1}^{n^2 + 1}\)</span>, totally <span class="arithmatex">\(n^2 + 1\)</span> elements.</li>
+</ul>
+<p>Thus <span class="arithmatex">\(\exists\ s, t,\ \ \text{ s.t. } i_s = i_t, d_s = d_t\)</span>, which leads to a contradiction.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>Let <span class="arithmatex">\(x_1, \dots x_n\)</span> be a sequence of integers, then there are some successive integers in the sequence s.t. their sum can be divied by <span class="arithmatex">\(n\)</span>.</p>
+<p><strong>Solution.</strong></p>
+<p>Let <span class="arithmatex">\(A_i = \sum\limits_{k = 1}^{i}x_k\)</span>.</p>
+<ul>
+<li>If <span class="arithmatex">\(\exists\ i\)</span>, s.t. <span class="arithmatex">\(n \mid A_i\)</span>, then it's true.</li>
+<li>
+<p>If not, then <span class="arithmatex">\(n \nmid A_i, i = 1, 2, \dots n\)</span>. Then</p>
+<ul>
+<li>the pigeonhole is <span class="arithmatex">\([1]_n, \dots, [n - 1]_n\)</span>, totally <span class="arithmatex">\(n - 1\)</span> elements.</li>
+<li>the pigeon is <span class="arithmatex">\(\{A_i\}_{i = 1}^{n}\)</span>, totally <span class="arithmatex">\(n\)</span> elements.</li>
+</ul>
+<p>Thus <span class="arithmatex">\(\exists\ i &lt; j,\ \ \text{ s.t. } A_i \equiv A_j (\text{ mod } n)\)</span>. Thus <span class="arithmatex">\(n \mid (A_j - A_i)\)</span>.</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Every sequence <span class="arithmatex">\(a_1, a_2, \dots, a_N\)</span> (<span class="arithmatex">\(N = 2^n\)</span>), where <span class="arithmatex">\(a_i \in \{x_1, x_2, \dots, x_n\}\)</span>, contains a successive subsequence such that their product is a perfect square.</p>
+<p><strong>Solution.</strong></p>
+<p>Let <span class="arithmatex">\(A_i\)</span> = \prod_{k = 1}^{i} a_k$, then <span class="arithmatex">\(A_i = \sum\limits_{k = 1}^{n} x_k^{\alpha_{ik}}\)</span>.</p>
+<ul>
+<li>If <span class="arithmatex">\(\exists\ i\)</span>, s.t. <span class="arithmatex">\(A_i\)</span> is a perfect square, then it's true.</li>
+<li>
+<p>If not, then <span class="arithmatex">\(A_i\)</span> are not perfect square. Suppose a bijection</p>
+<div class="arithmatex">\[
+    A_i \leftrightarrow (\alpha_{i1}, \dots, \alpha_{in}) \leftrightarrow (\alpha_{i1} (\text{ mod } 2), \dots, \alpha_{in} (\text{ mod } 2)).
+\]</div>
+<ul>
+<li>the pigeonhole is <span class="arithmatex">\(\{0, 1\} \times \{0, 1\} \times \cdots \times \{0, 1\} - (0, 0, \cdots, 0)\)</span>, totally <span class="arithmatex">\(2^n - 1\)</span> elements.</li>
+<li>the pigeon is <span class="arithmatex">\(\{A_i\}_{i = 1}^{2^n}\)</span>, totally <span class="arithmatex">\(2^n\)</span> elements.</li>
+</ul>
+<p>Thus <span class="arithmatex">\(\exists\ i &lt; j,\ \ \text{ s.t. }\)</span> </p>
+<div class="arithmatex">\[
+    \frac{A_j}{A_i} = x_1^{2k_1} x_2^{2k_2} \cdots x_n^{2k_n} = (x_1^{k_1} x_2^{k_2} \cdots x_n^{k_n})^2,
+\]</div>
+<p>which is a perfect square.</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>During 30 days, a baseball team plays at least <span class="arithmatex">\(1\)</span> game a day, but no more than <span class="arithmatex">\(45\)</span> games in total. Show that there must be a period of some number of consecutive adays during which the team ust play exactly <span class="arithmatex">\(14\)</span> games.</p>
+<p><strong>Solution.</strong></p>
+<p>Let <span class="arithmatex">\(a_i\)</span> be the number of games played on before the <em>i</em>th day. Then <span class="arithmatex">\(a_1 &lt; a_2 &lt; \cdots &lt; a_{30}\)</span>, and</p>
+<div class="arithmatex">\[
+    1 \le a_i \le 45,\ \ 15 \le a_i + 14 \le 59.
+\]</div>
+<p>Then</p>
+<ul>
+<li>the pigeonhole is <span class="arithmatex">\(1 \sim 59\)</span>, totally <span class="arithmatex">\(59\)</span> elements.</li>
+<li>the pigeon is <span class="arithmatex">\(\{a_i\}_{i = 1}^{30}, \{a_i + 14\}_{i = 1}^{30}\)</span>, totally <span class="arithmatex">\(60\)</span> elements.</li>
+</ul>
+<p>Thus <span class="arithmatex">\(\exists\ i &lt; j,\ \ \text{ s.t. } a_i = a_j + 14\)</span>.</p>
+</div>
+</div>
+</input></input></input></input></input></div>
+</div>
+<h2 id="permutations-and-combinations">Permutations and Combinations<a class="headerlink" href="#permutations-and-combinations" title="Permanent link">¶</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>Given a set of distinct object <span class="arithmatex">\(X = \{x_1, \cdots, x_n\}\)</span>,</p>
+<ul>
+<li>a <strong>permutation</strong> of <span class="arithmatex">\(X\)</span> is an order arrangement of <span class="arithmatex">\(X\)</span>.</li>
+<li>an <strong>r-permutation</strong> (<span class="arithmatex">\(r \le n\)</span>) is an ordering of a subset of <em>r</em>-elements is denoted by <span class="arithmatex">\(P(n, r)\)</span>. The number of <em>r</em>-permutations is denoted by <span class="arithmatex">\(P(n, r)\)</span>.</li>
+<li>an <strong>r-combination</strong> of <span class="arithmatex">\(X\)</span> is an unordered selection of <span class="arithmatex">\(r\)</span> elements. The number of <em>r</em>-combinations is denoted by <span class="arithmatex">\(C(n, r)\)</span>.</li>
+</ul>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<div class="arithmatex">\[
+    P(n, r) = n(n - 1)\cdot(n - r + 1) = \frac{n!}{(n - r)!}.
+\]</div>
+<div class="arithmatex">\[
+    C(n, r) = \frac{n!}{r!(n - r)!} = \frac{P(n, r)}{r!}.
+\]</div>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Property</p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{k = 0}^{n}C(n, k) = 2^n\)</span>.</li>
+<li>**Pascal's Identity" <span class="arithmatex">\(C(n + 1, k) = C(n, k) + C(n, k - 1)\)</span>.</li>
+<li>**Vandermonde's Identity$ <span class="arithmatex">\(C(m + n, r) = \sum\limits_{k = 0}^rC(m, r - k)C(n, k)\)</span>.</li>
+</ul>
+</div>
+<h3 id="binomial-coefficients">Binomial Coefficients<a class="headerlink" href="#binomial-coefficients" title="Permanent link">¶</a></h3>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem | Binomial Therorem</p>
+<p>If <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are eal numbers and <span class="arithmatex">\(n\)</span> is a positive integer, then</p>
+<div class="arithmatex">\[
+    (a + b)^n = C(n, 0)a^nb^0 + C(n, 1)a^{n - 1}b^1 + \cdots + C(n, n)a^0b^n.
+\]</div>
+</div>
+<h2 id="generalized-permutations-and-combinations">Generalized Permutations and Combinations<a class="headerlink" href="#generalized-permutations-and-combinations" title="Permanent link">¶</a></h2>
+<h3 id="permutation-with-repetition">Permutation with repetition<a class="headerlink" href="#permutation-with-repetition" title="Permanent link">¶</a></h3>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>The number of <em>r</em>-permutations of a set of <span class="arithmatex">\(n\)</span> objects with repetition allowed is <span class="arithmatex">\(n^r\)</span>.</p>
+</div>
+<h3 id="combination-with-repetition">Combination with repetition<a class="headerlink" href="#combination-with-repetition" title="Permanent link">¶</a></h3>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>The umber of <em>r</em>-combination of a set with <span class="arithmatex">\(n\)</span> elements with repetition allowed is <span class="arithmatex">\(C(n + r - 1, r)\)</span>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Example 1</label><label for="__tabbed_2_2">Example 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>How many solutions in nonnegative integers are there to the equation <span class="arithmatex">\(x_1 + x_2 + x_3 + x_4 = 29\)</span>, where <span class="arithmatex">\(x_1 &gt; 0, x_2 &gt; 1, x_3 &gt; 2, x_4 \ge 0\)</span> ?</p>
+<p><strong>Solution.</strong></p>
+<p><span class="arithmatex">\(C(4 + 23 - 1, 23) = C(26, 23) = C(26, 3) = 2600\)</span>.</p>
+</div>
+<div class="tabbed-block">
+<p>How many ways to place <span class="arithmatex">\(2t + 1\)</span> indistinguishable balls into <span class="arithmatex">\(3\)</span> distinguishable boxes such that the total number of balls in arbitrary two boxes is larger than the third one?</p>
+<p><strong>Solution.</strong></p>
+<p><span class="arithmatex">\(C(3 + 2t + 1 - 1, 2t + 1) - C(3, 1) \cdot C(3 + t - 1, t) = C(2t + 3, 2) - 3C(t + 2, 2)\)</span>.</p>
+</div>
+</div>
+</input></input></div>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>The number of ways to distriute <span class="arithmatex">\(n\)</span> distinguishable objects into <span class="arithmatex">\(K\)</span> distinguishable boxes so that <span class="arithmatex">\(n_i\)</span> objects are placed into box <span class="arithmatex">\(i\)</span> equals</p>
+<div class="arithmatex">\[
+    \frac{n!}{n_1!n_2!\cdots n_k!}.
+\]</div>
+</div>
+<h2 id="generating-permutations">Generating Permutations<a class="headerlink" href="#generating-permutations" title="Permanent link">¶</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>The permutaion <span class="arithmatex">\(a_1 a_2 \cdots a_n\)</span> <strong>precedes</strong> the permutation of <span class="arithmatex">\(b_1 b_2 \cdots b_n\)</span>, if for some <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(a_1 = b_1, \cdots, a_{k - 1} = b_{k - 1}\)</span> and <span class="arithmatex">\(a_k &lt; b_k\)</span>. It defines an order called $lexicographic order**.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The next permutaion in lexicographic order after <span class="arithmatex">\(362541\)</span> is <span class="arithmatex">\(364125\)</span>.</p>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.15 13:54:18 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.20 15:42:07 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
@@ -583,7 +921,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>

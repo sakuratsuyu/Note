@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#chapter-11-trees">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -279,8 +282,64 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Chap 11
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Chap 11
+      </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#property">
+    Property
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#application">
+    Application
+  </a>
+<nav aria-label="Application" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-search-tree-bst">
+    Binary Search Tree (BST)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prefix-codes">
+    Prefix Codes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decision-trees">
+    Decision Trees
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tree-traversal">
+    Tree Traversal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spanning-trees">
+    Spanning Trees
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Chap_12_13/">
+        Chap 12/13
       </a>
 </li>
 </ul>
@@ -560,6 +619,51 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#property">
+    Property
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#application">
+    Application
+  </a>
+<nav aria-label="Application" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-search-tree-bst">
+    Binary Search Tree (BST)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prefix-codes">
+    Prefix Codes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decision-trees">
+    Decision Trees
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tree-traversal">
+    Tree Traversal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spanning-trees">
+    Spanning Trees
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -569,13 +673,106 @@
 <a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Mathematics_Basis/DM/Chap_11.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Chap 11</h1>
+<h1 id="chapter-11-trees">Chapter 11 | Trees<a class="headerlink" href="#chapter-11-trees" title="Permanent link">¶</a></h1>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <strong>tree</strong> <span class="arithmatex">\(T\)</span> is a connected undirected graph with no simple circuit. A <strong>forest</strong> is an undirected graph with no simple circuit.</p>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>An undirected graph is a tree iff there is a unique simple path between any two of its vertices.</p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A particular vertex of a tree is designated as the <strong>root</strong>. Once we specify the root, we can assign a direction to each edge. We direct each edge away from the root. Thus, a tree together with its root produces a directed graph called a <strong>rooted tree</strong>.</p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<ul>
+<li><strong>Leaf</strong> is the vertex that have no children.</li>
+<li><strong>Internal vertex</strong> is the vertex that have children.</li>
+<li>Let <span class="arithmatex">\(T\)</span> be a rooted tree.<ul>
+<li><strong>level</strong> <span class="arithmatex">\(l(v)\)</span> is the length of the simple path from root to <span class="arithmatex">\(v\)</span>.</li>
+<li><strong>height</strong> <span class="arithmatex">\(h = \max\limits_{v \in V(T)} l(v)\)</span>.</li>
+</ul>
+</li>
+<li><strong><em>m</em>-ary tree <em>m</em> 元树</strong> is a tree that every internal vertex has no more than <span class="arithmatex">\(m\)</span> children.</li>
+<li><strong>Full <em>m</em>-ary tree</strong> is a tree that every internal vertex has exactly <span class="arithmatex">\(m\)</span> children.</li>
+<li><strong>Ordered rooted tree</strong> is a tree that the children of each internal vertex are ordered, namely each children is unique. e.g. binary tree is often ordered, since it distinguishes <em>left</em> child and <em>right</em> child.</li>
+<li>A rooted <em>m</em>-ary tree of height <span class="arithmatex">\(h\)</span> is <strong>balanced</strong> if all leaves are at levels <span class="arithmatex">\(h\)</span> or <span class="arithmatex">\(h - 1\)</span>.</li>
+</ul>
+</div>
+<div class="admonition plane">
+<p><strong>NOTE</strong> In most cases, we treat a tree as an <strong>ordered rooted tree</strong>, and often only discuss <strong>binary tree</strong> in <a href="../../../Computer_Science_Courses/FDS/Trees">FDS</a>.</p>
+</div>
+<h2 id="property">Property<a class="headerlink" href="#property" title="Permanent link">¶</a></h2>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>A tree with <span class="arithmatex">\(n\)</span> vertices has <span class="arithmatex">\(n - 1\)</span> edges.</p>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>A full <em>m</em>-ary tree with <span class="arithmatex">\(i\)</span> internal vertices contains <span class="arithmatex">\(n = mi + 1\)</span> vertices.</p>
+<p>Moreover, suppose <span class="arithmatex">\(l\)</span> is the number of leaves. With the equations</p>
+<div class="arithmatex">\[
+    n = mi + 1,\ \ n = l + i,
+\]</div>
+<p>if one of <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(l\)</span> is known, the other two quantities are determined.</p>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>There are at most <span class="arithmatex">\(m^h\)</span> leaves in <em>m</em>-ary tree of height <span class="arithmatex">\(h\)</span>.</p>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Corollary</p>
+<p>If an <em>m</em>-ary tree of height <span class="arithmatex">\(h\)</span> has <span class="arithmatex">\(l\)</span> leaves, then <span class="arithmatex">\(h \ge \lceil \log _m l \rceil\)</span>. If it's full and balanced, then <span class="arithmatex">\(h = \lceil \log _m l \rceil\)</span>.</p>
+</div>
+<h2 id="application">Application<a class="headerlink" href="#application" title="Permanent link">¶</a></h2>
+<h3 id="binary-search-tree-bst">Binary Search Tree (BST)<a class="headerlink" href="#binary-search-tree-bst" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Refer to <a href="../../../Computer_Science_Courses/FDS/Trees/#binary-search-tree-bst">Binary Search Tree</a>.</p>
+</blockquote>
+<h3 id="prefix-codes">Prefix Codes<a class="headerlink" href="#prefix-codes" title="Permanent link">¶</a></h3>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>To ensure that no bit string corresponds to more than one sequence of letters, the bit string for a letter must never occur as the first part of the string for another letter. Codes with this propertiy are called <strong>prefix codes</strong>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>To encode <span class="arithmatex">\(a, b, c, d\)</span>, <span class="arithmatex">\(\{0, 1, 01, 001\}\)</span> is not prefix codes, but <span class="arithmatex">\(\{0, 10, 110, 111\}\)</span> is.</p>
+</div>
+<div class="admonition plane">
+<p>A prefix code can be represented by a binary tree.</p>
+<p><div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/10.png"><img src="../Pic/10.png" style="width:200px"/></a>
+</div></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Extension: Huffman Coding</p>
+<div class="admonition question">
+<p class="admonition-title">Remains</p>
+</div>
+</div>
+<h3 id="decision-trees">Decision Trees<a class="headerlink" href="#decision-trees" title="Permanent link">¶</a></h3>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A rooted tree in which each internal vertex corresponds to a decision, with a subtree at these vertices for each possible outcome of the decision, is called a <strong>decision tree</strong>.</p>
+</div>
+<h2 id="tree-traversal">Tree Traversal<a class="headerlink" href="#tree-traversal" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>Refer to <a href="../../../Computer_Science_Courses/FDS/Trees/#traversals">Traversals</a>.</p>
+</blockquote>
+<h2 id="spanning-trees">Spanning Trees<a class="headerlink" href="#spanning-trees" title="Permanent link">¶</a></h2>
+<p>We can consturct spanning trees by DFS or BFS.</p>
+<blockquote>
+<p>Refer to <a href="../../../Computer_Science_Courses/FDS/Graph/#minimum-spanning-tree-mstTrees/#traversals">MST</a>.</p>
+</blockquote>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.15 13:54:18 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.20 15:42:07 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
@@ -583,7 +780,7 @@
 </div>
 <div class="md-source-date">
 <small>
-<!-- 作者: <span class='git-page-authors git-authors'></span> -->
+<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
       作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
@@ -610,13 +807,13 @@
             </div>
 </div>
 </a>
-<a aria-label="下一页: Class Notes" class="md-footer__link md-footer__link--next" href="../../NA/class_notes/" rel="next">
+<a aria-label="下一页: Chap 12/13" class="md-footer__link md-footer__link--next" href="../Chap_12_13/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              Class Notes
+              Chap 12/13
             </div>
 </div>
 <div class="md-footer__button md-icon">

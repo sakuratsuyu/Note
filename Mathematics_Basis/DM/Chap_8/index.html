@@ -267,9 +267,45 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Chap 8
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Chap 8
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recurrence-relations">
+    Recurrence Relations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#generating-functions">
+    Generating Functions
+  </a>
+<nav aria-label="Generating Functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#application">
+    Application
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principle-of-inclusion-exclusion">
+    Principle of Inclusion-Exclusion
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_9/">
@@ -284,6 +320,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_11/">
         Chap 11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Chap_12_13/">
+        Chap 12/13
       </a>
 </li>
 </ul>
@@ -563,6 +604,36 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recurrence-relations">
+    Recurrence Relations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#generating-functions">
+    Generating Functions
+  </a>
+<nav aria-label="Generating Functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#application">
+    Application
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principle-of-inclusion-exclusion">
+    Principle of Inclusion-Exclusion
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -573,12 +644,455 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="chapter-8-advanced-counting-techniques">Chapter 8 | Advanced Counting Techniques<a class="headerlink" href="#chapter-8-advanced-counting-techniques" title="Permanent link">¶</a></h1>
+<h2 id="recurrence-relations">Recurrence Relations<a class="headerlink" href="#recurrence-relations" title="Permanent link">¶</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <strong>recurrence relation</strong> for a sequence <span class="arithmatex">\(\{a_n\}\)</span> is an equation that express <span class="arithmatex">\(a_n\)</span> in terms of one or more of the previous terms of the sequence.</p>
+<ul>
+<li>A sequence is called a <strong>solution</strong> of recurrence relation if its term satisfy the recurrence relation.</li>
+<li>A particular solution needs some <strong>initial conditions</strong>.</li>
+</ul>
+</div>
+<p>Actually, there are many recurrence relations that don't have a solution. But for some certain cases, we have some methods to obtain the solutions. Here we only focus the following form of recurrence relations:</p>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <strong>linear homogeneous recurrence relation of degree <span class="arithmatex">\(k\)</span> with constant coeffieients</strong> is a recurrence relation of the form</p>
+<div class="arithmatex">\[
+    a_n  = c_1 a_{n - 1} + c_2 a_{n - 2} + \cdots + c_k a_{n - k},
+\]</div>
+<p>where <span class="arithmatex">\(c_i \in \mathbb{R}\)</span> and <span class="arithmatex">\(c_k \neq 0\)</span>.</p>
+<details class="example">
+<summary>Example</summary>
+<ul>
+<li><span class="arithmatex">\(a_n = a_{n - 1} + a_{n - 2}^2\)</span> is not linear.</li>
+<li><span class="arithmatex">\(a_n = 2a_{n - 1} + 1\)</span> is not homogeneous.</li>
+<li><span class="arithmatex">\(a_n = na_{n - 1}\)</span> has no constant coefficients.</li>
+</ul>
+</details>
+</div>
+<p>Now we discuss the solution for it. First we define <strong>characteristic equation</strong> by</p>
+<div class="arithmatex">\[
+    r^k - c_1 r^{k - 1} - c_2 r^{k - 2} - \cdots - c_{k - 1} r - c_k = 0.
+\]</div>
+<p>and the roots <span class="arithmatex">\(r_i\)</span> are called the <strong>characteristic roots</strong>.</p>
+<div class="admonition plane">
+<p><strong>degree</strong> <span class="arithmatex">\(k = 2\)</span></p>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>Let <span class="arithmatex">\(c_1\)</span> and <span class="arithmatex">\(c_2\)</span> be real numbers. Suppose that the characteristic equation</p>
+<div class="arithmatex">\[
+    r^2 - c_1 r - c_2 = 0
+\]</div>
+<ul>
+<li>
+<p>has two <strong>distinct</strong> roots <span class="arithmatex">\(r_1\)</span> and <span class="arithmatex">\(r_2\)</span>. Then the solution is of the form</p>
+<div class="arithmatex">\[
+    a_n = \alpha_1 r_1^n + \alpha_2 r_2^n,\ \ \text{ where $\alpha_1$ and $\alpha_2$ are constants}.
+\]</div>
+</li>
+<li>
+<p>has <strong>only one</strong> root <span class="arithmatex">\(r_0\)</span>. Then the solution is of the form</p>
+<div class="arithmatex">\[
+    a_n = \alpha_1 r_0^n + \alpha_2 n r_0^n,\ \ \text{ where $\alpha_1$ and $\alpha_2$ are constants}.
+\]</div>
+</li>
+</ul>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">distinct roots</label><label for="__tabbed_1_2">multiple roots</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Find the solution of <span class="arithmatex">\(a_n = a_{n - 1} + 2a_{n - 2}\)</span> with intial conditions <span class="arithmatex">\(a_0 = 2\)</span> and <span class="arithmatex">\(a_1 = 7\)</span>.</p>
+<p><strong>Solution.</strong></p>
+<p>The charateristic equation is <span class="arithmatex">\(r^2 - r - 2 = 0\)</span> and the roots are <span class="arithmatex">\(r = 2\)</span> and <span class="arithmatex">\(r = -1\)</span>. The general solution is</p>
+<div class="arithmatex">\[
+    a_n = \alpha_1 2^n + \alpha_2 (-1)^n.
+\]</div>
+<p>Substitue initial condition, we have <span class="arithmatex">\(\alpha_1 = 3\)</span> and <span class="arithmatex">\(\alpha_2 = -1\)</span>.</p>
+<p>Thus the solution is <span class="arithmatex">\(a_n = 3 \cdot 2^n - (-1)^n\)</span>.</p>
+</div>
+<div class="tabbed-block">
+<p>Find the solution of <span class="arithmatex">\(a_n = 6a_{n - 1} - 9a_{n - 2}\)</span> with intial conditions <span class="arithmatex">\(a_0 = 1\)</span> and <span class="arithmatex">\(a_1 = 6\)</span>.</p>
+<p><strong>Solution.</strong></p>
+<p>The charateristic equation is <span class="arithmatex">\(r^2 - 6r + 9 = 0\)</span> and the root is <span class="arithmatex">\(r = 1\)</span>. The general solution is</p>
+<div class="arithmatex">\[
+    a_n = \alpha_1 3^n + \alpha_2 n 3^n.
+\]</div>
+<p>Substitue initial condition, we have <span class="arithmatex">\(\alpha_1 = 1\)</span> and <span class="arithmatex">\(\alpha_2 = 1\)</span>.</p>
+<p>Thus the solution is <span class="arithmatex">\(a_n = 3^n + n \cdot 3^n\)</span>.</p>
+</div>
+</div>
+</input></input></div>
+</details>
+</div>
+<div class="admonition plane">
+<p><strong>degree</strong> <span class="arithmatex">\(k\)</span></p>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>Let <span class="arithmatex">\(c_1, \dots, c_k\)</span> be real numbers. Suppose that the characteristic equation</p>
+<div class="arithmatex">\[
+    r^k - c_1 r^{k - 1} - c_2 r^{k - 2} - \cdots - c_{k - 1} r - c_k = 0.
+\]</div>
+<ul>
+<li>
+<p>has <span class="arithmatex">\(k\)</span> distinct roots <span class="arithmatex">\(r_1, \dots, r_k\)</span>. Then the solution is of the form</p>
+<div class="arithmatex">\[
+    a_n = \alpha_1 r_1^n + \alpha_2 r_2^n + \cdots + \alpha_k r_k^n,\ \ \text{ where $\alpha_i$ are constants}.
+\]</div>
+</li>
+<li>
+<p>has <span class="arithmatex">\(t\)</span> distinct roots <span class="arithmatex">\(r_1, \dots, r_t\)</span> with multiplicitiese <span class="arithmatex">\(m_1, \dots, m_t\)</span>. Then the solution is of the form</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    a_n &amp;= (\alpha_{1, 0} + a_{1, 1}n + \cdots + \alpha_{1, m_1} n^{m_1 - 1}) r_1^n \\
+        &amp;+ (\alpha_{2, 0} + a_{2, 1}n + \cdots + \alpha_{2, m_2} n^{m_2 - 1}) r_2^n \\
+        &amp;+ \cdots \\
+        &amp;+ (\alpha_{t, 0} + a_{t, 1}n + \cdots + \alpha_{t, m_t} n^{m_t - 1}) r_t^n \\
+\end{aligned}
+,\ \ 
+\text{ where $\alpha_{ij}$ are constants}.
+\]</div>
+</li>
+</ul>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">distinct roots</label><label for="__tabbed_2_2">multiple roots</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Find the solution of <span class="arithmatex">\(a_n = 6a_{n - 1} - 11a_{n - 2} + 6a_{n - 3}\)</span> with intial conditions <span class="arithmatex">\(a_0 = 2\)</span>, <span class="arithmatex">\(a_1 = 5\)</span> and <span class="arithmatex">\(a_2 = 15\)</span>.</p>
+<p><strong>Solution.</strong></p>
+<p>The charateristic equation is <span class="arithmatex">\(r^3 - 6r^2 + 11r - 6 = 0\)</span> and the roots are <span class="arithmatex">\(r = 1\)</span>, <span class="arithmatex">\(r = 2\)</span> and <span class="arithmatex">\(r = 3\)</span>. The general solution is</p>
+<div class="arithmatex">\[
+    a_n = \alpha_1 \cdot 1^n + \alpha_2 \cdot 2^n + \alpha_3 \cdot 3^n.
+\]</div>
+<p>Substitue initial condition, we have <span class="arithmatex">\(\alpha_1 = 1\)</span>, <span class="arithmatex">\(\alpha_2 = -1\)</span> and <span class="arithmatex">\(\alpha_3 = 2\)</span>.</p>
+<p>Thus the solution is <span class="arithmatex">\(a_n = 1 - 2^n + 2 \cdot 3^n\)</span>.</p>
+</div>
+<div class="tabbed-block">
+<p>Find the solution of <span class="arithmatex">\(a_n = -3a_{n - 1} - 3a_{n - 2} - a_{n - 3}\)</span> with intial conditions <span class="arithmatex">\(a_0 = 1\)</span>, <span class="arithmatex">\(a_1 = -2\)</span> and <span class="arithmatex">\(a_2 = -1\)</span>.</p>
+<p><strong>Solution.</strong></p>
+<p>The charateristic equation is <span class="arithmatex">\(r^3 + 3r^2 + 3r + 1 = (r + 1)^3 = 0\)</span> and the root is <span class="arithmatex">\(r = -1\)</span> of multiplicity <span class="arithmatex">\(3\)</span>. The general solution is</p>
+<div class="arithmatex">\[
+    a_n = \alpha_{1, 0} (-1)^n + \alpha_{1, 1} n (-1)^n + \alpha_{1, 2} n^2 (-1)^n.
+\]</div>
+<p>Substitue initial condition, we have <span class="arithmatex">\(\alpha_{1, 0} = 1\)</span>, <span class="arithmatex">\(\alpha_{1, 1} = 3\)</span> and <span class="arithmatex">\(\alpha_{1, 2} = -2\)</span>.</p>
+<p>Thus the solution is <span class="arithmatex">\(a_n = (1 + 3n - 2n^2)(-1)^n\)</span>.</p>
+</div>
+</div>
+</input></input></div>
+</details>
+</div>
+<p>Moreover, we can also consider the nonhomogeneous cases.</p>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <strong>linear nonhomogeneous recurrence relation of degree <span class="arithmatex">\(k\)</span> with constant coeffieients</strong> is a recurrence relation of the form</p>
+<div class="arithmatex">\[
+    a_n  = c_1 a_{n - 1} + c_2 a_{n - 2} + \cdots + c_k a_{n - k} + F(n),
+\]</div>
+<p>where <span class="arithmatex">\(c_i \in \mathbb{R}\)</span> and <span class="arithmatex">\(F(n) \not\equiv = 0\)</span>. And</p>
+<div class="arithmatex">\[
+    a_n  = c_1 a_{n - 1} + c_2 a_{n - 2} + \cdots + c_k a_{n - k}
+\]</div>
+<p>is called the <strong>associated homogeneous recurrence relation</strong>.</p>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>If <span class="arithmatex">\(\{a_n^{(p)}\}\)</span> is <strong>particular solution</strong> of the linear nonhomogeneous recurrence relation with constant coefficients</p>
+<div class="arithmatex">\[
+    a_n  = c_1 a_{n - 1} + c_2 a_{n - 2} + \cdots + c_k a_{n - k} + F(n),,
+\]</div>
+<p>then each solution is of the form <span class="arithmatex">\(\{a_n^{(p)} + a_n^{(h)}\}\)</span>, where <span class="arithmatex">\(a_n^{(h)}\)</span> is a solution of the associated homogeneous recurrence relation</p>
+<div class="arithmatex">\[
+    a_n  = c_1 a_{n - 1} + c_2 a_{n - 2} + \cdots + c_k a_{n - k}.
+\]</div>
+</div>
+<details class="example">
+<summary>Example</summary>
+<p>Find solutions of <span class="arithmatex">\(a_n = 3a_{n - 1} + 2n\)</span> with <span class="arithmatex">\(a_1 = 3\)</span>.</p>
+<p><strong>Solution.</strong></p>
+<p>The associated linear homogeneous recurrence relation is <span class="arithmatex">\(a_n = 3a_{n-1}\)</span>, whose solution is <span class="arithmatex">\(a_n^{(h)} = \alpha \cdot 3^n\)</span>.</p>
+<p>It's reasonable to try <span class="arithmatex">\(a_n^{(p)} = cn + d\)</span> as a solution. Then from <span class="arithmatex">\(a_n = 3a_{n - 1} + 2n\)</span> we have</p>
+<div class="arithmatex">\[
+    cn + d = 3(c(n - 1) + d) + 2n,
+\]</div>
+<p>and thus <span class="arithmatex">\(c = -1\)</span> and <span class="arithmatex">\(d = -\cfrac{3}{2}\)</span>.</p>
+<p>The general solution is</p>
+<div class="arithmatex">\[
+    a_n = a_n^{(p)} + a_n^{(h)} = -n - \frac{3}{2} + \alpha \cdot 3^n.
+\]</div>
+<p>Substitute <span class="arithmatex">\(a_1 = 3\)</span>, we have <span class="arithmatex">\(\alpha = \cfrac{11}{6}\)</span>. Thus</p>
+<div class="arithmatex">\[
+    a_n = a_n^{(p)} + a_n^{(h)} = -n - \frac{3}{2} + \frac{11}{6} \cdot 3^n.
+\]</div>
+</details>
+<p>Moreover, for specific forms of <span class="arithmatex">\(F(n)\)</span>, we have the following theorem.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>If <span class="arithmatex">\(F(n) = (b_t n^t + b_{t - 1} n^{t - 1} + \cdots + b_1 n + b_0) s^n\)</span>, where <span class="arithmatex">\(b_i, s \in \mathbb{R}\)</span>.</p>
+<ul>
+<li>
+<p>When <span class="arithmatex">\(s\)</span> is not a characteristic root of the associated linear homogeneous recurrence relation, there is a particular solution of the form</p>
+<div class="arithmatex">\[
+    a_n^{(p)} = (p_t n^t + p_{t - 1} n^{t - 1} + \cdots + p_1 n + p_0) s^n.
+\]</div>
+</li>
+<li>
+<p>When <span class="arithmatex">\(s\)</span> is a characteristic root with multiplicity <span class="arithmatex">\(m\)</span>, there is a particular solution of the form</p>
+<div class="arithmatex">\[
+    a_n^{(p)} = n^m (p_t n^t + p_{t - 1} n^{t - 1} + \cdots + p_1 n + p_0) s^n.
+\]</div>
+</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Consider <span class="arithmatex">\(a_n = 6a_{n - 1} - 9a_{n - 2} + F(n)\)</span>. The charateristic root is <span class="arithmatex">\(r = 3\)</span> of multiplicity <span class="arithmatex">\(2\)</span>.</p>
+<ul>
+<li>If <span class="arithmatex">\(F(n) = 3^n\)</span>, then <span class="arithmatex">\(a_n^{(p)} = n^2 p_0 3^n\)</span>.</li>
+<li>If <span class="arithmatex">\(F(n) = n \cdot 3^n\)</span>, then <span class="arithmatex">\(a_n^{(p)} = n^2(p_1 n + p_0) 3^n\)</span>.</li>
+<li>If <span class="arithmatex">\(F(n) = n^2 2^n\)</span>, then <span class="arithmatex">\(a_n^{(p)} = (p_2 n^2 + p_1 n + p_0) 2^n\)</span>.</li>
+<li>If <span class="arithmatex">\(F(n) = (n^2 + 1) 3^n\)</span>, then <span class="arithmatex">\(a_n^{(p)} = n^2 (p_2 n^2 + p_1 n + p_0) 3^n\)</span>.</li>
+</ul>
+</div>
+<h2 id="generating-functions">Generating Functions<a class="headerlink" href="#generating-functions" title="Permanent link">¶</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>generating function</strong> for the sequence <span class="arithmatex">\(a_0, a_1, \dots\)</span> is the infineite series</p>
+<div class="arithmatex">\[
+    G(x) = a_0 + a_1 x + \dots = \sum\limits_{k = 0}^{\infty} a_k x^k.
+\]</div>
+<p>For finite sequence, then</p>
+<div class="arithmatex">\[
+    G(x) = a_0 + a_1 x + \dots + a_n x^n = \sum\limits_{k = 0}^{n} a_k x^k.
+\]</div>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Property</p>
+<p>Let <span class="arithmatex">\(f(x) = \sum\limits_{k = 0}^{\infty}a_k x^k\)</span> and <span class="arithmatex">\(g(x) = \sum\limits_{k = 0}^{\infty}b_k x^k\)</span>.</p>
+<ul>
+<li><span class="arithmatex">\(f(x) + g(x) = \sum\limits_{k = 0}^{\infty}(a_k + b_k) x^k\)</span></li>
+<li><span class="arithmatex">\(f(x) \cdot g(x) = \sum\limits_{k = 0}^{\infty}(\sum\limits_{j = 0}^k a_j b_{k - j}) x^k\)</span></li>
+<li><span class="arithmatex">\(\alpha f(x) = \sum\limits_{k = 0}^{\infty} \alpha a_k x^k\)</span></li>
+<li><span class="arithmatex">\(x f'(x) = \sum\limits_{k = 0}^{\infty} k a_k x^k\)</span></li>
+<li><span class="arithmatex">\(f(\alpha x) = \sum\limits_{k = 0}^{\infty} \alpha^k a_k x^k\)</span></li>
+</ul>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>For <span class="arithmatex">\(u \in \mathbb{R}\)</span> and <span class="arithmatex">\(k \in \mathbb{N}^*\)</span>, the <strong>extended binomial coefficient</strong> is</p>
+<div class="arithmatex">\[
+    \binom{u}{k} = \left\{
+        \begin{aligned}
+            &amp; \frac{1}{k!} u(u - 1)\cdots(u - k + 1), &amp; k &gt; 0 \\
+            &amp; 1, &amp; k = 0.
+        \end{aligned}
+    \right.
+\]</div>
+<p>In particular, for <span class="arithmatex">\(u = -n\)</span>,</p>
+<div class="arithmatex">\[
+    \binom{-n}{r} = (-1)^r \binom{n + r - 1}{r}.
+\]</div>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem | Extended Binomial Theorem</p>
+<p>If <span class="arithmatex">\(x, u \in \mathbb{R}\)</span> and <span class="arithmatex">\(|x| &lt; 1\)</span>, then</p>
+<div class="arithmatex">\[
+    (1 + x)^u = \sum\limits_{k = 0}^{\infty}\binom{u}{k}x^k.
+\]</div>
+</div>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/12.png"><img src="../Pic/12.png" style="width:600px"/></a>
+</div>
+<h3 id="application">Application<a class="headerlink" href="#application" title="Permanent link">¶</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Solve Recurrence Relations</p>
+<p>Solve <span class="arithmatex">\(a_n = 8a_{n - 1} + 10^{n - 1}\)</span> with initial condition <span class="arithmatex">\(a_1 = 9\)</span>.</p>
+<p><strong>Solution.</strong></p>
+<p>Let <span class="arithmatex">\(G(x) = \sum\limits_{k = 0}^{\infty} a_k x^k\)</span>. Then</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    G(x) - a_0 &amp;= \sum\limits_{k = 1}^{\infty} a_k x^k = \sum\limits_{k = 1}^{\infty} (8 a_{k - 1} x^k + 10^{k - 1} x^k) \\
+               &amp;= 8 \sum\limits_{k = 1}^{\infty} a_{k - 1} x^k + \sum\limits_{k = 1}^{\infty} 10^{k - 1} x^k \\
+               &amp;= 8 x\sum\limits_{k = 1}^{\infty} a_{k - 1} x^{k - 1} + x \sum\limits_{k = 1}^{\infty} 10^{k - 1} x^{k - 1} \\
+               &amp;= 8 x\sum\limits_{k = 0}^{\infty} a_{k - 1} x^k + x \sum\limits_{k = 0}^{\infty} 10^{k - 1} x^k \\
+               &amp;= 8 G(x) + \frac{x}{1 - 10x}.
+\end{aligned}
+\]</div>
+<p>Thus</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    G(x) &amp;= \frac{1 - 9x}{(1 - 8x)(1 - 10x)} = \frac{1}{2}\left(\frac{1}{1 - 8x} + \frac{1}{1 - 10x}\right) \\
+         &amp;= \sum\limits_{l = 0}^{\infty} \frac{1}{2} \left(8^k + 10^k\right) x^k
+\end{aligned}
+\]</div>
+<p>Therefore</p>
+<div class="arithmatex">\[
+    a_k = \frac{1}{2} \left(8^k + 10^k\right).
+\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Combination</p>
+<ul>
+<li>
+<p>Find <span class="arithmatex">\(C(n, k)\)</span>.</p>
+<div class="arithmatex">\[
+    G(x) = (1 + x)^n = \sum\limits_{k = 0}^n C(n, k) x^k.
+\]</div>
+</li>
+<li>
+<p>Find <span class="arithmatex">\(C(n + r - 1, r)\)</span>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    G(x) &amp;= (1 + x + x^2 + x^3 + \cdots)^n = \frac{1}{(1 - x)^n} = (1 + (-x))^{-n} \\
+         &amp;= \sum\limits_{r = 0}^{\infty}\binom{-n}{r}(-x)^r = \sum\limits_{r = 0}^{\infty}\binom{-n}{r}(-1)^r x^r \\
+         &amp;= \sum\limits_{r = 0}^{\infty}(-1)^r C(n + r - 1, r) (-1)^r x^r \\
+         &amp;= \sum\limits_{r = 0}^{\infty}C(n + r - 1, r) x^r
+\end{aligned}
+\]</div>
+</li>
+</ul>
+<details class="example">
+<summary>Example</summary>
+<p>Find the number of solution of</p>
+<div class="arithmatex">\[
+    x_1 + x_2 + x_3 = 17
+\]</div>
+<p>where <span class="arithmatex">\(x_1, x_2, x_3 \in \mathbb{N}\)</span> with <span class="arithmatex">\(2 \le x_1 \le 5\)</span>, <span class="arithmatex">\(3 \le x_2 \le 6\)</span> and <span class="arithmatex">\(4 \le x_3 \le 7\)</span>.</p>
+<p><strong>Solution.</strong></p>
+<p>It's the same to find the coefficient of <span class="arithmatex">\(x^{17}\)</span> in the expansion of</p>
+<div class="arithmatex">\[
+    G(x) = (x^2 + x^3 + x^4 + x^5)(x^3 + x^4 + x^5 + x^6)(x^4 + x^5 + x^6 + x^7).
+\]</div>
+<p>Thus the answer is <span class="arithmatex">\(3\)</span>.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Permutation</p>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>exponential generating function</strong> for <span class="arithmatex">\(\{a_n\}\)</span> is <span class="arithmatex">\(\sum\limits_{n = 0}^{\infty} \cfrac{a_n}{n!}x^n\)</span>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>How many different strings with four characaters can be formed from four <span class="arithmatex">\(A\)</span>, two <span class="arithmatex">\(B\)</span>, two <span class="arithmatex">\(C\)</span>, two <span class="arithmatex">\(D\)</span>, two <span class="arithmatex">\(E\)</span> and one <span class="arithmatex">\(F\)</span>, one <span class="arithmatex">\(G\)</span>, one <span class="arithmatex">\(H\)</span>?</p>
+<p><strong>Solution.</strong></p>
+<p>It's the same to find the coefficient of <span class="arithmatex">\(\cfrac{x^{4}}{4!}\)</span> in the expansion of</p>
+<div class="arithmatex">\[
+    G(x) = \left(1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!}\right)\left(1 + \frac{x}{1!} + \frac{x^2}{2!}\right)^4 \left(1 + \frac{x}{1!}\right)^3.
+\]</div>
+<p>Thus the answer is <span class="arithmatex">\(3029\)</span>.</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<p>How many different strings with length <span class="arithmatex">\(r\)</span> made from digits <span class="arithmatex">\(1, 3, 5, 7, 9\)</span> are there which contain even <span class="arithmatex">\(3\)</span>s and even <span class="arithmatex">\(7\)</span>s?</p>
+<p><strong>Solution.</strong></p>
+<div class="arithmatex">\[
+    G(x) = \left(1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots\right)^2 \left(1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots\right)^3
+\]</div>
+<p>Notice that <span class="arithmatex">\(e^x + e^{-x} = 2 \left(1 + \cfrac{x^2}{2!} + \cfrac{x^4}{4!} + \cdots \right)\)</span>, hence</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    G(x) &amp;= \left(\frac{e^x + e^{-x}}{2}\right)^2 \cdot (e^x)^3 = \frac{1}{4}(e^{5x} + 2e^{3x} + e^{x}) \\
+         &amp;= \frac{1}{4}\left(\sum\limits_{r = 0}^{\infty}5^r \frac{x^r}{r!} + 2 \sum\limits_{r = 0}^{\infty}3^r \frac{x^r}{r!} + \sum\limits_{r = 0}^{\infty} \frac{x^r}{r!}\right) \\
+         &amp;= \sum\limits_{r = 0}^{\infty} \left(\frac{1}{4} \cdot 5^r + \frac{1}{2} \cdot 3^r\right) \frac{x^r}{r!}.
+\end{aligned}
+\]</div>
+<p>Thus the answer is <span class="arithmatex">\(\frac{1}{4} \cdot 5^r + \frac{1}{2} \cdot 3^r\)</span>.</p>
+</details>
+</div>
+<h2 id="principle-of-inclusion-exclusion">Principle of Inclusion-Exclusion<a class="headerlink" href="#principle-of-inclusion-exclusion" title="Permanent link">¶</a></h2>
+<p>Recall principle of inclusion-exclusion</p>
+<div class="arithmatex">\[
+    \left|\bigcup_{i = 1}^nA_i\right| = \sum_{i = 1}^n|A_i| - \sum_{1 \le i \ne j \le n} |A_i \cap A_j| + \cdots + (-1)^{n-1}\left|\bigcap_{i = 1]}^n A_i\right|.
+\]</div>
+<div class="admonition plane">
+<p><strong>An Alternative Form</strong></p>
+<p>Suppose <span class="arithmatex">\(A_i \{x | x \text{ has property } P_i\}\)</span>, and</p>
+<div class="arithmatex">\[
+    \small
+    N(P_{i_1} \dots P_{i_k}) = |\{x | x \text{ has all the properties } P_{i_1}, \dots, P_{i_k}\}| = \left|\bigcap_{i = 1}^nA_i\right|.
+\]</div>
+<div class="arithmatex">\[
+    \small
+    N(P_{i_1}' \dots P_{i_k}') = |\{x | x \text{ has none of the properties } P_{i_1}, \dots, P_{i_k}\}| = N - \left|\bigcup_{i = 1]}^n A_i\right|.
+\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>How many solution does</p>
+<div class="arithmatex">\[
+    x_1 + x_2 + x_3 = 11
+\]</div>
+<p>have, where <span class="arithmatex">\(x_i \in \mathbb{N}\)</span> with <span class="arithmatex">\(x_1 \le 3\)</span>, <span class="arithmatex">\(x_2 \le 4\)</span> and <span class="arithmatex">\(x_3 \le 6\)</span>?</p>
+<p><strong>Solution.</strong></p>
+<p>Let <span class="arithmatex">\(P_1 : x_1 &gt; 3\)</span>, <span class="arithmatex">\(P_2 : x_2 &gt; 4\)</span> and <span class="arithmatex">\(P_3 : x_3 &gt; 6\)</span>. The answer is</p>
+<div class="arithmatex">\[
+\small
+\begin{aligned}
+    N(P_1' P_2' P_3') &amp;= N - N(P_1) - N(P_2) - N(P_3) \\
+                      &amp;+ N(P_1 P_2) + N(P_1 P_3) + N(P_2 P_3) - N(P_1 P_2 P_3).
+\end{aligned}
+\]</div>
+<p>We have</p>
+<div class="arithmatex">\[
+\small
+\begin{aligned}
+    &amp; N = C(3 + 11 - 1, 11) = 78, \\
+    &amp; N(P_1) = C(3 + 7 - 1, 7) = 36, N(P_2) = C(3 + 6 - 1, 6) = 28, \\
+    &amp; N(P_3) = C(3 + 4 - 1, 4) = 15, \\
+    &amp; N(P_1 P_2) = C(3 + 2 - 1, 2) = 6, N(P_1 P_3) = N(P_2 P_3) = N(P_1 P_2 P_3) = 0.
+\end{aligned}
+\]</div>
+<p>Thus</p>
+<div class="arithmatex">\[
+    N(P_1' P_2' P_3') = 6.
+\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>How many <strong>onto functions</strong> are there from a set of <span class="arithmatex">\(6\)</span> elements to a set of <span class="arithmatex">\(3\)</span> elements?</p>
+<p><strong>Solution.</strong></p>
+<p>Suppose codomain = <span class="arithmatex">\(\{b_1, b_2, b_3\}\)</span>. Let <span class="arithmatex">\(P_i\)</span> be the property that <span class="arithmatex">\(b_i\)</span> are not in the range of the function. Then a function is onto iff it has none of properties <span class="arithmatex">\(P_1\)</span>, <span class="arithmatex">\(P_2\)</span> or <span class="arithmatex">\(P_3\)</span>.</p>
+<p>The answer is</p>
+<div class="arithmatex">\[
+\small
+\begin{aligned}
+    N(P_1' P_2' P_3') &amp;= N - N(P_1) - N(P_2) - N(P_3) \\
+                      &amp;+ N(P_1 P_2) + N(P_1 P_3) + N(P_2 P_3) - N(P_1 P_2 P_3).
+\end{aligned}
+\]</div>
+<p>We have</p>
+<div class="arithmatex">\[
+\small
+\begin{aligned}
+    &amp; N = 3^6, \\
+    &amp; N(P_i) = 2^6 \\
+    &amp; N(P_i P_j) = 1^6, \\
+    &amp; N(P_1 P_2 P_3) = 0.
+\end{aligned}
+\]</div>
+<p>Thus</p>
+<div class="arithmatex">\[
+    N(P_1' P_2' P_3') = 3^6 - C(3, 1) 2^6 + C(3, 2) 1^6 = 540.
+\]</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>There are</p>
+<div class="arithmatex">\[
+    \small
+    n^m - \binom{n}{1} (n - 1)^m + \cdots + (-1)^{n - 1} \binom{n}{n - 1} \cdot 1^m = \sum\limits_{k = 0}^{n - 1}(-1)^k \binom{n}{k} (n - k)^m
+\]</div>
+<p>onto functions from a set with <span class="arithmatex">\(m\)</span> elements to a set with <span class="arithmatex">\(n\)</span> elements, where <span class="arithmatex">\(m, n \in \mathbb{N}^*\)</span>.</p>
+</div>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.15 13:54:18 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.20 15:42:07 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.15 13:54:18 CST</span>
