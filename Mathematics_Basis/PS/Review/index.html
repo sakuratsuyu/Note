@@ -6,10 +6,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="sakuratsuyu" name="author"/>
-<link href="https://sakuratsuyu.github.io/Note/Mathematics_Basis/DM/Chap_9/" rel="canonical"/>
+<link href="https://sakuratsuyu.github.io/Note/Mathematics_Basis/PS/Review/" rel="canonical"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.8" name="generator"/>
-<title>Chap 9 - NOTES</title>
+<title>概率论与数理统计 | Probability and Statistics - NOTES</title>
 <link href="../../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.815d1a91.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h226.7c17 0 33.3-6.7 45.3-18.7l93.3-93.3c12-12 18.7-28.3 18.7-45.3V96c0-35.3-28.7-64-64-64H64zm0 64h320v224h-64c-17.7 0-32 14.3-32 32v64H64V96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -36,7 +36,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#chapter-9-relations">
+<a class="md-skip" href="#_1">
           跳转至
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Chap 9
+              概率论与数理统计 | Probability and Statistics
             
           </span>
 </div>
@@ -218,8 +218,8 @@
           Mathematics Basis
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2">
           离散数学 | Discrete Mathamatics
           <span class="md-nav__icon md-icon"></span>
@@ -231,147 +231,62 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_1/">
+<a class="md-nav__link" href="../../DM/Chap_1/">
         Chap 1
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_2/">
+<a class="md-nav__link" href="../../DM/Chap_2/">
         Chap 2
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_3/">
+<a class="md-nav__link" href="../../DM/Chap_3/">
         Chap 3
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_4/">
+<a class="md-nav__link" href="../../DM/Chap_4/">
         Chap 4
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_5/">
+<a class="md-nav__link" href="../../DM/Chap_5/">
         Chap 5
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_6/">
+<a class="md-nav__link" href="../../DM/Chap_6/">
         Chap 6
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_7/">
+<a class="md-nav__link" href="../../DM/Chap_7/">
         Chap 7
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_8/">
+<a class="md-nav__link" href="../../DM/Chap_8/">
         Chap 8
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Chap 9
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DM/Chap_9/">
         Chap 9
       </a>
-<nav aria-label="Content" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Content
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#combining-relations">
-    Combining Relations
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#properties">
-    Properties
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#representation">
-    Representation
-  </a>
-<nav aria-label="Representation" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#matrix-form">
-    Matrix Form
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#graph-form">
-    Graph Form
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#closures-of-relations">
-    Closures of Relations
-  </a>
-<nav aria-label="Closures of Relations" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#method-to-find-transitive-closure">
-    Method to find Transitive Closure
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#equivalence-relations">
-    Equivalence Relations
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#partial-order">
-    Partial Order
-  </a>
-<nav aria-label="Partial Order" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hasse-diagram">
-    Hasse Diagram
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#maximial-minimal-greatest-and-least-element">
-    Maximial, Minimal, Greatest and Least Element
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#lattice">
-    Lattice
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_10/">
+<a class="md-nav__link" href="../../DM/Chap_10/">
         Chap 10
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_11/">
+<a class="md-nav__link" href="../../DM/Chap_11/">
         Chap 11
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Chap_12_13/">
+<a class="md-nav__link" href="../../DM/Chap_12_13/">
         Chap 12/13
       </a>
 </li>
@@ -443,10 +358,235 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../PS/Review/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          概率论与数理统计 | Probability and Statistics
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         概率论与数理统计 | Probability and Statistics
       </a>
+<nav aria-label="Content" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1 概率论的基本概念
+  </a>
+<nav aria-label="1 概率论的基本概念" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    1.1 样本空间与随机事件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+    1.2 频率和概率
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+    1.3 等可能概型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14">
+    1.4 条件概率
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#15">
+    1.5 事件的独立性与独立试验
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2 随机变量及其概率分布
+  </a>
+<nav aria-label="2 随机变量及其概率分布" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21">
+    2.1 随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22">
+    2.2 离散型随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23">
+    2.3 随机变量的概率分布函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24">
+    2.4 连续型随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25">
+    2.5 随机变量函数的分布
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3 多元随机变量及其分布
+  </a>
+<nav aria-label="3 多元随机变量及其分布" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31">
+    3.1 二元离散型随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32">
+    3.2 二元随机变量的分布函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33">
+    3.3 二元连续型随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#34">
+    3.4 随机变量的独立性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#35">
+    3.5 二元随机变量函数的分布
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4 随机变量的数字特征
+  </a>
+<nav aria-label="4 随机变量的数字特征" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41">
+    4.1 数学期望
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42">
+    4.2 方差、变异系数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43">
+    4.3 协方差与相关系数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#44">
+    4.4 其他数字特征
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#45">
+    4.5 多元随机变量的数字特征
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5 大数定律及中心极限定理
+  </a>
+<nav aria-label="5 大数定律及中心极限定理" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51">
+    5.1 大数定律
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52">
+    5.2 中心极限定理
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6 统计量与抽样分布
+  </a>
+<nav aria-label="6 统计量与抽样分布" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61">
+    6.1 随机样本与统计量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-chi2-t-f">
+    6.2 \(\chi^2\) 分布，\(t\) 分布，\(F\) 分布
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63">
+    6.3 正态总体下抽样分布
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7 参数估计
+  </a>
+<nav aria-label="7 参数估计" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    点估计
+  </a>
+<nav aria-label="点估计" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    评价准则
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    区间估计
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8 假设检验
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -663,76 +803,216 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#combining-relations">
-    Combining Relations
+<a class="md-nav__link" href="#1">
+    1 概率论的基本概念
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#properties">
-    Properties
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#representation">
-    Representation
-  </a>
-<nav aria-label="Representation" class="md-nav">
+<nav aria-label="1 概率论的基本概念" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#matrix-form">
-    Matrix Form
+<a class="md-nav__link" href="#11">
+    1.1 样本空间与随机事件
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#graph-form">
-    Graph Form
+<a class="md-nav__link" href="#12">
+    1.2 频率和概率
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+    1.3 等可能概型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14">
+    1.4 条件概率
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#15">
+    1.5 事件的独立性与独立试验
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#closures-of-relations">
-    Closures of Relations
+<a class="md-nav__link" href="#2">
+    2 随机变量及其概率分布
   </a>
-<nav aria-label="Closures of Relations" class="md-nav">
+<nav aria-label="2 随机变量及其概率分布" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#method-to-find-transitive-closure">
-    Method to find Transitive Closure
+<a class="md-nav__link" href="#21">
+    2.1 随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22">
+    2.2 离散型随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23">
+    2.3 随机变量的概率分布函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24">
+    2.4 连续型随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25">
+    2.5 随机变量函数的分布
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#equivalence-relations">
-    Equivalence Relations
+<a class="md-nav__link" href="#3">
+    3 多元随机变量及其分布
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#partial-order">
-    Partial Order
-  </a>
-<nav aria-label="Partial Order" class="md-nav">
+<nav aria-label="3 多元随机变量及其分布" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hasse-diagram">
-    Hasse Diagram
+<a class="md-nav__link" href="#31">
+    3.1 二元离散型随机变量
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#maximial-minimal-greatest-and-least-element">
-    Maximial, Minimal, Greatest and Least Element
+<a class="md-nav__link" href="#32">
+    3.2 二元随机变量的分布函数
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lattice">
-    Lattice
+<a class="md-nav__link" href="#33">
+    3.3 二元连续型随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#34">
+    3.4 随机变量的独立性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#35">
+    3.5 二元随机变量函数的分布
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4 随机变量的数字特征
+  </a>
+<nav aria-label="4 随机变量的数字特征" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41">
+    4.1 数学期望
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42">
+    4.2 方差、变异系数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43">
+    4.3 协方差与相关系数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#44">
+    4.4 其他数字特征
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#45">
+    4.5 多元随机变量的数字特征
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5 大数定律及中心极限定理
+  </a>
+<nav aria-label="5 大数定律及中心极限定理" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51">
+    5.1 大数定律
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52">
+    5.2 中心极限定理
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6 统计量与抽样分布
+  </a>
+<nav aria-label="6 统计量与抽样分布" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61">
+    6.1 随机样本与统计量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-chi2-t-f">
+    6.2 \(\chi^2\) 分布，\(t\) 分布，\(F\) 分布
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63">
+    6.3 正态总体下抽样分布
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7 参数估计
+  </a>
+<nav aria-label="7 参数估计" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    点估计
+  </a>
+<nav aria-label="点估计" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    评价准则
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    区间估计
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8 假设检验
+  </a>
 </li>
 </ul>
 </nav>
@@ -741,465 +1021,565 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Mathematics_Basis/DM/Chap_9.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/sakuratsuyu/Note/edit/master/docs/Mathematics_Basis/PS/Review.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="chapter-9-relations">Chapter 9 | Relations<a class="headerlink" href="#chapter-9-relations" title="Permanent link">¶</a></h1>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>A <strong>binary relation</strong> <span class="arithmatex">\(R\)</span> between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> is a subset of the Cartesian product <span class="arithmatex">\(A \times B\)</span>.</p>
-<div class="arithmatex">\[
-    R \subseteq A \times B
-\]</div>
-<p>when <span class="arithmatex">\(A = B\)</span>, R is a relation on <span class="arithmatex">\(A\)</span>.</p>
+<h1 id="_1">概率论与数理统计<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<h2 id="1">1 概率论的基本概念<a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
+<h3 id="11">1.1 样本空间与随机事件<a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
 <ul>
-<li>The <strong>domain</strong> of <span class="arithmatex">\(R\)</span>: $\text{Dom}(R) = {x \in A | (x, y) \in R \text{ for some } y \in B}.</li>
-<li>The <strong>range</strong> of <span class="arithmatex">\(R\)</span>: <span class="arithmatex">\(\text{Ran}(R) = \{y \in B | (x, y) \in R \text{ for some } x \in A\}\)</span>.</li>
+<li>随机试验，样本空间，样本点，随机事件，基本事件，必然事件，不可能事件</li>
+<li>事件的关系<ul>
+<li>包含、相等、和事件、积事件、逆事件、差事件</li>
+<li>互不相容/互斥</li>
 </ul>
-</div>
-<div class="admonition theorem">
-<p class="admonition-title">Property</p>
-<p>There are <span class="arithmatex">\(2^{n^2}\)</span> relations on a set with <span class="arithmatex">\(n\)</span> elements.</p>
-</div>
-<h2 id="combining-relations">Combining Relations<a class="headerlink" href="#combining-relations" title="Permanent link">¶</a></h2>
-<p>Since the nature of relation is a set, thus we have <strong>union, intersection, complement and difference</strong>. Moreover, we have <strong>composite</strong>.</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Let <span class="arithmatex">\(R\)</span> be a relation from a set <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(S\)</span> is a relation from <span class="arithmatex">\(B\)</span> to <span class="arithmatex">\(C\)</span>. The <strong>composite</strong> of <span class="arithmatex">\(R\)</span> and <span class="arithmatex">\(S\)</span> is the relation</p>
-<div class="arithmatex">\[
-    S \circ R = \{(a, c) | a \in A, c \in C, \exist\ b \in B\ s.t.\ (a, b) \in R, (b, c) \in S\}.
-\]</div>
-<ul>
-<li>Denote <span class="arithmatex">\(R^1 = R,\ \ R^{n + 1} = R^n \circ R\)</span>.</li>
-<li>Denote <strong>inverse</strong> <span class="arithmatex">\(R^{-1} = \{(y, x) | (x, y) \in R\}\)</span>.</li>
-</ul>
-</div>
-<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">¶</a></h2>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Let <span class="arithmatex">\(R\)</span> be a relation on a set <span class="arithmatex">\(A\)</span>. Then</p>
-<ul>
-<li><span class="arithmatex">\(R\)</span> is <strong>reflexive</strong> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(\forall\ x \in A, \ \ (x, x) \in R\)</span>.</li>
-<li><span class="arithmatex">\(R\)</span> is <strong>irreflexive</strong> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(\forall\ x \in A, \ \ (x, x) \notin R\)</span>.</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Remark</p>
-<ul>
-<li><span class="arithmatex">\(R\)</span> is reflexive iff <span class="arithmatex">\(R_= \subseteq R\)</span>.</li>
-</ul>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Let <span class="arithmatex">\(R\)</span> be a relation on a set <span class="arithmatex">\(A\)</span>. Then</p>
-<ul>
-<li><span class="arithmatex">\(R\)</span> is <strong>symmetric</strong> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(\forall\ x, y \in A,\ \ (x, y) \in R \Rightarrow (y, x) \in R\)</span>.</li>
-<li><span class="arithmatex">\(R\)</span> is <strong>antisymmetric</strong> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(\forall\ x, y \in A,\ \ (x, y) \in R (y, x) \in R \Rightarrow x = y\)</span>.</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Remark</p>
-<ul>
-<li><span class="arithmatex">\(R\)</span> is symmetric iff <span class="arithmatex">\(R^{-1} = R\)</span>.</li>
-<li><span class="arithmatex">\(R\)</span> is antisymmetric iff <span class="arithmatex">\(R \cap R^{-1} \subseteq R_=\)</span>.</li>
-<li>Non-symmetric is not the same as antisymmetric (e.g. <span class="arithmatex">\(R_=\)</span>)</li>
-</ul>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Let <span class="arithmatex">\(R\)</span> be a relation on a set <span class="arithmatex">\(A\)</span>, then</p>
-<ul>
-<li><span class="arithmatex">\(R\)</span> is <strong>transitive</strong> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(\forall x, y, z \in A, ((x, y) \in R \wedge (y, z) \in R) \Rightarrow (x, z) \in R\)</span>.</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Remark</p>
-<ul>
-<li><span class="arithmatex">\(R\)</span> is transitive <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(R \circ R \subseteq R\)</span>.</li>
-</ul>
-</div>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>The relation <span class="arithmatex">\(R\)</span> on a set <span class="arithmatex">\(A\)</span> is transitive iff <span class="arithmatex">\(R^n \subseteq R\)</span> for <span class="arithmatex">\(n = 2, 3, \dots\)</span>.</p>
-</div>
-<h2 id="representation">Representation<a class="headerlink" href="#representation" title="Permanent link">¶</a></h2>
-<h3 id="matrix-form">Matrix Form<a class="headerlink" href="#matrix-form" title="Permanent link">¶</a></h3>
-<p>Suppose <span class="arithmatex">\(R\)</span> is a relation from <span class="arithmatex">\(A = \{a_1, a_2, \cdots, a_m\}\)</span> to <span class="arithmatex">\(B = \{b_1, b_2, \cdots, b_n\}\)</span>. The relation <span class="arithmatex">\(R\)</span> can be represented by matrix <span class="arithmatex">\(M_R = (m_{ij})_{m \times n}\)</span>, where</p>
-<div class="arithmatex">\[
-    m_{ij} = \left\{
-        \begin{aligned}
-            &amp; 1, &amp; (a_i, b_j) \in R \\
-            &amp; 0, &amp; (a_i, b_j) \notin R \\
-        \end{aligned}
-    \right.
-\]</div>
-<div class="admonition theorem">
-<p class="admonition-title">Property</p>
-<ul>
-<li><span class="arithmatex">\(M_R^2\)</span> = <span class="arithmatex">\(M_R \circ M_R\)</span>.</li>
-<li><span class="arithmatex">\(R\)</span> is reflexive <span class="arithmatex">\(\Leftrightarrow\)</span> All terms <span class="arithmatex">\(m_ii\)</span> in the main diagnoal of <span class="arithmatex">\(M_R\)</span> are <span class="arithmatex">\(1\)</span>.</li>
-<li><span class="arithmatex">\(R\)</span> is symmetric$ <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(m_{ij} = m_{ji}\)</span> for all <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span>, namely a symmetric matrix.</li>
-<li><span class="arithmatex">\(R\)</span> is trasitive <span class="arithmatex">\(\Leftrightarrow\)</span> whenever <span class="arithmatex">\(c_{ij}\)</span> in <span class="arithmatex">\(C = M_R^2\)</span> is nonzero then entry <span class="arithmatex">\(m_{ij}\)</span> in <span class="arithmatex">\(M_R\)</span> is also nonzero. (<span class="arithmatex">\(R^2 \subseteq R\)</span>)</li>
-<li>Combining Relations</li>
-</ul>
-<div class="arithmatex">\[
-    M_{R_1 \cup R_2} = M_{R_1} \vee M_{R_2},
-    M_{R_1 \cap R_2} = M_{R_1} \wedge M_{R_2},
-    M_{S \circ R} = M_R \times M_S.
-\]</div>
-</div>
-<h3 id="graph-form">Graph Form<a class="headerlink" href="#graph-form" title="Permanent link">¶</a></h3>
-<p>Each order pair is represented using an arc with its direction indicated by an arrow, thus we can use <strong>digraph</strong> to represent a relation.</p>
-<div class="admonition theorem">
-<p class="admonition-title">Property</p>
-<ul>
-<li><span class="arithmatex">\(R\)</span> is reflexive <span class="arithmatex">\(\Leftrightarrow\)</span> There are loops at each vertex.</li>
-<li><span class="arithmatex">\(R\)</span> is symmetric$ <span class="arithmatex">\(\Leftrightarrow\)</span> Each edge is accompanied by an inverse edge.</li>
-</ul>
-</div>
-<h2 id="closures-of-relations">Closures of Relations<a class="headerlink" href="#closures-of-relations" title="Permanent link">¶</a></h2>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Let <span class="arithmatex">\(R\)</span> be a relation on a set <span class="arithmatex">\(A\)</span>. If there is a relation <span class="arithmatex">\(S\)</span> satisfy:</p>
-<ul>
-<li><span class="arithmatex">\(S\)</span> with property <span class="arithmatex">\(\textbf{P}\)</span> (reflexive, symmetry, or transitivity).</li>
-<li><span class="arithmatex">\(\forall\ S'\)</span> with property <span class="arithmatex">\(\textbf{P}\)</span> and <span class="arithmatex">\(R \subseteq S'\)</span>, then <span class="arithmatex">\(S \subseteq S'\)</span>.</li>
-</ul>
-<p>Then <span class="arithmatex">\(S\)</span> is called a <strong>closure</strong> of <span class="arithmatex">\(R\)</span> w.r.t. <span class="arithmatex">\(\textbf{P}\)</span>.</p>
-</div>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>Let <span class="arithmatex">\(R\)</span> be a relation on a set <span class="arithmatex">\(A\)</span>.</p>
-<ul>
-<li>
-<p><strong>Reflexive closure</strong> of relation <span class="arithmatex">\(R\)</span>:</p>
-<div class="arithmatex">\[
-    r(R) = R \cup \Delta.
-\]</div>
-<p>where <span class="arithmatex">\(\Delta = \{(a, a) | a \in A\}\)</span> is diagonal relation on <span class="arithmatex">\(A\)</span>.</p>
 </li>
+<li>交换律、结合律、分配律、德摩根律</li>
+<li>并联系统、串联系统</li>
+</ul>
+<h3 id="12">1.2 频率和概率<a class="headerlink" href="#12" title="Permanent link">¶</a></h3>
+<ul>
+<li>频率，概率</li>
 <li>
-<p><strong>Symmetric closure</strong> of relation <span class="arithmatex">\(R\)</span>:</p>
-<div class="arithmatex">\[
-    s(R) = R \cup R^{-1}.
-\]</div>
-</li>
+<p>定义</p>
+<ul>
+<li>非负性 <span class="arithmatex">\(P(A) \ge 0\)</span></li>
+<li>规范性 <span class="arithmatex">\(P(S) = 1\)</span></li>
 <li>
-<p><strong>Transitive closure</strong> of relation <span class="arithmatex">\(R\)</span>:</p>
+<p>可列可加性</p>
 <div class="arithmatex">\[
-    t(R) = R^*,\ \ \text{ where $R^*$ is connectivity relation}.
+    P\left(\bigcup_{j = 1}^{\infty} A_j \right) = \sum\limits_{j = 1}^{\infty} P(A_j).
 \]</div>
 </li>
 </ul>
-</div>
-<p>To prove the transitive closure, we gives the following definition and theorem.</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>Let <span class="arithmatex">\(R\)</span> be a relation on set <span class="arithmatex">\(A\)</span>. There is a path of length <span class="arithmatex">\(n\)</span> from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\((a, b) \in R^n\)</span>.</p>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>The <strong>connectivity relation</strong> <span class="arithmatex">\(R^* = \{(a, b) | \text{there is a path from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span>}\}\)</span>.</p>
+</li>
+<li>
+<p>性质</p>
+<ul>
+<li>
+<p>有限可加性</p>
 <div class="arithmatex">\[
-    R^* = \bigcup\limits_{n = 1}^{\infty} R^n.
+    P\left(\bigcup_{j = 1}^{n} A_j \right) = \sum\limits_{j = 1}^{n} P(A_j).
 \]</div>
-<p>If <span class="arithmatex">\(R\)</span> is on set <span class="arithmatex">\(A\)</span> with <span class="arithmatex">\(n\)</span> elements, then</p>
+</li>
+<li>
+<p><span class="arithmatex">\(P(A) = 1 - P(\overline{A})\)</span></p>
+</li>
+<li>当 <span class="arithmatex">\(B \subset A\)</span>, <span class="arithmatex">\(P(A - B) = P(A) - P(B)\)</span>, <span class="arithmatex">\(P(A) \ge P(B)\)</span>.</li>
+<li>容斥原理 <span class="arithmatex">\(P(A \cup B) = P(A) + P(B) - P(AB)\)</span>.</li>
+<li><span class="arithmatex">\(P(B | A) = \dfrac{P(AB)}{P(A)}\)</span>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="13">1.3 等可能概型<a class="headerlink" href="#13" title="Permanent link">¶</a></h3>
+<h3 id="14">1.4 条件概率<a class="headerlink" href="#14" title="Permanent link">¶</a></h3>
+<ul>
+<li>条件概率</li>
+<li>全概率公式
+        - <span class="arithmatex">\(P(A) = \sum\limits_{j = 1}^{n} P(B_j) P(A|B_j)\)</span>
+        - <span class="arithmatex">\(P(A|C) = \sum\limits_{j = 1}^{n} P(AB_j | C) = \sum\limits_{j = 1}^{n} P(B_j | C) \cdot P(A| B_jC)\)</span></li>
+<li>
+<p>贝叶斯公式 Bayes Formula</p>
 <div class="arithmatex">\[
-    R^* = \bigcup\limits_{i = 1}^{n} R^i.
-\]</div>
-</div>
-<h3 id="method-to-find-transitive-closure">Method to find Transitive Closure<a class="headerlink" href="#method-to-find-transitive-closure" title="Permanent link">¶</a></h3>
-<div class="admonition theorem">
-<p class="admonition-title">Lemma</p>
-<p>Let <span class="arithmatex">\(A\)</span> be a set with <span class="arithmatex">\(n\)</span> elements, and let <span class="arithmatex">\(R\)</span> be a relation on <span class="arithmatex">\(A\)</span>. If there is a path in <span class="arithmatex">\(R\)</span> from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span>, then there is such a path with length not exceeding <span class="arithmatex">\(n\)</span>. Moreover, when <span class="arithmatex">\(a \ne b\)</span>, if there is a path in <span class="arithmatex">\(R\)</span> from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span>, then there is such a path with length not exceeding <span class="arithmatex">\(n - 1\)</span>.</p>
-</div>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p><span class="arithmatex">\(M_R\)</span> is the 0-1 matrix of the relation <span class="arithmatex">\(R\)</span> on a set <span class="arithmatex">\(A\)</span> with <span class="arithmatex">\(n\)</span> elements, Then the 0-1 matrix of the transitive closure <span class="arithmatex">\(R^*\)</span> is </p>
-<div class="arithmatex">\[
-    M_{R^*} = M_R \vee M_R^2 \vee \cdots \vee M_R^n.
-\]</div>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Find 0-1 matrix of the transitive closure of the relation <span class="arithmatex">\(R\)</span> where</p>
-<div class="arithmatex">\[
-    M_R = \begin{bmatrix}
-        1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 0
-    \end{bmatrix}
-\]</div>
-<p><strong>Solution.</strong></p>
-<div class="arithmatex">\[
-    M_{R^*} = M_R \vee M_R^2 \vee M_R^3 =
-    \begin{bmatrix}
-        1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 0
-    \end{bmatrix}
-    \vee
-    \begin{bmatrix}
-        1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 0
-    \end{bmatrix}
-    \vee
-    \begin{bmatrix}
-        1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 1
-    \end{bmatrix}
-\]</div>
-</div>
-<div class="admonition plane">
-<p>Computational complexity of this method is <span class="arithmatex">\((n - 1)n^2(2n-1)+(n-1)n^2 = O(n^4)\)</span>. Now we introduce an <span class="arithmatex">\(O(n^3)\)</span> method to solve out transtive closure.</p>
-</div>
-<div class="admonition plane">
-<p>**Warshall's Algorithm"</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>For a path <span class="arithmatex">\(a, x_1, \dots, x_{m-1}, b\)</span>, the <strong>interior vertices</strong> are <span class="arithmatex">\(x_1, \cdots, x_{m - 1}\)</span>.</p>
-<p>Define</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    W_0 = M^R, \\
-    W_k = \left[w_{ij}^{(k)}\right]_{n \times n}.
-\end{aligned}
-\]</div>
-<p>where</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    w_{ij}^{(k)} = \left\{
-        \begin{aligned}
-            &amp; 1, &amp;&amp; \substack{
-                    \text{there is a path from $v_i$ to $v_j$ s.t all the} \\
-                    \text{interior vertices of the path are in the set $\tiny \{v_1, v_2, \cdots, v_k\}$,}
-                } \\
-            &amp; 0, &amp;&amp; {\tiny\text{otherwise.}}
-        \end{aligned}
-    \right.
-\end{aligned}
-\]</div>
-<p>And from definition we have</p>
-<div class="arithmatex">\[
-    W_n = M_{R^*}.
-\]</div>
-</div>
-<div class="admonition theorem">
-<p class="admonition-title">Lemma</p>
-<div class="arithmatex">\[
-    w_{ij}^{(k)} = w_{ij}^{(k - 1)} \vee \left(w_{ik}^{(k - 1)} \wedge w_{kj}^{(k - 1)}\right).
-\]</div>
-</div>
-<div class="admonition success">
-<p class="admonition-title">Method</p>
-<p>Compute <span class="arithmatex">\(M_{R^*}\)</span> by computing <span class="arithmatex">\(W_0 \rightarrow W_1 \rightarrow \cdots \rightarrow W_n = M_{R^*}\)</span>.</p>
-</div>
-<details class="example">
-<summary>Example</summary>
-<p>Find transitive closure of</p>
-<div class="arithmatex">\[
-    M_R = \begin{bmatrix}
-        0 &amp; 0 &amp; 0 &amp; 1 \\
-        1 &amp; 0 &amp; 1 &amp; 0 \\
-        1 &amp; 0 &amp; 0 &amp; 1 \\
-        0 &amp; 0 &amp; 1 &amp; 0
-    \end{bmatrix}.
-\]</div>
-<p><strong>Solution.</strong></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">W0</label><label for="__tabbed_1_2">W1 / W2</label><label for="__tabbed_1_3">W3</label><label for="__tabbed_1_4">W4</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="arithmatex">\[
-    W_0 = M_R = \begin{bmatrix}
-        0 &amp; 0 &amp; 0 &amp; 1 \\
-        1 &amp; 0 &amp; 1 &amp; 0 \\
-        1 &amp; 0 &amp; 0 &amp; 1 \\
-        0 &amp; 0 &amp; 1 &amp; 0
-    \end{bmatrix}.
-\]</div>
-<p>Consider the entries of <span class="arithmatex">\(1\)</span> in the <strong>first</strong> row (<code>14</code>) and the <strong>first</strong> column (<code>21</code>, <code>31</code>). Combine them with elimination of <code>1</code> and we get <code>24</code> and <code>34</code>, and thus set</p>
-<div class="arithmatex">\[
-    w_{24}^{(1)} = w_{34}^{(1)} = 1.
-\]</div>
-</div>
-<div class="tabbed-block">
-<div class="arithmatex">\[
-    W_1 = W_2 = \begin{bmatrix}
-        0 &amp; 0 &amp; 0 &amp; 1 \\
-        1 &amp; 0 &amp; 1 &amp; 1 \\
-        1 &amp; 0 &amp; 0 &amp; 1 \\
-        0 &amp; 0 &amp; 1 &amp; 0
-    \end{bmatrix}.
+    P(B_i | A) = \frac{P(B_i)P(A|B_i)}{\sum\limits_{j = 1}^{n}P(B_j)P(A|B_j)}
 \]</div>
 <ul>
-<li>Consider the entries of <span class="arithmatex">\(1\)</span> in the <strong>second</strong> row (<code>none</code>) and the <strong>second</strong> column (<code>none</code>). Thus <span class="arithmatex">\(W_2 = W_1\)</span>.</li>
-<li>Consider the entries of <span class="arithmatex">\(1\)</span> in the <strong>third</strong> row (<code>31</code>, <code>34</code>) and the <strong>third</strong> column (<code>23</code>, <code>43</code>). Combine them with elimination of <code>3</code> and we get <code>21</code>, <code>24</code>, <code>41</code> and <code>44</code>, and thus set</li>
+<li>先验概率，后验概率</li>
+</ul>
+</li>
+</ul>
+<h3 id="15">1.5 事件的独立性与独立试验<a class="headerlink" href="#15" title="Permanent link">¶</a></h3>
+<ul>
+<li>相互独立，两两独立，相互独立比两两独立强</li>
+<li>条件独立</li>
+</ul>
+<h2 id="2">2 随机变量及其概率分布<a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
+<h3 id="21">2.1 随机变量<a class="headerlink" href="#21" title="Permanent link">¶</a></h3>
+<ul>
+<li>随机变量</li>
+</ul>
+<h3 id="22">2.2 离散型随机变量<a class="headerlink" href="#22" title="Permanent link">¶</a></h3>
+<ul>
+<li>离散型随机变量，离散型分布</li>
+<li>概率分布律</li>
+<li>常见分布<ul>
+<li>0 - 1 分布 / 两点分布<span class="arithmatex">\(0-1(p)\)</span> 伯努利试验<ul>
+<li><span class="arithmatex">\(P(X = k) = p^k(1 - p)^{1 - k}\)</span></li>
+<li><span class="arithmatex">\(E(X) = p\)</span></li>
+</ul>
+</li>
+<li>二项分布 <span class="arithmatex">\(B(n,p)\)</span> n 重伯努利试验<ul>
+<li><span class="arithmatex">\(P(X = k)=C^k_n p^k(1 - p)^{n - k}\)</span></li>
+<li><span class="arithmatex">\(E(X) = np\)</span></li>
+<li><span class="arithmatex">\(D(X) = np(1 - p)\)</span></li>
+</ul>
+</li>
+<li>泊松分布 <span class="arithmatex">\(P(\lambda)\)</span><ul>
+<li><span class="arithmatex">\(P(X = k)=\dfrac{e^{-\lambda} \lambda^k}{k!}\)</span></li>
+<li>拟合二项分布，<span class="arithmatex">\(\lambda=np\)</span></li>
+<li><span class="arithmatex">\(E(X) = \lambda\)</span></li>
+<li><span class="arithmatex">\(D(X) = \lambda\)</span></li>
+</ul>
+</li>
+<li>几何分布 <span class="arithmatex">\(\text{Geom}(p)\)</span><ul>
+<li><span class="arithmatex">\(P(X = k) = p(1 - p)^{k - 1}\)</span></li>
+<li>无记忆性</li>
+<li><span class="arithmatex">\(E(X) = \dfrac{1}{p}\)</span></li>
+<li><span class="arithmatex">\(D(X) = \dfrac{1 - p}{p^2}\)</span></li>
+</ul>
+</li>
+<li>超几何分布 <span class="arithmatex">\(H(n, a, N)\)</span><ul>
+<li><span class="arithmatex">\(P(X = k) = \dfrac{C_a^k C_b^{n-k}}{C_N^n},\ \ a + b = N\)</span></li>
+<li><span class="arithmatex">\(E(X) = n \dfrac{a}{N}\)</span></li>
+<li><span class="arithmatex">\(D(X) = n \dfrac{a(N - a)(N - n)}{N^2(N - 1)}\)</span></li>
+</ul>
+</li>
+<li>巴斯卡分布 <span class="arithmatex">\(NB(r, p)\)</span><ul>
+<li><span class="arithmatex">\(P(X = k) = C_{k - 1}^{r - 1} p^r (1 - p)^{k - r}\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="23">2.3 随机变量的概率分布函数<a class="headerlink" href="#23" title="Permanent link">¶</a></h3>
+<ul>
+<li>分布函数 <span class="arithmatex">\(F(x) = P(X \le x)\)</span></li>
+<li>性质：单调不减；无限处极限；右连续 <span class="arithmatex">\(F(x) = F(x + 0)\)</span> （左闭右开）</li>
+</ul>
+<h3 id="24">2.4 连续型随机变量<a class="headerlink" href="#24" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>连续型随机变量，概率密度函数(p.d.f.)，支撑</p>
+</li>
+<li>
+<p><span class="arithmatex">\(F(x) = \int_{-\infty}^x f(t)dt\)</span>.</p>
+</li>
+<li>
+<p>常见分布</p>
+<ul>
+<li>均匀分布 <span class="arithmatex">\(U(a,b)\)</span><ul>
+<li><span class="arithmatex">\(f(x)=\left\{
+        \begin{array}{l}
+            \dfrac{1}{b-a}, &amp; x \in (a, b), \\
+            0, &amp; \text{else}. 
+        \end{array}
+    \right.\)</span></li>
+<li><span class="arithmatex">\(F(x)=\left\{
+        \begin{array}{l}
+            0, &amp; x &lt; a, \\
+            \dfrac{x - a}{b - a}, &amp; x \in (a, b), \\
+            1, &amp; \text{else}.
+        \end{array}
+    \right.\)</span></li>
+<li><span class="arithmatex">\(E(X) = \dfrac{a + b}{2}\)</span></li>
+<li><span class="arithmatex">\(D(X) = \dfrac{(b - a)^2}{12}\)</span></li>
+</ul>
+</li>
+<li>正态分布 <span class="arithmatex">\(N(\mu, \sigma^2)\)</span><ul>
+<li><span class="arithmatex">\(f(x) = \dfrac{1}{\sqrt{2 \pi}\sigma} e^{-(x - \mu)^2 / (2 \sigma^2)}\)</span></li>
+<li><span class="arithmatex">\(F(x) = \int_{-\infty}^{x} \dfrac{1}{\sqrt{2 \pi} \sigma} e^{-(t - \mu)^2 / (2 \sigma^2)} dt\)</span></li>
+<li><span class="arithmatex">\(E(X) = \mu\)</span></li>
+<li><span class="arithmatex">\(D(X) = \sigma^2\)</span></li>
+</ul>
+</li>
+<li>指数分布 <span class="arithmatex">\(E(\lambda)\)</span><ul>
+<li><span class="arithmatex">\(f(x)=\left\{
+        \begin{array}{l}
+            \lambda e^{-\lambda x}, &amp; x &gt; 0, \\
+            0, &amp; \text{else}.
+        \end{array}
+    \right.\)</span></li>
+<li><span class="arithmatex">\(F(x)=\left\{
+        \begin{array}{l}
+            1 - e^{-\lambda x}, &amp; x &gt; 0, \\
+            1, &amp; \text{else}.
+        \end{array}
+    \right.\)</span></li>
+<li>无记忆性 <span class="arithmatex">\(P(X &gt; t_0 + t | X &gt; t_0) = P(X &gt; t)\)</span></li>
+<li><span class="arithmatex">\(E(X) = \dfrac{1}{\lambda}\)</span></li>
+<li><span class="arithmatex">\(D(X) = \dfrac{1}{\lambda^2}\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="25">2.5 随机变量函数的分布<a class="headerlink" href="#25" title="Permanent link">¶</a></h3>
+<h2 id="3">3 多元随机变量及其分布<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
+<h3 id="31">3.1 二元离散型随机变量<a class="headerlink" href="#31" title="Permanent link">¶</a></h3>
+<ul>
+<li>联合概率分布律 / 联合分布律，边际分布律，条件分布律</li>
+</ul>
+<h3 id="32">3.2 二元随机变量的分布函数<a class="headerlink" href="#32" title="Permanent link">¶</a></h3>
+<ul>
+<li>联合概率分布函数 / 联合分布函数，边际分布函数，条件分布函数</li>
+</ul>
+<h3 id="33">3.3 二元连续型随机变量<a class="headerlink" href="#33" title="Permanent link">¶</a></h3>
+<ul>
+<li>联合概率密度函数 / 联合密度函数，边际密度函数，条件密度函数</li>
+<li><span class="arithmatex">\(F(x,y) = P(X\le x, Y\le y)\)</span></li>
+<li><span class="arithmatex">\(F_{X|Y}(x|y) = \dfrac{P(X \le x, Y = y)}{P(Y = y)} = \lim\limits_{\Delta y \rightarrow 0^+}\dfrac{P(X \le x, y &lt; Y \le y + \Delta y)}{P(y &lt; Y \le y + \Delta y)}\)</span></li>
+<li><span class="arithmatex">\(f_X(x) = \int_{-\infty}^{\infty}f(x,y)dy\)</span></li>
+<li><span class="arithmatex">\(f_{X|Y}(x|y) = \dfrac{f(x, y)}{f_Y(y)},\ \ f(x, y) = f_Y(y)f_{X|Y}(x|y)\)</span></li>
+<li><span class="arithmatex">\(F_{X|Y}(x|y) = P(X \le x | Y = y) = \int_{-\infty}^x f_{X|Y}(x|y)dx\)</span></li>
+<li>常见分布<ul>
+<li>均匀分布</li>
+<li>正态分布 <span class="arithmatex">\(X, Y \sim N(\mu_1, \mu_2; \sigma_1^2, \sigma_2^2; \rho)\)</span><ul>
+<li><span class="arithmatex">\(X \sim N(\mu_1, \sigma_1^2),\ \ Y \sim N(\mu_2, \sigma_2^2)\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>可加性<ul>
+<li><span class="arithmatex">\(X \sim B(n, p),\ \ Y \sim B(m, p) \Rightarrow X + Y \sim B(m + n, p)\)</span></li>
+<li><span class="arithmatex">\(X \sim P(\lambda_1),\ \ Y \sim P(\lambda_2) \Rightarrow X + Y \sim P(\lambda_1 + \lambda_2)\)</span></li>
+<li><span class="arithmatex">\(X\sim N(\mu_1,\ \ \sigma_1^2),Y\sim N(\mu_2,\sigma_2^2) \Rightarrow X\pm Y\sim N(\mu_1 \pm \mu_2,\sigma_1^2+\sigma_2^2)\)</span></li>
+</ul>
+</li>
+</ul>
+<h3 id="34">3.4 随机变量的独立性<a class="headerlink" href="#34" title="Permanent link">¶</a></h3>
+<ul>
+<li><span class="arithmatex">\(X,Y\)</span> 独立时，<span class="arithmatex">\(P(X\le x,Y\le y) = P(X\le x) \cdot P(Y\le y)\)</span>, 即 <span class="arithmatex">\(F(x, y) = F_X(x) F_Y(y)\)</span></li>
+<li>对于连续型随机变量，充要条件是 <span class="arithmatex">\(f(x, y) = m(x)n(y)\)</span></li>
+</ul>
+<h3 id="35">3.5 二元随机变量函数的分布<a class="headerlink" href="#35" title="Permanent link">¶</a></h3>
+<ul>
+<li><span class="arithmatex">\(Z = X + Y\)</span><ul>
+<li><span class="arithmatex">\(P(Z = z) = P(X + Y = z) = \sum\limits_{i = 1}^{+\infty} P(X = x_i, Y = z - x_i)\)</span></li>
+<li><span class="arithmatex">\(f_Z(z) = \int_{-\infty}^{+\infty} f(x, z - x) dx \overset{独立}{=\!=\!=} \int_{-\infty}^{+\infty} f_X(x) f_Y(z - x)dx\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(M = \max(X_1, X_2, \dots, X_N),\ \ N = \min(X_1, X_2, \dots, X_N)\)</span><ul>
+<li>相互独立: <span class="arithmatex">\(F_{M}(z) = \prod\limits_{i = 1}^{n} F_i(t),\ \ F_{N} = 1 - \prod\limits_{i = 1}^{n} [1 - F_i(t)]\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="4">4 随机变量的数字特征<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
+<h3 id="41">4.1 数学期望<a class="headerlink" href="#41" title="Permanent link">¶</a></h3>
+<ul>
+<li>定义，存在性, 性质</li>
+<li><span class="arithmatex">\(E(X) = \sum\limits_{k = 1}^{+\infty} x_k p_k = \int_{-\infty}^{\infty}xf(x)dx\)</span></li>
+<li><span class="arithmatex">\(E(Y) = E(g(X)) = \sum\limits_{k = 1}^{+\infty} g(x_k) p_k = \int_{-\infty}^{+\infty}g(x)f(x)dx\)</span></li>
+<li><span class="arithmatex">\(E(Z) = E(h(X, Z)) = \sum\limits_{i = 1}^{+\infty} \sum\limits_{j = 1}^{+\infty} h(x_i, y_j) p_{ij} = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}h(x, y)f(x,y)dxdy\)</span></li>
+<li>性质<ul>
+<li><span class="arithmatex">\(E(C) = C\)</span></li>
+<li><span class="arithmatex">\(E(CX) = C \cdot E(X)\)</span></li>
+<li><span class="arithmatex">\(E(X + Y) = E(X) + E(Y)\)</span></li>
+<li>相互独立，<span class="arithmatex">\(E(XY) = E(X)E(Y)\)</span></li>
+</ul>
+</li>
+</ul>
+<h3 id="42">4.2 方差、变异系数<a class="headerlink" href="#42" title="Permanent link">¶</a></h3>
+<ul>
+<li>方差，标准差</li>
+<li><span class="arithmatex">\(E[(X -E(X))^2]\)</span></li>
+<li><span class="arithmatex">\(Var(X), D(X), V(X)\)</span></li>
+<li><span class="arithmatex">\(\text{Var}(X) = E(X^2)-(E(X))^2\)</span></li>
+<li>性质<ul>
+<li><span class="arithmatex">\(\text{Var}(C) = 0\)</span></li>
+<li><span class="arithmatex">\(\text{Var}(CX) = C^2 \cdot \text{Var}(X)\)</span></li>
+<li><span class="arithmatex">\(\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X, Y)\)</span></li>
+<li><span class="arithmatex">\(\text{Var}(X) = 0 \Leftrightarrow P(X = C) = 1 \wedge C = E(X)\)</span></li>
+</ul>
+</li>
+<li>标准化随机变量<ul>
+<li><span class="arithmatex">\(X^*=\dfrac{X - E(X)}{\sqrt{Var(X)}}\)</span></li>
+</ul>
+</li>
+<li>变异系数<ul>
+<li><span class="arithmatex">\(C_v(X) = \dfrac{\sqrt{\text{Var}(X)}}{E(X)}\)</span></li>
+</ul>
+</li>
+</ul>
+<h3 id="43">4.3 协方差与相关系数<a class="headerlink" href="#43" title="Permanent link">¶</a></h3>
+<ul>
+<li>协方差<ul>
+<li><span class="arithmatex">\(\text{Cov}(X, Y) = E[(X - E(X))(Y - E(Y))]\)</span></li>
+<li><span class="arithmatex">\(\text{Cov}(X, Y) = E(XY)-E(X)E(Y)\)</span></li>
+</ul>
+</li>
+<li>性质<ul>
+<li><span class="arithmatex">\(\text{Cov}(X, Y) = \text{Cov}(Y, X)\)</span></li>
+<li><span class="arithmatex">\(\text{Cov}(X, X) = \text{Var}(X)\)</span></li>
+<li><span class="arithmatex">\(\text{Cov}(aX, bY) = ab \cdot \text{Cov}(X, Y)\)</span></li>
+<li><span class="arithmatex">\(\text{Cov}(X_1 + X_2) = \text{Cov}(X_1, Y) + \text{Cov}(X_2, Y)\)</span></li>
+</ul>
+</li>
+<li>相关系数<ul>
+<li><span class="arithmatex">\(\rho_{XY}=\dfrac{Cov(X,Y)}{\sqrt{Var(X)}\sqrt{Var(Y)}} = \text{Cov}(X^*, Y^*) \in [-1,1]\)</span></li>
+<li>大于一正相关，小于一负相关，零则不相关</li>
+<li>不相关等价条件<ul>
+<li><span class="arithmatex">\(\text{Cov}(X, Y) = 0\)</span></li>
+<li><span class="arithmatex">\(E(XY) = E(X)E(Y)\)</span></li>
+<li><span class="arithmatex">\(\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)\)</span></li>
+<li>相互独立是不相关的充分条件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="44">4.4 其他数字特征<a class="headerlink" href="#44" title="Permanent link">¶</a></h3>
+<ul>
+<li>矩<ul>
+<li><span class="arithmatex">\(k\)</span> 阶原点矩 <span class="arithmatex">\(E(X^k)\)</span></li>
+<li><span class="arithmatex">\(k\)</span> 阶中心矩 <span class="arithmatex">\(E([X - E(X)]^k)\)</span></li>
+<li><span class="arithmatex">\(k + l\)</span> 阶混合原点矩 <span class="arithmatex">\(E(X^k Y^l)\)</span></li>
+<li><span class="arithmatex">\(k + l\)</span> 阶混合中心矩 <span class="arithmatex">\(E([X - E(X)]^k [Y - E(Y)]^l)\)</span></li>
+</ul>
+</li>
+</ul>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/0.png"><img src="../Pic/0.png" style="width:600px"/></a>
+</div>
+<h3 id="45">4.5 多元随机变量的数字特征<a class="headerlink" href="#45" title="Permanent link">¶</a></h3>
+<ul>
+<li>多元随机变量的数字特征<ul>
+<li>对于 <span class="arithmatex">\(\vec{X}=(X_1,X_2,\cdots,X_n)^T,X_i\sim N(\mu_i,\sigma_i)\)</span>，<span class="arithmatex">\(\vec{X}\sim N(\vec{a},\vec{B})\)</span></li>
+<li>当 <span class="arithmatex">\(n=2,\ \ \vec{B}=\begin{bmatrix} \sigma_1^2&amp;\sigma_1\sigma_2\rho\\ \sigma_1\sigma_2\rho&amp;\sigma_2^2 \end{bmatrix}\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="5">5 大数定律及中心极限定理<a class="headerlink" href="#5" title="Permanent link">¶</a></h2>
+<h3 id="51">5.1 大数定律<a class="headerlink" href="#51" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>依概率收敛</p>
+<ul>
+<li><span class="arithmatex">\(\forall\ \varepsilon \gt 0,\ \ \lim\limits_{x \rightarrow +\infty}P(|Y_n-c|\ge\varepsilon)=0\)</span></li>
+<li><span class="arithmatex">\(Y_n\stackrel{P}\longrightarrow c,\ \ n\rightarrow +\infty\)</span></li>
+<li>
+<p><span class="arithmatex">\(n\rightarrow +\infty,\ \ X_n\stackrel{P}\longrightarrow a,\ \ Y_n\stackrel{P}\longrightarrow b\)</span>, <span class="arithmatex">\(g(x, y)\)</span> 在 <span class="arithmatex">\((a, b)\)</span> 连续，</p>
+<div class="arithmatex">\[
+    g(X_n, Y_n)\stackrel{P}\longrightarrow g(a, b),\ \ n\rightarrow +\infty
+\]</div>
+</li>
+</ul>
+</li>
+<li>
+<p>马尔可夫不等式</p>
+<div class="arithmatex">\[
+    P(|Y| \ge \varepsilon) \le \dfrac{E(|Y|^k)}{\varepsilon^k}
+\]</div>
+</li>
+<li>
+<p>切比雪夫不等式</p>
+<div class="arithmatex">\[
+    P(|X-\mu| \ge \varepsilon) \le \dfrac{\sigma^2}{\varepsilon^2}
+\]</div>
+</li>
+<li>
+<p>大数定律</p>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(\{Y_i\}\)</span> 为一随机变量序列，存在常数序列 <span class="arithmatex">\(\{c_n\}\)</span> 使得，</p>
+<div class="arithmatex">\[
+    \lim\limits_{n\rightarrow +\infty} P \left(\left|\frac{1}{n}\sum\limits_{i=1}^nY_i-c_n\right|\ge\varepsilon\right)=0
+\]</div>
+</li>
+<li>
+<p><span class="arithmatex">\(n\rightarrow+\infty,\ \ \dfrac{1}{n}\sum\limits_{i=1}^nY_i-c_n\stackrel{P}\longrightarrow0\)</span></p>
+</li>
+<li>特别地，当 <span class="arithmatex">\(c_n=c\)</span>，可写为 <span class="arithmatex">\(n\rightarrow+\infty,\ \ \dfrac{1}{n}\sum\limits_{i=1}^nY_i\stackrel{P}\longrightarrow c\)</span></li>
+</ul>
+</li>
+<li>
+<p>伯努利大数定律</p>
+<div class="arithmatex">\[
+    \lim_{n\rightarrow+\infty} P \left(\left|\dfrac{n_A}{n}-p\right|\ge\varepsilon\right)=0
+\]</div>
+</li>
+<li>
+<p>辛钦大数定律（独立同分布）</p>
+<div class="arithmatex">\[
+    \lim_{n\rightarrow+\infty} P \left(\left|\frac{1}{n}\sum_{i=1}^nX_i-\mu\right|\ge\varepsilon\right)=0
+\]</div>
+<ul>
+<li>推论</li>
 </ul>
 <div class="arithmatex">\[
-    w_{21}^{(3)} = w_{24}^{(3)} = w_{41}^{(3)} = w_{44}^{(3)} = 1.
+    \lim_{n\rightarrow+\infty} P \left(\left|\frac{1}{n}\sum_{i=1}^n h(X_i) - E(h(X_1)) \right| \ge \varepsilon\right) = 0
 \]</div>
-</div>
-<div class="tabbed-block">
-<div class="arithmatex">\[
-    W_3 = \begin{bmatrix}
-        0 &amp; 0 &amp; 0 &amp; 1 \\
-        1 &amp; 0 &amp; 1 &amp; 1 \\
-        1 &amp; 0 &amp; 0 &amp; 1 \\
-        1 &amp; 0 &amp; 1 &amp; 1
-    \end{bmatrix}.
-\]</div>
-<ul>
-<li>Consider the entries of <span class="arithmatex">\(1\)</span> in the <strong>fourth</strong> row (<code>41</code>, <code>43</code>, <code>44</code>) and the <strong>fourth</strong> column (<code>14</code>, <code>24</code>, <code>34</code>, <code>44</code>). Combine them with elimination of <code>4</code> and we get <code>11</code>, <code>13</code>, <code>14</code>, <code>21</code>, <code>23</code>, <code>24</code> and <code>31</code>, <code>33</code>, <code>34</code>, and thus set</li>
+</li>
 </ul>
+<h3 id="52">5.2 中心极限定理<a class="headerlink" href="#52" title="Permanent link">¶</a></h3>
+<p>独立同分布</p>
+<ul>
+<li>
+<p>林德伯格-莱维中心极限定理</p>
 <div class="arithmatex">\[
-    w_{11}^{(4)} = w_{13}^{(4)} = w_{14}^{(4)} = 1.
-    w_{21}^{(4)} = w_{23}^{(4)} = w_{24}^{(4)} = 1.
-    w_{31}^{(4)} = w_{33}^{(4)} = w_{34}^{(4)} = 1.
+    \lim\limits_{n\rightarrow+\infty}P\left(\dfrac{\sum\limits_{i=1}^nX_i-E(\sum\limits_{i=1}^nX_i)}{\sqrt{\text{Var}\left(\sum\limits_{i=1}^nX_i\right)}}\le x\right)
+    = \lim\limits_{n\rightarrow+\infty} P \left(\dfrac{\sum\limits_{i=1}^nX_i-n\mu}{\sigma\sqrt{n}}\le x \right) =\Phi(x)
 \]</div>
-</div>
-<div class="tabbed-block">
+</li>
+<li>
+<p>棣莫弗-拉普拉斯中心极限定理</p>
 <div class="arithmatex">\[
-    M_{R^*} = W_4 = \begin{bmatrix}
-        1 &amp; 0 &amp; 1 &amp; 1 \\
-        1 &amp; 0 &amp; 1 &amp; 1 \\
-        1 &amp; 0 &amp; 1 &amp; 1 \\
-        1 &amp; 0 &amp; 1 &amp; 1
-    \end{bmatrix}.
+    \lim\limits_{n\rightarrow+\infty} P \left(\dfrac{n_A-np}{\sqrt{np(1-p)}}\le x \right) = \Phi(x)
 \]</div>
-</div>
-</div>
-</input></input></input></input></div>
-</details>
-</div>
-<h2 id="equivalence-relations">Equivalence Relations<a class="headerlink" href="#equivalence-relations" title="Permanent link">¶</a></h2>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Relation <span class="arithmatex">\(R_\sim : A \leftrightarrow A\)</span> is an <strong>equivalence relation</strong> if it's <em>reflexive</em>, <em>symmetric</em> and <em>transitive</em>.</p>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Let <span class="arithmatex">\(R: A \leftrightarrow A\)</span> is an equivalence relatiion. For any <span class="arithmatex">\(a \in A\)</span>, the <strong>equivalence class</strong> of <span class="arithmatex">\(a\)</span> is the set of the elements related to <span class="arithmatex">\(a\)</span>, denoted by</p>
+</li>
+</ul>
+<h2 id="6">6 统计量与抽样分布<a class="headerlink" href="#6" title="Permanent link">¶</a></h2>
+<h3 id="61">6.1 随机样本与统计量<a class="headerlink" href="#61" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>总体、个体、有限总体、无限总体</p>
+</li>
+<li>
+<p>抽样、样本（代表性、独立性）、样本容量、随机样本</p>
+</li>
+<li>
+<p>统计量：样本均值，样本方差，样本 <span class="arithmatex">\(k\)</span> 阶原点矩，样本 <span class="arithmatex">\(k\)</span> 阶中心矩</p>
+</li>
+<li>
+<p>样本均值</p>
 <div class="arithmatex">\[
-    [a]_R = \{x \in A | (x, a) \in R\}.
+    \overline{X} = \frac{1}{n} \sum\limits_{i = 1}^{n} X_i
 \]</div>
-<p>If <span class="arithmatex">\(b \in [a]_R\)</span>, then <span class="arithmatex">\(b\)</span> is called a <strong>representitive</strong> of this equivalence class.</p>
-</div>
-<div class="admonition theorem">
-<p class="admonition-title">Property</p>
-<ul>
-<li><span class="arithmatex">\(\forall a \in A,\ \ a \in [a]_R \neq \emptyset.\)</span></li>
-<li><span class="arithmatex">\((a, b) \in R \Rightarrow [a]_R = [b]_R.\)</span></li>
-<li><span class="arithmatex">\((a, b) \notin R \Rightarrow [a]_R \cap [b]_R = \emptyset.\)</span></li>
-<li><span class="arithmatex">\(\bigcup\limits_{a \in A}[a]_R = A.\)</span></li>
-</ul>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>The set of all equivalence classes of <span class="arithmatex">\(R\)</span> is the <strong>quotient set</strong> of <span class="arithmatex">\(A\)</span> w.r.t. <span class="arithmatex">\(R\)</span>.</p>
+</li>
+<li>
+<p>样本方差</p>
 <div class="arithmatex">\[
-    A / R = \{[a]_R | a \in A\}.
+    S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})=\frac{1}{n-1}\left(\sum_{i=1}^nX_i^2-n\overline{X}^2\right)
 \]</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Remark</p>
-<ul>
-<li>If <span class="arithmatex">\(A\)</span> is finite, then <span class="arithmatex">\(A / R\)</span> is finite.</li>
-<li>If <span class="arithmatex">\(A\)</span> has <span class="arithmatex">\(n\)</span> elements and each <span class="arithmatex">\([a]_R\)</span> has <span class="arithmatex">\(m\)</span> elements, then <span class="arithmatex">\(m | n\)</span> and <span class="arithmatex">\(A / R\)</span> has $n / m $ elements.</li>
+</li>
+<li>
+<p>样本 <span class="arithmatex">\(k\)</span> 阶（原点）矩</p>
+<div class="arithmatex">\[
+    A_k=\frac{1}{n}\sum_{i=1}^nX_i^k
+\]</div>
+</li>
+<li>
+<p>样本 <span class="arithmatex">\(k\)</span> 阶中心矩</p>
+<div class="arithmatex">\[
+    B_k=\frac{1}{n}\sum_{i=1}^n(X_i-\overline{X})^k
+\]</div>
+</li>
 </ul>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>A <strong>partition</strong> <span class="arithmatex">\(\pi\)</span> on a set <span class="arithmatex">\(S\)</span> is a family <span class="arithmatex">\(\{A_1, A_2, \cdots, A_n\}\)</span> of subsets of <span class="arithmatex">\(S\)</span> and</p>
+<h3 id="62-chi2-t-f">6.2 <span class="arithmatex">\(\chi^2\)</span> 分布，<span class="arithmatex">\(t\)</span> 分布，<span class="arithmatex">\(F\)</span> 分布<a class="headerlink" href="#62-chi2-t-f" title="Permanent link">¶</a></h3>
 <ul>
-<li><span class="arithmatex">\(\bigcup\limits_{k = 1}^{n} A_k = S.\)</span></li>
-<li><span class="arithmatex">\(A_j \cap A_k = \emptyset\)</span> for every <span class="arithmatex">\(j, k\)</span> with <span class="arithmatex">\(j \ne k\)</span>.</li>
+<li><span class="arithmatex">\(\chi^2\)</span> 分布<ul>
+<li><span class="arithmatex">\(\chi^2(n) = \sum\limits_{i = 1}^{n} X_i^2,\ \ X_i \sim N(0, 1)\)</span></li>
+<li><span class="arithmatex">\(X, Y\)</span> 相互独立, <span class="arithmatex">\(X \sim \chi^2(m),\ \ Y \sim \chi^2(n) \Rightarrow X + Y \sim \chi^2(m + n)\)</span></li>
+<li><span class="arithmatex">\(E(\chi^2(n)) = n\)</span></li>
+<li><span class="arithmatex">\(D(\chi^2(n)) = 2n\)</span></li>
+<li><span class="arithmatex">\(n &gt; 40\)</span>, <span class="arithmatex">\(\chi^2_\alpha(n) \approx \dfrac{1}{2}(z_\alpha + \sqrt{2n - 1})^2\)</span></li>
 </ul>
-</div>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<ul>
-<li>Let <span class="arithmatex">\(R\)</span> be an equivalence relation on a set <span class="arithmatex">\(S\)</span>, then the equivalence classes of <span class="arithmatex">\(R\)</span> form a partition of <span class="arithmatex">\(X\)</span>.</li>
-<li>Conversely, given a partition <span class="arithmatex">\(\{A_i | i \in I\}\)</span> of set <span class="arithmatex">\(S\)</span>, there is an equivalence relation <span class="arithmatex">\(R\)</span> that has the set <span class="arithmatex">\(A_i\)</span> , <span class="arithmatex">\(i \in I\)</span> as its equivalence classes.</li>
+</li>
+<li><span class="arithmatex">\(t\)</span> 分布<ul>
+<li><span class="arithmatex">\(t(n) = \dfrac{X}{\sqrt{Y / n}},\ \ X \sim N(0, 1),\ \ Y \sim \chi^2(n)\)</span></li>
+<li><span class="arithmatex">\(n \rightarrow +\infty,\ \ t(n) \rightarrow N(0, 1)\)</span></li>
+<li><span class="arithmatex">\(E(T) = 0,\ \ n \ge 2\)</span></li>
+<li><span class="arithmatex">\(D(T) = \dfrac{n}{n - 1},\ \ n \ge 3\)</span></li>
+<li><span class="arithmatex">\(n &gt; 45,\ \ t_\alpha (n) \approx z_\alpha\)</span></li>
 </ul>
-</div>
-<h2 id="partial-order">Partial Order<a class="headerlink" href="#partial-order" title="Permanent link">¶</a></h2>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Relation <span class="arithmatex">\(R_\preceq: S \leftrightarrow S\)</span> is a <strong>partial order</strong> if it's <em>reflexive</em>, <em>antisymmetric</em> and <em>transitive</em>.</p>
-<p>A set <span class="arithmatex">\(S\)</span> together with a partial order <span class="arithmatex">\(R_\preceq\)</span> is called a <strong>partial order set</strong> or <strong>poset</strong>, denoted by <span class="arithmatex">\((S, R_\preceq)\)</span>.</p>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p><span class="arithmatex">\(a, b \in (S, \preceq)\)</span> are called <strong>comparable</strong> if either <span class="arithmatex">\(a \preceq b\)</span> or <span class="arithmatex">\(b \preceq a\)</span>, otherwise <strong>incomparable</strong>.</p>
-<p>If every elements of <span class="arithmatex">\((S, \preceq)\)</span> are comaparable, then <span class="arithmatex">\(S\)</span> is called a <strong>totally order</strong> or <strong>linearly order set</strong> and <span class="arithmatex">\(\preceq\)</span> is called a <strong>total order</strong> or <strong>linear order</strong>. A totally ordered set is also called a <strong>chain</strong>.</p>
-</div>
-<h3 id="hasse-diagram">Hasse Diagram<a class="headerlink" href="#hasse-diagram" title="Permanent link">¶</a></h3>
-<p>We can represent the partial order by a graph called <strong>Hasse Diagram</strong>. To construct a Hasse diagram, follow the steps below.</p>
-<ol>
-<li>Start with the directed graph for the relation.</li>
-<li>Remove all loops.</li>
-<li>Remove the edges that must be present because of the transitivity.</li>
-<li>Finally arrage each edges so that its inital vertex is below its terminal vertex, and remove all arrows.</li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Draw the Hasse diagram representing</p>
+</li>
+<li><span class="arithmatex">\(F\)</span> 分布<ul>
+<li><span class="arithmatex">\(F(n_1, n_2) = \dfrac{U / n_1}{V / n_2}\)</span></li>
+<li><span class="arithmatex">\(F \sim F(n_1, n_2) \Rightarrow \dfrac{1}{F} \sim F(n_2, n_1)\)</span></li>
+<li><span class="arithmatex">\(F_{1 - \alpha}(n_1, n_2) = \dfrac{1}{F_\alpha(n_2, n_1)}\)</span></li>
+</ul>
+</li>
+</ul>
+<h3 id="63">6.3 正态总体下抽样分布<a class="headerlink" href="#63" title="Permanent link">¶</a></h3>
 <ul>
-<li>the partial order <span class="arithmatex">\(\{(a, b) | a | b\}\)</span> on the set <span class="arithmatex">\(\{1, 2, 3, 4, 6, 8, 12\}\)</span>.</li>
-<li>the partial order <span class="arithmatex">\(\{(A, B) | A \subseteq B\}\)</span> on power set <span class="arithmatex">\(2^S\)</span>, where <span class="arithmatex">\(S = \{a, b, c\}\)</span>.</li>
+<li><span class="arithmatex">\(E(\overline{X}) = \mu, \ \ \text{Var}(\overline{X}) = \dfrac{\sigma^2}{n}\)</span></li>
+<li><span class="arithmatex">\(E(S^2) = \sigma^2,\ \ E(B_2) = \dfrac{n - 1}{n} \sigma^2\)</span></li>
+<li>正态总体下<ul>
+<li><span class="arithmatex">\(\overline{X}\sim N(\mu,\dfrac{\sigma^2}{n})\)</span></li>
+<li><span class="arithmatex">\(\text{Var}(S^2) = \dfrac{2\sigma^4}{n - 1}\)</span></li>
+<li><span class="arithmatex">\(\dfrac{\sum\limits_{i = 1}^{n} (X_i - \overline{X})^2}{\sigma^2} = \dfrac{(n-    1) S^2}{\sigma^2}\sim\chi^2(n-1)\)</span></li>
+<li><span class="arithmatex">\(\overline{X}\)</span> 与 <span class="arithmatex">\(S^2\)</span> 相互独立</li>
+<li><span class="arithmatex">\(\dfrac{\overline{X} - \mu}{S / \sqrt{n}} \sim t(n - 1)\)</span></li>
+<li><span class="arithmatex">\(\dfrac{S_1^2 / \sigma_1^2}{S_2^2 / \sigma_2^2} \sim F(n_1 - 1, n_2 - 1)\)</span></li>
+<li><span class="arithmatex">\(\dfrac{(\overline{X} - \overline{Y}) - (\mu_1 - \mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n_1^2} + \dfrac{\sigma_2^2}{n_2}}} \sim N(0, 1)\)</span></li>
+<li><span class="arithmatex">\(\sigma_1^2 = \sigma_2^2 = \sigma,\ \ \dfrac{(\overline{X} - \overline{Y}) - (\mu_1 - \mu_2)}{S_w\sqrt{\dfrac{1}{n_1^2} + \dfrac{1}{n_2}}} \sim t(n_1 + n_2 - 2),\ \ S_w^2 = \dfrac{(n_1 - 1)S_1^2 + (n_2 - 1) S_2^2}{n_1 + n_2 - 2}\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="7">7 参数估计<a class="headerlink" href="#7" title="Permanent link">¶</a></h2>
+<h3 id="_2">点估计<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<ul>
+<li>矩法<ul>
+<li>用矩表示统计量，再用 <span class="arithmatex">\(A_k \rightarrow \mu_k,\ \ B_k \rightarrow \nu_k\)</span> 替换</li>
+</ul>
+</li>
+<li>极大似然法<ul>
+<li><span class="arithmatex">\(L(\theta) = \prod\limits_{i = 1}^n f(x_i; \theta)\)</span></li>
+<li><span class="arithmatex">\(L(\hat \theta) = \max\limits_{\theta \in \Theta} L(\theta). \left(\left.\dfrac{dL(\theta)}{d\theta}\right|_{\theta = \hat{\theta}} = 0\right)\)</span></li>
+<li>为了计算方便，取对数 <span class="arithmatex">\(l(\theta)=\ln L(\theta)\)</span>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="_3">评价准则<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>无偏性准则<ul>
+<li>无偏估计 <span class="arithmatex">\(E(\hat{\theta})=\theta\)</span>.</li>
+<li>渐近无偏估计 <span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}E(\hat{\theta})=\theta\)</span>.</li>
+</ul>
+</li>
+<li>有效性准则<ul>
+<li>方差 <span class="arithmatex">\(\text{Var}(\theta)\)</span></li>
+<li>方差越小越有效.</li>
+</ul>
+</li>
+<li>均方误差准则<ul>
+<li>均方误差 <span class="arithmatex">\(\text{Mse}(\hat{\theta})=E[(\hat{\theta}-\theta)^2]\)</span>.</li>
+<li>均方误差越小越有效.</li>
+</ul>
+</li>
+<li>相合性准则<ul>
+<li><span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty} P (|\hat{\theta}_n-\theta|&lt;\varepsilon)=1,\ \ \hat{\theta}_n\stackrel{P}\longrightarrow\theta\)</span> 则称为相合估计量.</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">区间估计<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<ul>
+<li>正态总体</li>
+</ul>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/1.png"><img src="../Pic/1.png" style="width:800px"/></a>
+</div>
+<ul>
+<li>
+<p>非正态总体</p>
+<ul>
+<li>
+<p>0 - 1 分布</p>
+<div class="arithmatex">\[
+    P\left(-z_{\alpha/2}&lt;\frac{n\overline{X}-np}{\sqrt{np(1-p)}}&lt;z_{\alpha/2}\right)\approx 1-\alpha
+\]</div>
+</li>
+<li>
+<p>其他分布均值为 <span class="arithmatex">\(\mu\)</span></p>
+<div class="arithmatex">\[
+    \frac{\sum\limits_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma}\sim N(0,1)
+\]</div>
+<p><span class="arithmatex">\(\left(\overline{X}\pm\dfrac{\sigma}{\sqrt{n}}z_{\alpha/2}\right)\)</span>，<span class="arithmatex">\(\sigma^2\)</span> 未知时使用 <span class="arithmatex">\(S^2\)</span> 替代.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="8">8 假设检验<a class="headerlink" href="#8" title="Permanent link">¶</a></h2>
+<ul>
+<li>原假设，备择假设</li>
+<li>检验，接收域，拒绝域，检验统计量</li>
+<li>第一类错误（弃真），第二类错误（取伪）</li>
+<li>显著性水平</li>
 </ul>
 <p><div align="center">
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/11.png"><img src="../Pic/11.png" style="width:500px"/></a>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/2.jpg"><img src="../Pic/2.jpg" style="width:800px"/></a>
 </div></p>
-</div>
-<h3 id="maximial-minimal-greatest-and-least-element">Maximial, Minimal, Greatest and Least Element<a class="headerlink" href="#maximial-minimal-greatest-and-least-element" title="Permanent link">¶</a></h3>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Let <span class="arithmatex">\((A, \preceq)\)</span> be a partial ordered set, <span class="arithmatex">\(B \subseteq A\)</span>.</p>
-<ul>
-<li><span class="arithmatex">\(a\)</span> is a <strong>maximal element 极大元</strong> of <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(a \in B \wedge \text{ There is no } x \in B \text{ s.t. } a \prec x\)</span>. <br/>
-<span class="arithmatex">\(b\)</span> is a <strong>minimal element 极小元</strong> of <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(b \in B \wedge \text{ There is no } x \in B \text{ s.t. } x \prec b\)</span>.</li>
-<li><span class="arithmatex">\(a\)</span> is a the <strong>greatest element 最大元</strong> of <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(a \in B \wedge \forall\ x \in B, x \preceq a\)</span>. <br/>
-<span class="arithmatex">\(b\)</span> is a the <strong>least element 最小元</strong> of <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(b \in B \wedge \forall\ x \in B, b \preceq x\)</span>.</li>
-<li><span class="arithmatex">\(c\)</span> is an <strong>upper bound 上界</strong> of <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(c \in A \wedge \forall\ x \in B : x \preceq c\)</span>. <br/>
-<span class="arithmatex">\(d\)</span> is a <strong>lower bound 下界</strong> of <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(d \in A \wedge \forall\ x \in B : d \preceq x\)</span>.</li>
-<li><span class="arithmatex">\(c\)</span> is a <strong>least upper bound (lub) 上确界</strong> of <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(c\)</span> is a upper bound and <span class="arithmatex">\(\forall\ x\)</span> is a upper bound, <span class="arithmatex">\(c \preceq x\)</span>. <br/>
-<span class="arithmatex">\(d\)</span> is a <strong>greatest lower bound (glb) 下确界</strong> of <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(c\)</span> is a lower bound and <span class="arithmatex">\(\forall\ x\)</span> is a lower bound, <span class="arithmatex">\(x \preceq d\)</span>.</li>
-</ul>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>For <span class="arithmatex">\((A, \subseteq)\)</span>, where <span class="arithmatex">\(A = 2^S\)</span>, <span class="arithmatex">\(S = \{a, b, c\}\)</span>, and <span class="arithmatex">\(B = \{\emptyset, \{a\}, \{c\}, \{a, b\}\}\)</span>.</p>
-<ul>
-<li>minimal element: <span class="arithmatex">\(emptyset\)</span>.</li>
-<li>maximal element: <span class="arithmatex">\(\{c\}, \{a,b\}\)</span>.</li>
-<li>the greatest element: none.</li>
-<li>the least element: <span class="arithmatex">\(\emptyset\)</span>.</li>
-<li>upper bound: <span class="arithmatex">\(\{a, b, c\}\)</span>.</li>
-<li>least upper bound: <span class="arithmatex">\(\{a, b, c\}\)</span>.</li>
-<li>lower bound: <span class="arithmatex">\(\emptyset\)</span>.</li>
-<li>least lower bound: <span class="arithmatex">\(\emptyset\)</span>.</li>
-</ul>
-</div>
-<h3 id="lattice">Lattice<a class="headerlink" href="#lattice" title="Permanent link">¶</a></h3>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>A partially ordered set in which every pair of elements has both a least upper bound and a greatest lower bound is called a <strong>lattice 格</strong>.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<ul>
-<li>The poset <span class="arithmatex">\((\mathbb{Z}, |)\)</span> is a lattice, since for the pair <span class="arithmatex">\((a, b)\)</span>, <span class="arithmatex">\(\text{lub}(a, b) = \text{lcm}(a, b)\)</span> and <span class="arithmatex">\(\text{glb}(a, b) = \text{gcd}(a, b)\)</span>.</li>
-<li>The poset <span class="arithmatex">\((\{1, 2, 3, 4, 5\}, |)\)</span> is not a lattice, since <span class="arithmatex">\(\text{lub}(2, 3) = \text{lcm}(2, 3) = 6 \notin \{1, 2, 3, 4, 5\}\)</span>.</li>
-</ul>
+<div align="center">
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/3.jpg"><img src="../Pic/3.jpg" style="width:800px"/></a>
 </div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.20 15:42:07 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.22 01:24:06 CST</span>
 <br/>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.22 01:24:06 CST</span>
 </small>
 </div>
 <div class="md-source-date">
@@ -1218,7 +1598,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: Chap 8" class="md-footer__link md-footer__link--prev" href="../Chap_8/" rel="prev">
+<a aria-label="上一页: Chap 9" class="md-footer__link md-footer__link--prev" href="../../NA/Chap_9/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1227,17 +1607,17 @@
 <span class="md-footer__direction">
                 上一页
               </span>
-              Chap 8
+              Chap 9
             </div>
 </div>
 </a>
-<a aria-label="下一页: Chap 10" class="md-footer__link md-footer__link--next" href="../Chap_10/" rel="next">
+<a aria-label="下一页: Title Page" class="md-footer__link md-footer__link--next" href="../../../Computer_Science_Courses/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              Chap 10
+              Title Page
             </div>
 </div>
 <div class="md-footer__button md-icon">
