@@ -9,7 +9,7 @@
 <link href="https://sakuratsuyu.github.io/Note/Mathematics_Basis/DM/Chap_6/" rel="canonical"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.8" name="generator"/>
-<title>Chap 6 - NOTES</title>
+<title>Chap 6 | Counting - NOTES</title>
 <link href="../../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.815d1a91.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h226.7c17 0 33.3-6.7 45.3-18.7l93.3-93.3c12-12 18.7-28.3 18.7-45.3V96c0-35.3-28.7-64-64-64H64zm0 64h320v224h-64c-17.7 0-32 14.3-32 32v64H64V96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Chap 6
+              Chap 6 | Counting
             
           </span>
 </div>
@@ -232,37 +232,37 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_1/">
-        Chap 1
+        Chap 1 | Logic and Proofs
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_2/">
-        Chap 2
+        Chap 2 | Sets and Functions
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_3/">
-        Chap 3
+        Chap 3 | Algorithms
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_4/">
-        Chap 4
+        Chap 4 | Number Theory
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_5/">
-        Chap 5
+        Chap 5 | Induction and Recursion
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Chap 6
+          Chap 6 | Counting
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Chap 6
+        Chap 6 | Counting
       </a>
 <nav aria-label="Content" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -323,45 +323,50 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_7/">
-        Chap 7
+        Chap 7 | Discrete Probability
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_8/">
-        Chap 8
+        Chap 8 | Advanced Counting
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_9/">
-        Chap 9
+        Chap 9 | Relations
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_10/">
-        Chap 10
+        Chap 10 | Graphs
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_11/">
-        Chap 11
+        Chap 11 | Trees
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Chap_12_13/">
-        Chap 12/13
+        Chap 12 &amp; 13 | Boolean Algrebra &amp; Modeling Computation
       </a>
 </li>
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../PS/Review/">
+        概率论与数理统计 | Probability and Statistics
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_3">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4">
           数值分析 | Numerical Analysis
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="数值分析 | Numerical Analysis" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_3">
+<label class="md-nav__title" for="__nav_2_4">
 <span class="md-nav__icon md-icon"></span>
           数值分析 | Numerical Analysis
         </label>
@@ -373,56 +378,51 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../NA/Chap_1/">
-        Chap 1
+        Chap 1 | Math Prelims
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../NA/Chap_2/">
-        Chap 2
+        Chap 2 | Solve Equation
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../NA/Chap_3/">
-        Chap 3
+        Chap 3 | Interpolation
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../NA/Chap_4/">
-        Chap 4
+        Chap 4 | Differentiation and Integration
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../NA/Chap_5/">
-        Chap 5
+        Chap 5 | IVP for ODE
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../NA/Chap_6/">
-        Chap 6
+        Chap 6 | Solve Linear System Directly
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../NA/Chap_7/">
-        Chap 7
+        Chap 7 | Solve Linear System Iteratively
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../NA/Chap_8/">
-        Chap 8
+        Chap 8 | Approximation
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../NA/Chap_9/">
-        Chap 9
+        Chap 9 | Eigenvalues
       </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../PS/Review/">
-        概率论与数理统计 | Probability and Statistics
-      </a>
 </li>
 </ul>
 </nav>
@@ -735,7 +735,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Example 1</label><label for="__tabbed_1_2">Example 2</label><label for="__tabbed_1_3">Example 3</label><label for="__tabbed_1_4">Example 4</label><label for="__tabbed_1_5">Example 5</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Given <span class="arithmatex">\(n + 1\)</span> positive integers <span class="arithmatex">\(a_i\)</span> (<span class="arithmatex">\(i = 1, \dots, n + 1\)</span>) and <span class="arithmatex">\(a_i \le 2n\)</span>, show that <span class="arithmatex">\(\exist\ i, j,\ \ \text{ s.t. } a_i \mid a_j\)</span>.</p>
+<p>Given <span class="arithmatex">\(n + 1\)</span> positive integers <span class="arithmatex">\(a_i\)</span> (<span class="arithmatex">\(i = 1, \dots, n + 1\)</span>) and <span class="arithmatex">\(a_i \le 2n\)</span>, show that <span class="arithmatex">\(\exist i, j, \text{ s.t. } a_i \mid a_j\)</span>.</p>
 <p><strong>Solution.</strong></p>
 <p>Suppose <span class="arithmatex">\(a_i = 2^{k_i} q_i\)</span> for some <span class="arithmatex">\(k_i\)</span> and odd <span class="arithmatex">\(q_i\)</span>.</p>
 <p>Then</p>
@@ -743,7 +743,7 @@
 <li>the pigeonhole is <span class="arithmatex">\(\{q_i\}_{i = 1}^{n}\)</span>, totally <span class="arithmatex">\(n\)</span> elements.</li>
 <li>the pigeon is <span class="arithmatex">\(\{a_i\}_{i = 1}^{n + 1}\)</span>, totally <span class="arithmatex">\(n + 1\)</span> elements.</li>
 </ul>
-<p>Thus <span class="arithmatex">\(\exists\ i, j,\ \ \text{ s.t. } q_i = q_j\)</span>, and <span class="arithmatex">\(a_i = 2^{k_i}q_i\)</span>, <span class="arithmatex">\(a_j = 2^{k_j}q_j\)</span>. Without loss of generation, if <span class="arithmatex">\(k_i &lt; k_j\)</span>, then <span class="arithmatex">\(a_i \mid a_j\)</span>.</p>
+<p>Thus <span class="arithmatex">\(\exists\ i, j, \text{ s.t. } q_i = q_j\)</span>, and <span class="arithmatex">\(a_i = 2^{k_i}q_i\)</span>, <span class="arithmatex">\(a_j = 2^{k_j}q_j\)</span>. Without loss of generation, if <span class="arithmatex">\(k_i &lt; k_j\)</span>, then <span class="arithmatex">\(a_i \mid a_j\)</span>.</p>
 </div>
 <div class="tabbed-block">
 <div class="admonition theorem">
@@ -775,7 +775,7 @@
 <li>the pigeonhole is <span class="arithmatex">\(\{(i_k, d_k)\}\)</span>, totally <span class="arithmatex">\(n^2\)</span> elements.</li>
 <li>the pigeon is <span class="arithmatex">\(\{a_i\}_{i = 1}^{n^2 + 1}\)</span>, totally <span class="arithmatex">\(n^2 + 1\)</span> elements.</li>
 </ul>
-<p>Thus <span class="arithmatex">\(\exists\ s, t,\ \ \text{ s.t. } i_s = i_t, d_s = d_t\)</span>, which leads to a contradiction.</p>
+<p>Thus <span class="arithmatex">\(\exists\ s, t, \text{ s.t. } i_s = i_t, d_s = d_t\)</span>, which leads to a contradiction.</p>
 </div>
 </div>
 <div class="tabbed-block">
@@ -790,7 +790,7 @@
 <li>the pigeonhole is <span class="arithmatex">\([1]_n, \dots, [n - 1]_n\)</span>, totally <span class="arithmatex">\(n - 1\)</span> elements.</li>
 <li>the pigeon is <span class="arithmatex">\(\{A_i\}_{i = 1}^{n}\)</span>, totally <span class="arithmatex">\(n\)</span> elements.</li>
 </ul>
-<p>Thus <span class="arithmatex">\(\exists\ i &lt; j,\ \ \text{ s.t. } A_i \equiv A_j (\text{ mod } n)\)</span>. Thus <span class="arithmatex">\(n \mid (A_j - A_i)\)</span>.</p>
+<p>Thus <span class="arithmatex">\(\exists\ i &lt; j, \text{ s.t. } A_i \equiv A_j (\text{ mod } n)\)</span>. Thus <span class="arithmatex">\(n \mid (A_j - A_i)\)</span>.</p>
 </li>
 </ul>
 </div>
@@ -809,7 +809,7 @@
 <li>the pigeonhole is <span class="arithmatex">\(\{0, 1\} \times \{0, 1\} \times \cdots \times \{0, 1\} - (0, 0, \cdots, 0)\)</span>, totally <span class="arithmatex">\(2^n - 1\)</span> elements.</li>
 <li>the pigeon is <span class="arithmatex">\(\{A_i\}_{i = 1}^{2^n}\)</span>, totally <span class="arithmatex">\(2^n\)</span> elements.</li>
 </ul>
-<p>Thus <span class="arithmatex">\(\exists\ i &lt; j,\ \ \text{ s.t. }\)</span> </p>
+<p>Thus <span class="arithmatex">\(\exists\ i &lt; j, \text{ s.t. }\)</span> </p>
 <div class="arithmatex">\[
     \frac{A_j}{A_i} = x_1^{2k_1} x_2^{2k_2} \cdots x_n^{2k_n} = (x_1^{k_1} x_2^{k_2} \cdots x_n^{k_n})^2,
 \]</div>
@@ -818,7 +818,7 @@
 </ul>
 </div>
 <div class="tabbed-block">
-<p>During 30 days, a baseball team plays at least <span class="arithmatex">\(1\)</span> game a day, but no more than <span class="arithmatex">\(45\)</span> games in total. Show that there must be a period of some number of consecutive adays during which the team ust play exactly <span class="arithmatex">\(14\)</span> games.</p>
+<p>During <span class="arithmatex">\(30\)</span> days, a baseball team plays at least <span class="arithmatex">\(1\)</span> game a day, but no more than <span class="arithmatex">\(45\)</span> games in total. Show that there must be a period of some number of consecutive adays during which the team ust play exactly <span class="arithmatex">\(14\)</span> games.</p>
 <p><strong>Solution.</strong></p>
 <p>Let <span class="arithmatex">\(a_i\)</span> be the number of games played on before the <em>i</em>th day. Then <span class="arithmatex">\(a_1 &lt; a_2 &lt; \cdots &lt; a_{30}\)</span>, and</p>
 <div class="arithmatex">\[
@@ -829,7 +829,7 @@
 <li>the pigeonhole is <span class="arithmatex">\(1 \sim 59\)</span>, totally <span class="arithmatex">\(59\)</span> elements.</li>
 <li>the pigeon is <span class="arithmatex">\(\{a_i\}_{i = 1}^{30}, \{a_i + 14\}_{i = 1}^{30}\)</span>, totally <span class="arithmatex">\(60\)</span> elements.</li>
 </ul>
-<p>Thus <span class="arithmatex">\(\exists\ i &lt; j,\ \ \text{ s.t. } a_i = a_j + 14\)</span>.</p>
+<p>Thus <span class="arithmatex">\(\exists\ i &lt; j, \text{ s.t. } a_i = a_j + 14\)</span>.</p>
 </div>
 </div>
 </input></input></input></input></input></div>
@@ -857,8 +857,8 @@
 <p class="admonition-title">Property</p>
 <ul>
 <li><span class="arithmatex">\(\sum\limits_{k = 0}^{n}C(n, k) = 2^n\)</span>.</li>
-<li>**Pascal's Identity" <span class="arithmatex">\(C(n + 1, k) = C(n, k) + C(n, k - 1)\)</span>.</li>
-<li>**Vandermonde's Identity$ <span class="arithmatex">\(C(m + n, r) = \sum\limits_{k = 0}^rC(m, r - k)C(n, k)\)</span>.</li>
+<li><strong>Pascal's Identity</strong> <span class="arithmatex">\(C(n + 1, k) = C(n, k) + C(n, k - 1)\)</span>.</li>
+<li><strong>Vandermonde's Identity</strong> <span class="arithmatex">\(C(m + n, r) = \sum\limits_{k = 0}^rC(m, r - k)C(n, k)\)</span>.</li>
 </ul>
 </div>
 <h3 id="binomial-coefficients">Binomial Coefficients<a class="headerlink" href="#binomial-coefficients" title="Permanent link">¶</a></h3>
@@ -907,7 +907,7 @@
 <h2 id="generating-permutations">Generating Permutations<a class="headerlink" href="#generating-permutations" title="Permanent link">¶</a></h2>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
-<p>The permutaion <span class="arithmatex">\(a_1 a_2 \cdots a_n\)</span> <strong>precedes</strong> the permutation of <span class="arithmatex">\(b_1 b_2 \cdots b_n\)</span>, if for some <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(a_1 = b_1, \cdots, a_{k - 1} = b_{k - 1}\)</span> and <span class="arithmatex">\(a_k &lt; b_k\)</span>. It defines an order called $lexicographic order**.</p>
+<p>The permutaion <span class="arithmatex">\(a_1 a_2 \cdots a_n\)</span> <strong>precedes</strong> the permutation of <span class="arithmatex">\(b_1 b_2 \cdots b_n\)</span>, if for some <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(a_1 = b_1, \cdots, a_{k - 1} = b_{k - 1}\)</span> and <span class="arithmatex">\(a_k &lt; b_k\)</span>. It defines an order called <strong>lexicographic order</strong>.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -918,16 +918,10 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.20 15:42:07 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.22 21:34:40 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
-</small>
-</div>
-<div class="md-source-date">
-<small>
-<!-- 作者: <span class='git-page-authors git-authors'><a href='mailto:sakuratsuyu@outlook.com'>sakuratsuyu</a></span> -->
-      作者: <a href="https://github.com/sakuratsuyu" target="_blank">sakuratsuyu</a>
 </small>
 </div>
 </article>
@@ -940,7 +934,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: Chap 5" class="md-footer__link md-footer__link--prev" href="../Chap_5/" rel="prev">
+<a aria-label="上一页: Chap 5 | Induction and Recursion" class="md-footer__link md-footer__link--prev" href="../Chap_5/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -949,17 +943,17 @@
 <span class="md-footer__direction">
                 上一页
               </span>
-              Chap 5
+              Chap 5 | Induction and Recursion
             </div>
 </div>
 </a>
-<a aria-label="下一页: Chap 7" class="md-footer__link md-footer__link--next" href="../Chap_7/" rel="next">
+<a aria-label="下一页: Chap 7 | Discrete Probability" class="md-footer__link md-footer__link--next" href="../Chap_7/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              Chap 7
+              Chap 7 | Discrete Probability
             </div>
 </div>
 <div class="md-footer__button md-icon">
