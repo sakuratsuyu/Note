@@ -221,13 +221,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2">
-          离散数学 | Discrete Mathamatics
+          离散数学 | Discrete Mathematics
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="离散数学 | Discrete Mathamatics" class="md-nav" data-md-level="2">
+<nav aria-label="离散数学 | Discrete Mathematics" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
-          离散数学 | Discrete Mathamatics
+          离散数学 | Discrete Mathematics
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -310,15 +310,11 @@
 <a class="md-nav__link" href="#adjacency-matrix">
     Adjacency Matrix 邻接矩阵
   </a>
-<nav aria-label="Adjacency Matrix 邻接矩阵" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#incidence-matrix">
     Incidence Matrix 关联矩阵
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#isomorphism-of-graphs">
@@ -678,15 +674,11 @@
 <a class="md-nav__link" href="#adjacency-matrix">
     Adjacency Matrix 邻接矩阵
   </a>
-<nav aria-label="Adjacency Matrix 邻接矩阵" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#incidence-matrix">
     Incidence Matrix 关联矩阵
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#isomorphism-of-graphs">
@@ -741,8 +733,8 @@
 <p class="admonition-title">Definition</p>
 <ul>
 <li>A <strong>simple graph</strong> <span class="arithmatex">\(G = (V, E)\)</span> consists of <span class="arithmatex">\(V\)</span>, a nonempty set of vertices and <span class="arithmatex">\(E\)</span>, a set of unordered pair of distinct elements of <span class="arithmatex">\(V\)</span> called edges.</li>
-<li>A <strong>multigraph</strong> <span class="arithmatex">\(G = (V, E)\)</span> consists of <span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(E\)</span> and a function from <span class="arithmatex">\(E\)</span> to <span class="arithmatex">\(\{(u, v) | u, v \in V, u \neq v\}\)</span>. The edges <span class="arithmatex">\(e_1\)</span> and <span class="arithmatex">\(e_2\)</span> are called <strong>multiple</strong> or <strong>parallel edges</strong> if <span class="arithmatex">\(f(e_1) = f(e_2)\)</span>.</li>
-<li>A <strong>pseudograph</strong> <span class="arithmatex">\(G = (V, E)\)</span> consists of <span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(E\)</span> and a function from <span class="arithmatex">\(E\)</span> to <span class="arithmatex">\(\{(u, v) | u, v \in V\}\)</span>. An edge is a loop if <span class="arithmatex">\(f(e) = \{u, u\} = \{u\}\)</span> for some <span class="arithmatex">\(u \in V\)</span>.</li>
+<li>A <strong>multigraph</strong> <span class="arithmatex">\(G = (V, E)\)</span> consists of <span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(E\)</span> and a function from <span class="arithmatex">\(E\)</span> to <span class="arithmatex">\(\{\{u, v\} | u, v \in V, u \neq v\}\)</span>. The edges <span class="arithmatex">\(e_1\)</span> and <span class="arithmatex">\(e_2\)</span> are called <strong>multiple</strong> or <strong>parallel edges</strong> if <span class="arithmatex">\(f(e_1) = f(e_2)\)</span>.</li>
+<li>A <strong>pseudograph</strong> <span class="arithmatex">\(G = (V, E)\)</span> consists of <span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(E\)</span> and a function from <span class="arithmatex">\(E\)</span> to <span class="arithmatex">\(\{\{u, v\} | u, v \in V\}\)</span>. An edge is a loop if <span class="arithmatex">\(f(e) = \{u, u\} = \{u\}\)</span> for some <span class="arithmatex">\(u \in V\)</span>.</li>
 <li>A <strong>directed graph</strong> <span class="arithmatex">\(G = (V, E)\)</span> consists of <span class="arithmatex">\(V\)</span>, and a set of edges <span class="arithmatex">\(E\)</span> that are ordered pairs of elemetnes of <span class="arithmatex">\(V\)</span>.</li>
 <li>A <strong>directed multigraph</strong> <span class="arithmatex">\(G = (V, E)\)</span> consists of <span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(E\)</span> and a function from <span class="arithmatex">\(E\)</span> to <span class="arithmatex">\(\{(u, v) | u, v \in V, u \neq v\}\)</span>. The edges <span class="arithmatex">\(e_1\)</span> and <span class="arithmatex">\(e_2\)</span> are called <strong>multiple</strong> or <strong>parallel edges</strong> if <span class="arithmatex">\(f(e_1) = f(e_2)\)</span>.</li>
 </ul>
@@ -941,7 +933,7 @@
 </li>
 </ul>
 </div>
-<h4 id="incidence-matrix">Incidence Matrix 关联矩阵<a class="headerlink" href="#incidence-matrix" title="Permanent link">¶</a></h4>
+<h3 id="incidence-matrix">Incidence Matrix 关联矩阵<a class="headerlink" href="#incidence-matrix" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
 <p><span class="arithmatex">\(G = (V, E)\)</span> is an undirected graph with vertices <span class="arithmatex">\(v_1, \dots, v_n\)</span> and edges <span class="arithmatex">\(e_1, \dots, e_n\)</span>, then the <strong>incidence matrix</strong> w.r.t this ordering of <span class="arithmatex">\(V\)</span> and <span class="arithmatex">\(E\)</span> is matrix <span class="arithmatex">\(M = [m_{ij}]_{n \times m}\)</span>, where</p>
@@ -1017,7 +1009,10 @@
 </div>
 <div class="admonition theorem">
 <p class="admonition-title">Theorem</p>
-<p>A connected simple graph <span class="arithmatex">\(G\)</span> with <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(n \ge 3\)</span>) vertices has a Hamilton circuit if the sum of degree of each vertex pair is larger than <span class="arithmatex">\(n\)</span>.</p>
+<p>A connected simple graph <span class="arithmatex">\(G(V, E)\)</span> with <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(n \ge 3\)</span>) vertices has a Hamilton circuit if</p>
+<div class="arithmatex">\[
+    \forall u, v \in V,\ \ d(u) + d(v) \ge n.
+\]</div>
 </div>
 <h2 id="shortest-path-problems">Shortest Path Problems<a class="headerlink" href="#shortest-path-problems" title="Permanent link">¶</a></h2>
 <blockquote>
@@ -1145,7 +1140,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.22 21:34:40 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.23 01:06:50 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2022.11.10 01:04:43 CST</span>
