@@ -1,6 +1,6 @@
 # Chapter 5 | Initial-Value Problems for Ordinary Differential Equations
 
-!!! note "Initial-Value Problem (IVP)"
+!!! definition "Initial-Value Problem (IVP)"
     **Basic IVP (one variable first order)**
 
     Approximate the solution $y(t)$ to a problem of the form

@@ -9,7 +9,7 @@
 
     when $A = B$, R is a relation on $A$.
 
-    - The **domain** of $R$: $\text{Dom}(R) = \{x \in A | (x, y) \in R \text{ for some } y \in B\}.
+    - The **domain** of $R$: $\text{Dom}(R) = \{x \in A | (x, y) \in R \text{ for some } y \in B\}$.
     - The **range** of $R$: $\text{Ran}(R) = \{y \in B | (x, y) \in R \text{ for some } x \in A\}$.
 
 !!! theorem "Property"
@@ -17,7 +17,7 @@
 
 ## Combining Relations
 
-Since the nature of relation is a set, thus we have **union, intersection, complement and difference**. Moreover, we have **composite**.
+Since the nature of relation is a set, thus we have **union**, **intersection**, **complement** and **difference**. Moreover, we have **composite**.
 
 !!! definition
     Let $R$ be a relation from a set $A$ to $B$ and $S$ is a relation from $B$ to $C$. The **composite** of $R$ and $S$ is the relation
@@ -39,18 +39,21 @@ Since the nature of relation is a set, thus we have **union, intersection, compl
 
 !!! note "Remark"
     - $R$ is reflexive iff $R_= \subseteq R$.
+    - There are $2^{n(n - 1)}$ reflexive relations on a set with $n$ elements.
 
 !!! definition
     Let $R$ be a relation on a set $A$. Then
 
     - $R$ is **symmetric** $\Leftrightarrow$ $\forall\ x, y \in A,\ \ (x, y) \in R \Rightarrow (y, x) \in R$.
-    - $R$ is **antisymmetric** $\Leftrightarrow$ $\forall\ x, y \in A,\ \ (x, y) \in R (y, x) \in R \Rightarrow x = y$.
+    - $R$ is **antisymmetric** $\Leftrightarrow$ $\forall\ x, y \in A,\ \ (x, y) \in R, (y, x) \in R \Rightarrow x = y$.
 
 !!! note "Remark"
 
     - $R$ is symmetric iff $R^{-1} = R$.
     - $R$ is antisymmetric iff $R \cap R^{-1} \subseteq R_=$.
     - Non-symmetric is not the same as antisymmetric (e.g. $R_=$)
+    - There are $2^{\frac{n(n + 1)}{2}}$ symmetric relations on a set with $n$ elements.
+    - There are $2^{n} \cdot 3^{\frac{n(n - 1)}{2}}$ reflexive antisymmetric on a set with $n$ elements.
 
 !!! definition
     Let $R$ be a relation on a set $A$, then
@@ -82,14 +85,14 @@ $$
 !!! theorem "Property"
     
     - $M_R^2$ = $M_R \circ M_R$.
-    - $R$ is reflexive $\Leftrightarrow$ All terms $m_ii$ in the main diagnoal of $M_R$ are $1$.
-    - $R$ is symmetric$ $\Leftrightarrow$ $m_{ij} = m_{ji}$ for all $i$ and $j$, namely a symmetric matrix.
+    - $R$ is reflexive $\Leftrightarrow$ All terms $m_{ii}$ in the main diagnoal of $M_R$ are $1$.
+    - $R$ is symmetric $\Leftrightarrow$ $m_{ij} = m_{ji}$ for all $i$ and $j$, namely a symmetric matrix.
     - $R$ is trasitive $\Leftrightarrow$ whenever $c_{ij}$ in $C = M_R^2$ is nonzero then entry $m_{ij}$ in $M_R$ is also nonzero. ($R^2 \subseteq R$)
     - Combining Relations
 
     $$
-        M_{R_1 \cup R_2} = M_{R_1} \vee M_{R_2},
-        M_{R_1 \cap R_2} = M_{R_1} \wedge M_{R_2},
+        M_{R_1 \cup R_2} = M_{R_1} \vee M_{R_2},\ \
+        M_{R_1 \cap R_2} = M_{R_1} \wedge M_{R_2},\ \
         M_{S \circ R} = M_R \times M_S.
     $$
 
@@ -100,12 +103,12 @@ Each order pair is represented using an arc with its direction indicated by an a
 !!! theorem "Property"
 
     - $R$ is reflexive $\Leftrightarrow$ There are loops at each vertex.
-    - $R$ is symmetric$ $\Leftrightarrow$ Each edge is accompanied by an inverse edge.
+    - $R$ is symmetric $\Leftrightarrow$ Each edge is accompanied by an inverse edge.
 
 ## Closures of Relations
 
 !!! definition
-    Let $R$ be a relation on a set $A$. If there is a relation $S$ satisfy:
+    Let $R$ be a relation on a set $A$. If there is a relation $S$ satisfying
 
     - $S$ with property $\textbf{P}$ (reflexive, symmetry, or transitivity).
     - $\forall\ S'$ with property $\textbf{P}$ and $R \subseteq S'$, then $S \subseteq S'$.
@@ -134,7 +137,9 @@ Each order pair is represented using an arc with its direction indicated by an a
             t(R) = R^*,\ \ \text{ where $R^*$ is connectivity relation}.
         $$
 
-To prove the transitive closure, we gives the following definition and theorem.
+### Method to Find Transitive Closure
+
+To find the transitive closure, we gives the following definition and theorem.
 
 !!! theorem
     Let $R$ be a relation on set $A$. There is a path of length $n$ from $a$ to $b$ $\Leftrightarrow$ $(a, b) \in R^n$.
@@ -152,8 +157,6 @@ To prove the transitive closure, we gives the following definition and theorem.
         R^* = \bigcup\limits_{i = 1}^{n} R^i.
     $$
 
-### Method to find Transitive Closure
-
 !!! theorem "Lemma"
     Let $A$ be a set with $n$ elements, and let $R$ be a relation on $A$. If there is a path in $R$ from $a$ to $b$, then there is such a path with length not exceeding $n$. Moreover, when $a \ne b$, if there is a path in $R$ from $a$ to $b$, then there is such a path with length not exceeding $n - 1$.
 
@@ -170,7 +173,7 @@ To prove the transitive closure, we gives the following definition and theorem.
     $$
         M_R = \begin{bmatrix}
             1 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 1 & 0
-        \end{bmatrix}
+        \end{bmatrix}.
     $$ 
 
     **Solution.**
@@ -191,14 +194,14 @@ To prove the transitive closure, we gives the following definition and theorem.
         =
         \begin{bmatrix}
             1 & 1 & 1 \\ 0 & 1 & 0 \\ 1 & 1 & 1
-        \end{bmatrix}
+        \end{bmatrix}.
     $$
 
 !!! plane ""
     Computational complexity of this method is $(n - 1)n^2(2n-1)+(n-1)n^2 = O(n^4)$. Now we introduce an $O(n^3)$ method to solve out transtive closure.
 
 !!! plane ""
-    **Warshall's Algorithm"
+    **Warshall's Algorithm**
 
     !!! definition
         For a path $a, x_1, \dots, x_{m-1}, b$, the **interior vertices** are $x_1, \cdots, x_{m - 1}$.
@@ -207,8 +210,8 @@ To prove the transitive closure, we gives the following definition and theorem.
 
         $$
         \begin{aligned}
-            W_0 = M^R, \\
-            W_k = \left[w_{ij}^{(k)}\right]_{n \times n}.
+            W_0 &= M^R, \\
+            W_k &= \left[w_{ij}^{(k)}\right]_{n \times n}.
         \end{aligned}
         $$
 
@@ -286,7 +289,7 @@ To prove the transitive closure, we gives the following definition and theorem.
                 \end{bmatrix}.
             $$
 
-            - Consider the entries of $1$ in the **second** row (`none`) and the **second** column (`none`). Thus $W_2 = W_1$.
+            - Consider the entries of $1$ in the **second** row (`21`, `23`, `24`) and the **second** column (`none`). Thus $W_2 = W_1$.
             - Consider the entries of $1$ in the **third** row (`31`, `34`) and the **third** column (`23`, `43`). Combine them with elimination of `3` and we get `21`, `24`, `41` and `44`, and thus set
             
             $$
@@ -308,9 +311,11 @@ To prove the transitive closure, we gives the following definition and theorem.
             - Consider the entries of $1$ in the **fourth** row (`41`, `43`, `44`) and the **fourth** column (`14`, `24`, `34`, `44`). Combine them with elimination of `4` and we get `11`, `13`, `14`, `21`, `23`, `24` and `31`, `33`, `34`, and thus set
             
             $$
-                w_{11}^{(4)} = w_{13}^{(4)} = w_{14}^{(4)} = 1.
-                w_{21}^{(4)} = w_{23}^{(4)} = w_{24}^{(4)} = 1.
+            \begin{aligned}
+                w_{11}^{(4)} = w_{13}^{(4)} = w_{14}^{(4)} = 1. \\
+                w_{21}^{(4)} = w_{23}^{(4)} = w_{24}^{(4)} = 1. \\
                 w_{31}^{(4)} = w_{33}^{(4)} = w_{34}^{(4)} = 1.
+            \end{aligned}
             $$
 
         === "W4"
@@ -370,14 +375,14 @@ To prove the transitive closure, we gives the following definition and theorem.
 ## Partial Order
 
 !!! definition
-    Relation $R_\preceq: S \leftrightarrow S$ is a **partial order** if it's *reflexive*, *antisymmetric* and *transitive*.
+    Relation $R_\preceq: S \leftrightarrow S$ is a **partial order 偏序** if it's *reflexive*, *antisymmetric* and *transitive*.
 
     A set $S$ together with a partial order $R_\preceq$ is called a **partial order set** or **poset**, denoted by $(S, R_\preceq)$.
 
 !!! definition
     $a, b \in (S, \preceq)$ are called **comparable** if either $a \preceq b$ or $b \preceq a$, otherwise **incomparable**.
 
-    If every elements of $(S, \preceq)$ are comaparable, then $S$ is called a **totally order** or **linearly order set** and $\preceq$ is called a **total order** or **linear order**. A totally ordered set is also called a **chain**.
+    If every elements of $(S, \preceq)$ are comaparable, then $S$ is called a **totally order 全序** or **linearly order set** and $\preceq$ is called a **total order** or **linear order**. A totally ordered set is also called a **chain**.
 
 ### Hasse Diagram
 
@@ -391,7 +396,7 @@ We can represent the partial order by a graph called **Hasse Diagram**. To const
 !!! example
     Draw the Hasse diagram representing
 
-    - the partial order $\{(a, b) | a | b\}$ on the set $\{1, 2, 3, 4, 6, 8, 12\}$.
+    - the partial order $\{(a, b) | a \mid b\}$ on the set $\{1, 2, 3, 4, 6, 8, 12\}$.
     - the partial order $\{(A, B) | A \subseteq B\}$ on power set $2^S$, where $S = \{a, b, c\}$.
 
 
@@ -414,13 +419,13 @@ We can represent the partial order by a graph called **Hasse Diagram**. To const
         $d$ is a **greatest lower bound (glb) 下确界** of $B$ if $c$ is a lower bound and $\forall\ x$ is a lower bound, $x \preceq d$.
     
 !!! example
-    For $(A, \subseteq)$, where $A = 2^S$, $S = \{a, b, c\}$, and $B = \{\emptyset, \{a\}, \{c\}, \{a, b\}\}$.
+    For $(A, \subseteq)$, where $A = 2^S$, $S = \{a, b, c, d\}$, and $B = \{\emptyset, \{a\}, \{c\}, \{a, b\}\}$.
 
-    - minimal element: $emptyset$.
+    - minimal element: $\emptyset$.
     - maximal element: $\{c\}, \{a,b\}$.
     - the greatest element: none.
     - the least element: $\emptyset$.
-    - upper bound: $\{a, b, c\}$.
+    - upper bound: $\{a, b, c\}, \{a, b, c, d\}$.
     - least upper bound: $\{a, b, c\}$.
     - lower bound: $\emptyset$.
     - least lower bound: $\emptyset$.
@@ -431,5 +436,5 @@ We can represent the partial order by a graph called **Hasse Diagram**. To const
     A partially ordered set in which every pair of elements has both a least upper bound and a greatest lower bound is called a **lattice 格**.
 
 !!! example
-    - The poset $(\mathbb{Z}, |)$ is a lattice, since for the pair $(a, b)$, $\text{lub}(a, b) = \text{lcm}(a, b)$ and $\text{glb}(a, b) = \text{gcd}(a, b)$.
-    - The poset $(\{1, 2, 3, 4, 5\}, |)$ is not a lattice, since $\text{lub}(2, 3) = \text{lcm}(2, 3) = 6 \notin \{1, 2, 3, 4, 5\}$.
+    - The poset $(\mathbb{Z}, \mid)$ is a lattice, since for the pair $(a, b)$, $\text{lub}(a, b) = \text{lcm}(a, b)$ and $\text{glb}(a, b) = \text{gcd}(a, b)$.
+    - The poset $(\{1, 2, 3, 4, 5\}, \mid)$ is not a lattice, since $\text{lub}(2, 3) = \text{lcm}(2, 3) = 6 \notin \{1, 2, 3, 4, 5\}$.

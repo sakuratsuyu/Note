@@ -108,10 +108,10 @@ and the roots $r_i$ are called the **characteristic roots**.
 
             $$
             \begin{aligned}
-                a_n &= (\alpha_{1, 0} + a_{1, 1}n + \cdots + \alpha_{1, m_1} n^{m_1 - 1}) r_1^n \\
-                    &+ (\alpha_{2, 0} + a_{2, 1}n + \cdots + \alpha_{2, m_2} n^{m_2 - 1}) r_2^n \\
+                a_n &= (\alpha_{1, 0} + \alpha_{1, 1}n + \cdots + \alpha_{1, m_1} n^{m_1 - 1}) r_1^n \\
+                    &+ (\alpha_{2, 0} + \alpha_{2, 1}n + \cdots + \alpha_{2, m_2} n^{m_2 - 1}) r_2^n \\
                     &+ \cdots \\
-                    &+ (\alpha_{t, 0} + a_{t, 1}n + \cdots + \alpha_{t, m_t} n^{m_t - 1}) r_t^n \\
+                    &+ (\alpha_{t, 0} + \alpha_{t, 1}n + \cdots + \alpha_{t, m_t} n^{m_t - 1}) r_t^n \\
             \end{aligned}
             ,\ \ 
             \text{ where $\alpha_{ij}$ are constants}.
@@ -144,7 +144,7 @@ and the roots $r_i$ are called the **characteristic roots**.
             The charateristic equation is $r^3 + 3r^2 + 3r + 1 = (r + 1)^3 = 0$ and the root is $r = -1$ of multiplicity $3$. The general solution is
 
             $$
-                a_n = \alpha_{1, 0} (-1)^n + \alpha_{1, 1} n (-1)^n + \alpha_{1, 2} n^2 (-1)^n.
+                a_n = (\alpha_{1, 0} + \alpha_{1, 1} n + \alpha_{1, 2} n^2)(-1)^n.
             $$
 
             Substitue initial condition, we have $\alpha_{1, 0} = 1$, $\alpha_{1, 1} = 3$ and $\alpha_{1, 2} = -2$.
@@ -172,7 +172,7 @@ Moreover, we can also consider the nonhomogeneous cases.
     If $\{a_n^{(p)}\}$ is **particular solution** of the linear nonhomogeneous recurrence relation with constant coefficients
 
     $$
-        a_n  = c_1 a_{n - 1} + c_2 a_{n - 2} + \cdots + c_k a_{n - k} + F(n),,
+        a_n  = c_1 a_{n - 1} + c_2 a_{n - 2} + \cdots + c_k a_{n - k} + F(n),
     $$
 
     then each solution is of the form $\{a_n^{(p)} + a_n^{(h)}\}$, where $a_n^{(h)}$ is a solution of the associated homogeneous recurrence relation
@@ -264,7 +264,7 @@ Moreover, for specific forms of $F(n)$, we have the following theorem.
     $$
         \binom{u}{k} = \left\{
             \begin{aligned}
-                & \frac{1}{k!} u(u - 1)\cdots(u - k + 1), & k > 0 \\
+                & \frac{1}{k!} u(u - 1)\cdots(u - k + 1), & k > 0, \\
                 & 1, & k = 0.
             \end{aligned}
         \right.
@@ -284,13 +284,13 @@ Moreover, for specific forms of $F(n)$, we have the following theorem.
     $$
 
 <div align="center">
-	<img src="../Pic/12.png" style="width:600px"/>
+	<img src="../Pic/12.png" style="width:700px"/>
 </div>
 
 ### Application
 
 !!! example "Solve Recurrence Relations"
-    Solve $a_n = 8a_{n - 1} + 10^{n - 1}$ with initial condition $a_1 = 9$.
+    Solve $a_n = 8a_{n - 1} + 10^{n - 1}$ with initial condition $a_0 = 1$.
 
     **Solution.**
 
@@ -301,7 +301,7 @@ Moreover, for specific forms of $F(n)$, we have the following theorem.
         G(x) - a_0 &= \sum\limits_{k = 1}^{\infty} a_k x^k = \sum\limits_{k = 1}^{\infty} (8 a_{k - 1} x^k + 10^{k - 1} x^k) \\
                    &= 8 \sum\limits_{k = 1}^{\infty} a_{k - 1} x^k + \sum\limits_{k = 1}^{\infty} 10^{k - 1} x^k \\
                    &= 8 x\sum\limits_{k = 1}^{\infty} a_{k - 1} x^{k - 1} + x \sum\limits_{k = 1}^{\infty} 10^{k - 1} x^{k - 1} \\
-                   &= 8 x\sum\limits_{k = 0}^{\infty} a_{k - 1} x^k + x \sum\limits_{k = 0}^{\infty} 10^{k - 1} x^k \\
+                   &= 8 x\sum\limits_{k = 0}^{\infty} a_{k - 1} x^k + x \sum\limits_{k = 0}^{\infty} 10^k x^k \\
                    &= 8 G(x) + \frac{x}{1 - 10x}.
     \end{aligned}
     $$
@@ -484,7 +484,7 @@ $$
     \small
     \begin{aligned}
         & N = 3^6, \\
-        & N(P_i) = 2^6 \\
+        & N(P_i) = 2^6, \\
         & N(P_i P_j) = 1^6, \\
         & N(P_1 P_2 P_3) = 0.
     \end{aligned}

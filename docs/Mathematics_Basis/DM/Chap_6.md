@@ -42,7 +42,7 @@ We give some elegant applications of this principle.
 
     === "Example 1"
 
-        Given $n + 1$ positive integers $a_i$ ($i = 1, \dots, n + 1$) and $a_i \le 2n$, show that $\exist\ i, j,\ \ \text{ s.t. } a_i \mid a_j$.
+        Given $n + 1$ positive integers $a_i$ ($i = 1, \dots, n + 1$) and $a_i \le 2n$, show that $\exist i, j, \text{ s.t. } a_i \mid a_j$.
 
         **Solution.**
 
@@ -53,7 +53,7 @@ We give some elegant applications of this principle.
         - the pigeonhole is $\{q_i\}_{i = 1}^{n}$, totally $n$ elements.
         - the pigeon is $\{a_i\}_{i = 1}^{n + 1}$, totally $n + 1$ elements.
 
-        Thus $\exists\ i, j,\ \ \text{ s.t. } q_i = q_j$, and $a_i = 2^{k_i}q_i$, $a_j = 2^{k_j}q_j$. Without loss of generation, if $k_i < k_j$, then $a_i \mid a_j$.
+        Thus $\exists\ i, j, \text{ s.t. } q_i = q_j$, and $a_i = 2^{k_i}q_i$, $a_j = 2^{k_j}q_j$. Without loss of generation, if $k_i < k_j$, then $a_i \mid a_j$.
 
     === "Example 2"
 
@@ -87,7 +87,7 @@ We give some elegant applications of this principle.
             - the pigeonhole is $\{(i_k, d_k)\}$, totally $n^2$ elements.
             - the pigeon is $\{a_i\}_{i = 1}^{n^2 + 1}$, totally $n^2 + 1$ elements.
 
-            Thus $\exists\ s, t,\ \ \text{ s.t. } i_s = i_t, d_s = d_t$, which leads to a contradiction.
+            Thus $\exists\ s, t, \text{ s.t. } i_s = i_t, d_s = d_t$, which leads to a contradiction.
     
     === "Example 3"
 
@@ -103,7 +103,7 @@ We give some elegant applications of this principle.
             - the pigeonhole is $[1]_n, \dots, [n - 1]_n$, totally $n - 1$ elements.
             - the pigeon is $\{A_i\}_{i = 1}^{n}$, totally $n$ elements.
 
-            Thus $\exists\ i < j,\ \ \text{ s.t. } A_i \equiv A_j (\text{ mod } n)$. Thus $n \mid (A_j - A_i)$.
+            Thus $\exists\ i < j, \text{ s.t. } A_i \equiv A_j (\text{ mod } n)$. Thus $n \mid (A_j - A_i)$.
 
     === "Example 4"
 
@@ -123,7 +123,7 @@ We give some elegant applications of this principle.
             - the pigeonhole is $\{0, 1\} \times \{0, 1\} \times \cdots \times \{0, 1\} - (0, 0, \cdots, 0)$, totally $2^n - 1$ elements.
             - the pigeon is $\{A_i\}_{i = 1}^{2^n}$, totally $2^n$ elements.
 
-            Thus $\exists\ i < j,\ \ \text{ s.t. }$ 
+            Thus $\exists\ i < j, \text{ s.t. }$ 
 
             $$
                 \frac{A_j}{A_i} = x_1^{2k_1} x_2^{2k_2} \cdots x_n^{2k_n} = (x_1^{k_1} x_2^{k_2} \cdots x_n^{k_n})^2,
@@ -133,7 +133,7 @@ We give some elegant applications of this principle.
         
     === "Example 5"
 
-        During 30 days, a baseball team plays at least $1$ game a day, but no more than $45$ games in total. Show that there must be a period of some number of consecutive adays during which the team ust play exactly $14$ games.
+        During $30$ days, a baseball team plays at least $1$ game a day, but no more than $45$ games in total. Show that there must be a period of some number of consecutive adays during which the team ust play exactly $14$ games.
             
         **Solution.**
 
@@ -148,7 +148,7 @@ We give some elegant applications of this principle.
         - the pigeonhole is $1 \sim 59$, totally $59$ elements.
         - the pigeon is $\{a_i\}_{i = 1}^{30}, \{a_i + 14\}_{i = 1}^{30}$, totally $60$ elements.
 
-        Thus $\exists\ i < j,\ \ \text{ s.t. } a_i = a_j + 14$.
+        Thus $\exists\ i < j, \text{ s.t. } a_i = a_j + 14$.
 
 
 
@@ -175,8 +175,8 @@ We give some elegant applications of this principle.
 !!! theorem "Property"
     
     - $\sum\limits_{k = 0}^{n}C(n, k) = 2^n$.
-    - **Pascal's Identity" $C(n + 1, k) = C(n, k) + C(n, k - 1)$.
-    - **Vandermonde's Identity$ $C(m + n, r) = \sum\limits_{k = 0}^rC(m, r - k)C(n, k)$.
+    - **Pascal's Identity** $C(n + 1, k) = C(n, k) + C(n, k - 1)$.
+    - **Vandermonde's Identity** $C(m + n, r) = \sum\limits_{k = 0}^rC(m, r - k)C(n, k)$.
 
 ### Binomial Coefficients
 
@@ -227,7 +227,7 @@ We give some elegant applications of this principle.
 ## Generating Permutations
 
 !!! definition
-    The permutaion $a_1 a_2 \cdots a_n$ **precedes** the permutation of $b_1 b_2 \cdots b_n$, if for some $k$, $a_1 = b_1, \cdots, a_{k - 1} = b_{k - 1}$ and $a_k < b_k$. It defines an order called $lexicographic order**.
+    The permutaion $a_1 a_2 \cdots a_n$ **precedes** the permutation of $b_1 b_2 \cdots b_n$, if for some $k$, $a_1 = b_1, \cdots, a_{k - 1} = b_{k - 1}$ and $a_k < b_k$. It defines an order called **lexicographic order**.
 
 !!! example
     The next permutaion in lexicographic order after $362541$ is $364125$.

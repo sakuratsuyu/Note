@@ -4,17 +4,19 @@
 
 **The Well-Ordering Property:** Every nonnegative integers has *a least element*.
 
-### The First Principle of Mathematical Induction
+!!! plane ""
+    **The First Principle of Mathematical Induction**
 
-To prove by mathematical induction that$P(n)$is true for every positive integer$n$,
+    To prove by mathematical induction that $P(n)$ is true for every positive integer$n$,
 
-1. Basic Step. The proposition $P(1)$ is shown to be true.
-2. Inductive Step. The implication $P(n) \rightarrow P(n + 1)$ is shown to be true for every positive integer $n$.
+    1. Basic Step. The proposition $P(1)$ is shown to be true.
+    2. Inductive Step. The implication $P(n) \rightarrow P(n + 1)$ is shown to be true for every positive integer $n$.
 
-### The Second Principle of Mathematical Induction
+!!! plane ""
+    **The Second Principle of Mathematical Induction**
 
-1. Basic Step. The proposition $P(1)$ is shown to be true.
-2. Inductive Step. The implication $[P(1) \wedge P(2) \wedge \cdots \wedge P(n)] \rightarrow P(n + 1)$ is shown to be true for every positive integer $n$.
+    1. Basic Step. The proposition $P(1)$ is shown to be true.
+    2. Inductive Step. The implication $[P(1) \wedge P(2) \wedge \cdots \wedge P(n)] \rightarrow P(n + 1)$ is shown to be true for every positive integer $n$.
 
 ## Recursion
 

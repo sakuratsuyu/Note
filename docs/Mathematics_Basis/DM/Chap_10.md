@@ -4,9 +4,9 @@
 
     - A **simple graph** $G = (V, E)$ consists of $V$, a nonempty set of vertices and $E$, a set of unordered pair of distinct elements of $V$ called edges.
     - A **multigraph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to $\{(u, v) | u, v \in V, u \neq v\}$. The edges $e_1$ and $e_2$ are called **multiple** or **parallel edges** if $f(e_1) = f(e_2)$.
-    - A **pseudograph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to \{(u, v) | u, v \in V\}. An edge is a loop if $f(e) = \{u, u\} = \{u\}$ for some $u \in V$.
+    - A **pseudograph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to $\{(u, v) | u, v \in V\}$. An edge is a loop if $f(e) = \{u, u\} = \{u\}$ for some $u \in V$.
     - A **directed graph** $G = (V, E)$ consists of $V$, and a set of edges $E$ that are ordered pairs of elemetnes of $V$.
-    - A **directed multigraph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to \{(u, v) | u, v \in V, u \noteq v\}. The edges $e_1$ and $e_2$ are called **multiple** or **parallel edges** if $f(e_1) = f(e_2)$.
+    - A **directed multigraph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to $\{(u, v) | u, v \in V, u \neq v\}$. The edges $e_1$ and $e_2$ are called **multiple** or **parallel edges** if $f(e_1) = f(e_2)$.
 
     
     | Type                | Edges      | Multiple Edges? | Loop? |
@@ -23,10 +23,10 @@
     - $H$ is a **spanning subgraph** of $G$, if $W = V,\ \ F \subseteq E$.
     - **Union** of two simple graph $G_1 = (V_1, E_1)$ and $G_2 = (V_2, E_2)$ is the simple graph with vertex set $V_1 \cup V_2$ and edge set $E_1 \cup E_2$, denoted by $G_1 \cup G_2$.
 
-## Adjacecy and Degree
+## Adjacency and Degree
 
-!!! note
-    In undirected graph, we use $\{u, v\}$ to denote an edge, while in directed graph, we use $(u, v)$ to denote an edge,
+!!! tip
+    In undirected graph, we use $\{u, v\}$ to denote an edge, while in directed graph, we use $(u, v)$ to denote an edge.
 
 !!! definition
     For Undirected graph,
@@ -46,13 +46,13 @@
     $$
 
 !!! definition
-    For directed graph,
+    For a directed graph,
 
     - If $e = (u, v)$ is an edge of $G$.
         - $u$ is the initial vertex and adjecnt to $v$.
         - $u$ is the end vertex or terminal and adjecnt from $v$.
-    - $In-degree$ of $v$, denoted by $\text{deg}^{-}v$ is the number of edges with $v$ as their end vertex.
-    - $Out-degree$ of $v$, denoted by $\text{deg}^{+}v$ is the number of edges with $v$ as their initial vertex.
+    - **In-degree** of $v$, denoted by $\text{deg}^{-}v$, is the number of edges with $v$ as their end vertex.
+    - **Out-degree** of $v$, denoted by $\text{deg}^{+}v$, is the number of edges with $v$ as their initial vertex.
 
 !!! theorem
     $G$ is a directed graph,
@@ -102,7 +102,7 @@
     *n*-Cubes $Q_n$ is the graph has vertices representing $2^n$ bit strings of length $n$.
 
 !!! plane ""
-    **Bipartite graph** 二分图 / 偶图
+    **Bipartite Graph** 二分图 / 偶图
 
     A bipartite graph $G = (V, E)$ is a graph s.t.
 
@@ -213,7 +213,7 @@ There are many ways to represent graphs: Graph, adjacecy lists, adjacency matric
     $G$ is a graph with its adjacency matrix $A$ w.r.t the ordering $v_1, \dots, v_n$. The number of different paths of length $r$ from $v_i$ to $v_j$ equals to the $(i, j)$th entry of $A^r$.
 
     !!! note
-        We can use this theorem to determine whether a graph is connected.
+        We can use this theorem to determine **whether a graph is connected**.
 
 ## Euler Paths and circuits
 
@@ -233,7 +233,11 @@ There are many ways to represent graphs: Graph, adjacecy lists, adjacency matric
     - A connected graph $G$ is an **Hamilton graph** if it has an Euler circuit.
 
 !!! theorem
-    A connected simple graph $G$ with $n$ ($n \ge 3$) vertices, then $G$ has a Hamilton circuit if the degree of each vertex is at least $n / 2$.
+    A connected simple graph $G$ with $n$ ($n \ge 3$) vertices has a Hamilton circuit if the degree of each vertex is at least $n / 2$.
+
+!!! theorem
+    A connected simple graph $G$ with $n$ ($n \ge 3$) vertices has a Hamilton circuit if the sum of degree of each vertex pair is larger than $n$.
+
 
 ## Shortest Path Problems
 
@@ -283,7 +287,7 @@ From **Euler's Formula**, some corollaries are derived to easily show **a graph 
         e \le 2v - 4.
     $$
 
-    **NOTE** the condition **simple** is neccessary.
+    **NOTE:** the condition **simple** is neccessary.
 
 ??? proof
     Define **degree of a region** is the number of edge on the boundary of the region.
@@ -297,7 +301,7 @@ From **Euler's Formula**, some corollaries are derived to easily show **a graph 
         2e = \sum\limits_{\text{all region $R$}}\text{deg}(R) \ge 3r \Rightarrow \frac{2}{3}e \ge r.
     $$
 
-    From Euler formular, we have
+    From Euler formula, we have
 
     $$
         e - v + 2 = r \le \frac{2}{3}e \Rightarrow e \le 3v - 6.
@@ -353,7 +357,8 @@ The graph is called **dual graph** of the map.
 
 !!! example
     - The chromatic number of $K_n$ is $n$.
-    - The chromatic number of the complete bipartite $K_{m, n}$ is $2$. (it's also the sufficient and necessary condition)
+    - The chromatic number of the complete bipartite $K_{m, n}$ is $2$.
+        (it's also the sufficient and necessary condition)
     - The chromatic number of $C_n$ is `n % 2 == 0 ? 2 : 3`.
 
 !!! plane ""

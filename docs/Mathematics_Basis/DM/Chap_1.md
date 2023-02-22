@@ -50,7 +50,7 @@
 
     - **tautology (重言式 / 永真式):** if its truth table contains only *true* values for every case.
     - **contradiction (永假式):** if its truth table contains only *false* values for every case.
-    - **Contigence:** neither a tautology nor a contradiction.
+    - **contingence:** neither a tautology nor a contradiction.
 
 ### Proposition Equivalences
 
@@ -60,21 +60,21 @@
 !!! definition
     if $p \rightarrow q$,
 
-    - **inverse (否命题)** $\neg p \rightarrow \neg q$.
-    - **converse (逆命题)** $q \rightarrow p$.
+    - **inverse (否命题)** $\neg p \rightarrow \neg q$
+    - **converse (逆命题)** $q \rightarrow p$
     - **contrapositive (逆否命题)** $\neg q \rightarrow \neg p$
 
     **NOTE:** $p \rightarrow q \Leftrightarrow \neg q \rightarrow \neg p$.
 
 <div align="center">
-	<img src="../Pic/0.png" style="width:400px"/>
+	<img src="../Pic/0.png" style="width:430px"/>
 </div>
 
 <div align="center">
 	<img src="../Pic/1.png" style="width:600px"/>
 </div>
 
-## Predicates and Quantifieres
+## Predicates and Quantifiers
 
 !!! definition
     **Predicates (谓词 / 断言)** is a  statement of the form $P(x_1, x_2, \dots, x_n)$, where $P$ is a *propositional function* at the *n*-tuple $(x_1, x_2,\dots,x_n)$.
@@ -82,9 +82,9 @@
 ### Quantifier 量词
 
 - domain / universe of discourse 论域
-- Universal Quantifier 全称量词
+- universal quantifier 全称量词
     - For all $x$, $p(x): \forall xp(x)$.
-- Existential Quantifier 存在量词
+- existential quantifier 存在量词
     - For some $x$, $p(x): \exists xp(x)$.
 
 ### Banding Variables
@@ -96,16 +96,33 @@
 
 !!! note "Remark"
 
-    - If the universe of discourse can be listed, then $\forall xP(x) \Leftrightarrow P(x_1) \wedge \dots \wedge P(x_n)$ and $\exists xP(x) \Leftrightarrow P(x_1) \vee\dots \vee P(x_n)$.
+    - If the universe of discourse can be listed, then
+
+        $$
+            \forall xP(x) \Leftrightarrow P(x_1) \wedge \dots \wedge P(x_n)
+        $$
+        
+        $$
+            \exists xP(x) \Leftrightarrow P(x_1) \vee\dots \vee P(x_n)
+        $$
+
     - Properties
-        - De Morgan's Laws: $\neg \forall x p(x) \Leftrightarrow \exists x \neg p(x),\ \ \neg \exists x p(x) \Leftrightarrow \forall x \neg p(x)$.
+        - De Morgan's Laws
+        
+            $$
+                \neg \forall x p(x) \Leftrightarrow \exists x \neg p(x),\ \ \neg \exists x p(x) \Leftrightarrow \forall x \neg p(x)
+            $$
+
+        - 
 
             $$
             \begin{aligned}
                 \forall x ((p(x) \wedge q(x)) & \Leftrightarrow (\forall x p(x)) \wedge (\forall x q(x)). \\
-                exists x ((p(x) \vee q(x)) & \Leftrightarrow (\exists x p(x)) \vee (\exists x q(x)).
+                \exists x ((p(x) \vee q(x)) & \Leftrightarrow (\exists x p(x)) \vee (\exists x q(x)).
             \end{aligned}
             $$
+
+        - 
 
             $$
             \begin{aligned}
@@ -128,8 +145,9 @@
 
 !!! definition
     **Deductive reasoning** the process of reaching a conclusion $q$ from a sequence of propositions $p_1,\dots,p_n$.
+
     - $p_1,\dots,p_n$ are premises or hypothesis.
-    - $q$is conclusion.
+    - $q$ is conclusion.
 
     An **argument** in propositional logic is a sequence of propositions. All but the final proposition in the argument are called **premises (假设)** and the final proposition is called the **conclusion (结论)**.
 
@@ -149,7 +167,7 @@
 </div>
 
 <div align="center">
-	<img src="../Pic/3.png" style="width:300px"/>
+	<img src="../Pic/3.png" style="width:400px"/>
 </div>
 
 !!! note "Remark"
@@ -166,7 +184,7 @@
 
    - About **Resolution** rule
         - Use for automatic theorem proving.
-        - $q\vee r$is called the **resolvent**.
+        - $q\vee r$ is called the **resolvent**.
 
 
 ## Normal Form
@@ -202,7 +220,9 @@ $$
     - Full disjunctive form can be obtained by using truth table.
     - $\{\neg, \wedge, \vee\}$ is **functionally complete**.
 
-### Conjuctive Normal Form (CNF) (DNF similarly)
+### Conjuctive Normal Form (CNF)
+
+> Similar to DNF
 
 ### Prenex Normal Form 前束范式
 
@@ -221,3 +241,25 @@ $$
     2. Eliminate all connectives $\rightarrow$ and $\leftrightarrow$.
     3. Move all negations inward.
     4. Move all quantifiers to the front of the formula.
+
+!!! example
+    Convert
+
+    $$
+        \forall x (\forall y P(y, x) \rightarrow \exist y Q(x, y))
+    $$
+
+    into prenex normal form.
+
+    **Solution.**
+
+    $$
+    \begin{aligned}
+        \forall x & (\forall y P(y, x) \rightarrow \exists y Q(x, y)) \\
+        & \Leftrightarrow \forall x (\neg \forall y P(y, x) \vee \exists y Q(x, y)) \\
+        & \Leftrightarrow \forall x (\exists y \neg P(y, x) \vee \exists y Q(x, y)) \\
+        & \Leftrightarrow \forall x (\exists y \neg P(y, x) \vee \exists z Q(x, z)) \\
+        & \Leftrightarrow \forall x \exists y \exists z (\neg P(y, x) \vee Q(x, z)) \\
+        & \Leftrightarrow \forall x \exists y \exists z (P(y, x) \rightarrow Q(x, z)) \\
+    \end{aligned}
+    $$

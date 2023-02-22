@@ -3,29 +3,27 @@
 ## Set and Subset
 
 !!! definition
-    The object in a set are **elements**. A **set** *contains* its elements.
+    The objects in a set are **elements**. A **set** *contains* its elements.
 
-**Ways to describe sets:** List; Predicate; Venn Diagram.
+- **Ways to describe sets:** List; Predicate; Venn Diagram.
+- **Properties of sets:** Certainty; Don't care order and repetition of elements; Finite and Infinite set.
+- **Subset**
 
-**Properties of sets:** Certainty; Don't care order and repetition of elements; Finite and Infinite set.
+    $$
+        S \subseteq T \Leftrightarrow (\forall x \in S \Rightarrow x \in T).
+    $$
 
-**Subset**
+- **Proper subset (真子集)**
 
-$$
-S \subseteq T \Leftrightarrow (\forall x \in S \Rightarrow x \in T).
-$$
+    $$
+        S \subset T \Leftrightarrow (\forall x \in S \Rightarrow x \in T) \wedge S \ne T.
+    $$
 
-**Proper subset (真子集)**
+- **Empty set $\emptyset$ and Universal set $U$**
 
-$$
-S \subset T \Leftrightarrow (\forall x \in S \Rightarrow x \in T) \wedge S \ne T.
-$$
-
-** Empty set $\emptyset$ and Universal set $U$**
-
-$$
-\text{For any set } A,\ \ A \subseteq A,\ \ \emptyset \subseteq A \subseteq U.
-$$
+    $$
+        \text{For any set } A,\ \ A \subseteq A,\ \ \emptyset \subseteq A \subseteq U.
+    $$
 
 ### Operations
 
@@ -37,7 +35,7 @@ $$
     - Properties
         
         $$
-            A \oplus B = B \oplus A, (A \oplus B) \oplus C = A \oplus (B \oplus C), A \oplus A = \emptyset, A \oplus \emptyset = A.
+            A \oplus B = B \oplus A,\ \ (A \oplus B) \oplus C = A \oplus (B \oplus C),\ \ A \oplus A = \emptyset,\ \ A \oplus \emptyset = A.
         $$
 
         $$
@@ -64,13 +62,13 @@ If a set has $n$ elements, then its power set has $2^n$ elements.
         A \times B = \{(a, b) | a \in A \wedge b \in B\}.
     $$
 
-    Generally for $n$ sets $A_1,\ \ \dots,\ \ A_n$, 
+    Generally for $n$ sets $A_1, \dots, A_n$, 
     
     $$
         A_1 \times A_2 \times \ \cdots \times A_n = \{(a_1, a_2, \dots a_n) | a_i \in A_i \text{ for } i = 1, 2, \dots, n\}.
     $$
 
-!!! note "Properties"
+!!! theorem "Properties"
 
     - $A \times \emptyset = \emptyset \times A = \emptyset$.
     - In general, $A \times B \ne B \times A$.
@@ -90,7 +88,9 @@ If a set has $n$ elements, then its power set has $2^n$ elements.
 
 **Cardinality** is the size of a set $S$, denoted by $|S|$.
 
-!!! theorem | "Prniciple of Inclusion-exclusion 容斥原理"
+### Finite Sets
+
+!!! theorem "Theorem | Prniciple of Inclusion-exclusion 容斥原理"
 
     $$
         |A \cup B| = |A| + |B| - |A \cap B|.
@@ -102,11 +102,11 @@ If a set has $n$ elements, then its power set has $2^n$ elements.
         \left|\bigcup_{i = 1}^nA_i\right| = \sum_{i = 1}^n|A_i| - \sum_{1 \le i \ne j \le n} |A_i \cap A_j| + \cdots + (-1)^{n-1}\left|\bigcap_{i = 1]}^n A_i\right|.
     $$
 
+### Inifinite Sets
 
 !!! definition
     Two sets have **the same cardinality** or say are **equinumerous (等势的)** iff there is an *bijective* from $A$ to $B$, i.e.$|A| = |B|$.
 
-### Inifinite Sets
 - Countable (denumerable) set
     - A set that is equinumerous with $\mathbb{N}$, e.g. $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{N} \times \mathbb{N}$.
     - $\aleph_0$ is called **countable**.
@@ -120,11 +120,12 @@ If a set has $n$ elements, then its power set has $2^n$ elements.
     - $\left|2^A\right| > |A|$.
     - $|\mathbb{R}| = \aleph_1 > \aleph_0$.
 
-### Continuum Hypothesis (CH) 连续统假设
+!!! plane ""
+    **Continuum Hypothesis (CH) 连续统假设**
 
-$$
-    \exists ? \omega,\ \ s.t.\ \aleph_0 \lt \omega \lt \aleph_1.
-$$
+    $$
+        \exists ? \omega,\ \ s.t.\ \aleph_0 \lt \omega \lt \aleph_1.
+    $$
 
 ## Functions
 
@@ -154,16 +155,16 @@ $f$ maps $A$ to $B$.
 - **One-to-one Correspondence (Bijective) 双射**
     
     <div align="center">
-        one-to-one  + onto
+        one-to-one + onto
     </div>
 
 ### Inverse and Composition
 
 !!! definition "Definition | Inverse Function"
-    If $f$ is bijective, $f^{-1}:B\rightarrow A$is the **inverse function** of$f$.
+    If $f$ is bijective, then $f^{-1}:B\rightarrow A$ is the **inverse function** of$f$.
     
     $$
-        \forall a \in A, b \in B, (f(a) = b) \Leftrightarrow (f^{-1}(b) = a).
+        \forall a \in A, b \in B,\ \ (f(a) = b) \Leftrightarrow (f^{-1}(b) = a).
     $$
 
     Thus we also call a one-to-one correspondence **invertible**.
@@ -185,7 +186,8 @@ $f$ maps $A$ to $B$.
 !!! quote
     Similar to [**Algorithm Analysis**](../../../Computer_Science_Courses/FDS/Algorithm_Analysis/#asymptotic-notation) in **FDS**.
 
-BIG-O NOTATION, BIG-OMEGA NOTATION and BIG_THETA NOTATION.
+    BIG-O NOTATION, BIG-OMEGA NOTATION and BIG-THETA NOTATION.
+
 
 !!! theorem
     If

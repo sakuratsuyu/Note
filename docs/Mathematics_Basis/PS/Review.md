@@ -1,5 +1,10 @@
 # 概率论与数理统计
 
+!!! warning
+    It's not a complete note, but a simple review of **concepts** and most of the concerned **formulae**.
+
+    Since this course is taught and examined in Chinese, I write in Chinese there.
+
 ## 1 概率论的基本概念
 
 ### 1.1 样本空间与随机事件
@@ -68,7 +73,7 @@
 - 离散型随机变量，离散型分布
 - 概率分布律
 - 常见分布
-    - 0 - 1 分布 / 两点分布$0-1(p)$ 伯努利试验
+    - 0 - 1 分布 / 两点分布 $0-1(p)$ 伯努利试验
         - $P(X = k) = p^k(1 - p)^{1 - k}$
         - $E(X) = p$
     - 二项分布 $B(n,p)$ n 重伯努利试验
@@ -144,6 +149,11 @@
 
 ### 2.5 随机变量函数的分布
 
+- 可加性
+    - $X \sim B(n, p),\ \ Y \sim B(m, p) \Rightarrow X + Y \sim B(m + n, p)$
+    - $X \sim P(\lambda_1),\ \ Y \sim P(\lambda_2) \Rightarrow X + Y \sim P(\lambda_1 + \lambda_2)$
+    - $X\sim N(\mu_1,\sigma_1^2),Y\sim N(\mu_2,\sigma_2^2) \Rightarrow X\pm Y\sim N(\mu_1 \pm \mu_2,\sigma_1^2+\sigma_2^2)$
+
 ## 3 多元随机变量及其分布
 
 ### 3.1 二元离散型随机变量
@@ -166,10 +176,6 @@
     - 均匀分布
     - 正态分布 $X, Y \sim N(\mu_1, \mu_2; \sigma_1^2, \sigma_2^2; \rho)$
         - $X \sim N(\mu_1, \sigma_1^2),\ \ Y \sim N(\mu_2, \sigma_2^2)$
-- 可加性
-    - $X \sim B(n, p),\ \ Y \sim B(m, p) \Rightarrow X + Y \sim B(m + n, p)$
-    - $X \sim P(\lambda_1),\ \ Y \sim P(\lambda_2) \Rightarrow X + Y \sim P(\lambda_1 + \lambda_2)$
-    - $X\sim N(\mu_1,\ \ \sigma_1^2),Y\sim N(\mu_2,\sigma_2^2) \Rightarrow X\pm Y\sim N(\mu_1 \pm \mu_2,\sigma_1^2+\sigma_2^2)$
 
 ### 3.4 随机变量的独立性
 
@@ -189,7 +195,7 @@
 
 ### 4.1 数学期望
 
-- 定义，存在性, 性质
+- 定义，存在性，性质
 - $E(X) = \sum\limits_{k = 1}^{+\infty} x_k p_k = \int_{-\infty}^{\infty}xf(x)dx$
 - $E(Y) = E(g(X)) = \sum\limits_{k = 1}^{+\infty} g(x_k) p_k = \int_{-\infty}^{+\infty}g(x)f(x)dx$
 - $E(Z) = E(h(X, Z)) = \sum\limits_{i = 1}^{+\infty} \sum\limits_{j = 1}^{+\infty} h(x_i, y_j) p_{ij} = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}h(x, y)f(x,y)dxdy$
@@ -202,8 +208,8 @@
 ### 4.2 方差、变异系数
 
 - 方差，标准差
-- $E[(X -E(X))^2]$
-- $Var(X), D(X), V(X)$
+- $\text{Var}(X), D(X), V(X)$
+- $\text{Var}(X) = E[(X -E(X))^2]$
 - $\text{Var}(X) = E(X^2)-(E(X))^2$
 - 性质
     - $\text{Var}(C) = 0$
@@ -211,7 +217,7 @@
     - $\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X, Y)$
     - $\text{Var}(X) = 0 \Leftrightarrow P(X = C) = 1 \wedge C = E(X)$
 - 标准化随机变量
-    - $X^*=\dfrac{X - E(X)}{\sqrt{Var(X)}}$
+    - $X^*=\dfrac{X - E(X)}{\sqrt{\text{Var}(X)}}$
 - 变异系数
     - $C_v(X) = \dfrac{\sqrt{\text{Var}(X)}}{E(X)}$
 ### 4.3 协方差与相关系数
@@ -225,7 +231,7 @@
     - $\text{Cov}(aX, bY) = ab \cdot \text{Cov}(X, Y)$
     - $\text{Cov}(X_1 + X_2) = \text{Cov}(X_1, Y) + \text{Cov}(X_2, Y)$
 - 相关系数
-    - $\rho_{XY}=\dfrac{Cov(X,Y)}{\sqrt{Var(X)}\sqrt{Var(Y)}} = \text{Cov}(X^*, Y^*) \in [-1,1]$
+    - $\rho_{XY}=\dfrac{\text{Cov}(X,Y)}{\sqrt{\text{Var}(X)}\sqrt{\text{Var}(Y)}} = \text{Cov}(X^*, Y^*) \in [-1,1]$
     - 大于一正相关，小于一负相关，零则不相关
     - 不相关等价条件
         - $\text{Cov}(X, Y) = 0$

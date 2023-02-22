@@ -24,11 +24,17 @@
     - Time Complexity
         - Types: best-case time; worst-case time; average-case time.
 
-- **P-Class**	problems can be solved by polynomial time algorithm
-- **NP-Class**	problems for which a solution can be checked in polynomial time
-- **NP-Complete Problem**
-    - If any of these problems can be solved by polynomial worst-case time algorithm, then all can be solved by polynomial worst-case time algorithms.
+!!! plane ""
 
-<div align="center">
-	<img src="../Pic/4.png" style="width:400px"/>
-</div>
+    - **P-Class Problem**
+        - P for 「polynomial」
+        - problems that can be **solved** by polynomial time algorithm
+    - **NP-Class Problem**
+        - NP for 「nondeterministic polynomial」
+        - problems for which a solution can be **checked** in polynomial time
+    - **NP-Complete (NPC) Problem**
+        - If any of these problems can be solved by polynomial worst-case time algorithm, then all can be solved by polynomial worst-case time algorithms.
+
+    <div align="center">
+    	<img src="../Pic/4.png" style="width:400px"/>
+    </div>
