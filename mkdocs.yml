@@ -148,7 +148,7 @@ nav:
     - Blogroll: discussion.md
   - Mathematics Basis:
     - Mathematics_Basis/index.md
-    - 离散数学 | Discrete Mathamatics:
+    - 离散数学 | Discrete Mathematics:
       - Chap 1 | Logic and Proofs : Mathematics_Basis/DM/Chap_1.md
       - Chap 2 | Sets and Functions: Mathematics_Basis/DM/Chap_2.md
       - Chap 3 | Algorithms: Mathematics_Basis/DM/Chap_3.md

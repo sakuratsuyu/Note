@@ -3,8 +3,8 @@
 !!! definition
 
     - A **simple graph** $G = (V, E)$ consists of $V$, a nonempty set of vertices and $E$, a set of unordered pair of distinct elements of $V$ called edges.
-    - A **multigraph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to $\{(u, v) | u, v \in V, u \neq v\}$. The edges $e_1$ and $e_2$ are called **multiple** or **parallel edges** if $f(e_1) = f(e_2)$.
-    - A **pseudograph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to $\{(u, v) | u, v \in V\}$. An edge is a loop if $f(e) = \{u, u\} = \{u\}$ for some $u \in V$.
+    - A **multigraph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to $\{\{u, v\} | u, v \in V, u \neq v\}$. The edges $e_1$ and $e_2$ are called **multiple** or **parallel edges** if $f(e_1) = f(e_2)$.
+    - A **pseudograph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to $\{\{u, v\} | u, v \in V\}$. An edge is a loop if $f(e) = \{u, u\} = \{u\}$ for some $u \in V$.
     - A **directed graph** $G = (V, E)$ consists of $V$, and a set of edges $E$ that are ordered pairs of elemetnes of $V$.
     - A **directed multigraph** $G = (V, E)$ consists of $V$, $E$ and a function from $E$ to $\{(u, v) | u, v \in V, u \neq v\}$. The edges $e_1$ and $e_2$ are called **multiple** or **parallel edges** if $f(e_1) = f(e_2)$.
 
@@ -168,7 +168,7 @@ There are many ways to represent graphs: Graph, adjacecy lists, adjacency matric
         - $a_{ii} = 0$ since a simple graph has no loops.
         - $\text{deg}(v_i) = \sum\limits_{j = 1}^{n} a_{ij}$.
 
-#### Incidence Matrix 关联矩阵
+### Incidence Matrix 关联矩阵
 
 !!! definition
     $G = (V, E)$ is an undirected graph with vertices $v_1, \dots, v_n$ and edges $e_1, \dots, e_n$, then the **incidence matrix** w.r.t this ordering of $V$ and $E$ is matrix $M = [m_{ij}]_{n \times m}$, where
@@ -236,7 +236,11 @@ There are many ways to represent graphs: Graph, adjacecy lists, adjacency matric
     A connected simple graph $G$ with $n$ ($n \ge 3$) vertices has a Hamilton circuit if the degree of each vertex is at least $n / 2$.
 
 !!! theorem
-    A connected simple graph $G$ with $n$ ($n \ge 3$) vertices has a Hamilton circuit if the sum of degree of each vertex pair is larger than $n$.
+    A connected simple graph $G(V, E)$ with $n$ ($n \ge 3$) vertices has a Hamilton circuit if
+    
+    $$
+        \forall u, v \in V,\ \ d(u) + d(v) \ge n.
+    $$
 
 
 ## Shortest Path Problems

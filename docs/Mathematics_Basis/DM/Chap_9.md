@@ -416,10 +416,10 @@ We can represent the partial order by a graph called **Hasse Diagram**. To const
     -   $c$ is an **upper bound 上界** of $B$ if $c \in A \wedge \forall\ x \in B : x \preceq c$. <br/>
         $d$ is a **lower bound 下界** of $B$ if $d \in A \wedge \forall\ x \in B : d \preceq x$.
     -   $c$ is a **least upper bound (lub) 上确界** of $B$ if $c$ is a upper bound and $\forall\ x$ is a upper bound, $c \preceq x$. <br/>
-        $d$ is a **greatest lower bound (glb) 下确界** of $B$ if $c$ is a lower bound and $\forall\ x$ is a lower bound, $x \preceq d$.
+        $d$ is a **greatest lower bound (glb) 下确界** of $B$ if $d$ is a lower bound and $\forall\ x$ is a lower bound, $x \preceq d$.
     
 !!! example
-    For $(A, \subseteq)$, where $A = 2^S$, $S = \{a, b, c, d\}$, and $B = \{\emptyset, \{a\}, \{c\}, \{a, b\}\}$.
+    For $(A, \subseteq)$, where $A = 2^S$, $S = \{a, b, c, d\}$, consider the following concepts of $B = \{\emptyset, \{a\}, \{c\}, \{a, b\}\}$.
 
     - minimal element: $\emptyset$.
     - maximal element: $\{c\}, \{a,b\}$.
