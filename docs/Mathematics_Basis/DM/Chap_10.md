@@ -230,7 +230,7 @@ There are many ways to represent graphs: Graph, adjacecy lists, adjacency matric
 !!! definition
     - An **Hamilton Path** is a path go through all vertices.
     - An **Hamilton Circuit** is a circuit go through all vertices.
-    - A connected graph $G$ is an **Hamilton graph** if it has an Euler circuit.
+    - A connected graph $G$ is an **Hamilton graph** if it has an Hamilton circuit.
 
 !!! theorem
     A connected simple graph $G$ with $n$ ($n \ge 3$) vertices has a Hamilton circuit if the degree of each vertex is at least $n / 2$.
