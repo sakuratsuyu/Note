@@ -346,7 +346,7 @@ Furthermore, we have the sufficient and necessary condition of **nonplanar graph
 
 Each map in the plane can be represented by a graph, by the following processes:
 
-- each region of the map is represented by a *vertex*.
+- Each region of the map is represented by a *vertex*.
 - Edges connect two vertices if each regions represented by these vertices have a common border.
 
 The graph is called **dual graph** of the map.

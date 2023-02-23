@@ -110,7 +110,7 @@
         - De Morgan's Laws
         
             $$
-                \neg \forall x p(x) \Leftrightarrow \exists x \neg p(x),\ \ \neg \exists x p(x) \Leftrightarrow \forall x \neg p(x)
+                \neg \forall x p(x) \Leftrightarrow \exists x \neg p(x),\ \ \neg \exists x p(x) \Leftrightarrow \forall x \neg p(x).
             $$
 
         - 
@@ -160,7 +160,7 @@
 
     Hypothetical syllogism 假言三段论, Disjunctive syllogism 析取三段论.
 
-    Addition 附加规则, Simplification 简化规, Conjuction 合取规则, Resolution 消解原理.
+    Addition 附加规则, Simplification 简化规则, Conjuction 合取规则, Resolution 消解原理.
 
 <div align="center">
 	<img src="../Pic/2.png" style="width:500px"/>
@@ -201,13 +201,13 @@
     Similar discussion can be seen in the canonical form and K-map of Digital Design.
 
 $$
-    \bigvee\limits _{i = 1}^{k} \bigwedge\limits _{j = 1}^{n_i} A_{ij} = (A_{11} \wedge A_{12} \wedge \dots \wedge A_{1n_1}) \vee \dots \vee (A_{k1} \wedge A_{k2} \wedge \dots \wedge A_{kn_1})
+    \bigvee\limits _{i = 1}^{k} \bigwedge\limits _{j = 1}^{n_i} A_{ij} = (A_{11} \wedge A_{12} \wedge \dots \wedge A_{1n_1}) \vee \dots \vee (A_{k1} \wedge A_{k2} \wedge \dots \wedge A_{kn_1}).
 $$
 
 !!! theorem
     Any formula is tautologically equivalent to some formula in DNF.
 
-### Full Disjunctvie Form
+### Full Disjunctvie Normal Form
 
 !!! definition
 
@@ -220,9 +220,13 @@ $$
     - Full disjunctive form can be obtained by using truth table.
     - $\{\neg, \wedge, \vee\}$ is **functionally complete**.
 
-### Conjuctive Normal Form (CNF)
+### Conjuctive Normal Form (CNF) & Full Conjuctive Normal Form
 
-> Similar to DNF
+> Similar to DNF / Full DNF.
+
+$$
+    \bigwedge\limits _{i = 1}^{k} \bigvee\limits _{j = 1}^{n_i} A_{ij} = (A_{11} \vee A_{12} \vee \dots \vee A_{1n_1}) \wedge \dots \wedge (A_{k1} \vee A_{k2} \vee \dots \vee A_{kn_1}).
+$$
 
 ### Prenex Normal Form 前束范式
 

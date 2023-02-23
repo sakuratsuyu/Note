@@ -35,7 +35,11 @@
     - Properties
         
         $$
-            A \oplus B = B \oplus A,\ \ (A \oplus B) \oplus C = A \oplus (B \oplus C),\ \ A \oplus A = \emptyset,\ \ A \oplus \emptyset = A.
+            A \oplus B = B \oplus A,\ \ (A \oplus B) \oplus C = A \oplus (B \oplus C).
+        $$
+
+        $$
+            A \oplus A = \emptyset,\ \ A \oplus \emptyset = A.
         $$
 
         $$
