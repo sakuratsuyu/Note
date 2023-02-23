@@ -319,13 +319,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#full-disjunctvie-form">
-    Full Disjunctvie Form
+<a class="md-nav__link" href="#full-disjunctvie-normal-form">
+    Full Disjunctvie Normal Form
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#conjuctive-normal-form-cnf">
-    Conjuctive Normal Form (CNF)
+<a class="md-nav__link" href="#conjuctive-normal-form-cnf-full-conjuctive-normal-form">
+    Conjuctive Normal Form (CNF) &amp; Full Conjuctive Normal Form
   </a>
 </li>
 <li class="md-nav__item">
@@ -755,13 +755,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#full-disjunctvie-form">
-    Full Disjunctvie Form
+<a class="md-nav__link" href="#full-disjunctvie-normal-form">
+    Full Disjunctvie Normal Form
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#conjuctive-normal-form-cnf">
-    Conjuctive Normal Form (CNF)
+<a class="md-nav__link" href="#conjuctive-normal-form-cnf-full-conjuctive-normal-form">
+    Conjuctive Normal Form (CNF) &amp; Full Conjuctive Normal Form
   </a>
 </li>
 <li class="md-nav__item">
@@ -915,7 +915,7 @@
 <li>
 <p>De Morgan's Laws</p>
 <div class="arithmatex">\[
-    \neg \forall x p(x) \Leftrightarrow \exists x \neg p(x),\ \ \neg \exists x p(x) \Leftrightarrow \forall x \neg p(x)
+    \neg \forall x p(x) \Leftrightarrow \exists x \neg p(x),\ \ \neg \exists x p(x) \Leftrightarrow \forall x \neg p(x).
 \]</div>
 </li>
 <li>
@@ -967,7 +967,7 @@
 <summary>Glossary</summary>
 <p>Hypothetical Judgement 假言推断: Modus ponens 肯定前件式, Modus tollens 否定后件式.</p>
 <p>Hypothetical syllogism 假言三段论, Disjunctive syllogism 析取三段论.</p>
-<p>Addition 附加规则, Simplification 简化规, Conjuction 合取规则, Resolution 消解原理.</p>
+<p>Addition 附加规则, Simplification 简化规则, Conjuction 合取规则, Resolution 消解原理.</p>
 </details>
 <div align="center">
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../Pic/2.png"><img src="../Pic/2.png" style="width:500px"/></a>
@@ -1011,13 +1011,13 @@
 <p>Similar discussion can be seen in the canonical form and K-map of Digital Design.</p>
 </div>
 <div class="arithmatex">\[
-    \bigvee\limits _{i = 1}^{k} \bigwedge\limits _{j = 1}^{n_i} A_{ij} = (A_{11} \wedge A_{12} \wedge \dots \wedge A_{1n_1}) \vee \dots \vee (A_{k1} \wedge A_{k2} \wedge \dots \wedge A_{kn_1})
+    \bigvee\limits _{i = 1}^{k} \bigwedge\limits _{j = 1}^{n_i} A_{ij} = (A_{11} \wedge A_{12} \wedge \dots \wedge A_{1n_1}) \vee \dots \vee (A_{k1} \wedge A_{k2} \wedge \dots \wedge A_{kn_1}).
 \]</div>
 <div class="admonition theorem">
 <p class="admonition-title">Theorem</p>
 <p>Any formula is tautologically equivalent to some formula in DNF.</p>
 </div>
-<h3 id="full-disjunctvie-form">Full Disjunctvie Form<a class="headerlink" href="#full-disjunctvie-form" title="Permanent link">¶</a></h3>
+<h3 id="full-disjunctvie-normal-form">Full Disjunctvie Normal Form<a class="headerlink" href="#full-disjunctvie-normal-form" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
 <ul>
@@ -1033,10 +1033,13 @@
 <li><span class="arithmatex">\(\{\neg, \wedge, \vee\}\)</span> is <strong>functionally complete</strong>.</li>
 </ul>
 </div>
-<h3 id="conjuctive-normal-form-cnf">Conjuctive Normal Form (CNF)<a class="headerlink" href="#conjuctive-normal-form-cnf" title="Permanent link">¶</a></h3>
+<h3 id="conjuctive-normal-form-cnf-full-conjuctive-normal-form">Conjuctive Normal Form (CNF) &amp; Full Conjuctive Normal Form<a class="headerlink" href="#conjuctive-normal-form-cnf-full-conjuctive-normal-form" title="Permanent link">¶</a></h3>
 <blockquote>
-<p>Similar to DNF</p>
+<p>Similar to DNF / Full DNF.</p>
 </blockquote>
+<div class="arithmatex">\[
+    \bigwedge\limits _{i = 1}^{k} \bigvee\limits _{j = 1}^{n_i} A_{ij} = (A_{11} \vee A_{12} \vee \dots \vee A_{1n_1}) \wedge \dots \wedge (A_{k1} \vee A_{k2} \vee \dots \vee A_{kn_1}).
+\]</div>
 <h3 id="prenex-normal-form">Prenex Normal Form 前束范式<a class="headerlink" href="#prenex-normal-form" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
@@ -1079,7 +1082,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.22 21:34:40 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.02.23 09:26:35 CST</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.15 13:54:18 CST</span>
