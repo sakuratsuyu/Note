@@ -182,7 +182,7 @@
         2. Show that $\neg p$ is also true.
         3. $p \wedge \neg p = F$, which leads to a contradiction.
 
-   - About **Resolution** rule
+    - About **Resolution** rule
         - Use for automatic theorem proving.
         - $q\vee r$ is called the **resolvent**.
 

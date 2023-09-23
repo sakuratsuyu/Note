@@ -1,4 +1,4 @@
-# ここは —— なんと!
+# NOTES
 A note book by @sakuratsuyu.
 
 偶尔写点东西，希望你喜欢。
@@ -9,9 +9,8 @@ $$
 
 !!! info "About me"
     - All ids I used: **sakuratsuyu**, **桜つゆ**, **曦露** and **Mslease**. Maybe you can find me somewhere else! :stuck_out_tongue_closed_eyes:
-    - Sophomore as a ZJU CS Undergraduate.
-    - ZJUSCT Freshman. (摸大鱼)
-    - MADer. (MAD 在做了在做了.jpg)
+    - Junior as a ZJU CS Undergraduate.
+    - MADer.
 
 <div align="center" style="font-size:20px; font-weight:normal; margin:50px">Hope you can find anything useful and interesting here!</div>
 

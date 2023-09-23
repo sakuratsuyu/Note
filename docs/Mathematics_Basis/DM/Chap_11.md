@@ -58,7 +58,7 @@
     To ensure that no bit string corresponds to more than one sequence of letters, the bit string for a letter must never occur as the first part of the string for another letter. Codes with this propertiy are called **prefix codes**.
 
 !!! example
-    To encode $a, b, c, d$, $\{0, 1, 01, 001\}$ is not prefix codes, but $\{0, 10, 110, 111\}$ is.
+    To encode $\{a, b, c, d\}$ four characters, $\{0, 1, 01, 001\}$ is not prefix codes, but $\{0, 10, 110, 111\}$ is.
 
 !!! plane ""
     A prefix code can be represented by a binary tree.

@@ -360,7 +360,7 @@ To find the transitive closure, we gives the following definition and theorem.
 !!! note "Remark"
 
     - If $A$ is finite, then $A / R$ is finite.
-    - If $A$ has $n$ elements and each $[a]_R$ has $m$ elements, then $m | n$ and $A / R$ has $n / m $ elements.
+    - If $A$ has $n$ elements and each $[a]_R$ has $m$ elements, then $m | n$ and $A / R$ has $n / m$ elements.
 
 !!! definition
     A **partition** $\pi$ on a set $S$ is a family $\{A_1, A_2, \cdots, A_n\}$ of subsets of $S$ and
