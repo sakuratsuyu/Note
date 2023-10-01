@@ -95,13 +95,13 @@ The circle with an arrow pointing to it is **initial state** and the double circ
 
 !!! definition
 
-    A finite automata $M = (K, \Sigma, \delta, s, F)$, where
+    A **deterministic finite automata (DFA)** is $M = (K, \Sigma, \delta, s, F)$, where
 
     - $K$ is a finite set of states.
     - $\Sigma$ is the input alphabet.
     - $s \in k$ is initial state.
     - $F \subseteq k$ is the set of final states.
-    - $\delta$ is a transition function. It describes in the current state, when read a symbol, what will the next state be.
+    - $\delta$ is a transition **function**. It describes in the current state, when read a symbol, what will the next state be.
 
     $$
         \delta: K \times \Sigma \rightarrow K.
@@ -135,7 +135,10 @@ The circle with an arrow pointing to it is **initial state** and the double circ
 
     For $L(M) = \{ w \in \Sigma^*: M \text{ accepts } w \}$, we say $M$ **accpets** $L(M)$.
 
-    A language is **regular（正则的）** if it is accept by some FA (finite automata).
+
+!!! definition
+
+    A language is **regular（正则的）** if it is accepted by some FA (finite automata).
 
 !!! definition
 
@@ -155,19 +158,20 @@ The circle with an arrow pointing to it is **initial state** and the double circ
 
         $\exists M_A = (K_A, \Sigma, \delta_A, s_A, F_A)$ accpets $A$, and $\exists M_B = (K_B, \Sigma, \delta_B, s_B, F_B)$ accpets $A$.
 
-        We construct $\exists M_U = (K_U, \Sigma, \delta_U, s_U, F_U)$ where
+        We construct $\exists M_\cup_ = (K_\cup_, \Sigma, \delta_\cup_, s_\cup_, F_\cup_)$ where
 
-        - $K_U = K_A \times K_B$.
-        - $s_U = (s_A, s_B)$.
-        - $F_U = \{(q_A, q_B) \in K_A \times K_B | q_A \in F_A \text{ or } q_B \in F_B\}$.
-        - $\delta_U$: for any $q_A \in K_A$, $q_B \in K_B$, $a \in \Sigma$,
+        - $K_\cup_ = K_A \times K_B$.
+        - $s_\cup_ = (s_A, s_B)$.
+        - $F_\cup_ = \{(q_A, q_B) \in K_A \times K_B | q_A \in F_A \text{ or } q_B \in F_B\}$.
+        - $\delta_\cup_$: for any $q_A \in K_A$, $q_B \in K_B$, $a \in \Sigma$,
 
             $$
                 \delta((q_A, q_B), a) = (\delta_A(q_A, a), \delta_B(q_B, a))
             $$
 
-        Then $M_U$ accepts $A \cup B$.
+        Then $M_\cup_$ accepts $A \cup B$.
 
 !!! theorem
 
     If $A$ and $B$ are regular, so is $A \cap B$.
+    If $A$ is regular, so is $\overline{A}$.
