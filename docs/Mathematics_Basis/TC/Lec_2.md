@@ -142,9 +142,10 @@ Since the equivalence of NFA and DFA, so a language is regular if it's accepted 
         title: Idea
         ---
         flowchart LR
-            w --> startA
+            start(( )) --> startA
             Q0A -- e --> startB
             Q1A -- e --> startB
+            style start fill:#000,stroke-width:0px
 
             subgraph M_circ
             subgraph M_A
@@ -183,9 +184,11 @@ Since the equivalence of NFA and DFA, so a language is regular if it's accepted 
         title: Idea
         ---
         flowchart LR
-            start -- e --> startA
+            start(( )) --> s
+            s(( )) --> startA
             Q0A -- e --> startA
             Q1A -- e --> startA
+            style start fill:#000,stroke-width:0px
 
             subgraph M
                 startA(( )) -- ... --> Q0A((( )))
