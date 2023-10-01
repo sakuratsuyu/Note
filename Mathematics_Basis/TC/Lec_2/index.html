@@ -2230,9 +2230,10 @@
 title: Idea
 ---
 flowchart LR
-    w --&gt; startA
+    start(( )) --&gt; startA
     Q0A -- e --&gt; startB
     Q1A -- e --&gt; startB
+    style start fill:#000,stroke-width:0px
 
     subgraph M_circ
     subgraph M_A
@@ -2267,9 +2268,11 @@ flowchart LR
 title: Idea
 ---
 flowchart LR
-    start -- e --&gt; startA
+    start(( )) --&gt; s
+    s(( )) --&gt; startA
     Q0A -- e --&gt; startA
     Q1A -- e --&gt; startA
+    style start fill:#000,stroke-width:0px
 
     subgraph M
         startA(( )) -- ... --&gt; Q0A((( )))
@@ -2285,7 +2288,7 @@ flowchart LR
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.10.01 15:23:00 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.10.01 15:28:15 CST</span>
       
         <br>
         创建日期:
