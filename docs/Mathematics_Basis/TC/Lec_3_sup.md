@@ -1,37 +1,4 @@
-# Lecture 3
 
-## Regular Expression
-
-!!! definition
-
-    Suppose an alphabet $\Sigma$,
-
-    #### Atomic
-
-    - For a regular expression $\phi$, its language is $L(\phi) = \phi$.
-    - For a regular expression $a \in \Sigma$, its language is $L(a) = \{a\}$.
-
-    #### Composite
-
-    - For a regular expression $L(R_1 \cup R_2)$, its language is $L(R_1 \cup R_2) = L(R_1) \cup L(R_2)$.
-    - For a regular expression $L(R_1 \circ R_2)$, its language is $L(R_1 \circ R_2) = L(R_1) \circ L(R_2)$.
-    - For a regular expression $L(R^*)$, its language is $L(R^*) = (L(R))^*$.
-
-    !!! plane ""
-
-        **Precedence** $^* > \circ > \cup$.
-
-!!! example
-
-    | Language | Regular Expression |
-    | -------- | ------------------ |
-    | $\{e\}$  | $\phi^*$           |
-    | $\{w \in (a \cup b)^* \| w \text{ starts with } a \text{ and end with } b\}$ | $a(a \cup b)^* b$ |
-    | $\{w \in (a \cup b)^* \| w \text{ has at least two occurences of } a\}$ | $(a \cup b)^*a(a \cup b)^* a(a \cup b)^*$ |
-
-!!! theorem
-
-    A language $B$ is regular iff there is some regular expression $R$ with $L(R) = B$.
 
 
 From NFA to regular expression. For any NFA $M$, there exists a regular expression $R$, such that $L(R) = L(M)$.
@@ -85,21 +52,21 @@ We first simplify a specific NFA $M$ with the following steps to find its corres
 
     There are only three connection situations of states.
 
-    !!! plane ""
+    !!! plane
 
         ```mermaid
         flowchart LR
             subgraph Base
                 direction LR
-                q1((q<sub>1</sub>)) -- a --> q2((q<sub>2</sub>))
-                q1 -- b --> q2
+                q1((q1)) -- a --> q2((q2))
+                q1((q1)) -- b --> q2((q2))
             end
 
             Base -.-> Simplified
 
             subgraph Simplified
                 direction LR
-                q1_((q<sub>1</sub>)) -- "a ∪ b" --> q2_((q<sub>2</sub>))
+                q1_((q1)) -- a ∪ b --> q2_((q2))
             end
         ```
 
@@ -107,15 +74,15 @@ We first simplify a specific NFA $M$ with the following steps to find its corres
         flowchart LR
             subgraph Base
                 direction LR
-                q1((q<sub>1</sub>)) -- a --> q2((q<sub>2</sub>))
-                q2 -- b --> q3((q<sub>3</sub>))
+                q1((q1)) -- a --> q2((q2))
+                q2((q2)) -- b --> q3((q3))
             end
 
             Base -.-> Simplified
 
             subgraph Simplified
                 direction LR
-                q1_((q<sub>1</sub>)) -- ab --> q3_((q<sub>3</sub>))
+                q1_((q1)) -- ab --> q3_((q3))
             end
         ```
 
@@ -123,16 +90,16 @@ We first simplify a specific NFA $M$ with the following steps to find its corres
         flowchart LR
             subgraph Base
                 direction LR
-                q1((q<sub>1</sub>)) -- a --> q2((q<sub>2</sub>))
+                q1((q1)) -- a --> q2((q2))
                 q2 -- c --> q2
-                q2 -- b --> q3((q<sub>3</sub>))
+                q2((q2)) -- b --> q3((q3))
             end
 
             Base -.-> Simplified
 
             subgraph Simplified
                 direction LR
-                q1_((q<sub>1</sub>)) -- ac*b --> q3_((q<sub>3</sub>))
+                q1_((q1)) -- ac*b --> q3_((q3))
             end
         ```
 
@@ -164,7 +131,7 @@ We first simplify a specific NFA $M$ with the following steps to find its corres
         ```mermaid
         flowchart LR
             start(( )) --> q4((q4))
-            q4 -- "a*b(a ∪ ba*ba*b)*" --> q5(((q5)))
+            q4 -- a*b(a∪ba*ba*b)* --> q5(((q5)))
 
             style start fill:#000,stroke-width:0px
         ```
@@ -172,12 +139,6 @@ We first simplify a specific NFA $M$ with the following steps to find its corres
 Based on the mechanism above, we can simply give the following more abstract proof.
 
 !!! proof
-
-    Now we back to the proof of the equivenlance of regular expression and NFA.
-
-    (1) Regular expression $\Rightarrow$ NFA is trivial by definition.
-
-    (2) We now proof NFA $\Rightarrow$ regular expression.
 
     Suppose an NFA $M = (K, \Sigma, \Delta, s, F)$ satisfying
 
@@ -210,10 +171,10 @@ Based on the mechanism above, we can simply give the following more abstract pro
 
     ```mermaid
     flowchart LR
-        qi((q<sub>i</sub>)) -- "R<sub>ij</sub><sup>k - 1<sup>" --> qj((q<sub>j</sub>))
-        qi -- "R<sub>ik</sub><sup>k - 1</sup>" --> qk((q<sub>k</sub>))
-        qk -- "R<sub>kj</sub><sup>k - 1</sup>" --> qj
-        qk -- "R<sub>kk</sub><sup>k - 1</sup>" --> qk
+        qi((q_i)) -- R_{ij}^{k - 1} --> qj((q_j))
+        qi -- R_{ik}^{k - 1} --> qk((q_k))
+        qk -- R_{kj}^{k - 1} --> qj
+        qk -- R_{kk}^{k - 1} --> qk
     ```
 
 
@@ -239,12 +200,12 @@ Based on the mechanism above, we can simply give the following more abstract pro
 
     ```mermaid
     flowchart LR
-        start(( )) --> q0((q<sub>0</sub>))
-        q0 -- a1 --> q1((q<sub>1</sub>))
-        q1 -- a2 --> q2((q<sub>2</sub>))
+        start(( )) --> q0((q0))
+        q0 -- a1 --> q1((q1))
+        q1 -- a2 --> q2((q2))
         q2 --> q3(( ))
         q3 -- ... --> q4(( ))
-        q4 -- an --> qn((q<sub>n</sub>))
+        q4 -- an --> qn((qn))
 
         style start fill:#000,stroke-width:0px
     ```
@@ -253,10 +214,10 @@ Based on the mechanism above, we can simply give the following more abstract pro
 
     ```mermaid
     flowchart LR
-        start(( )) --> q0((q<sub>0</sub>))
-        q0 -- a<sub>1</sub>a<sub>2</sub>...a<sub>2</sub> --> qi((q<sub>i</sub>))
-        qi -- "a<sub>i + 1</sub>...a<sub>j</sub>" --> qj((q<sub>j</sub>))
-        qj -- "a<sub>j + 1</sub>...a<sub>n</sub>" --> qn((q<sub>n</sub>))
+        start(( )) --> q0((q0))
+        q0 -- a1a2...ai --> qi((qi))
+        qi -- a(i+1)...aj --> qj((qj))
+        qj -- a(j+1)...an --> qn((qn))
 
         style start fill:#000,stroke-width:0px
     ```
