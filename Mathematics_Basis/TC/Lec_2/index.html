@@ -1197,6 +1197,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -1306,6 +1308,26 @@
   
   <span class="md-ellipsis">
     Lecture 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lec_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 4
   </span>
   
 
@@ -2140,14 +2162,16 @@
 <li><span class="arithmatex">\(\Sigma\)</span> is the input alphabet.</li>
 <li><span class="arithmatex">\(s \in k\)</span> is initial state.</li>
 <li><span class="arithmatex">\(F \subseteq k\)</span> is the set of final states.</li>
-<li><span class="arithmatex">\(\Delta\)</span> is a transition <strong>relation</strong>. </li>
-</ul>
+<li>
+<p><span class="arithmatex">\(\Delta\)</span> is a transition <strong>relation</strong>. </p>
 <div class="arithmatex">\[
-    \Delta \subseteq K \times (\Sigma \cup \{e\}) \times K
+    \Delta \subseteq (K \times (\Sigma \cup \{e\})) \times K
 \]</div>
+</li>
+</ul>
 <p>Configurations and yields are defined similarly to DFA.</p>
 <p><span class="arithmatex">\(M\)</span> <strong>accepts</strong> <span class="arithmatex">\(w \in \Sigma^*\)</span> if <span class="arithmatex">\((s, w) \vdash_M^* (q, e)\)</span> for some <span class="arithmatex">\(q \in F\)</span>.</p>
-<p>For <span class="arithmatex">\(L(M) = \{ w \in \Sigma^*: M \text{ accepts } w \}\)</span>, we say <span class="arithmatex">\(M\)</span> <strong>accpets</strong> <span class="arithmatex">\(L(M)\)</span>.</p>
+<p>For <span class="arithmatex">\(L(M) = \{ w \in \Sigma^*: M \text{ accepts } w \}\)</span>, we say <span class="arithmatex">\(M\)</span> <strong>accepts</strong> <span class="arithmatex">\(L(M)\)</span>.</p>
 </div>
 <p>The difference between DFA and NFA is that NFA allows</p>
 <ul>
@@ -2204,7 +2228,7 @@
 <li><span class="arithmatex">\(\forall Q \in K', a \in \Sigma,\ \ \delta(Q, a) = \bigcup\limits_{q \in Q} \bigcup\limits_{p : (q, a, p) \in \Delta} E(p)\)</span>.</li>
 </ul>
 <p>Then we claim that <span class="arithmatex">\(\forall p, q \in K, w \in \Sigma^*, (p, w) \vdash_M^* (q, e) \text{ iff } (E(p), w) \vdash_{M'}^* (Q, e), \text{ where } q \in Q\)</span>. (We can prove it by induction on <span class="arithmatex">\(|w|\)</span>)</p>
-<p>Thus, DFA <span class="arithmatex">\(M'\)</span> accpets <span class="arithmatex">\(w\)</span> <span class="arithmatex">\(\Leftrightarrow\)</span> NFA <span class="arithmatex">\(M\)</span> accpets <span class="arithmatex">\(w\)</span>.</p>
+<p>Thus, DFA <span class="arithmatex">\(M'\)</span> accepts <span class="arithmatex">\(w\)</span> <span class="arithmatex">\(\Leftrightarrow\)</span> NFA <span class="arithmatex">\(M\)</span> accepts <span class="arithmatex">\(w\)</span>.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -2273,7 +2297,7 @@ flowchart LR
     end
     end</code></pre>
 </div>
-<p>Since <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are regular, thus there exist NFAs <span class="arithmatex">\(M_A = (K_A, \Sigma, \Delta_A, s_A, F_A)\)</span> and <span class="arithmatex">\(M_B = (K_B, \Sigma, \Delta_B, s_B, F_B)\)</span> which accpets <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> respectively.</p>
+<p>Since <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are regular, thus there exist NFAs <span class="arithmatex">\(M_A = (K_A, \Sigma, \Delta_A, s_A, F_A)\)</span> and <span class="arithmatex">\(M_B = (K_B, \Sigma, \Delta_B, s_B, F_B)\)</span> which accepts <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> respectively.</p>
 <p>We construct an NFA <span class="arithmatex">\(M_\circ = (K_\circ, \Sigma, \Delta_\circ, s_\circ, F_\circ)\)</span>, where</p>
 <ul>
 <li><span class="arithmatex">\(K_\circ = K_A \cup K_B\)</span>.</li>
@@ -2310,7 +2334,7 @@ flowchart LR
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.10.01 15:28:15 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.10.24 21:45:59 CST</span>
       
         <br>
         创建日期:
