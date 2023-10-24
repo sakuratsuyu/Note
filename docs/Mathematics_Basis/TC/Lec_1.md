@@ -158,18 +158,18 @@ The circle with an arrow pointing to it is **initial state** and the double circ
 
         $\exists M_A = (K_A, \Sigma, \delta_A, s_A, F_A)$ accpets $A$, and $\exists M_B = (K_B, \Sigma, \delta_B, s_B, F_B)$ accpets $A$.
 
-        We construct $\exists M_\cup_ = (K_\cup_, \Sigma, \delta_\cup_, s_\cup_, F_\cup_)$ where
+        We construct $\exists M_\cup = (K_\cup, \Sigma, \delta_\cup, s_\cup, F_\cup)$ where
 
-        - $K_\cup_ = K_A \times K_B$.
-        - $s_\cup_ = (s_A, s_B)$.
-        - $F_\cup_ = \{(q_A, q_B) \in K_A \times K_B | q_A \in F_A \text{ or } q_B \in F_B\}$.
-        - $\delta_\cup_$: for any $q_A \in K_A$, $q_B \in K_B$, $a \in \Sigma$,
+        - $K_\cup = K_A \times K_B$.
+        - $s_\cup = (s_A, s_B)$.
+        - $F_\cup = \{(q_A, q_B) \in K_A \times K_B | q_A \in F_A \text{ or } q_B \in F_B\}$.
+        - $\delta_\cup$: for any $q_A \in K_A$, $q_B \in K_B$, $a \in \Sigma$,
 
             $$
                 \delta((q_A, q_B), a) = (\delta_A(q_A, a), \delta_B(q_B, a))
             $$
 
-        Then $M_\cup_$ accepts $A \cup B$.
+        Then $M_\cup$ accepts $A \cup B$.
 
 !!! theorem
 
