@@ -133,7 +133,7 @@ The circle with an arrow pointing to it is **initial state** and the double circ
 
     $M$ **accepts** $w \in \Sigma^*$ if $(s, w) \vdash_M^* (q, e)$ for some $q \in F$.
 
-    For $L(M) = \{ w \in \Sigma^*: M \text{ accepts } w \}$, we say $M$ **accpets** $L(M)$.
+    For $L(M) = \{ w \in \Sigma^*: M \text{ accepts } w \}$, we say $M$ **accepts** $L(M)$.
 
 
 !!! definition
@@ -156,7 +156,7 @@ The circle with an arrow pointing to it is **initial state** and the double circ
 
     ??? proof
 
-        $\exists M_A = (K_A, \Sigma, \delta_A, s_A, F_A)$ accpets $A$, and $\exists M_B = (K_B, \Sigma, \delta_B, s_B, F_B)$ accpets $A$.
+        $\exists M_A = (K_A, \Sigma, \delta_A, s_A, F_A)$ accepts $A$, and $\exists M_B = (K_B, \Sigma, \delta_B, s_B, F_B)$ accepts $A$.
 
         We construct $\exists M_\cup = (K_\cup, \Sigma, \delta_\cup, s_\cup, F_\cup)$ where
 

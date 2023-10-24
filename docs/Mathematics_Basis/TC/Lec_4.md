@@ -100,7 +100,7 @@ We call it an **ambiguous** expression. To find out the difference, we first int
         N8 === N11
     ```
 
-    === First Case (multiply then add)
+    === "First Probability (multiply then add)"
 
         ```mermaid
         graph TD;
@@ -123,10 +123,9 @@ We call it an **ambiguous** expression. To find out the difference, we first int
             N4 === N8
             N6 === N9
             N8 === N10
-
         ```
     
-    === Second Case (add then muliply)
+    === "Second Probability (add then muliply)"
 
         ```mermaid
         graph TD;
@@ -150,3 +149,148 @@ We call it an **ambiguous** expression. To find out the difference, we first int
             N5 === N9
             N7 === N10
         ```
+
+For the latter case, to eliminate ambiguity, we can define another grammar,
+
+$$
+\begin{aligned}
+E &\rightarrow E + T \\
+E &\rightarrow T \\
+T &\rightarrow T \times F \\
+T &\rightarrow F \\
+F &\rightarrow (E) \\
+F &\rightarrow a \\
+\end{aligned}
+$$
+
+Then we can build the unique parse tree of $a + a \times a$.
+
+```mermaid
+graph TD;
+    N1(("E"))
+    N2(("E"))
+    N3(("+"))
+    N4(("T"))
+    N5(("T"))
+    N6(("T"))
+    N7(("×"))
+    N8(("F"))
+    N9(("F"))
+    N10(("F"))
+    N11(("a"))
+    N12(("a"))
+    N13(("a"))
+
+    N1 === N2
+    N1 === N3
+    N1 === N4
+    N2 === N5
+    N4 === N6
+    N4 === N7
+    N4 === N8
+    N5 === N9
+    N6 === N10
+    N8 === N11
+    N9 === N12
+    N10 === N13
+```
+
+!!! definition
+
+    A CFG is in **Chomsky normal form (CNF)** if every rule of it is of one of the following forms.
+
+    - $S \rightarrow e$.
+    - $A \rightarrow BC$, where $B, C \in V - \Sigma - \{S\}$.
+    - $A \rightarrow a$, where $a \in \Sigma$.
+
+!!! theorem "Property"
+
+    Suppose $G$ is a CFG in CNF, if $G$ generates a string of length $n \ge 1$, then the length of derivation is exactly $2n-1$.
+
+!!! theorem
+    Every CFG has an equivalent CFG in CNF.
+
+## Pushdown Automata (PDA)
+
+!!! definition
+
+    > PDA = NFA + stack
+
+    A PDA is a 6-tuple $P = (K, \Gamma, \Sigma, \Delta, S, F)$,
+
+    - $K$ is a finite set of states.
+    - $\Gamma$ is the stack alphabet.
+    - $\Sigma$ is the input alphabet.
+    - $S \in k$ is initial state.
+    - $F \subseteq k$ is the set of final states.
+    - $\Delta$ is a transition **relation**. It describes in the current state and a string at the top of the stack, when read a symbol, what will the next state be, and then pop the top string, push another string onto the stack.
+
+        $$
+            \Delta \subseteq (K \times (\Sigma \cup \{e\}) \times \Gamma^*) \times (K \times \Gamma^*)
+        $$
+
+!!! definition
+
+    - **Yields in one step**
+
+        - $(p, x, \alpha) \vdash_P (q, y, \beta)$ if $\exists ((p, a, \gamma), (q, \eta))$, such that $x = ay$, $\alpha = \gamma\tau$ and $\beta = \gamma\tau$ for some $\tau \in \Gamma^*$.
+    
+    - **Yields**
+
+         - $(p, x, \alpha) \vdash_P^* (q, y, \beta)$ if $(p, x, \alpha) = (q, y, \beta)$ or $(p, x, a) \vdash_P \cdots \vdash_P (q, y, \beta)$.
+
+!!! definition
+
+    $P$ accepts $w \in \Sigma$ if $(s, w, e) \vdash_P^* (q, e, e)$ for some $q \in F$.
+
+    For $L(P) = \{ w \in \Sigma^*: P \text{ accepts } w \}$, we say $P$ **accepts** $L(P)$.
+
+!!! example
+
+    Show that $\{w \in \{0, 1\}^* | \text{ the number of 0 equals the number of 1}\}$ can be accepted by a PDA.
+
+    **Proof**
+
+    Construct a PDA $P = (K, \Gamma, \Sigma, \Delta, S, F)$, where
+
+    - $K = \{s, q, f\}$.
+    - $\Gamma = \{0, 1, \$\}$, where $\$$ means the bottom of the stack.
+    - $\Sigma = \{0, 1\}$.
+    - $S = s$.
+    - $F = \{f\}$.
+    - transition relation
+
+        $$
+        \begin{aligned}
+            \Delta = \{ & ((s, e, e), (q, \$)), \\
+                        & ((q, 0, 0), (q, 00)), \\
+                        & ((q, 0, \$), (q, 0\$)),  \\
+                        & ((q, 0, 1), (q, e)),  \\
+                        & ((q, 1, 0), (q, 00)), \\
+                        & ((q, 1, \$), (q, 0\$)),  \\
+                        & ((q, 1, 1), (q, e)),  \\
+                        & ((q, e, \$), (f, e))
+                     \}
+        \end{aligned}
+        $$
+
+    > I think $\$ \in \Gamma$ here is to make $q$ not the final state.
+
+    Considering that PDA is NFA, we can construct a better PDA, with
+
+    - $K = \{s\}$.
+    - $\Gamma = \{0, 1\}$.
+    - $\Sigma = \{0, 1\}$.
+    - $S = s$.
+    - $F = \{s\}$.
+    - transition relation
+
+        $$
+        \begin{aligned}
+            \Delta = \{ & ((s, 0, 1), (s, e)), \\
+                        & ((s, 0, e), (s, 0)), \\
+                        & ((s, 1, 0), (s, e)),  \\
+                        & ((s, 1, e), (s, 1))
+                     \}
+        \end{aligned}
+        $$

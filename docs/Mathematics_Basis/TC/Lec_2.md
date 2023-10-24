@@ -10,15 +10,15 @@
     - $F \subseteq k$ is the set of final states.
     - $\Delta$ is a transition **relation**. 
 
-    $$
-        \Delta \subseteq K \times (\Sigma \cup \{e\}) \times K
-    $$
+        $$
+            \Delta \subseteq (K \times (\Sigma \cup \{e\})) \times K
+        $$
 
     Configurations and yields are defined similarly to DFA.
 
     $M$ **accepts** $w \in \Sigma^*$ if $(s, w) \vdash_M^* (q, e)$ for some $q \in F$.
 
-    For $L(M) = \{ w \in \Sigma^*: M \text{ accepts } w \}$, we say $M$ **accpets** $L(M)$.
+    For $L(M) = \{ w \in \Sigma^*: M \text{ accepts } w \}$, we say $M$ **accepts** $L(M)$.
 
 The difference between DFA and NFA is that NFA allows
 
@@ -81,7 +81,7 @@ The difference between DFA and NFA is that NFA allows
 
     Then we claim that $\forall p, q \in K, w \in \Sigma^*, (p, w) \vdash_M^* (q, e) \text{ iff } (E(p), w) \vdash_{M'}^* (Q, e), \text{ where } q \in Q$. (We can prove it by induction on $|w|$)
 
-    Thus, DFA $M'$ accpets $w$ $\Leftrightarrow$ NFA $M$ accpets $w$.
+    Thus, DFA $M'$ accepts $w$ $\Leftrightarrow$ NFA $M$ accepts $w$.
 
 !!! example
 
@@ -164,7 +164,7 @@ Since the equivalence of NFA and DFA, so a language is regular if it's accepted 
             end
         ```
 
-    Since $A$ and $B$ are regular, thus there exist NFAs $M_A = (K_A, \Sigma, \Delta_A, s_A, F_A)$ and $M_B = (K_B, \Sigma, \Delta_B, s_B, F_B)$ which accpets $A$ and $B$ respectively.
+    Since $A$ and $B$ are regular, thus there exist NFAs $M_A = (K_A, \Sigma, \Delta_A, s_A, F_A)$ and $M_B = (K_B, \Sigma, \Delta_B, s_B, F_B)$ which accepts $A$ and $B$ respectively.
 
     We construct an NFA $M_\circ = (K_\circ, \Sigma, \Delta_\circ, s_\circ, F_\circ)$, where
 
