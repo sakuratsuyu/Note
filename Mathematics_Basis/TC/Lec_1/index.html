@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
       
       
   
@@ -2422,19 +2422,19 @@
 <details class="proof">
 <summary>Proof</summary>
 <p><span class="arithmatex">\(\exists M_A = (K_A, \Sigma, \delta_A, s_A, F_A)\)</span> accpets <span class="arithmatex">\(A\)</span>, and <span class="arithmatex">\(\exists M_B = (K_B, \Sigma, \delta_B, s_B, F_B)\)</span> accpets <span class="arithmatex">\(A\)</span>.</p>
-<p>We construct <span class="arithmatex">\(\exists M_\cup_ = (K_\cup_, \Sigma, \delta_\cup_, s_\cup_, F_\cup_)\)</span> where</p>
+<p>We construct <span class="arithmatex">\(\exists M_\cup = (K_\cup, \Sigma, \delta_\cup, s_\cup, F_\cup)\)</span> where</p>
 <ul>
-<li><span class="arithmatex">\(K_\cup_ = K_A \times K_B\)</span>.</li>
-<li><span class="arithmatex">\(s_\cup_ = (s_A, s_B)\)</span>.</li>
-<li><span class="arithmatex">\(F_\cup_ = \{(q_A, q_B) \in K_A \times K_B | q_A \in F_A \text{ or } q_B \in F_B\}\)</span>.</li>
+<li><span class="arithmatex">\(K_\cup = K_A \times K_B\)</span>.</li>
+<li><span class="arithmatex">\(s_\cup = (s_A, s_B)\)</span>.</li>
+<li><span class="arithmatex">\(F_\cup = \{(q_A, q_B) \in K_A \times K_B | q_A \in F_A \text{ or } q_B \in F_B\}\)</span>.</li>
 <li>
-<p><span class="arithmatex">\(\delta_\cup_\)</span>: for any <span class="arithmatex">\(q_A \in K_A\)</span>, <span class="arithmatex">\(q_B \in K_B\)</span>, <span class="arithmatex">\(a \in \Sigma\)</span>,</p>
+<p><span class="arithmatex">\(\delta_\cup\)</span>: for any <span class="arithmatex">\(q_A \in K_A\)</span>, <span class="arithmatex">\(q_B \in K_B\)</span>, <span class="arithmatex">\(a \in \Sigma\)</span>,</p>
 <div class="arithmatex">\[
     \delta((q_A, q_B), a) = (\delta_A(q_A, a), \delta_B(q_B, a))
 \]</div>
 </li>
 </ul>
-<p>Then <span class="arithmatex">\(M_\cup_\)</span> accepts <span class="arithmatex">\(A \cup B\)</span>.</p>
+<p>Then <span class="arithmatex">\(M_\cup\)</span> accepts <span class="arithmatex">\(A \cup B\)</span>.</p>
 </details>
 </div>
 <div class="admonition theorem">
@@ -2448,7 +2448,7 @@ If <span class="arithmatex">\(A\)</span> is regular, so is <span class="arithmat
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.10.01 15:23:00 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.10.24 14:35:40 CST</span>
       
         <br>
         创建日期:
@@ -2526,10 +2526,10 @@ If <span class="arithmatex">\(A\)</span> is regular, so is <span class="arithmat
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
         <script src="../../../js/katex.js"></script>
       
