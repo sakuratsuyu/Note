@@ -86,6 +86,8 @@ Since the equivalence of PDA and CFG, we can use PDA to define context-free lang
 
     Every regular language is context-free.
 
+## Closure Property
+
 Similar to regular language, we have context-free language properties closure.
 
 !!! theorem
@@ -103,6 +105,8 @@ Similar to regular language, we have context-free language properties closure.
     One counter example of $A \cap B$ and $\overline{A}$ is $A = \{a^i b^j c^k | i = j\}$ and $B = \{a^i b^j c^k | j = k\}$. Both $A$ and $B$ are context-free, but $A \cap B = \{a^nb^nc^n | n \ge 0\}$ is not context-free (we will prove it later after giving pumping theorem for CFL).
 
     Since $A \cap B = \overline{\overline{A} \cup \overline{B}}$, we can show that $\overline{A}$ is not context-free.
+
+## Pumping Theorem
 
 !!! theorem "Pumping Theorem for CFL"
 
