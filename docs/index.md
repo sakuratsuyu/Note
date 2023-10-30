@@ -1,11 +1,11 @@
 # NOTES
+
 A note book by @sakuratsuyu.
 
 偶尔写点东西，希望你喜欢。
 
-$$
-\tt{Transfering\ content\ from\ other\ places\ these\ days\ } \cdots\ \&\$@\%\&\$@\%\&\$@\%
-$$
+!!! tip
+    - Currently updating [Theory of Computation](Mathematics_Basis/TC/Lec_5/) weekly.
 
 !!! info "About me"
     - All ids I used: **sakuratsuyu**, **桜つゆ**, **曦露** and **Mslease**. Maybe you can find me somewhere else! :stuck_out_tongue_closed_eyes:
