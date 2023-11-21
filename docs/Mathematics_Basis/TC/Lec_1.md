@@ -86,7 +86,14 @@ So we abstract the problem to a set, which we call a **language**.
 
 <div align="center">
 <figure>
-    <img src="../imgs/0.png" style="width:400px"/>
+    <img src="../imgs/0.svg" style="width:400px"/>
+    <figcaption> state diagram </figcaption>
+</figure>
+</div>
+
+<div align="center">
+<figure>
+    <img src="../imgs/1.svg" style="width:400px"/>
     <figcaption> state diagram </figcaption>
 </figure>
 </div>

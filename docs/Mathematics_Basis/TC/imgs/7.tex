@@ -1,0 +1,33 @@
+\documentclass[dvisvgm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary {arrows, positioning, automata}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=2cm,
+    initial text=$ $,
+    on grid,
+]
+
+    \node[rectangle, draw = gray, text = olive, fill = blue!10!white, minimum width = 2.8cm, minimum height = 4cm] (M1) at (0.7, 0) {$\ \ \ M$};
+
+    \node[           state]                    (A) {};
+    \node[initial,   state, left =of A]        (Q) {};
+    \node[accepting, state, above right =of A] (B) {};
+    \node[accepting, state, below right =of A] (C) {};
+
+    \path
+        
+        (Q) edge [above]            node                {e}  (A)
+        (A) edge [bend right]       node [fill=blue!20] {$\dots$}  (B)
+        (A) edge [bend left]        node [fill=blue!20] {$\dots$}  (C)
+        (B) edge [bend right, left] node                {e}  (A)
+        (C) edge [bend left, left]  node                {e}  (A)
+    ;
+\end{tikzpicture}
+
+\end{document}

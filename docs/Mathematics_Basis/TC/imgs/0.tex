@@ -1,0 +1,29 @@
+\documentclass[dvisvgm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary {arrows, positioning, automata}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=2cm,
+    initial text=$ $,
+    on grid,
+]
+
+    \node[initial,   state]              (A) {$q_0$};
+    \node[           state, right =of A] (B) {$q_1$};
+    \node[accepting, state, right =of B] (C) {$q_2$};
+
+    \path
+        (A) edge [bend left, above] node {0}     (B)
+        (A) edge [loop above]       node {1}     (A)
+        (B) edge [bend left, below] node {1}     (A)
+        (B) edge [above]            node {0}     (C)
+        (B) edge [loop above]       node {0, 1}     (C)
+    ;
+\end{tikzpicture}
+
+\end{document}

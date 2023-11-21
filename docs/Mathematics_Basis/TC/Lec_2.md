@@ -27,7 +27,7 @@ The difference between DFA and NFA is that NFA allows
 
 <div align="center">
 <figure>
-    <img src="../imgs/1.png" style="width:300px"/>
+    <img src="../imgs/2.svg" style="width:200px"/>
     <figcaption> state diagram of NFA </figcaption>
 </figure>
 </div>
@@ -44,18 +44,11 @@ The difference between DFA and NFA is that NFA allows
         L = \{w \in \{a, b\}^* | \text{ the second symbol from the end of $w$ is $b$.}\}
     $$
 
-    ```mermaid
-    flowchart LR
-        start(( )) --> q1((q1))
-        q1 -- a, b --> q1
-        q1 -- b --> q2((q2))
-        q2 -- a, b --> q3(((q3)))
-
-        style start fill:#000,stroke-width:0px
-        style q1 stroke-width:0px
-        style q2 stroke-width:0px
-        style q3 fill:#bbf,stroke:#333,stroke-width:2px
-    ```
+    <div align="center">
+    <figure>
+        <img src="../imgs/3.svg" style="width:300px"/>
+    </figure>
+    </div>
 
 !!! theorem
 
@@ -89,43 +82,21 @@ The difference between DFA and NFA is that NFA allows
 
         **NFA**
 
-        ```mermaid
-        flowchart LR
-            start(( )) --> q0((q0))
-            q0 -- a --> q0
-            q0 -- b --> q1(((q1)))
-            q1 -- e --> q0
-
-            style start fill:#000,stroke-width:0px
-            style q0 stroke-width:0px
-            style q1 fill:#bbf,stroke:#333,stroke-width:2px
-        ```
+        <div align="center">
+        <figure>
+            <img src="../imgs/4.svg" style="width:200px"/>
+        </figure>
+        </div>
 
     !!! plane ""
 
         **DFA**
 
-        ```mermaid
-        flowchart LR
-            start(( )) --> Q0(("{q0}"))
-            Q0 -- a --> Q0
-            Q0 -- b --> Q1((("{q0, q1}")))
-            Q1 -- a --> Q0
-            Q1 -- b --> Q1
-
-            style start fill:#000,stroke-width:0px
-            style Q0 stroke-width:0px
-            style Q1 fill:#bbf,stroke:#333,stroke-width:2px
-        ```
-
-        ```mermaid
-        flowchart LR
-            Q0((("{q1}"))) -- a, b --> Q1(("Φ"))
-            Q1 -- a, b --> Q1
-
-            style Q1 stroke-width:0px
-            style Q0 fill:#bbf,stroke:#333,stroke-width:2px
-        ```
+        <div align="center">
+        <figure>
+            <img src="../imgs/5.svg" style="width:300px"/>
+        </figure>
+        </div>
 
 Since the equivalence of NFA and DFA, so a language is regular if it's accepted by some NFA. Now we can prove the following theorem by NFA.
 
@@ -136,33 +107,12 @@ Since the equivalence of NFA and DFA, so a language is regular if it's accepted 
 !!! proof
 
     !!! plane ""
-
-        ```mermaid
-        ---
-        title: Idea
-        ---
-        flowchart LR
-            start(( )) --> startA
-            Q0A -- e --> startB
-            Q1A -- e --> startB
-            style start fill:#000,stroke-width:0px
-
-            subgraph M_circ
-            subgraph M_A
-                startA(( )) -- ... --> Q0A((( )))
-                startA(( )) -- ... --> Q1A((( )))
-                style Q0A fill:#bbf,stroke:#333,stroke-width:2px
-                style Q1A fill:#bbf,stroke:#333,stroke-width:2px
-            end
-
-            subgraph M_B
-                startB(( )) -- ...  --> Q0B((( )))
-                startB(( )) -- ...  --> Q1B((( )))
-                style Q0B fill:#bbf,stroke:#333,stroke-width:2px
-                style Q1B fill:#bbf,stroke:#333,stroke-width:2px
-            end
-            end
-        ```
+        
+        <div align="center">
+        <figure>
+            <img src="../imgs/6.svg" style="width:500px"/>
+        </figure>
+        </div>
 
     Since $A$ and $B$ are regular, thus there exist NFAs $M_A = (K_A, \Sigma, \Delta_A, s_A, F_A)$ and $M_B = (K_B, \Sigma, \Delta_B, s_B, F_B)$ which accepts $A$ and $B$ respectively.
 
@@ -178,22 +128,9 @@ Since the equivalence of NFA and DFA, so a language is regular if it's accepted 
     If $A$ is regular, so is $A^*$.
 
     !!! plane ""
-
-        ```mermaid
-        ---
-        title: Idea
-        ---
-        flowchart LR
-            start(( )) --> s
-            s(( )) --> startA
-            Q0A -- e --> startA
-            Q1A -- e --> startA
-            style start fill:#000,stroke-width:0px
-
-            subgraph M
-                startA(( )) -- ... --> Q0A((( )))
-                startA(( )) -- ... --> Q1A((( )))
-                style Q0A fill:#bbf,stroke:#333,stroke-width:2px
-                style Q1A fill:#bbf,stroke:#333,stroke-width:2px
-            end
-        ```
+        
+        <div align="center">
+        <figure>
+            <img src="../imgs/7.svg" style="width:300px"/>
+        </figure>
+        </div>
