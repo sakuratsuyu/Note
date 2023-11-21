@@ -2401,7 +2401,7 @@
 <h3 id="method-1-tree">Method 1 | Tree<a class="headerlink" href="#method-1-tree" title="Permanent link">&para;</a></h3>
 <p>The sets is represented by a forest. Each set <span class="arithmatex">\(S_i\)</span> is represented by a tree, and the root of the tree is the representation element. And a list <code>name</code> stores the roots of the trees.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/13.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/13.png" style="width:400px"/></a>
+    <a class="glightbox" href="../imgs/13.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/13.png" style="width:400px"/></a>
 </div>
 
 <p>For <strong>Union</strong> operation, it sets the parent of the root of one tree to the other root. The following picture shows</p>
@@ -2409,12 +2409,12 @@
     S_2 \cup S1 \Rightarrow S_2.
 \]</div>
 <div align="center">
-    <a class="glightbox" href="../Pic/14.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/14.png" style="width:400px"/></a>
+    <a class="glightbox" href="../imgs/14.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/14.png" style="width:400px"/></a>
 </div>
 
 <p>For <strong>Find</strong> operation, it finds the root of <span class="arithmatex">\(i\)</span> and its corresponding <code>name</code>, which is <code>'S'</code> in the following picture.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/15.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/15.png" style="width:300px"/></a>
+    <a class="glightbox" href="../imgs/15.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/15.png" style="width:300px"/></a>
 </div>
 
 <h3 id="method-2-array">Method 2 | Array<a class="headerlink" href="#method-2-array" title="Permanent link">&para;</a></h3>
@@ -2429,14 +2429,14 @@
 \]</div>
 <p>And the name of each set is the <strong>index</strong> of the root.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/16.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/16.png" style="width:600px"/></a>
+    <a class="glightbox" href="../imgs/16.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/16.png" style="width:600px"/></a>
 </div>
 
 <p>For <strong>Union</strong> operation, we just set</p>
 <div class="highlight"><pre><span></span><code><span class="n">S</span><span class="p">[</span><span class="n">root_2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root_1</span><span class="p">.</span>
 </code></pre></div>
 <div align="center">
-    <a class="glightbox" href="../Pic/17.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/17.png" style="width:300px"/></a>
+    <a class="glightbox" href="../imgs/17.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/17.png" style="width:300px"/></a>
 </div>
 
 <p>For <strong>Find</strong> operation, we iteratively or recursively find its parent until <code>S[x] = 0</code>.</p>
@@ -2489,7 +2489,7 @@
 <p>When we are finding an element, we can simultaneously change the parents of the nodes along the finding path, including itself, to the root, which makes the tree shallower.</p>
 <div align="center">
 <figure>
-    <a class="glightbox" href="../Pic/18.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/18.png" style="width:300px"/></a>
+    <a class="glightbox" href="../imgs/18.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/18.png" style="width:300px"/></a>
     <figcaption> When finding the root of the <strong>purple</strong> node </figcaption>
 </figure>
 </div>
@@ -2597,7 +2597,7 @@ A(i, j) = \left\{
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.07 23:15:42 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.21 17:00:13 CST</span>
       
         <br>
         创建日期:

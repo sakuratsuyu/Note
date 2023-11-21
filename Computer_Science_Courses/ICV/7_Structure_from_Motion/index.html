@@ -2542,7 +2542,7 @@
 <h1 id="lecture-7-structure-from-motion-sfm">Lecture 7 Structure from Motion (SfM)<a class="headerlink" href="#lecture-7-structure-from-motion-sfm" title="Permanent link">&para;</a></h1>
 <h2 id="camera-calibration">Camera Calibration 相机标定<a class="headerlink" href="#camera-calibration" title="Permanent link">&para;</a></h2>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_0.png" alt="lec7_0" style="width:600px"/></a>
+    <a class="glightbox" href="../imgs/lec7_0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_0.png" alt="lec7_0" style="width:600px"/></a>
 </div>
 
 <p>The process of camera calibration is the process from world coordinates to image sensor, we focus on the four coordinates:</p>
@@ -2557,7 +2557,7 @@
 <h4 id="coordinate-transformation">Coordinate Transformation<a class="headerlink" href="#coordinate-transformation" title="Permanent link">&para;</a></h4>
 <p>Coordinate transformation is from world coordinates to camera coordinates.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_1.png" alt="lec7_1" style="width:600px"/></a>
+    <a class="glightbox" href="../imgs/lec7_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_1.png" alt="lec7_1" style="width:600px"/></a>
 </div>
 
 <p><strong>Feature</strong></p>
@@ -2629,7 +2629,7 @@ M_{ext} =
 <h4 id="perspective-projection">Perspective Projection<a class="headerlink" href="#perspective-projection" title="Permanent link">&para;</a></h4>
 <p>Perspective projection is from camera coordinates to image plane.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_2.png" alt="lec7_2" style="width:400px"/></a>
+    <a class="glightbox" href="../imgs/lec7_2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_2.png" alt="lec7_2" style="width:400px"/></a>
 </div>
 
 <p>We have discuss this part in the previous <a href="../2_Image_Formation/#geometric-image-formation">Lectures</a>, thus we skip it and just leave the conclusion.</p>
@@ -2657,7 +2657,7 @@ M_{ext} =
 </div>
 <p>In addition, since the origin of image plane is at the center of the image, while the origin of image sensor is at the top left corner, we need some <strong>tranlation</strong> for the coordinate transformation.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_3.png" alt="lec7_3" style="width:500px"/></a>
+    <a class="glightbox" href="../imgs/lec7_3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_3.png" alt="lec7_3" style="width:500px"/></a>
 </div>
 
 <div class="arithmatex">\[
@@ -2774,12 +2774,12 @@ K =
 <h3 id="implemetation">Implemetation<a class="headerlink" href="#implemetation" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1.</strong> Capture an image of an object with known geometry.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_4.png" alt="lec7_4" style="width:300px"/></a>
+    <a class="glightbox" href="../imgs/lec7_4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_4.png" alt="lec7_4" style="width:300px"/></a>
 </div>
 
 <p><strong>Step 2.</strong> Identify correspondences (Image Matching 图像匹配) between 3D scene points and image points.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_5.png" alt="lec7_5" style="width:400px"/></a>
+    <a class="glightbox" href="../imgs/lec7_5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_5.png" alt="lec7_5" style="width:400px"/></a>
 </div>
 
 <p><strong>Step 3.</strong> For each corresponding point <span class="arithmatex">\(i\)</span>, we get </p>
@@ -2916,7 +2916,7 @@ i.e.\ \ A \mathbf{p} = 0.
 <div class="admonition bug">
 <p class="admonition-title">Problem: Distortion</p>
 <p><div align="center">
-    <a class="glightbox" href="../Pic/lec7_6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_6.png" alt="lec7_6" style="width:600px"/></a>
+    <a class="glightbox" href="../imgs/lec7_6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_6.png" alt="lec7_6" style="width:600px"/></a>
 </div></p>
 <p>In fact, camera itself has some coefficients of distortion, we <strong>ignore</strong> its effects here.</p>
 </div>
@@ -2928,7 +2928,7 @@ i.e.\ \ A \mathbf{p} = 0.
 <p>It's the method mentioned above. First solve out <span class="arithmatex">\(P\)</span>, and from <span class="arithmatex">\(K\)</span> solve out <span class="arithmatex">\(R\)</span> and <span class="arithmatex">\(\mathbf{t}\)</span>.</p>
 <h4 id="p3p">P3P<a class="headerlink" href="#p3p" title="Permanent link">&para;</a></h4>
 <p><div align="center">
-    <a class="glightbox" href="../Pic/lec7_7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_7.png" alt="lec7_7" style="width:200px"/></a>
+    <a class="glightbox" href="../imgs/lec7_7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_7.png" alt="lec7_7" style="width:200px"/></a>
 </div></p>
 <p>The question is with the coordinates <span class="arithmatex">\(a, b, c, A, B, C\)</span> known, find out the coordinate of <span class="arithmatex">\(O\)</span>.</p>
 <ul>
@@ -2977,7 +2977,7 @@ i.e.\ \ A \mathbf{p} = 0.
 </ul>
 <p>The general method is to solve by the linear combinations of four pairs of control points.</p>
 <p><div align="center">
-    <a class="glightbox" href="../Pic/lec7_8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_8.png" alt="lec7_8" style="width:300px"/></a>
+    <a class="glightbox" href="../imgs/lec7_8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_8.png" alt="lec7_8" style="width:300px"/></a>
 </div></p>
 </div>
 <h2 id="two-frame-structure-from-motion">Two-frame Structure from Motion<a class="headerlink" href="#two-frame-structure-from-motion" title="Permanent link">&para;</a></h2>
@@ -2986,7 +2986,7 @@ i.e.\ \ A \mathbf{p} = 0.
 <p>Compute 3D structure of the scene and camera poses from views (images).</p>
 </details>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_9.png" alt="lec7_9" style="width:600px"/></a>
+    <a class="glightbox" href="../imgs/lec7_9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_9.png" alt="lec7_9" style="width:600px"/></a>
 </div>
 
 <p>Two-frame SfM is aimed at solving a problem: Given two images and the intrinsic matrices (<span class="arithmatex">\(K_l(3 \times 3)\)</span> and <span class="arithmatex">\(K_r(3 \times 3)\)</span>)，find camera pose and the coordinates of the captured objects.</p>
@@ -2995,7 +2995,7 @@ i.e.\ \ A \mathbf{p} = 0.
 <p class="admonition-title">Epipolar Geometry 对极几何</p>
 <p>Epipolar geometry describes a geometry relation of <span class="arithmatex">\(u_l\)</span>, <span class="arithmatex">\(u_r\)</span>, which are the 2D projections of a 3D point <span class="arithmatex">\(P\)</span> in two views. And through this relation build up the transformation of the two cameras (namely find <span class="arithmatex">\(R\)</span> and <span class="arithmatex">\(\mathbf{t}\)</span>).</p>
 <p><div align="center">
-    <a class="glightbox" href="../Pic/lec7_10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_10.png" alt="lec7_10" style="width:600px"/></a>
+    <a class="glightbox" href="../imgs/lec7_10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_10.png" alt="lec7_10" style="width:600px"/></a>
 </div></p>
 </div>
 <div class="admonition definition">
@@ -3012,7 +3012,7 @@ i.e.\ \ A \mathbf{p} = 0.
 </li>
 </ul>
 <p><div align="center">
-    <a class="glightbox" href="../Pic/lec7_11.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_11.png" alt="lec7_11" style="width:600px"/></a>
+    <a class="glightbox" href="../imgs/lec7_11.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_11.png" alt="lec7_11" style="width:600px"/></a>
 </div></p>
 </div>
 <h4 id="essential-matrix-e">Essential Matrix <span class="arithmatex">\(E\)</span> 基本矩阵<a class="headerlink" href="#essential-matrix-e" title="Permanent link">&para;</a></h4>
@@ -3218,7 +3218,7 @@ E = K_l^T F K_r.
 <h3 id="implementation">Implementation 实现<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1.</strong> Find a set (<span class="arithmatex">\(m\)</span> pairs) of corresponding features. 找到一组（<span class="arithmatex">\(m\)</span> 对）匹配点.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_12.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_12.png" alt="lec7_12" style="width:500px"/></a>
+    <a class="glightbox" href="../imgs/lec7_12.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_12.png" alt="lec7_12" style="width:500px"/></a>
 </div>
 
 <div class="admonition tip">
@@ -3430,7 +3430,7 @@ x_r \\ y_r \\ z_r \\ 1
     \text{cost}(P) = \text{dist}(\mathbf{u}_l, \mathbf{\hat u}_l)^2 + \text{dist}(\mathbf{u}_r, \mathbf{\hat u}_r)^2.
 \]</div>
 <p><div align="center">
-    <a class="glightbox" href="../Pic/lec7_13.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_13.png" alt="lec7_13" style="width:400px"/></a>
+    <a class="glightbox" href="../imgs/lec7_13.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_13.png" alt="lec7_13" style="width:400px"/></a>
 </div></p>
 <p>By the way, we can optimize <span class="arithmatex">\(R\)</span> and <span class="arithmatex">\(\mathbf{t}\)</span> by this method.</p>
 </div>
@@ -3446,7 +3446,7 @@ x_r \\ y_r \\ z_r \\ 1
 <p><strong>Step 1.</strong> Initialize camera motion and scene structure. 初始化</p>
 <p>First, select two images to do Two-frame SfM.</p>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_14.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_14.png" alt="lec7_14" style="width:300px"/></a>
+    <a class="glightbox" href="../imgs/lec7_14.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_14.png" alt="lec7_14" style="width:300px"/></a>
 </div>
 
 <p><strong>Step 2.</strong> Deal with an addition view. 处理下一张图</p>
@@ -3455,14 +3455,14 @@ x_r \\ y_r \\ z_r \\ 1
 <li>For the points with built 3D points: <a href="#PnP">PnP Problem</a>. </li>
 </ul>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_15.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_15.png" alt="lec7_15" style="width:450px"/></a>
+    <a class="glightbox" href="../imgs/lec7_15.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_15.png" alt="lec7_15" style="width:450px"/></a>
 </div>
 
 <ul>
 <li>For the points without built 3D points: do Two-frame SfM.</li>
 </ul>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_16.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_16.png" alt="lec7_16" style="width:300px"/></a>
+    <a class="glightbox" href="../imgs/lec7_16.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_16.png" alt="lec7_16" style="width:300px"/></a>
 </div>
 
 <p><strong>Step 3.</strong> Refine structure and motion: Bundle Adjustment. 集束调整</p>
@@ -3475,13 +3475,13 @@ x_r \\ y_r \\ z_r \\ 1
 <p>COLMAP is a general-purpose <strong>Structure-from-Motion (SfM)</strong> and <strong>Multi-View Stereo (MVS)</strong> pipeline with a graphical and commandline interface. It offers a wide range of features for reconstruction of ordered and unordered image collections.</p>
 </blockquote>
 <div align="center">
-    <a class="glightbox" href="../Pic/lec7_17.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_17.png" alt="lec7_17" style="width:600px"/></a>
+    <a class="glightbox" href="../imgs/lec7_17.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_17.png" alt="lec7_17" style="width:600px"/></a>
 </div>
 
 <div class="admonition plane">
 <p>Pipeline</p>
 <p><div align="center">
-    <a class="glightbox" href="../Pic/lec7_18.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../Pic/lec7_18.png" alt="lec7_18" style="width:700px"/></a>
+    <a class="glightbox" href="../imgs/lec7_18.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/lec7_18.png" alt="lec7_18" style="width:700px"/></a>
 </div></p>
 </div>
 
@@ -3490,7 +3490,7 @@ x_r \\ y_r \\ z_r \\ 1
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.01.16 00:06:03 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.21 17:00:13 CST</span>
       
         <br>
         创建日期:
