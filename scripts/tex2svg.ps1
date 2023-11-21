@@ -14,8 +14,8 @@ $LOG = $FILENAME + ".log"
 
 cd $BASENAME
 
-xelatex -no-pdf -interaction=batchmode -halt-on-error $TEX
-dvisvgm $XDV -n -v 0 -o $SVG
+xelatex -no-pdf -interaction=batchmode -halt-on-error $TEX > $null
+dvisvgm $XDV -n -v 0 -o $SVG > $null
 Remove-Item $XDV,$AUX,$LOG
 Remove-Item *.pdf,*synctex.gz
 
