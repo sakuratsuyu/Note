@@ -67,11 +67,11 @@
     **NOTE:** $p \rightarrow q \Leftrightarrow \neg q \rightarrow \neg p$.
 
 <div align="center">
-	<img src="../Pic/0.png" style="width:430px"/>
+	<img src="../imgs/0.png" style="width:430px"/>
 </div>
 
 <div align="center">
-	<img src="../Pic/1.png" style="width:600px"/>
+	<img src="../imgs/1.png" style="width:600px"/>
 </div>
 
 ## Predicates and Quantifiers
@@ -163,11 +163,11 @@
     Addition 附加规则, Simplification 简化规则, Conjuction 合取规则, Resolution 消解原理.
 
 <div align="center">
-	<img src="../Pic/2.png" style="width:500px"/>
+	<img src="../imgs/2.png" style="width:500px"/>
 </div>
 
 <div align="center">
-	<img src="../Pic/3.png" style="width:400px"/>
+	<img src="../imgs/3.png" style="width:400px"/>
 </div>
 
 !!! note "Remark"

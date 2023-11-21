@@ -695,7 +695,7 @@ void HeapSort(const int n, int a[]) {
         
         <div align="center">
         <figure>
-        	<img src="../Pic/12.png" style="width:400px"/>
+        	<img src="../imgs/12.png" style="width:400px"/>
             <figcaption> Worst Case of Shell's Increment Sequence </figcaption>
         </figure>
         </div>

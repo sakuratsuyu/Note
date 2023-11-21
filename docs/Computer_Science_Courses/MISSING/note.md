@@ -545,7 +545,7 @@ Even if trying to debug a black box binary, there are tools to help. `strace` in
     For CPU sampling profilers is to use a **Flame Graph**.
 
     <div align="center">
-    	<img src="../Pic/0.png" style="width:800px"/>
+    	<img src="../imgs/0.png" style="width:800px"/>
     </div>
 
 !!! note "Resource Monitoring"

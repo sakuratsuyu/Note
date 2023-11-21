@@ -102,7 +102,7 @@ $$
 - Undersampling creates frequency aliases.
 
 <div align="center">
-	<img src="../Pic/lec3_0.png" alt="lec3_0" style="width:400px"/>
+	<img src="../imgs/lec3_0.png" alt="lec3_0" style="width:400px"/>
 </div>
 
 ### Fourier Transform
@@ -110,22 +110,22 @@ $$
 Simly put, fourier transform represents a function as a **weighted sum** of sines and cosines, where the sines and consines are in various **frequencies**.
 
 <div align="center">
-	<img src="../Pic/lec3_1.png" alt="lec3_1" style="width:800px"/>
+	<img src="../imgs/lec3_1.png" alt="lec3_1" style="width:800px"/>
 </div>
 
 <div align="center">
-	<img src="../Pic/lec3_2.png" alt="lec3_2" style="width:200px"/>
+	<img src="../imgs/lec3_2.png" alt="lec3_2" style="width:200px"/>
 </div>
 
 <br/>
 
 <div align="center">
-	<img src="../Pic/lec3_3.png" alt="lec3_3" style="width:500px"/>
+	<img src="../imgs/lec3_3.png" alt="lec3_3" style="width:500px"/>
 </div>
 
 !!! theorem "Convolution Theorem"
 	<div align="center">
-		<img src="../Pic/lec3_4.png" alt="lec3_4" style="width:500px"/>
+		<img src="../imgs/lec3_4.png" alt="lec3_4" style="width:500px"/>
 	</div>
 
 !!! plane ""
@@ -137,7 +137,7 @@ Simly put, fourier transform represents a function as a **weighted sum** of sine
 Sampling is repeating frequency contents. Aliasing is mixed frequency contents.
 
 <div align="center">
-	<img src="../Pic/lec3_5.png" alt="lec3_5" style="width:500px"/>
+	<img src="../imgs/lec3_5.png" alt="lec3_5" style="width:500px"/>
 </div>
 
 !!! success "Method to reduce aliasing"
@@ -146,20 +146,20 @@ Sampling is repeating frequency contents. Aliasing is mixed frequency contents.
 		!!! theorem "Nyquist-Shannon theorem"
 				 the signal can be perfectly reconstructed if sampled with a frequency larger than $2f_0$.
 				<div align="center">
-					<img src="../Pic/lec3_6.png" alt="lec3_6" style="width:400px"/>
+					<img src="../imgs/lec3_6.png" alt="lec3_6" style="width:400px"/>
 				</div>
 			
 	-   Anti-aliasing
 		-   Filtering --> Sampling.
 
 			<div align="center">
-				<img src="../Pic/lec3_7.png" alt="lec3_7" style="width:500px"/>
+				<img src="../imgs/lec3_7.png" alt="lec3_7" style="width:500px"/>
 			</div>
 
 	!!! example
 
 		<div align="center">
-			<img src="../Pic/lec3_8.png" alt="lec3_8" style="width:500px"/>
+			<img src="../imgs/lec3_8.png" alt="lec3_8" style="width:500px"/>
 		</div>
 
 ## Image Magnification
@@ -174,21 +174,21 @@ An important method: **Interpolation**.
 	-  **Feature:** Not continuous; Not smooth.
 
 		<div align="center">
-			<img src="../Pic/lec3_9.png" alt="lec3_9" style="width:400px"/>
+			<img src="../imgs/lec3_9.png" alt="lec3_9" style="width:400px"/>
 		</div>
 
 -   Linear Interpolation
 	- **Feature:** Continuous; Not smooth.
 
 		<div align="center">
-			<img src="../Pic/lec3_10.png" alt="lec3_10" style="width:400px"/>
+			<img src="../imgs/lec3_10.png" alt="lec3_10" style="width:400px"/>
 		</div>
 
 -   Cubic Interpolation
 	- **Feature:** Continuous; Smooth.
 
 		<div align="center">
-			<img src="../Pic/lec3_11.png" alt="lec3_11" style="width:400px"/>
+			<img src="../imgs/lec3_11.png" alt="lec3_11" style="width:400px"/>
 		</div>
 
 ### 2D Interpolation
@@ -202,7 +202,7 @@ An important method: **Interpolation**.
 	- then $f(x, y) = \text{lerp}(t, u_0, u_1)$, where $u_0 = \text{lerp}(s, u_{00}, u_{10})$ and $u_1 = \text{lerp}(s, u_{01}, u_{11})$.
 -   Bicubic Interpolation
 		<div align="center">
-			<img src="../Pic/lec3_12.png" alt="lec3_12" style="width:600px"/>
+			<img src="../imgs/lec3_12.png" alt="lec3_12" style="width:600px"/>
 		</div>
 
 ### Super-Resolution

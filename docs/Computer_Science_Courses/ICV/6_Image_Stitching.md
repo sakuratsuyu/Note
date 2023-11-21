@@ -79,7 +79,7 @@
 #### Summary of Different Transformations
 
 <div align="center">
-	<img src="../Pic/lec6_0.png" alt="lec6_0" style="width:600px"/>
+	<img src="../imgs/lec6_0.png" alt="lec6_0" style="width:600px"/>
 </div>
 
 ### Implementation
@@ -91,13 +91,13 @@ For convenience and maneuverability, we need a function that implies the general
 Suppose that an image function $f:(x, y) \rightarrow (r, g, b)$ transforms with $T:(x, y) \rightarrow (x', y')$ to a new image function $g:(x', y') \rightarrow (r, g, b)$.
 
 <div align="center">
-	<img src="../Pic/lec6_1.png" alt="lec6_1" style="width:600px"/>
+	<img src="../imgs/lec6_1.png" alt="lec6_1" style="width:600px"/>
 </div>
 
 !!! question "If the transformed pixed lands inside the pixels"
 
 	<div align="center">
-		<img src="../Pic/lec6_2.png" alt="lec6_2" style="width:600px"/>
+		<img src="../imgs/lec6_2.png" alt="lec6_2" style="width:600px"/>
 	</div>
 
 	**Problem** :fontawesome-solid-robot: It's quite complicated to solve it.
@@ -107,12 +107,12 @@ Suppose that an image function $f:(x, y) \rightarrow (r, g, b)$ transforms with 
 Why not consider inversely?
 
 <div align="center">
-	<img src="../Pic/lec6_3.png" alt="lec6_3" style="width:600px"/>
+	<img src="../imgs/lec6_3.png" alt="lec6_3" style="width:600px"/>
 </div>
 
 !!! question "If the transformed pixed lands inside the pixels"
 	<div align="center">
-		<img src="../Pic/lec6_4.png" alt="lec6_4" style="width:600px"/>
+		<img src="../imgs/lec6_4.png" alt="lec6_4" style="width:600px"/>
 	</div>
 
 	**Solution** :fontawesome-solid-check: [2D Interpolation!](../3_Image_Processing/#2d-interpolation)
@@ -287,13 +287,13 @@ How to make image stitching?
 !!! info "Extension: Panaroma and Cylindrical Projection"
 
 	<div align="center">
-		<img src="../Pic/lec6_5.png" alt="lec6_5" style="width:600px"/>
+		<img src="../imgs/lec6_5.png" alt="lec6_5" style="width:600px"/>
 	</div>
 
 	!!! bug "Problem: Drift"
 
 		<div align="center">
-			<img src="../Pic/lec6_6.png" alt="lec6_6" style="width:600px"/>
+			<img src="../imgs/lec6_6.png" alt="lec6_6" style="width:600px"/>
 		</div>
 
 	!!! success "Solution"

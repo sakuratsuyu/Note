@@ -401,7 +401,7 @@ We can represent the partial order by a graph called **Hasse Diagram**. To const
 
 
     <div align="center">
-    	<img src="../Pic/11.png" style="width:500px"/>
+    	<img src="../imgs/11.png" style="width:500px"/>
     </div>
 
 ### Maximial, Minimal, Greatest and Least Element

@@ -49,7 +49,7 @@ But sometimes we have $key_1 \ne key_2$, but $hash(key_1) = hash(key_2)$, we cal
 ## Hash Table
 
 <div align="center">
-	<img src="../Pic/9.png" style="width:400px"/>
+	<img src="../imgs/9.png" style="width:400px"/>
 </div>
 
 !!! definition

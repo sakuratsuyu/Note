@@ -3,7 +3,7 @@
 ## Camera Calibration 相机标定
 
 <div align="center">
-	<img src="../Pic/lec7_0.png" alt="lec7_0" style="width:600px"/>
+	<img src="../imgs/lec7_0.png" alt="lec7_0" style="width:600px"/>
 </div>
 
 The process of camera calibration is the process from world coordinates to image sensor, we focus on the four coordinates:
@@ -22,7 +22,7 @@ The parameters in the first two transform matrices are called **Camera Extrinsic
 Coordinate transformation is from world coordinates to camera coordinates.
 
 <div align="center">
-	<img src="../Pic/lec7_1.png" alt="lec7_1" style="width:600px"/>
+	<img src="../imgs/lec7_1.png" alt="lec7_1" style="width:600px"/>
 </div>
 
 **Feature**
@@ -105,7 +105,7 @@ $$
 Perspective projection is from camera coordinates to image plane.
 
 <div align="center">
-	<img src="../Pic/lec7_2.png" alt="lec7_2" style="width:400px"/>
+	<img src="../imgs/lec7_2.png" alt="lec7_2" style="width:400px"/>
 </div>
 
 We have discuss this part in the previous [Lectures](../2_Image_Formation/#geometric-image-formation), thus we skip it and just leave the conclusion.
@@ -136,7 +136,7 @@ $$
 In addition, since the origin of image plane is at the center of the image, while the origin of image sensor is at the top left corner, we need some **tranlation** for the coordinate transformation.
 
 <div align="center">
-	<img src="../Pic/lec7_3.png" alt="lec7_3" style="width:500px"/>
+	<img src="../imgs/lec7_3.png" alt="lec7_3" style="width:500px"/>
 </div>
 
 $$
@@ -269,13 +269,13 @@ $$
 **Step 1.** Capture an image of an object with known geometry.
 
 <div align="center">
-	<img src="../Pic/lec7_4.png" alt="lec7_4" style="width:300px"/>
+	<img src="../imgs/lec7_4.png" alt="lec7_4" style="width:300px"/>
 </div>
 
 **Step 2.** Identify correspondences (Image Matching 图像匹配) between 3D scene points and image points.
 
 <div align="center">
-	<img src="../Pic/lec7_5.png" alt="lec7_5" style="width:400px"/>
+	<img src="../imgs/lec7_5.png" alt="lec7_5" style="width:400px"/>
 </div>
 
 **Step 3.** For each corresponding point $i$, we get 
@@ -430,7 +430,7 @@ $$
 !!! Bug "Problem: Distortion"
 
 	<div align="center">
-		<img src="../Pic/lec7_6.png" alt="lec7_6" style="width:600px"/>
+		<img src="../imgs/lec7_6.png" alt="lec7_6" style="width:600px"/>
 	</div>
 	
 	In fact, camera itself has some coefficients of distortion, we **ignore** its effects here.
@@ -447,7 +447,7 @@ $$
 	#### P3P
 	
 	<div align="center">
-		<img src="../Pic/lec7_7.png" alt="lec7_7" style="width:200px"/>
+		<img src="../imgs/lec7_7.png" alt="lec7_7" style="width:200px"/>
 	</div>
 	
 	The question is with the coordinates $a, b, c, A, B, C$ known, find out the coordinate of $O$.
@@ -500,7 +500,7 @@ $$
 	The general method is to solve by the linear combinations of four pairs of control points.
 	
 	<div align="center">
-		<img src="../Pic/lec7_8.png" alt="lec7_8" style="width:300px"/>
+		<img src="../imgs/lec7_8.png" alt="lec7_8" style="width:300px"/>
 	</div>
 
 ## Two-frame Structure from Motion
@@ -509,7 +509,7 @@ $$
 	Compute 3D structure of the scene and camera poses from views (images).
 
 <div align="center">
-	<img src="../Pic/lec7_9.png" alt="lec7_9" style="width:600px"/>
+	<img src="../imgs/lec7_9.png" alt="lec7_9" style="width:600px"/>
 </div>
 
 Two-frame SfM is aimed at solving a problem: Given two images and the intrinsic matrices ($K_l(3 \times 3)$ and $K_r(3 \times 3)$)，find camera pose and the coordinates of the captured objects.
@@ -521,7 +521,7 @@ Two-frame SfM is aimed at solving a problem: Given two images and the intrinsic 
 	Epipolar geometry describes a geometry relation of $u_l$, $u_r$, which are the 2D projections of a 3D point $P$ in two views. And through this relation build up the transformation of the two cameras (namely find $R$ and $\mathbf{t}$).
 	
 	<div align="center">
-		<img src="../Pic/lec7_10.png" alt="lec7_10" style="width:600px"/>
+		<img src="../imgs/lec7_10.png" alt="lec7_10" style="width:600px"/>
 	</div>
 
 !!! definition
@@ -533,7 +533,7 @@ Two-frame SfM is aimed at solving a problem: Given two images and the intrinsic 
 		- Epipoles are on the epipolar plane.
 
 	<div align="center">
-		<img src="../Pic/lec7_11.png" alt="lec7_11" style="width:600px"/>
+		<img src="../imgs/lec7_11.png" alt="lec7_11" style="width:600px"/>
 	</div>
 
 #### Essential Matrix $E$ 基本矩阵
@@ -761,7 +761,7 @@ $$
 **Step 1.** Find a set ($m$ pairs) of corresponding features. 找到一组（$m$ 对）匹配点.
 
 <div align="center">
-	<img src="../Pic/lec7_12.png" alt="lec7_12" style="width:500px"/>
+	<img src="../imgs/lec7_12.png" alt="lec7_12" style="width:500px"/>
 </div>
 
 !!! tip "Least Number of Points"
@@ -998,7 +998,7 @@ $$
 	$$
 	
 	<div align="center">
-		<img src="../Pic/lec7_13.png" alt="lec7_13" style="width:400px"/>
+		<img src="../imgs/lec7_13.png" alt="lec7_13" style="width:400px"/>
 	</div>
 	
 	By the way, we can optimize $R$ and $\mathbf{t}$ by this method.
@@ -1023,7 +1023,7 @@ and $mn$ 2D projection points $\mathbf{u}_j^{(i)}$, find $m$ projection matrices
 First, select two images to do Two-frame SfM.
 
 <div align="center">
-	<img src="../Pic/lec7_14.png" alt="lec7_14" style="width:300px"/>
+	<img src="../imgs/lec7_14.png" alt="lec7_14" style="width:300px"/>
 </div>
 
 **Step 2.** Deal with an addition view. 处理下一张图
@@ -1033,13 +1033,13 @@ For each additional image,
 - For the points with built 3D points: [PnP Problem](#PnP). 
 
 <div align="center">
-	<img src="../Pic/lec7_15.png" alt="lec7_15" style="width:450px"/>
+	<img src="../imgs/lec7_15.png" alt="lec7_15" style="width:450px"/>
 </div>
 
 - For the points without built 3D points: do Two-frame SfM.
 
 <div align="center">
-	<img src="../Pic/lec7_16.png" alt="lec7_16" style="width:300px"/>
+	<img src="../imgs/lec7_16.png" alt="lec7_16" style="width:300px"/>
 </div>
 
 **Step 3.** Refine structure and motion: Bundle Adjustment. 集束调整
@@ -1055,12 +1055,12 @@ $$
 > COLMAP is a general-purpose **Structure-from-Motion (SfM)** and **Multi-View Stereo (MVS)** pipeline with a graphical and commandline interface. It offers a wide range of features for reconstruction of ordered and unordered image collections.
 
 <div align="center">
-	<img src="../Pic/lec7_17.png" alt="lec7_17" style="width:600px"/>
+	<img src="../imgs/lec7_17.png" alt="lec7_17" style="width:600px"/>
 </div>
 
 !!! plane ""
 	Pipeline
 	
 	<div align="center">
-		<img src="../Pic/lec7_18.png" alt="lec7_18" style="width:700px"/>
+		<img src="../imgs/lec7_18.png" alt="lec7_18" style="width:700px"/>
 	</div>

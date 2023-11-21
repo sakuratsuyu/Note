@@ -149,7 +149,7 @@
 ## Iterative Techniques for Solving Linear Systems
 
 <div align="center">
-	<img src="../Pic/chap7_0.png" alt="chap7_0 " style="width:200px"/>
+	<img src="../imgs/chap7_0.png" alt="chap7_0 " style="width:200px"/>
 </div>
 
 $$

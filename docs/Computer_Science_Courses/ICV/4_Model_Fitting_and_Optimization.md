@@ -98,7 +98,7 @@ But, if no analytical solution, we should only consider the **approximate soluti
 		- To minimize $\phi(a)$.
 
 			<div align="center">
-				<img src="../Pic/lec4_0.png" alt="lec4_0" style="width:300px"/>
+				<img src="../imgs/lec4_0.png" alt="lec4_0" style="width:300px"/>
 			</div>	
 	
 			!!! success "Backtracking Algorithm"
@@ -107,7 +107,7 @@ But, if no analytical solution, we should only consider the **approximate soluti
 				- Decrease $\alpha$ until $\phi(\alpha)\le\phi(0) + \gamma\phi'(0)\alpha$.
 
 				<div align="center">
-					<img src="../Pic/lec4_1.png" alt="lec4_1" style="width:300px"/>
+					<img src="../imgs/lec4_1.png" alt="lec4_1" style="width:300px"/>
 				</div>	
 	
 	- Advantage
@@ -164,7 +164,7 @@ But, if no analytical solution, we should only consider the **approximate soluti
 !!! note "Local Minimum and Global Minimum"
 
 	<div align="center">
-		<img src="../Pic/lec4_2.png" alt="lec4_2" style="width:400px"/>
+		<img src="../imgs/lec4_2.png" alt="lec4_2" style="width:400px"/>
 	</div>	
 
 ### Convex Optimization
@@ -180,7 +180,7 @@ But, if no analytical solution, we should only consider the **approximate soluti
 Outlier makes MSE fail. To reduce its effect, we can use other loss functions, called **robust functions.**
 
 <div align="center">
-	<img src="../Pic/lec4_3.png" alt="lec4_3" style="width:400px"/>
+	<img src="../imgs/lec4_3.png" alt="lec4_3" style="width:400px"/>
 </div>	
 
 ### RANSAC (RANdom SAmple Concensus)
@@ -193,7 +193,7 @@ The most powerful method to handle outliers.
 	- Use data point pairs to vote.
 
 	<div align="center">
-		<img src="../Pic/lec4_4.png" alt="lec4_4" style="width:500px"/>
+		<img src="../imgs/lec4_4.png" alt="lec4_4" style="width:500px"/>
 	</div>	
 
 ### ill-posed Problem 病态问题 / 多解问题
@@ -230,14 +230,14 @@ Cut $C=(V_A, V_B)$ is a parition of vertices $V$ of a graph $G$ into two disjoin
 **Cost of Cut:** $\text{cut}(V_A, V_B) = \sum\limits_{u\in V_A, v\in V_B} w(u, v)$.
 
 <div align="center">
-	<img src="../Pic/lec4_5.png" alt="lec4_5" style="width:300px"/>
+	<img src="../imgs/lec4_5.png" alt="lec4_5" style="width:300px"/>
 </div>	
 
 !!! question "Problem with Min-Cut"
 	Min-cut is bias to cut small and isolated segments.
 
 	<div align="center">
-		<img src="../Pic/lec4_6.png" alt="lec4_6" style="width:600px"/>
+		<img src="../imgs/lec4_6.png" alt="lec4_6" style="width:600px"/>
 	</div>	
 
 !!! success "Solution: Normalized Cut"

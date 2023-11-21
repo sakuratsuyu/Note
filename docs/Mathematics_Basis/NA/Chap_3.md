@@ -49,7 +49,7 @@ Suppose we have function $y = f(x)$ with the given points $(x_0, y_0), (x_1, y_1
     $$
 
     <div align="center">
-    	<img src="../Pic/chap3_0.png" alt="chap3_0 " style="width:600px"/>
+    	<img src="../imgs/chap3_0.png" alt="chap3_0 " style="width:600px"/>
     </div>
 
     For uniqueness, we prove by contradition. If not, suppose $P(x)$ and $Q(x)$ both satisfying the conditions, then $D(x) = P(x) - Q(x)$ is a polynomial of degree $\text{deg}(D(x)) \le n$, but $D(x)$ has $n + 1$ distinct roots $x_0, x_1, \dots, x_n$, which leads to a contradiction.
@@ -144,7 +144,7 @@ $$
 then from **Theorem 3.2**, the interpolating polynomials can be generated **recursively**. 
 
 <div align="center">
-	<img src="../Pic/chap3_1.png" alt="chap3_1 " style="width:700px"/>
+	<img src="../imgs/chap3_1.png" alt="chap3_1 " style="width:700px"/>
 </div>
 
 ## Newton Interpolation
@@ -177,7 +177,7 @@ $$
 And the divided difference can be generated as below, which is similar to Neville's Method.
 
 <div align="center">
-	<img src="../Pic/chap3_2.png" alt="chap3_2 " style="width:700px"/>
+	<img src="../imgs/chap3_2.png" alt="chap3_2 " style="width:700px"/>
 </div>
 
 !!! theorem "Theorem 3.3"
@@ -394,7 +394,7 @@ $$
 $$
 
 <div align="center">
-	<img src="../Pic/chap3_3.png" alt="chap3_3 " style="width:800px"/>
+	<img src="../imgs/chap3_3.png" alt="chap3_3 " style="width:800px"/>
 </div>
 
 ## Cubic Spline Interpolation
@@ -536,5 +536,5 @@ $$
 $$
 
 <div align="center">
-	<img src="../Pic/chap3_4.png" alt="chap3_4 " style="width:500px"/>
+	<img src="../imgs/chap3_4.png" alt="chap3_4 " style="width:500px"/>
 </div>

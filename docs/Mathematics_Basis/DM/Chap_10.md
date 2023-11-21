@@ -75,7 +75,7 @@
     **Remark** $|E| = C(n ,2)$.
 
     <div align="center">
-    	<img src="../Pic/5.png" style="width:500px"/>
+    	<img src="../imgs/5.png" style="width:500px"/>
     </div>
 
 !!! plane ""
@@ -84,7 +84,7 @@
     The cycle $C_n$ ($n ge 3$) consists of $n$ vertices $v_1, v_2, \dots, v_n$ and edges $\{v_1, v_2\}, \{v_2, v_3\}, \dots \{v_{n - 1}, v_n\} and \{v_n, v_1\}$.
 
     <div align="center">
-    	<img src="../Pic/6.png" style="width:500px"/>
+    	<img src="../imgs/6.png" style="width:500px"/>
     </div>
 
 !!! plane ""
@@ -93,7 +93,7 @@
     The wheel $W_n$ is to add an additional vertex to the cycle $C_n$, and connect this new vertex to each of $n$ vertices by new edges.
 
     <div align="center">
-    	<img src="../Pic/7.png" style="width:500px"/>
+    	<img src="../imgs/7.png" style="width:500px"/>
     </div>
 
 !!! plane ""
@@ -115,7 +115,7 @@
     A bipartite graph is the **complete bipartite graph** $K_{m, n}$ if every vertex in $V_1$ is joined to a vertex in $V_2$ nad conversely, and $|V_1| = m$, $|V_2| = n$.
 
     <div align="center">
-    	<img src="../Pic/8.png" style="width:500px"/>
+    	<img src="../imgs/8.png" style="width:500px"/>
     </div>
 
 ## Representation
@@ -185,7 +185,7 @@ There are many ways to represent graphs: Graph, adjacecy lists, adjacency matric
 !!! example
 
     <div align="center">
-    	<img src="../Pic/9.png" style="width:600px"/>
+    	<img src="../imgs/9.png" style="width:600px"/>
     </div>
 
 ### Isomorphism of Graphs

@@ -25,7 +25,7 @@
 The sets is represented by a forest. Each set $S_i$ is represented by a tree, and the root of the tree is the representation element. And a list `name` stores the roots of the trees.
 
 <div align="center">
-	<img src="../Pic/13.png" style="width:400px"/>
+	<img src="../imgs/13.png" style="width:400px"/>
 </div>
 
 For **Union** operation, it sets the parent of the root of one tree to the other root. The following picture shows
@@ -35,13 +35,13 @@ $$
 $$
 
 <div align="center">
-	<img src="../Pic/14.png" style="width:400px"/>
+	<img src="../imgs/14.png" style="width:400px"/>
 </div>
 
 For **Find** operation, it finds the root of $i$ and its corresponding `name`, which is `'S'` in the following picture.
 
 <div align="center">
-	<img src="../Pic/15.png" style="width:300px"/>
+	<img src="../imgs/15.png" style="width:300px"/>
 </div>
 
 ### Method 2 | Array
@@ -60,7 +60,7 @@ $$
 And the name of each set is the **index** of the root.
 
 <div align="center">
-	<img src="../Pic/16.png" style="width:600px"/>
+	<img src="../imgs/16.png" style="width:600px"/>
 </div>
 
 For **Union** operation, we just set
@@ -70,7 +70,7 @@ S[root_2] = root_1.
 ```
 
 <div align="center">
-	<img src="../Pic/17.png" style="width:300px"/>
+	<img src="../imgs/17.png" style="width:300px"/>
 </div>
 
 For **Find** operation, we iteratively or recursively find its parent until `S[x] = 0`.
@@ -142,7 +142,7 @@ When we are finding an element, we can simultaneously change the parents of the 
 
 <div align="center">
 <figure>
-	<img src="../Pic/18.png" style="width:300px"/>
+	<img src="../imgs/18.png" style="width:300px"/>
     <figcaption> When finding the root of the <strong>purple</strong> node </figcaption>
 </figure>
 </div>

@@ -73,7 +73,7 @@ We can repeat this process recursively, and finally we get the following conclus
     $$
 
     <div align="center">
-    	<img src="../Pic/chap4_0.png" alt="chap4_0" style="width:500px"/>
+    	<img src="../imgs/chap4_0.png" alt="chap4_0" style="width:500px"/>
     </div>
 
 ## Numerical Differentiation
@@ -145,11 +145,11 @@ $$
     $$
 
 <div align="center">
-	<img src="../Pic/chap4_2.png" alt="chap4_2" style="width:500px"/>
+	<img src="../imgs/chap4_2.png" alt="chap4_2" style="width:500px"/>
 </div>
 
 <div align="center">
-	<img src="../Pic/chap4_3.png" alt="chap4_3" style="width:500px"/>
+	<img src="../imgs/chap4_3.png" alt="chap4_3" style="width:500px"/>
 </div>
 
 !!! success "Differentiation with Richardson's Extrapolation"
@@ -188,7 +188,7 @@ $$
         Suppose $x_0 = 2.0$, $h = 0.2$, $f(x) = xe^x$, the exact value of $f'(x_0)$ is 22.167168. While the extrapolation process is shown below.
 
         <div align="center">
-        	<img src="../Pic/chap4_1.png" alt="chap4_1" style="width:600px"/>
+        	<img src="../imgs/chap4_1.png" alt="chap4_1" style="width:600px"/>
         </div>
 
 
@@ -300,7 +300,7 @@ Similarly, we suppose **equally spaced** situation here again.
 
     <div align="center">
     <figure>
-    	<img src="../Pic/chap4_6.png" alt="chap4_6" style="width:500px"/>
+    	<img src="../imgs/chap4_6.png" alt="chap4_6" style="width:500px"/>
         <figcaption>(n + 1)-point closed Newton-Cotes formulae</figcaption>
     </figure>
     </div>
@@ -329,14 +329,14 @@ Similarly, we suppose **equally spaced** situation here again.
 
 <div align="center">
 <figure>
-	<img src="../Pic/chap4_4.png" alt="chap4_4" style="width:500px"/>
+	<img src="../imgs/chap4_4.png" alt="chap4_4" style="width:500px"/>
     <figcaption>Trapezoidal rule</figcaption>
 </figure>
 </div>
 
 <div align="center">
 <figure>
-	<img src="../Pic/chap4_5.png" alt="chap4_5" style="width:500px"/>
+	<img src="../imgs/chap4_5.png" alt="chap4_5" style="width:500px"/>
     <figcaption>Simpson's rule</figcaption>
 </figure>
 </div>
@@ -364,7 +364,7 @@ Similarly, we suppose **equally spaced** situation here again.
 
     <div align="center">
     <figure>
-    	<img src="../Pic/chap4_7.png" alt="chap4_7" style="width:500px"/>
+    	<img src="../imgs/chap4_7.png" alt="chap4_7" style="width:500px"/>
         <figcaption>(n + 1)-point open Newton-Cotes formulae</figcaption>
     </figure>
     </div>
@@ -390,7 +390,7 @@ Similarly, we discuss a **piecewise** approach to numerical integration with low
     $$
 
     <div align="center">
-    	<img src="../Pic/chap4_8.png" alt="chap4_8" style="width:500px"/>
+    	<img src="../imgs/chap4_8.png" alt="chap4_8" style="width:500px"/>
     </div>
 
 !!! theorem "Theorem 4.3 | Composite Simpson's rule"
@@ -402,7 +402,7 @@ Similarly, we discuss a **piecewise** approach to numerical integration with low
     $$
 
     <div align="center">
-    	<img src="../Pic/chap4_9.png" alt="chap4_9" style="width:500px"/>
+    	<img src="../imgs/chap4_9.png" alt="chap4_9" style="width:500px"/>
     </div>
 
 !!! theorem "Theorem 4.4 | Composite Midpoint rule"
@@ -413,7 +413,7 @@ Similarly, we discuss a **piecewise** approach to numerical integration with low
     $$
 
     <div align="center">
-    	<img src="../Pic/chap4_10.png" alt="chap4_10" style="width:500px"/>
+    	<img src="../imgs/chap4_10.png" alt="chap4_10" style="width:500px"/>
     </div>
 
 !!! note "Stability"
@@ -461,7 +461,7 @@ $$
 
 
 <div align="center">
-	<img src="../Pic/chap4_11.png" alt="chap4_11" style="width:600px"/>
+	<img src="../imgs/chap4_11.png" alt="chap4_11" style="width:600px"/>
 </div>
 
 !!! theorem "Theorem 4.5"
@@ -484,7 +484,7 @@ This nice theorem makes Richardson's extrapolation available to reduce the trunc
     with an $O(h^{2j}_k)$ approximation.
 
     <div align="center">
-    	<img src="../Pic/chap4_12.png" alt="chap4_12" style="width:400px"/>
+    	<img src="../imgs/chap4_12.png" alt="chap4_12" style="width:400px"/>
     </div>
 
 #### Adaptive Quadrature Methods
@@ -672,7 +672,7 @@ $$
 The following table gives the pre-calculated values.
 
 <div align="center">
-	<img src="../Pic/chap4_13.png" alt="chap4_13" style="width:300px"/>
+	<img src="../imgs/chap4_13.png" alt="chap4_13" style="width:300px"/>
 </div>
 
 And from interval $[-1, 1]$ to $[a, b]$, we have a linear map
@@ -682,7 +682,7 @@ $$
 $$
 
 <div align="center">
-	<img src="../Pic/chap4_14.png" alt="chap4_14" style="width:600px"/>
+	<img src="../imgs/chap4_14.png" alt="chap4_14" style="width:600px"/>
 </div>
 
 Thus we have

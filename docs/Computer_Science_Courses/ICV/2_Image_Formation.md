@@ -6,7 +6,7 @@
 
 A barrier to block off most of the rays. The opening is the **aperture 光圈**.
 <div align="center">
-	<img src="../Pic/lec2_0.png" alt="lec2_0" style="width:600px"/>
+	<img src="../imgs/lec2_0.png" alt="lec2_0" style="width:600px"/>
 </div>
 
 **Flaws**
@@ -17,7 +17,7 @@ A barrier to block off most of the rays. The opening is the **aperture 光圈**.
 ### Lens 透镜
 
 <div align="center">
-	<img src="../Pic/lec2_1.png" alt="lec2_1" style="width:500px"/>
+	<img src="../imgs/lec2_1.png" alt="lec2_1" style="width:500px"/>
 </div>
 
 $$
@@ -35,7 +35,7 @@ m = \frac{h_i}{h_o}.
 $$
 
 <div align="center">
-	<img src="../Pic/lec2_2.png" alt="lec2_2" style="width:500px"/>
+	<img src="../imgs/lec2_2.png" alt="lec2_2" style="width:500px"/>
 </div>
 
 #### Field of View (FOV) 视野
@@ -46,7 +46,7 @@ $$
 	- Longer focal length, Narrower angle of view. Vice versa.
 
 <div align="center">
-	<img src="../Pic/lec2_3.png" alt="lec2_3" style="width:200px"/>
+	<img src="../imgs/lec2_3.png" alt="lec2_3" style="width:200px"/>
 </div>
 
 !!! note 
@@ -58,7 +58,7 @@ $$
 	- Bigger sensor size, Wider angle of view. Vice versa.
 
 <div align="center">
-	<img src="../Pic/lec2_4.png" alt="lec2_4" style="width:500px"/>
+	<img src="../imgs/lec2_4.png" alt="lec2_4" style="width:500px"/>
 </div>
 
 ### Aperture 光圈
@@ -74,7 +74,7 @@ $$
 ### Lens Defocus
 
 <div align="center">
-	<img src="../Pic/lec2_5.png" alt="lec2_5" style="width:500px"/>
+	<img src="../imgs/lec2_5.png" alt="lec2_5" style="width:500px"/>
 </div>
 
 Blur Circle Diameter (光斑半径)
@@ -86,13 +86,13 @@ $$
 ### Focusing 对焦
 
 <div align="center">
-	<img src="../Pic/lec2_6.png" alt="lec2_6" style="width:600px"/>
+	<img src="../imgs/lec2_6.png" alt="lec2_6" style="width:600px"/>
 </div>
 
 #### Depth of Field (DoF) 景深
 
 <div align="center">
-	<img src="../Pic/lec2_7.png" alt="lec2_7" style="width:600px"/>
+	<img src="../imgs/lec2_7.png" alt="lec2_7" style="width:600px"/>
 </div>
 
 
@@ -113,7 +113,7 @@ From the equation above, we can find that **DoF is almost proportional to $N$**,
 
 !!! note "Camera model"
 	<div align="center">
-		<img src="../Pic/lec2_8.png" alt="lec2_8" style="width:400px"/>
+		<img src="../imgs/lec2_8.png" alt="lec2_8" style="width:400px"/>
 	</div>
 
 $$
@@ -161,7 +161,7 @@ $$
 For convenience of dicussion, we can also put the image plane in front of the camera (opposite to the previous picture).
 
 <div align="center">
-	<img src="../Pic/lec2_9.png" alt="lec2_9" style="width:400px"/>
+	<img src="../imgs/lec2_9.png" alt="lec2_9" style="width:400px"/>
 </div>
 	
 ### Perspective Projection
@@ -172,10 +172,10 @@ For convenience of dicussion, we can also put the image plane in front of the ca
 #### Vanishing Points
 
 <div align="center">
-	<img src="../Pic/lec2_10.png" alt="lec2_10" style="width:500px"/>
+	<img src="../imgs/lec2_10.png" alt="lec2_10" style="width:500px"/>
 </div>
 <div align="center">
-	<img src="../Pic/lec2_11.png" alt="lec2_11" style="width:500px"/>
+	<img src="../imgs/lec2_11.png" alt="lec2_11" style="width:500px"/>
 </div>
 
 !!! theorem "Properties"
@@ -191,7 +191,7 @@ Multiple vanishing points compose the vanishing lines.
 The direction of the vanishing line tells us the orientation of the plane.
 
 <div align="center">
-	<img src="../Pic/lec2_12.png" alt="lec2_12" style="width:500px"/>
+	<img src="../imgs/lec2_12.png" alt="lec2_12" style="width:500px"/>
 </div>
 
 #### Distortion
@@ -200,7 +200,7 @@ The direction of the vanishing line tells us the orientation of the plane.
 
 <figure markdown> 
 	<div align="center">
-		<img src="../Pic/lec2_13.png" alt="lec2_13" style="width:800px"/>
+		<img src="../imgs/lec2_13.png" alt="lec2_13" style="width:800px"/>
 	</div>
 	<figcaption>Problem and Solution (View Camera 移轴相机)</figcaption>
 </figure>
@@ -208,13 +208,13 @@ The direction of the vanishing line tells us the orientation of the plane.
 - Exterior columns appear bigger. (Due to lens flaws.)
 
 	<div align="center">
-		<img src="../Pic/lec2_14.png" alt="lec2_14" style="width:300px"/>
+		<img src="../imgs/lec2_14.png" alt="lec2_14" style="width:300px"/>
 	</div>
 
 - Radial distortion. (Due to imperfect lens.)
 
 <div align="center">
-	<img src="../Pic/lec2_15.png" alt="lec2_15" style="width:800px"/>
+	<img src="../imgs/lec2_15.png" alt="lec2_15" style="width:800px"/>
 </div>
 
 $$
@@ -231,7 +231,7 @@ $$
 #### Orthographic Projection
 
 <div align="center">
-	<img src="../Pic/lec2_16.png" alt="lec2_16" style="width:400px"/>
+	<img src="../imgs/lec2_16.png" alt="lec2_16" style="width:400px"/>
 </div>
 
 $$
@@ -276,19 +276,19 @@ Shutter speed controls exposure time.
 -   Practical Color Sensing: **Bayer Filter**
 
 <div align="center">
-	<img src="../Pic/lec2_17.png" alt="lec2_17" style="width:800px"/>
+	<img src="../imgs/lec2_17.png" alt="lec2_17" style="width:800px"/>
 </div>
 
 ### Shading 着色
 
 <div align="center">
-	<img src="../Pic/lec2_18.png" alt="lec2_18" style="width:300px"/>
+	<img src="../imgs/lec2_18.png" alt="lec2_18" style="width:300px"/>
 </div>
 
 ### BRDF (Bidirectional Reflectance Distribution Function)
 
 <div align="center">
-	<img src="../Pic/lec2_19.png" alt="lec2_19" style="width:600px"/>
+	<img src="../imgs/lec2_19.png" alt="lec2_19" style="width:600px"/>
 </div>
 
 $$
@@ -300,7 +300,7 @@ $$
 -   Shading independent of view direction.
 
 <div align="center">
-	<img src="../Pic/lec2_20.png" alt="lec2_20" style="width:600px"/>
+	<img src="../imgs/lec2_20.png" alt="lec2_20" style="width:600px"/>
 </div>
 
 #### Specular Term
@@ -308,13 +308,13 @@ $$
 -   Intensity depends on view direction.
 
 <div align="center">
-	<img src="../Pic/lec2_21.png" alt="lec2_21" style="width:600px"/>
+	<img src="../imgs/lec2_21.png" alt="lec2_21" style="width:600px"/>
 </div>
 
 #### Blinn-Phong Reflection Model
 
 <div align="center">
-	<img src="../Pic/lec2_22.png" alt="lec2_22" style="width:800px"/>
+	<img src="../imgs/lec2_22.png" alt="lec2_22" style="width:800px"/>
 </div>
 
 $$

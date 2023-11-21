@@ -80,7 +80,7 @@ Before finding out the approximation, we need some conditions to guarantee its a
     $$
 
     <div align="center">
-    	<img src="../Pic/chap5_0.png" alt="chap5_0 " style="width:600px"/>
+    	<img src="../imgs/chap5_0.png" alt="chap5_0 " style="width:600px"/>
     </div>
 
 !!! theorem "Theorem 5.0 | Sufficient Condition"
@@ -204,7 +204,7 @@ If $w_i \approx y(t_i)$ and we delete the remainder term, we get the **(Explicit
     $$ 
 
 <div align="center">
-	<img src="../Pic/chap5_1.png" alt="chap5_1 " style="width:600px"/>
+	<img src="../imgs/chap5_1.png" alt="chap5_1 " style="width:600px"/>
 </div>
 
 The local truncation error of Euler's Method is
@@ -497,7 +497,7 @@ The most common Runge-Kutta method is given below.
 The local trancation error of Runge-Kutta are given below, where $n$ is the number of evaluations per step.
 
 <div align="center">
-	<img src="../Pic/chap5_2.png" alt="chap5_2 " style="width:800px"/>
+	<img src="../imgs/chap5_2.png" alt="chap5_2 " style="width:800px"/>
 </div>
 
 !!! theorem "Property"
@@ -1160,7 +1160,7 @@ Again, to make $w_i$ approximate $(e^H)^i$, we want at least all $|\beta_k| < 1$
 The region of Euler's method is like
 
 <div align="center">
-	<img src="../Pic/chap5_3.png" alt="chap5_3 " style="width:200px"/>
+	<img src="../imgs/chap5_3.png" alt="chap5_3 " style="width:200px"/>
 </div>
 
 Thus it's only stable for some cases of stiff equation. When the negative $\lambda$ becomes smaller and get out of the region, it becomes not stable.
@@ -1174,7 +1174,7 @@ $$
 And the region is like
 
 <div align="center">
-	<img src="../Pic/chap5_4.png" alt="chap5_4 " style="width:200px"/>
+	<img src="../imgs/chap5_4.png" alt="chap5_4 " style="width:200px"/>
 </div>
 
 Let's consider some implicit method. Say Euler's implicit method, we have
@@ -1186,7 +1186,7 @@ $$
 whose region is
 
 <div align="center">
-	<img src="../Pic/chap5_5.png" alt="chap5_5 " style="width:200px"/>
+	<img src="../imgs/chap5_5.png" alt="chap5_5 " style="width:200px"/>
 </div>
 
 Thus it's *A-stable*.
@@ -1200,7 +1200,7 @@ $$
 whose region is just right covers the left half-plane.
 
 <div align="center">
-	<img src="../Pic/chap5_6.png" alt="chap5_6 " style="width:200px"/>
+	<img src="../imgs/chap5_6.png" alt="chap5_6 " style="width:200px"/>
 </div>
 
 Thus an important intuitive is that **implicit method is more stable than explicit method in the stiff discussion**.

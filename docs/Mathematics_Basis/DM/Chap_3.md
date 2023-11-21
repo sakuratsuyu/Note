@@ -36,5 +36,5 @@
         - If any of these problems can be solved by polynomial worst-case time algorithm, then all can be solved by polynomial worst-case time algorithms.
 
     <div align="center">
-    	<img src="../Pic/4.png" style="width:400px"/>
+    	<img src="../imgs/4.png" style="width:400px"/>
     </div>

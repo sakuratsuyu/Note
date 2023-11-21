@@ -248,7 +248,7 @@
     - $k + l$ 阶混合中心矩 $E([X - E(X)]^k [Y - E(Y)]^l)$
 
 <div align="center">
-	<img src="../Pic/0.png" style="width:600px"/>
+	<img src="../imgs/0.png" style="width:600px"/>
 </div>
 
 ### 4.5 多元随机变量的数字特征
@@ -427,7 +427,7 @@
 - 正态总体
 
 <div align="center">
-	<img src="../Pic/1.png" style="width:800px"/>
+	<img src="../imgs/1.png" style="width:800px"/>
 </div>
 
 - 非正态总体
@@ -454,8 +454,8 @@
 - 显著性水平
 
 <div align="center">
-	<img src="../Pic/2.jpg" style="width:800px"/>
+	<img src="../imgs/2.jpg" style="width:800px"/>
 </div>
 <div align="center">
-	<img src="../Pic/3.jpg" style="width:800px"/>
+	<img src="../imgs/3.jpg" style="width:800px"/>
 </div>

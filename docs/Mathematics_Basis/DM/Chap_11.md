@@ -64,7 +64,7 @@
     A prefix code can be represented by a binary tree.
     
     <div align="center">
-    	<img src="../Pic/10.png" style="width:200px"/>
+    	<img src="../imgs/10.png" style="width:200px"/>
     </div>
 
 !!! note "Extension: Huffman Coding"

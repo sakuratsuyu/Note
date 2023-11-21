@@ -257,7 +257,7 @@ $$
 Further decompose $U$ to $D\tilde U$.
 
 <div align="center">
-	<img src="../Pic/chap6_0.png" alt="chap6_0 " style="width:500px"/>
+	<img src="../imgs/chap6_0.png" alt="chap6_0 " style="width:500px"/>
 </div>
 
 $A$ is symmetric $\Rightarrow$ $L = \tilde U^t$.

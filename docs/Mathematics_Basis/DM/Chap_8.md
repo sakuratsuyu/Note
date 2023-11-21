@@ -284,7 +284,7 @@ Moreover, for specific forms of $F(n)$, we have the following theorem.
     $$
 
 <div align="center">
-	<img src="../Pic/12.png" style="width:700px"/>
+	<img src="../imgs/12.png" style="width:700px"/>
 </div>
 
 ### Application

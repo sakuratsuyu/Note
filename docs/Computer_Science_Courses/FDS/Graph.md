@@ -256,7 +256,7 @@ typedef struct {
 
     <figure>
         <div align="center">
-        	<img src="../Pic/19.png" style="width:400px"/>
+        	<img src="../imgs/19.png" style="width:400px"/>
         </div>
         <figcaption> for the left given graph, the corresponding adjancency multilists is the right one </figcaption>
     </figure>
@@ -604,15 +604,15 @@ We introduce **Ford-Fulkerson Augmenting Path Algorithm** here.
 !!! example
 
     <div align="center">
-    	<img src="../Pic/20.png" style="width:500px"/>
+    	<img src="../imgs/20.png" style="width:500px"/>
     </div>
 
     <div align="center">
-    	<img src="../Pic/21.png" style="width:500px"/>
+    	<img src="../imgs/21.png" style="width:500px"/>
     </div>
 
     <div align="center">
-    	<img src="../Pic/22.png" style="width:500px"/>
+    	<img src="../imgs/22.png" style="width:500px"/>
     </div>
 
     ??? note "Description"
@@ -974,7 +974,7 @@ $u$ is an **articulation point** if
 
     <figure>
         <div align="center">
-        	<img src="../Pic/23.png" style="width:500px"/>
+        	<img src="../imgs/23.png" style="width:500px"/>
         </div>
         <figcaption> Tarjan for Cut Point </figcaption>
     </figure>

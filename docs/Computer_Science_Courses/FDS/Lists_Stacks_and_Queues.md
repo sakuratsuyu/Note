@@ -485,7 +485,7 @@ int pos = ((position % list->size) + list->size) % list->size;
     Suppose a university with 40000 students and 2500 courses. We want to print the students' name list for each course and the registered classes list for each student.
 
     <div align="center">
-    	<img src="../Pic/0.png" style="width:500px"/>
+    	<img src="../imgs/0.png" style="width:500px"/>
     </div>
 
     If we want the students' name of course $C3$, we start from node $C3$ and move to the **right**. For each node, we sub-move another pointer circularly **up and down** to find $S1$, which is the student's name of this node.

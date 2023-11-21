@@ -18,14 +18,14 @@ We want **uniqueness**.
 
 <figure markdown> 
 	<div align="center">
-		<img src="../Pic/lec5_0.png" alt="lec5_0" style="width:600px"/>
+		<img src="../imgs/lec5_0.png" alt="lec5_0" style="width:600px"/>
 	</div>
 	<figcaption>shifting the window in any direction causes a big change</figcaption>
 </figure>
 
 <figure markdown> 
 	<div align="center">
-		<img src="../Pic/lec5_1.png" alt="lec5_1" style="width:600px"/>
+		<img src="../imgs/lec5_1.png" alt="lec5_1" style="width:600px"/>
 	</div>
 	<figcaption>distribution of gradients</figcaption>
 </figure>
@@ -34,7 +34,7 @@ We want **uniqueness**.
 	To describe the distribution of gradients by two eigenvectors.
 
 	<div align="center">
-		<img src="../Pic/lec5_2.png" alt="lec5_2" style="width:600px"/>
+		<img src="../imgs/lec5_2.png" alt="lec5_2" style="width:600px"/>
 	</div>
 
 !!! success  "Method of Corner Detection"
@@ -67,14 +67,14 @@ We want **uniqueness**.
 			- Try each scale and find the scale of maximum of $f$.
 
 	<div align="center">
-		<img src="../Pic/lec5_3.png" alt="lec5_3" style="width:700px"/>
+		<img src="../imgs/lec5_3.png" alt="lec5_3" style="width:700px"/>
 	</div>
 
 	!!! note "Implementation"
 		**image pyramid** with a fixed window size.
 
 		<div align="center">
-			<img src="../Pic/lec5_4.png" alt="lec5_4" style="width:600px"/>
+			<img src="../imgs/lec5_4.png" alt="lec5_4" style="width:600px"/>
 		</div>
 
 #### Blob Detection
@@ -90,7 +90,7 @@ convolution!
 	$$
 
 <div align="center">
-	<img src="../Pic/lec5_5.png" alt="lec5_5" style="width:600px"/>
+	<img src="../imgs/lec5_5.png" alt="lec5_5" style="width:600px"/>
 </div>
 
 Laplacian is sensitive to noise. To solve this flaw, we often
@@ -103,7 +103,7 @@ $$
 $$
 
 <div align="center">
-	<img src="../Pic/lec5_6.png" alt="lec5_6" style="width:600px"/>
+	<img src="../imgs/lec5_6.png" alt="lec5_6" style="width:600px"/>
 </div>
 
 ##### Scale Selection (the same problem as corner detection)
@@ -111,7 +111,7 @@ $$
 The same solution as corner detection - Try and find maximum.
 
 <div align="center">
-	<img src="../Pic/lec5_7.png" alt="lec5_7" style="width:600px"/>
+	<img src="../imgs/lec5_7.png" alt="lec5_7" style="width:600px"/>
 </div>
 
 ##### Implementation: Difference of Gaussian (DoG)
@@ -123,7 +123,7 @@ $$
 $$
 
 <div align="center">
-	<img src="../Pic/lec5_8.png" alt="lec5_8" style="width:600px"/>
+	<img src="../imgs/lec5_8.png" alt="lec5_8" style="width:600px"/>
 </div>
 
 ### 2. Description
@@ -131,7 +131,7 @@ $$
 We mainly focus on the <u>SIFT</u> (Scale Invariant Feature Transform) descriptor.
 
 <div align="center">
-	<img src="../Pic/lec5_9.png" alt="lec5_9" style="width:600px"/>
+	<img src="../imgs/lec5_9.png" alt="lec5_9" style="width:600px"/>
 </div>
 
 #### Orientation Normalization
@@ -165,7 +165,7 @@ We mainly focus on the <u>SIFT</u> (Scale Invariant Feature Transform) descripto
 Problem: repeated elements
 
 <div align="center">
-	<img src="../Pic/lec5_10.png" alt="lec5_10" style="width:600px"/>
+	<img src="../imgs/lec5_10.png" alt="lec5_10" style="width:600px"/>
 </div>
 
 -   To find that the problem happens: Ratio Test
@@ -175,7 +175,7 @@ Problem: repeated elements
 -   best match $f_2$, second best match $f'_2$.
 
 <div align="center">
-	<img src="../Pic/lec5_11.png" alt="lec5_11" style="width:600px"/>
+	<img src="../imgs/lec5_11.png" alt="lec5_11" style="width:600px"/>
 </div>
 
 -   Another strategy: Mutual Nearest Neighbor
@@ -239,11 +239,11 @@ For taylor expansion, we want the motion as small as possbile. But probably not 
 -   Reduce the resolution
 
 <div align="center">
-	<img src="../Pic/lec5_12.png" alt="lec5_12" style="width:500px"/>
+	<img src="../imgs/lec5_12.png" alt="lec5_12" style="width:500px"/>
 </div>
 
 -   Use the image pyramid
 
 <div align="center">
-	<img src="../Pic/lec5_13.png" alt="lec5_13" style="width:500px"/>
+	<img src="../imgs/lec5_13.png" alt="lec5_13" style="width:500px"/>
 </div>

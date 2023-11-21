@@ -58,7 +58,7 @@ $$
     $\Rightarrow$ The smaller $k$ is, the faster it converges.
 
 <div align="center">
-	<img src="../Pic/chap2_0.png" alt="chap2_0 " style="width:800px"/>
+	<img src="../imgs/chap2_0.png" alt="chap2_0 " style="width:800px"/>
 </div>
 
 ## Newton's Method (Newton-Raphson Method)
@@ -159,7 +159,7 @@ It is still convegent, but *not quadratically*.
 ### Aitken's $\Delta^2$ Method
 
 <div align="center">
-	<img src="../Pic/chap2_1.png" alt="chap2_1 " style="width:400px"/>
+	<img src="../imgs/chap2_1.png" alt="chap2_1 " style="width:400px"/>
 </div>
 
 !!! definition "Definition 2.1"

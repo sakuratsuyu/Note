@@ -197,7 +197,7 @@ $$
 with the least squares measurement, w.r.t the weight function $w(x) \equiv 1$.
 
 <div align="center">
-	<img src="../Pic/chap8_0.png" alt="chap8_0 " style="width:600px"/>
+	<img src="../imgs/chap8_0.png" alt="chap8_0 " style="width:600px"/>
 </div>
 
 ### Solution
@@ -325,7 +325,7 @@ The minimax approximation to minimize $||P - f||_\infty||$ has the following pro
         $$
     
     <div align="center">
-    	<img src="../Pic/chap8_3.png" alt="chap8_3 " style="width:300px"/>
+    	<img src="../imgs/chap8_3.png" alt="chap8_3 " style="width:300px"/>
     </div>
 
 Here we introduce Chebyshev polynomials to deal with $E_\infty$ error, and by the way, we can use it to economize the power series.
@@ -380,7 +380,7 @@ $$
         $$
 
 <div align="center">
-	<img src="../Pic/chap8_1.png" alt="chap8_1 " style="width:600px"/>
+	<img src="../imgs/chap8_1.png" alt="chap8_1 " style="width:600px"/>
 </div>
 
 ### Monic Chebyshev Polynomials
@@ -392,7 +392,7 @@ $$
 $$
 
 <div align="center">
-	<img src="../Pic/chap8_2.png" alt="chap8_2 " style="width:600px"/>
+	<img src="../imgs/chap8_2.png" alt="chap8_2 " style="width:600px"/>
 </div>
 
 The following is an important theorem for the position of Chebyshev polynomials.

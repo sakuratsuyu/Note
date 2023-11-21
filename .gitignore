@@ -2,3 +2,4 @@ site/
 .obsidian/
 .history/
 .vscode/
+**/.DS_Store

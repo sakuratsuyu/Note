@@ -26,7 +26,7 @@
 Consider the following tree.
 
 <div align="center">
-	<img src="../Pic/1.png" style="width:300px"/>
+	<img src="../imgs/1.png" style="width:300px"/>
 </div>
 
 ### List Representation
@@ -34,13 +34,13 @@ Consider the following tree.
 - Array Representation
 
 <div align="center">
-	<img src="../Pic/2.png" style="width:400px"/>
+	<img src="../imgs/2.png" style="width:400px"/>
 </div>
 
 - Linked List Representation
 
 <div align="center">
-	<img src="../Pic/3.png" style="width:300px"/>
+	<img src="../imgs/3.png" style="width:300px"/>
 </div>
 
 ### FirstChild-NextSibling Representation
@@ -48,8 +48,8 @@ Consider the following tree.
 This representation is not unique with different `FirstChild` chosen.
 
 <div align="center" style="height:200px;">
-   <img src="../Pic/4.png" style="width:200px; vertical-align:middle;" />
-   <img src="../Pic/5.png" style="width:300px; vertical-align:middle;" />
+   <img src="../imgs/4.png" style="width:200px; vertical-align:middle;" />
+   <img src="../imgs/5.png" style="width:300px; vertical-align:middle;" />
 </div>
 
 ## Binary Tree
@@ -58,7 +58,7 @@ This representation is not unique with different `FirstChild` chosen.
     A **binary tree** is a tree in which no node can have more than two children.
 
 <div align="center">
-	<img src="../Pic/6.png" style="width:200px"/>
+	<img src="../imgs/6.png" style="width:200px"/>
 </div>
 
 Since it has the same structure of FirstChild-NextSibling Representation, thus **all trees can be represented by binary trees**.
@@ -182,8 +182,8 @@ typedef struct ThreadedTreeNode {
     $$
 
     <div align="center" style="height:300px;">
-       <img src="../Pic/7.png" style="height:200px; vertical-align:middle;" />
-       <img src="../Pic/8.png" style="height:300px; vertical-align:middle;" />
+       <img src="../imgs/7.png" style="height:200px; vertical-align:middle;" />
+       <img src="../imgs/8.png" style="height:300px; vertical-align:middle;" />
     </div>
 
 ## Binary Search Tree (BST)
