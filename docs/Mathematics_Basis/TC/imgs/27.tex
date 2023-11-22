@@ -1,0 +1,30 @@
+\documentclass[dvisvgm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary {arrows.meta, positioning, automata}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=3cm,
+    initial text=$ $,
+    on grid,
+    every state/.style={fill=none,draw=none}
+]
+
+    \node[initial,   state]                    (A) {$L_\sqcup$};
+    \node[           state, right =of A]       (B) {$R$};
+    \node[           state, right =of B]       (C) {$\sqcup LaR$};
+    \node[           state, below =of B]       (D) {$L$};
+
+    \path
+        (A) edge              node {} (B)
+        (B) edge [above]      node {$a \neq \sqcup$} (C)
+        (C) edge [bend left]  node {} (B)
+        (B) edge [right]      node {$\sqcup$} (D)
+    ;
+\end{tikzpicture}
+
+\end{document}

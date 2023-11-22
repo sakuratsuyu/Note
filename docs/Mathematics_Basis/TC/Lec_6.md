@@ -2,6 +2,8 @@
 
 FA and PDA, as we mentioned in previous lectures, can only accept a few of the languages. Now we are going to give a stronger automata, the Turing machine.
 
+## Turing Machine
+
 !!! definition
 
     A deterministic Turing machine is a 5-tuple $M = (K, \Sigma, \delta, s, H)$, where
@@ -72,5 +74,93 @@ Now let's fix $\Sigma$, we give some simple Turing Machine examples.
 
 We call $M_a$, $M_\leftarrow$ and $M_\rightarrow$ basic machines, sometimes we abbreviate them to $a$, $L$, $R$.
 
+For simplicity, we introduce the following symbols.
+
+!!! plane ""
+
+    !!! plane ""
+
+        <div align="center" style="text-align: center">
+            <span style="vertical-align: middle">
+                <img src="../imgs/22.svg" style="height:50px; vertical-align: middle"/>
+                <span> ---\> </span>
+                <img src="../imgs/23.svg" style="height:20px; vertical-align: middle"/>
+            </span>
+        </div>
+        
+    !!! plane ""
+
+        <div align="center" style="text-align: center">
+            <span style="vertical-align: middle">
+                <img src="../imgs/24.svg" style="height:200px; vertical-align: middle"/>
+                <span> ---\> </span>
+                <img src="../imgs/25.svg" style="height:50px; vertical-align: middle"/>
+            </span>
+        </div>
+
+    And some abbreviations.
+
+    - $R_\sqcup$ find the next blank symbol on the right. 
+    - $L_\sqcup$ find the next blank symbol on the left.
+    - $R_{\overline{\sqcup}}$ find the next non-blank symbol on the right.
+    - $L_{\overline{\sqcup}}$ find the next non-blank symbol on the left.
+
+    <div align="center">
+        <img src="../imgs/26.svg" style="height:40px"/>
+    </div>
+
 !!! example
 
+    **Left-shifting Machine** $S_\leftarrow$
+
+     $$
+        \forall w \in (\Sigma - \{\triangleright, \sqcup\})^*, \exists h \in H,\ \ s.t.\ \ (s, \triangleright\sqcup\sqcup w \sqcup) \vdash_M^*(h, \triangleright\sqcup w\sqcup).
+    $$
+
+    <div align="center">
+        <img src="../imgs/27.svg" style="height:200px"/>
+    </div>
+
+## Language Recognization
+
+!!! definition
+
+    **input alphabet**: $\Sigma_0 \subseteq (\Sigma - \{\triangleright, \sqcup\}$.
+
+    **input configuration**: $(s, \triangleright \underline{\sqcup} w)$.
+
+    !!! plane ""
+
+        For $L(M) = \{ w \in \Sigma_0^*: (s, \triangleright \underline{\sqcup} w) \vdash_M^* (h, \dots), h \in H \}$, we say $M$ **semidecides** $L(M)$ and $L(M)$ is **recursively enumerable / recognizable**.
+
+
+    !!! plane ""
+        
+        Suppose a Turing machine $M = (K, \Sigma_0, \Sigma, \delta, s, \{y, n\})$, we say $M$ **decides** a language $L \subseteq \Sigma_0$ if
+
+        - $\forall w \in L, (s, \triangleright \underline{\sqcup} w) \vdash_M^* (y, \dots)$, we say $M$ accepts $w$.
+        - $\forall w \in \Sigma_0^* - L, (s, \triangleright \underline{\sqcup} w) \vdash_M^* (n, \dots)$, we say $M$ rejects $w$.
+
+        and $L$ is **recursive / decidable**.
+
+!!! theorem
+
+    If $L$ is recursive, then $L$ must be recursively enumerable.
+
+## Function Computation
+
+!!! definition
+
+    $\forall w \in \Sigma_0^*$, if $(s, \triangleright \underline{\sqcup} w) \vdash_M^* (h, \triangleright \underline{\sqcup} y)$ for some $h \in H$ and some $y \in \Sigma_0^*$, we say $y$ is the output of $M$ on $w$, denoted by $y = M(w)$.
+
+    Let $f : \Sigma_0^* \rightarrow \Sigma_0^*$, we say $M$ **computes** $f$ if
+
+    $$
+        \forall w \in \Sigma_0^*,\ \ M(w) = f(w).
+    $$
+
+    and $f$ is **recursive / computable**.
+
+!!! example
+
+    Show that $\{a^nb^nc^n | n \ge 0\}$ is recursive.
