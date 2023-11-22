@@ -135,7 +135,7 @@ Similar to regular language, we have context-free language properties closure.
     Since the length of the longest path from the root of the parse tree to its leaves is $|V - \Sigma| + 1$, with the number of nodes $|V - \Sigma| + 2$. Namely the number of non-terminals along the path is $|V - \Sigma| + 1$. Thus there must be some non-terminal $Q$ that appears **twice** along the path.
 
     <div align="center">
-	    <img src="../imgs/2.png" style="width:200px"/>
+	    <img src="../imgs/21.png" style="width:200px"/>
     </div>
 
     From the graph of parse tree, we can derive
