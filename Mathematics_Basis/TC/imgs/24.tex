@@ -1,0 +1,30 @@
+\documentclass[dvisvgm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary {arrows.meta, positioning, automata}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=2cm,
+    initial text=$ $,
+    on grid,
+    every state/.style={fill=none,draw=none}
+]
+
+    \node[initial,   state]                    (A) {$R$};
+    \node[           state, above right =of A] (B) {$Ra_1$};
+    \node[           state,       right =of A] (C) {$Ra_2$};
+    \node[           state, below right =of A] (D) {$Ra_k$};
+
+    \path
+        (A) edge [left]       node {$a_1$}  (B)
+        (A) edge [above]      node {$a_2$}  (C)
+        (A) edge [left]       node {$a_k$}  (D)
+        (A) edge [above]      node {$\ \ \ \ \vdots$}  (D)
+    ;
+\end{tikzpicture}
+
+\end{document}
