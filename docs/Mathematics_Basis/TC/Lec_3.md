@@ -48,38 +48,21 @@ We first simplify a specific NFA $M$ with the following steps to find its corres
 
     !!! plane ""
 
-        ```mermaid
-        flowchart LR
-            start(( )) --> startA
-            style start fill:#000,stroke-width:0px
-
-            subgraph M
-                startA(( )) -- ... --> Q0A((( )))
-                startA(( )) -- ... --> Q1A((( )))
-                style Q0A fill:#bbf,stroke:#333,stroke-width:2px
-                style Q1A fill:#bbf,stroke:#333,stroke-width:2px
-            end
-        ```
+        <div align="center">
+        <figure>
+            <img src="../imgs/8.svg" style="height:200px"/>
+        </figure>
+        </div>
     
     we simplify it to
     
     !!! plane ""
 
-        ```mermaid
-        flowchart LR
-            start(( )) --> s
-            s(( )) -- e --> startA
-            style start fill:#000,stroke-width:0px
-            Q0A -- e --> e((( )))
-            Q1A -- e --> e
-
-            subgraph M
-                startA(( )) -- ... --> Q0A(( ))
-                startA(( )) -- ... --> Q1A(( ))
-                style Q0A fill:#bbf,stroke:#333,stroke-width:2px
-                style Q1A fill:#bbf,stroke:#333,stroke-width:2px
-            end
-        ```
+        <div align="center">
+        <figure>
+            <img src="../imgs/9.svg" style="height:200px"/>
+        </figure>
+        </div>
 
 2. Eliminate States
 
@@ -87,87 +70,53 @@ We first simplify a specific NFA $M$ with the following steps to find its corres
 
     !!! plane ""
 
-        ```mermaid
-        flowchart LR
-            subgraph Base
-                direction LR
-                q1((q<sub>1</sub>)) -- a --> q2((q<sub>2</sub>))
-                q1 -- b --> q2
-            end
+        <div align="center" style="text-align: center">
+            <span style="vertical-align: middle">
+                <img src="../imgs/10.svg" style="height:90px; vertical-align: middle"/>
+                <span> ---\> </span>
+                <img src="../imgs/11.svg" style="height:50px; vertical-align: middle"/>
+            </span>
+        </div>
 
-            Base -.-> Simplified
+        <div align="center" style="text-align: center">
+            <span style="vertical-align: middle">
+                <img src="../imgs/12.svg" style="height:50px; vertical-align: middle"/>
+                <span> ---\> </span>
+                <img src="../imgs/13.svg" style="height:50px; vertical-align: middle"/>
+            </span>
+        </div>
 
-            subgraph Simplified
-                direction LR
-                q1_((q<sub>1</sub>)) -- "a ∪ b" --> q2_((q<sub>2</sub>))
-            end
-        ```
+        <div align="center" style="text-align: center">
+            <span style="vertical-align: middle">
+                <img src="../imgs/14.svg" style="height:95px; vertical-align: middle"/>
+                <span> ---\> </span>
+                <img src="../imgs/15.svg" style="height:50px; vertical-align: middle"/>
+            </span>
+        </div>
 
-        ```mermaid
-        flowchart LR
-            subgraph Base
-                direction LR
-                q1((q<sub>1</sub>)) -- a --> q2((q<sub>2</sub>))
-                q2 -- b --> q3((q<sub>3</sub>))
-            end
-
-            Base -.-> Simplified
-
-            subgraph Simplified
-                direction LR
-                q1_((q<sub>1</sub>)) -- ab --> q3_((q<sub>3</sub>))
-            end
-        ```
-
-        ```mermaid
-        flowchart LR
-            subgraph Base
-                direction LR
-                q1((q<sub>1</sub>)) -- a --> q2((q<sub>2</sub>))
-                q2 -- c --> q2
-                q2 -- b --> q3((q<sub>3</sub>))
-            end
-
-            Base -.-> Simplified
-
-            subgraph Simplified
-                direction LR
-                q1_((q<sub>1</sub>)) -- ac*b --> q3_((q<sub>3</sub>))
-            end
-        ```
 
 ??? example
 
     For the following instance of NFA,
 
     !!! plane ""
-    
-        ```mermaid
-        flowchart LR
-            start(( )) --> q4((q4))
-            q4 -- e --> q1((q1))
-            q1 -- a --> q1
-            q1 -- b --> q2((q2))
-            q2 -- a --> q2
-            q1 -- b --> q3((q3))
-            q3 -- a --> q3
-            q3 -- b --> q2
-            q3 -- e --> q5(((q5)))
 
-            style start fill:#000,stroke-width:0px
-        ```
+        <div align="center">
+        <figure>
+            <img src="../imgs/16.svg" style="height:200px"/>
+        </figure>
+        </div>
 
     we can finally simplify it to
 
     !!! plane ""
 
-        ```mermaid
-        flowchart LR
-            start(( )) --> q4((q4))
-            q4 -- "a*b(a ∪ ba*ba*b)*" --> q5(((q5)))
-
-            style start fill:#000,stroke-width:0px
-        ```
+        <div align="center">
+        <figure>
+            <img src="../imgs/17.svg" style="height:50px"/>
+        </figure>
+        </div>
+        
 
 Based on the mechanism above, we can simply give the following more abstract proof.
 
@@ -207,14 +156,12 @@ Based on the mechanism above, we can simply give the following more abstract pro
     $$
         R_{ij}^{k} = R_{ij}^{k - 1} \cup R_{ik}^{k - 1}(R_{kk}^{k - 1})^* R_{kj}^{k - 1}
     $$
-
-    ```mermaid
-    flowchart LR
-        qi((q<sub>i</sub>)) -- "R<sub>ij</sub><sup>k - 1<sup>" --> qj((q<sub>j</sub>))
-        qi -- "R<sub>ik</sub><sup>k - 1</sup>" --> qk((q<sub>k</sub>))
-        qk -- "R<sub>kj</sub><sup>k - 1</sup>" --> qj
-        qk -- "R<sub>kk</sub><sup>k - 1</sup>" --> qk
-    ```
+    
+    <div align="center">
+    <figure>
+        <img src="../imgs/18.svg" style="height:200px"/>
+    </figure>
+    </div>
 
 
 !!! theorem "Pumping Theorem"
@@ -237,29 +184,19 @@ Based on the mechanism above, we can simply give the following more abstract pro
 
     If $L$ is infinite, then there exists a DFA $M$ accepting $L$. Let $p$ be the number of the states of $M$, and $w = a_1\cdots a_n$ in $L$ with $|w| \ge p$.
 
-    ```mermaid
-    flowchart LR
-        start(( )) --> q0((q<sub>0</sub>))
-        q0 -- a1 --> q1((q<sub>1</sub>))
-        q1 -- a2 --> q2((q<sub>2</sub>))
-        q2 --> q3(( ))
-        q3 -- ... --> q4(( ))
-        q4 -- an --> qn((q<sub>n</sub>))
-
-        style start fill:#000,stroke-width:0px
-    ```
+    <div align="center">
+    <figure>
+        <img src="../imgs/19.svg" style="height:50px"/>
+    </figure>
+    </div>
 
     Then $\exists 0 \le i < j \le p$, such that $q_i = q_j$.
 
-    ```mermaid
-    flowchart LR
-        start(( )) --> q0((q<sub>0</sub>))
-        q0 -- a<sub>1</sub>a<sub>2</sub>...a<sub>2</sub> --> qi((q<sub>i</sub>))
-        qi -- "a<sub>i + 1</sub>...a<sub>j</sub>" --> qj((q<sub>j</sub>))
-        qj -- "a<sub>j + 1</sub>...a<sub>n</sub>" --> qn((q<sub>n</sub>))
-
-        style start fill:#000,stroke-width:0px
-    ```
+    <div align="center">
+    <figure>
+        <img src="../imgs/20.svg" style="height:200px"/>
+    </figure>
+    </div>
 
     So $x = a_1 \cdots a_i$, $y = a_{i + 1} \cdots a_j$ and $z = a_{j + 1} \cdots a_n$. And
 
