@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
   
@@ -2202,7 +2202,7 @@
 </ul>
 <div align="center">
 <figure>
-    <a class="glightbox" href="../imgs/1.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/1.svg" style="width:300px"/></a>
+    <a class="glightbox" href="../imgs/2.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/2.svg" style="width:200px"/></a>
     <figcaption> state diagram of NFA </figcaption>
 </figure>
 </div>
@@ -2217,16 +2217,11 @@
 <div class="arithmatex">\[
     L = \{w \in \{a, b\}^* | \text{ the second symbol from the end of $w$ is $b$.}\}
 \]</div>
-<pre class="mermaid"><code>flowchart LR
-    start(( )) --&gt; q1((q1))
-    q1 -- a, b --&gt; q1
-    q1 -- b --&gt; q2((q2))
-    q2 -- a, b --&gt; q3(((q3)))
-
-    style start fill:#000,stroke-width:0px
-    style q1 stroke-width:0px
-    style q2 stroke-width:0px
-    style q3 fill:#bbf,stroke:#333,stroke-width:2px</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/3.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/3.svg" style="width:300px"/></a>
+</figure>
+</div></p>
 </div>
 <div class="admonition theorem">
 <p class="admonition-title">Theorem</p>
@@ -2256,34 +2251,19 @@
 <p class="admonition-title">Example</p>
 <div class="admonition plane">
 <p><strong>NFA</strong></p>
-<pre class="mermaid"><code>flowchart LR
-    start(( )) --&gt; q0((q0))
-    q0 -- a --&gt; q0
-    q0 -- b --&gt; q1(((q1)))
-    q1 -- e --&gt; q0
-
-    style start fill:#000,stroke-width:0px
-    style q0 stroke-width:0px
-    style q1 fill:#bbf,stroke:#333,stroke-width:2px</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/4.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/4.svg" style="width:200px"/></a>
+</figure>
+</div></p>
 </div>
 <div class="admonition plane">
 <p><strong>DFA</strong></p>
-<pre class="mermaid"><code>flowchart LR
-    start(( )) --&gt; Q0(("{q0}"))
-    Q0 -- a --&gt; Q0
-    Q0 -- b --&gt; Q1((("{q0, q1}")))
-    Q1 -- a --&gt; Q0
-    Q1 -- b --&gt; Q1
-
-    style start fill:#000,stroke-width:0px
-    style Q0 stroke-width:0px
-    style Q1 fill:#bbf,stroke:#333,stroke-width:2px</code></pre>
-<pre class="mermaid"><code>flowchart LR
-    Q0((("{q1}"))) -- a, b --&gt; Q1(("Φ"))
-    Q1 -- a, b --&gt; Q1
-
-    style Q1 stroke-width:0px
-    style Q0 fill:#bbf,stroke:#333,stroke-width:2px</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/5.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/5.svg" style="width:300px"/></a>
+</figure>
+</div></p>
 </div>
 </div>
 <p>Since the equivalence of NFA and DFA, so a language is regular if it's accepted by some NFA. Now we can prove the following theorem by NFA.</p>
@@ -2294,30 +2274,11 @@
 <div class="admonition proof">
 <p class="admonition-title">Proof</p>
 <div class="admonition plane">
-<pre class="mermaid"><code>---
-title: Idea
----
-flowchart LR
-    start(( )) --&gt; startA
-    Q0A -- e --&gt; startB
-    Q1A -- e --&gt; startB
-    style start fill:#000,stroke-width:0px
-
-    subgraph M_circ
-    subgraph M_A
-        startA(( )) -- ... --&gt; Q0A((( )))
-        startA(( )) -- ... --&gt; Q1A((( )))
-        style Q0A fill:#bbf,stroke:#333,stroke-width:2px
-        style Q1A fill:#bbf,stroke:#333,stroke-width:2px
-    end
-
-    subgraph M_B
-        startB(( )) -- ...  --&gt; Q0B((( )))
-        startB(( )) -- ...  --&gt; Q1B((( )))
-        style Q0B fill:#bbf,stroke:#333,stroke-width:2px
-        style Q1B fill:#bbf,stroke:#333,stroke-width:2px
-    end
-    end</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/6.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/6.svg" style="width:500px"/></a>
+</figure>
+</div></p>
 </div>
 <p>Since <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are regular, thus there exist NFAs <span class="arithmatex">\(M_A = (K_A, \Sigma, \Delta_A, s_A, F_A)\)</span> and <span class="arithmatex">\(M_B = (K_B, \Sigma, \Delta_B, s_B, F_B)\)</span> which accepts <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> respectively.</p>
 <p>We construct an NFA <span class="arithmatex">\(M_\circ = (K_\circ, \Sigma, \Delta_\circ, s_\circ, F_\circ)\)</span>, where</p>
@@ -2332,22 +2293,11 @@ flowchart LR
 <p class="admonition-title">Theorem</p>
 <p>If <span class="arithmatex">\(A\)</span> is regular, so is <span class="arithmatex">\(A^*\)</span>.</p>
 <div class="admonition plane">
-<pre class="mermaid"><code>---
-title: Idea
----
-flowchart LR
-    start(( )) --&gt; s
-    s(( )) --&gt; startA
-    Q0A -- e --&gt; startA
-    Q1A -- e --&gt; startA
-    style start fill:#000,stroke-width:0px
-
-    subgraph M
-        startA(( )) -- ... --&gt; Q0A((( )))
-        startA(( )) -- ... --&gt; Q1A((( )))
-        style Q0A fill:#bbf,stroke:#333,stroke-width:2px
-        style Q1A fill:#bbf,stroke:#333,stroke-width:2px
-    end</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/7.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/7.svg" style="width:300px"/></a>
+</figure>
+</div></p>
 </div>
 </div>
 
@@ -2356,7 +2306,7 @@ flowchart LR
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.10.24 21:45:59 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.21 23:52:18 CST</span>
       
         <br>
         创建日期:
@@ -2434,10 +2384,10 @@ flowchart LR
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="../../../js/katex.js"></script>
       

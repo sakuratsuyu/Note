@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
   
@@ -2159,9 +2159,81 @@
 <p>FA and PDA, as we mentioned in previous lectures, can only accept a few of the languages. Now we are going to give a stronger automata, the Turing machine.</p>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
-<p>A Turing machine is a 5-tuple <span class="arithmatex">\(M = (K, \Sigma, \delta, s, H)\)</span>, where</p>
-<div class="highlight"><pre><span></span><code>- $K$ is a finite set of states
-</code></pre></div>
+<p>A deterministic Turing machine is a 5-tuple <span class="arithmatex">\(M = (K, \Sigma, \delta, s, H)\)</span>, where</p>
+<ul>
+<li><span class="arithmatex">\(K\)</span> is a finite set of states.</li>
+<li><span class="arithmatex">\(\Sigma\)</span> is the tape alphabet, containing the left end symbol <span class="arithmatex">\(\triangleright\)</span> the blank <span class="arithmatex">\(\sqcup\)</span>.</li>
+<li><span class="arithmatex">\(s \in K\)</span> is the initial state.</li>
+<li><span class="arithmatex">\(H \subseteq K\)</span> is a set of halting state.</li>
+<li>
+<p><span class="arithmatex">\(\delta\)</span> is a <strong>transition function</strong>. It describes in the current state, when read a symbol, what will the next state be and the head action be (move or write).</p>
+<div class="arithmatex">\[
+    \delta: (K - H) \times \Sigma \rightarrow K \times (\{\leftarrow, \rightarrow\} \cup (\Sigma - \{\triangleright\})).
+\]</div>
+<ul>
+<li>
+<p>Also, there is a limitation of <span class="arithmatex">\(\delta\)</span>.</p>
+<div class="arithmatex">\[
+    \forall q \in K - H, \exists p \in K,\ \ s.t.\  \delta(q, \triangleleft) = (p, \rightarrow)
+\]</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A configuration of a Turing machine is a member of the set</p>
+<div class="arithmatex">\[
+    K \times \triangleright (\Sigma - \{\triangleright\})^* \times (\{e\} \cup (\Sigma - \{\triangleright\})^* (\Sigma - \{\triangleright, \sqcup\}))
+\]</div>
+<p>Specially, <span class="arithmatex">\((q, \triangleleft w \underline{a} u)\)</span> is a halting configuration if <span class="arithmatex">\(q \in H\)</span>.</p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<ul>
+<li><strong>Yields in one step</strong>: <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span> if either of the following cases.<ul>
+<li><strong>Writing</strong>: <span class="arithmatex">\(\delta(q_1, a_1) = (q_2, a_2), w_2 = w_1, u_2 = u_1\)</span>.</li>
+<li><strong>Moving Left</strong>: <span class="arithmatex">\(\delta(q_1, a_1) = (q_2, \leftarrow), w_1 = w_2 q_2, u_2 = a_1 u_1\)</span> (Specially, <span class="arithmatex">\(u_2 = e\)</span> if <span class="arithmatex">\(a_1 = \sqcup, u_1 = e\)</span>).</li>
+<li><strong>Moving Right</strong>: <span class="arithmatex">\(\delta(q_1, a_1) = (q_2, \rightarrow), w_2 = w_1 a_1, u_1 = a_2 u_2\)</span> (Specially, <span class="arithmatex">\(u_1 = e\)</span> if <span class="arithmatex">\(a_2 = \sqcup, u_2 = e\)</span>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Yields</strong>: <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M^* (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span> if</p>
+<ul>
+<li>either <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) = (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span>.</li>
+<li>or <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M \cdots \vdash_M (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span> in some <span class="arithmatex">\(k\)</span>(<span class="arithmatex">\(k \in \mathbb{N}^*\)</span>) steps.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Now let's fix <span class="arithmatex">\(\Sigma\)</span>, we give some simple Turing Machine examples.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="admonition plane">
+<p><strong>Symbol writing machine</strong></p>
+<p><span class="arithmatex">\(M_a = (\{s, h\}, \Sigma, \delta, s, \{h\})\)</span> (<span class="arithmatex">\(a \in \Sigma - \{\triangleright\}\)</span>), where</p>
+<ul>
+<li><span class="arithmatex">\(\forall b \in \Sigma - \{\triangleright\}\)</span>, <span class="arithmatex">\(\delta(s, b) = (h, a)\)</span>.</li>
+<li><span class="arithmatex">\(\delta(s, \triangleright) = \delta(s, \rightarrow)\)</span>.</li>
+</ul>
+</div>
+<div class="admonition plane">
+<p><strong>Heading moving machine</strong></p>
+<p><span class="arithmatex">\(M_\leftarrow = (\{s, h\}, \Sigma, \delta, s, \{h\})\)</span>, where</p>
+<ul>
+<li><span class="arithmatex">\(\forall b \in \Sigma - \{\triangleright\}\)</span>, <span class="arithmatex">\(\delta(s, b) = (h, \leftarrow)\)</span>.</li>
+<li><span class="arithmatex">\(\delta(s, \triangleright) = \delta(s, \rightarrow)\)</span>.</li>
+</ul>
+<p><span class="arithmatex">\(M_\rightarrow = (\{s, h\}, \Sigma, \delta, s, \{h\})\)</span>, where</p>
+<ul>
+<li><span class="arithmatex">\(\forall b \in \Sigma\)</span>, <span class="arithmatex">\(\delta(s, b) = (h, \rightarrow)\)</span>.</li>
+</ul>
+</div>
+</div>
+<p>We call <span class="arithmatex">\(M_a\)</span>, <span class="arithmatex">\(M_\leftarrow\)</span> and <span class="arithmatex">\(M_\rightarrow\)</span> basic machines, sometimes we abbreviate them to <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(L\)</span>, <span class="arithmatex">\(R\)</span>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 </div>
 
   <hr>
@@ -2169,11 +2241,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.21 17:00:54 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.21 23:52:18 CST</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.21 17:00:54 CST</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.21 23:52:18 CST</span>
       
     
   </small>
@@ -2247,10 +2319,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="../../../js/katex.js"></script>
       

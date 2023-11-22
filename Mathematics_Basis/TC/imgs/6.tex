@@ -1,0 +1,39 @@
+\documentclass[dvisvgm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary {arrows, positioning, automata}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=2cm,
+    initial text=$ $,
+    on grid,
+]
+
+    \node[rectangle, text = olive, fill = blue!10!white, minimum width = 2.6cm, minimum height = 4cm] (M1) at (0.7, 0) {$M_A$};
+    \node[rectangle, text = olive, fill = blue!10!white, minimum width = 2.6cm, minimum height = 4cm] (M2) at (3.6, 0) {$M_B$};
+
+    \node[           state]                    (A) {};
+    \node[initial,   state, left =of A]        (Q) {};
+    \node[accepting, state, above right =of A] (B) {};
+    \node[accepting, state, below right =of A] (C) {};
+    \node[           state, above right =of C] (D) {};
+    \node[accepting, state, above right =of D] (E) {};
+    \node[accepting, state, below right =of D] (F) {};
+
+    \path
+
+        (Q) edge [above]      node                {e}  (A)
+        (B) edge [above]      node                {e}  (D)
+        (C) edge [above]      node                {e}  (D)
+        (A) edge [bend left]  node [fill=blue!20] {$\dots$}  (B)
+        (A) edge [bend right] node [fill=blue!20] {$\dots$}  (C)
+        (D) edge [bend left]  node [fill=blue!20] {$\dots$}  (E)
+        (D) edge [bend right] node [fill=blue!20] {$\dots$}  (F)
+    ;
+\end{tikzpicture}
+
+\end{document}

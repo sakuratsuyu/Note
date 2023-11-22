@@ -1,0 +1,24 @@
+\documentclass[dvisvgm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary {arrows, positioning, automata}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=2cm,
+    initial text=$ $,
+    on grid,
+]
+
+    \node[initial,   state] (A)              {$p$};
+    \node[accepting, state, right =of A] (B) {$q$};
+
+    \path
+        (A) edge [above]      node {1}     (B)
+        (A) edge [loop above] node {0, 1}  (A);
+\end{tikzpicture}
+
+\end{document}

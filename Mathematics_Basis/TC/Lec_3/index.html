@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
   
@@ -2329,78 +2329,46 @@
 </ul>
 <p>For the following NFA <span class="arithmatex">\(M\)</span>,</p>
 <div class="admonition plane">
-<pre class="mermaid"><code>flowchart LR
-    start(( )) --&gt; startA
-    style start fill:#000,stroke-width:0px
-
-    subgraph M
-        startA(( )) -- ... --&gt; Q0A((( )))
-        startA(( )) -- ... --&gt; Q1A((( )))
-        style Q0A fill:#bbf,stroke:#333,stroke-width:2px
-        style Q1A fill:#bbf,stroke:#333,stroke-width:2px
-    end</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/8.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/8.svg" style="height:200px"/></a>
+</figure>
+</div></p>
 </div>
 <p>we simplify it to</p>
 <div class="admonition plane">
-<pre class="mermaid"><code>flowchart LR
-    start(( )) --&gt; s
-    s(( )) -- e --&gt; startA
-    style start fill:#000,stroke-width:0px
-    Q0A -- e --&gt; e((( )))
-    Q1A -- e --&gt; e
-
-    subgraph M
-        startA(( )) -- ... --&gt; Q0A(( ))
-        startA(( )) -- ... --&gt; Q1A(( ))
-        style Q0A fill:#bbf,stroke:#333,stroke-width:2px
-        style Q1A fill:#bbf,stroke:#333,stroke-width:2px
-    end</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/9.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/9.svg" style="height:200px"/></a>
+</figure>
+</div></p>
 </div>
 </li>
 <li>
 <p>Eliminate States</p>
 <p>There are only three connection situations of states.</p>
 <div class="admonition plane">
-<pre class="mermaid"><code>flowchart LR
-    subgraph Base
-        direction LR
-        q1((q&lt;sub&gt;1&lt;/sub&gt;)) -- a --&gt; q2((q&lt;sub&gt;2&lt;/sub&gt;))
-        q1 -- b --&gt; q2
-    end
-
-    Base -.-&gt; Simplified
-
-    subgraph Simplified
-        direction LR
-        q1_((q&lt;sub&gt;1&lt;/sub&gt;)) -- "a ∪ b" --&gt; q2_((q&lt;sub&gt;2&lt;/sub&gt;))
-    end</code></pre>
-<pre class="mermaid"><code>flowchart LR
-    subgraph Base
-        direction LR
-        q1((q&lt;sub&gt;1&lt;/sub&gt;)) -- a --&gt; q2((q&lt;sub&gt;2&lt;/sub&gt;))
-        q2 -- b --&gt; q3((q&lt;sub&gt;3&lt;/sub&gt;))
-    end
-
-    Base -.-&gt; Simplified
-
-    subgraph Simplified
-        direction LR
-        q1_((q&lt;sub&gt;1&lt;/sub&gt;)) -- ab --&gt; q3_((q&lt;sub&gt;3&lt;/sub&gt;))
-    end</code></pre>
-<pre class="mermaid"><code>flowchart LR
-    subgraph Base
-        direction LR
-        q1((q&lt;sub&gt;1&lt;/sub&gt;)) -- a --&gt; q2((q&lt;sub&gt;2&lt;/sub&gt;))
-        q2 -- c --&gt; q2
-        q2 -- b --&gt; q3((q&lt;sub&gt;3&lt;/sub&gt;))
-    end
-
-    Base -.-&gt; Simplified
-
-    subgraph Simplified
-        direction LR
-        q1_((q&lt;sub&gt;1&lt;/sub&gt;)) -- ac*b --&gt; q3_((q&lt;sub&gt;3&lt;/sub&gt;))
-    end</code></pre>
+<p><div align="center" style="text-align: center">
+    <span style="vertical-align: middle">
+        <a class="glightbox" href="../imgs/10.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/10.svg" style="height:90px; vertical-align: middle"/></a>
+        <span> ---&gt; </span>
+        <a class="glightbox" href="../imgs/11.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/11.svg" style="height:50px; vertical-align: middle"/></a>
+    </span>
+</div></p>
+<p><div align="center" style="text-align: center">
+    <span style="vertical-align: middle">
+        <a class="glightbox" href="../imgs/12.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/12.svg" style="height:50px; vertical-align: middle"/></a>
+        <span> ---&gt; </span>
+        <a class="glightbox" href="../imgs/13.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/13.svg" style="height:50px; vertical-align: middle"/></a>
+    </span>
+</div></p>
+<p><div align="center" style="text-align: center">
+    <span style="vertical-align: middle">
+        <a class="glightbox" href="../imgs/14.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/14.svg" style="height:95px; vertical-align: middle"/></a>
+        <span> ---&gt; </span>
+        <a class="glightbox" href="../imgs/15.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/15.svg" style="height:50px; vertical-align: middle"/></a>
+    </span>
+</div></p>
 </div>
 </li>
 </ol>
@@ -2408,26 +2376,19 @@
 <summary>Example</summary>
 <p>For the following instance of NFA,</p>
 <div class="admonition plane">
-<pre class="mermaid"><code>flowchart LR
-    start(( )) --&gt; q4((q4))
-    q4 -- e --&gt; q1((q1))
-    q1 -- a --&gt; q1
-    q1 -- b --&gt; q2((q2))
-    q2 -- a --&gt; q2
-    q1 -- b --&gt; q3((q3))
-    q3 -- a --&gt; q3
-    q3 -- b --&gt; q2
-    q3 -- e --&gt; q5(((q5)))
-
-    style start fill:#000,stroke-width:0px</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/16.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/16.svg" style="height:200px"/></a>
+</figure>
+</div></p>
 </div>
 <p>we can finally simplify it to</p>
 <div class="admonition plane">
-<pre class="mermaid"><code>flowchart LR
-    start(( )) --&gt; q4((q4))
-    q4 -- "a*b(a ∪ ba*ba*b)*" --&gt; q5(((q5)))
-
-    style start fill:#000,stroke-width:0px</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/17.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/17.svg" style="height:50px"/></a>
+</figure>
+</div></p>
 </div>
 </details>
 <p>Based on the mechanism above, we can simply give the following more abstract proof.</p>
@@ -2458,11 +2419,11 @@
 <div class="arithmatex">\[
     R_{ij}^{k} = R_{ij}^{k - 1} \cup R_{ik}^{k - 1}(R_{kk}^{k - 1})^* R_{kj}^{k - 1}
 \]</div>
-<pre class="mermaid"><code>flowchart LR
-    qi((q&lt;sub&gt;i&lt;/sub&gt;)) -- "R&lt;sub&gt;ij&lt;/sub&gt;&lt;sup&gt;k - 1&lt;sup&gt;" --&gt; qj((q&lt;sub&gt;j&lt;/sub&gt;))
-    qi -- "R&lt;sub&gt;ik&lt;/sub&gt;&lt;sup&gt;k - 1&lt;/sup&gt;" --&gt; qk((q&lt;sub&gt;k&lt;/sub&gt;))
-    qk -- "R&lt;sub&gt;kj&lt;/sub&gt;&lt;sup&gt;k - 1&lt;/sup&gt;" --&gt; qj
-    qk -- "R&lt;sub&gt;kk&lt;/sub&gt;&lt;sup&gt;k - 1&lt;/sup&gt;" --&gt; qk</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/18.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/18.svg" style="height:200px"/></a>
+</figure>
+</div></p>
 </div>
 <div class="admonition theorem">
 <p class="admonition-title">Pumping Theorem</p>
@@ -2481,23 +2442,17 @@
 <p class="admonition-title">Proof</p>
 <p>If <span class="arithmatex">\(L\)</span> is finite, just let <span class="arithmatex">\(p = \max\limits_{w \in L} |w| + 1\)</span>. It's trivial.</p>
 <p>If <span class="arithmatex">\(L\)</span> is infinite, then there exists a DFA <span class="arithmatex">\(M\)</span> accepting <span class="arithmatex">\(L\)</span>. Let <span class="arithmatex">\(p\)</span> be the number of the states of <span class="arithmatex">\(M\)</span>, and <span class="arithmatex">\(w = a_1\cdots a_n\)</span> in <span class="arithmatex">\(L\)</span> with <span class="arithmatex">\(|w| \ge p\)</span>.</p>
-<pre class="mermaid"><code>flowchart LR
-    start(( )) --&gt; q0((q&lt;sub&gt;0&lt;/sub&gt;))
-    q0 -- a1 --&gt; q1((q&lt;sub&gt;1&lt;/sub&gt;))
-    q1 -- a2 --&gt; q2((q&lt;sub&gt;2&lt;/sub&gt;))
-    q2 --&gt; q3(( ))
-    q3 -- ... --&gt; q4(( ))
-    q4 -- an --&gt; qn((q&lt;sub&gt;n&lt;/sub&gt;))
-
-    style start fill:#000,stroke-width:0px</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/19.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/19.svg" style="height:50px"/></a>
+</figure>
+</div></p>
 <p>Then <span class="arithmatex">\(\exists 0 \le i &lt; j \le p\)</span>, such that <span class="arithmatex">\(q_i = q_j\)</span>.</p>
-<pre class="mermaid"><code>flowchart LR
-    start(( )) --&gt; q0((q&lt;sub&gt;0&lt;/sub&gt;))
-    q0 -- a&lt;sub&gt;1&lt;/sub&gt;a&lt;sub&gt;2&lt;/sub&gt;...a&lt;sub&gt;2&lt;/sub&gt; --&gt; qi((q&lt;sub&gt;i&lt;/sub&gt;))
-    qi -- "a&lt;sub&gt;i + 1&lt;/sub&gt;...a&lt;sub&gt;j&lt;/sub&gt;" --&gt; qj((q&lt;sub&gt;j&lt;/sub&gt;))
-    qj -- "a&lt;sub&gt;j + 1&lt;/sub&gt;...a&lt;sub&gt;n&lt;/sub&gt;" --&gt; qn((q&lt;sub&gt;n&lt;/sub&gt;))
-
-    style start fill:#000,stroke-width:0px</code></pre>
+<p><div align="center">
+<figure>
+    <a class="glightbox" href="../imgs/20.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/20.svg" style="height:200px"/></a>
+</figure>
+</div></p>
 <p>So <span class="arithmatex">\(x = a_1 \cdots a_i\)</span>, <span class="arithmatex">\(y = a_{i + 1} \cdots a_j\)</span> and <span class="arithmatex">\(z = a_{j + 1} \cdots a_n\)</span>. And</p>
 <ol>
 <li><span class="arithmatex">\(xy^iz \in L\)</span> for any <span class="arithmatex">\(i \in \mathbb{N}\)</span>.</li>
@@ -2538,7 +2493,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.10.16 20:12:58 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.22 20:26:08 CST</span>
       
         <br>
         创建日期:
@@ -2616,10 +2571,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="../../../js/katex.js"></script>
       
