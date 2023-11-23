@@ -6,7 +6,7 @@ FA and PDA, as we mentioned in previous lectures, can only accept a few of the l
 
 !!! definition
 
-    A deterministic Turing machine is a 5-tuple $M = (K, \Sigma, \delta, s, H)$, where
+    A **deterministic Turing machine (DTM)** is a 5-tuple $M = (K, \Sigma, \delta, s, H)$, where
 
     - $K$ is a finite set of states.
     - $\Sigma$ is the tape alphabet, containing the left end symbol $\triangleright$ the blank $\sqcup$.
@@ -26,13 +26,13 @@ FA and PDA, as we mentioned in previous lectures, can only accept a few of the l
 
 !!! definition
 
-    A configuration of a Turing machine is a member of the set
+    A **configuration** of a Turing machine is a member of the set
 
     $$
         K \times \triangleright (\Sigma - \{\triangleright\})^* \times (\{e\} \cup (\Sigma - \{\triangleright\})^* (\Sigma - \{\triangleright, \sqcup\}))
     $$
 
-    Specially, $(q, \triangleleft w \underline{a} u)$ is a halting configuration if $q \in H$.
+    Specially, $(q, \triangleright w \underline{a} u)$ is a halting configuration if $q \in H$.
 
 !!! definition
 
@@ -40,7 +40,13 @@ FA and PDA, as we mentioned in previous lectures, can only accept a few of the l
         - **Writing**: $\delta(q_1, a_1) = (q_2, a_2), w_2 = w_1, u_2 = u_1$.
         - **Moving Left**: $\delta(q_1, a_1) = (q_2, \leftarrow), w_1 = w_2 q_2, u_2 = a_1 u_1$ (Specially, $u_2 = e$ if $a_1 = \sqcup, u_1 = e$).
         - **Moving Right**: $\delta(q_1, a_1) = (q_2, \rightarrow), w_2 = w_1 a_1, u_1 = a_2 u_2$ (Specially, $u_1 = e$ if $a_2 = \sqcup, u_2 = e$).
-    - **Yields**: $(q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M^* (q_2, \triangleright w_2 \underline{a_2} u_2)$ if
+    - **Yields in $N$ steps**: $(q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M^N (q_2, \triangleright w_2 \underline{a_2} u_2)$ if
+    
+    $$
+    (q_1, \triangleright w_1 \underline{a_1} u_1) \underbrace{\vdash_M \cdots \vdash_M}_{N \text{ steps}} (q_2, \triangleright w_2 \underline{a_2} u_2).
+    $$
+    
+    - **Yields**: $(q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M^* (q_2, \triangleright w_2 \underline{a_2} u_2)$ if $(q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M \cdots \vdash_M (q_2, \triangleright w_2 \underline{a_2} u_2)$
 
         - either $(q_1, \triangleright w_1 \underline{a_1} u_1) = (q_2, \triangleright w_2 \underline{a_2} u_2)$.
         - or $(q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M \cdots \vdash_M (q_2, \triangleright w_2 \underline{a_2} u_2)$ in some $k$($k \in \mathbb{N}^*$) steps.
