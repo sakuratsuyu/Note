@@ -16,7 +16,7 @@
         <link rel="prev" href="../Lec_5/">
       
       
-        <link rel="next" href="../../../Computer_Science_Courses/">
+        <link rel="next" href="../Lec_7/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -1203,6 +1203,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -1429,6 +1431,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lec_7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 7
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2284,7 +2306,7 @@
 <h2 id="turing-machine">Turing Machine<a class="headerlink" href="#turing-machine" title="Permanent link">&para;</a></h2>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
-<p>A deterministic Turing machine is a 5-tuple <span class="arithmatex">\(M = (K, \Sigma, \delta, s, H)\)</span>, where</p>
+<p>A <strong>deterministic Turing machine (DTM)</strong> is a 5-tuple <span class="arithmatex">\(M = (K, \Sigma, \delta, s, H)\)</span>, where</p>
 <ul>
 <li><span class="arithmatex">\(K\)</span> is a finite set of states.</li>
 <li><span class="arithmatex">\(\Sigma\)</span> is the tape alphabet, containing the left end symbol <span class="arithmatex">\(\triangleright\)</span> the blank <span class="arithmatex">\(\sqcup\)</span>.</li>
@@ -2308,11 +2330,11 @@
 </div>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
-<p>A configuration of a Turing machine is a member of the set</p>
+<p>A <strong>configuration</strong> of a Turing machine is a member of the set</p>
 <div class="arithmatex">\[
     K \times \triangleright (\Sigma - \{\triangleright\})^* \times (\{e\} \cup (\Sigma - \{\triangleright\})^* (\Sigma - \{\triangleright, \sqcup\}))
 \]</div>
-<p>Specially, <span class="arithmatex">\((q, \triangleleft w \underline{a} u)\)</span> is a halting configuration if <span class="arithmatex">\(q \in H\)</span>.</p>
+<p>Specially, <span class="arithmatex">\((q, \triangleright w \underline{a} u)\)</span> is a halting configuration if <span class="arithmatex">\(q \in H\)</span>.</p>
 </div>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
@@ -2323,8 +2345,14 @@
 <li><strong>Moving Right</strong>: <span class="arithmatex">\(\delta(q_1, a_1) = (q_2, \rightarrow), w_2 = w_1 a_1, u_1 = a_2 u_2\)</span> (Specially, <span class="arithmatex">\(u_1 = e\)</span> if <span class="arithmatex">\(a_2 = \sqcup, u_2 = e\)</span>).</li>
 </ul>
 </li>
+<li><strong>Yields in <span class="arithmatex">\(N\)</span> steps</strong>: <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M^N (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span> if</li>
+</ul>
+<div class="arithmatex">\[
+(q_1, \triangleright w_1 \underline{a_1} u_1) \underbrace{\vdash_M \cdots \vdash_M}_{N \text{ steps}} (q_2, \triangleright w_2 \underline{a_2} u_2).
+\]</div>
+<ul>
 <li>
-<p><strong>Yields</strong>: <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M^* (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span> if</p>
+<p><strong>Yields</strong>: <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M^* (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span> if <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M \cdots \vdash_M (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span></p>
 <ul>
 <li>either <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) = (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span>.</li>
 <li>or <span class="arithmatex">\((q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M \cdots \vdash_M (q_2, \triangleright w_2 \underline{a_2} u_2)\)</span> in some <span class="arithmatex">\(k\)</span>(<span class="arithmatex">\(k \in \mathbb{N}^*\)</span>) steps.</li>
@@ -2439,7 +2467,7 @@ $$</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.22 23:01:00 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.23 10:40:27 CST</span>
       
         <br>
         创建日期:

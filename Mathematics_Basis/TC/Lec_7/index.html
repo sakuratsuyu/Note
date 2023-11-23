@@ -10,22 +10,28 @@
         <meta name="author" content="sakuratsuyu">
       
       
+        <link rel="canonical" href="https://sakuratsuyu.github.io/Note/Mathematics_Basis/TC/Lec_7/">
       
       
+        <link rel="prev" href="../Lec_6/">
       
-      <link rel="icon" href="/Note/assets/images/favicon.png">
+      
+        <link rel="next" href="../../../Computer_Science_Courses/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
     
     
       
-        <title>NOTES</title>
+        <title>Lecture 7 - NOTES</title>
       
     
     
-      <link rel="stylesheet" href="/Note/assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
       
         
-        <link rel="stylesheet" href="/Note/assets/stylesheets/palette.649f08f9.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
       
       
   
@@ -85,22 +91,33 @@
       
     
     
-      <link rel="stylesheet" href="/Note/css/basic.css">
+      <link rel="stylesheet" href="../../../css/basic.css">
     
-      <link rel="stylesheet" href="/Note/css/admonition.css">
+      <link rel="stylesheet" href="../../../css/admonition.css">
     
-      <link rel="stylesheet" href="/Note/css/flink.css">
+      <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css">
     
-    <script>__md_scope=new URL("/Note/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -121,6 +138,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#lecture-7" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -131,7 +153,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/Note/." title="NOTES" class="md-header__button md-logo" aria-label="NOTES" data-md-component="logo">
+    <a href="../../.." title="NOTES" class="md-header__button md-logo" aria-label="NOTES" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 18H5a4 4 0 0 1-4-4 8 8 0 0 1 8-8c1.06 0 2.07.21 3 .58.93-.37 1.94-.58 3-.58a8 8 0 0 1 8 8 4 4 0 0 1-4 4M3 14a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-2.37 1.03-4.5 2.67-5.96L9 8a6 6 0 0 0-6 6m16 2a2 2 0 0 0 2-2 6 6 0 0 0-6-6 6 6 0 0 0-6 6c0 .73-.19 1.41-.54 2H19Z"/></svg>
@@ -151,7 +173,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Lecture 7
             
           </span>
         </div>
@@ -264,7 +286,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/Note/." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
@@ -280,11 +302,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/Note/Mathematics_Basis/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -304,7 +328,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/Note/Computer_Science_Courses/" class="md-tabs__link">
+        <a href="../../../Computer_Science_Courses/" class="md-tabs__link">
           
   
     
@@ -324,7 +348,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/Note/comming_soon/" class="md-tabs__link">
+        <a href="../../../comming_soon/" class="md-tabs__link">
           
   
     
@@ -344,7 +368,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/Note/Pot-pourri/QISE/Review/" class="md-tabs__link">
+        <a href="../../../Pot-pourri/QISE/Review/" class="md-tabs__link">
           
   
     
@@ -379,7 +403,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/Note/." title="NOTES" class="md-nav__button md-logo" aria-label="NOTES" data-md-component="logo">
+    <a href="../../.." title="NOTES" class="md-nav__button md-logo" aria-label="NOTES" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 18H5a4 4 0 0 1-4-4 8 8 0 0 1 8-8c1.06 0 2.07.21 3 .58.93-.37 1.94-.58 3-.58a8 8 0 0 1 8 8 4 4 0 0 1-4 4M3 14a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-2.37 1.03-4.5 2.67-5.96L9 8a6 6 0 0 0-6 6m16 2a2 2 0 0 0 2-2 6 6 0 0 0-6-6 6 6 0 0 0-6 6c0 .73-.19 1.41-.54 2H19Z"/></svg>
@@ -431,7 +455,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Note/." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -462,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/tasklist/" class="md-nav__link">
+      <a href="../../../tasklist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -482,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/discussion/" class="md-nav__link">
+      <a href="../../../discussion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -507,6 +531,8 @@
       
   
   
+    
+  
   
     
     
@@ -525,18 +551,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Note/Mathematics_Basis/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -552,7 +578,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Mathematics Basis
@@ -627,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_1/" class="md-nav__link">
+      <a href="../../DM/Chap_1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_2/" class="md-nav__link">
+      <a href="../../DM/Chap_2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -667,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_3/" class="md-nav__link">
+      <a href="../../DM/Chap_3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_4/" class="md-nav__link">
+      <a href="../../DM/Chap_4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -707,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_5/" class="md-nav__link">
+      <a href="../../DM/Chap_5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -727,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_6/" class="md-nav__link">
+      <a href="../../DM/Chap_6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -747,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_7/" class="md-nav__link">
+      <a href="../../DM/Chap_7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -767,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_8/" class="md-nav__link">
+      <a href="../../DM/Chap_8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -787,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_9/" class="md-nav__link">
+      <a href="../../DM/Chap_9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -807,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_10/" class="md-nav__link">
+      <a href="../../DM/Chap_10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -827,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_11/" class="md-nav__link">
+      <a href="../../DM/Chap_11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -847,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/DM/Chap_12_13/" class="md-nav__link">
+      <a href="../../DM/Chap_12_13/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/PS/Review/" class="md-nav__link">
+      <a href="../../PS/Review/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -951,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/class_notes/" class="md-nav__link">
+      <a href="../../NA/class_notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -971,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/Chap_1/" class="md-nav__link">
+      <a href="../../NA/Chap_1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/Chap_2/" class="md-nav__link">
+      <a href="../../NA/Chap_2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/Chap_3/" class="md-nav__link">
+      <a href="../../NA/Chap_3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/Chap_4/" class="md-nav__link">
+      <a href="../../NA/Chap_4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/Chap_5/" class="md-nav__link">
+      <a href="../../NA/Chap_5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1071,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/Chap_6/" class="md-nav__link">
+      <a href="../../NA/Chap_6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/Chap_7/" class="md-nav__link">
+      <a href="../../NA/Chap_7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1111,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/Chap_8/" class="md-nav__link">
+      <a href="../../NA/Chap_8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1131,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/NA/Chap_9/" class="md-nav__link">
+      <a href="../../NA/Chap_9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1157,6 +1183,8 @@
                 
   
   
+    
+  
   
     
     
@@ -1179,13 +1207,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
@@ -1198,7 +1226,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             计算理论 | Theory of Computation
@@ -1211,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/TC/class_notes/" class="md-nav__link">
+      <a href="../class_notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1231,7 +1259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/TC/Lec_1/" class="md-nav__link">
+      <a href="../Lec_1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1251,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/TC/Lec_2/" class="md-nav__link">
+      <a href="../Lec_2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1271,7 +1299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/TC/Lec_3/" class="md-nav__link">
+      <a href="../Lec_3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1291,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/TC/Lec_4/" class="md-nav__link">
+      <a href="../Lec_4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1311,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/TC/Lec_5/" class="md-nav__link">
+      <a href="../Lec_5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1331,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/TC/Lec_6/" class="md-nav__link">
+      <a href="../Lec_6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1349,9 +1377,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/Note/Mathematics_Basis/TC/Lec_7/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lecture 7
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1360,6 +1408,130 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Content">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variant-of-turing-machine" class="md-nav__link">
+    Variant of Turing Machine
+  </a>
+  
+    <nav class="md-nav" aria-label="Variant of Turing Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multitape-turing-machine" class="md-nav__link">
+    Multitape Turing Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-way-infinite-tape-turing-machine" class="md-nav__link">
+    Two-way Infinite Tape Turing Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-turing-machine" class="md-nav__link">
+    Multi Head Turing Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-dimensional-tape-turing-machine" class="md-nav__link">
+    Two-dimensional Tape Turing Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-access-turing-machine" class="md-nav__link">
+    Random Access Turing Machine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-deterministic-turing-machine" class="md-nav__link">
+    Non-deterministic Turing Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#church-turing-thesis" class="md-nav__link">
+    Church-Turing Thesis
+  </a>
+  
+    <nav class="md-nav" aria-label="Church-Turing Thesis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descriptions-of-tm" class="md-nav__link">
+    Descriptions of TM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudo-code" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudo Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decidable-problems-recursive-languages" class="md-nav__link">
+    Decidable Problems (Recursive Languages)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduction" class="md-nav__link">
+    Reduction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1411,7 +1583,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Note/Computer_Science_Courses/" class="md-nav__link ">
+            <a href="../../../Computer_Science_Courses/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1442,7 +1614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/MISSING/note/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/MISSING/note/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1516,7 +1688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/FDS/class_notes/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/FDS/class_notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1536,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/FDS/Algorithm_Analysis/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/FDS/Algorithm_Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1556,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/FDS/Lists_Stacks_and_Queues/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/FDS/Lists_Stacks_and_Queues/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1576,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/FDS/Trees/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/FDS/Trees/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1596,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/FDS/Hashing/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/FDS/Hashing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1616,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/FDS/Priority_Queues/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/FDS/Priority_Queues/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1636,7 +1808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/FDS/Sort/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/FDS/Sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1656,7 +1828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/FDS/Disjoint_Set/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/FDS/Disjoint_Set/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/FDS/Graph/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/FDS/Graph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1764,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/1_Introduction/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/1_Introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1784,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/2_Image_Formation/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/2_Image_Formation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1804,7 +1976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/3_Image_Processing/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/3_Image_Processing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1824,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/4_Model_Fitting_and_Optimization/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/4_Model_Fitting_and_Optimization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1844,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/5_Image_Matching_and_Motion_Estimation/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/5_Image_Matching_and_Motion_Estimation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1864,7 +2036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/6_Image_Stitching/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/6_Image_Stitching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1884,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/7_Structure_from_Motion/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/7_Structure_from_Motion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1904,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/8_Depth_Estimation_and_3D_Reconstruction/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/8_Depth_Estimation_and_3D_Reconstruction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1924,7 +2096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/9_Deep_Learning/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/9_Deep_Learning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1944,7 +2116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/10_Recognition/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/10_Recognition/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1964,7 +2136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/11_3D_Deep_Learning/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/11_3D_Deep_Learning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1984,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Computer_Science_Courses/ICV/12_13_Computational_Photography/" class="md-nav__link">
+      <a href="../../../Computer_Science_Courses/ICV/12_13_Computational_Photography/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2057,7 +2229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/comming_soon/" class="md-nav__link">
+      <a href="../../../comming_soon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2122,7 +2294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Note/Pot-pourri/QISE/Review/" class="md-nav__link">
+      <a href="../../../Pot-pourri/QISE/Review/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2162,6 +2334,118 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variant-of-turing-machine" class="md-nav__link">
+    Variant of Turing Machine
+  </a>
+  
+    <nav class="md-nav" aria-label="Variant of Turing Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multitape-turing-machine" class="md-nav__link">
+    Multitape Turing Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-way-infinite-tape-turing-machine" class="md-nav__link">
+    Two-way Infinite Tape Turing Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-turing-machine" class="md-nav__link">
+    Multi Head Turing Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-dimensional-tape-turing-machine" class="md-nav__link">
+    Two-dimensional Tape Turing Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-access-turing-machine" class="md-nav__link">
+    Random Access Turing Machine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-deterministic-turing-machine" class="md-nav__link">
+    Non-deterministic Turing Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#church-turing-thesis" class="md-nav__link">
+    Church-Turing Thesis
+  </a>
+  
+    <nav class="md-nav" aria-label="Church-Turing Thesis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descriptions-of-tm" class="md-nav__link">
+    Descriptions of TM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudo-code" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudo Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decidable-problems-recursive-languages" class="md-nav__link">
+    Decidable Problems (Recursive Languages)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduction" class="md-nav__link">
+    Reduction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2173,8 +2457,227 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="lecture-7">Lecture 7<a class="headerlink" href="#lecture-7" title="Permanent link">&para;</a></h1>
+<h2 id="variant-of-turing-machine">Variant of Turing Machine<a class="headerlink" href="#variant-of-turing-machine" title="Permanent link">&para;</a></h2>
+<p>There are some variants of the original Turing machine (TM), but they can be proved to be equivalent to TM.</p>
+<h3 id="multitape-turing-machine">Multitape Turing Machine<a class="headerlink" href="#multitape-turing-machine" title="Permanent link">&para;</a></h3>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <span class="arithmatex">\(k\)</span>-tape Turing machine is a 5-tuple <span class="arithmatex">\(M = (K, \Sigma, \delta, s, H)\)</span>, where the only difference from TM is</p>
+<div class="arithmatex">\[
+    \delta: (K - H) \times \Sigma^k \rightarrow K \times (\{\leftarrow, \rightarrow\} \cup (\Sigma - \{\triangleright\})^k).
+\]</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The idea to prove the equivalence between multitape TM and TM is to treat each element of the single tape of TM as a set of the elements on the corresponding position on the <span class="arithmatex">\(k\)</span>-tapes.</p>
+</div>
+<h3 id="two-way-infinite-tape-turing-machine">Two-way Infinite Tape Turing Machine<a class="headerlink" href="#two-way-infinite-tape-turing-machine" title="Permanent link">&para;</a></h3>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A two-way infinite tape Turing machine is a 5-tuple <span class="arithmatex">\(M = (K, \Sigma, \delta, s, H)\)</span>, where the only difference from TM is</p>
+<ul>
+<li><span class="arithmatex">\(\Sigma\)</span> no longer contains the left end symbol <span class="arithmatex">\(\triangleright\)</span>.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The idea to prove the equivalence is to treat the two-way infinite tape TM as a 2-tape Turing machine.</p>
+</div>
+<h3 id="multi-head-turing-machine">Multi Head Turing Machine<a class="headerlink" href="#multi-head-turing-machine" title="Permanent link">&para;</a></h3>
+<p>Just multiple heads to move.</p>
+<h3 id="two-dimensional-tape-turing-machine">Two-dimensional Tape Turing Machine<a class="headerlink" href="#two-dimensional-tape-turing-machine" title="Permanent link">&para;</a></h3>
+<p>Build a mapping of integer to a 2-tuple of integer.</p>
+<h3 id="random-access-turing-machine">Random Access Turing Machine<a class="headerlink" href="#random-access-turing-machine" title="Permanent link">&para;</a></h3>
+<p>The step of movement of the head can be multiple.</p>
+<hr />
+<p>Well, all of the variants above are trivial. The most important variant is the following one, non-deterministic TM.</p>
+<h2 id="non-deterministic-turing-machine">Non-deterministic Turing Machine<a class="headerlink" href="#non-deterministic-turing-machine" title="Permanent link">&para;</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>A <strong>non-deterministic Turing machine (NTM)</strong> is a 5-tuple <span class="arithmatex">\(M = (K, \Sigma, \Delta, s, H)\)</span>, where</p>
+<ul>
+<li><span class="arithmatex">\(K\)</span> is a finite set of states.</li>
+<li><span class="arithmatex">\(\Sigma\)</span> is the tape alphabet, containing the left end symbol <span class="arithmatex">\(\triangleright\)</span> the blank <span class="arithmatex">\(\sqcup\)</span>.</li>
+<li><span class="arithmatex">\(s \in K\)</span> is the initial state.</li>
+<li><span class="arithmatex">\(H \subseteq K\)</span> is a set of halting state.</li>
+<li>
+<p><span class="arithmatex">\(\Delta\)</span> is a <strong>transition relation</strong>. It describes in the current state, when read a symbol, what will the next state be and the head action be (move or write).</p>
+<div class="arithmatex">\[
+    \delta: (K - H) \times \Sigma \rightarrow K \times (\{\leftarrow, \rightarrow\} \cup (\Sigma - \{\triangleright\})).
+\]</div>
+<ul>
+<li>
+<p>Also, there is a limitation of <span class="arithmatex">\(\delta\)</span>.</p>
+<div class="arithmatex">\[
+    \forall q \in K - H, \exists p \in K,\ \ s.t.\  \delta(q, \triangleleft) = (p, \rightarrow)
+\]</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>The definition of configuration and yields are the same as DTM.</p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>An NTM <span class="arithmatex">\(M\)</span> with input alphabet <span class="arithmatex">\(\Sigma_0\)</span> <strong>semidecides</strong> <span class="arithmatex">\(L \subseteq \Sigma_0^*\)</span> if <span class="arithmatex">\(\forall w \in \Sigma_0^*\)</span>, <span class="arithmatex">\(w \in L\)</span> iff <span class="arithmatex">\((s, \triangleright \underline{\sqcup} w) \vdash_M^* (h, \dots)\)</span> for some <span class="arithmatex">\(h \in H\)</span>.</p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>An NTM <span class="arithmatex">\(M\)</span> with input alphabet <span class="arithmatex">\(\Sigma_0\)</span> <strong>decides</strong> <span class="arithmatex">\(L \subseteq \Sigma_0^*\)</span> if</p>
+<ul>
+<li><span class="arithmatex">\(\exists N \in \mathbb{N},\ \forall w \in \Sigma_0^*, \text{ there is no configuration } C,\ \ s.t.\ (s, \triangleright \underline{\sqcup} w) \vdash_M^N C\)</span>.</li>
+<li><span class="arithmatex">\(w \in L\)</span> iff <span class="arithmatex">\((s, \triangleright \underline{\sqcup} w) \vdash_M^* (y, \dots)\)</span>.</li>
+</ul>
+<details class="tip">
+<summary>Tip</summary>
+<p>You can similarly imagine the yields of NTM as a tree, these conditions are to say that the height of the tree is finite and some branch either accepts or rejects <span class="arithmatex">\(w\)</span>.</p>
+</details>
+</div>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>Every NTM can be simulated by a DTM.</p>
+</div>
+<details class="proof">
+<summary>Proof (sketch)</summary>
+<p>an NTM semidecides <span class="arithmatex">\(L\)</span> &rarr; a DTM semidecides <span class="arithmatex">\(L\)</span>.</p>
+<p>Since an NTM yields as a tree, we can use a DTM to simulate it by BFS. Specifically, we use a 3-tape DTM.</p>
+<ul>
+<li>The first one stores the input <span class="arithmatex">\(w\)</span> and do nothing.</li>
+<li>The second one simulates the NTM.</li>
+<li>The third one enumerates the choice of BFS.</li>
+</ul>
+</details>
+<h2 id="church-turing-thesis">Church-Turing Thesis<a class="headerlink" href="#church-turing-thesis" title="Permanent link">&para;</a></h2>
+<div class="admonition theorem">
+<p class="admonition-title">Church-Turing Thesis</p>
+<p>Algorithms are equivalent to Turing machines. Since algorithms solve decision problems and Turing machines decide language. We can also say decision problems are equivalent to language.</p>
+</div>
+<h3 id="descriptions-of-tm">Descriptions of TM<a class="headerlink" href="#descriptions-of-tm" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Formal definition <span class="arithmatex">\(M = (K, \Sigma, \delta, s, H)\)</span>.</li>
+<li>Implement-level description. Diagram.</li>
+<li>High-level description. Pseudo code.</li>
+</ol>
+<h2 id="pseudo-code">Pseudo Code<a class="headerlink" href="#pseudo-code" title="Permanent link">&para;</a></h2>
+<p>The input of pseudo code is actually the encoding of the computation object. We need to first discuss about encoding. Here are some facts.</p>
+<div class="admonition plain">
+<ul>
+<li>Any finite set can be encoded.</li>
+<li>Any finite collection of finite sets can be encoded.</li>
+</ul>
+<p>For any compuatation object <span class="arithmatex">\(O\)</span>, we use <span class="arithmatex">\(\text{``}O\text{''}\)</span> to denote its encoding.</p>
+</div>
+<p>Thus FA, PDA and TM can be encoded, since they are finite collections of finite sets.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Make a TM that decides <span class="arithmatex">\(L = \{\text{``}G\text{''} : G \text{ is a connected graph}\}\)</span>.</p>
+<p><span class="arithmatex">\(M\)</span> = on input <span class="arithmatex">\(\text{``}G\text{''}\)</span>.</p>
+<ol>
+<li><strong>(Default, can be omitted)</strong> if the input is illegal, then reject, else decode <span class="arithmatex">\(\text{``}G\text{''}\)</span>.</li>
+<li>select a node of <span class="arithmatex">\(G\)</span> and mark it.</li>
+<li>repeat the following until no new node is marked.</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; for each marked node</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mark all of its neighbor.</li>
+<li>if all the nodes are marked,</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; accept,</li>
+<li>else,</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; reject.</li>
+</ol>
+</div>
+<h3 id="decidable-problems-recursive-languages">Decidable Problems (Recursive Languages)<a class="headerlink" href="#decidable-problems-recursive-languages" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><strong>R1</strong> <span class="arithmatex">\(A_\text{DFA} = \{\text{<code>}D\text{''}\text{</code>}w\text{''} : D \text{ is a DFA that accepts } w\}\)</span>.</p>
+<div class="admonition plane">
+<p><span class="arithmatex">\(M_{R1}\)</span> = on input <span class="arithmatex">\(\text{<code>}D\text{''}\text{</code>}w\text{''}\)</span></p>
+<ol>
+<li>run <span class="arithmatex">\(D\)</span> on <span class="arithmatex">\(w\)</span>.</li>
+<li>if <span class="arithmatex">\(D\)</span> accepts <span class="arithmatex">\(w\)</span>.</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; accept <span class="arithmatex">\(\text{<code>}D\text{''}\text{</code>}w\text{''}\)</span>,</li>
+<li>else,</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; reject <span class="arithmatex">\(\text{<code>}D\text{''}\text{</code>}w\text{''}\)</span>.</li>
+</ol>
+</div>
+<p><strong>R2</strong> <span class="arithmatex">\(A_\text{NFA} = \{\text{<code>}N\text{''}\text{</code>}w\text{''} : N \text{ is a NFA that accepts } w\}\)</span>.</p>
+<div class="admonition plane">
+<p><span class="arithmatex">\(M_{R2}\)</span> = on input <span class="arithmatex">\(\text{<code>}N\text{''}\text{</code>}w\text{''}\)</span></p>
+<ol>
+<li>build a DFA <span class="arithmatex">\(D\)</span> equivalent to <span class="arithmatex">\(N\)</span>.</li>
+<li>run <span class="arithmatex">\(M_{R1}\)</span> on <span class="arithmatex">\(\text{<code>}D\text{''}\text{</code>}w\text{''}\)</span>.</li>
+<li>output the result of <span class="arithmatex">\(M_{R1}\)</span>.</li>
+</ol>
+</div>
+<p><strong>R3</strong> <span class="arithmatex">\(A_\text{REX} = \{\text{<code>}R\text{''}\text{</code>}w\text{''} : R \text{ is a regular expression with } w \in L(R)\}\)</span>.</p>
+<div class="admonition plane">
+<p><span class="arithmatex">\(M_{R2}\)</span> = on input <span class="arithmatex">\(\text{<code>}R\text{''}\text{</code>}w\text{''}\)</span></p>
+<ol>
+<li>build an NFA <span class="arithmatex">\(N\)</span> equivalent to <span class="arithmatex">\(R\)</span>.</li>
+<li>run <span class="arithmatex">\(M_{R2}\)</span> on <span class="arithmatex">\(\text{<code>}N\text{''}\text{</code>}w\text{''}\)</span>.</li>
+<li>output the result of <span class="arithmatex">\(M_{R1}\)</span>.</li>
+</ol>
+</div>
+<p><strong>R4</strong> <span class="arithmatex">\(E_\text{DFA} = \{\text{``}D\text{''} : D \text{ is a DFA with } L(D) = \emptyset\}\)</span>.</p>
+<div class="admonition plane">
+<p><span class="arithmatex">\(M_{R4}\)</span> = on input <span class="arithmatex">\(\text{``}D\text{''}\)</span></p>
+<ol>
+<li>if <span class="arithmatex">\(D\)</span> has no final state,</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; accept,</li>
+<li>else,</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; run BFS on the diagram, starting with the inital state.</li>
+<li>if there exists a path from <span class="arithmatex">\(s\)</span> to final state,</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; reject,</li>
+<li>else,</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; accept.</li>
+</ol>
+</div>
+<p><strong>R5</strong> <span class="arithmatex">\(EQ_\text{DFA} = \{\text{<code>}D_1\text{''}\text{</code>}D_2\text{''} : D_1, D_2 \text{ are DFAs with } L(D_1) = L(D_2)\}\)</span>.</p>
+<div class="admonition plane">
+<p><span class="arithmatex">\(M_{R5}\)</span> = on input <span class="arithmatex">\(\text{<code>}R\text{''}\text{</code>}w\text{''}\)</span></p>
+<ol>
+<li>construct <span class="arithmatex">\(D_3\)</span> such that <span class="arithmatex">\(L(D_3) = L(D_1) \oplus L(D_2)\)</span> (symmetric difference).</li>
+<li>run <span class="arithmatex">\(M_{R4}\)</span> on <span class="arithmatex">\(\text{``}D_3\text{''}\)</span>.</li>
+<li>output the result of <span class="arithmatex">\(M_{R4}\)</span>.</li>
+</ol>
+</div>
+</div>
+<h3 id="reduction">Reduction<a class="headerlink" href="#reduction" title="Permanent link">&para;</a></h3>
+<p>In the examples above, we use the idea of reduction (归约). Take R1 and R2 as example. The equivalence of DFA and NFA guarantees that</p>
+<div class="arithmatex">\[
+\text{``}N\text{''}\text{``}w\text{''} \in A_{\text{NFA}} \text{ iff } \text{``}D\text{''}\text{``}w\text{''} \in A_{\text{DFA}}.
+\]</div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.23 10:40:27 CST</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.23 10:40:27 CST</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2236,15 +2739,15 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/Note/", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "/Note/assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/Note/assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
-        <script src="/Note/js/katex.js"></script>
+        <script src="../../../js/katex.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
