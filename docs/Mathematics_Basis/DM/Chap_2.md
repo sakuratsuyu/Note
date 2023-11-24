@@ -109,7 +109,7 @@ If a set has $n$ elements, then its power set has $2^n$ elements.
 ### Inifinite Sets
 
 !!! definition
-    Two sets have **the same cardinality** or say are **equinumerous (等势的)** iff there is an *bijective* from $A$ to $B$, i.e.$|A| = |B|$.
+    Two sets have **the same cardinality** or say are **equinumerous (等势的)** iff there is a *bijective* from $A$ to $B$, i.e.$|A| = |B|$.
 
 - Countable (denumerable) set
     - A set that is equinumerous with $\mathbb{N}$, e.g. $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{N} \times \mathbb{N}$.

@@ -205,10 +205,14 @@ Thus FA, PDA and TM can be encoded, since they are finite collections of finite 
         2. run $M_{R4}$ on $\text{``}D_3\text{''}$.
         3. output the result of $M_{R4}$.
 
-### Reduction
+!!! plane ""
 
-In the examples above, we use the idea of reduction (归约). Take R1 and R2 as example. The equivalence of DFA and NFA guarantees that
+    ## Reduction
 
-$$
-\text{``}N\text{''}\text{``}w\text{''} \in A_{\text{NFA}} \text{ iff } \text{``}D\text{''}\text{``}w\text{''} \in A_{\text{DFA}}.
-$$
+    In the examples above, we use the idea of reduction (归约). Take R1 and R2 as example. The equivalence of DFA and NFA guarantees that
+
+    $$
+    \text{``}N\text{''}\text{``}w\text{''} \in A_{\text{NFA}} \text{ iff } \text{``}D\text{''}\text{``}w\text{''} \in A_{\text{DFA}}.
+    $$
+
+    > We will further discuss reduction in the next lecture.
