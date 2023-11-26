@@ -4,36 +4,38 @@ Continue examples of Decidable Problems from the last lecture.
 
 !!! example
 
-    **C1** $A_\text{CFG} = \{\text{``}G\text{''}\text{``}w\text{''} : G \text{ is a CFG that generates } w\}$.
+    **C1** $A_\text{CFG} = \{\langle G, w \rangle : G \text{ is a CFG that generates } w\}$.
 
     !!! plane ""
 
-        $M_{C1}$ = on input $\text{``}G\text{''}\text{``}w\text{''}$
+        $M_{C1}$ = on input $\langle G, w \rangle$
 
         1. build an CFG $G'$ in CNF equivalent to $G$.
         2. enumerate all the derivations of length $2|w| - 1$.
+
             > Recap the property of CFG in CNF that
             > if $G$ generates a string of length $n \ge 1$, then the length of derivation is exactly $2n-1$.
-        3. if any of them generates $w$,
-        4. &nbsp;&nbsp;&nbsp;&nbsp; accept $\text{``}G\text{''}\text{``}w\text{''}$,
-        5. else,
-        6. &nbsp;&nbsp;&nbsp;&nbsp; reject $\text{``}G\text{''}\text{``}w\text{''}$.
 
-    **C2** $A_\text{PDA} = \{\text{``}P\text{''}\text{``}w\text{''} : P \text{ is a PDA that accepts } w\}$.
+        3. if any of them generates $w$,
+        4. &nbsp;&nbsp;&nbsp;&nbsp; accept $\langle G, w \rangle$,
+        5. else,
+        6. &nbsp;&nbsp;&nbsp;&nbsp; reject $\langle G, w \rangle$.
+
+    **C2** $A_\text{PDA} = \{\langle P, w \rangle : P \text{ is a PDA that accepts } w\}$.
 
     !!! plane ""
 
-        $M_{C2}$ = on input $\text{``}P\text{''}\text{``}w\text{''}$
+        $M_{C2}$ = on input $\langle P, w \rangle$
 
         1. build an CFG $G$ equivalent to $P$.
-        2. run $M_{C1}$ on $\text{``}G\text{''}\text{``}w\text{''}$.
+        2. run $M_{C1}$ on $\langle G, w \rangle$.
         3. output the result of $M_{C1}$.
     
-    **C3** $E_\text{CFG} = \{\text{``}G\text{''} : G \text{ is a CFG with } L(G) = \emptyset\}$.
+    **C3** $E_\text{CFG} = \{\langle G \rangle : G \text{ is a CFG with } L(G) = \emptyset\}$.
 
     !!! plane ""
 
-        $M_{C3}$ = on input $\text{``}G\text{''}$
+        $M_{C3}$ = on input $\langle G \rangle$
 
         1. mark all terminals and $e$.
         2. repeat the following until no new symbol is marked.
@@ -44,7 +46,7 @@ Continue examples of Decidable Problems from the last lecture.
         7. else,
         8. &nbsp;&nbsp;&nbsp;&nbsp; accept.
 
-    **C4** $E_\text{PDA} = \{\text{``}P\text{''} : P \text{ is a PDA with } L(P) = \emptyset\}$.
+    **C4** $E_\text{PDA} = \{\langle P \rangle : P \text{ is a PDA with } L(P) = \emptyset\}$.
 
 ## Reduction
 
@@ -149,7 +151,7 @@ Since $\mathcal{L}$ is uncountable while $\mathcal{M}$ is countable, then we hav
 Now we define
 
 $$
-H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } w\}.
+H = \{\langle M, w \rangle : M \text{ is a TM that halts on } w\}.
 $$
 
 !!! theorem
@@ -158,11 +160,11 @@ $$
 
 !!! proof
 
-    $U$ = on input $\text{``}M\text{''}\text{``}w\text{''}$
+    $U$ = on input $\langle M, w \rangle$
 
     1. run $M$ on $w$.
 
-    Then $U$ halts on $\text{``}M\text{''}\text{``}w\text{''}$ $\Leftrightarrow$ $M$ halts on $w$ $\Leftrightarrow$ $\text{``}M\text{''}\text{``}w\text{''} \in H$.
+    Then $U$ halts on $\langle M, w \rangle$ $\Leftrightarrow$ $M$ halts on $w$ $\Leftrightarrow$ $\langle M, w \rangle \in H$.
 
     > We also call $U$ **universal TM**. You can think $U$ is a computer, since it run an algorithm $M$ on some input $w$. Both of the algorithm and input are programmable.
 
@@ -172,7 +174,7 @@ $$
 
 !!! proof
 
-    Let $H_d = \{\text{``}M\text{''} : M \text{ is a TM that does NOT halt on } \text{``}M\text{''}\}$
+    Let $H_d = \{\langle M \rangle : M \text{ is a TM that does NOT halt on } \langle M \rangle\}$
 
     !!! theorem "Lemma 1"
 
@@ -182,13 +184,13 @@ $$
     
         Suppose $H$ is recursive, then there exists a TM $M_H$ that decides $H$.
 
-        $M_d$ = on input $\text{``}M\text{''}$
+        $M_d$ = on input $\langle M \rangle$
 
-        1. run $M_H$ on $\text{``}M\text{''}\text{``}M\text{''}$.
-        2. if $M_H$ accepts $\text{``}M\text{''}\text{``}M\text{''}$,
-        3. &nbsp;&nbsp;&nbsp;&nbsp; reject $\text{``}M\text{''}$,
+        1. run $M_H$ on $\langle M, M \rangle$.
+        2. if $M_H$ accepts $\langle M, M \rangle$,
+        3. &nbsp;&nbsp;&nbsp;&nbsp; reject $\langle M \rangle$,
         4. else,
-        5. &nbsp;&nbsp;&nbsp;&nbsp; accept $\text{``}M\text{''}$.
+        5. &nbsp;&nbsp;&nbsp;&nbsp; accept $\langle M \rangle$.
 
         Thus $M_d$ decides $H_d$ and $H_d$ is recursive.
 
@@ -201,11 +203,11 @@ $$
         Assume $H_d$ is recursively enumerable, then there exists a TM $D$ that semidecides $H_d$.
 
         $$
-            D \text{ on input } \text{``}M\text{''}
+            D \text{ on input } \langle M \rangle
             \left\{
             \begin{aligned}
-                & \text{halt}, && \text{``}M\text{''} \in H_d, \\
-                & \text{NOT halt}, && \text{``}M\text{''} \notin H_d.
+                & \text{halt}, && \langle M \rangle \in H_d, \\
+                & \text{NOT halt}, && \langle M \rangle \notin H_d.
             \end{aligned}
             \right.
         $$
@@ -213,11 +215,11 @@ $$
         Since $D$ is a Turing machine, substitute $M$ with $D$, we have
 
         $$
-            D \text{ on input } \text{``}D\text{''}
+            D \text{ on input } \langle D \rangle
             \left\{
             \begin{aligned}
-                & \text{halt}, && \text{``}D\text{''} \in H_d, \\
-                & \text{NOT halt}, && \text{``}D\text{''} \notin H_d.
+                & \text{halt}, && \langle D \rangle \in H_d, \\
+                & \text{NOT halt}, && \langle D \rangle \notin H_d.
             \end{aligned}
             \right.
         $$
@@ -239,14 +241,14 @@ Now that we have a powerful example $H$, which is recursively enumerable but not
 
 !!! example
 
-    Show that $L_1 = \{\text{``}M\text{''} : M \text{ is a TM that halts on } e\}$ is not recursive.
+    Show that $L_1 = \{\langle M \rangle : M \text{ is a TM that halts on } e\}$ is not recursive.
 
     !!! proof
 
         To use the reduction theorem, we need to construct some $M'$, such that
 
         $$
-            \text{``}M\text{''}\text{``}w\text{''} \in H \text{ iff } \text{``}M'\text{''} \in L_1
+            \langle M, w \rangle \in H \text{ iff } \langle M' \rangle \in L_1
         $$
 
         $M'$ = on input $u$,
@@ -257,9 +259,9 @@ Now that we have a powerful example $H$, which is recursively enumerable but not
 
 !!! example
 
-    Show that $L_2 = \{\text{``}M\text{''} : M \text{ is a TM that halts on some input} \}$ is not recursive.
+    Show that $L_2 = \{\langle M \rangle : M \text{ is a TM that halts on some input} \}$ is not recursive.
 
-    Show that $L_3 = \{\text{``}M\text{''} : M \text{ is a TM that halts on every input} \}$ is not recursive.
+    Show that $L_3 = \{\langle M \rangle : M \text{ is a TM that halts on every input} \}$ is not recursive.
 
     !!! proof
 
@@ -273,12 +275,12 @@ Now that we have a powerful example $H$, which is recursively enumerable but not
 
 !!! example
 
-    Show that $L_4 = \{\text{``}M_1\text{''}\text{``}M_2\text{''} : M_1 \text{ and } M_2 \text{ are two TMs with} L(M_1) = L(M_2) \}$ is not recursive.
+    Show that $L_4 = \{\langle M_1, M_2 \rangle : M_1 \text{ and } M_2 \text{ are two TMs with } L(M_1) = L(M_2) \}$ is not recursive.
 
     !!! proof
 
         $$
-            \text{``}M\text{''} \in L_3 \text{ iff } \text{``}M_1\text{''}\text{``}M_2\text{''} \in L_4
+            \langle M \rangle \in L_3 \text{ iff } \langle M_1, M_2 \rangle \in L_4
         $$
 
         namely
@@ -289,8 +291,8 @@ Now that we have a powerful example $H$, which is recursively enumerable but not
 
         $M$ halts on every input, which means $L(M) = \Sigma^*$. So we construct
 
-        - $M_1 = M$
+        $M_1 = M$
 
-        - $M_2$ = on input $u$
-
-            1. halt.
+        $M_2$ = on input $u$
+        
+        1. halt.

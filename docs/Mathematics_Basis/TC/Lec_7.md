@@ -123,17 +123,17 @@ The input of pseudo code is actually the encoding of the computation object. We 
     - Any finite set can be encoded.
     - Any finite collection of finite sets can be encoded.
 
-    For any compuatation object $O$, we use $\text{``}O\text{''}$ to denote its encoding.
+    For any compuatation object $O$, we use $\text{``}O\text{''}$ or $\langle O \rangle$ to denote its encoding.
 
 Thus FA, PDA and TM can be encoded, since they are finite collections of finite sets.
 
 !!! example
 
-    Make a TM that decides $L = \{\text{``}G\text{''} : G \text{ is a connected graph}\}$.
+    Make a TM that decides $L = \{\langle G \rangle : G \text{ is a connected graph}\}$.
 
-    $M$ = on input $\text{``}G\text{''}$.
+    $M$ = on input $\langle G \rangle$.
 
-    0. **(Default, can be omitted)** if the input is illegal, then reject, else decode $\text{``}G\text{''}$.
+    0. **(Default, can be omitted)** if the input is illegal, then reject, else decode $\langle G \rangle$.
     1. select a node of $G$ and mark it.
     2. repeat the following until no new node is marked.
     3. &nbsp;&nbsp;&nbsp;&nbsp; for each marked node
@@ -147,43 +147,52 @@ Thus FA, PDA and TM can be encoded, since they are finite collections of finite 
 
 !!! example
 
-    **R1** $A_\text{DFA} = \{\text{``}D\text{''}\text{``}w\text{''} : D \text{ is a DFA that accepts } w\}$.
+    **R1**  $A_\text{DFA} = \{\langle D, w \rangle : D \text{ is a DFA 
+    that accepts } w\}$.
 
     !!! plane ""
 
-        $M_{R1}$ = on input $\text{``}D\text{''}\text{``}w\text{''}$
+        $M_{R1}$ = on input $\langle D, w \rangle$
 
         1. run $D$ on $w$.
         2. if $D$ accepts $w$.
-        3. &nbsp;&nbsp;&nbsp;&nbsp; accept $\text{``}D\text{''}\text{``}w\text{''}$,
+        3. &nbsp;&nbsp;&nbsp;&nbsp; accept $\langle D, w \rangle$,
         4. else,
-        5. &nbsp;&nbsp;&nbsp;&nbsp; reject $\text{``}D\text{''}\text{``}w\text{''}$.
+        5. &nbsp;&nbsp;&nbsp;&nbsp; reject $\langle D, w \rangle$.
 
-    **R2** $A_\text{NFA} = \{\text{``}N\text{''}\text{``}w\text{''} : N \text{ is a NFA that accepts } w\}$.
+    **R2**
+    
+    $$
+        A_\text{NFA} = \{\langle N, w \rangle : N \text{ is a NFA that accepts } w\}
+    $$
 
     !!! plane ""
 
-        $M_{R2}$ = on input $\text{``}N\text{''}\text{``}w\text{''}$
+        $M_{R2}$ = on input $\langle N, w \rangle$
 
         1. build a DFA $D$ equivalent to $N$.
-        2. run $M_{R1}$ on $\text{``}D\text{''}\text{``}w\text{''}$.
+        2. run $M_{R1}$ on $\langle D, w \rangle$.
         3. output the result of $M_{R1}$.
 
-    **R3** $A_\text{REX} = \{\text{``}R\text{''}\text{``}w\text{''} : R \text{ is a regular expression with } w \in L(R)\}$.
+    **R3** 
+    
+    $$
+        A_\text{REX} = \{\langle R, w \rangle : R \text{ is a regular expression with } w \in L(R)\}
+    $$
 
     !!! plane ""
 
-        $M_{R2}$ = on input $\text{``}R\text{''}\text{``}w\text{''}$
+        $M_{R2}$ = on input $\langle R, w \rangle$
 
         1. build an NFA $N$ equivalent to $R$.
-        2. run $M_{R2}$ on $\text{``}N\text{''}\text{``}w\text{''}$.
+        2. run $M_{R2}$ on $\langle N, w \rangle$.
         3. output the result of $M_{R1}$.
     
-    **R4** $E_\text{DFA} = \{\text{``}D\text{''} : D \text{ is a DFA with } L(D) = \emptyset\}$.
+    **R4** $E_\text{DFA} = \{\langle D \rangle : D \text{ is a DFA with } L(D) = \emptyset\}$.
 
     !!! plane ""
 
-        $M_{R4}$ = on input $\text{``}D\text{''}$
+        $M_{R4}$ = on input $\langle D \rangle$
 
         1. if $D$ has no final state,
         2. &nbsp;&nbsp;&nbsp;&nbsp; accept,
@@ -195,14 +204,14 @@ Thus FA, PDA and TM can be encoded, since they are finite collections of finite 
         8. &nbsp;&nbsp;&nbsp;&nbsp; accept.
 
 
-    **R5** $EQ_\text{DFA} = \{\text{``}D_1\text{''}\text{``}D_2\text{''} : D_1, D_2 \text{ are DFAs with } L(D_1) = L(D_2)\}$.
+    **R5** $EQ_\text{DFA} = \{\langle D_1, D_2 \rangle : D_1, D_2 \text{ are DFAs with } L(D_1) = L(D_2)\}$.
 
     !!! plane ""
 
-        $M_{R5}$ = on input $\text{``}R\text{''}\text{``}w\text{''}$
+        $M_{R5}$ = on input $\langle R, w \rangle$
 
         1. construct $D_3$ such that $L(D_3) = L(D_1) \oplus L(D_2)$ (symmetric difference).
-        2. run $M_{R4}$ on $\text{``}D_3\text{''}$.
+        2. run $M_{R4}$ on $\langle D_3 \rangle$.
         3. output the result of $M_{R4}$.
 
 !!! plane ""
@@ -212,7 +221,7 @@ Thus FA, PDA and TM can be encoded, since they are finite collections of finite 
     In the examples above, we use the idea of reduction (归约). Take R1 and R2 as example. The equivalence of DFA and NFA guarantees that
 
     $$
-    \text{``}N\text{''}\text{``}w\text{''} \in A_{\text{NFA}} \text{ iff } \text{``}D\text{''}\text{``}w\text{''} \in A_{\text{DFA}}.
+    \langle N, w \rangle \in A_{\text{NFA}} \text{ iff } \langle D, w \rangle \in A_{\text{DFA}}.
     $$
 
     > We will further discuss reduction in the next lecture.
