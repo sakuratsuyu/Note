@@ -2327,32 +2327,38 @@
 <p>Continue examples of Decidable Problems from the last lecture.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><strong>C1</strong> <span class="arithmatex">\(A_\text{CFG} = \{\text{<code>}G\text{''}\text{</code>}w\text{''} : G \text{ is a CFG that generates } w\}\)</span>.</p>
+<p><strong>C1</strong> <span class="arithmatex">\(A_\text{CFG} = \{\langle G, w \rangle : G \text{ is a CFG that generates } w\}\)</span>.</p>
 <div class="admonition plane">
-<p><span class="arithmatex">\(M_{C1}\)</span> = on input <span class="arithmatex">\(\text{<code>}G\text{''}\text{</code>}w\text{''}\)</span></p>
+<p><span class="arithmatex">\(M_{C1}\)</span> = on input <span class="arithmatex">\(\langle G, w \rangle\)</span></p>
 <ol>
 <li>build an CFG <span class="arithmatex">\(G'\)</span> in CNF equivalent to <span class="arithmatex">\(G\)</span>.</li>
-<li>enumerate all the derivations of length <span class="arithmatex">\(2|w| - 1\)</span>.
-    &gt; Recap the property of CFG in CNF that
-    &gt; if <span class="arithmatex">\(G\)</span> generates a string of length <span class="arithmatex">\(n \ge 1\)</span>, then the length of derivation is exactly <span class="arithmatex">\(2n-1\)</span>.</li>
-<li>if any of them generates <span class="arithmatex">\(w\)</span>,</li>
-<li>&nbsp;&nbsp;&nbsp;&nbsp; accept <span class="arithmatex">\(\text{<code>}G\text{''}\text{</code>}w\text{''}\)</span>,</li>
+<li>
+<p>enumerate all the derivations of length <span class="arithmatex">\(2|w| - 1\)</span>.</p>
+<blockquote>
+<p>Recap the property of CFG in CNF that
+if <span class="arithmatex">\(G\)</span> generates a string of length <span class="arithmatex">\(n \ge 1\)</span>, then the length of derivation is exactly <span class="arithmatex">\(2n-1\)</span>.</p>
+</blockquote>
+</li>
+<li>
+<p>if any of them generates <span class="arithmatex">\(w\)</span>,</p>
+</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; accept <span class="arithmatex">\(\langle G, w \rangle\)</span>,</li>
 <li>else,</li>
-<li>&nbsp;&nbsp;&nbsp;&nbsp; reject <span class="arithmatex">\(\text{<code>}G\text{''}\text{</code>}w\text{''}\)</span>.</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; reject <span class="arithmatex">\(\langle G, w \rangle\)</span>.</li>
 </ol>
 </div>
-<p><strong>C2</strong> <span class="arithmatex">\(A_\text{PDA} = \{\text{<code>}P\text{''}\text{</code>}w\text{''} : P \text{ is a PDA that accepts } w\}\)</span>.</p>
+<p><strong>C2</strong> <span class="arithmatex">\(A_\text{PDA} = \{\langle P, w \rangle : P \text{ is a PDA that accepts } w\}\)</span>.</p>
 <div class="admonition plane">
-<p><span class="arithmatex">\(M_{C2}\)</span> = on input <span class="arithmatex">\(\text{<code>}P\text{''}\text{</code>}w\text{''}\)</span></p>
+<p><span class="arithmatex">\(M_{C2}\)</span> = on input <span class="arithmatex">\(\langle P, w \rangle\)</span></p>
 <ol>
 <li>build an CFG <span class="arithmatex">\(G\)</span> equivalent to <span class="arithmatex">\(P\)</span>.</li>
-<li>run <span class="arithmatex">\(M_{C1}\)</span> on <span class="arithmatex">\(\text{<code>}G\text{''}\text{</code>}w\text{''}\)</span>.</li>
+<li>run <span class="arithmatex">\(M_{C1}\)</span> on <span class="arithmatex">\(\langle G, w \rangle\)</span>.</li>
 <li>output the result of <span class="arithmatex">\(M_{C1}\)</span>.</li>
 </ol>
 </div>
-<p><strong>C3</strong> <span class="arithmatex">\(E_\text{CFG} = \{\text{``}G\text{''} : G \text{ is a CFG with } L(G) = \emptyset\}\)</span>.</p>
+<p><strong>C3</strong> <span class="arithmatex">\(E_\text{CFG} = \{\langle G \rangle : G \text{ is a CFG with } L(G) = \emptyset\}\)</span>.</p>
 <div class="admonition plane">
-<p><span class="arithmatex">\(M_{C3}\)</span> = on input <span class="arithmatex">\(\text{``}G\text{''}\)</span></p>
+<p><span class="arithmatex">\(M_{C3}\)</span> = on input <span class="arithmatex">\(\langle G \rangle\)</span></p>
 <ol>
 <li>mark all terminals and <span class="arithmatex">\(e\)</span>.</li>
 <li>repeat the following until no new symbol is marked.</li>
@@ -2364,7 +2370,7 @@
 <li>&nbsp;&nbsp;&nbsp;&nbsp; accept.</li>
 </ol>
 </div>
-<p><strong>C4</strong> <span class="arithmatex">\(E_\text{PDA} = \{\text{``}P\text{''} : P \text{ is a PDA with } L(P) = \emptyset\}\)</span>.</p>
+<p><strong>C4</strong> <span class="arithmatex">\(E_\text{PDA} = \{\langle P \rangle : P \text{ is a PDA with } L(P) = \emptyset\}\)</span>.</p>
 </div>
 <h2 id="reduction">Reduction<a class="headerlink" href="#reduction" title="Permanent link">&para;</a></h2>
 <p>Now we give the formal definition of <strong>reduction</strong>.</p>
@@ -2454,7 +2460,7 @@
 </div>
 <p>Now we define</p>
 <div class="arithmatex">\[
-H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } w\}.
+H = \{\langle M, w \rangle : M \text{ is a TM that halts on } w\}.
 \]</div>
 <div class="admonition theorem">
 <p class="admonition-title">Theorem</p>
@@ -2462,11 +2468,11 @@ H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } 
 </div>
 <div class="admonition proof">
 <p class="admonition-title">Proof</p>
-<p><span class="arithmatex">\(U\)</span> = on input <span class="arithmatex">\(\text{<code>}M\text{''}\text{</code>}w\text{''}\)</span></p>
+<p><span class="arithmatex">\(U\)</span> = on input <span class="arithmatex">\(\langle M, w \rangle\)</span></p>
 <ol>
 <li>run <span class="arithmatex">\(M\)</span> on <span class="arithmatex">\(w\)</span>.</li>
 </ol>
-<p>Then <span class="arithmatex">\(U\)</span> halts on <span class="arithmatex">\(\text{<code>}M\text{''}\text{</code>}w\text{''}\)</span> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(M\)</span> halts on <span class="arithmatex">\(w\)</span> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(\text{<code>}M\text{''}\text{</code>}w\text{''} \in H\)</span>.</p>
+<p>Then <span class="arithmatex">\(U\)</span> halts on <span class="arithmatex">\(\langle M, w \rangle\)</span> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(M\)</span> halts on <span class="arithmatex">\(w\)</span> <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(\langle M, w \rangle \in H\)</span>.</p>
 <blockquote>
 <p>We also call <span class="arithmatex">\(U\)</span> <strong>universal TM</strong>. You can think <span class="arithmatex">\(U\)</span> is a computer, since it run an algorithm <span class="arithmatex">\(M\)</span> on some input <span class="arithmatex">\(w\)</span>. Both of the algorithm and input are programmable.</p>
 </blockquote>
@@ -2477,7 +2483,7 @@ H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } 
 </div>
 <div class="admonition proof">
 <p class="admonition-title">Proof</p>
-<p>Let <span class="arithmatex">\(H_d = \{\text{<code>}M\text{''} : M \text{ is a TM that does NOT halt on } \text{</code>}M\text{''}\}\)</span></p>
+<p>Let <span class="arithmatex">\(H_d = \{\langle M \rangle : M \text{ is a TM that does NOT halt on } \langle M \rangle\}\)</span></p>
 <div class="admonition theorem">
 <p class="admonition-title">Lemma 1</p>
 <p>If <span class="arithmatex">\(H\)</span> is recursive, then <span class="arithmatex">\(H_d\)</span> is recursive.</p>
@@ -2485,13 +2491,13 @@ H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } 
 <div class="admonition proof">
 <p class="admonition-title">Proof</p>
 <p>Suppose <span class="arithmatex">\(H\)</span> is recursive, then there exists a TM <span class="arithmatex">\(M_H\)</span> that decides <span class="arithmatex">\(H\)</span>.</p>
-<p><span class="arithmatex">\(M_d\)</span> = on input <span class="arithmatex">\(\text{``}M\text{''}\)</span></p>
+<p><span class="arithmatex">\(M_d\)</span> = on input <span class="arithmatex">\(\langle M \rangle\)</span></p>
 <ol>
-<li>run <span class="arithmatex">\(M_H\)</span> on <span class="arithmatex">\(\text{<code>}M\text{''}\text{</code>}M\text{''}\)</span>.</li>
-<li>if <span class="arithmatex">\(M_H\)</span> accepts <span class="arithmatex">\(\text{<code>}M\text{''}\text{</code>}M\text{''}\)</span>,</li>
-<li>&nbsp;&nbsp;&nbsp;&nbsp; reject <span class="arithmatex">\(\text{``}M\text{''}\)</span>,</li>
+<li>run <span class="arithmatex">\(M_H\)</span> on <span class="arithmatex">\(\langle M, M \rangle\)</span>.</li>
+<li>if <span class="arithmatex">\(M_H\)</span> accepts <span class="arithmatex">\(\langle M, M \rangle\)</span>,</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; reject <span class="arithmatex">\(\langle M \rangle\)</span>,</li>
 <li>else,</li>
-<li>&nbsp;&nbsp;&nbsp;&nbsp; accept <span class="arithmatex">\(\text{``}M\text{''}\)</span>.</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; accept <span class="arithmatex">\(\langle M \rangle\)</span>.</li>
 </ol>
 <p>Thus <span class="arithmatex">\(M_d\)</span> decides <span class="arithmatex">\(H_d\)</span> and <span class="arithmatex">\(H_d\)</span> is recursive.</p>
 </div>
@@ -2503,21 +2509,21 @@ H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } 
 <p class="admonition-title">Proof</p>
 <p>Assume <span class="arithmatex">\(H_d\)</span> is recursively enumerable, then there exists a TM <span class="arithmatex">\(D\)</span> that semidecides <span class="arithmatex">\(H_d\)</span>.</p>
 <div class="arithmatex">\[
-    D \text{ on input } \text{``}M\text{''}
+    D \text{ on input } \langle M \rangle
     \left\{
     \begin{aligned}
-        &amp; \text{halt}, &amp;&amp; \text{``}M\text{''} \in H_d, \\
-        &amp; \text{NOT halt}, &amp;&amp; \text{``}M\text{''} \notin H_d.
+        &amp; \text{halt}, &amp;&amp; \langle M \rangle \in H_d, \\
+        &amp; \text{NOT halt}, &amp;&amp; \langle M \rangle \notin H_d.
     \end{aligned}
     \right.
 \]</div>
 <p>Since <span class="arithmatex">\(D\)</span> is a Turing machine, substitute <span class="arithmatex">\(M\)</span> with <span class="arithmatex">\(D\)</span>, we have</p>
 <div class="arithmatex">\[
-    D \text{ on input } \text{``}D\text{''}
+    D \text{ on input } \langle D \rangle
     \left\{
     \begin{aligned}
-        &amp; \text{halt}, &amp;&amp; \text{``}D\text{''} \in H_d, \\
-        &amp; \text{NOT halt}, &amp;&amp; \text{``}D\text{''} \notin H_d.
+        &amp; \text{halt}, &amp;&amp; \langle D \rangle \in H_d, \\
+        &amp; \text{NOT halt}, &amp;&amp; \langle D \rangle \notin H_d.
     \end{aligned}
     \right.
 \]</div>
@@ -2536,12 +2542,12 @@ H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } 
 <p>Now that we have a powerful example <span class="arithmatex">\(H\)</span>, which is recursively enumerable but not recursive. So to prove some language that is also recursively enumerable but not recursive, we can use reduction: just reduct <span class="arithmatex">\(H\)</span> to that langauge. Here we give some examples.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Show that <span class="arithmatex">\(L_1 = \{\text{``}M\text{''} : M \text{ is a TM that halts on } e\}\)</span> is not recursive.</p>
+<p>Show that <span class="arithmatex">\(L_1 = \{\langle M \rangle : M \text{ is a TM that halts on } e\}\)</span> is not recursive.</p>
 <div class="admonition proof">
 <p class="admonition-title">Proof</p>
 <p>To use the reduction theorem, we need to construct some <span class="arithmatex">\(M'\)</span>, such that</p>
 <div class="arithmatex">\[
-    \text{``}M\text{''}\text{``}w\text{''} \in H \text{ iff } \text{``}M'\text{''} \in L_1
+    \langle M, w \rangle \in H \text{ iff } \langle M' \rangle \in L_1
 \]</div>
 <p><span class="arithmatex">\(M'\)</span> = on input <span class="arithmatex">\(u\)</span>,</p>
 <ol>
@@ -2552,8 +2558,8 @@ H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } 
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Show that <span class="arithmatex">\(L_2 = \{\text{``}M\text{''} : M \text{ is a TM that halts on some input} \}\)</span> is not recursive.</p>
-<p>Show that <span class="arithmatex">\(L_3 = \{\text{``}M\text{''} : M \text{ is a TM that halts on every input} \}\)</span> is not recursive.</p>
+<p>Show that <span class="arithmatex">\(L_2 = \{\langle M \rangle : M \text{ is a TM that halts on some input} \}\)</span> is not recursive.</p>
+<p>Show that <span class="arithmatex">\(L_3 = \{\langle M \rangle : M \text{ is a TM that halts on every input} \}\)</span> is not recursive.</p>
 <div class="admonition proof">
 <p class="admonition-title">Proof</p>
 <p>Notice the proof in <span class="arithmatex">\(L_1\)</span>, we construct <span class="arithmatex">\(M'\)</span>. And actually we have</p>
@@ -2565,28 +2571,22 @@ H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } 
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Show that <span class="arithmatex">\(L_4 = \{\text{<code>}M_1\text{''}\text{</code>}M_2\text{''} : M_1 \text{ and } M_2 \text{ are two TMs with} L(M_1) = L(M_2) \}\)</span> is not recursive.</p>
+<p>Show that <span class="arithmatex">\(L_4 = \{\langle M_1, M_2 \rangle : M_1 \text{ and } M_2 \text{ are two TMs with } L(M_1) = L(M_2) \}\)</span> is not recursive.</p>
 <div class="admonition proof">
 <p class="admonition-title">Proof</p>
 <div class="arithmatex">\[
-    \text{``}M\text{''} \in L_3 \text{ iff } \text{``}M_1\text{''}\text{``}M_2\text{''} \in L_4
+    \langle M \rangle \in L_3 \text{ iff } \langle M_1, M_2 \rangle \in L_4
 \]</div>
 <p>namely</p>
 <div class="arithmatex">\[
     M \text{ halts on every input} \text{ iff } L(M_1) = L(M_2)
 \]</div>
 <p><span class="arithmatex">\(M\)</span> halts on every input, which means <span class="arithmatex">\(L(M) = \Sigma^*\)</span>. So we construct</p>
-<ul>
-<li>
 <p><span class="arithmatex">\(M_1 = M\)</span></p>
-</li>
-<li>
 <p><span class="arithmatex">\(M_2\)</span> = on input <span class="arithmatex">\(u\)</span></p>
 <ol>
 <li>halt.</li>
 </ol>
-</li>
-</ul>
 </div>
 </div>
 
@@ -2595,7 +2595,7 @@ H = \{\text{``}M\text{''}\text{``}w\text{''} : M \text{ is a TM that halts on } 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.24 23:19:46 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.26 15:01:27 CST</span>
       
         <br>
         创建日期:

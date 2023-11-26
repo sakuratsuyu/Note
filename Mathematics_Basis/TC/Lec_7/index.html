@@ -2597,15 +2597,15 @@
 <li>Any finite set can be encoded.</li>
 <li>Any finite collection of finite sets can be encoded.</li>
 </ul>
-<p>For any compuatation object <span class="arithmatex">\(O\)</span>, we use <span class="arithmatex">\(\text{``}O\text{''}\)</span> to denote its encoding.</p>
+<p>For any compuatation object <span class="arithmatex">\(O\)</span>, we use <span class="arithmatex">\(\text{``}O\text{''}\)</span> or <span class="arithmatex">\(\langle O \rangle\)</span> to denote its encoding.</p>
 </div>
 <p>Thus FA, PDA and TM can be encoded, since they are finite collections of finite sets.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Make a TM that decides <span class="arithmatex">\(L = \{\text{``}G\text{''} : G \text{ is a connected graph}\}\)</span>.</p>
-<p><span class="arithmatex">\(M\)</span> = on input <span class="arithmatex">\(\text{``}G\text{''}\)</span>.</p>
+<p>Make a TM that decides <span class="arithmatex">\(L = \{\langle G \rangle : G \text{ is a connected graph}\}\)</span>.</p>
+<p><span class="arithmatex">\(M\)</span> = on input <span class="arithmatex">\(\langle G \rangle\)</span>.</p>
 <ol>
-<li><strong>(Default, can be omitted)</strong> if the input is illegal, then reject, else decode <span class="arithmatex">\(\text{``}G\text{''}\)</span>.</li>
+<li><strong>(Default, can be omitted)</strong> if the input is illegal, then reject, else decode <span class="arithmatex">\(\langle G \rangle\)</span>.</li>
 <li>select a node of <span class="arithmatex">\(G\)</span> and mark it.</li>
 <li>repeat the following until no new node is marked.</li>
 <li>&nbsp;&nbsp;&nbsp;&nbsp; for each marked node</li>
@@ -2619,38 +2619,45 @@
 <h3 id="decidable-problems-recursive-languages">Decidable Problems (Recursive Languages)<a class="headerlink" href="#decidable-problems-recursive-languages" title="Permanent link">&para;</a></h3>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><strong>R1</strong> <span class="arithmatex">\(A_\text{DFA} = \{\text{<code>}D\text{''}\text{</code>}w\text{''} : D \text{ is a DFA that accepts } w\}\)</span>.</p>
+<p><strong>R1</strong>  <span class="arithmatex">\(A_\text{DFA} = \{\langle D, w \rangle : D \text{ is a DFA 
+that accepts } w\}\)</span>.</p>
 <div class="admonition plane">
-<p><span class="arithmatex">\(M_{R1}\)</span> = on input <span class="arithmatex">\(\text{<code>}D\text{''}\text{</code>}w\text{''}\)</span></p>
+<p><span class="arithmatex">\(M_{R1}\)</span> = on input <span class="arithmatex">\(\langle D, w \rangle\)</span></p>
 <ol>
 <li>run <span class="arithmatex">\(D\)</span> on <span class="arithmatex">\(w\)</span>.</li>
 <li>if <span class="arithmatex">\(D\)</span> accepts <span class="arithmatex">\(w\)</span>.</li>
-<li>&nbsp;&nbsp;&nbsp;&nbsp; accept <span class="arithmatex">\(\text{<code>}D\text{''}\text{</code>}w\text{''}\)</span>,</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; accept <span class="arithmatex">\(\langle D, w \rangle\)</span>,</li>
 <li>else,</li>
-<li>&nbsp;&nbsp;&nbsp;&nbsp; reject <span class="arithmatex">\(\text{<code>}D\text{''}\text{</code>}w\text{''}\)</span>.</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; reject <span class="arithmatex">\(\langle D, w \rangle\)</span>.</li>
 </ol>
 </div>
-<p><strong>R2</strong> <span class="arithmatex">\(A_\text{NFA} = \{\text{<code>}N\text{''}\text{</code>}w\text{''} : N \text{ is a NFA that accepts } w\}\)</span>.</p>
+<p><strong>R2</strong></p>
+<div class="arithmatex">\[
+    A_\text{NFA} = \{\langle N, w \rangle : N \text{ is a NFA that accepts } w\}
+\]</div>
 <div class="admonition plane">
-<p><span class="arithmatex">\(M_{R2}\)</span> = on input <span class="arithmatex">\(\text{<code>}N\text{''}\text{</code>}w\text{''}\)</span></p>
+<p><span class="arithmatex">\(M_{R2}\)</span> = on input <span class="arithmatex">\(\langle N, w \rangle\)</span></p>
 <ol>
 <li>build a DFA <span class="arithmatex">\(D\)</span> equivalent to <span class="arithmatex">\(N\)</span>.</li>
-<li>run <span class="arithmatex">\(M_{R1}\)</span> on <span class="arithmatex">\(\text{<code>}D\text{''}\text{</code>}w\text{''}\)</span>.</li>
+<li>run <span class="arithmatex">\(M_{R1}\)</span> on <span class="arithmatex">\(\langle D, w \rangle\)</span>.</li>
 <li>output the result of <span class="arithmatex">\(M_{R1}\)</span>.</li>
 </ol>
 </div>
-<p><strong>R3</strong> <span class="arithmatex">\(A_\text{REX} = \{\text{<code>}R\text{''}\text{</code>}w\text{''} : R \text{ is a regular expression with } w \in L(R)\}\)</span>.</p>
+<p><strong>R3</strong> </p>
+<div class="arithmatex">\[
+    A_\text{REX} = \{\langle R, w \rangle : R \text{ is a regular expression with } w \in L(R)\}
+\]</div>
 <div class="admonition plane">
-<p><span class="arithmatex">\(M_{R2}\)</span> = on input <span class="arithmatex">\(\text{<code>}R\text{''}\text{</code>}w\text{''}\)</span></p>
+<p><span class="arithmatex">\(M_{R2}\)</span> = on input <span class="arithmatex">\(\langle R, w \rangle\)</span></p>
 <ol>
 <li>build an NFA <span class="arithmatex">\(N\)</span> equivalent to <span class="arithmatex">\(R\)</span>.</li>
-<li>run <span class="arithmatex">\(M_{R2}\)</span> on <span class="arithmatex">\(\text{<code>}N\text{''}\text{</code>}w\text{''}\)</span>.</li>
+<li>run <span class="arithmatex">\(M_{R2}\)</span> on <span class="arithmatex">\(\langle N, w \rangle\)</span>.</li>
 <li>output the result of <span class="arithmatex">\(M_{R1}\)</span>.</li>
 </ol>
 </div>
-<p><strong>R4</strong> <span class="arithmatex">\(E_\text{DFA} = \{\text{``}D\text{''} : D \text{ is a DFA with } L(D) = \emptyset\}\)</span>.</p>
+<p><strong>R4</strong> <span class="arithmatex">\(E_\text{DFA} = \{\langle D \rangle : D \text{ is a DFA with } L(D) = \emptyset\}\)</span>.</p>
 <div class="admonition plane">
-<p><span class="arithmatex">\(M_{R4}\)</span> = on input <span class="arithmatex">\(\text{``}D\text{''}\)</span></p>
+<p><span class="arithmatex">\(M_{R4}\)</span> = on input <span class="arithmatex">\(\langle D \rangle\)</span></p>
 <ol>
 <li>if <span class="arithmatex">\(D\)</span> has no final state,</li>
 <li>&nbsp;&nbsp;&nbsp;&nbsp; accept,</li>
@@ -2662,12 +2669,12 @@
 <li>&nbsp;&nbsp;&nbsp;&nbsp; accept.</li>
 </ol>
 </div>
-<p><strong>R5</strong> <span class="arithmatex">\(EQ_\text{DFA} = \{\text{<code>}D_1\text{''}\text{</code>}D_2\text{''} : D_1, D_2 \text{ are DFAs with } L(D_1) = L(D_2)\}\)</span>.</p>
+<p><strong>R5</strong> <span class="arithmatex">\(EQ_\text{DFA} = \{\langle D_1, D_2 \rangle : D_1, D_2 \text{ are DFAs with } L(D_1) = L(D_2)\}\)</span>.</p>
 <div class="admonition plane">
-<p><span class="arithmatex">\(M_{R5}\)</span> = on input <span class="arithmatex">\(\text{<code>}R\text{''}\text{</code>}w\text{''}\)</span></p>
+<p><span class="arithmatex">\(M_{R5}\)</span> = on input <span class="arithmatex">\(\langle R, w \rangle\)</span></p>
 <ol>
 <li>construct <span class="arithmatex">\(D_3\)</span> such that <span class="arithmatex">\(L(D_3) = L(D_1) \oplus L(D_2)\)</span> (symmetric difference).</li>
-<li>run <span class="arithmatex">\(M_{R4}\)</span> on <span class="arithmatex">\(\text{``}D_3\text{''}\)</span>.</li>
+<li>run <span class="arithmatex">\(M_{R4}\)</span> on <span class="arithmatex">\(\langle D_3 \rangle\)</span>.</li>
 <li>output the result of <span class="arithmatex">\(M_{R4}\)</span>.</li>
 </ol>
 </div>
@@ -2676,7 +2683,7 @@
 <h2 id="reduction">Reduction<a class="headerlink" href="#reduction" title="Permanent link">&para;</a></h2>
 <p>In the examples above, we use the idea of reduction (归约). Take R1 and R2 as example. The equivalence of DFA and NFA guarantees that</p>
 <div class="arithmatex">\[
-\text{``}N\text{''}\text{``}w\text{''} \in A_{\text{NFA}} \text{ iff } \text{``}D\text{''}\text{``}w\text{''} \in A_{\text{DFA}}.
+\langle N, w \rangle \in A_{\text{NFA}} \text{ iff } \langle D, w \rangle \in A_{\text{DFA}}.
 \]</div>
 <blockquote>
 <p>We will further discuss reduction in the next lecture.</p>
@@ -2688,7 +2695,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.24 23:19:46 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.26 15:01:27 CST</span>
       
         <br>
         创建日期:
