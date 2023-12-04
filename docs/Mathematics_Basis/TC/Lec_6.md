@@ -21,7 +21,7 @@ FA and PDA, as we mentioned in previous lectures, can only accept a few of the l
         - Also, there is a limitation of $\delta$.
 
             $$
-                \forall q \in K - H, \exists p \in K,\ \ s.t.\  \delta(q, \triangleleft) = (p, \rightarrow)
+                \forall q \in K - H, \exists p \in K,\ \ s.t.\  \delta(q, \triangleright) = (p, \rightarrow)
             $$
 
 !!! definition

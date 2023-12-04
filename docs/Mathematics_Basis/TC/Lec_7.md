@@ -65,7 +65,7 @@ Well, all of the variants above are trivial. The most important variant is the f
         - Also, there is a limitation of $\delta$.
 
             $$
-                \forall q \in K - H, \exists p \in K,\ \ s.t.\  \delta(q, \triangleleft) = (p, \rightarrow)
+                \forall q \in K - H, \exists p \in K,\ \ s.t.\  \delta(q, \triangleright) = (p, \rightarrow)
             $$
 
 !!! definition
