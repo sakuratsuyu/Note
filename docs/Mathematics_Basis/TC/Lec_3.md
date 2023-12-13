@@ -232,4 +232,4 @@ Based on the mechanism above, we can simply give the following more abstract pro
 
     !!! proof
 
-        Simply proof by reduction. Suppose $B$ is regular, then $B \cap \{0^n1^n | n \in \mathbb{N}^*\}$ must also be regular, which is $\{0^n1^n | n \in \mathbb{N}^*\}$. But we've prove it not regular. So $B$ is not regular.
+        Simply proof by reduction. Suppose $B$ is regular, then $B \cap \{0^n1^m | n, m \in \mathbb{N}^*\}$ must also be regular, which is $\{0^n1^n | n \in \mathbb{N}^*\}$. But we've proved it not regular. So $B$ is not regular.

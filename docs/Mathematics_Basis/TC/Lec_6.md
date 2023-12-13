@@ -119,7 +119,7 @@ For simplicity, we introduce the following symbols.
 
     **Left-shifting Machine** $S_\leftarrow$
 
-     $$
+    $$
         \forall w \in (\Sigma - \{\triangleright, \sqcup\})^*, \exists h \in H,\ \ s.t.\ \ (s, \triangleright\sqcup\sqcup w \sqcup) \vdash_M^*(h, \triangleright\sqcup w\sqcup).
     $$
 
