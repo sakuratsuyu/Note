@@ -131,7 +131,7 @@ For simplicity, we introduce the following symbols.
 
 !!! definition
 
-    **input alphabet**: $\Sigma_0 \subseteq (\Sigma - \{\triangleright, \sqcup\}$.
+    **input alphabet**: $\Sigma_0 \subseteq (\Sigma - \{\triangleright, \sqcup\})$.
 
     **input configuration**: $(s, \triangleright \underline{\sqcup} w)$.
 
@@ -142,7 +142,7 @@ For simplicity, we introduce the following symbols.
 
     !!! plane ""
         
-        Suppose a Turing machine $M = (K, \Sigma_0, \Sigma, \delta, s, \{y, n\})$, we say $M$ **decides** a language $L \subseteq \Sigma_0$ if
+        Suppose a Turing machine $M = (K, \Sigma_0, \delta, s, \{y, n\})$, we say $M$ **decides** a language $L \subseteq \Sigma_0$ if
 
         - $\forall w \in L, (s, \triangleright \underline{\sqcup} w) \vdash_M^* (y, \dots)$, we say $M$ accepts $w$.
         - $\forall w \in \Sigma_0^* - L, (s, \triangleright \underline{\sqcup} w) \vdash_M^* (n, \dots)$, we say $M$ rejects $w$.

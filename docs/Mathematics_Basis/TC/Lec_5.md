@@ -98,9 +98,9 @@ Similar to regular language, we have context-free language properties closure.
 
     For CFG $G_A = (V_A, \Sigma, S_A, R_A)$ and $G_B = (V_B, \Sigma, S_B, R_B)$, then
 
-    - $G_{A \cup B} = (V_A \cup V_B, \Sigma, S_{A \cup B}, R_A \cup R_B \cup \{S \rightarrow S_A | S_B\})$.
-    - $G_{A \circ B} = (V_A \cup V_B, \Sigma, S_{A \cup B}, R_A \cup R_B \cup \{S \rightarrow S_AS_B\})$.
-    - $G_{A^*} = (V_A \cup V_B, \Sigma, S_{A \cup B}, R_A \cup R_B \cup \{S \rightarrow e\} \cup \{S \rightarrow SS_A\})$.
+    - $G_{A \cup B} = (V_A \cup V_B, \Sigma, S, R_A \cup R_B \cup \{S \rightarrow S_A | S_B\})$.
+    - $G_{A \circ B} = (V_A \cup V_B, \Sigma, S, R_A \cup R_B \cup \{S \rightarrow S_AS_B\})$.
+    - $G_{A^*} = (V_A, \Sigma, S, R_A \cup \{S \rightarrow e\} \cup \{S \rightarrow SS_A\})$.
 
     One counter example of $A \cap B$ and $\overline{A}$ is $A = \{a^i b^j c^k | i = j\}$ and $B = \{a^i b^j c^k | j = k\}$. Both $A$ and $B$ are context-free, but $A \cap B = \{a^nb^nc^n | n \ge 0\}$ is not context-free (we will prove it later after giving pumping theorem for CFL).
 

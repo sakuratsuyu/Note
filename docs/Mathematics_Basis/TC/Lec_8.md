@@ -76,7 +76,7 @@ Now we give the formal definition of **reduction**.
 
 ## Language Category
 
-Now we know that enumerable recursive languages contains recusive languages. But we care about two questions:
+Now we know that enumerable recursive languages contain recusive languages. But we care about two questions:
 
 !!! plane ""
 
@@ -97,7 +97,7 @@ Before we dive in, let's recap something about equinumerosity.
 
     !!! theorem "Lemma"
 
-        A is countable iff there exists an injection $f : A \rightarrow \mathbb{N}$.
+        $A$ is countable iff there exists an injection $f : A \rightarrow \mathbb{N}$.
 
     ??? proof
 
