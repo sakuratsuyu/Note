@@ -2449,23 +2449,25 @@
 <h2 id="primitive-recursive-function">Primitive Recursive Function<a class="headerlink" href="#primitive-recursive-function" title="Permanent link">&para;</a></h2>
 <h3 id="basic-functions">Basic Functions<a class="headerlink" href="#basic-functions" title="Permanent link">&para;</a></h3>
 <ol>
-<li>zero function</li>
-</ol>
+<li>
+<p>zero function</p>
 <div class="arithmatex">\[
-\text{zero}(n_1, \dots, n_k) = 0.
+    \text{zero}(n_1, \dots, n_k) = 0.
 \]</div>
-<ol>
-<li>identity function</li>
-</ol>
+</li>
+<li>
+<p>identity function</p>
 <div class="arithmatex">\[
-\text{id}_{k, j}(n_1, \dots, n_k) = n_j.
+    \text{id}_{k, j}(n_1, \dots, n_k) = n_j.
 \]</div>
-<ol>
-<li>successor function</li>
-</ol>
+</li>
+<li>
+<p>successor function</p>
 <div class="arithmatex">\[
-\text{succ}(n) = n + 1.
+    \text{succ}(n) = n + 1.
 \]</div>
+</li>
+</ol>
 <div class="admonition theorem">
 <p class="admonition-title">Theorem</p>
 <p>Basic functions are computable.</p>
@@ -2644,7 +2646,7 @@
 \left\{
 \begin{aligned}
     \text{rem}(0, n) &amp;= 0, \\
-    \text{rem}(m, n) &amp;= \left\{\begin{aligned}
+    \text{rem}(m + 1, n) &amp;= \left\{\begin{aligned}
         &amp; 0, &amp;&amp; \text{if $m + 1$ is divisible by $n$}, \\
         &amp; \text{rem}(m, n), &amp;&amp; \text{otherwise}.
     \end{aligned}\right.
@@ -2659,7 +2661,7 @@
 \left\{
 \begin{aligned}
     \text{div}(0, n) &amp;= 0, \\
-    \text{div}(m, n) &amp;= \left\{\begin{aligned}
+    \text{div}(m + 1, n) &amp;= \left\{\begin{aligned}
         &amp; \text{div}(m, n) + 1, &amp;&amp; \text{if $m + 1$ is divisible by $n$}, \\
         &amp; \text{div}(m, n), &amp;&amp; \text{otherwise}.
     \end{aligned}\right.
@@ -2674,11 +2676,11 @@
 \]</div>
 </li>
 <li>
-<p><span class="arithmatex">\(\text{sum}_f(m, n) = \sum\limits_{k = 0}^{m} f(m, k)\)</span>, where <span class="arithmatex">\(f\)</span> is primitive recursive.</p>
+<p><span class="arithmatex">\(\text{sum}_f(m, n) = \sum\limits_{k = 0}^{n} f(m, k)\)</span>, where <span class="arithmatex">\(f\)</span> is primitive recursive.</p>
 <div class="arithmatex">\[
 \left\{
 \begin{aligned}
-    \text{sum}_f(0, n) &amp;= 0, \\
+    \text{sum}_f(m, 0) &amp;= f(m, 0), \\
     \text{sum}_f(m, n + 1) &amp;= \text{sum}_f(m, n) + f(m, \text{succ}(n)).
 \end{aligned}
 \right.
@@ -2686,17 +2688,17 @@
 <div class="admonition failure">
 <p class="admonition-title">Wrong Consideration</p>
 <div class="arithmatex">\[
-    \text{sum}_f(m, n) = \underbrace{f(m, 0) + f(m, 1) + \dots + f(m, n)}_{n \text{times}}
+    \text{sum}_f(m, n) = \underbrace{f(m, 0) + f(m, 1) + \dots + f(m, n)}_{n \text{ times}}
 \]</div>
 <p>Notice that the theorem that sum of two primitive recursive functions is primitive recursive can not induce that sum of <span class="arithmatex">\(n\)</span> primitive recursive function is primitive recursive, when <span class="arithmatex">\(n\)</span> is a variable and is an input of the function.</p>
 </div>
 </li>
 <li>
-<p><span class="arithmatex">\(\text{mult}_f(m, n) = \prod\limits_{k = 0}^{m} f(m, k)\)</span>, where <span class="arithmatex">\(f\)</span> is primitive recursive.</p>
+<p><span class="arithmatex">\(\text{mult}_f(m, n) = \prod\limits_{k = 0}^{n} f(m, k)\)</span>, where <span class="arithmatex">\(f\)</span> is primitive recursive.</p>
 <div class="arithmatex">\[
 \left\{
 \begin{aligned}
-    \text{mult}_f(0, n) &amp;= 0, \\
+    \text{mult}_f(m, 0) &amp;= f(m, 0), \\
     \text{mult}_f(m, n + 1) &amp;= \text{mult}_f(m, n) \cdot f(m, \text{succ}(n)).
 \end{aligned}
 \right.
@@ -2806,7 +2808,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.12.12 22:53:54 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.12.24 20:45:38 CST</span>
       
         <br>
         创建日期:
