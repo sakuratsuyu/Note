@@ -20,21 +20,21 @@
 
 1. zero function
 
-$$
-\text{zero}(n_1, \dots, n_k) = 0.
-$$
+    $$
+        \text{zero}(n_1, \dots, n_k) = 0.
+    $$
 
 2. identity function
 
-$$
-\text{id}_{k, j}(n_1, \dots, n_k) = n_j.
-$$
+    $$
+        \text{id}_{k, j}(n_1, \dots, n_k) = n_j.
+    $$
 
 3. successor function
 
-$$
-\text{succ}(n) = n + 1.
-$$
+    $$
+        \text{succ}(n) = n + 1.
+    $$
 
 !!! theorem
 
@@ -222,7 +222,7 @@ Here we give some examples of primitive recursive functions.
         \left\{
         \begin{aligned}
             \text{rem}(0, n) &= 0, \\
-            \text{rem}(m, n) &= \left\{\begin{aligned}
+            \text{rem}(m + 1, n) &= \left\{\begin{aligned}
                 & 0, && \text{if $m + 1$ is divisible by $n$}, \\
                 & \text{rem}(m, n), && \text{otherwise}.
             \end{aligned}\right.
@@ -238,7 +238,7 @@ Here we give some examples of primitive recursive functions.
         \left\{
         \begin{aligned}
             \text{div}(0, n) &= 0, \\
-            \text{div}(m, n) &= \left\{\begin{aligned}
+            \text{div}(m + 1, n) &= \left\{\begin{aligned}
                 & \text{div}(m, n) + 1, && \text{if $m + 1$ is divisible by $n$}, \\
                 & \text{div}(m, n), && \text{otherwise}.
             \end{aligned}\right.
@@ -252,12 +252,12 @@ Here we give some examples of primitive recursive functions.
             \text{div}(\text{rem}(n, p^m), p^{m - 1})
         $$
 
-    15. $\text{sum}_f(m, n) = \sum\limits_{k = 0}^{m} f(m, k)$, where $f$ is primitive recursive.
+    15. $\text{sum}_f(m, n) = \sum\limits_{k = 0}^{n} f(m, k)$, where $f$ is primitive recursive.
 
         $$
         \left\{
         \begin{aligned}
-            \text{sum}_f(0, n) &= 0, \\
+            \text{sum}_f(m, 0) &= f(m, 0), \\
             \text{sum}_f(m, n + 1) &= \text{sum}_f(m, n) + f(m, \text{succ}(n)).
         \end{aligned}
         \right.
@@ -266,17 +266,17 @@ Here we give some examples of primitive recursive functions.
         !!! failure "Wrong Consideration"
 
             $$
-                \text{sum}_f(m, n) = \underbrace{f(m, 0) + f(m, 1) + \dots + f(m, n)}_{n \text{times}}
+                \text{sum}_f(m, n) = \underbrace{f(m, 0) + f(m, 1) + \dots + f(m, n)}_{n \text{ times}}
             $$
 
             Notice that the theorem that sum of two primitive recursive functions is primitive recursive can not induce that sum of $n$ primitive recursive function is primitive recursive, when $n$ is a variable and is an input of the function.
 
-    16. $\text{mult}_f(m, n) = \prod\limits_{k = 0}^{m} f(m, k)$, where $f$ is primitive recursive.
+    16. $\text{mult}_f(m, n) = \prod\limits_{k = 0}^{n} f(m, k)$, where $f$ is primitive recursive.
 
         $$
         \left\{
         \begin{aligned}
-            \text{mult}_f(0, n) &= 0, \\
+            \text{mult}_f(m, 0) &= f(m, 0), \\
             \text{mult}_f(m, n + 1) &= \text{mult}_f(m, n) \cdot f(m, \text{succ}(n)).
         \end{aligned}
         \right.
