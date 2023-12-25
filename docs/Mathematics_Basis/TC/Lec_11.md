@@ -1,0 +1,70 @@
+# Lecture 11
+
+## $\mu$-recursive Function
+
+!!! definition
+
+    **$\mu$ recursive functions** (or say **genernal recursive function**) are the **basic functions** and those obtained from the **basic functions** by applying **composition**, **recursive definition** and **minimalization of minimalizable functions** a finite number of times.
+
+!!! theorem
+
+    A numerical function $f$ is **$\mu$-recursive** iff it's **computable**.
+
+!!! proof
+
+    $\Rightarrow$: It's trivial, since the generation of $\mu$-recursive function are all computable.
+
+    $\Leftarrow$: Since $f$ is computable, then there exists a Turing machine $M$ that computes $f$.
+
+    For the process from $n$ to $f(n)$, the yield process is
+
+    $$
+        (s, \triangleright \underline{\sqcup} n) \vdash_M (q_1, \triangleright u_1 \underline{a_1} v_1) \vdash_M \cdots \vdash_M (h, \triangleright \underline{\sqcup} f(n))
+    $$
+
+    We can rewrite it to another way.
+
+    $$
+        \triangleright \sqcup s n \ \ \triangleright u_1 a_1 q_1 v_1 \ \ \cdots \ \triangleright \sqcup h f(n)
+    $$
+
+    Since $\Sigma \cup K$ (symbols and states) is a finite set with $b$ elements, we can map it to an integer set $\{0, 1, 2, \dots b - 1\}$. Then **the yield process can be denoted as a base-$b$ integer**.
+
+    Therefore, it suffices to prove the following process can be composed by composition defined in $\mu$-recursive.
+
+    $$
+        n \\ \downarrow \\
+        \triangleright \sqcup sn \\ \downarrow \\
+        \triangleright \sqcup s n \ \ \triangleright u_1 a_1 q_1 v_1 \ \ \cdots \ \triangleright \sqcup h f(n) \\ \downarrow \\
+        \triangleright \sqcup h f(n) \\ \downarrow \\
+        f(n)
+    $$
+
+    1. $h_1(n) = \triangleright \sqcup s \ b^{\lceil \log_b n + 1\rceil} + n$
+    2. $\mu_m [\text{iscomp}(\triangleright \sqcup sn, m) \wedge \text{halted}(m)]$
+    3. $\mu_m [\text{digit}(m, n, b) = \triangleright] = k$
+    4. $\text{rem}(n, b^k)$
+
+## Grammar
+
+!!! definition
+
+    A **grammar** is a 4-tuple $G = (V, \Sigma, S, R)$, where
+
+    - $V$ is an alphabet.
+    - $\Sigma$ is the set of terminals.
+    - $S \in V- \Sigma$ is the start symbol.
+    - $R \subseteq (V^*(V - \Sigma)V^*) \times V^*$ is a **finite** set of rules.
+        - $(uAv, w)$ means $uAv \rightarrow w$. Here $u$ and $v$ are called **context**.
+
+!!! definition
+
+    - $\forall x, y, u \in U^*, A \in U - \Sigma$, if $(A, u) \in R$, then we have $xAy \Rightarrow_G xuy$ and we say it **derive in one step**.
+
+    - $\forall w, y, u \in U^*, A \in U - \Sigma$, if $w = u$ or $w \Rightarrow_G \cdots \Rightarrow_G u$, then we have $w \Rightarrow^*_G u$ and we say it **a derivation from $w$ to $u$ of length $n$**.
+
+!!! definition
+
+    $G$ generates $w \in \Sigma^*$ if $S \Rightarrow^*_G w$.
+
+    For $L(G) = \{w \in \Sigma^* | G \text{ generates } w\}$., we say $G$ **generates** $L(G)$.
