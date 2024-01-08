@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
       
       
   
@@ -2415,15 +2415,18 @@
 <ol>
 <li>If <span class="arithmatex">\(|F| &gt; 1\)</span>, we create a new state <span class="arithmatex">\(f'\)</span>. For each <span class="arithmatex">\(q \in F\)</span>, we add a new transition <span class="arithmatex">\(((q, e, e), (f', e))\)</span> and set <span class="arithmatex">\(F' = \{f'\}\)</span>.</li>
 <li>
+<p>For each transition <span class="arithmatex">\(\delta \in \Delta\)</span>, if it's not satifsying the condition of simple PDA, then it only be of the following four cases.</p>
 <ul>
 <li>2.1 <span class="arithmatex">\(|\alpha| \ge 1\)</span> and <span class="arithmatex">\(|\beta| \ge 1\)</span>.</li>
 <li>2.2 <span class="arithmatex">\(|\alpha| \ge 1\)</span> and <span class="arithmatex">\(\beta = e\)</span>.</li>
 <li>2.3 <span class="arithmatex">\(\beta = e\)</span> and <span class="arithmatex">\(|\beta| \ge 1\)</span>.</li>
 <li>2.4 <span class="arithmatex">\(\alpha = e\)</span> and <span class="arithmatex">\(\beta = e\)</span>.</li>
 </ul>
-<p>For each transition <span class="arithmatex">\(\delta \in \Delta\)</span>, if it's not satifsying the condition of simple PDA, then it only be of the following four cases.</p>
 <p>For 2.1 <span class="arithmatex">\(((p, a, \alpha), (q, \beta))\)</span>, create a new state <span class="arithmatex">\(r\)</span> and replace it with <span class="arithmatex">\(((p, a, \alpha), (r, e))\)</span> and <span class="arithmatex">\(((r, e, e), (q, \beta))\)</span>, which comes to 2.2 and 2.3.</p>
-<p>For 2.2 <span class="arithmatex">\(((p, a, \alpha), (q, e))\)</span>, supposing <span class="arithmatex">\(\alpha = c_1 c_2 \cdots c_k\)</span>, create new states <span class="arithmatex">\(r_1, \dots, r_k\)</span> and replace it with <span class="arithmatex">\(((p, a, c_1), (r_1, e)), ((r_1, e, c_2), (r_2, e)), \dots ((r_{k - 1}, e, c_k), (q, e))\)</span>.</p>
+<p>For 2.2 <span class="arithmatex">\(((p, a, \alpha), (q, e))\)</span>, supposing <span class="arithmatex">\(\alpha = c_1 c_2 \cdots c_k\)</span>, create new states <span class="arithmatex">\(r_1, \dots, r_k\)</span> and replace it with </p>
+<div class="arithmatex">\[
+((p, a, c_1), (r_1, e)), ((r_1, e, c_2), (r_2, e)), \dots ((r_{k - 1}, e, c_k), (q, e)).
+\]</div>
 <p>For 2.3, similar to 2.2.</p>
 <p>For 2.4 <span class="arithmatex">\(((p, a, e), (q, e))\)</span>, create a new state <span class="arithmatex">\(r\)</span>, pick some <span class="arithmatex">\(c \in \Gamma\)</span>, and replace it with <span class="arithmatex">\(((p, a, e), (r, c))\)</span> and <span class="arithmatex">\(((r, e, c), (q, e))\)</span>.</p>
 </li>
@@ -2438,7 +2441,7 @@
 <li><span class="arithmatex">\(\forall p \in K\)</span>, <span class="arithmatex">\(A_{pp} \rightarrow e\)</span>.</li>
 <li><span class="arithmatex">\(\forall p, q \in K\)</span>,<ul>
 <li><span class="arithmatex">\(A_{pq} \rightarrow A_{pr}A_{rq}, \forall r \in K\)</span>.</li>
-<li><span class="arithmatex">\(A_{pq} \rightarrow a A_{p'q} b, \forall ((p, a, e), (p', \alpha)) \in \Delta, ((q', b, \alpha), (q, e)) \in \Delta\)</span> for some <span class="arithmatex">\(\alpha \in \Gamma\)</span>.</li>
+<li><span class="arithmatex">\(A_{pq} \rightarrow a A_{p'q'} b, \forall ((p, a, e), (p', \alpha)) \in \Delta, ((q', b, \alpha), (q, e)) \in \Delta\)</span> for some <span class="arithmatex">\(\alpha \in \Gamma\)</span>.</li>
 </ul>
 </li>
 </ol>
@@ -2490,7 +2493,7 @@
 <div class="admonition plane">
 <p>If a tree with fanout less than or equal <span class="arithmatex">\(b\)</span> has <span class="arithmatex">\(n\)</span> leaves, then its height <span class="arithmatex">\(h \ge \log_b n\)</span>.</p>
 </div>
-<p>Let <span class="arithmatex">\(p = b^{|V - \Sigma| - 1}\)</span>, for any <span class="arithmatex">\(w \in L\)</span> with <span class="arithmatex">\(|w| \ge p\)</span>. Let <span class="arithmatex">\(T\)</span> be the parse tree of <span class="arithmatex">\(w\)</span> with <strong>smallest</strong> number of nodes, and the height of <span class="arithmatex">\(T\)</span> is <span class="arithmatex">\(h \ge log_b p = |V - \Sigma| + 1\)</span>.</p>
+<p>Let <span class="arithmatex">\(p = b^{|V - \Sigma| + 1}\)</span>, for any <span class="arithmatex">\(w \in L\)</span> with <span class="arithmatex">\(|w| \ge p\)</span>. Let <span class="arithmatex">\(T\)</span> be the parse tree of <span class="arithmatex">\(w\)</span> with <strong>smallest</strong> number of nodes, and the height of <span class="arithmatex">\(T\)</span> is <span class="arithmatex">\(h \ge log_b p = |V - \Sigma| + 1\)</span>.</p>
 <p>Since the length of the longest path from the root of the parse tree to its leaves is <span class="arithmatex">\(|V - \Sigma| + 1\)</span>, with the number of nodes <span class="arithmatex">\(|V - \Sigma| + 2\)</span>. Namely the number of non-terminals along the path is <span class="arithmatex">\(|V - \Sigma| + 1\)</span>. Thus there must be some non-terminal <span class="arithmatex">\(Q\)</span> that appears <strong>twice</strong> along the path.</p>
 <p><div align="center">
     <a class="glightbox" href="../imgs/21.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/21.png" style="width:200px"/></a>
@@ -2532,7 +2535,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.12.14 23:21:31 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2024.01.08 10:20:32 CST</span>
       
         <br>
         创建日期:
@@ -2610,10 +2613,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
         <script src="../../../js/katex.js"></script>
       
