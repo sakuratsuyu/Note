@@ -230,7 +230,7 @@ There are some extra properties of Turing machine.
     Let $M$ be a TM that enumerates $L$, then $M$ is **lexicographically enumerates** $L$ if whenever
 
     $$
-        (q, \triangleright \underline{\sqcup}) w \vdash_M^+ (q, \triangleright \underline{\sqcup} w')
+        (q, \triangleright \underline{\sqcup} w) \vdash_M^+ (q, \triangleright \underline{\sqcup} w')
     $$
 
     we have $w'$ after $w$ in **lexicographical order**.

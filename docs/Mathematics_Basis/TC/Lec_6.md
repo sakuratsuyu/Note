@@ -38,7 +38,7 @@ FA and PDA, as we mentioned in previous lectures, can only accept a few of the l
 
     - **Yields in one step**: $(q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M (q_2, \triangleright w_2 \underline{a_2} u_2)$ if either of the following cases.
         - **Writing**: $\delta(q_1, a_1) = (q_2, a_2), w_2 = w_1, u_2 = u_1$.
-        - **Moving Left**: $\delta(q_1, a_1) = (q_2, \leftarrow), w_1 = w_2 q_2, u_2 = a_1 u_1$ (Specially, $u_2 = e$ if $a_1 = \sqcup, u_1 = e$).
+        - **Moving Left**: $\delta(q_1, a_1) = (q_2, \leftarrow), w_1 = w_2 a_2, u_2 = a_1 u_1$ (Specially, $u_2 = e$ if $a_1 = \sqcup, u_1 = e$).
         - **Moving Right**: $\delta(q_1, a_1) = (q_2, \rightarrow), w_2 = w_1 a_1, u_1 = a_2 u_2$ (Specially, $u_1 = e$ if $a_2 = \sqcup, u_2 = e$).
     - **Yields in $N$ steps**: $(q_1, \triangleright w_1 \underline{a_1} u_1) \vdash_M^N (q_2, \triangleright w_2 \underline{a_2} u_2)$ if
     

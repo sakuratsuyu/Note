@@ -47,6 +47,7 @@
 
     1. If $|F| > 1$, we create a new state $f'$. For each $q \in F$, we add a new transition $((q, e, e), (f', e))$ and set $F' = \{f'\}$.
     2. For each transition $\delta \in \Delta$, if it's not satifsying the condition of simple PDA, then it only be of the following four cases.
+
         - 2.1 $|\alpha| \ge 1$ and $|\beta| \ge 1$.
         - 2.2 $|\alpha| \ge 1$ and $\beta = e$.
         - 2.3 $\beta = e$ and $|\beta| \ge 1$.
@@ -54,7 +55,11 @@
 
         For 2.1 $((p, a, \alpha), (q, \beta))$, create a new state $r$ and replace it with $((p, a, \alpha), (r, e))$ and $((r, e, e), (q, \beta))$, which comes to 2.2 and 2.3.
 
-        For 2.2 $((p, a, \alpha), (q, e))$, supposing $\alpha = c_1 c_2 \cdots c_k$, create new states $r_1, \dots, r_k$ and replace it with $((p, a, c_1), (r_1, e)), ((r_1, e, c_2), (r_2, e)), \dots ((r_{k - 1}, e, c_k), (q, e))$.
+        For 2.2 $((p, a, \alpha), (q, e))$, supposing $\alpha = c_1 c_2 \cdots c_k$, create new states $r_1, \dots, r_k$ and replace it with 
+        
+        $$
+        ((p, a, c_1), (r_1, e)), ((r_1, e, c_2), (r_2, e)), \dots ((r_{k - 1}, e, c_k), (q, e)).
+        $$
 
         For 2.3, similar to 2.2.
 
@@ -73,7 +78,7 @@
     1. $\forall p \in K$, $A_{pp} \rightarrow e$.
     2. $\forall p, q \in K$,
         - $A_{pq} \rightarrow A_{pr}A_{rq}, \forall r \in K$.
-        - $A_{pq} \rightarrow a A_{p'q} b, \forall ((p, a, e), (p', \alpha)) \in \Delta, ((q', b, \alpha), (q, e)) \in \Delta$ for some $\alpha \in \Gamma$.
+        - $A_{pq} \rightarrow a A_{p'q'} b, \forall ((p, a, e), (p', \alpha)) \in \Delta, ((q', b, \alpha), (q, e)) \in \Delta$ for some $\alpha \in \Gamma$.
     
     Then for the claim before,
 
@@ -130,7 +135,7 @@ Similar to regular language, we have context-free language properties closure.
     
         If a tree with fanout less than or equal $b$ has $n$ leaves, then its height $h \ge \log_b n$.
     
-    Let $p = b^{|V - \Sigma| - 1}$, for any $w \in L$ with $|w| \ge p$. Let $T$ be the parse tree of $w$ with **smallest** number of nodes, and the height of $T$ is $h \ge log_b p = |V - \Sigma| + 1$.
+    Let $p = b^{|V - \Sigma| + 1}$, for any $w \in L$ with $|w| \ge p$. Let $T$ be the parse tree of $w$ with **smallest** number of nodes, and the height of $T$ is $h \ge log_b p = |V - \Sigma| + 1$.
     
     Since the length of the longest path from the root of the parse tree to its leaves is $|V - \Sigma| + 1$, with the number of nodes $|V - \Sigma| + 2$. Namely the number of non-terminals along the path is $|V - \Sigma| + 1$. Thus there must be some non-terminal $Q$ that appears **twice** along the path.
 
