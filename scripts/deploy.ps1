@@ -12,4 +12,6 @@ if ($comment) {
 
 git push -u origin main
 
+conda activate notes
+
 mkdocs gh-deploy

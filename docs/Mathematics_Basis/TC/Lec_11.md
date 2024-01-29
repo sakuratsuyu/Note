@@ -90,8 +90,4 @@ The following definitions are similar to **context-free grammar**.
 
 !!! proof
 
-    $\Rightarrow$. For a given $G$, construct a Turing machine $M$ that semidecides $L(G)$.
-
-    $\forall w$, TODO
-
-    $\Leftarrow$. For a given $M$, construct a grammar $G$ that generates $L(M)$.
+    !!! question "Remains"

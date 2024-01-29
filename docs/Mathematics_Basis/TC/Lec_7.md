@@ -143,12 +143,16 @@ Thus FA, PDA and TM can be encoded, since they are finite collections of finite 
     7. else,
     8. &nbsp;&nbsp;&nbsp;&nbsp; reject.
 
-### Decidable Problems (Recursive Languages)
+## Decidable Problems (Recursive Languages)
 
 !!! example
 
-    **R1**  $A_\text{DFA} = \{\langle D, w \rangle : D \text{ is a DFA 
-    that accepts } w\}$.
+    **R1**  
+    
+    $$
+        A_\text{DFA} = \{\langle D, w \rangle : D \text{ is a DFA 
+    that accepts } w\}
+    $$
 
     !!! plane ""
 
@@ -188,7 +192,11 @@ Thus FA, PDA and TM can be encoded, since they are finite collections of finite 
         2. run $M_{R2}$ on $\langle N, w \rangle$.
         3. output the result of $M_{R1}$.
     
-    **R4** $E_\text{DFA} = \{\langle D \rangle : D \text{ is a DFA with } L(D) = \emptyset\}$.
+    **R4** 
+    
+    $$
+        E_\text{DFA} = \{\langle D \rangle : D \text{ is a DFA with } L(D) = \emptyset\}
+    $$
 
     !!! plane ""
 
@@ -204,7 +212,11 @@ Thus FA, PDA and TM can be encoded, since they are finite collections of finite 
         8. &nbsp;&nbsp;&nbsp;&nbsp; accept.
 
 
-    **R5** $EQ_\text{DFA} = \{\langle D_1, D_2 \rangle : D_1, D_2 \text{ are DFAs with } L(D_1) = L(D_2)\}$.
+    **R5**
+    
+    $$
+        EQ_\text{DFA} = \{\langle D_1, D_2 \rangle : D_1, D_2 \text{ are DFAs with } L(D_1) = L(D_2)\}
+    $$
 
     !!! plane ""
 
@@ -216,9 +228,9 @@ Thus FA, PDA and TM can be encoded, since they are finite collections of finite 
 
 !!! plane ""
 
-    ## Reduction
+    **Reduction**
 
-    In the examples above, we use the idea of reduction (归约). Take R1 and R2 as example. The equivalence of DFA and NFA guarantees that
+    In the examples above, we use the idea of **reduction** (归约). Take R1 and R2 as example. The equivalence of DFA and NFA guarantees that
 
     $$
     \langle N, w \rangle \in A_{\text{NFA}} \text{ iff } \langle D, w \rangle \in A_{\text{DFA}}.

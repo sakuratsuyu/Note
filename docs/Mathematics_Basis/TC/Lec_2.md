@@ -1,5 +1,7 @@
 # Lecture 2
 
+## Non-deterministic finite automata
+
 !!! definition
 
     A **non-deterministic finite automata (NFA)** is $M = (K, \Sigma, \Delta, s, F)$, where
@@ -98,11 +100,13 @@ The difference between DFA and NFA is that NFA allows
         </figure>
         </div>
 
+## Closure Property (Cont.)
+
 Since the equivalence of NFA and DFA, so a language is regular if it's accepted by some NFA. Now we can prove the following theorem by NFA.
 
 !!! theorem
 
-    If $A$ and $B$ are regular, so is $A \cdot B$ (or $A \circ B$).
+    If $A$ and $B$ are regular, so is $A \cdot B$.
 
 !!! proof
 

@@ -6,12 +6,12 @@
 
     Suppose an alphabet $\Sigma$,
 
-    #### Atomic
+    **Atomic**
 
     - For a regular expression $\phi$, its language is $L(\phi) = \phi$.
     - For a regular expression $a \in \Sigma$, its language is $L(a) = \{a\}$.
 
-    #### Composite
+    **Composite**
 
     - For a regular expression $L(R_1 \cup R_2)$, its language is $L(R_1 \cup R_2) = L(R_1) \cup L(R_2)$.
     - For a regular expression $L(R_1 \circ R_2)$, its language is $L(R_1 \circ R_2) = L(R_1) \circ L(R_2)$.
@@ -28,6 +28,9 @@
     | $\{e\}$  | $\phi^*$           |
     | $\{w \in (a \cup b)^* \| w \text{ starts with } a \text{ and end with } b\}$ | $a(a \cup b)^* b$ |
     | $\{w \in (a \cup b)^* \| w \text{ has at least two occurences of } a\}$ | $(a \cup b)^*a(a \cup b)^* a(a \cup b)^*$ |
+
+
+## Equivalence of Regex and NFA
 
 !!! theorem
 
@@ -107,7 +110,7 @@ We first simplify a specific NFA $M$ with the following steps to find its corres
         </figure>
         </div>
 
-    we can finally simplify it to
+    If we eliminate the state with the order $q_1$, $q_2$, $q_3$, then we can finally simplify it to
 
     !!! plane ""
 
@@ -134,7 +137,7 @@ Based on the mechanism above, we can simply give the following more abstract pro
     2. $\forall p \in K, a \in \Sigma,\ \ (p, a, q_{n - 1}) \notin \Delta$.
     3. $\forall p \in K, a \in \Sigma,\ \ (q_n, a, p) \notin \Delta$.
 
-    For any NFA that not satisfying the properties above, we can use the mechanism above to make it satisfy.
+    For any NFA that not satisfying the properties above, we can use the mechanism mentioned above to make it satisfy the properties.
 
     Then we define a subproblem and use the idea of DP (Dynamic Programming) to prove.
 
@@ -163,6 +166,8 @@ Based on the mechanism above, we can simply give the following more abstract pro
     </figure>
     </div>
 
+
+## Pumping Theorem
 
 !!! theorem "Pumping Theorem"
 

@@ -322,7 +322,7 @@ $$
 
 !!! proof
 
-    Assume that $C$ is decidable. Then $\text{C} = \{\langle f\rangle | f \text{ is a unary computable numerical function}\} \subseteq C$ is also decidable.
+    Assume that $C$ is decidable. Then $C' = \{\langle f\rangle | f \text{ is a unary computable numerical function}\} \subseteq C$ is also decidable.
 
     Then $C'$ is lexicographically Turing enumerable. Thus we can enumerate $C'$ by
 

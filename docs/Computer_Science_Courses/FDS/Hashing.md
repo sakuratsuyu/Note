@@ -62,7 +62,7 @@ An **overflow** occur when a new identifier are hashed into a full bucket.
 
 ## Collision Resolution
 
-Although we try many methods to make a hash function to avoid collision. But it's unfortunately unavoidable. The most important issue of hash table is to deal with collision. We have some strategy for it.
+Although we try many methods to make a hash function avoid collision. But it's unfortunately unavoidable. The most important issue of hash table is to deal with collision. We have some strategies for it.
 
 Suppose the hash function we use below are all
 
@@ -72,7 +72,7 @@ $$
 
 ### Separate Chaining 拉链法
 
-Separate chaining keeps a list of all keys that hash to the same value.
+Separate chaining keeps a **linked list** of all keys that hash to the same value.
 
 ```C title="Data Type"
 typedef struct {

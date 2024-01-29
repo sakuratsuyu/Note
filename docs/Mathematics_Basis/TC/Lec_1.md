@@ -154,8 +154,10 @@ The circle with an arrow pointing to it is **initial state** and the double circ
     If $A$ and $B$ are languages,
 
     - Union $A \cup B = \{w | w \in A \text{ or } w \in B\}$.
-    - Concatnation $A \cdot B = \{ab | a \in A \text{ and } b \in B\}$.
+    - Concatnation $A \cdot B = \{ab | a \in A \text{ and } b \in B\}$ (Also denoted by $A \circ B$).
     - Kleene Star $A^* = \{w_1w_2\cdots w_k| w_i \in A \text{ and } k \ge 0\}$.
+
+## Closure Property
 
 !!! theorem
 

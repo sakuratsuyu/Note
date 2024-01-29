@@ -135,7 +135,7 @@ Similar to regular language, we have context-free language properties closure.
     
         If a tree with fanout less than or equal $b$ has $n$ leaves, then its height $h \ge \log_b n$.
     
-    Let $p = b^{|V - \Sigma| + 1}$, for any $w \in L$ with $|w| \ge p$. Let $T$ be the parse tree of $w$ with **smallest** number of nodes, and the height of $T$ is $h \ge log_b p = |V - \Sigma| + 1$.
+    Let $p = b^{|V - \Sigma| + 1}$, for any $w \in L$ with $|w| \ge p$. Let $T$ be the parse tree of $w$ with **smallest** number of nodes, and the height of $T$ is $h \ge \log_b p = |V - \Sigma| + 1$.
     
     Since the length of the longest path from the root of the parse tree to its leaves is $|V - \Sigma| + 1$, with the number of nodes $|V - \Sigma| + 2$. Namely the number of non-terminals along the path is $|V - \Sigma| + 1$. Thus there must be some non-terminal $Q$ that appears **twice** along the path.
 
@@ -147,7 +147,7 @@ Similar to regular language, we have context-free language properties closure.
 
     1. for each integer $i \ge 0$, $uv^ixy^iz \in L$.
     2. if $v = y = e$, then there exists a parse tree smaller than $T$, which leads to a contradiction. Thus $|v| + |y| > 0$.
-    3. for the subtree with root $Q$, its height $h' \le |V - \Sigma| + 1$, thus $|vxy| = \# leaves \le b^{|V - \Sigma| + 1} = p$.
+    3. for the subtree with root $Q$, its height $h' \le |V - \Sigma| + 1$, thus $|vxy| = \# \text{leaves} \le b^{|V - \Sigma| + 1} = p$.
 
 !!! example
 

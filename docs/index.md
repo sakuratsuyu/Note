@@ -4,11 +4,15 @@ A note book by @sakuratsuyu.
 
 偶尔写点东西，希望你喜欢。
 
-!!! note
-    - Currently updating [Theory of Computation](Mathematics_Basis/TC/Lec_5/) weekly.
+!!! note "Completed Notes ✨"
+    - [数据结构基础 | Fundemental of Data Structures](Computer_Science_Courses/FDS/class_notes/).
+    - [离散数学 | Discrete Mathematics](Mathematics_Basis/DA/Chap_1/).
+    - [数值分析 | Numerical Analysis](Mathematics_Basis/NA/class_notes/).
+    - [计算理论 | Theory of Computation](Mathematics_Basis/TC/class_notes/).
 
 !!! info "About me"
-    - All ids I used: **sakuratsuyu**, **桜つゆ**, **曦露** and **Mslease**. Maybe you can find me somewhere else! :stuck_out_tongue_closed_eyes:
+    - All IDs used: **sakuratsuyu**, **桜つゆ**, **曦露** and **Mslease**.
+        - Maybe you can find me somewhere else! :stuck_out_tongue_closed_eyes:
     - Junior as a ZJU CS Undergraduate.
     - MADer.
 

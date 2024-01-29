@@ -12,8 +12,8 @@
 
         1. construct a TM $M'$ = on input $x$
             
-            1. run $M$ on $w$
-            2. run $U$ on $x$
+            1. run $M$ on $w$.
+            2. run $U$ on $x$. ($U$ is the [universal TM](../Lec_8/#utm))
         
             $$
                 L(M') = \left\{
@@ -87,7 +87,7 @@ From the examples above, we can conclude some pattern of not recursive langauges
     
         **Case 2.** $\phi \in \mathcal{L}(P)$
 
-        Then $\phi \notin \overline{\mathcal{L}(P)}$, we can reduce $H$ to $\overline{R(P)}$ like in case 1. And thus $$R(P)$ is not recursive.
+        Then $\phi \notin \overline{\mathcal{L}(P)}$, we can reduce $H$ to $\overline{R(P)}$ like in case 1. And thus $R(P)$ is not recursive.
 
 ## Summary
 
@@ -149,7 +149,7 @@ From the examples above, we can conclude some pattern of not recursive langauges
 
     !!! proof
 
-        $M_A$ = on input $\langle M \rangle$.
+        $M_A$ = on input $\langle M \rangle$
 
         1. for $i$ = $1, 2, 3, \dots$
         2. &nbsp;&nbsp;&nbsp;&nbsp; for $s$ = $s_1, s_2, \dots, s_i$ ($s_i \in L$)
