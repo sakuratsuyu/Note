@@ -1512,24 +1512,11 @@
     Pseudo Code
   </a>
   
-    <nav class="md-nav" aria-label="Pseudo Code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#decidable-problems-recursive-languages" class="md-nav__link">
-    Decidable Problems (Recursive Languages)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#reduction" class="md-nav__link">
-    Reduction
+  <a href="#decidable-problems-recursive-languages" class="md-nav__link">
+    Decidable Problems (Recursive Languages)
   </a>
   
 </li>
@@ -2489,24 +2476,11 @@
     Pseudo Code
   </a>
   
-    <nav class="md-nav" aria-label="Pseudo Code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#decidable-problems-recursive-languages" class="md-nav__link">
-    Decidable Problems (Recursive Languages)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#reduction" class="md-nav__link">
-    Reduction
+  <a href="#decidable-problems-recursive-languages" class="md-nav__link">
+    Decidable Problems (Recursive Languages)
   </a>
   
 </li>
@@ -2660,11 +2634,14 @@
 <li>&nbsp;&nbsp;&nbsp;&nbsp; reject.</li>
 </ol>
 </div>
-<h3 id="decidable-problems-recursive-languages">Decidable Problems (Recursive Languages)<a class="headerlink" href="#decidable-problems-recursive-languages" title="Permanent link">&para;</a></h3>
+<h2 id="decidable-problems-recursive-languages">Decidable Problems (Recursive Languages)<a class="headerlink" href="#decidable-problems-recursive-languages" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><strong>R1</strong>  <span class="arithmatex">\(A_\text{DFA} = \{\langle D, w \rangle : D \text{ is a DFA 
-that accepts } w\}\)</span>.</p>
+<p><strong>R1</strong>  </p>
+<div class="arithmatex">\[
+    A_\text{DFA} = \{\langle D, w \rangle : D \text{ is a DFA 
+that accepts } w\}
+\]</div>
 <div class="admonition plane">
 <p><span class="arithmatex">\(M_{R1}\)</span> = on input <span class="arithmatex">\(\langle D, w \rangle\)</span></p>
 <ol>
@@ -2699,7 +2676,10 @@ that accepts } w\}\)</span>.</p>
 <li>output the result of <span class="arithmatex">\(M_{R1}\)</span>.</li>
 </ol>
 </div>
-<p><strong>R4</strong> <span class="arithmatex">\(E_\text{DFA} = \{\langle D \rangle : D \text{ is a DFA with } L(D) = \emptyset\}\)</span>.</p>
+<p><strong>R4</strong> </p>
+<div class="arithmatex">\[
+    E_\text{DFA} = \{\langle D \rangle : D \text{ is a DFA with } L(D) = \emptyset\}
+\]</div>
 <div class="admonition plane">
 <p><span class="arithmatex">\(M_{R4}\)</span> = on input <span class="arithmatex">\(\langle D \rangle\)</span></p>
 <ol>
@@ -2713,7 +2693,10 @@ that accepts } w\}\)</span>.</p>
 <li>&nbsp;&nbsp;&nbsp;&nbsp; accept.</li>
 </ol>
 </div>
-<p><strong>R5</strong> <span class="arithmatex">\(EQ_\text{DFA} = \{\langle D_1, D_2 \rangle : D_1, D_2 \text{ are DFAs with } L(D_1) = L(D_2)\}\)</span>.</p>
+<p><strong>R5</strong></p>
+<div class="arithmatex">\[
+    EQ_\text{DFA} = \{\langle D_1, D_2 \rangle : D_1, D_2 \text{ are DFAs with } L(D_1) = L(D_2)\}
+\]</div>
 <div class="admonition plane">
 <p><span class="arithmatex">\(M_{R5}\)</span> = on input <span class="arithmatex">\(\langle R, w \rangle\)</span></p>
 <ol>
@@ -2724,8 +2707,8 @@ that accepts } w\}\)</span>.</p>
 </div>
 </div>
 <div class="admonition plane">
-<h2 id="reduction">Reduction<a class="headerlink" href="#reduction" title="Permanent link">&para;</a></h2>
-<p>In the examples above, we use the idea of reduction (归约). Take R1 and R2 as example. The equivalence of DFA and NFA guarantees that</p>
+<p><strong>Reduction</strong></p>
+<p>In the examples above, we use the idea of <strong>reduction</strong> (归约). Take R1 and R2 as example. The equivalence of DFA and NFA guarantees that</p>
 <div class="arithmatex">\[
 \langle N, w \rangle \in A_{\text{NFA}} \text{ iff } \langle D, w \rangle \in A_{\text{DFA}}.
 \]</div>
@@ -2739,7 +2722,7 @@ that accepts } w\}\)</span>.</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.12.04 16:11:01 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2024.01.29 15:36:20 CST</span>
       
         <br>
         创建日期:

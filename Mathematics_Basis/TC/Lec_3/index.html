@@ -1357,25 +1357,19 @@
     Regular Expression
   </a>
   
-    <nav class="md-nav" aria-label="Regular Expression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#atomic" class="md-nav__link">
-    Atomic
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equivalence-of-regex-and-nfa" class="md-nav__link">
+    Equivalence of Regex and NFA
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#composite" class="md-nav__link">
-    Composite
+      
+        <li class="md-nav__item">
+  <a href="#pumping-theorem" class="md-nav__link">
+    Pumping Theorem
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2339,25 +2333,19 @@
     Regular Expression
   </a>
   
-    <nav class="md-nav" aria-label="Regular Expression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#atomic" class="md-nav__link">
-    Atomic
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equivalence-of-regex-and-nfa" class="md-nav__link">
+    Equivalence of Regex and NFA
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#composite" class="md-nav__link">
-    Composite
+      
+        <li class="md-nav__item">
+  <a href="#pumping-theorem" class="md-nav__link">
+    Pumping Theorem
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2384,12 +2372,12 @@
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
 <p>Suppose an alphabet <span class="arithmatex">\(\Sigma\)</span>,</p>
-<h4 id="atomic">Atomic<a class="headerlink" href="#atomic" title="Permanent link">&para;</a></h4>
+<p><strong>Atomic</strong></p>
 <ul>
 <li>For a regular expression <span class="arithmatex">\(\phi\)</span>, its language is <span class="arithmatex">\(L(\phi) = \phi\)</span>.</li>
 <li>For a regular expression <span class="arithmatex">\(a \in \Sigma\)</span>, its language is <span class="arithmatex">\(L(a) = \{a\}\)</span>.</li>
 </ul>
-<h4 id="composite">Composite<a class="headerlink" href="#composite" title="Permanent link">&para;</a></h4>
+<p><strong>Composite</strong></p>
 <ul>
 <li>For a regular expression <span class="arithmatex">\(L(R_1 \cup R_2)\)</span>, its language is <span class="arithmatex">\(L(R_1 \cup R_2) = L(R_1) \cup L(R_2)\)</span>.</li>
 <li>For a regular expression <span class="arithmatex">\(L(R_1 \circ R_2)\)</span>, its language is <span class="arithmatex">\(L(R_1 \circ R_2) = L(R_1) \circ L(R_2)\)</span>.</li>
@@ -2424,6 +2412,7 @@
 </tbody>
 </table>
 </div>
+<h2 id="equivalence-of-regex-and-nfa">Equivalence of Regex and NFA<a class="headerlink" href="#equivalence-of-regex-and-nfa" title="Permanent link">&para;</a></h2>
 <div class="admonition theorem">
 <p class="admonition-title">Theorem</p>
 <p>A language <span class="arithmatex">\(B\)</span> is regular iff there is some regular expression <span class="arithmatex">\(R\)</span> with <span class="arithmatex">\(L(R) = B\)</span>.</p>
@@ -2492,7 +2481,7 @@
 </figure>
 </div></p>
 </div>
-<p>we can finally simplify it to</p>
+<p>If we eliminate the state with the order <span class="arithmatex">\(q_1\)</span>, <span class="arithmatex">\(q_2\)</span>, <span class="arithmatex">\(q_3\)</span>, then we can finally simplify it to</p>
 <div class="admonition plane">
 <p><div align="center">
 <figure>
@@ -2513,7 +2502,7 @@
 <li><span class="arithmatex">\(\forall p \in K, a \in \Sigma,\ \ (p, a, q_{n - 1}) \notin \Delta\)</span>.</li>
 <li><span class="arithmatex">\(\forall p \in K, a \in \Sigma,\ \ (q_n, a, p) \notin \Delta\)</span>.</li>
 </ol>
-<p>For any NFA that not satisfying the properties above, we can use the mechanism above to make it satisfy.</p>
+<p>For any NFA that not satisfying the properties above, we can use the mechanism mentioned above to make it satisfy the properties.</p>
 <p>Then we define a subproblem and use the idea of DP (Dynamic Programming) to prove.</p>
 <p><span class="arithmatex">\(\forall i, j, k \in [1, n] (i, j, k \in \mathbb{N})\)</span>, we define the regular expression <span class="arithmatex">\(R_{ij}^{k}\)</span> satisfying</p>
 <div class="arithmatex">\[
@@ -2535,6 +2524,7 @@
 </figure>
 </div></p>
 </div>
+<h2 id="pumping-theorem">Pumping Theorem<a class="headerlink" href="#pumping-theorem" title="Permanent link">&para;</a></h2>
 <div class="admonition theorem">
 <p class="admonition-title">Pumping Theorem</p>
 <p>Let <span class="arithmatex">\(L\)</span> be a regular language. There exists an integer <span class="arithmatex">\(p \ge 1\)</span> such that <span class="arithmatex">\(w \in L\)</span> with <span class="arithmatex">\(|w| \ge p\)</span> can be divided into 3 parts <span class="arithmatex">\(w = xyz\)</span>, where</p>
@@ -2603,7 +2593,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.12.13 08:27:58 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2024.01.29 15:36:20 CST</span>
       
         <br>
         创建日期:

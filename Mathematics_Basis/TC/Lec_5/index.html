@@ -2493,7 +2493,7 @@
 <div class="admonition plane">
 <p>If a tree with fanout less than or equal <span class="arithmatex">\(b\)</span> has <span class="arithmatex">\(n\)</span> leaves, then its height <span class="arithmatex">\(h \ge \log_b n\)</span>.</p>
 </div>
-<p>Let <span class="arithmatex">\(p = b^{|V - \Sigma| + 1}\)</span>, for any <span class="arithmatex">\(w \in L\)</span> with <span class="arithmatex">\(|w| \ge p\)</span>. Let <span class="arithmatex">\(T\)</span> be the parse tree of <span class="arithmatex">\(w\)</span> with <strong>smallest</strong> number of nodes, and the height of <span class="arithmatex">\(T\)</span> is <span class="arithmatex">\(h \ge log_b p = |V - \Sigma| + 1\)</span>.</p>
+<p>Let <span class="arithmatex">\(p = b^{|V - \Sigma| + 1}\)</span>, for any <span class="arithmatex">\(w \in L\)</span> with <span class="arithmatex">\(|w| \ge p\)</span>. Let <span class="arithmatex">\(T\)</span> be the parse tree of <span class="arithmatex">\(w\)</span> with <strong>smallest</strong> number of nodes, and the height of <span class="arithmatex">\(T\)</span> is <span class="arithmatex">\(h \ge \log_b p = |V - \Sigma| + 1\)</span>.</p>
 <p>Since the length of the longest path from the root of the parse tree to its leaves is <span class="arithmatex">\(|V - \Sigma| + 1\)</span>, with the number of nodes <span class="arithmatex">\(|V - \Sigma| + 2\)</span>. Namely the number of non-terminals along the path is <span class="arithmatex">\(|V - \Sigma| + 1\)</span>. Thus there must be some non-terminal <span class="arithmatex">\(Q\)</span> that appears <strong>twice</strong> along the path.</p>
 <p><div align="center">
     <a class="glightbox" href="../imgs/21.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/21.png" style="width:200px"/></a>
@@ -2502,7 +2502,7 @@
 <ol>
 <li>for each integer <span class="arithmatex">\(i \ge 0\)</span>, <span class="arithmatex">\(uv^ixy^iz \in L\)</span>.</li>
 <li>if <span class="arithmatex">\(v = y = e\)</span>, then there exists a parse tree smaller than <span class="arithmatex">\(T\)</span>, which leads to a contradiction. Thus <span class="arithmatex">\(|v| + |y| &gt; 0\)</span>.</li>
-<li>for the subtree with root <span class="arithmatex">\(Q\)</span>, its height <span class="arithmatex">\(h' \le |V - \Sigma| + 1\)</span>, thus <span class="arithmatex">\(|vxy| = \# leaves \le b^{|V - \Sigma| + 1} = p\)</span>.</li>
+<li>for the subtree with root <span class="arithmatex">\(Q\)</span>, its height <span class="arithmatex">\(h' \le |V - \Sigma| + 1\)</span>, thus <span class="arithmatex">\(|vxy| = \# \text{leaves} \le b^{|V - \Sigma| + 1} = p\)</span>.</li>
 </ol>
 </div>
 <div class="admonition example">
@@ -2535,7 +2535,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2024.01.08 10:20:32 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2024.01.29 15:36:20 CST</span>
       
         <br>
         创建日期:

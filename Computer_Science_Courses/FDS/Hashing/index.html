@@ -2539,13 +2539,13 @@
 </div>
 <p>An <strong>overflow</strong> occur when a new identifier are hashed into a full bucket.</p>
 <h2 id="collision-resolution">Collision Resolution<a class="headerlink" href="#collision-resolution" title="Permanent link">&para;</a></h2>
-<p>Although we try many methods to make a hash function to avoid collision. But it's unfortunately unavoidable. The most important issue of hash table is to deal with collision. We have some strategy for it.</p>
+<p>Although we try many methods to make a hash function avoid collision. But it's unfortunately unavoidable. The most important issue of hash table is to deal with collision. We have some strategies for it.</p>
 <p>Suppose the hash function we use below are all</p>
 <div class="arithmatex">\[
     hash(x) = x \text{ mod } N,\ \ N \in \mathbb{P}.
 \]</div>
 <h3 id="separate-chaining">Separate Chaining 拉链法<a class="headerlink" href="#separate-chaining" title="Permanent link">&para;</a></h3>
-<p>Separate chaining keeps a list of all keys that hash to the same value.</p>
+<p>Separate chaining keeps a <strong>linked list</strong> of all keys that hash to the same value.</p>
 <div class="highlight"><span class="filename">Data Type</span><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
@@ -2954,7 +2954,7 @@ p = &amp;\left\{
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2023.11.21 17:00:13 CST</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2024.01.29 15:36:20 CST</span>
       
         <br>
         创建日期:
