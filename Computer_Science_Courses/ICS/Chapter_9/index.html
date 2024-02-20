@@ -1,0 +1,4085 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="sakuratsuyu">
+      
+      
+        <link rel="canonical" href="https://sakuratsuyu.github.io/Note/Computer_Science_Courses/ICS/Chapter_9/">
+      
+      
+        <link rel="prev" href="../Chapter_8/">
+      
+      
+        <link rel="next" href="../Chapter_10/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Chapter 9 - NOTES</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/basic.css">
+    
+      <link rel="stylesheet" href="../../../css/admonition.css">
+    
+      <link rel="stylesheet" href="../../../css/flink.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-9-io" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="NOTES" class="md-header__button md-logo" aria-label="NOTES" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 18H5a4 4 0 0 1-4-4 8 8 0 0 1 8-8c1.06 0 2.07.21 3 .58.93-.37 1.94-.58 3-.58a8 8 0 0 1 8 8 4 4 0 0 1-4 4M3 14a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-2.37 1.03-4.5 2.67-5.96L9 8a6 6 0 0 0-6 6m16 2a2 2 0 0 0 2-2 6 6 0 0 0-6-6 6 6 0 0 0-6 6c0 .73-.19 1.41-.54 2H19Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NOTES
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 9
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange"  aria-label="dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0-.39.39-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1v-1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="dark" data-md-color-accent="deep-orange"  aria-label="light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1v-1M19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0-.39.39-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sakuratsuyu/Note" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sakuratsuyu/Note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home Page
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Mathematics_Basis/" class="md-tabs__link">
+          
+  
+    
+  
+  Mathematics Basis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science Courses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../comming_soon/" class="md-tabs__link">
+          
+  
+    
+  
+  Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Pot-pourri/QISE/Review/" class="md-tabs__link">
+          
+  
+    
+  
+  Pot-pourri
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NOTES" class="md-nav__button md-logo" aria-label="NOTES" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 18H5a4 4 0 0 1-4-4 8 8 0 0 1 8-8c1.06 0 2.07.21 3 .58.93-.37 1.94-.58 3-.58a8 8 0 0 1 8 8 4 4 0 0 1-4 4M3 14a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-2.37 1.03-4.5 2.67-5.96L9 8a6 6 0 0 0-6 6m16 2a2 2 0 0 0 2-2 6 6 0 0 0-6-6 6 6 0 0 0-6 6c0 .73-.19 1.41-.54 2H19Z"/></svg>
+
+    </a>
+    NOTES
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sakuratsuyu/Note" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sakuratsuyu/Note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home Page
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_1">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home Page
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tasklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blogroll
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Mathematics_Basis/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mathematics Basis
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Mathematics Basis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    离散数学 | Discrete Mathematics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            离散数学 | Discrete Mathematics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1 | Logic and Proofs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | Sets and Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 4 | Number Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 5 | Induction and Recursion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 6 | Counting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 7 | Discrete Probability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 8 | Advanced Counting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 9 | Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 10 | Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 11 | Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/DM/Chap_12_13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 12 & 13 | Boolean Algrebra & Modeling Computation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/PS/Review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概率论与数理统计 | Probability and Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数值分析 | Numerical Analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            数值分析 | Numerical Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/class_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/Chap_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1 | Math Prelims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/Chap_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | Solve Equation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/Chap_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | Interpolation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/Chap_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 4 | Differentiation and Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/Chap_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 5 | IVP for ODE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/Chap_6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 6 | Solve Linear System Directly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/Chap_7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 7 | Solve Linear System Iteratively
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/Chap_8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 8 | Approximation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/NA/Chap_9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 9 | Eigenvalues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算理论 | Theory of Computation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            计算理论 | Theory of Computation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/class_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics_Basis/TC/Lec_10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 10
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Computer Science Courses
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_3">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MISSING/note/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Missing Semester of Your CS Education
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机系统概论 | Introduction to Computing Systems
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机系统概论 | Introduction to Computing Systems
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter 9
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 9
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Content">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-priority" class="md-nav__link">
+    Privilege, Priority
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege, Priority">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#privilege" class="md-nav__link">
+    Privilege
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority" class="md-nav__link">
+    Priority
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-processor-status-register-psr" class="md-nav__link">
+    The Processor Status Register, PSR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-address-space-of-lc-3" class="md-nav__link">
+    Memory Address Space of LC-3
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Address Space of LC-3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-space-textx0000-to-x2fff" class="md-nav__link">
+    System Space \(\text{x0000 to x2FFF}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-space-textx3000-to-xfdff" class="md-nav__link">
+    User Space \(\text{x3000 to xFDFF}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-page-textxfe00-to-xffff" class="md-nav__link">
+    I/O Page \(\text{xFE00 to xFFFF}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stack-pointer" class="md-nav__link">
+    Stack pointer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-output" class="md-nav__link">
+    Input / Output
+  </a>
+  
+    <nav class="md-nav" aria-label="Input / Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-characteristics" class="md-nav__link">
+    Basic Characteristics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-mapped-io" class="md-nav__link">
+    Memory-Mapped I/O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction" class="md-nav__link">
+    Interaction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-from-the-keyboard" class="md-nav__link">
+    Input from the Keyboard
+  </a>
+  
+    <nav class="md-nav" aria-label="Input from the Keyboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-registers" class="md-nav__link">
+    Input Registers
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Registers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kbdr-keyboard-data-register" class="md-nav__link">
+    KBDR, keyboard data register
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kbsr-keyboard-status-register" class="md-nav__link">
+    KBSR, keyboard status register
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-input-service-rountine" class="md-nav__link">
+    Basic Input Service Rountine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-to-the-monitor" class="md-nav__link">
+    Output to the Monitor
+  </a>
+  
+    <nav class="md-nav" aria-label="Output to the Monitor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-registers" class="md-nav__link">
+    Output Registers
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Registers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ddr-display-data-register" class="md-nav__link">
+    DDR, display data register
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dsr-display-status-register" class="md-nav__link">
+    DSR, display status register
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-output-service-rountine" class="md-nav__link">
+    Basic Output Service Rountine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_1" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-of-memory-mapped-io-revisited" class="md-nav__link">
+    Implementation of Memory-Mapped I/O, Revisited
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-system-service-rountine" class="md-nav__link">
+    Operating System Service Rountine
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating System Service Rountine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trap-mechanism" class="md-nav__link">
+    TRAP Mechanism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trap-and-rti-instruction" class="md-nav__link">
+    TRAP and RTI Instruction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trap-examples" class="md-nav__link">
+    TRAP Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="TRAP Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handling-io" class="md-nav__link">
+    Handling I/O
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling I/O">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getc-or-trap-x20" class="md-nav__link">
+    GETC or TRAP x20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-or-trap-x21" class="md-nav__link">
+    OUT or TRAP x21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puts-or-trap-x22" class="md-nav__link">
+    PUTS or TRAP   x22
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-or-trap-x23" class="md-nav__link">
+    IN or TRAP x23
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#halting-the-computer" class="md-nav__link">
+    Halting the Computer
+  </a>
+  
+    <nav class="md-nav" aria-label="Halting the Computer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#halt-or-trap-x25" class="md-nav__link">
+    HALT or TRAP   x25
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrupts-and-interrupt-driven-io" class="md-nav__link">
+    Interrupts and Interrupt-Driven I/O
+  </a>
+  
+    <nav class="md-nav" aria-label="Interrupts and Interrupt-Driven I/O">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-interrupt-driven-io" class="md-nav__link">
+    What is Interrupt-Driven I/O ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrupt-driven-io-mechanism" class="md-nav__link">
+    Interrupt-Driven I/O Mechanism
+  </a>
+  
+    <nav class="md-nav" aria-label="Interrupt-Driven I/O Mechanism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#precondition-to-trigger-an-interrupt-signal-int" class="md-nav__link">
+    Precondition to trigger an interrupt signal (INT)
+  </a>
+  
+    <nav class="md-nav" aria-label="Precondition to trigger an interrupt signal (INT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-for-int" class="md-nav__link">
+    Test for INT
+  </a>
+  
+    <nav class="md-nav" aria-label="Test for INT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-int-signal" class="md-nav__link">
+    The INT Signal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-the-interrrupt-request" class="md-nav__link">
+    Handling the Interrrupt Request
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling the Interrrupt Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initiate-the-interrupt" class="md-nav__link">
+    Initiate the Interrupt
+  </a>
+  
+    <nav class="md-nav" aria-label="Initiate the Interrupt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-the-state-of-the-interrupted-program" class="md-nav__link">
+    Save the State of the Interrupted Program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-state-of-the-interrupt-service-routine" class="md-nav__link">
+    Load the State of the Interrupt Service Routine.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-the-interrupt" class="md-nav__link">
+    Service the Interrupt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-from-the-interrupt-rti" class="md-nav__link">
+    Return from the Interrupt, RTI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 10
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pot-pourri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pot-pourri
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Appendix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appendix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据结构基础 | Fundemental of Data Structure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构基础 | Fundemental of Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/class_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/Algorithm_Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithm Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/Lists_Stacks_and_Queues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lists, Stacks and Queues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/Trees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/Hashing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hashing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/Priority_Queues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Priority Queues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/Sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sort
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/Disjoint_Set/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disjoint Set
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/Graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机视觉导论 | Introduction to Computer Vision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            计算机视觉导论 | Introduction to Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/1_Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/2_Image_Formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/3_Image_Processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/4_Model_Fitting_and_Optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/5_Image_Matching_and_Motion_Estimation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/6_Image_Stitching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/7_Structure_from_Motion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/8_Depth_Estimation_and_3D_Reconstruction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/9_Deep_Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/10_Recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 10
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/11_3D_Deep_Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICV/12_13_Computational_Photography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 12/13
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Waiting...
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pot-pourri
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Pot-pourri
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Pot-pourri/QISE/Review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantum Information Basis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Content">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Content
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-priority" class="md-nav__link">
+    Privilege, Priority
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege, Priority">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#privilege" class="md-nav__link">
+    Privilege
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority" class="md-nav__link">
+    Priority
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-processor-status-register-psr" class="md-nav__link">
+    The Processor Status Register, PSR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-address-space-of-lc-3" class="md-nav__link">
+    Memory Address Space of LC-3
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Address Space of LC-3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-space-textx0000-to-x2fff" class="md-nav__link">
+    System Space \(\text{x0000 to x2FFF}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-space-textx3000-to-xfdff" class="md-nav__link">
+    User Space \(\text{x3000 to xFDFF}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-page-textxfe00-to-xffff" class="md-nav__link">
+    I/O Page \(\text{xFE00 to xFFFF}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stack-pointer" class="md-nav__link">
+    Stack pointer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-output" class="md-nav__link">
+    Input / Output
+  </a>
+  
+    <nav class="md-nav" aria-label="Input / Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-characteristics" class="md-nav__link">
+    Basic Characteristics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-mapped-io" class="md-nav__link">
+    Memory-Mapped I/O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction" class="md-nav__link">
+    Interaction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-from-the-keyboard" class="md-nav__link">
+    Input from the Keyboard
+  </a>
+  
+    <nav class="md-nav" aria-label="Input from the Keyboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-registers" class="md-nav__link">
+    Input Registers
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Registers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kbdr-keyboard-data-register" class="md-nav__link">
+    KBDR, keyboard data register
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kbsr-keyboard-status-register" class="md-nav__link">
+    KBSR, keyboard status register
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-input-service-rountine" class="md-nav__link">
+    Basic Input Service Rountine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-to-the-monitor" class="md-nav__link">
+    Output to the Monitor
+  </a>
+  
+    <nav class="md-nav" aria-label="Output to the Monitor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-registers" class="md-nav__link">
+    Output Registers
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Registers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ddr-display-data-register" class="md-nav__link">
+    DDR, display data register
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dsr-display-status-register" class="md-nav__link">
+    DSR, display status register
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-output-service-rountine" class="md-nav__link">
+    Basic Output Service Rountine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_1" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-of-memory-mapped-io-revisited" class="md-nav__link">
+    Implementation of Memory-Mapped I/O, Revisited
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-system-service-rountine" class="md-nav__link">
+    Operating System Service Rountine
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating System Service Rountine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trap-mechanism" class="md-nav__link">
+    TRAP Mechanism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trap-and-rti-instruction" class="md-nav__link">
+    TRAP and RTI Instruction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trap-examples" class="md-nav__link">
+    TRAP Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="TRAP Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handling-io" class="md-nav__link">
+    Handling I/O
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling I/O">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getc-or-trap-x20" class="md-nav__link">
+    GETC or TRAP x20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-or-trap-x21" class="md-nav__link">
+    OUT or TRAP x21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puts-or-trap-x22" class="md-nav__link">
+    PUTS or TRAP   x22
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-or-trap-x23" class="md-nav__link">
+    IN or TRAP x23
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#halting-the-computer" class="md-nav__link">
+    Halting the Computer
+  </a>
+  
+    <nav class="md-nav" aria-label="Halting the Computer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#halt-or-trap-x25" class="md-nav__link">
+    HALT or TRAP   x25
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrupts-and-interrupt-driven-io" class="md-nav__link">
+    Interrupts and Interrupt-Driven I/O
+  </a>
+  
+    <nav class="md-nav" aria-label="Interrupts and Interrupt-Driven I/O">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-interrupt-driven-io" class="md-nav__link">
+    What is Interrupt-Driven I/O ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrupt-driven-io-mechanism" class="md-nav__link">
+    Interrupt-Driven I/O Mechanism
+  </a>
+  
+    <nav class="md-nav" aria-label="Interrupt-Driven I/O Mechanism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#precondition-to-trigger-an-interrupt-signal-int" class="md-nav__link">
+    Precondition to trigger an interrupt signal (INT)
+  </a>
+  
+    <nav class="md-nav" aria-label="Precondition to trigger an interrupt signal (INT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-for-int" class="md-nav__link">
+    Test for INT
+  </a>
+  
+    <nav class="md-nav" aria-label="Test for INT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-int-signal" class="md-nav__link">
+    The INT Signal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-the-interrrupt-request" class="md-nav__link">
+    Handling the Interrrupt Request
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling the Interrrupt Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initiate-the-interrupt" class="md-nav__link">
+    Initiate the Interrupt
+  </a>
+  
+    <nav class="md-nav" aria-label="Initiate the Interrupt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-the-state-of-the-interrupted-program" class="md-nav__link">
+    Save the State of the Interrupted Program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-state-of-the-interrupt-service-routine" class="md-nav__link">
+    Load the State of the Interrupt Service Routine.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-the-interrupt" class="md-nav__link">
+    Service the Interrupt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-from-the-interrupt-rti" class="md-nav__link">
+    Return from the Interrupt, RTI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="chapter-9-io">Chapter 9 | I/O<a class="headerlink" href="#chapter-9-io" title="Permanent link">&para;</a></h1>
+<h2 id="privilege-priority">Privilege, Priority<a class="headerlink" href="#privilege-priority" title="Permanent link">&para;</a></h2>
+<p>Privilege and priority are two orthogonal notions, meaning they have nothing to do with each other.</p>
+<h3 id="privilege">Privilege<a class="headerlink" href="#privilege" title="Permanent link">&para;</a></h3>
+<p>It's all about the right to do something.</p>
+<p><strong>Supervisor privilege</strong> indicates privileged.</p>
+<p>A promgram is executing in <strong>supervisor mode</strong> to indicate privileged, or <strong>user mode</strong> to indicate unprivileged.</p>
+<h3 id="priority">Priority<a class="headerlink" href="#priority" title="Permanent link">&para;</a></h3>
+<p>It's all about the urgency of a program to execute.</p>
+<p>Every program is assigned a priority, specifying its urgency as compared to all other programs.</p>
+<h3 id="the-processor-status-register-psr">The Processor Status Register, PSR<a class="headerlink" href="#the-processor-status-register-psr" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(\text{bit[15]}\)</span> specifies the privilege. There are two privilege modes. </p>
+<ul>
+<li><code>1</code> indicates supervisor privilege.</li>
+<li><code>0</code> indicates unprivileged, or user mode.</li>
+</ul>
+<p><span class="arithmatex">\(\text{bit[10:8]}\)</span> specifies the <em>priority level (PL)</em> of the program.</p>
+<ul>
+<li>the highest priority level is 7 (PL7), the lowest is PL0.</li>
+<li>e.g. <code>000</code> for user, <code>100</code> for keyboard input, <code>110</code> for power supply,</li>
+</ul>
+<p><code>111</code> for <em>machine check</em>, which means something goes wrong.</p>
+<p><span class="arithmatex">\(\text{bit[2:0]}\)</span> contains the currnt values of the condition codes.</p>
+<div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/62.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/62.png" width="80%" style="margin: 0 auto;"></a>
+    </figure>
+</div>
+
+<h2 id="memory-address-space-of-lc-3">Memory Address Space of LC-3<a class="headerlink" href="#memory-address-space-of-lc-3" title="Permanent link">&para;</a></h2>
+<h4 id="system-space-textx0000-to-x2fff">System Space <span class="arithmatex">\(\text{x0000 to x2FFF}\)</span><a class="headerlink" href="#system-space-textx0000-to-x2fff" title="Permanent link">&para;</a></h4>
+<p>It contains the various data structures and code of the operating system.</p>
+<ul>
+<li>Privileged</li>
+<li>System Space</li>
+<li>Supervisor Stack</li>
+<li>Supervisor Stack Pointer, SSP</li>
+</ul>
+<h4 id="user-space-textx3000-to-xfdff">User Space <span class="arithmatex">\(\text{x3000 to xFDFF}\)</span><a class="headerlink" href="#user-space-textx3000-to-xfdff" title="Permanent link">&para;</a></h4>
+<p>All user programs and data use this region of memory.</p>
+<ul>
+<li>Unprivileged</li>
+<li>User Space</li>
+<li>User Stack</li>
+<li>User Stack Pointer, USP</li>
+</ul>
+<h4 id="io-page-textxfe00-to-xffff">I/O Page <span class="arithmatex">\(\text{xFE00 to xFFFF}\)</span><a class="headerlink" href="#io-page-textxfe00-to-xffff" title="Permanent link">&para;</a></h4>
+<p>It identifies registers that take part in input and output functions and some special registers associated with the processor.</p>
+<p>e.g. PSR is assigned address <span class="arithmatex">\(\text{xFFFC}\)</span>, MCR (Master Control Register) is assigned address <span class="arithmatex">\(\text{xFFFE}\)</span>.</p>
+<ul>
+<li>Privileged</li>
+</ul>
+<h4 id="stack-pointer">Stack pointer<a class="headerlink" href="#stack-pointer" title="Permanent link">&para;</a></h4>
+<p>Each space has a stack pointer. Since a program can only execute in Supervisor mode or User mode at any one time, only one of the two stacks is active at any one time.</p>
+<p><strong>Register 6</strong> is generally used as the stack pointer for the active stack.</p>
+<p>Two <strong>Registers</strong>, <span class="arithmatex">\(\text{Saved\_SSP}\)</span> and <span class="arithmatex">\(\text{Saved\_USP}\)</span> are provided to save the SP not in use.</p>
+<div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/63.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/63.png" width="80%" style="margin: 0 auto;"></a>
+        <caption>regions of memory</caption>
+    </figure>
+</div>
+
+<h2 id="input-output">Input / Output<a class="headerlink" href="#input-output" title="Permanent link">&para;</a></h2>
+<h3 id="basic-characteristics">Basic Characteristics<a class="headerlink" href="#basic-characteristics" title="Permanent link">&para;</a></h3>
+<p>All I/O activity is controlled by instructions in the computer's ISA.</p>
+<h4 id="memory-mapped-io">Memory-Mapped I/O<a class="headerlink" href="#memory-mapped-io" title="Permanent link">&para;</a></h4>
+<p>It uses the same data movement instructions that are used for loading or storing data between memory and GPR.</p>
+<p>The I/O device registers are <em>mapped</em> to a set of addresses which are allocated to I/O device registers rather than to memory locations.</p>
+<p>The LC-3 uses memory-mapped I/O.</p>
+<div class="admonition plane">
+<p><strong>Another scheme : Special I/O instructions</strong></p>
+<p>It uses special input and output instructions to control I/O devices.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Asynchronous and Synchronous</p>
+<p>I/O devices usually operate at speeds different from that of a microprocessor, and not in lockstep.</p>
+<p><strong>Asynchronous</strong> not in lockstep with microprocessor</p>
+<p>To control processing in an asynchronous world requires some protocol or <em>handshaking</em> mechanism.</p>
+<p><strong>The Simplest Form of Synchronization: flag</strong></p>
+<p>A single flag, which is a one-bit status register, is called the <em>ready bit</em>.</p>
+<p>Each time the typist types a character, the ready bit is set to <code>1</code>. Each time the computer reads a character, it clears the ready bit to <code>0</code>.</p>
+</div>
+<h4 id="interaction">Interaction<a class="headerlink" href="#interaction" title="Permanent link">&para;</a></h4>
+<p>The processor and the typist each is doing its own thing. they need to interact.</p>
+<p>The issue of <em>interrupt-driven</em> and <em>polling</em> is the issue of who controls the interaction.</p>
+<h3 id="input-from-the-keyboard">Input from the Keyboard<a class="headerlink" href="#input-from-the-keyboard" title="Permanent link">&para;</a></h3>
+<h4 id="input-registers">Input Registers<a class="headerlink" href="#input-registers" title="Permanent link">&para;</a></h4>
+<h5 id="kbdr-keyboard-data-register">KBDR, keyboard data register<a class="headerlink" href="#kbdr-keyboard-data-register" title="Permanent link">&para;</a></h5>
+<p>A data register that contains the character to be input.</p>
+<p>Address <span class="arithmatex">\(\text{xFE02}\)</span></p>
+<p><span class="arithmatex">\(\text{bits[7:0]}\)</span> are used for the data, <span class="arithmatex">\(\text{bits[15:8]}\)</span> contains <span class="arithmatex">\(\text{x00}\)</span>.</p>
+<h5 id="kbsr-keyboard-status-register">KBSR, keyboard status register<a class="headerlink" href="#kbsr-keyboard-status-register" title="Permanent link">&para;</a></h5>
+<p>A synchronization mechanism to let the processor know that input has occured.</p>
+<p>Address <span class="arithmatex">\(\text{xFE00}\)</span></p>
+<p><span class="arithmatex">\(\text{bit[15]}\)</span> contains the synchronization mechanism, which is the ready bit.</p>
+<h4 id="basic-input-service-rountine">Basic Input Service Rountine<a class="headerlink" href="#basic-input-service-rountine" title="Permanent link">&para;</a></h4>
+<p>When a key on the keyboard is struck, the ASCII code for that key is loaded into <span class="arithmatex">\(\text{KBDR[7:0]}\)</span>, and the electronic circuits associated with the keyboard automatically set <span class="arithmatex">\(\text{KBDR[15]}\)</span>.</p>
+<p>When the LC-3 reads KBDR, the eletronic circuits associated with the keyboard automatically clear <span class="arithmatex">\(\text{KBDR[15]}\)</span>.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">INPUT_LOOP</span><span class="w">  </span><span class="no">LDI</span><span class="w">     </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">KBSR</span>
+<span class="w">            </span><span class="nf">BRzp</span><span class="w">    </span><span class="no">INPUT_LOOP</span>
+<span class="w">            </span><span class="nf">LDI</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">KBDR</span>
+<span class="w">            </span><span class="nf">BRnzp</span><span class="w">   </span><span class="no">NEXT_TASK</span>
+<span class="nf">KBSR</span><span class="w">                </span><span class="no">.FILL</span><span class="w">   </span><span class="no">xFE00</span>
+<span class="nf">KBDR</span><span class="w">                </span><span class="no">.FILL</span><span class="w">   </span><span class="no">xFE02</span>
+</code></pre></div>
+<h4 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h4>
+<div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/64.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/64.png" width="100%" style="margin: 0 auto;"></a>
+    </figure>
+</div>
+
+<h3 id="output-to-the-monitor">Output to the Monitor<a class="headerlink" href="#output-to-the-monitor" title="Permanent link">&para;</a></h3>
+<h4 id="output-registers">Output Registers<a class="headerlink" href="#output-registers" title="Permanent link">&para;</a></h4>
+<h5 id="ddr-display-data-register">DDR, display data register<a class="headerlink" href="#ddr-display-data-register" title="Permanent link">&para;</a></h5>
+<p>A data register that contains the character to be output.</p>
+<p>Address <span class="arithmatex">\(\text{xFE06}\)</span></p>
+<p><span class="arithmatex">\(\text{bits[7:0]}\)</span> are used for the data, <span class="arithmatex">\(\text{bits[15:8]}\)</span> contains <span class="arithmatex">\(\text{x00}\)</span>.</p>
+<h5 id="dsr-display-status-register">DSR, display status register<a class="headerlink" href="#dsr-display-status-register" title="Permanent link">&para;</a></h5>
+<p>A synchronization mechanism to let the processor know that output has occured.</p>
+<p>Address <span class="arithmatex">\(\text{xFE04}\)</span></p>
+<p><span class="arithmatex">\(\text{bit[15]}\)</span> contains the synchronization mechanism, which is the ready bit.</p>
+<h4 id="basic-output-service-rountine">Basic Output Service Rountine<a class="headerlink" href="#basic-output-service-rountine" title="Permanent link">&para;</a></h4>
+<p>When the LC-3 transfer an ASCII code to <span class="arithmatex">\(\text{DDR[7:0]}\)</span> for outputting, the electronics curcuits of the monitor automatically clear <span class="arithmatex">\(\text{DSR[15]}\)</span> as the character processing begins.</p>
+<p>When the monitor finishes processing the character on the screen, the electronic curcuits of the monitor automatically set <span class="arithmatex">\(\text{DSR[15]}\)</span>.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">OUTPUT_LOOP</span><span class="w"> </span><span class="no">LDI</span><span class="w">     </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">DSR</span>
+<span class="w">            </span><span class="nf">BRzp</span><span class="w">    </span><span class="no">OUTPUT_LOOP</span>
+<span class="w">            </span><span class="nf">STI</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">DDR</span>
+<span class="w">            </span><span class="nf">BRnzp</span><span class="w">   </span><span class="no">NEXT_TASK</span>
+<span class="nf">DSR</span><span class="w">                 </span><span class="no">.FILL</span><span class="w">   </span><span class="no">xFE04</span>
+<span class="nf">DDR</span><span class="w">                 </span><span class="no">.FILL</span><span class="w">   </span><span class="no">xFE06</span>
+</code></pre></div>
+<h4 id="implementation_1">Implementation<a class="headerlink" href="#implementation_1" title="Permanent link">&para;</a></h4>
+<div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/65.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/65.png" width="100%" style="margin: 0 auto;"></a>
+    </figure>
+</div>
+
+<h5 id="prompt">Prompt<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h5>
+<p>the message printed on the monitor to let the person sitting at the keyboard know that the program is waiting for input from the keyboard.</p>
+<h3 id="implementation-of-memory-mapped-io-revisited">Implementation of Memory-Mapped I/O, Revisited<a class="headerlink" href="#implementation-of-memory-mapped-io-revisited" title="Permanent link">&para;</a></h3>
+<div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/66.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/66.png" width="100%" style="margin: 0 auto;"></a>
+    </figure>
+</div>
+
+<p><strong>MIO.EN</strong> indicates whether a data movement from/to memory or I/O is to take place this clock cycle.</p>
+<p><strong>MAR</strong> contains the address of the memory location or the memory-mapped address of an I/O device register.</p>
+<p><strong>R.W</strong> indicates whether a load or a store is to take place.</p>
+<h2 id="operating-system-service-rountine">Operating System Service Rountine<a class="headerlink" href="#operating-system-service-rountine" title="Permanent link">&para;</a></h2>
+<p>It's not an easy way to control I/O activity with many programs, so in general it's ill-advised to give user programmers access to these registers and the addresses of hardare registers are part of the privileged memory address space.</p>
+<p>The simpler and safer solution to the problem of user program requiring I/O, involves <strong>the TRAP instruction</strong> and the <strong>operating system</strong>.</p>
+<h3 id="trap-mechanism">TRAP Mechanism<a class="headerlink" href="#trap-mechanism" title="Permanent link">&para;</a></h3>
+<p>The trap mechanism involves several elements.</p>
+<ol>
+<li><strong>A set of service routines</strong> executed on behalf of user programs by the operating system</li>
+<li><strong>A table of the staring address</strong> of these 256 service routines.</li>
+<li>The table is stored in memory locations <span class="arithmatex">\(\text{x0000 to x00FF}\)</span>.</li>
+<li>The table is called the <em>System Control Block</em> or the <em>Trap Vector Table</em>.</li>
+<li><strong>The TRAP instruction</strong>.</li>
+<li><strong>A linkage</strong> back to the user program.</li>
+</ol>
+<div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/67.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/67.png" width="80%" style="margin: 0 auto;"></a>
+    </figure>
+</div>
+
+<h3 id="trap-and-rti-instruction">TRAP and RTI Instruction<a class="headerlink" href="#trap-and-rti-instruction" title="Permanent link">&para;</a></h3>
+<div class="admonition asmop">
+<p class="admonition-title">TRAP</p>
+<p><strong>Opcode</strong> <span class="arithmatex">\(\text{[15:12]} = 1111\)</span></p>
+<p><strong>Operand</strong> </p>
+<ul>
+<li><span class="arithmatex">\(\text{[11:8]}\)</span> : must be <code>0000</code></li>
+<li><span class="arithmatex">\(\text{[7:0]}\)</span> : trapvect8</li>
+</ul>
+<p><strong>FUNCTION</strong></p>
+<div class="arithmatex">\[
+    \begin{aligned}
+        1.\ &amp;\text{if PSR[15] == 1, then Save\_USP = R6, R6 = Saved\_SSP} \\
+        2.\ &amp;\text{Push PSR, incremented PC onto the system stack} \\
+        3.\ &amp;\text{PSR[15] = 0} \\
+        4.\ &amp;\text{PC = Mem[ZEXT(trapvect8)]} \\
+    \end{aligned}
+\]</div>
+<p>Condition Codes <img alt="❎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/274e.svg" title=":negative_squared_cross_mark:" /></p>
+<p><div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/68.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/68.png" width="80%" style="margin: 0 auto;"></a>
+        <caption>encoding</caption>
+    </figure>
+</div></p>
+</div>
+<div class="admonition asmop">
+<p class="admonition-title">RTI</p>
+<div class="admonition plane">
+<p>RTI stands for Return from Trap or Interrupt.</p>
+</div>
+<p><strong>Opcode</strong> <span class="arithmatex">\(\text{[15:12]} = 1000\)</span></p>
+<p><strong>Operand</strong></p>
+<ul>
+<li><span class="arithmatex">\(\text{[11:0]}\)</span> : must be <code>0000 0000 0000</code></li>
+</ul>
+<p><strong>FUNCTION</strong></p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{if PSR[15] == 1, then} \\
+    &amp;\text{initiate a privilege mode exception} \\
+    \text{else}\\
+    1.\ &amp;\text{Pop PSR, incremented PC from the system stack} \\
+    2.\ &amp;\text{if PSR[15] == 1, Save\_SSP = R6, R6 = Saved\_USP} \\
+\end{aligned}
+\]</div>
+<p>Condition Codes <img alt="❎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/274e.svg" title=":negative_squared_cross_mark:" /></p>
+<p><div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/69.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/69.png" width="80%" style="margin: 0 auto;"></a>
+        <caption>encoding</caption>
+    </figure>
+</div></p>
+</div>
+<div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/70.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/70.png" width="80%" style="margin: 0 auto;"></a>
+        <caption>flow of control</caption>
+    </figure>
+</div>
+
+<h3 id="trap-examples">TRAP Examples<a class="headerlink" href="#trap-examples" title="Permanent link">&para;</a></h3>
+<h4 id="handling-io">Handling I/O<a class="headerlink" href="#handling-io" title="Permanent link">&para;</a></h4>
+<h5 id="getc-or-trap-x20"><code>GETC</code> or <code>TRAP x20</code><a class="headerlink" href="#getc-or-trap-x20" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="nf">TRAP_GETC</span><span class="w">   </span><span class="no">LDI</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">KBSR</span>
+<span class="w">            </span><span class="nf">BRzp</span><span class="w">    </span><span class="no">TRAP_GETC</span>
+<span class="w">            </span><span class="nf">LDI</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">KBDR</span>
+<span class="w">            </span><span class="nf">RTI</span>
+
+<span class="nf">KBSR</span><span class="w">        </span><span class="no">.FILL</span><span class="w">   </span><span class="no">xFE00</span>
+<span class="nf">KBDR</span><span class="w">        </span><span class="no">.FILL</span><span class="w">   </span><span class="no">xFE02</span>
+</code></pre></div>
+<h5 id="out-or-trap-x21"><code>OUT</code> or <code>TRAP x21</code><a class="headerlink" href="#out-or-trap-x21" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#-1</span>
+<span class="w">            </span><span class="nf">STR</span><span class="w">     </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+
+<span class="nf">TRAP_OUT</span><span class="w">    </span><span class="no">LDI</span><span class="w">     </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">DSR</span>
+<span class="w">            </span><span class="nf">BRzp</span><span class="w">    </span><span class="no">TRAP_OUT</span>
+<span class="w">            </span><span class="nf">STI</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">DDR</span>
+
+<span class="w">            </span><span class="nf">LDR</span><span class="w">     </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+<span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span>
+<span class="w">            </span><span class="nf">RTI</span>
+
+<span class="nf">DSR</span><span class="w">         </span><span class="no">.FILL</span><span class="w">   </span><span class="no">xFE04</span>
+<span class="nf">DDR</span><span class="w">         </span><span class="no">.FILL</span><span class="w">   </span><span class="no">xFE06</span>
+</code></pre></div>
+<h5 id="puts-or-trap-x22"><code>PUTS</code> or <code>TRAP   x22</code><a class="headerlink" href="#puts-or-trap-x22" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#-1</span>
+<span class="w">            </span><span class="nf">STR</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+<span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#-1</span>
+<span class="w">            </span><span class="nf">STR</span><span class="w">     </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+
+<span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+<span class="nf">TRAP_PUTS_LOOP</span>
+<span class="w">            </span><span class="nf">LDR</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+<span class="w">            </span><span class="nf">BRz</span><span class="w">     </span><span class="no">TRAP_PUTS_DONE</span>
+<span class="w">            </span><span class="nf">OUT</span>
+<span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span>
+<span class="w">            </span><span class="nf">BRnzp</span><span class="w">   </span><span class="no">TRAP_PUTS_LOOP</span>
+
+<span class="nf">TRAP_PUTS_DONE</span>
+<span class="w">            </span><span class="nf">LDR</span><span class="w">     </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+<span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span>
+<span class="w">            </span><span class="nf">LDR</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+<span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span>
+<span class="w">            </span><span class="nf">RTI</span>
+</code></pre></div>
+<h5 id="in-or-trap-x23"><code>IN</code> or <code>TRAP x23</code><a class="headerlink" href="#in-or-trap-x23" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="w">            </span><span class="nf">LEA</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">TRAP_IN_MSG</span>
+<span class="w">            </span><span class="nf">PUTS</span>
+<span class="w">            </span><span class="nf">GETC</span>
+<span class="w">            </span><span class="nf">OUT</span>
+
+<span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#-1</span>
+<span class="w">            </span><span class="nf">STR</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+
+<span class="w">            </span><span class="nf">AND</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+<span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">x000A</span>
+<span class="w">            </span><span class="nf">OUT</span><span class="w">                         </span><span class="c1">; Print LF</span>
+
+<span class="w">            </span><span class="nf">LDR</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span>
+<span class="w">            </span><span class="nf">ADD</span><span class="w">     </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="no">R6</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span>
+<span class="w">            </span><span class="nf">RTI</span>
+<span class="nf">TRAP_IN_MSG</span><span class="w"> </span><span class="no">.STRINGZ</span><span class="w">    </span><span class="err">&quot;\</span><span class="no">nInput</span><span class="w"> </span><span class="no">a</span><span class="w"> </span><span class="no">character</span><span class="err">&gt;</span><span class="w"> </span><span class="err">&quot;</span>
+</code></pre></div>
+<h4 id="halting-the-computer">Halting the Computer<a class="headerlink" href="#halting-the-computer" title="Permanent link">&para;</a></h4>
+<p>Recall the RUN latch is ANDed with the crystal oscillator.</p>
+<div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/71.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/71.png" width="100%" style="margin: 0 auto;"></a>
+        <caption>the clock circuit and its control</caption>
+    </figure>
+</div>
+
+<p>In the LC-3, the RUN latch is bit[15] of the Master Control Register (MCR), which is memory-mapped to the location <span class="arithmatex">\(\text{xFFFE}\)</span>. If bit[15] of MCR is cleared, then the computer halts.</p>
+<h5 id="halt-or-trap-x25"><code>HALT</code> or <code>TRAP   x25</code><a class="headerlink" href="#halt-or-trap-x25" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="nf">TRAP_HALT</span><span class="w">   </span><span class="no">LEA</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">TRAP_HALT_MSG</span>
+<span class="w">            </span><span class="nf">PUTS</span>
+<span class="w">            </span><span class="nf">LDI</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">MCR</span>
+<span class="w">            </span><span class="nf">LD</span><span class="w">      </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">TRAP_HALT_MASK</span>
+<span class="w">            </span><span class="nf">AND</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span>
+<span class="w">            </span><span class="nf">STI</span><span class="w">     </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">MCR</span>
+<span class="w">            </span><span class="nf">BRnzp</span><span class="w">   </span><span class="no">TRAP_HALT</span>
+<span class="nf">MCR</span><span class="w">             </span><span class="no">.FILL</span><span class="w">   </span><span class="no">xFEEE</span>
+<span class="nf">TRAP_HALT_MASK</span><span class="w">  </span><span class="no">.FILL</span><span class="w">   </span><span class="no">x7FFF</span>
+</code></pre></div>
+<h2 id="interrupts-and-interrupt-driven-io">Interrupts and Interrupt-Driven I/O<a class="headerlink" href="#interrupts-and-interrupt-driven-io" title="Permanent link">&para;</a></h2>
+<h4 id="what-is-interrupt-driven-io">What is Interrupt-Driven I/O ?<a class="headerlink" href="#what-is-interrupt-driven-io" title="Permanent link">&para;</a></h4>
+<p>An I/O device that has nothing to do with the running program can</p>
+<ol>
+<li>force the running program to stop.</li>
+<li>have the processor execute a program that carries out the needs of the I/O device.</li>
+<li>have the stopped promgram <em>resume</em> execution as if nothing had happened.</li>
+</ol>
+<h2 id="interrupt-driven-io-mechanism">Interrupt-Driven I/O Mechanism<a class="headerlink" href="#interrupt-driven-io-mechanism" title="Permanent link">&para;</a></h2>
+<h3 id="precondition-to-trigger-an-interrupt-signal-int">Precondition to trigger an interrupt signal (INT)<a class="headerlink" href="#precondition-to-trigger-an-interrupt-signal-int" title="Permanent link">&para;</a></h3>
+<div class="admonition plane">
+<p><strong>The device MUST WANT service</strong></p>
+<p>The I/O device wants service when the corresponding ready bit is set.</p>
+<p><strong>The device MUST HAVE THE RIGHT to request the service</strong></p>
+<p>In most I/O devices, the <em>interrupt enable (IE)</em> bit is part of the device status register.</p>
+<p>In KBSR and DSR, the IE bit is bit[14].</p>
+<p>The <strong>interrupt request signal</strong> from I/O device is the logical AND of IE bit and the ready bit.</p>
+<p><div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/72.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/72.png" width="70%" style="margin: 0 auto;"></a>
+    </figure>
+</div></p>
+<p><strong>The deivce request MUST BE MORE URGENT than what the processor is currently doing</strong></p>
+<p>To successfully interrupt the running program, the priority of the request must be higher than the priority of the program wished to interrupt.</p>
+</div>
+<h4 id="test-for-int">Test for INT<a class="headerlink" href="#test-for-int" title="Permanent link">&para;</a></h4>
+<h5 id="the-int-signal">The INT Signal<a class="headerlink" href="#the-int-signal" title="Permanent link">&para;</a></h5>
+<p>To interrupt, the INT signal must be asserted.</p>
+<p>The PL of each device are stored in the corresponding hardware.</p>
+<div style="text-align: center;">
+    <figure>
+        <a class="glightbox" href="../imgs/73.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../imgs/73.png" width="80%" style="margin: 0 auto;"></a>
+        <caption>generation of INT signal</caption>
+    </figure>
+</div>
+
+<p>Interrruption can happen at any time. But it makes much more sense to ignore interrupt signals except when we are at an instruction boundary. </p>
+<p>At the first clock cycle of FETCH phase, it will test the INT signal to see whether it's asserted. If INT signal is asserted, then the next state is handling the interrupt request.</p>
+<h3 id="handling-the-interrrupt-request">Handling the Interrrupt Request<a class="headerlink" href="#handling-the-interrrupt-request" title="Permanent link">&para;</a></h3>
+<h4 id="initiate-the-interrupt">Initiate the Interrupt<a class="headerlink" href="#initiate-the-interrupt" title="Permanent link">&para;</a></h4>
+<h5 id="save-the-state-of-the-interrupted-program">Save the State of the Interrupted Program<a class="headerlink" href="#save-the-state-of-the-interrupted-program" title="Permanent link">&para;</a></h5>
+<p>Push PC and PSR to the supervisor stack.</p>
+<h5 id="load-the-state-of-the-interrupt-service-routine">Load the State of the Interrupt Service Routine.<a class="headerlink" href="#load-the-state-of-the-interrupt-service-routine" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Load PC</li>
+</ul>
+<p>the mechanism of <em>vectored interrupts</em>.</p>
+<p>If the interrupt is taken, the processor expands the 8-bit interrupt vector (INTV) to form a 16-bit address, which is an entry into the <strong>Interrupt Vector Table.</strong></p>
+<p>The <strong>Interrupt Vector Table</strong> consists of memory locations <code>x0100</code> to <code>x01FF</code>, each containing the starting address of an interrupt service routine.</p>
+<p>PC is loaded with the contents of location in the Interrupt Vector Table corresponding to the address formed by expanding INTV.</p>
+<ul>
+<li>Load PSR</li>
+</ul>
+<p><code>PSR[2:0]</code> contains no meaningful information. We arbitarily load it initailly with <code>010</code>.</p>
+<p><code>PSR[15]</code> is set to <code>0</code>.</p>
+<p><code>PSR[10:8]</code> is set to the priority level associated with the interrupt request.</p>
+<h3 id="service-the-interrupt">Service the Interrupt<a class="headerlink" href="#service-the-interrupt" title="Permanent link">&para;</a></h3>
+<h3 id="return-from-the-interrupt-rti">Return from the Interrupt, RTI<a class="headerlink" href="#return-from-the-interrupt-rti" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Pop PSR and PC to the supervisor stack.</li>
+<li>Check whether change modes and the stack pointer.</li>
+</ol>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2024.02.21 00:56:50 CST</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom">2024.02.21 00:56:50 CST</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 sakuratsuyu
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/sakuratsuyu" target="_blank" rel="noopener" title="Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:sakuratsuyu@outlook.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
