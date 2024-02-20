@@ -6,7 +6,7 @@
     - [ ] Abstract Algrebra
 - [ ] Computer Science Courses
     - [x] The Missing Semester of your CS education --> Cheat Sheets / Tools
-    - [ ] Introduction to Computer Systems | ICS
+    - [x] Introduction to Computer Systems | ICS
     - [ ] Introduction to Computer Vision | ICV
     - [x] Fundemental of Data Structure | FDS
 - [ ] Cheat Sheets / Tools

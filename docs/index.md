@@ -5,6 +5,7 @@ A note book by @sakuratsuyu.
 偶尔写点东西，希望你喜欢。
 
 !!! note "Completed Notes ✨"
+    - [计算机系统概论 | Introduction to Computing Systems](Computer_Science_Courses/ICS/class_notes/).
     - [数据结构基础 | Fundemental of Data Structures](Computer_Science_Courses/FDS/class_notes/).
     - [离散数学 | Discrete Mathematics](Mathematics_Basis/DA/Chap_1/).
     - [数值分析 | Numerical Analysis](Mathematics_Basis/NA/class_notes/).
